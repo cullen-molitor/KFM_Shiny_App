@@ -1,0 +1,34 @@
+SiteNumber,IslandCode,IslandName,SiteCode,SiteName,Reference,ReserveStatus,ReserveType,ReserveYear,Old_New,Old_New_Comp,Latitude,Longitude,MeanDepth,LineType,Color,Color2,ARMs,Bath
+1,SM,San Miguel Island,WL,Wyckoff Ledge,FALSE,Outside,Outside,Outside,Outside,TRUE,34.02236667,-120.3874667,43.27,solid,red2,slateblue4,FALSE,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,FALSE,Inside,SMR,2003,New Reserve,TRUE,34.06438333,-120.3566,20.5,dashed,blue2,darkorchid1,FALSE,FALSE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,TRUE,Outside,Outside,Outside,Outside,TRUE,33.90146667,-120.1029667,33.18,solid,red2,deepskyblue,TRUE,FALSE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,TRUE,Outside,Outside,Outside,Outside,TRUE,33.89753333,-120.10075,46.72,solid,blue2,deepskyblue4,TRUE,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,FALSE,Outside,Outside,Outside,Outside,TRUE,34.03261667,-120.107,44.77,solid,green3,blue,FALSE,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,FALSE,Inside,SMR,2003,New Reserve,TRUE,33.94966667,-119.8275833,52,dashed,red2,chartreuse,TRUE,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,FALSE,Outside,Outside,Outside,Outside,TRUE,34.0510635,-119.75515,40.82,solid,blue2,chartreuse4,TRUE,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,FALSE,Outside,Outside,Outside,Outside,TRUE,34.03488333,-119.7030833,21.33,solid,green3,darkolivegreen3,TRUE,FALSE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,TRUE,Inside,SMR,2003,New Reserve,TRUE,34.04798333,-119.5514,15.45,dashed,deepskyblue2,darkgreen,TRUE,TRUE
+10,SC,Santa Cruz Island,YB,Yellow Banks,FALSE,Outside,Outside,Outside,Outside,TRUE,33.98983333,-119.5630667,50.67,solid,yellow2,forestgreen,TRUE,FALSE
+11,AN,Anacapa Island,AR,Admiral's Reef,TRUE,Outside,Outside,Outside,Outside,TRUE,34.00775,-119.4343833,44.36,solid,red2,gold,TRUE,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,TRUE,Inside,SMR,1978,Old Reserve,TRUE,34.01586667,-119.3717333,26.45,dashed,blue2,gold3,TRUE,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,TRUE,Inside,SMR,1978,Old Reserve,TRUE,34.01703333,-119.3611333,24.25,dashed,green3,yellow,TRUE,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,TRUE,Inside,SMR,2003,New Reserve,TRUE,33.46611667,-119.0277833,43.09,dashed,red2,darkred,FALSE,FALSE
+15,SB,Santa Barbara Island,AP,Arch Point,TRUE,Outside,Outside,Outside,Outside,TRUE,33.48753333,-119.0275833,24.82,solid,blue2,firebrick1,FALSE,FALSE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,TRUE,Outside,Outside,Outside,Outside,TRUE,33.46441667,-119.0391667,25.91,solid,green3,violetred,FALSE,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,FALSE,Outside,Outside,Outside,Outside,FALSE,34.0237,-120.3951333,27.55,solid,green3,darkmagenta,TRUE,FALSE
+22,SR,Santa Rosa Island,CP,Cluster Point,TRUE,Outside,Outside,Outside,Outside,FALSE,33.92303333,-120.1873667,45.33,solid,deepskyblue2,turquoise1,FALSE,FALSE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,TRUE,Inside,SMR,2003,New Reserve,FALSE,33.90855,-120.1555333,42.18,dashed,yellow2,turquoise4,FALSE,FALSE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,TRUE,Inside,SMR,2003,New Reserve,FALSE,33.90036667,-120.1356667,36.6,dashed,darkgreen,steelblue1,FALSE,FALSE
+25,SR,Santa Rosa Island,SP,South Point,TRUE,Inside,SMR,2003,New Reserve,FALSE,33.89233333,-120.1195,41.09,dashed,darkorange3,steelblue4,FALSE,FALSE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,TRUE,Outside,Outside,Outside,Outside,FALSE,34.04488333,-119.6012667,38.45,solid,darkgreen,lightgreen,FALSE,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,TRUE,Inside,SMR,2003,New Reserve,FALSE,34.05216667,-119.5821167,37,dashed,darkorange3,limegreen,FALSE,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,TRUE,Inside,SMR,2003,New Reserve,FALSE,34.05428333,-119.5668667,40,dashed,darkseagreen4,palegreen4,FALSE,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,TRUE,Outside,Outside,Outside,Outside,FALSE,34.04415,-119.54245,37.82,solid,darkslategrey,seagreen3,FALSE,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,TRUE,Outside,Outside,Outside,Outside,FALSE,34.03836667,-119.5253,29.73,solid,black,green,FALSE,TRUE
+31,AN,Anacapa Island,KH,Keyhole,FALSE,Inside,SMCA,2003,New Reserve,FALSE,34.01641667,-119.4320167,29.64,dotted,deepskyblue2,yellow3,FALSE,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,TRUE,Outside,Outside,Outside,Outside,FALSE,34.0045,-119.3857833,38.09,solid,yellow2,palegoldenrod,FALSE,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,TRUE,Inside,SMR,2003,New Reserve,FALSE,34.0126,-119.3891833,53.18,dashed,darkgreen,orange,FALSE,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,TRUE,Outside,Outside,Outside,Outside,FALSE,34.0141,-119.3590167,27.91,solid,darkorange3,darkgoldenrod2,FALSE,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,TRUE,Outside,Outside,Outside,Outside,FALSE,33.47985,-119.0622,48.18,solid,deepskyblue2,red,FALSE,FALSE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,TRUE,Inside,SMR,2003,New Reserve,FALSE,33.47306667,-119.0268167,38.14,dashed,yellow2,deeppink,FALSE,FALSE
+37,SB,Santa Barbara Island,SER,Southeast Reef,TRUE,Inside,SMR,2003,New Reserve,FALSE,33.46293333,-119.0312667,38.73,dashed,darkgreen,deeppink4,TRUE,FALSE

@@ -1,0 +1,864 @@
+IslandCode,IslandName,SiteCode,SiteName,SurveyYear,ReserveStatus,Simpson_Index,Date
+SM,San Miguel Island,WL,Wyckoff Ledge,1982,Outside,0.7557463842975206,1982-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,1983,Outside,0.7780187074829932,1983-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,1984,Outside,0.7569083969794703,1984-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,1985,Outside,0.8215909364799256,1985-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,1986,Outside,0.8170462820053264,1986-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,1987,Outside,0.8255987597323393,1987-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,1988,Outside,0.847699684423077,1988-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,1989,Outside,0.8375737072313403,1989-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,1990,Outside,0.8107930046068902,1990-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,1991,Outside,0.844160496238088,1991-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,1992,Outside,0.8621563998675421,1992-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,1993,Outside,0.8802646037759319,1993-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,1994,Outside,0.8700398504879943,1994-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,1995,Outside,0.8813536503032388,1995-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,1996,Outside,0.8850758155226585,1996-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,1997,Outside,0.8852666962904185,1997-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,1998,Outside,0.8873557097428002,1998-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,1999,Outside,0.8766911451100972,1999-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,2000,Outside,0.8879841766016615,2000-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,2001,Outside,0.8757984507160282,2001-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,2002,Outside,0.874305746170142,2002-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,2003,Outside,0.8838388487644034,2003-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,2004,Outside,0.8620823716760778,2004-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,2005,Outside,0.866726311810985,2005-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,2006,Outside,0.8589259111853756,2006-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,2007,Outside,0.8759159231020144,2007-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,2008,Outside,0.8564367701154889,2008-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,2009,Outside,0.887107123394612,2009-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,2010,Outside,0.890617838108195,2010-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,2011,Outside,0.8878924235663865,2011-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,2012,Outside,0.8914973570032716,2012-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,2013,Outside,0.872319234168923,2013-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,2014,Outside,0.8373185696811476,2014-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,2015,Outside,0.8603920400335148,2015-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,2016,Outside,0.833065152971877,2016-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,2017,Outside,0.8642089380195022,2017-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,2018,Outside,0.8214059037544817,2018-07-01
+SM,San Miguel Island,WL,Wyckoff Ledge,2019,Outside,0.7748669579627497,2019-07-01
+SM,San Miguel Island,HR,Hare Rock,1982,Inside,0.7889059989362284,1982-07-01
+SM,San Miguel Island,HR,Hare Rock,1983,Inside,0.7661212159228181,1983-07-01
+SM,San Miguel Island,HR,Hare Rock,1984,Inside,0.743796970903198,1984-07-01
+SM,San Miguel Island,HR,Hare Rock,1985,Inside,0.7323577851837896,1985-07-01
+SM,San Miguel Island,HR,Hare Rock,1986,Inside,0.7978228250101975,1986-07-01
+SM,San Miguel Island,HR,Hare Rock,1987,Inside,0.7718586037077293,1987-07-01
+SM,San Miguel Island,HR,Hare Rock,1988,Inside,0.8016764158456224,1988-07-01
+SM,San Miguel Island,HR,Hare Rock,1989,Inside,0.7904994034130609,1989-07-01
+SM,San Miguel Island,HR,Hare Rock,1990,Inside,0.8555844943236837,1990-07-01
+SM,San Miguel Island,HR,Hare Rock,1991,Inside,0.7732397424567605,1991-07-01
+SM,San Miguel Island,HR,Hare Rock,1992,Inside,0.8015890071986937,1992-07-01
+SM,San Miguel Island,HR,Hare Rock,1993,Inside,0.8203558964369775,1993-07-01
+SM,San Miguel Island,HR,Hare Rock,1994,Inside,0.7915840026864185,1994-07-01
+SM,San Miguel Island,HR,Hare Rock,1995,Inside,0.7767567147494335,1995-07-01
+SM,San Miguel Island,HR,Hare Rock,1996,Inside,0.7734059498696958,1996-07-01
+SM,San Miguel Island,HR,Hare Rock,1997,Inside,0.7470048272032124,1997-07-01
+SM,San Miguel Island,HR,Hare Rock,1998,Inside,0.7646527859179171,1998-07-01
+SM,San Miguel Island,HR,Hare Rock,1999,Inside,0.791451711316675,1999-07-01
+SM,San Miguel Island,HR,Hare Rock,2000,Inside,0.7874456116325043,2000-07-01
+SM,San Miguel Island,HR,Hare Rock,2001,Inside,0.8014431075267692,2001-07-01
+SM,San Miguel Island,HR,Hare Rock,2002,Inside,0.815434735563413,2002-07-01
+SM,San Miguel Island,HR,Hare Rock,2003,Inside,0.8562560193692799,2003-07-01
+SM,San Miguel Island,HR,Hare Rock,2004,Inside,0.8449307542095674,2004-07-01
+SM,San Miguel Island,HR,Hare Rock,2005,Inside,0.826619540516819,2005-07-01
+SM,San Miguel Island,HR,Hare Rock,2006,Inside,0.8516235198335396,2006-07-01
+SM,San Miguel Island,HR,Hare Rock,2007,Inside,0.8249373873147252,2007-07-01
+SM,San Miguel Island,HR,Hare Rock,2008,Inside,0.7503475752948537,2008-07-01
+SM,San Miguel Island,HR,Hare Rock,2009,Inside,0.7586804567277972,2009-07-01
+SM,San Miguel Island,HR,Hare Rock,2010,Inside,0.7316439027621818,2010-07-01
+SM,San Miguel Island,HR,Hare Rock,2011,Inside,0.7814659273688678,2011-07-01
+SM,San Miguel Island,HR,Hare Rock,2012,Inside,0.7305056946508783,2012-07-01
+SM,San Miguel Island,HR,Hare Rock,2013,Inside,0.738521362761444,2013-07-01
+SM,San Miguel Island,HR,Hare Rock,2014,Inside,0.7528531330153292,2014-07-01
+SM,San Miguel Island,HR,Hare Rock,2015,Inside,0.7452517575526194,2015-07-01
+SM,San Miguel Island,HR,Hare Rock,2016,Inside,0.7787514917379426,2016-07-01
+SM,San Miguel Island,HR,Hare Rock,2017,Inside,0.7887382175581487,2017-07-01
+SM,San Miguel Island,HR,Hare Rock,2018,Inside,0.762053646470228,2018-07-01
+SM,San Miguel Island,HR,Hare Rock,2019,Inside,0.7726626299043137,2019-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,1982,Outside,0.6953021818645624,1982-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,1983,Outside,0.7556823332799157,1983-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,1984,Outside,0.7603157491186754,1984-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,1985,Outside,0.7745861069778369,1985-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,1986,Outside,0.7805442367383136,1986-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,1987,Outside,0.7407982958716914,1987-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,1988,Outside,0.7571931088341752,1988-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,1989,Outside,0.8002616295319942,1989-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,1990,Outside,0.8227333255708837,1990-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,1991,Outside,0.8362786840395335,1991-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,1992,Outside,0.828431836285237,1992-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,1993,Outside,0.8695821576996692,1993-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,1994,Outside,0.8637521411246385,1994-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,1995,Outside,0.8494773039740343,1995-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,1996,Outside,0.8587698136114401,1996-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,1997,Outside,0.8759442781123677,1997-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,1998,Outside,0.8482552931088772,1998-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,1999,Outside,0.8205001880291692,1999-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,2000,Outside,0.7770108732452465,2000-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,2001,Outside,0.8565644225342415,2001-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,2002,Outside,0.8399089769823463,2002-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,2003,Outside,0.8170069226674168,2003-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,2004,Outside,0.8317616859833795,2004-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,2005,Outside,0.8124593438598987,2005-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,2006,Outside,0.7704044886201803,2006-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,2007,Outside,0.8422082394228045,2007-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,2008,Outside,0.8449863693455064,2008-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,2009,Outside,0.8635553578985663,2009-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,2010,Outside,0.8622044099812995,2010-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,2011,Outside,0.8678002065537046,2011-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,2012,Outside,0.8078529401030521,2012-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,2013,Outside,0.8885809704167104,2013-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,2014,Outside,0.8522467161398407,2014-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,2015,Outside,0.784544469585427,2015-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,2016,Outside,0.7160641575019187,2016-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,2017,Outside,0.6969471068667334,2017-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,2018,Outside,0.7542725049015384,2018-07-01
+SR,Santa Rosa Island,JLNO,Johnson's Lee North,2019,Outside,0.767925578382903,2019-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,1982,Outside,0.7703277047700527,1982-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,1983,Outside,0.8543715757714385,1983-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,1984,Outside,0.8071632233639805,1984-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,1985,Outside,0.8200490086879038,1985-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,1986,Outside,0.7977043642670242,1986-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,1987,Outside,0.8135410556154163,1987-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,1988,Outside,0.8085970299364421,1988-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,1989,Outside,0.8032896720548213,1989-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,1990,Outside,0.840564951577106,1990-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,1991,Outside,0.8640237651458791,1991-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,1992,Outside,0.8478057403121517,1992-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,1993,Outside,0.8663818174035771,1993-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,1994,Outside,0.8603519839308272,1994-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,1995,Outside,0.8666953706876341,1995-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,1996,Outside,0.8758498844902165,1996-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,1997,Outside,0.8743771538720317,1997-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,1998,Outside,0.8616498511916182,1998-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,1999,Outside,0.8778676785210833,1999-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,2000,Outside,0.8807242622698042,2000-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,2001,Outside,0.861808293240621,2001-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,2002,Outside,0.8867608468125172,2002-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,2003,Outside,0.8724193345547893,2003-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,2004,Outside,0.8844345752780064,2004-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,2005,Outside,0.8458516747171895,2005-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,2006,Outside,0.8687227340785102,2006-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,2007,Outside,0.8544204986500892,2007-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,2008,Outside,0.8714192188802076,2008-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,2009,Outside,0.8791845172629297,2009-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,2010,Outside,0.8688679350328918,2010-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,2011,Outside,0.8704391018794999,2011-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,2012,Outside,0.8517202968403272,2012-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,2013,Outside,0.8558163994729064,2013-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,2014,Outside,0.8650772382647284,2014-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,2015,Outside,0.8477796793161385,2015-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,2016,Outside,0.8057972586721954,2016-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,2017,Outside,0.7682713780162316,2017-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,2018,Outside,0.7865779166316508,2018-07-01
+SR,Santa Rosa Island,JLSO,Johnson's Lee South,2019,Outside,0.8187645593173976,2019-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,1983,Outside,0.8113258845071623,1983-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,1984,Outside,0.7802759306673543,1984-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,1985,Outside,0.7793560334322374,1985-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,1986,Outside,0.7839759070521601,1986-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,1987,Outside,0.7584753226946319,1987-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,1988,Outside,0.8325116777462209,1988-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,1989,Outside,0.8040521501303056,1989-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,1990,Outside,0.8076317435915148,1990-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,1991,Outside,0.8288809202001746,1991-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,1992,Outside,0.8257492339754584,1992-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,1993,Outside,0.8194264751237724,1993-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,1994,Outside,0.8253620939259205,1994-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,1995,Outside,0.8403141874548886,1995-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,1996,Outside,0.8439523835991116,1996-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,1997,Outside,0.8483861310370375,1997-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,1998,Outside,0.8052611695381383,1998-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,1999,Outside,0.7231861964117596,1999-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,2000,Outside,0.7622736121434359,2000-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,2001,Outside,0.785604407448858,2001-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,2002,Outside,0.8248860263650123,2002-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,2003,Outside,0.8258682936982372,2003-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,2004,Outside,0.7953439823193056,2004-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,2005,Outside,0.7729674061548384,2005-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,2006,Outside,0.8189232299147698,2006-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,2007,Outside,0.8415284428144274,2007-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,2008,Outside,0.838146947555292,2008-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,2009,Outside,0.7194920139975418,2009-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,2010,Outside,0.7473036096569339,2010-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,2011,Outside,0.7086833872460767,2011-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,2012,Outside,0.6594483978622605,2012-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,2013,Outside,0.7003231098116391,2013-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,2014,Outside,0.7320404573122796,2014-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,2015,Outside,0.6704256727528797,2015-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,2016,Outside,0.722223864130763,2016-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,2017,Outside,0.7207444433667571,2017-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,2018,Outside,0.7596487501697942,2018-07-01
+SR,Santa Rosa Island,RR,Rodes Reef,2019,Outside,0.7229044668177876,2019-07-01
+SC,Santa Cruz Island,GI,Gull Island South,1982,Inside,0.7090167630624449,1982-07-01
+SC,Santa Cruz Island,GI,Gull Island South,1983,Inside,0.7676440358773021,1983-07-01
+SC,Santa Cruz Island,GI,Gull Island South,1984,Inside,0.7560445949180945,1984-07-01
+SC,Santa Cruz Island,GI,Gull Island South,1985,Inside,0.7456528014173809,1985-07-01
+SC,Santa Cruz Island,GI,Gull Island South,1986,Inside,0.755729867061715,1986-07-01
+SC,Santa Cruz Island,GI,Gull Island South,1987,Inside,0.764427664399093,1987-07-01
+SC,Santa Cruz Island,GI,Gull Island South,1988,Inside,0.758990162443645,1988-07-01
+SC,Santa Cruz Island,GI,Gull Island South,1989,Inside,0.7622168834740377,1989-07-01
+SC,Santa Cruz Island,GI,Gull Island South,1990,Inside,0.7721393700129301,1990-07-01
+SC,Santa Cruz Island,GI,Gull Island South,1991,Inside,0.7755214505221536,1991-07-01
+SC,Santa Cruz Island,GI,Gull Island South,1992,Inside,0.7695481587098677,1992-07-01
+SC,Santa Cruz Island,GI,Gull Island South,1993,Inside,0.8009752376498412,1993-07-01
+SC,Santa Cruz Island,GI,Gull Island South,1994,Inside,0.8011937560288718,1994-07-01
+SC,Santa Cruz Island,GI,Gull Island South,1995,Inside,0.763170723507262,1995-07-01
+SC,Santa Cruz Island,GI,Gull Island South,1996,Inside,0.7378131926352911,1996-07-01
+SC,Santa Cruz Island,GI,Gull Island South,1997,Inside,0.754876370467467,1997-07-01
+SC,Santa Cruz Island,GI,Gull Island South,1998,Inside,0.7378162915057569,1998-07-01
+SC,Santa Cruz Island,GI,Gull Island South,1999,Inside,0.7492226568865674,1999-07-01
+SC,Santa Cruz Island,GI,Gull Island South,2000,Inside,0.7234012886701702,2000-07-01
+SC,Santa Cruz Island,GI,Gull Island South,2001,Inside,0.7462115835864656,2001-07-01
+SC,Santa Cruz Island,GI,Gull Island South,2002,Inside,0.8141921383666636,2002-07-01
+SC,Santa Cruz Island,GI,Gull Island South,2003,Inside,0.7882708703968544,2003-07-01
+SC,Santa Cruz Island,GI,Gull Island South,2004,Inside,0.8066679091150817,2004-07-01
+SC,Santa Cruz Island,GI,Gull Island South,2005,Inside,0.7959445629033821,2005-07-01
+SC,Santa Cruz Island,GI,Gull Island South,2006,Inside,0.8334889928867668,2006-07-01
+SC,Santa Cruz Island,GI,Gull Island South,2007,Inside,0.8159090364953371,2007-07-01
+SC,Santa Cruz Island,GI,Gull Island South,2008,Inside,0.8276648668598776,2008-07-01
+SC,Santa Cruz Island,GI,Gull Island South,2009,Inside,0.8388984327984346,2009-07-01
+SC,Santa Cruz Island,GI,Gull Island South,2010,Inside,0.786314869866382,2010-07-01
+SC,Santa Cruz Island,GI,Gull Island South,2011,Inside,0.8009055566152791,2011-07-01
+SC,Santa Cruz Island,GI,Gull Island South,2012,Inside,0.7940051669165782,2012-07-01
+SC,Santa Cruz Island,GI,Gull Island South,2013,Inside,0.7708499281815571,2013-07-01
+SC,Santa Cruz Island,GI,Gull Island South,2014,Inside,0.7989743736494317,2014-07-01
+SC,Santa Cruz Island,GI,Gull Island South,2015,Inside,0.8114332587811828,2015-07-01
+SC,Santa Cruz Island,GI,Gull Island South,2016,Inside,0.779947776431614,2016-07-01
+SC,Santa Cruz Island,GI,Gull Island South,2017,Inside,0.7850689311692324,2017-07-01
+SC,Santa Cruz Island,GI,Gull Island South,2018,Inside,0.8157409527072094,2018-07-01
+SC,Santa Cruz Island,GI,Gull Island South,2019,Inside,0.803959641343787,2019-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,1982,Outside,0.8257049334715459,1982-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,1983,Outside,0.810851380662584,1983-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,1984,Outside,0.8101998018285079,1984-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,1985,Outside,0.8027509249068517,1985-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,1986,Outside,0.7967870377997732,1986-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,1987,Outside,0.7857095473065662,1987-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,1988,Outside,0.8166074629848679,1988-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,1989,Outside,0.8435461139820423,1989-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,1990,Outside,0.8188555221237788,1990-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,1991,Outside,0.8371481247137973,1991-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,1992,Outside,0.8281767022020333,1992-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,1993,Outside,0.8415822039393184,1993-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,1994,Outside,0.8276230385487529,1994-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,1995,Outside,0.7999173626177929,1995-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,1996,Outside,0.8279390125393828,1996-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,1997,Outside,0.8259837373661898,1997-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,1998,Outside,0.8184755311896629,1998-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,1999,Outside,0.8135247679721926,1999-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,2000,Outside,0.7985118282719741,2000-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,2001,Outside,0.8287970147054267,2001-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,2002,Outside,0.810466593712535,2002-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,2003,Outside,0.8246187446456211,2003-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,2004,Outside,0.8194816839260131,2004-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,2005,Outside,0.8314319732515413,2005-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,2006,Outside,0.8257355769495132,2006-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,2007,Outside,0.8384846319419033,2007-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,2008,Outside,0.8594296721503856,2008-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,2009,Outside,0.8280937111839209,2009-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,2010,Outside,0.8445418233799756,2010-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,2011,Outside,0.8557005584223764,2011-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,2012,Outside,0.8380755517480108,2012-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,2013,Outside,0.8587150868817356,2013-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,2014,Outside,0.8241917686416969,2014-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,2015,Outside,0.8050272613474315,2015-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,2016,Outside,0.7660339328292717,2016-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,2017,Outside,0.7769365645905482,2017-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,2018,Outside,0.7520508333541107,2018-07-01
+SC,Santa Cruz Island,FH,Fry's Harbor,2019,Outside,0.7976558569989057,2019-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,1982,Outside,0.8834132965373527,1982-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,1983,Outside,0.8523743911195637,1983-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,1984,Outside,0.8641412744689713,1984-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,1985,Outside,0.8496192359859467,1985-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,1986,Outside,0.8421705309749148,1986-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,1987,Outside,0.8354110955839644,1987-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,1988,Outside,0.8391654653830882,1988-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,1989,Outside,0.8437556432955278,1989-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,1990,Outside,0.8595683818355884,1990-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,1991,Outside,0.8758625323691923,1991-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,1992,Outside,0.8503797044908793,1992-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,1993,Outside,0.8896009773553804,1993-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,1994,Outside,0.8658013342996258,1994-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,1995,Outside,0.8074991437818205,1995-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,1996,Outside,0.817217972725232,1996-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,1997,Outside,0.8398939823872061,1997-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,1998,Outside,0.8299991136211089,1998-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,1999,Outside,0.8108238124147583,1999-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,2000,Outside,0.8359139512382983,2000-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,2001,Outside,0.8009521708379588,2001-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,2002,Outside,0.815603271210467,2002-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,2003,Outside,0.817526091479967,2003-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,2004,Outside,0.8184846554894538,2004-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,2005,Outside,0.8356425282450979,2005-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,2006,Outside,0.8523132669066567,2006-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,2007,Outside,0.8546855070807523,2007-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,2008,Outside,0.8589686805293005,2008-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,2009,Outside,0.8638390788052637,2009-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,2010,Outside,0.875582112311968,2010-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,2011,Outside,0.8398900552021723,2011-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,2012,Outside,0.8353632469153723,2012-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,2013,Outside,0.8253898620320207,2013-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,2014,Outside,0.8484177093075889,2014-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,2015,Outside,0.8237620429344126,2015-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,2016,Outside,0.8602865500023968,2016-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,2017,Outside,0.8334892822355112,2017-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,2018,Outside,0.797213206265276,2018-07-01
+SC,Santa Cruz Island,PB,Pelican Bay,2019,Outside,0.8481401324497504,2019-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,1982,Inside,0.8317121516805516,1982-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,1983,Inside,0.8220263330437402,1983-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,1984,Inside,0.7891275168784491,1984-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,1985,Inside,0.8001697864450161,1985-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,1986,Inside,0.7841990971575643,1986-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,1987,Inside,0.7867210383991347,1987-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,1988,Inside,0.7549473770516242,1988-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,1989,Inside,0.7682799169550173,1989-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,1990,Inside,0.7662945660909553,1990-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,1991,Inside,0.7529359751581469,1991-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,1992,Inside,0.7712297314953754,1992-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,1993,Inside,0.7542487723301898,1993-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,1994,Inside,0.7933047310614507,1994-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,1995,Inside,0.7673382947331878,1995-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,1996,Inside,0.7576344466656184,1996-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,1997,Inside,0.7676905073378665,1997-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,1998,Inside,0.7278345938468203,1998-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,1999,Inside,0.788315676826909,1999-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,2000,Inside,0.762325912395432,2000-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,2001,Inside,0.7704848445463832,2001-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,2002,Inside,0.7700011508923742,2002-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,2003,Inside,0.764866053248974,2003-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,2004,Inside,0.7771473235428535,2004-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,2005,Inside,0.8162838202264178,2005-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,2006,Inside,0.8130645332653865,2006-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,2007,Inside,0.8089584845823816,2007-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,2008,Inside,0.7624891656339451,2008-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,2009,Inside,0.770392593253047,2009-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,2010,Inside,0.8018260230625379,2010-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,2011,Inside,0.7673815324547946,2011-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,2012,Inside,0.7126996417993079,2012-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,2013,Inside,0.7784268205178714,2013-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,2014,Inside,0.8349563902569215,2014-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,2015,Inside,0.8422389581489734,2015-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,2016,Inside,0.8785677574120209,2016-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,2017,Inside,0.8702469349250367,2017-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,2018,Inside,0.8616690011268884,2018-07-01
+SC,Santa Cruz Island,SA,Scorpion Anchorage,2019,Inside,0.8494200044923734,2019-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,1986,Outside,0.8417218164010627,1986-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,1987,Outside,0.8095198453991379,1987-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,1988,Outside,0.8495152688655243,1988-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,1989,Outside,0.8450241199392399,1989-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,1990,Outside,0.8623605615985566,1990-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,1991,Outside,0.8505588727289795,1991-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,1992,Outside,0.8637289032353248,1992-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,1993,Outside,0.8995897668441546,1993-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,1994,Outside,0.9020481150174232,1994-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,1995,Outside,0.8792795998049325,1995-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,1996,Outside,0.9072981392905982,1996-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,1997,Outside,0.9075179493464094,1997-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,1998,Outside,0.6931048539652005,1998-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,1999,Outside,0.7825049292824988,1999-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,2000,Outside,0.7813784156753547,2000-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,2001,Outside,0.8271908633744537,2001-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,2002,Outside,0.8263057524043986,2002-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,2003,Outside,0.8589811196238583,2003-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,2004,Outside,0.82261798303001,2004-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,2005,Outside,0.8259881607816832,2005-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,2006,Outside,0.8546107732993522,2006-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,2007,Outside,0.8162973816121571,2007-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,2008,Outside,0.8088095641143306,2008-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,2009,Outside,0.8491438798612021,2009-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,2010,Outside,0.8312864801241068,2010-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,2011,Outside,0.8272921602538299,2011-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,2012,Outside,0.8219915205960802,2012-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,2013,Outside,0.8408645470854259,2013-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,2014,Outside,0.8270929223706108,2014-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,2015,Outside,0.7768007239781778,2015-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,2016,Outside,0.7734636285354448,2016-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,2017,Outside,0.728322965599107,2017-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,2018,Outside,0.7333125631845043,2018-07-01
+SC,Santa Cruz Island,YB,Yellow Banks,2019,Outside,0.7490885849492152,2019-07-01
+AN,Anacapa Island,AR,Admiral's Reef,1982,Outside,0.7580199491154919,1982-07-01
+AN,Anacapa Island,AR,Admiral's Reef,1983,Outside,0.8021892854051247,1983-07-01
+AN,Anacapa Island,AR,Admiral's Reef,1984,Outside,0.8316136315900021,1984-07-01
+AN,Anacapa Island,AR,Admiral's Reef,1985,Outside,0.8396127051466078,1985-07-01
+AN,Anacapa Island,AR,Admiral's Reef,1986,Outside,0.8426434841376138,1986-07-01
+AN,Anacapa Island,AR,Admiral's Reef,1987,Outside,0.8414970581550971,1987-07-01
+AN,Anacapa Island,AR,Admiral's Reef,1988,Outside,0.8613168452198756,1988-07-01
+AN,Anacapa Island,AR,Admiral's Reef,1989,Outside,0.8173798770030041,1989-07-01
+AN,Anacapa Island,AR,Admiral's Reef,1990,Outside,0.8344652331394755,1990-07-01
+AN,Anacapa Island,AR,Admiral's Reef,1991,Outside,0.8593152573529411,1991-07-01
+AN,Anacapa Island,AR,Admiral's Reef,1992,Outside,0.8608184569619084,1992-07-01
+AN,Anacapa Island,AR,Admiral's Reef,1993,Outside,0.8817733830180842,1993-07-01
+AN,Anacapa Island,AR,Admiral's Reef,1994,Outside,0.880224850078466,1994-07-01
+AN,Anacapa Island,AR,Admiral's Reef,1995,Outside,0.8407128648935958,1995-07-01
+AN,Anacapa Island,AR,Admiral's Reef,1996,Outside,0.8001863200603699,1996-07-01
+AN,Anacapa Island,AR,Admiral's Reef,1997,Outside,0.8411077178528619,1997-07-01
+AN,Anacapa Island,AR,Admiral's Reef,1998,Outside,0.810934859686364,1998-07-01
+AN,Anacapa Island,AR,Admiral's Reef,1999,Outside,0.8075520781023344,1999-07-01
+AN,Anacapa Island,AR,Admiral's Reef,2000,Outside,0.798201662883377,2000-07-01
+AN,Anacapa Island,AR,Admiral's Reef,2001,Outside,0.801792386031746,2001-07-01
+AN,Anacapa Island,AR,Admiral's Reef,2002,Outside,0.8159616309598824,2002-07-01
+AN,Anacapa Island,AR,Admiral's Reef,2003,Outside,0.8224757163053162,2003-07-01
+AN,Anacapa Island,AR,Admiral's Reef,2004,Outside,0.8360268209447508,2004-07-01
+AN,Anacapa Island,AR,Admiral's Reef,2005,Outside,0.8385530685928145,2005-07-01
+AN,Anacapa Island,AR,Admiral's Reef,2006,Outside,0.8296429590942136,2006-07-01
+AN,Anacapa Island,AR,Admiral's Reef,2007,Outside,0.8272771623047256,2007-07-01
+AN,Anacapa Island,AR,Admiral's Reef,2008,Outside,0.8175306578707603,2008-07-01
+AN,Anacapa Island,AR,Admiral's Reef,2009,Outside,0.8213604377186008,2009-07-01
+AN,Anacapa Island,AR,Admiral's Reef,2010,Outside,0.81253184120458255,2010-07-01
+AN,Anacapa Island,AR,Admiral's Reef,2011,Outside,0.8216151284222737,2011-07-01
+AN,Anacapa Island,AR,Admiral's Reef,2012,Outside,0.7976756153466449,2012-07-01
+AN,Anacapa Island,AR,Admiral's Reef,2013,Outside,0.7549988647025708,2013-07-01
+AN,Anacapa Island,AR,Admiral's Reef,2014,Outside,0.8012748287158065,2014-07-01
+AN,Anacapa Island,AR,Admiral's Reef,2015,Outside,0.8291812369226612,2015-07-01
+AN,Anacapa Island,AR,Admiral's Reef,2016,Outside,0.8229838161826918,2016-07-01
+AN,Anacapa Island,AR,Admiral's Reef,2017,Outside,0.8213256522228067,2017-07-01
+AN,Anacapa Island,AR,Admiral's Reef,2018,Outside,0.8097342289518844,2018-07-01
+AN,Anacapa Island,AR,Admiral's Reef,2019,Outside,0.8742762147745295,2019-07-01
+AN,Anacapa Island,CC,Cathedral Cove,1982,Inside,0.858762060432505,1982-07-01
+AN,Anacapa Island,CC,Cathedral Cove,1983,Inside,0.8447392290249434,1983-07-01
+AN,Anacapa Island,CC,Cathedral Cove,1984,Inside,0.8575244064028499,1984-07-01
+AN,Anacapa Island,CC,Cathedral Cove,1985,Inside,0.884740075721508,1985-07-01
+AN,Anacapa Island,CC,Cathedral Cove,1986,Inside,0.8656469795724662,1986-07-01
+AN,Anacapa Island,CC,Cathedral Cove,1987,Inside,0.8418311464385936,1987-07-01
+AN,Anacapa Island,CC,Cathedral Cove,1988,Inside,0.8447131265202591,1988-07-01
+AN,Anacapa Island,CC,Cathedral Cove,1989,Inside,0.8577469846635608,1989-07-01
+AN,Anacapa Island,CC,Cathedral Cove,1990,Inside,0.8718313945908651,1990-07-01
+AN,Anacapa Island,CC,Cathedral Cove,1991,Inside,0.8668451421394074,1991-07-01
+AN,Anacapa Island,CC,Cathedral Cove,1992,Inside,0.8709096441649121,1992-07-01
+AN,Anacapa Island,CC,Cathedral Cove,1993,Inside,0.8827620904112623,1993-07-01
+AN,Anacapa Island,CC,Cathedral Cove,1994,Inside,0.8968265624890065,1994-07-01
+AN,Anacapa Island,CC,Cathedral Cove,1995,Inside,0.8787510392621543,1995-07-01
+AN,Anacapa Island,CC,Cathedral Cove,1996,Inside,0.8830505489644593,1996-07-01
+AN,Anacapa Island,CC,Cathedral Cove,1997,Inside,0.879993411281348,1997-07-01
+AN,Anacapa Island,CC,Cathedral Cove,1998,Inside,0.8543932115833837,1998-07-01
+AN,Anacapa Island,CC,Cathedral Cove,1999,Inside,0.8795153825503262,1999-07-01
+AN,Anacapa Island,CC,Cathedral Cove,2000,Inside,0.8872297119406324,2000-07-01
+AN,Anacapa Island,CC,Cathedral Cove,2001,Inside,0.8739102939284842,2001-07-01
+AN,Anacapa Island,CC,Cathedral Cove,2002,Inside,0.861330352726905,2002-07-01
+AN,Anacapa Island,CC,Cathedral Cove,2003,Inside,0.838203476471489,2003-07-01
+AN,Anacapa Island,CC,Cathedral Cove,2004,Inside,0.8726820469342175,2004-07-01
+AN,Anacapa Island,CC,Cathedral Cove,2005,Inside,0.8982783166078759,2005-07-01
+AN,Anacapa Island,CC,Cathedral Cove,2006,Inside,0.8793244558159622,2006-07-01
+AN,Anacapa Island,CC,Cathedral Cove,2007,Inside,0.9003443917914724,2007-07-01
+AN,Anacapa Island,CC,Cathedral Cove,2008,Inside,0.899950890063145,2008-07-01
+AN,Anacapa Island,CC,Cathedral Cove,2009,Inside,0.9007181166936454,2009-07-01
+AN,Anacapa Island,CC,Cathedral Cove,2010,Inside,0.9087802796015065,2010-07-01
+AN,Anacapa Island,CC,Cathedral Cove,2011,Inside,0.8985879849620347,2011-07-01
+AN,Anacapa Island,CC,Cathedral Cove,2012,Inside,0.8823886506309251,2012-07-01
+AN,Anacapa Island,CC,Cathedral Cove,2013,Inside,0.9033073943813071,2013-07-01
+AN,Anacapa Island,CC,Cathedral Cove,2014,Inside,0.9078907216693395,2014-07-01
+AN,Anacapa Island,CC,Cathedral Cove,2015,Inside,0.9081933194092594,2015-07-01
+AN,Anacapa Island,CC,Cathedral Cove,2016,Inside,0.9001011419348015,2016-07-01
+AN,Anacapa Island,CC,Cathedral Cove,2017,Inside,0.903407831465904,2017-07-01
+AN,Anacapa Island,CC,Cathedral Cove,2018,Inside,0.8911527718684056,2018-07-01
+AN,Anacapa Island,CC,Cathedral Cove,2019,Inside,0.9118518151490457,2019-07-01
+AN,Anacapa Island,LC,Landing Cove,1982,Inside,0.8458596242259335,1982-07-01
+AN,Anacapa Island,LC,Landing Cove,1983,Inside,0.8661418746696761,1983-07-01
+AN,Anacapa Island,LC,Landing Cove,1984,Inside,0.8484532544378698,1984-07-01
+AN,Anacapa Island,LC,Landing Cove,1985,Inside,0.8547990609356769,1985-07-01
+AN,Anacapa Island,LC,Landing Cove,1986,Inside,0.8704582349371797,1986-07-01
+AN,Anacapa Island,LC,Landing Cove,1987,Inside,0.8687364136605817,1987-07-01
+AN,Anacapa Island,LC,Landing Cove,1988,Inside,0.8842027232647965,1988-07-01
+AN,Anacapa Island,LC,Landing Cove,1989,Inside,0.89523503275106,1989-07-01
+AN,Anacapa Island,LC,Landing Cove,1990,Inside,0.897755652658019,1990-07-01
+AN,Anacapa Island,LC,Landing Cove,1991,Inside,0.8893699718379688,1991-07-01
+AN,Anacapa Island,LC,Landing Cove,1992,Inside,0.8789497591545536,1992-07-01
+AN,Anacapa Island,LC,Landing Cove,1993,Inside,0.915397335182266,1993-07-01
+AN,Anacapa Island,LC,Landing Cove,1994,Inside,0.9069167553292102,1994-07-01
+AN,Anacapa Island,LC,Landing Cove,1995,Inside,0.9071643401581159,1995-07-01
+AN,Anacapa Island,LC,Landing Cove,1996,Inside,0.900957573903443,1996-07-01
+AN,Anacapa Island,LC,Landing Cove,1997,Inside,0.8928743810165335,1997-07-01
+AN,Anacapa Island,LC,Landing Cove,1998,Inside,0.9062315034099004,1998-07-01
+AN,Anacapa Island,LC,Landing Cove,1999,Inside,0.8930500028910863,1999-07-01
+AN,Anacapa Island,LC,Landing Cove,2000,Inside,0.9070489240931925,2000-07-01
+AN,Anacapa Island,LC,Landing Cove,2001,Inside,0.915831518080424,2001-07-01
+AN,Anacapa Island,LC,Landing Cove,2002,Inside,0.9117013994200162,2002-07-01
+AN,Anacapa Island,LC,Landing Cove,2003,Inside,0.9104428408640507,2003-07-01
+AN,Anacapa Island,LC,Landing Cove,2004,Inside,0.9190123746556474,2004-07-01
+AN,Anacapa Island,LC,Landing Cove,2005,Inside,0.8863716769477403,2005-07-01
+AN,Anacapa Island,LC,Landing Cove,2006,Inside,0.905488906768977,2006-07-01
+AN,Anacapa Island,LC,Landing Cove,2007,Inside,0.8997947108643853,2007-07-01
+AN,Anacapa Island,LC,Landing Cove,2008,Inside,0.9148869374012232,2008-07-01
+AN,Anacapa Island,LC,Landing Cove,2009,Inside,0.9030985173232868,2009-07-01
+AN,Anacapa Island,LC,Landing Cove,2010,Inside,0.8989419645085175,2010-07-01
+AN,Anacapa Island,LC,Landing Cove,2011,Inside,0.9149195478054497,2011-07-01
+AN,Anacapa Island,LC,Landing Cove,2012,Inside,0.9130857073098808,2012-07-01
+AN,Anacapa Island,LC,Landing Cove,2013,Inside,0.9193432578857663,2013-07-01
+AN,Anacapa Island,LC,Landing Cove,2014,Inside,0.9012926467374063,2014-07-01
+AN,Anacapa Island,LC,Landing Cove,2015,Inside,0.9279003912069125,2015-07-01
+AN,Anacapa Island,LC,Landing Cove,2016,Inside,0.9154884097573873,2016-07-01
+AN,Anacapa Island,LC,Landing Cove,2017,Inside,0.9173378279033155,2017-07-01
+AN,Anacapa Island,LC,Landing Cove,2018,Inside,0.9203528859921051,2018-07-01
+AN,Anacapa Island,LC,Landing Cove,2019,Inside,0.9224476806696202,2019-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1982,Inside,0.8009170331492654,1982-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1983,Inside,0.7690932048771805,1983-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1984,Inside,0.7521958470339174,1984-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1985,Inside,0.8070828755015431,1985-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1986,Inside,0.8023961967112481,1986-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1987,Inside,0.8038241455791978,1987-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1988,Inside,0.7976831896551725,1988-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1989,Inside,0.7803896726907344,1989-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1990,Inside,0.8116705972512143,1990-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1991,Inside,0.8177137191418282,1991-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1992,Inside,0.8147465927977839,1992-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1993,Inside,0.8474037181442512,1993-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1994,Inside,0.8005562143331053,1994-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1995,Inside,0.7809577070717992,1995-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1996,Inside,0.7522023157883297,1996-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1997,Inside,0.7840047672193877,1997-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1998,Inside,0.8022939268323763,1998-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1999,Inside,0.7540506201780005,1999-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2000,Inside,0.7966947348434168,2000-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2001,Inside,0.8086458153145824,2001-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2002,Inside,0.8350935200740679,2002-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2003,Inside,0.8455021957458839,2003-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2004,Inside,0.78717738578097185,2004-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2005,Inside,0.8060006324084636,2005-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2006,Inside,0.7914460694477724,2006-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2007,Inside,0.7738806347186629,2007-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2008,Inside,0.7739244389202657,2008-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2009,Inside,0.8004082830931474,2009-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2010,Inside,0.8071981743677996,2010-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2011,Inside,0.7809684970607486,2011-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2012,Inside,0.7527051366539836,2012-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2013,Inside,0.7855780387481579,2013-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2014,Inside,0.831424004802121,2014-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2015,Inside,0.8280836733820895,2015-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2016,Inside,0.8409186755162334,2016-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2017,Inside,0.8689878751179437,2017-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2018,Inside,0.8734251990083789,2018-07-01
+SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2019,Inside,0.8918201003582656,2019-07-01
+SB,Santa Barbara Island,AP,Arch Point,1982,Outside,0.800369793639957,1982-07-01
+SB,Santa Barbara Island,AP,Arch Point,1983,Outside,0.8174963106935895,1983-07-01
+SB,Santa Barbara Island,AP,Arch Point,1984,Outside,0.7696265652419029,1984-07-01
+SB,Santa Barbara Island,AP,Arch Point,1985,Outside,0.8396820796306064,1985-07-01
+SB,Santa Barbara Island,AP,Arch Point,1986,Outside,0.7873988562218275,1986-07-01
+SB,Santa Barbara Island,AP,Arch Point,1987,Outside,0.8049866436540064,1987-07-01
+SB,Santa Barbara Island,AP,Arch Point,1988,Outside,0.8239036917411172,1988-07-01
+SB,Santa Barbara Island,AP,Arch Point,1989,Outside,0.7987497941347764,1989-07-01
+SB,Santa Barbara Island,AP,Arch Point,1990,Outside,0.8150940965284781,1990-07-01
+SB,Santa Barbara Island,AP,Arch Point,1991,Outside,0.822010513639677,1991-07-01
+SB,Santa Barbara Island,AP,Arch Point,1992,Outside,0.8020794929832503,1992-07-01
+SB,Santa Barbara Island,AP,Arch Point,1993,Outside,0.8673101405771146,1993-07-01
+SB,Santa Barbara Island,AP,Arch Point,1994,Outside,0.8479155940326589,1994-07-01
+SB,Santa Barbara Island,AP,Arch Point,1995,Outside,0.7713456699943186,1995-07-01
+SB,Santa Barbara Island,AP,Arch Point,1996,Outside,0.7571604760904258,1996-07-01
+SB,Santa Barbara Island,AP,Arch Point,1997,Outside,0.7959299486513314,1997-07-01
+SB,Santa Barbara Island,AP,Arch Point,1998,Outside,0.7637689713163536,1998-07-01
+SB,Santa Barbara Island,AP,Arch Point,1999,Outside,0.7920613914876674,1999-07-01
+SB,Santa Barbara Island,AP,Arch Point,2000,Outside,0.7886722327105404,2000-07-01
+SB,Santa Barbara Island,AP,Arch Point,2001,Outside,0.8238138668411357,2001-07-01
+SB,Santa Barbara Island,AP,Arch Point,2002,Outside,0.8061534142783775,2002-07-01
+SB,Santa Barbara Island,AP,Arch Point,2003,Outside,0.8484249701176456,2003-07-01
+SB,Santa Barbara Island,AP,Arch Point,2004,Outside,0.781098949878208,2004-07-01
+SB,Santa Barbara Island,AP,Arch Point,2005,Outside,0.7912282918040171,2005-07-01
+SB,Santa Barbara Island,AP,Arch Point,2006,Outside,0.7673949685735689,2006-07-01
+SB,Santa Barbara Island,AP,Arch Point,2007,Outside,0.7614678323054834,2007-07-01
+SB,Santa Barbara Island,AP,Arch Point,2008,Outside,0.7884703785422208,2008-07-01
+SB,Santa Barbara Island,AP,Arch Point,2009,Outside,0.7741682593299273,2009-07-01
+SB,Santa Barbara Island,AP,Arch Point,2010,Outside,0.7914346058026317,2010-07-01
+SB,Santa Barbara Island,AP,Arch Point,2011,Outside,0.7814312215960802,2011-07-01
+SB,Santa Barbara Island,AP,Arch Point,2012,Outside,0.7373525578974252,2012-07-01
+SB,Santa Barbara Island,AP,Arch Point,2013,Outside,0.7863431145473554,2013-07-01
+SB,Santa Barbara Island,AP,Arch Point,2014,Outside,0.7790697591575192,2014-07-01
+SB,Santa Barbara Island,AP,Arch Point,2015,Outside,0.8586753698604548,2015-07-01
+SB,Santa Barbara Island,AP,Arch Point,2016,Outside,0.8825024596477714,2016-07-01
+SB,Santa Barbara Island,AP,Arch Point,2017,Outside,0.855902021036959,2017-07-01
+SB,Santa Barbara Island,AP,Arch Point,2018,Outside,0.8739617990951487,2018-07-01
+SB,Santa Barbara Island,AP,Arch Point,2019,Outside,0.8302108724735952,2019-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,1986,Outside,0.8045486563097289,1986-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,1987,Outside,0.8230642028946995,1987-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,1988,Outside,0.866882512075881,1988-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,1989,Outside,0.8002962793930337,1989-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,1990,Outside,0.8084979285163055,1990-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,1991,Outside,0.8314205929975791,1991-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,1992,Outside,0.8176231236296172,1992-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,1993,Outside,0.8721485562861823,1993-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,1994,Outside,0.8338560297346087,1994-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,1995,Outside,0.8624080454296631,1995-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,1996,Outside,0.841434382313919,1996-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,1997,Outside,0.8085108856318314,1997-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,1998,Outside,0.7524728527881328,1998-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,1999,Outside,0.7515338866761361,1999-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,2000,Outside,0.7723696035816486,2000-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,2001,Outside,0.7584362486186162,2001-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,2002,Outside,0.777114100288141,2002-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,2003,Outside,0.8033414843028367,2003-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,2004,Outside,0.7399248787332299,2004-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,2005,Outside,0.7414348618784334,2005-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,2006,Outside,0.7753434709174689,2006-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,2007,Outside,0.721172538376702,2007-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,2008,Outside,0.7185568902679382,2008-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,2009,Outside,0.7494715411706784,2009-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,2010,Outside,0.8348954365868153,2010-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,2011,Outside,0.7778855311165115,2011-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,2012,Outside,0.7497878083386583,2012-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,2013,Outside,0.8372488600350471,2013-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,2014,Outside,0.7631389645612615,2014-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,2015,Outside,0.7592732723384479,2015-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,2016,Outside,0.8669847940381491,2016-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,2017,Outside,0.834359631180931,2017-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,2018,Outside,0.8402809090264776,2018-07-01
+SB,Santa Barbara Island,CAT,Cat Canyon,2019,Outside,0.8434318807366323,2019-07-01
+CL,San Clemente Island,NWH,Northwest Harbor,2003,NA,0.8703568262831813,2003-07-01
+CL,San Clemente Island,NWH,Northwest Harbor,2004,NA,0.8743214184496253,2004-07-01
+CL,San Clemente Island,BSC,Boy Scout Camp,2003,NA,0.8727794038563432,2003-07-01
+CL,San Clemente Island,BSC,Boy Scout Camp,2004,NA,0.8707766684600329,2004-07-01
+CL,San Clemente Island,EP,Eel Point,2003,NA,0.8771217607204114,2003-07-01
+CL,San Clemente Island,EP,Eel Point,2004,NA,0.8588282214761926,2004-07-01
+CL,San Clemente Island,HBC,Horse Beach Cove,2003,NA,0.8970299142724498,2003-07-01
+CL,San Clemente Island,HBC,Horse Beach Cove,2004,NA,0.8815882563260701,2004-07-01
+SM,San Miguel Island,MM,Miracle Mile,2003,Outside,0.9025404653169211,2003-07-01
+SM,San Miguel Island,MM,Miracle Mile,2005,Outside,0.8761624191746615,2005-07-01
+SM,San Miguel Island,MM,Miracle Mile,2006,Outside,0.8886694388100178,2006-07-01
+SM,San Miguel Island,MM,Miracle Mile,2007,Outside,0.8841879821521856,2007-07-01
+SM,San Miguel Island,MM,Miracle Mile,2008,Outside,0.8715620064297543,2008-07-01
+SM,San Miguel Island,MM,Miracle Mile,2009,Outside,0.8705917797848104,2009-07-01
+SM,San Miguel Island,MM,Miracle Mile,2010,Outside,0.877021023200719,2010-07-01
+SM,San Miguel Island,MM,Miracle Mile,2011,Outside,0.8770176282895406,2011-07-01
+SM,San Miguel Island,MM,Miracle Mile,2012,Outside,0.8734028758357862,2012-07-01
+SM,San Miguel Island,MM,Miracle Mile,2013,Outside,0.8567796205362781,2013-07-01
+SM,San Miguel Island,MM,Miracle Mile,2014,Outside,0.8681443587731876,2014-07-01
+SM,San Miguel Island,MM,Miracle Mile,2015,Outside,0.8718861002967151,2015-07-01
+SM,San Miguel Island,MM,Miracle Mile,2016,Outside,0.8618552726046763,2016-07-01
+SM,San Miguel Island,MM,Miracle Mile,2017,Outside,0.8618649968037047,2017-07-01
+SM,San Miguel Island,MM,Miracle Mile,2018,Outside,0.7790214813120676,2018-07-01
+SM,San Miguel Island,MM,Miracle Mile,2019,Outside,0.8028580454331989,2019-07-01
+SR,Santa Rosa Island,CP,Cluster Point,2005,Outside,0.8410575616,2005-07-01
+SR,Santa Rosa Island,CP,Cluster Point,2006,Outside,0.8655728962799233,2006-07-01
+SR,Santa Rosa Island,CP,Cluster Point,2007,Outside,0.8482925694682237,2007-07-01
+SR,Santa Rosa Island,CP,Cluster Point,2008,Outside,0.880529546297858,2008-07-01
+SR,Santa Rosa Island,CP,Cluster Point,2009,Outside,0.8770043157016246,2009-07-01
+SR,Santa Rosa Island,CP,Cluster Point,2010,Outside,0.8788497110266287,2010-07-01
+SR,Santa Rosa Island,CP,Cluster Point,2011,Outside,0.8694792229717567,2011-07-01
+SR,Santa Rosa Island,CP,Cluster Point,2012,Outside,0.8522721239951495,2012-07-01
+SR,Santa Rosa Island,CP,Cluster Point,2013,Outside,0.8183749721670571,2013-07-01
+SR,Santa Rosa Island,CP,Cluster Point,2014,Outside,0.8587980115910925,2014-07-01
+SR,Santa Rosa Island,CP,Cluster Point,2015,Outside,0.839170249589623,2015-07-01
+SR,Santa Rosa Island,CP,Cluster Point,2016,Outside,0.7859873646845121,2016-07-01
+SR,Santa Rosa Island,CP,Cluster Point,2017,Outside,0.7993039917792426,2017-07-01
+SR,Santa Rosa Island,CP,Cluster Point,2018,Outside,0.7488209503527798,2018-07-01
+SR,Santa Rosa Island,CP,Cluster Point,2019,Outside,0.8325855479075622,2019-07-01
+SR,Santa Rosa Island,TC,Trancion Canyon,2005,Inside,0.8807170658227499,2005-07-01
+SR,Santa Rosa Island,TC,Trancion Canyon,2006,Inside,0.8643407508394946,2006-07-01
+SR,Santa Rosa Island,TC,Trancion Canyon,2007,Inside,0.8812986378504579,2007-07-01
+SR,Santa Rosa Island,TC,Trancion Canyon,2008,Inside,0.8916982416206976,2008-07-01
+SR,Santa Rosa Island,TC,Trancion Canyon,2009,Inside,0.8676220032399105,2009-07-01
+SR,Santa Rosa Island,TC,Trancion Canyon,2010,Inside,0.8658620153214659,2010-07-01
+SR,Santa Rosa Island,TC,Trancion Canyon,2011,Inside,0.8322651653142186,2011-07-01
+SR,Santa Rosa Island,TC,Trancion Canyon,2012,Inside,0.775350326285517,2012-07-01
+SR,Santa Rosa Island,TC,Trancion Canyon,2013,Inside,0.8018723302438233,2013-07-01
+SR,Santa Rosa Island,TC,Trancion Canyon,2014,Inside,0.8145831143384086,2014-07-01
+SR,Santa Rosa Island,TC,Trancion Canyon,2015,Inside,0.8209214069758353,2015-07-01
+SR,Santa Rosa Island,TC,Trancion Canyon,2016,Inside,0.8036716478461683,2016-07-01
+SR,Santa Rosa Island,TC,Trancion Canyon,2017,Inside,0.8060110522721617,2017-07-01
+SR,Santa Rosa Island,TC,Trancion Canyon,2018,Inside,0.796472093700938,2018-07-01
+SR,Santa Rosa Island,TC,Trancion Canyon,2019,Inside,0.8208150605623666,2019-07-01
+SR,Santa Rosa Island,CSAW,Chickasaw,2005,Inside,0.8390464344190629,2005-07-01
+SR,Santa Rosa Island,CSAW,Chickasaw,2006,Inside,0.8625345412792736,2006-07-01
+SR,Santa Rosa Island,CSAW,Chickasaw,2007,Inside,0.8780227168954781,2007-07-01
+SR,Santa Rosa Island,CSAW,Chickasaw,2008,Inside,0.8839657002455545,2008-07-01
+SR,Santa Rosa Island,CSAW,Chickasaw,2009,Inside,0.879503632705179,2009-07-01
+SR,Santa Rosa Island,CSAW,Chickasaw,2010,Inside,0.8630821791928489,2010-07-01
+SR,Santa Rosa Island,CSAW,Chickasaw,2011,Inside,0.8376675656185224,2011-07-01
+SR,Santa Rosa Island,CSAW,Chickasaw,2012,Inside,0.885385861425411,2012-07-01
+SR,Santa Rosa Island,CSAW,Chickasaw,2013,Inside,0.8701559631409097,2013-07-01
+SR,Santa Rosa Island,CSAW,Chickasaw,2014,Inside,0.8536128463392851,2014-07-01
+SR,Santa Rosa Island,CSAW,Chickasaw,2015,Inside,0.8628483874701389,2015-07-01
+SR,Santa Rosa Island,CSAW,Chickasaw,2016,Inside,0.866734225094043,2016-07-01
+SR,Santa Rosa Island,CSAW,Chickasaw,2017,Inside,0.8509749863620664,2017-07-01
+SR,Santa Rosa Island,CSAW,Chickasaw,2018,Inside,0.860455835147658,2018-07-01
+SR,Santa Rosa Island,CSAW,Chickasaw,2019,Inside,0.8613450317553264,2019-07-01
+SR,Santa Rosa Island,SP,South Point,2005,Inside,0.856065165462067,2005-07-01
+SR,Santa Rosa Island,SP,South Point,2006,Inside,0.8759509854138877,2006-07-01
+SR,Santa Rosa Island,SP,South Point,2007,Inside,0.8786576911554311,2007-07-01
+SR,Santa Rosa Island,SP,South Point,2008,Inside,0.8692791219245333,2008-07-01
+SR,Santa Rosa Island,SP,South Point,2009,Inside,0.8892855313973962,2009-07-01
+SR,Santa Rosa Island,SP,South Point,2010,Inside,0.8823303365140989,2010-07-01
+SR,Santa Rosa Island,SP,South Point,2011,Inside,0.8524135706479995,2011-07-01
+SR,Santa Rosa Island,SP,South Point,2012,Inside,0.8956703485389885,2012-07-01
+SR,Santa Rosa Island,SP,South Point,2013,Inside,0.8790391939531085,2013-07-01
+SR,Santa Rosa Island,SP,South Point,2014,Inside,0.8953834273148538,2014-07-01
+SR,Santa Rosa Island,SP,South Point,2015,Inside,0.9088644330186302,2015-07-01
+SR,Santa Rosa Island,SP,South Point,2016,Inside,0.8701336676352165,2016-07-01
+SR,Santa Rosa Island,SP,South Point,2017,Inside,0.9035509730580457,2017-07-01
+SR,Santa Rosa Island,SP,South Point,2018,Inside,0.8988781286217826,2018-07-01
+SR,Santa Rosa Island,SP,South Point,2019,Inside,0.9023473666728965,2019-07-01
+SC,Santa Cruz Island,DPM,Devil's Peak Member,2005,Outside,0.7971005658365484,2005-07-01
+SC,Santa Cruz Island,DPM,Devil's Peak Member,2006,Outside,0.8127448832896969,2006-07-01
+SC,Santa Cruz Island,DPM,Devil's Peak Member,2007,Outside,0.8269004876560548,2007-07-01
+SC,Santa Cruz Island,DPM,Devil's Peak Member,2008,Outside,0.7609189572081871,2008-07-01
+SC,Santa Cruz Island,DPM,Devil's Peak Member,2009,Outside,0.8228400802205096,2009-07-01
+SC,Santa Cruz Island,DPM,Devil's Peak Member,2010,Outside,0.7835289035063652,2010-07-01
+SC,Santa Cruz Island,DPM,Devil's Peak Member,2011,Outside,0.7868101077166239,2011-07-01
+SC,Santa Cruz Island,DPM,Devil's Peak Member,2012,Outside,0.7599273996312244,2012-07-01
+SC,Santa Cruz Island,DPM,Devil's Peak Member,2013,Outside,0.7551717119752973,2013-07-01
+SC,Santa Cruz Island,DPM,Devil's Peak Member,2014,Outside,0.7946442257807533,2014-07-01
+SC,Santa Cruz Island,DPM,Devil's Peak Member,2015,Outside,0.7566883170103709,2015-07-01
+SC,Santa Cruz Island,DPM,Devil's Peak Member,2016,Outside,0.7915086115130823,2016-07-01
+SC,Santa Cruz Island,DPM,Devil's Peak Member,2017,Outside,0.7804617679358783,2017-07-01
+SC,Santa Cruz Island,DPM,Devil's Peak Member,2018,Outside,0.7937792111625687,2018-07-01
+SC,Santa Cruz Island,DPM,Devil's Peak Member,2019,Outside,0.797894965863492,2019-07-01
+SC,Santa Cruz Island,PP,Potato Pasture,2005,Inside,0.8356857546667004,2005-07-01
+SC,Santa Cruz Island,PP,Potato Pasture,2006,Inside,0.828299427038342,2006-07-01
+SC,Santa Cruz Island,PP,Potato Pasture,2007,Inside,0.808295089823084,2007-07-01
+SC,Santa Cruz Island,PP,Potato Pasture,2008,Inside,0.853795893581672,2008-07-01
+SC,Santa Cruz Island,PP,Potato Pasture,2009,Inside,0.8258171945354417,2009-07-01
+SC,Santa Cruz Island,PP,Potato Pasture,2010,Inside,0.822085039141156,2010-07-01
+SC,Santa Cruz Island,PP,Potato Pasture,2011,Inside,0.811890528112977,2011-07-01
+SC,Santa Cruz Island,PP,Potato Pasture,2012,Inside,0.8096743077434626,2012-07-01
+SC,Santa Cruz Island,PP,Potato Pasture,2013,Inside,0.8141470875576893,2013-07-01
+SC,Santa Cruz Island,PP,Potato Pasture,2014,Inside,0.8566237022647936,2014-07-01
+SC,Santa Cruz Island,PP,Potato Pasture,2015,Inside,0.8643964951168571,2015-07-01
+SC,Santa Cruz Island,PP,Potato Pasture,2016,Inside,0.8767974310463791,2016-07-01
+SC,Santa Cruz Island,PP,Potato Pasture,2017,Inside,0.8875578057681816,2017-07-01
+SC,Santa Cruz Island,PP,Potato Pasture,2018,Inside,0.8832658773587106,2018-07-01
+SC,Santa Cruz Island,PP,Potato Pasture,2019,Inside,0.8853987865212655,2019-07-01
+SC,Santa Cruz Island,CVP,Cavern Point,2005,Inside,0.8171012544162451,2005-07-01
+SC,Santa Cruz Island,CVP,Cavern Point,2006,Inside,0.8179817073973806,2006-07-01
+SC,Santa Cruz Island,CVP,Cavern Point,2007,Inside,0.8058328579572976,2007-07-01
+SC,Santa Cruz Island,CVP,Cavern Point,2008,Inside,0.8157555408340252,2008-07-01
+SC,Santa Cruz Island,CVP,Cavern Point,2009,Inside,0.7920701954710323,2009-07-01
+SC,Santa Cruz Island,CVP,Cavern Point,2010,Inside,0.8492782159901602,2010-07-01
+SC,Santa Cruz Island,CVP,Cavern Point,2011,Inside,0.8742600111464409,2011-07-01
+SC,Santa Cruz Island,CVP,Cavern Point,2012,Inside,0.8749378533448466,2012-07-01
+SC,Santa Cruz Island,CVP,Cavern Point,2013,Inside,0.8617598861327246,2013-07-01
+SC,Santa Cruz Island,CVP,Cavern Point,2014,Inside,0.8838749267920556,2014-07-01
+SC,Santa Cruz Island,CVP,Cavern Point,2015,Inside,0.8701035295549515,2015-07-01
+SC,Santa Cruz Island,CVP,Cavern Point,2016,Inside,0.866486791222769,2016-07-01
+SC,Santa Cruz Island,CVP,Cavern Point,2017,Inside,0.8827088180810647,2017-07-01
+SC,Santa Cruz Island,CVP,Cavern Point,2018,Inside,0.8773454996685235,2018-07-01
+SC,Santa Cruz Island,CVP,Cavern Point,2019,Inside,0.8713896456015296,2019-07-01
+SC,Santa Cruz Island,LS,Little Scorpion,2005,Outside,0.8213009065823488,2005-07-01
+SC,Santa Cruz Island,LS,Little Scorpion,2006,Outside,0.8283560515130708,2006-07-01
+SC,Santa Cruz Island,LS,Little Scorpion,2007,Outside,0.8446770348286567,2007-07-01
+SC,Santa Cruz Island,LS,Little Scorpion,2008,Outside,0.8466894684211361,2008-07-01
+SC,Santa Cruz Island,LS,Little Scorpion,2009,Outside,0.8322821626115762,2009-07-01
+SC,Santa Cruz Island,LS,Little Scorpion,2010,Outside,0.8301624090019885,2010-07-01
+SC,Santa Cruz Island,LS,Little Scorpion,2011,Outside,0.8187117030625605,2011-07-01
+SC,Santa Cruz Island,LS,Little Scorpion,2012,Outside,0.8016252426102742,2012-07-01
+SC,Santa Cruz Island,LS,Little Scorpion,2013,Outside,0.7970918189322261,2013-07-01
+SC,Santa Cruz Island,LS,Little Scorpion,2014,Outside,0.7879039025950925,2014-07-01
+SC,Santa Cruz Island,LS,Little Scorpion,2015,Outside,0.7969596875011875,2015-07-01
+SC,Santa Cruz Island,LS,Little Scorpion,2016,Outside,0.7948044182224029,2016-07-01
+SC,Santa Cruz Island,LS,Little Scorpion,2017,Outside,0.7929232843910599,2017-07-01
+SC,Santa Cruz Island,LS,Little Scorpion,2018,Outside,0.8231340820685842,2018-07-01
+SC,Santa Cruz Island,LS,Little Scorpion,2019,Outside,0.7960000977457395,2019-07-01
+SC,Santa Cruz Island,PRF,Pedro Reef,2005,Outside,0.7913894357743096,2005-07-01
+SC,Santa Cruz Island,PRF,Pedro Reef,2006,Outside,0.8250916863161851,2006-07-01
+SC,Santa Cruz Island,PRF,Pedro Reef,2007,Outside,0.8028632631008915,2007-07-01
+SC,Santa Cruz Island,PRF,Pedro Reef,2008,Outside,0.8094677438528234,2008-07-01
+SC,Santa Cruz Island,PRF,Pedro Reef,2009,Outside,0.818823046166144,2009-07-01
+SC,Santa Cruz Island,PRF,Pedro Reef,2010,Outside,0.7962066047837181,2010-07-01
+SC,Santa Cruz Island,PRF,Pedro Reef,2011,Outside,0.8312114079736508,2011-07-01
+SC,Santa Cruz Island,PRF,Pedro Reef,2012,Outside,0.7823965110249307,2012-07-01
+SC,Santa Cruz Island,PRF,Pedro Reef,2013,Outside,0.84660665097094,2013-07-01
+SC,Santa Cruz Island,PRF,Pedro Reef,2014,Outside,0.8306543548402168,2014-07-01
+SC,Santa Cruz Island,PRF,Pedro Reef,2015,Outside,0.8072405784499055,2015-07-01
+SC,Santa Cruz Island,PRF,Pedro Reef,2016,Outside,0.8416656094440166,2016-07-01
+SC,Santa Cruz Island,PRF,Pedro Reef,2017,Outside,0.7723126461193532,2017-07-01
+SC,Santa Cruz Island,PRF,Pedro Reef,2018,Outside,0.7917884299868484,2018-07-01
+SC,Santa Cruz Island,PRF,Pedro Reef,2019,Outside,0.8057233953363689,2019-07-01
+AN,Anacapa Island,KH,Keyhole,2005,Inside,0.8723573092286576,2005-07-01
+AN,Anacapa Island,KH,Keyhole,2006,Inside,0.8536291529423943,2006-07-01
+AN,Anacapa Island,KH,Keyhole,2007,Inside,0.8705495693585502,2007-07-01
+AN,Anacapa Island,KH,Keyhole,2008,Inside,0.8709631670163587,2008-07-01
+AN,Anacapa Island,KH,Keyhole,2009,Inside,0.8593223615646537,2009-07-01
+AN,Anacapa Island,KH,Keyhole,2010,Inside,0.8437029186275105,2010-07-01
+AN,Anacapa Island,KH,Keyhole,2011,Inside,0.8076324721284113,2011-07-01
+AN,Anacapa Island,KH,Keyhole,2012,Inside,0.8220218657577391,2012-07-01
+AN,Anacapa Island,KH,Keyhole,2013,Inside,0.8176899579690922,2013-07-01
+AN,Anacapa Island,KH,Keyhole,2014,Inside,0.8368223166789869,2014-07-01
+AN,Anacapa Island,KH,Keyhole,2015,Inside,0.875889219244052,2015-07-01
+AN,Anacapa Island,KH,Keyhole,2016,Inside,0.8754257668100439,2016-07-01
+AN,Anacapa Island,KH,Keyhole,2017,Inside,0.8784868821811409,2017-07-01
+AN,Anacapa Island,KH,Keyhole,2018,Inside,0.8887590608890278,2018-07-01
+AN,Anacapa Island,KH,Keyhole,2019,Inside,0.8771439255815133,2019-07-01
+AN,Anacapa Island,EFC,East Fish Camp,2005,Outside,0.8063695893726699,2005-07-01
+AN,Anacapa Island,EFC,East Fish Camp,2006,Outside,0.7953730656,2006-07-01
+AN,Anacapa Island,EFC,East Fish Camp,2007,Outside,0.7824381178451094,2007-07-01
+AN,Anacapa Island,EFC,East Fish Camp,2008,Outside,0.7997120832593702,2008-07-01
+AN,Anacapa Island,EFC,East Fish Camp,2009,Outside,0.7919734386474437,2009-07-01
+AN,Anacapa Island,EFC,East Fish Camp,2010,Outside,0.8096924167310191,2010-07-01
+AN,Anacapa Island,EFC,East Fish Camp,2011,Outside,0.8105340242094917,2011-07-01
+AN,Anacapa Island,EFC,East Fish Camp,2012,Outside,0.8207009799019757,2012-07-01
+AN,Anacapa Island,EFC,East Fish Camp,2013,Outside,0.8088738656018,2013-07-01
+AN,Anacapa Island,EFC,East Fish Camp,2014,Outside,0.8202962323835123,2014-07-01
+AN,Anacapa Island,EFC,East Fish Camp,2015,Outside,0.8141493173939309,2015-07-01
+AN,Anacapa Island,EFC,East Fish Camp,2016,Outside,0.8012034904344598,2016-07-01
+AN,Anacapa Island,EFC,East Fish Camp,2017,Outside,0.7898012798779069,2017-07-01
+AN,Anacapa Island,EFC,East Fish Camp,2018,Outside,0.7781373115765168,2018-07-01
+AN,Anacapa Island,EFC,East Fish Camp,2019,Outside,0.7975728247520933,2019-07-01
+AN,Anacapa Island,BSBR,Black Sea Bass Reef,2005,Inside,0.800882856171598,2005-07-01
+AN,Anacapa Island,BSBR,Black Sea Bass Reef,2006,Inside,0.8087316363536803,2006-07-01
+AN,Anacapa Island,BSBR,Black Sea Bass Reef,2007,Inside,0.8108832401622897,2007-07-01
+AN,Anacapa Island,BSBR,Black Sea Bass Reef,2008,Inside,0.8282481613358056,2008-07-01
+AN,Anacapa Island,BSBR,Black Sea Bass Reef,2009,Inside,0.8251844762693364,2009-07-01
+AN,Anacapa Island,BSBR,Black Sea Bass Reef,2010,Inside,0.8322727375564873,2010-07-01
+AN,Anacapa Island,BSBR,Black Sea Bass Reef,2011,Inside,0.7988080244727679,2011-07-01
+AN,Anacapa Island,BSBR,Black Sea Bass Reef,2012,Inside,0.7977371494977372,2012-07-01
+AN,Anacapa Island,BSBR,Black Sea Bass Reef,2013,Inside,0.819948644810088,2013-07-01
+AN,Anacapa Island,BSBR,Black Sea Bass Reef,2014,Inside,0.8386402516558723,2014-07-01
+AN,Anacapa Island,BSBR,Black Sea Bass Reef,2015,Inside,0.8521734663847055,2015-07-01
+AN,Anacapa Island,BSBR,Black Sea Bass Reef,2016,Inside,0.8371001520659421,2016-07-01
+AN,Anacapa Island,BSBR,Black Sea Bass Reef,2017,Inside,0.838534806225973,2017-07-01
+AN,Anacapa Island,BSBR,Black Sea Bass Reef,2018,Inside,0.8296735959902791,2018-07-01
+AN,Anacapa Island,BSBR,Black Sea Bass Reef,2019,Inside,0.8527803515682852,2019-07-01
+AN,Anacapa Island,LH,Lighthouse,2005,Outside,0.8719386290648797,2005-07-01
+AN,Anacapa Island,LH,Lighthouse,2006,Outside,0.8494677423770434,2006-07-01
+AN,Anacapa Island,LH,Lighthouse,2007,Outside,0.8375644190478985,2007-07-01
+AN,Anacapa Island,LH,Lighthouse,2008,Outside,0.8552433368044247,2008-07-01
+AN,Anacapa Island,LH,Lighthouse,2009,Outside,0.8000734565501577,2009-07-01
+AN,Anacapa Island,LH,Lighthouse,2010,Outside,0.8360703880746121,2010-07-01
+AN,Anacapa Island,LH,Lighthouse,2011,Outside,0.7917238963041091,2011-07-01
+AN,Anacapa Island,LH,Lighthouse,2012,Outside,0.8349732832159475,2012-07-01
+AN,Anacapa Island,LH,Lighthouse,2013,Outside,0.8114947817800511,2013-07-01
+AN,Anacapa Island,LH,Lighthouse,2014,Outside,0.8541813905321864,2014-07-01
+AN,Anacapa Island,LH,Lighthouse,2015,Outside,0.8260199854100139,2015-07-01
+AN,Anacapa Island,LH,Lighthouse,2016,Outside,0.8508476326941041,2016-07-01
+AN,Anacapa Island,LH,Lighthouse,2017,Outside,0.8696020835265665,2017-07-01
+AN,Anacapa Island,LH,Lighthouse,2018,Outside,0.8781869355216025,2018-07-01
+AN,Anacapa Island,LH,Lighthouse,2019,Outside,0.8620298512505208,2019-07-01
+SB,Santa Barbara Island,WA,Webster's Arch,2005,Outside,0.7829381371775976,2005-07-01
+SB,Santa Barbara Island,WA,Webster's Arch,2006,Outside,0.781898151127021,2006-07-01
+SB,Santa Barbara Island,WA,Webster's Arch,2007,Outside,0.777497468706165,2007-07-01
+SB,Santa Barbara Island,WA,Webster's Arch,2008,Outside,0.818684285472933,2008-07-01
+SB,Santa Barbara Island,WA,Webster's Arch,2009,Outside,0.7929585051683127,2009-07-01
+SB,Santa Barbara Island,WA,Webster's Arch,2010,Outside,0.7782672773244107,2010-07-01
+SB,Santa Barbara Island,WA,Webster's Arch,2011,Outside,0.7977966316122473,2011-07-01
+SB,Santa Barbara Island,WA,Webster's Arch,2012,Outside,0.7970340199659118,2012-07-01
+SB,Santa Barbara Island,WA,Webster's Arch,2013,Outside,0.7836551353774576,2013-07-01
+SB,Santa Barbara Island,WA,Webster's Arch,2014,Outside,0.836665480776706,2014-07-01
+SB,Santa Barbara Island,WA,Webster's Arch,2015,Outside,0.8412838064732656,2015-07-01
+SB,Santa Barbara Island,WA,Webster's Arch,2016,Outside,0.8292146261900614,2016-07-01
+SB,Santa Barbara Island,WA,Webster's Arch,2017,Outside,0.8467706732831545,2017-07-01
+SB,Santa Barbara Island,WA,Webster's Arch,2018,Outside,0.8343302186579544,2018-07-01
+SB,Santa Barbara Island,WA,Webster's Arch,2019,Outside,0.8316579802917524,2019-07-01
+SB,Santa Barbara Island,GC,Graveyard Canyon,2005,Inside,0.8455526448783861,2005-07-01
+SB,Santa Barbara Island,GC,Graveyard Canyon,2006,Inside,0.8371958987054724,2006-07-01
+SB,Santa Barbara Island,GC,Graveyard Canyon,2007,Inside,0.8376985679583624,2007-07-01
+SB,Santa Barbara Island,GC,Graveyard Canyon,2008,Inside,0.853512568995439,2008-07-01
+SB,Santa Barbara Island,GC,Graveyard Canyon,2009,Inside,0.844457773275396,2009-07-01
+SB,Santa Barbara Island,GC,Graveyard Canyon,2010,Inside,0.8678083220869663,2010-07-01
+SB,Santa Barbara Island,GC,Graveyard Canyon,2011,Inside,0.8569030502992164,2011-07-01
+SB,Santa Barbara Island,GC,Graveyard Canyon,2012,Inside,0.861374412473245,2012-07-01
+SB,Santa Barbara Island,GC,Graveyard Canyon,2013,Inside,0.8837513588078947,2013-07-01
+SB,Santa Barbara Island,GC,Graveyard Canyon,2014,Inside,0.8788331298337989,2014-07-01
+SB,Santa Barbara Island,GC,Graveyard Canyon,2015,Inside,0.8844753491751454,2015-07-01
+SB,Santa Barbara Island,GC,Graveyard Canyon,2016,Inside,0.9049687171188122,2016-07-01
+SB,Santa Barbara Island,GC,Graveyard Canyon,2017,Inside,0.8976856996775491,2017-07-01
+SB,Santa Barbara Island,GC,Graveyard Canyon,2018,Inside,0.8899166238479971,2018-07-01
+SB,Santa Barbara Island,GC,Graveyard Canyon,2019,Inside,0.8832586623437665,2019-07-01
+SB,Santa Barbara Island,SER,Southeast Reef,2005,Inside,0.8451640980428738,2005-07-01
+SB,Santa Barbara Island,SER,Southeast Reef,2006,Inside,0.8377016873768119,2006-07-01
+SB,Santa Barbara Island,SER,Southeast Reef,2007,Inside,0.8209999424279182,2007-07-01
+SB,Santa Barbara Island,SER,Southeast Reef,2008,Inside,0.8549402063839667,2008-07-01
+SB,Santa Barbara Island,SER,Southeast Reef,2009,Inside,0.8621717497285958,2009-07-01
+SB,Santa Barbara Island,SER,Southeast Reef,2010,Inside,0.8754427409111685,2010-07-01
+SB,Santa Barbara Island,SER,Southeast Reef,2011,Inside,0.8928260240760345,2011-07-01
+SB,Santa Barbara Island,SER,Southeast Reef,2012,Inside,0.8562806624188433,2012-07-01
+SB,Santa Barbara Island,SER,Southeast Reef,2013,Inside,0.8698215607455948,2013-07-01
+SB,Santa Barbara Island,SER,Southeast Reef,2014,Inside,0.8674909373193456,2014-07-01
+SB,Santa Barbara Island,SER,Southeast Reef,2015,Inside,0.8720021954479794,2015-07-01
+SB,Santa Barbara Island,SER,Southeast Reef,2016,Inside,0.8614574289416386,2016-07-01
+SB,Santa Barbara Island,SER,Southeast Reef,2017,Inside,0.8815078723852655,2017-07-01
+SB,Santa Barbara Island,SER,Southeast Reef,2018,Inside,0.8732978982829046,2018-07-01
+SB,Santa Barbara Island,SER,Southeast Reef,2019,Inside,0.8881282020389638,2019-07-01

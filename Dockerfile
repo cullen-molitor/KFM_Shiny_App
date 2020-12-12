@@ -52,7 +52,7 @@ RUN R -e "install.packages('vegan', repos='http://cran.rstudio.com/')"
 
 # EXPOSE 3838
 
-COPY /kfmapp /srv/shiny-server/
+COPY /App /srv/shiny-server/
 
 COPY shiny-server.sh /usr/bin/shiny-server.sh
 

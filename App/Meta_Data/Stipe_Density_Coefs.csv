@@ -1,0 +1,13 @@
+model,Independent_variable,Dependent_variable,Month,slope,intercept,pvalue,rsquare,N
+1,Frond_Density,FSC_dry,January,0.07142,0,<.0001,0.96,41
+1,Frond_Density,FSC_dry,February,0.07553,0,<.0001,0.94,45
+1,Frond_Density,FSC_dry,March,0.08708,0,<.0001,0.95,45
+1,Frond_Density,FSC_dry,April,0.09626,0,<.0001,0.95,46
+1,Frond_Density,FSC_dry,May,0.09907,0,<.0001,0.94,48
+1,Frond_Density,FSC_dry,June,0.09343,0,<.0001,0.93,48
+1,Frond_Density,FSC_dry,July,0.08635,0,<.0001,0.91,48
+1,Frond_Density,FSC_dry,August,0.08348,0,<.0001,0.87,48
+1,Frond_Density,FSC_dry,September,0.07437,0,<.0001,0.85,48
+1,Frond_Density,FSC_dry,October,0.07194,0,<.0001,0.85,45
+1,Frond_Density,FSC_dry,November,0.06029,0,<.0001,0.93,48
+1,Frond_Density,FSC_dry,December,0.06589,0,<.0001,0.94,48

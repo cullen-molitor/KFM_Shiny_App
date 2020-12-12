@@ -1,0 +1,2563 @@
+SiteCode,SiteName,IslandCode,IslandName,ScientificName,SurveyYear,ReserveStatus,Percent_Cover
+AP,Arch Point,SB,Santa Barbara Island,Cobble,1982,Outside,13.4
+AP,Arch Point,SB,Santa Barbara Island,Cobble,1983,Outside,26.25
+AP,Arch Point,SB,Santa Barbara Island,Cobble,1984,Outside,8.6
+AP,Arch Point,SB,Santa Barbara Island,Cobble,1985,Outside,17.2
+AP,Arch Point,SB,Santa Barbara Island,Cobble,1986,Outside,12.6
+AP,Arch Point,SB,Santa Barbara Island,Cobble,1987,Outside,16.8
+AP,Arch Point,SB,Santa Barbara Island,Cobble,1988,Outside,8.2
+AP,Arch Point,SB,Santa Barbara Island,Cobble,1989,Outside,11.3
+AP,Arch Point,SB,Santa Barbara Island,Cobble,1990,Outside,10
+AP,Arch Point,SB,Santa Barbara Island,Cobble,1991,Outside,12.4
+AP,Arch Point,SB,Santa Barbara Island,Cobble,1992,Outside,11
+AP,Arch Point,SB,Santa Barbara Island,Cobble,1993,Outside,16.1
+AP,Arch Point,SB,Santa Barbara Island,Cobble,1994,Outside,11.8
+AP,Arch Point,SB,Santa Barbara Island,Cobble,1995,Outside,14.3
+AP,Arch Point,SB,Santa Barbara Island,Cobble,1996,Outside,11
+AP,Arch Point,SB,Santa Barbara Island,Cobble,1997,Outside,14.6667
+AP,Arch Point,SB,Santa Barbara Island,Cobble,1998,Outside,2.1667
+AP,Arch Point,SB,Santa Barbara Island,Cobble,1999,Outside,12
+AP,Arch Point,SB,Santa Barbara Island,Cobble,2000,Outside,12.6667
+AP,Arch Point,SB,Santa Barbara Island,Cobble,2001,Outside,19.6667
+AP,Arch Point,SB,Santa Barbara Island,Cobble,2002,Outside,17.1667
+AP,Arch Point,SB,Santa Barbara Island,Cobble,2003,Outside,12.6667
+AP,Arch Point,SB,Santa Barbara Island,Cobble,2004,Outside,11.6667
+AP,Arch Point,SB,Santa Barbara Island,Cobble,2005,Outside,17.8333
+AP,Arch Point,SB,Santa Barbara Island,Cobble,2006,Outside,18.5
+AP,Arch Point,SB,Santa Barbara Island,Cobble,2007,Outside,6.3333
+AP,Arch Point,SB,Santa Barbara Island,Cobble,2008,Outside,11.3333
+AP,Arch Point,SB,Santa Barbara Island,Cobble,2009,Outside,5.1667
+AP,Arch Point,SB,Santa Barbara Island,Cobble,2010,Outside,9
+AP,Arch Point,SB,Santa Barbara Island,Cobble,2011,Outside,9.5
+AP,Arch Point,SB,Santa Barbara Island,Cobble,2012,Outside,8.1667
+AP,Arch Point,SB,Santa Barbara Island,Cobble,2013,Outside,9
+AP,Arch Point,SB,Santa Barbara Island,Cobble,2014,Outside,4
+AP,Arch Point,SB,Santa Barbara Island,Cobble,2015,Outside,11.5
+AP,Arch Point,SB,Santa Barbara Island,Cobble,2016,Outside,21
+AP,Arch Point,SB,Santa Barbara Island,Cobble,2017,Outside,12.5
+AP,Arch Point,SB,Santa Barbara Island,Cobble,2018,Outside,22.1667
+AP,Arch Point,SB,Santa Barbara Island,Cobble,2019,Outside,16.8333
+AP,Arch Point,SB,Santa Barbara Island,Rock,1982,Outside,75
+AP,Arch Point,SB,Santa Barbara Island,Rock,1983,Outside,72.5
+AP,Arch Point,SB,Santa Barbara Island,Rock,1984,Outside,88.8
+AP,Arch Point,SB,Santa Barbara Island,Rock,1985,Outside,79
+AP,Arch Point,SB,Santa Barbara Island,Rock,1986,Outside,84
+AP,Arch Point,SB,Santa Barbara Island,Rock,1987,Outside,77.7
+AP,Arch Point,SB,Santa Barbara Island,Rock,1988,Outside,82.9
+AP,Arch Point,SB,Santa Barbara Island,Rock,1989,Outside,82.3
+AP,Arch Point,SB,Santa Barbara Island,Rock,1990,Outside,83.3
+AP,Arch Point,SB,Santa Barbara Island,Rock,1991,Outside,79.7
+AP,Arch Point,SB,Santa Barbara Island,Rock,1992,Outside,84.1
+AP,Arch Point,SB,Santa Barbara Island,Rock,1993,Outside,79.5
+AP,Arch Point,SB,Santa Barbara Island,Rock,1994,Outside,83.8
+AP,Arch Point,SB,Santa Barbara Island,Rock,1995,Outside,82.5
+AP,Arch Point,SB,Santa Barbara Island,Rock,1996,Outside,82.8333
+AP,Arch Point,SB,Santa Barbara Island,Rock,1997,Outside,83.5
+AP,Arch Point,SB,Santa Barbara Island,Rock,1998,Outside,96.6667
+AP,Arch Point,SB,Santa Barbara Island,Rock,1999,Outside,87.5
+AP,Arch Point,SB,Santa Barbara Island,Rock,2000,Outside,85.6667
+AP,Arch Point,SB,Santa Barbara Island,Rock,2001,Outside,78.5
+AP,Arch Point,SB,Santa Barbara Island,Rock,2002,Outside,80
+AP,Arch Point,SB,Santa Barbara Island,Rock,2003,Outside,86.1667
+AP,Arch Point,SB,Santa Barbara Island,Rock,2004,Outside,87.3333
+AP,Arch Point,SB,Santa Barbara Island,Rock,2005,Outside,79
+AP,Arch Point,SB,Santa Barbara Island,Rock,2006,Outside,81
+AP,Arch Point,SB,Santa Barbara Island,Rock,2007,Outside,92.8333
+AP,Arch Point,SB,Santa Barbara Island,Rock,2008,Outside,85.6667
+AP,Arch Point,SB,Santa Barbara Island,Rock,2009,Outside,94.3333
+AP,Arch Point,SB,Santa Barbara Island,Rock,2010,Outside,90.3333
+AP,Arch Point,SB,Santa Barbara Island,Rock,2011,Outside,87.8333
+AP,Arch Point,SB,Santa Barbara Island,Rock,2012,Outside,91.6667
+AP,Arch Point,SB,Santa Barbara Island,Rock,2013,Outside,84.8333
+AP,Arch Point,SB,Santa Barbara Island,Rock,2014,Outside,91
+AP,Arch Point,SB,Santa Barbara Island,Rock,2015,Outside,71.5
+AP,Arch Point,SB,Santa Barbara Island,Rock,2016,Outside,76.8333
+AP,Arch Point,SB,Santa Barbara Island,Rock,2017,Outside,87.5
+AP,Arch Point,SB,Santa Barbara Island,Rock,2018,Outside,75.5
+AP,Arch Point,SB,Santa Barbara Island,Rock,2019,Outside,82.1667
+AP,Arch Point,SB,Santa Barbara Island,Sand,1982,Outside,11.6
+AP,Arch Point,SB,Santa Barbara Island,Sand,1983,Outside,0
+AP,Arch Point,SB,Santa Barbara Island,Sand,1984,Outside,2.6
+AP,Arch Point,SB,Santa Barbara Island,Sand,1985,Outside,3.8
+AP,Arch Point,SB,Santa Barbara Island,Sand,1986,Outside,3.4
+AP,Arch Point,SB,Santa Barbara Island,Sand,1987,Outside,5.5
+AP,Arch Point,SB,Santa Barbara Island,Sand,1988,Outside,8.9
+AP,Arch Point,SB,Santa Barbara Island,Sand,1989,Outside,6.4
+AP,Arch Point,SB,Santa Barbara Island,Sand,1990,Outside,6.7
+AP,Arch Point,SB,Santa Barbara Island,Sand,1991,Outside,7.9
+AP,Arch Point,SB,Santa Barbara Island,Sand,1992,Outside,4.9
+AP,Arch Point,SB,Santa Barbara Island,Sand,1993,Outside,4.4
+AP,Arch Point,SB,Santa Barbara Island,Sand,1994,Outside,4.4
+AP,Arch Point,SB,Santa Barbara Island,Sand,1995,Outside,3.2
+AP,Arch Point,SB,Santa Barbara Island,Sand,1996,Outside,6.1667
+AP,Arch Point,SB,Santa Barbara Island,Sand,1997,Outside,1.8333
+AP,Arch Point,SB,Santa Barbara Island,Sand,1998,Outside,1.1667
+AP,Arch Point,SB,Santa Barbara Island,Sand,1999,Outside,0.5
+AP,Arch Point,SB,Santa Barbara Island,Sand,2000,Outside,1.6667
+AP,Arch Point,SB,Santa Barbara Island,Sand,2001,Outside,1.8333
+AP,Arch Point,SB,Santa Barbara Island,Sand,2002,Outside,2.8333
+AP,Arch Point,SB,Santa Barbara Island,Sand,2003,Outside,1.1667
+AP,Arch Point,SB,Santa Barbara Island,Sand,2004,Outside,1
+AP,Arch Point,SB,Santa Barbara Island,Sand,2005,Outside,3.1667
+AP,Arch Point,SB,Santa Barbara Island,Sand,2006,Outside,0.5
+AP,Arch Point,SB,Santa Barbara Island,Sand,2007,Outside,0.8333
+AP,Arch Point,SB,Santa Barbara Island,Sand,2008,Outside,3
+AP,Arch Point,SB,Santa Barbara Island,Sand,2009,Outside,0.5
+AP,Arch Point,SB,Santa Barbara Island,Sand,2010,Outside,0.6667
+AP,Arch Point,SB,Santa Barbara Island,Sand,2011,Outside,2.6667
+AP,Arch Point,SB,Santa Barbara Island,Sand,2012,Outside,0.1667
+AP,Arch Point,SB,Santa Barbara Island,Sand,2013,Outside,6.1667
+AP,Arch Point,SB,Santa Barbara Island,Sand,2014,Outside,5
+AP,Arch Point,SB,Santa Barbara Island,Sand,2015,Outside,17
+AP,Arch Point,SB,Santa Barbara Island,Sand,2016,Outside,2.1667
+AP,Arch Point,SB,Santa Barbara Island,Sand,2017,Outside,0
+AP,Arch Point,SB,Santa Barbara Island,Sand,2018,Outside,2.3333
+AP,Arch Point,SB,Santa Barbara Island,Sand,2019,Outside,1
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,1982,Outside,7.4
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,1983,Outside,34.75
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,1984,Outside,17.4
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,1985,Outside,14.4
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,1986,Outside,13.2
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,1987,Outside,15.8
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,1988,Outside,21.2
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,1989,Outside,7.2
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,1990,Outside,11
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,1991,Outside,12
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,1992,Outside,3.5
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,1993,Outside,3.7
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,1994,Outside,2.2
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,1995,Outside,8.2
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,1996,Outside,0
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,1997,Outside,0.3333
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,1998,Outside,11.5
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,1999,Outside,3
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,2000,Outside,3.6667
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,2001,Outside,6
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,2002,Outside,8.8333
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,2003,Outside,0.5
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,2004,Outside,0.6667
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,2005,Outside,5.1667
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,2006,Outside,0.6667
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,2007,Outside,8.3333
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,2008,Outside,2.3333
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,2009,Outside,9.6667
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,2010,Outside,13.3333
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,2011,Outside,1.5
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,2012,Outside,2.6667
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,2013,Outside,2
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,2014,Outside,1.6667
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,2015,Outside,3
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,2016,Outside,4
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,2017,Outside,3.8333
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,2018,Outside,3
+AR,Admiral's Reef,AN,Anacapa Island,Cobble,2019,Outside,6.5
+AR,Admiral's Reef,AN,Anacapa Island,Rock,1982,Outside,81.6
+AR,Admiral's Reef,AN,Anacapa Island,Rock,1983,Outside,75.25
+AR,Admiral's Reef,AN,Anacapa Island,Rock,1984,Outside,70.6
+AR,Admiral's Reef,AN,Anacapa Island,Rock,1985,Outside,76.9
+AR,Admiral's Reef,AN,Anacapa Island,Rock,1986,Outside,80.5
+AR,Admiral's Reef,AN,Anacapa Island,Rock,1987,Outside,77.9
+AR,Admiral's Reef,AN,Anacapa Island,Rock,1988,Outside,72.4
+AR,Admiral's Reef,AN,Anacapa Island,Rock,1989,Outside,86.9
+AR,Admiral's Reef,AN,Anacapa Island,Rock,1990,Outside,83.1
+AR,Admiral's Reef,AN,Anacapa Island,Rock,1991,Outside,80.6
+AR,Admiral's Reef,AN,Anacapa Island,Rock,1992,Outside,89.4
+AR,Admiral's Reef,AN,Anacapa Island,Rock,1993,Outside,89.2
+AR,Admiral's Reef,AN,Anacapa Island,Rock,1994,Outside,85.8
+AR,Admiral's Reef,AN,Anacapa Island,Rock,1995,Outside,79.5
+AR,Admiral's Reef,AN,Anacapa Island,Rock,1996,Outside,90
+AR,Admiral's Reef,AN,Anacapa Island,Rock,1997,Outside,85.5
+AR,Admiral's Reef,AN,Anacapa Island,Rock,1998,Outside,81.6667
+AR,Admiral's Reef,AN,Anacapa Island,Rock,1999,Outside,85.8333
+AR,Admiral's Reef,AN,Anacapa Island,Rock,2000,Outside,84.8333
+AR,Admiral's Reef,AN,Anacapa Island,Rock,2001,Outside,84.5
+AR,Admiral's Reef,AN,Anacapa Island,Rock,2002,Outside,81.3333
+AR,Admiral's Reef,AN,Anacapa Island,Rock,2003,Outside,87.5
+AR,Admiral's Reef,AN,Anacapa Island,Rock,2004,Outside,83.1667
+AR,Admiral's Reef,AN,Anacapa Island,Rock,2005,Outside,87.1667
+AR,Admiral's Reef,AN,Anacapa Island,Rock,2006,Outside,93.8333
+AR,Admiral's Reef,AN,Anacapa Island,Rock,2007,Outside,81
+AR,Admiral's Reef,AN,Anacapa Island,Rock,2008,Outside,89.6667
+AR,Admiral's Reef,AN,Anacapa Island,Rock,2009,Outside,79.8333
+AR,Admiral's Reef,AN,Anacapa Island,Rock,2010,Outside,82.3333
+AR,Admiral's Reef,AN,Anacapa Island,Rock,2011,Outside,90.6667
+AR,Admiral's Reef,AN,Anacapa Island,Rock,2012,Outside,86.5
+AR,Admiral's Reef,AN,Anacapa Island,Rock,2013,Outside,94.6667
+AR,Admiral's Reef,AN,Anacapa Island,Rock,2014,Outside,83.8333
+AR,Admiral's Reef,AN,Anacapa Island,Rock,2015,Outside,92
+AR,Admiral's Reef,AN,Anacapa Island,Rock,2016,Outside,88.8333
+AR,Admiral's Reef,AN,Anacapa Island,Rock,2017,Outside,88.5
+AR,Admiral's Reef,AN,Anacapa Island,Rock,2018,Outside,88.8333
+AR,Admiral's Reef,AN,Anacapa Island,Rock,2019,Outside,86.1667
+AR,Admiral's Reef,AN,Anacapa Island,Sand,1982,Outside,3
+AR,Admiral's Reef,AN,Anacapa Island,Sand,1983,Outside,2.5
+AR,Admiral's Reef,AN,Anacapa Island,Sand,1984,Outside,12
+AR,Admiral's Reef,AN,Anacapa Island,Sand,1985,Outside,8.7
+AR,Admiral's Reef,AN,Anacapa Island,Sand,1986,Outside,6.3
+AR,Admiral's Reef,AN,Anacapa Island,Sand,1987,Outside,6.3
+AR,Admiral's Reef,AN,Anacapa Island,Sand,1988,Outside,6.4
+AR,Admiral's Reef,AN,Anacapa Island,Sand,1989,Outside,5.9
+AR,Admiral's Reef,AN,Anacapa Island,Sand,1990,Outside,5.9
+AR,Admiral's Reef,AN,Anacapa Island,Sand,1991,Outside,7.4
+AR,Admiral's Reef,AN,Anacapa Island,Sand,1992,Outside,7.1
+AR,Admiral's Reef,AN,Anacapa Island,Sand,1993,Outside,7.1
+AR,Admiral's Reef,AN,Anacapa Island,Sand,1994,Outside,12
+AR,Admiral's Reef,AN,Anacapa Island,Sand,1995,Outside,12.3
+AR,Admiral's Reef,AN,Anacapa Island,Sand,1996,Outside,10
+AR,Admiral's Reef,AN,Anacapa Island,Sand,1997,Outside,14.1667
+AR,Admiral's Reef,AN,Anacapa Island,Sand,1998,Outside,6.8333
+AR,Admiral's Reef,AN,Anacapa Island,Sand,1999,Outside,11.1667
+AR,Admiral's Reef,AN,Anacapa Island,Sand,2000,Outside,11.5
+AR,Admiral's Reef,AN,Anacapa Island,Sand,2001,Outside,9.5
+AR,Admiral's Reef,AN,Anacapa Island,Sand,2002,Outside,9.8333
+AR,Admiral's Reef,AN,Anacapa Island,Sand,2003,Outside,12
+AR,Admiral's Reef,AN,Anacapa Island,Sand,2004,Outside,16.1667
+AR,Admiral's Reef,AN,Anacapa Island,Sand,2005,Outside,7.6667
+AR,Admiral's Reef,AN,Anacapa Island,Sand,2006,Outside,5.5
+AR,Admiral's Reef,AN,Anacapa Island,Sand,2007,Outside,10.6667
+AR,Admiral's Reef,AN,Anacapa Island,Sand,2008,Outside,8.1667
+AR,Admiral's Reef,AN,Anacapa Island,Sand,2009,Outside,10.5
+AR,Admiral's Reef,AN,Anacapa Island,Sand,2010,Outside,4.3333
+AR,Admiral's Reef,AN,Anacapa Island,Sand,2011,Outside,7.8333
+AR,Admiral's Reef,AN,Anacapa Island,Sand,2012,Outside,10.8333
+AR,Admiral's Reef,AN,Anacapa Island,Sand,2013,Outside,3.3333
+AR,Admiral's Reef,AN,Anacapa Island,Sand,2014,Outside,14.5
+AR,Admiral's Reef,AN,Anacapa Island,Sand,2015,Outside,5
+AR,Admiral's Reef,AN,Anacapa Island,Sand,2016,Outside,7.1667
+AR,Admiral's Reef,AN,Anacapa Island,Sand,2017,Outside,7.6667
+AR,Admiral's Reef,AN,Anacapa Island,Sand,2018,Outside,8.1667
+AR,Admiral's Reef,AN,Anacapa Island,Sand,2019,Outside,7.3333
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Cobble,2005,Inside,8.1667
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Cobble,2006,Inside,13.8333
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Cobble,2007,Inside,6.3333
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Cobble,2008,Inside,11.5
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Cobble,2009,Inside,13.3333
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Cobble,2010,Inside,9.3333
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Cobble,2011,Inside,6.8333
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Cobble,2012,Inside,12.3333
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Cobble,2013,Inside,14.6667
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Cobble,2014,Inside,8.5
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Cobble,2015,Inside,14
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Cobble,2016,Inside,7.3333
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Cobble,2017,Inside,16.1667
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Cobble,2018,Inside,10.5
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Cobble,2019,Inside,9.8333
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Rock,2005,Inside,88.1667
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Rock,2006,Inside,82.6667
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Rock,2007,Inside,89.8333
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Rock,2008,Inside,83.1667
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Rock,2009,Inside,83.6667
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Rock,2010,Inside,79.3333
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Rock,2011,Inside,92
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Rock,2012,Inside,82.8333
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Rock,2013,Inside,83.5
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Rock,2014,Inside,86.5
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Rock,2015,Inside,84.5
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Rock,2016,Inside,92.5
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Rock,2017,Inside,81
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Rock,2018,Inside,89.3333
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Rock,2019,Inside,89.6667
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Sand,2005,Inside,3.6667
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Sand,2006,Inside,3.5
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Sand,2007,Inside,3.8333
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Sand,2008,Inside,5.3333
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Sand,2009,Inside,3
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Sand,2010,Inside,11.3333
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Sand,2011,Inside,1.1667
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Sand,2012,Inside,4.8333
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Sand,2013,Inside,1.8333
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Sand,2014,Inside,5
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Sand,2015,Inside,1.5
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Sand,2016,Inside,0.1667
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Sand,2017,Inside,2.8333
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Sand,2018,Inside,0.1667
+BSBR,Black Sea Bass Reef,AN,Anacapa Island,Sand,2019,Inside,0.5
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,1986,Outside,2.1
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,1987,Outside,3.5
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,1988,Outside,2.9
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,1989,Outside,3.6
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,1990,Outside,1.3
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,1991,Outside,3
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,1992,Outside,1.4
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,1993,Outside,1.4
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,1994,Outside,4.9
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,1995,Outside,2
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,1996,Outside,2.5
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,1997,Outside,0
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,1998,Outside,1.6667
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,1999,Outside,3.3333
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,2000,Outside,5.8333
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,2001,Outside,1.8333
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,2002,Outside,5.1667
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,2003,Outside,2.6667
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,2004,Outside,0.3333
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,2005,Outside,5.1667
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,2006,Outside,3.6667
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,2007,Outside,6.5
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,2008,Outside,6
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,2009,Outside,4
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,2010,Outside,1.1667
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,2011,Outside,7.3333
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,2012,Outside,1.3333
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,2013,Outside,7.8333
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,2014,Outside,3
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,2015,Outside,5
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,2016,Outside,4
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,2017,Outside,3.6667
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,2018,Outside,5.1667
+CAT,Cat Canyon,SB,Santa Barbara Island,Cobble,2019,Outside,5.8333
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,1986,Outside,79.7
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,1987,Outside,86.6
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,1988,Outside,76.2
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,1989,Outside,89.1
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,1990,Outside,89.1
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,1991,Outside,79.5
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,1992,Outside,85.6
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,1993,Outside,80.5
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,1994,Outside,87.4
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,1995,Outside,89.1
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,1996,Outside,87.3333
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,1997,Outside,86.3333
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,1998,Outside,91.1667
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,1999,Outside,89.8333
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,2000,Outside,85.8333
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,2001,Outside,90.1667
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,2002,Outside,87.8333
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,2003,Outside,91.1667
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,2004,Outside,89.5
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,2005,Outside,85.8333
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,2006,Outside,86.6667
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,2007,Outside,91.1667
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,2008,Outside,89.5
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,2009,Outside,89.8333
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,2010,Outside,94.6667
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,2011,Outside,86.1667
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,2012,Outside,96.8333
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,2013,Outside,85.3333
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,2014,Outside,89
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,2015,Outside,87.8333
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,2016,Outside,89.8333
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,2017,Outside,94.3333
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,2018,Outside,91.5
+CAT,Cat Canyon,SB,Santa Barbara Island,Rock,2019,Outside,84.6667
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,1986,Outside,18.2
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,1987,Outside,9.9
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,1988,Outside,20.9
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,1989,Outside,7.3
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,1990,Outside,9.6
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,1991,Outside,17.5
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,1992,Outside,13
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,1993,Outside,18.1
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,1994,Outside,7.7
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,1995,Outside,8.9
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,1996,Outside,10.1667
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,1997,Outside,13.6667
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,1998,Outside,7.1667
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,1999,Outside,6.8333
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,2000,Outside,8.3333
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,2001,Outside,8
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,2002,Outside,7
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,2003,Outside,6.1667
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,2004,Outside,10.1667
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,2005,Outside,9
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,2006,Outside,9.6667
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,2007,Outside,2.3333
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,2008,Outside,4.5
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,2009,Outside,6.1667
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,2010,Outside,4.1667
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,2011,Outside,6.5
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,2012,Outside,1.8333
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,2013,Outside,6.8333
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,2014,Outside,8
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,2015,Outside,7.1667
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,2016,Outside,6.1667
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,2017,Outside,2
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,2018,Outside,3.3333
+CAT,Cat Canyon,SB,Santa Barbara Island,Sand,2019,Outside,9.5
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,1982,Inside,31.6
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,1983,Inside,34.25
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,1984,Inside,25.6
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,1985,Inside,35
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,1986,Inside,29.3
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,1987,Inside,30
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,1988,Inside,22.7
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,1989,Inside,16.3
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,1990,Inside,14.5
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,1991,Inside,9.7
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,1992,Inside,9.4
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,1993,Inside,11.7
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,1994,Inside,13.6
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,1995,Inside,20.7
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,1996,Inside,9.6667
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,1997,Inside,20
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,1998,Inside,17.5
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,1999,Inside,14.5
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,2000,Inside,19.1667
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,2001,Inside,27.1667
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,2002,Inside,33.6667
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,2003,Inside,41.6667
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,2004,Inside,19.5
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,2005,Inside,17.1667
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,2006,Inside,14
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,2007,Inside,11.1667
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,2008,Inside,17.6667
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,2009,Inside,14.8333
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,2010,Inside,17.1667
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,2011,Inside,7.6667
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,2012,Inside,5.6667
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,2013,Inside,36.1667
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,2014,Inside,24
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,2015,Inside,29.8333
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,2016,Inside,20.5
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,2017,Inside,15.6667
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,2018,Inside,11.3333
+CC,Cathedral Cove,AN,Anacapa Island,Cobble,2019,Inside,16.1667
+CC,Cathedral Cove,AN,Anacapa Island,Rock,1982,Inside,56.8
+CC,Cathedral Cove,AN,Anacapa Island,Rock,1983,Inside,61.5
+CC,Cathedral Cove,AN,Anacapa Island,Rock,1984,Inside,55.8
+CC,Cathedral Cove,AN,Anacapa Island,Rock,1985,Inside,46.1
+CC,Cathedral Cove,AN,Anacapa Island,Rock,1986,Inside,54.2
+CC,Cathedral Cove,AN,Anacapa Island,Rock,1987,Inside,57
+CC,Cathedral Cove,AN,Anacapa Island,Rock,1988,Inside,63.3
+CC,Cathedral Cove,AN,Anacapa Island,Rock,1989,Inside,65.8
+CC,Cathedral Cove,AN,Anacapa Island,Rock,1990,Inside,58.2
+CC,Cathedral Cove,AN,Anacapa Island,Rock,1991,Inside,65.3
+CC,Cathedral Cove,AN,Anacapa Island,Rock,1992,Inside,70.1
+CC,Cathedral Cove,AN,Anacapa Island,Rock,1993,Inside,69.3
+CC,Cathedral Cove,AN,Anacapa Island,Rock,1994,Inside,67.3
+CC,Cathedral Cove,AN,Anacapa Island,Rock,1995,Inside,66.6
+CC,Cathedral Cove,AN,Anacapa Island,Rock,1996,Inside,66.6667
+CC,Cathedral Cove,AN,Anacapa Island,Rock,1997,Inside,61.3333
+CC,Cathedral Cove,AN,Anacapa Island,Rock,1998,Inside,64.1667
+CC,Cathedral Cove,AN,Anacapa Island,Rock,1999,Inside,72.5
+CC,Cathedral Cove,AN,Anacapa Island,Rock,2000,Inside,65
+CC,Cathedral Cove,AN,Anacapa Island,Rock,2001,Inside,61.3333
+CC,Cathedral Cove,AN,Anacapa Island,Rock,2002,Inside,54.5
+CC,Cathedral Cove,AN,Anacapa Island,Rock,2003,Inside,52
+CC,Cathedral Cove,AN,Anacapa Island,Rock,2004,Inside,63.5
+CC,Cathedral Cove,AN,Anacapa Island,Rock,2005,Inside,63.8333
+CC,Cathedral Cove,AN,Anacapa Island,Rock,2006,Inside,76.8333
+CC,Cathedral Cove,AN,Anacapa Island,Rock,2007,Inside,79.6667
+CC,Cathedral Cove,AN,Anacapa Island,Rock,2008,Inside,65
+CC,Cathedral Cove,AN,Anacapa Island,Rock,2009,Inside,66.6667
+CC,Cathedral Cove,AN,Anacapa Island,Rock,2010,Inside,71.5
+CC,Cathedral Cove,AN,Anacapa Island,Rock,2011,Inside,77.8333
+CC,Cathedral Cove,AN,Anacapa Island,Rock,2012,Inside,79
+CC,Cathedral Cove,AN,Anacapa Island,Rock,2013,Inside,59.6667
+CC,Cathedral Cove,AN,Anacapa Island,Rock,2014,Inside,62.8333
+CC,Cathedral Cove,AN,Anacapa Island,Rock,2015,Inside,64
+CC,Cathedral Cove,AN,Anacapa Island,Rock,2016,Inside,66.3333
+CC,Cathedral Cove,AN,Anacapa Island,Rock,2017,Inside,77.1667
+CC,Cathedral Cove,AN,Anacapa Island,Rock,2018,Inside,80.3333
+CC,Cathedral Cove,AN,Anacapa Island,Rock,2019,Inside,78.8333
+CC,Cathedral Cove,AN,Anacapa Island,Sand,1982,Inside,11.6
+CC,Cathedral Cove,AN,Anacapa Island,Sand,1983,Inside,4.25
+CC,Cathedral Cove,AN,Anacapa Island,Sand,1984,Inside,18.6
+CC,Cathedral Cove,AN,Anacapa Island,Sand,1985,Inside,18.9
+CC,Cathedral Cove,AN,Anacapa Island,Sand,1986,Inside,16.5
+CC,Cathedral Cove,AN,Anacapa Island,Sand,1987,Inside,13
+CC,Cathedral Cove,AN,Anacapa Island,Sand,1988,Inside,14
+CC,Cathedral Cove,AN,Anacapa Island,Sand,1989,Inside,17.4
+CC,Cathedral Cove,AN,Anacapa Island,Sand,1990,Inside,27.3
+CC,Cathedral Cove,AN,Anacapa Island,Sand,1991,Inside,25
+CC,Cathedral Cove,AN,Anacapa Island,Sand,1992,Inside,20.5
+CC,Cathedral Cove,AN,Anacapa Island,Sand,1993,Inside,19
+CC,Cathedral Cove,AN,Anacapa Island,Sand,1994,Inside,19.1
+CC,Cathedral Cove,AN,Anacapa Island,Sand,1995,Inside,12.7
+CC,Cathedral Cove,AN,Anacapa Island,Sand,1996,Inside,23.6667
+CC,Cathedral Cove,AN,Anacapa Island,Sand,1997,Inside,18.6667
+CC,Cathedral Cove,AN,Anacapa Island,Sand,1998,Inside,18.3333
+CC,Cathedral Cove,AN,Anacapa Island,Sand,1999,Inside,13
+CC,Cathedral Cove,AN,Anacapa Island,Sand,2000,Inside,15.8333
+CC,Cathedral Cove,AN,Anacapa Island,Sand,2001,Inside,11.5
+CC,Cathedral Cove,AN,Anacapa Island,Sand,2002,Inside,11.8333
+CC,Cathedral Cove,AN,Anacapa Island,Sand,2003,Inside,6.3333
+CC,Cathedral Cove,AN,Anacapa Island,Sand,2004,Inside,17
+CC,Cathedral Cove,AN,Anacapa Island,Sand,2005,Inside,19
+CC,Cathedral Cove,AN,Anacapa Island,Sand,2006,Inside,9.1667
+CC,Cathedral Cove,AN,Anacapa Island,Sand,2007,Inside,9.1667
+CC,Cathedral Cove,AN,Anacapa Island,Sand,2008,Inside,17.3333
+CC,Cathedral Cove,AN,Anacapa Island,Sand,2009,Inside,18.5
+CC,Cathedral Cove,AN,Anacapa Island,Sand,2010,Inside,11.3333
+CC,Cathedral Cove,AN,Anacapa Island,Sand,2011,Inside,14.5
+CC,Cathedral Cove,AN,Anacapa Island,Sand,2012,Inside,15.3333
+CC,Cathedral Cove,AN,Anacapa Island,Sand,2013,Inside,4.1667
+CC,Cathedral Cove,AN,Anacapa Island,Sand,2014,Inside,13.1667
+CC,Cathedral Cove,AN,Anacapa Island,Sand,2015,Inside,6.1667
+CC,Cathedral Cove,AN,Anacapa Island,Sand,2016,Inside,13.1667
+CC,Cathedral Cove,AN,Anacapa Island,Sand,2017,Inside,7.1667
+CC,Cathedral Cove,AN,Anacapa Island,Sand,2018,Inside,8.3333
+CC,Cathedral Cove,AN,Anacapa Island,Sand,2019,Inside,5
+CP,Cluster Point,SR,Santa Rosa Island,Cobble,2005,Outside,8.6667
+CP,Cluster Point,SR,Santa Rosa Island,Cobble,2006,Outside,10.5
+CP,Cluster Point,SR,Santa Rosa Island,Cobble,2007,Outside,11.3333
+CP,Cluster Point,SR,Santa Rosa Island,Cobble,2008,Outside,6.5
+CP,Cluster Point,SR,Santa Rosa Island,Cobble,2009,Outside,5.8333
+CP,Cluster Point,SR,Santa Rosa Island,Cobble,2010,Outside,9.3333
+CP,Cluster Point,SR,Santa Rosa Island,Cobble,2011,Outside,11.8333
+CP,Cluster Point,SR,Santa Rosa Island,Cobble,2012,Outside,10.1667
+CP,Cluster Point,SR,Santa Rosa Island,Cobble,2013,Outside,7.5
+CP,Cluster Point,SR,Santa Rosa Island,Cobble,2014,Outside,3.8333
+CP,Cluster Point,SR,Santa Rosa Island,Cobble,2015,Outside,5.5
+CP,Cluster Point,SR,Santa Rosa Island,Cobble,2016,Outside,4.5
+CP,Cluster Point,SR,Santa Rosa Island,Cobble,2017,Outside,9.3333
+CP,Cluster Point,SR,Santa Rosa Island,Cobble,2018,Outside,3.1667
+CP,Cluster Point,SR,Santa Rosa Island,Cobble,2019,Outside,9.6667
+CP,Cluster Point,SR,Santa Rosa Island,Rock,2005,Outside,85.3333
+CP,Cluster Point,SR,Santa Rosa Island,Rock,2006,Outside,83.3333
+CP,Cluster Point,SR,Santa Rosa Island,Rock,2007,Outside,85
+CP,Cluster Point,SR,Santa Rosa Island,Rock,2008,Outside,90.3333
+CP,Cluster Point,SR,Santa Rosa Island,Rock,2009,Outside,87.3333
+CP,Cluster Point,SR,Santa Rosa Island,Rock,2010,Outside,84.6667
+CP,Cluster Point,SR,Santa Rosa Island,Rock,2011,Outside,79
+CP,Cluster Point,SR,Santa Rosa Island,Rock,2012,Outside,77.6667
+CP,Cluster Point,SR,Santa Rosa Island,Rock,2013,Outside,87.6667
+CP,Cluster Point,SR,Santa Rosa Island,Rock,2014,Outside,88.1667
+CP,Cluster Point,SR,Santa Rosa Island,Rock,2015,Outside,83.3333
+CP,Cluster Point,SR,Santa Rosa Island,Rock,2016,Outside,90
+CP,Cluster Point,SR,Santa Rosa Island,Rock,2017,Outside,84.8333
+CP,Cluster Point,SR,Santa Rosa Island,Rock,2018,Outside,90
+CP,Cluster Point,SR,Santa Rosa Island,Rock,2019,Outside,87.6667
+CP,Cluster Point,SR,Santa Rosa Island,Sand,2005,Outside,6
+CP,Cluster Point,SR,Santa Rosa Island,Sand,2006,Outside,6.1667
+CP,Cluster Point,SR,Santa Rosa Island,Sand,2007,Outside,3.6667
+CP,Cluster Point,SR,Santa Rosa Island,Sand,2008,Outside,3.1667
+CP,Cluster Point,SR,Santa Rosa Island,Sand,2009,Outside,6.8333
+CP,Cluster Point,SR,Santa Rosa Island,Sand,2010,Outside,6
+CP,Cluster Point,SR,Santa Rosa Island,Sand,2011,Outside,9.1667
+CP,Cluster Point,SR,Santa Rosa Island,Sand,2012,Outside,12.1667
+CP,Cluster Point,SR,Santa Rosa Island,Sand,2013,Outside,4.8333
+CP,Cluster Point,SR,Santa Rosa Island,Sand,2014,Outside,8
+CP,Cluster Point,SR,Santa Rosa Island,Sand,2015,Outside,11.1667
+CP,Cluster Point,SR,Santa Rosa Island,Sand,2016,Outside,5.5
+CP,Cluster Point,SR,Santa Rosa Island,Sand,2017,Outside,5.8333
+CP,Cluster Point,SR,Santa Rosa Island,Sand,2018,Outside,6.8333
+CP,Cluster Point,SR,Santa Rosa Island,Sand,2019,Outside,2.6667
+CSAW,Chickasaw,SR,Santa Rosa Island,Cobble,2005,Inside,0.5
+CSAW,Chickasaw,SR,Santa Rosa Island,Cobble,2006,Inside,2.5
+CSAW,Chickasaw,SR,Santa Rosa Island,Cobble,2007,Inside,0.6667
+CSAW,Chickasaw,SR,Santa Rosa Island,Cobble,2008,Inside,0
+CSAW,Chickasaw,SR,Santa Rosa Island,Cobble,2009,Inside,2.3333
+CSAW,Chickasaw,SR,Santa Rosa Island,Cobble,2010,Inside,0
+CSAW,Chickasaw,SR,Santa Rosa Island,Cobble,2011,Inside,0.3333
+CSAW,Chickasaw,SR,Santa Rosa Island,Cobble,2012,Inside,0
+CSAW,Chickasaw,SR,Santa Rosa Island,Cobble,2013,Inside,0.5
+CSAW,Chickasaw,SR,Santa Rosa Island,Cobble,2014,Inside,0
+CSAW,Chickasaw,SR,Santa Rosa Island,Cobble,2015,Inside,0
+CSAW,Chickasaw,SR,Santa Rosa Island,Cobble,2016,Inside,0.5
+CSAW,Chickasaw,SR,Santa Rosa Island,Cobble,2017,Inside,1.5
+CSAW,Chickasaw,SR,Santa Rosa Island,Cobble,2018,Inside,0.3333
+CSAW,Chickasaw,SR,Santa Rosa Island,Cobble,2019,Inside,2
+CSAW,Chickasaw,SR,Santa Rosa Island,Rock,2005,Inside,91.8333
+CSAW,Chickasaw,SR,Santa Rosa Island,Rock,2006,Inside,84.8333
+CSAW,Chickasaw,SR,Santa Rosa Island,Rock,2007,Inside,79.6667
+CSAW,Chickasaw,SR,Santa Rosa Island,Rock,2008,Inside,77.8333
+CSAW,Chickasaw,SR,Santa Rosa Island,Rock,2009,Inside,78.5
+CSAW,Chickasaw,SR,Santa Rosa Island,Rock,2010,Inside,85.6667
+CSAW,Chickasaw,SR,Santa Rosa Island,Rock,2011,Inside,86.8333
+CSAW,Chickasaw,SR,Santa Rosa Island,Rock,2012,Inside,76.3333
+CSAW,Chickasaw,SR,Santa Rosa Island,Rock,2013,Inside,81.5
+CSAW,Chickasaw,SR,Santa Rosa Island,Rock,2014,Inside,93.3333
+CSAW,Chickasaw,SR,Santa Rosa Island,Rock,2015,Inside,85.1667
+CSAW,Chickasaw,SR,Santa Rosa Island,Rock,2016,Inside,82.5
+CSAW,Chickasaw,SR,Santa Rosa Island,Rock,2017,Inside,91
+CSAW,Chickasaw,SR,Santa Rosa Island,Rock,2018,Inside,83.6667
+CSAW,Chickasaw,SR,Santa Rosa Island,Rock,2019,Inside,89.1667
+CSAW,Chickasaw,SR,Santa Rosa Island,Sand,2005,Inside,7.6667
+CSAW,Chickasaw,SR,Santa Rosa Island,Sand,2006,Inside,12.6667
+CSAW,Chickasaw,SR,Santa Rosa Island,Sand,2007,Inside,19.6667
+CSAW,Chickasaw,SR,Santa Rosa Island,Sand,2008,Inside,22.1667
+CSAW,Chickasaw,SR,Santa Rosa Island,Sand,2009,Inside,19.1667
+CSAW,Chickasaw,SR,Santa Rosa Island,Sand,2010,Inside,14.3333
+CSAW,Chickasaw,SR,Santa Rosa Island,Sand,2011,Inside,12.8333
+CSAW,Chickasaw,SR,Santa Rosa Island,Sand,2012,Inside,23.6667
+CSAW,Chickasaw,SR,Santa Rosa Island,Sand,2013,Inside,18
+CSAW,Chickasaw,SR,Santa Rosa Island,Sand,2014,Inside,6.6667
+CSAW,Chickasaw,SR,Santa Rosa Island,Sand,2015,Inside,14.8333
+CSAW,Chickasaw,SR,Santa Rosa Island,Sand,2016,Inside,17
+CSAW,Chickasaw,SR,Santa Rosa Island,Sand,2017,Inside,7.5
+CSAW,Chickasaw,SR,Santa Rosa Island,Sand,2018,Inside,16
+CSAW,Chickasaw,SR,Santa Rosa Island,Sand,2019,Inside,8.8333
+CVP,Cavern Point,SC,Santa Cruz Island,Cobble,2005,Inside,10.1667
+CVP,Cavern Point,SC,Santa Cruz Island,Cobble,2006,Inside,10.8333
+CVP,Cavern Point,SC,Santa Cruz Island,Cobble,2007,Inside,10.6667
+CVP,Cavern Point,SC,Santa Cruz Island,Cobble,2008,Inside,6.5
+CVP,Cavern Point,SC,Santa Cruz Island,Cobble,2009,Inside,1.5
+CVP,Cavern Point,SC,Santa Cruz Island,Cobble,2010,Inside,4.1667
+CVP,Cavern Point,SC,Santa Cruz Island,Cobble,2011,Inside,5.3333
+CVP,Cavern Point,SC,Santa Cruz Island,Cobble,2012,Inside,5
+CVP,Cavern Point,SC,Santa Cruz Island,Cobble,2013,Inside,7.8333
+CVP,Cavern Point,SC,Santa Cruz Island,Cobble,2014,Inside,12.6667
+CVP,Cavern Point,SC,Santa Cruz Island,Cobble,2015,Inside,3.8333
+CVP,Cavern Point,SC,Santa Cruz Island,Cobble,2016,Inside,10.8333
+CVP,Cavern Point,SC,Santa Cruz Island,Cobble,2017,Inside,9.8333
+CVP,Cavern Point,SC,Santa Cruz Island,Cobble,2018,Inside,12.6667
+CVP,Cavern Point,SC,Santa Cruz Island,Cobble,2019,Inside,12.5
+CVP,Cavern Point,SC,Santa Cruz Island,Rock,2005,Inside,82
+CVP,Cavern Point,SC,Santa Cruz Island,Rock,2006,Inside,89
+CVP,Cavern Point,SC,Santa Cruz Island,Rock,2007,Inside,86.3333
+CVP,Cavern Point,SC,Santa Cruz Island,Rock,2008,Inside,93.1667
+CVP,Cavern Point,SC,Santa Cruz Island,Rock,2009,Inside,95.5
+CVP,Cavern Point,SC,Santa Cruz Island,Rock,2010,Inside,93.3333
+CVP,Cavern Point,SC,Santa Cruz Island,Rock,2011,Inside,85.8333
+CVP,Cavern Point,SC,Santa Cruz Island,Rock,2012,Inside,86.8333
+CVP,Cavern Point,SC,Santa Cruz Island,Rock,2013,Inside,90.1667
+CVP,Cavern Point,SC,Santa Cruz Island,Rock,2014,Inside,80.3333
+CVP,Cavern Point,SC,Santa Cruz Island,Rock,2015,Inside,92.6667
+CVP,Cavern Point,SC,Santa Cruz Island,Rock,2016,Inside,86.1667
+CVP,Cavern Point,SC,Santa Cruz Island,Rock,2017,Inside,86.3333
+CVP,Cavern Point,SC,Santa Cruz Island,Rock,2018,Inside,81
+CVP,Cavern Point,SC,Santa Cruz Island,Rock,2019,Inside,84.8333
+CVP,Cavern Point,SC,Santa Cruz Island,Sand,2005,Inside,7.8333
+CVP,Cavern Point,SC,Santa Cruz Island,Sand,2006,Inside,0.1667
+CVP,Cavern Point,SC,Santa Cruz Island,Sand,2007,Inside,3
+CVP,Cavern Point,SC,Santa Cruz Island,Sand,2008,Inside,0.3333
+CVP,Cavern Point,SC,Santa Cruz Island,Sand,2009,Inside,3
+CVP,Cavern Point,SC,Santa Cruz Island,Sand,2010,Inside,2.5
+CVP,Cavern Point,SC,Santa Cruz Island,Sand,2011,Inside,8.8333
+CVP,Cavern Point,SC,Santa Cruz Island,Sand,2012,Inside,8.1667
+CVP,Cavern Point,SC,Santa Cruz Island,Sand,2013,Inside,2
+CVP,Cavern Point,SC,Santa Cruz Island,Sand,2014,Inside,7
+CVP,Cavern Point,SC,Santa Cruz Island,Sand,2015,Inside,3.5
+CVP,Cavern Point,SC,Santa Cruz Island,Sand,2016,Inside,3
+CVP,Cavern Point,SC,Santa Cruz Island,Sand,2017,Inside,3.8333
+CVP,Cavern Point,SC,Santa Cruz Island,Sand,2018,Inside,6.3333
+CVP,Cavern Point,SC,Santa Cruz Island,Sand,2019,Inside,2.6667
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Cobble,2005,Outside,5.5
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Cobble,2006,Outside,2.1667
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Cobble,2007,Outside,0.6667
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Cobble,2008,Outside,2.6667
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Cobble,2009,Outside,10.3333
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Cobble,2010,Outside,1.6667
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Cobble,2011,Outside,5.8333
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Cobble,2012,Outside,3.1667
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Cobble,2013,Outside,4.1667
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Cobble,2014,Outside,0.5
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Cobble,2015,Outside,2.1667
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Cobble,2016,Outside,3.6667
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Cobble,2017,Outside,0.3333
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Cobble,2018,Outside,6.8333
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Cobble,2019,Outside,11.6667
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Rock,2005,Outside,84.8333
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Rock,2006,Outside,89.3333
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Rock,2007,Outside,95.1667
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Rock,2008,Outside,95.6667
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Rock,2009,Outside,84.6667
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Rock,2010,Outside,97.1667
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Rock,2011,Outside,91.3333
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Rock,2012,Outside,92.1667
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Rock,2013,Outside,92.6667
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Rock,2014,Outside,94.1667
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Rock,2015,Outside,93.5
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Rock,2016,Outside,88.5
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Rock,2017,Outside,98.8333
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Rock,2018,Outside,93
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Rock,2019,Outside,86.1667
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Sand,2005,Outside,9.6667
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Sand,2006,Outside,8.5
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Sand,2007,Outside,4.1667
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Sand,2008,Outside,1.6667
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Sand,2009,Outside,5
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Sand,2010,Outside,1.1667
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Sand,2011,Outside,2.8333
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Sand,2012,Outside,4.6667
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Sand,2013,Outside,3.1667
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Sand,2014,Outside,5.3333
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Sand,2015,Outside,4.3333
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Sand,2016,Outside,7.8333
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Sand,2017,Outside,0.8333
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Sand,2018,Outside,0.1667
+DPM,Devil's Peak Member,SC,Santa Cruz Island,Sand,2019,Outside,2.1667
+EFC,East Fish Camp,AN,Anacapa Island,Cobble,2005,Outside,4.6667
+EFC,East Fish Camp,AN,Anacapa Island,Cobble,2006,Outside,3.5
+EFC,East Fish Camp,AN,Anacapa Island,Cobble,2007,Outside,4.6667
+EFC,East Fish Camp,AN,Anacapa Island,Cobble,2008,Outside,5.8333
+EFC,East Fish Camp,AN,Anacapa Island,Cobble,2009,Outside,1.1667
+EFC,East Fish Camp,AN,Anacapa Island,Cobble,2010,Outside,2.6667
+EFC,East Fish Camp,AN,Anacapa Island,Cobble,2011,Outside,3.5
+EFC,East Fish Camp,AN,Anacapa Island,Cobble,2012,Outside,2.8333
+EFC,East Fish Camp,AN,Anacapa Island,Cobble,2013,Outside,2.3333
+EFC,East Fish Camp,AN,Anacapa Island,Cobble,2014,Outside,2.5
+EFC,East Fish Camp,AN,Anacapa Island,Cobble,2015,Outside,0.1667
+EFC,East Fish Camp,AN,Anacapa Island,Cobble,2016,Outside,3.8333
+EFC,East Fish Camp,AN,Anacapa Island,Cobble,2017,Outside,8.5
+EFC,East Fish Camp,AN,Anacapa Island,Cobble,2018,Outside,4.5
+EFC,East Fish Camp,AN,Anacapa Island,Cobble,2019,Outside,7.5
+EFC,East Fish Camp,AN,Anacapa Island,Rock,2005,Outside,89.8333
+EFC,East Fish Camp,AN,Anacapa Island,Rock,2006,Outside,88.5
+EFC,East Fish Camp,AN,Anacapa Island,Rock,2007,Outside,89.5
+EFC,East Fish Camp,AN,Anacapa Island,Rock,2008,Outside,84.6667
+EFC,East Fish Camp,AN,Anacapa Island,Rock,2009,Outside,90.6667
+EFC,East Fish Camp,AN,Anacapa Island,Rock,2010,Outside,88.6667
+EFC,East Fish Camp,AN,Anacapa Island,Rock,2011,Outside,85
+EFC,East Fish Camp,AN,Anacapa Island,Rock,2012,Outside,82.6667
+EFC,East Fish Camp,AN,Anacapa Island,Rock,2013,Outside,89.6667
+EFC,East Fish Camp,AN,Anacapa Island,Rock,2014,Outside,87.8333
+EFC,East Fish Camp,AN,Anacapa Island,Rock,2015,Outside,86.5
+EFC,East Fish Camp,AN,Anacapa Island,Rock,2016,Outside,93.1667
+EFC,East Fish Camp,AN,Anacapa Island,Rock,2017,Outside,88.3333
+EFC,East Fish Camp,AN,Anacapa Island,Rock,2018,Outside,93.1667
+EFC,East Fish Camp,AN,Anacapa Island,Rock,2019,Outside,88
+EFC,East Fish Camp,AN,Anacapa Island,Sand,2005,Outside,5.5
+EFC,East Fish Camp,AN,Anacapa Island,Sand,2006,Outside,8
+EFC,East Fish Camp,AN,Anacapa Island,Sand,2007,Outside,5.8333
+EFC,East Fish Camp,AN,Anacapa Island,Sand,2008,Outside,9.5
+EFC,East Fish Camp,AN,Anacapa Island,Sand,2009,Outside,8.1667
+EFC,East Fish Camp,AN,Anacapa Island,Sand,2010,Outside,8.6667
+EFC,East Fish Camp,AN,Anacapa Island,Sand,2011,Outside,11.5
+EFC,East Fish Camp,AN,Anacapa Island,Sand,2012,Outside,14.5
+EFC,East Fish Camp,AN,Anacapa Island,Sand,2013,Outside,8
+EFC,East Fish Camp,AN,Anacapa Island,Sand,2014,Outside,9.6667
+EFC,East Fish Camp,AN,Anacapa Island,Sand,2015,Outside,13.3333
+EFC,East Fish Camp,AN,Anacapa Island,Sand,2016,Outside,3
+EFC,East Fish Camp,AN,Anacapa Island,Sand,2017,Outside,3.1667
+EFC,East Fish Camp,AN,Anacapa Island,Sand,2018,Outside,2.3333
+EFC,East Fish Camp,AN,Anacapa Island,Sand,2019,Outside,4.5
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,1982,Outside,0.8
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,1983,Outside,26
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,1984,Outside,17.2
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,1985,Outside,12.1
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,1986,Outside,11.5
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,1987,Outside,8.4
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,1988,Outside,16.4
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,1989,Outside,18.2
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,1990,Outside,14.7
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,1991,Outside,15
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,1992,Outside,14.3
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,1993,Outside,13.5
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,1994,Outside,10.2
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,1995,Outside,11.8
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,1996,Outside,12.1667
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,1997,Outside,11.1667
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,1998,Outside,15.8333
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,1999,Outside,14.1667
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,2000,Outside,11.3333
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,2001,Outside,15.5
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,2002,Outside,12
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,2003,Outside,14
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,2004,Outside,10
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,2005,Outside,9.5
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,2006,Outside,12
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,2007,Outside,9.5
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,2008,Outside,4.1667
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,2009,Outside,6
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,2010,Outside,5
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,2011,Outside,4.1667
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,2012,Outside,3.6667
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,2013,Outside,6
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,2014,Outside,7.5
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,2015,Outside,4.5
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,2016,Outside,11.5
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,2017,Outside,7.8333
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,2018,Outside,5.8333
+FH,Fry's Harbor,SC,Santa Cruz Island,Cobble,2019,Outside,20.3333
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,1982,Outside,16.8
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,1983,Outside,70.75
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,1984,Outside,82.6
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,1985,Outside,83.4
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,1986,Outside,84.8
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,1987,Outside,86.4
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,1988,Outside,79.1
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,1989,Outside,74.5
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,1990,Outside,82.9
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,1991,Outside,77.2
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,1992,Outside,81.8
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,1993,Outside,79.7
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,1994,Outside,86.8
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,1995,Outside,85.9
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,1996,Outside,81.6667
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,1997,Outside,82.3333
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,1998,Outside,78.1667
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,1999,Outside,81.3333
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,2000,Outside,86.5
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,2001,Outside,81
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,2002,Outside,87
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,2003,Outside,84.8333
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,2004,Outside,83.8333
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,2005,Outside,82
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,2006,Outside,85.5
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,2007,Outside,87.3333
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,2008,Outside,92.8333
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,2009,Outside,90.5
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,2010,Outside,89.1667
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,2011,Outside,85.1667
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,2012,Outside,89
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,2013,Outside,82.3333
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,2014,Outside,84.6667
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,2015,Outside,88.1667
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,2016,Outside,84.8333
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,2017,Outside,88
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,2018,Outside,93
+FH,Fry's Harbor,SC,Santa Cruz Island,Rock,2019,Outside,79.5
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,1982,Outside,2.4
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,1983,Outside,2
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,1984,Outside,0.2
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,1985,Outside,4.5
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,1986,Outside,3.7
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,1987,Outside,5.2
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,1988,Outside,4.5
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,1989,Outside,7.3
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,1990,Outside,2.4
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,1991,Outside,7.7
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,1992,Outside,3.9
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,1993,Outside,6.8
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,1994,Outside,3
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,1995,Outside,2.3
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,1996,Outside,6.1667
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,1997,Outside,6.5
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,1998,Outside,6
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,1999,Outside,4.5
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,2000,Outside,2.1667
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,2001,Outside,3.5
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,2002,Outside,1
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,2003,Outside,1.1667
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,2004,Outside,6.1667
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,2005,Outside,8.5
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,2006,Outside,2.5
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,2007,Outside,3.1667
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,2008,Outside,3
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,2009,Outside,3.5
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,2010,Outside,5.8333
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,2011,Outside,10.6667
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,2012,Outside,7.3333
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,2013,Outside,11.6667
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,2014,Outside,7.8333
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,2015,Outside,7.3333
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,2016,Outside,3.6667
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,2017,Outside,4.1667
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,2018,Outside,1.1667
+FH,Fry's Harbor,SC,Santa Cruz Island,Sand,2019,Outside,0.1667
+GC,Graveyard Canyon,SB,Santa Barbara Island,Cobble,2005,Inside,2.8333
+GC,Graveyard Canyon,SB,Santa Barbara Island,Cobble,2006,Inside,0.6667
+GC,Graveyard Canyon,SB,Santa Barbara Island,Cobble,2007,Inside,2.3333
+GC,Graveyard Canyon,SB,Santa Barbara Island,Cobble,2008,Inside,3.1667
+GC,Graveyard Canyon,SB,Santa Barbara Island,Cobble,2009,Inside,10
+GC,Graveyard Canyon,SB,Santa Barbara Island,Cobble,2010,Inside,3.5
+GC,Graveyard Canyon,SB,Santa Barbara Island,Cobble,2011,Inside,3
+GC,Graveyard Canyon,SB,Santa Barbara Island,Cobble,2012,Inside,3.6667
+GC,Graveyard Canyon,SB,Santa Barbara Island,Cobble,2013,Inside,0.6667
+GC,Graveyard Canyon,SB,Santa Barbara Island,Cobble,2014,Inside,2.1667
+GC,Graveyard Canyon,SB,Santa Barbara Island,Cobble,2015,Inside,3.5
+GC,Graveyard Canyon,SB,Santa Barbara Island,Cobble,2016,Inside,6.8333
+GC,Graveyard Canyon,SB,Santa Barbara Island,Cobble,2017,Inside,7.3333
+GC,Graveyard Canyon,SB,Santa Barbara Island,Cobble,2018,Inside,5.3333
+GC,Graveyard Canyon,SB,Santa Barbara Island,Cobble,2019,Inside,5.8333
+GC,Graveyard Canyon,SB,Santa Barbara Island,Rock,2005,Inside,60.5
+GC,Graveyard Canyon,SB,Santa Barbara Island,Rock,2006,Inside,67.6667
+GC,Graveyard Canyon,SB,Santa Barbara Island,Rock,2007,Inside,65.1667
+GC,Graveyard Canyon,SB,Santa Barbara Island,Rock,2008,Inside,61.3333
+GC,Graveyard Canyon,SB,Santa Barbara Island,Rock,2009,Inside,68
+GC,Graveyard Canyon,SB,Santa Barbara Island,Rock,2010,Inside,62.1667
+GC,Graveyard Canyon,SB,Santa Barbara Island,Rock,2011,Inside,67.5
+GC,Graveyard Canyon,SB,Santa Barbara Island,Rock,2012,Inside,48.8333
+GC,Graveyard Canyon,SB,Santa Barbara Island,Rock,2013,Inside,59.8333
+GC,Graveyard Canyon,SB,Santa Barbara Island,Rock,2014,Inside,58.5
+GC,Graveyard Canyon,SB,Santa Barbara Island,Rock,2015,Inside,62.6667
+GC,Graveyard Canyon,SB,Santa Barbara Island,Rock,2016,Inside,60.8333
+GC,Graveyard Canyon,SB,Santa Barbara Island,Rock,2017,Inside,58.3333
+GC,Graveyard Canyon,SB,Santa Barbara Island,Rock,2018,Inside,50.5
+GC,Graveyard Canyon,SB,Santa Barbara Island,Rock,2019,Inside,46.8333
+GC,Graveyard Canyon,SB,Santa Barbara Island,Sand,2005,Inside,36.6667
+GC,Graveyard Canyon,SB,Santa Barbara Island,Sand,2006,Inside,31.6667
+GC,Graveyard Canyon,SB,Santa Barbara Island,Sand,2007,Inside,32.5
+GC,Graveyard Canyon,SB,Santa Barbara Island,Sand,2008,Inside,35.5
+GC,Graveyard Canyon,SB,Santa Barbara Island,Sand,2009,Inside,22
+GC,Graveyard Canyon,SB,Santa Barbara Island,Sand,2010,Inside,34.3333
+GC,Graveyard Canyon,SB,Santa Barbara Island,Sand,2011,Inside,29.5
+GC,Graveyard Canyon,SB,Santa Barbara Island,Sand,2012,Inside,47.5
+GC,Graveyard Canyon,SB,Santa Barbara Island,Sand,2013,Inside,39.5
+GC,Graveyard Canyon,SB,Santa Barbara Island,Sand,2014,Inside,39.3333
+GC,Graveyard Canyon,SB,Santa Barbara Island,Sand,2015,Inside,33.8333
+GC,Graveyard Canyon,SB,Santa Barbara Island,Sand,2016,Inside,32.3333
+GC,Graveyard Canyon,SB,Santa Barbara Island,Sand,2017,Inside,34.3333
+GC,Graveyard Canyon,SB,Santa Barbara Island,Sand,2018,Inside,44.1667
+GC,Graveyard Canyon,SB,Santa Barbara Island,Sand,2019,Inside,47.3333
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,1982,Inside,2
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,1983,Inside,2.25
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,1984,Inside,6.6
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,1985,Inside,1.2
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,1986,Inside,2.9
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,1987,Inside,3.2
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,1988,Inside,2.4
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,1989,Inside,1.6
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,1990,Inside,2.4
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,1991,Inside,2.2
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,1992,Inside,1.3
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,1993,Inside,2.1
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,1994,Inside,2.1
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,1995,Inside,1.7
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,1996,Inside,3.3333
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,1997,Inside,3.3333
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,1998,Inside,2.1667
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,1999,Inside,4.1667
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,2000,Inside,2.1667
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,2001,Inside,1.6667
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,2002,Inside,2.1667
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,2003,Inside,1.8333
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,2004,Inside,1
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,2005,Inside,0.5
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,2006,Inside,3
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,2007,Inside,0.6667
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,2008,Inside,1
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,2009,Inside,1.1667
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,2010,Inside,1.1667
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,2011,Inside,0.6667
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,2012,Inside,0.5
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,2013,Inside,0.8333
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,2014,Inside,2
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,2015,Inside,5.5
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,2016,Inside,1.8333
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,2017,Inside,2.5
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,2018,Inside,3.6667
+GI,Gull Island South,SC,Santa Cruz Island,Cobble,2019,Inside,2.6667
+GI,Gull Island South,SC,Santa Cruz Island,Rock,1982,Inside,94.2
+GI,Gull Island South,SC,Santa Cruz Island,Rock,1983,Inside,90.5
+GI,Gull Island South,SC,Santa Cruz Island,Rock,1984,Inside,89
+GI,Gull Island South,SC,Santa Cruz Island,Rock,1985,Inside,94.9
+GI,Gull Island South,SC,Santa Cruz Island,Rock,1986,Inside,91.6
+GI,Gull Island South,SC,Santa Cruz Island,Rock,1987,Inside,90.3
+GI,Gull Island South,SC,Santa Cruz Island,Rock,1988,Inside,92.6
+GI,Gull Island South,SC,Santa Cruz Island,Rock,1989,Inside,96.9
+GI,Gull Island South,SC,Santa Cruz Island,Rock,1990,Inside,93
+GI,Gull Island South,SC,Santa Cruz Island,Rock,1991,Inside,92.9
+GI,Gull Island South,SC,Santa Cruz Island,Rock,1992,Inside,95
+GI,Gull Island South,SC,Santa Cruz Island,Rock,1993,Inside,94.7
+GI,Gull Island South,SC,Santa Cruz Island,Rock,1994,Inside,93.7
+GI,Gull Island South,SC,Santa Cruz Island,Rock,1995,Inside,94.7
+GI,Gull Island South,SC,Santa Cruz Island,Rock,1996,Inside,88.3333
+GI,Gull Island South,SC,Santa Cruz Island,Rock,1997,Inside,95.3333
+GI,Gull Island South,SC,Santa Cruz Island,Rock,1998,Inside,97.1667
+GI,Gull Island South,SC,Santa Cruz Island,Rock,1999,Inside,94
+GI,Gull Island South,SC,Santa Cruz Island,Rock,2000,Inside,94.8333
+GI,Gull Island South,SC,Santa Cruz Island,Rock,2001,Inside,97.1667
+GI,Gull Island South,SC,Santa Cruz Island,Rock,2002,Inside,96.6667
+GI,Gull Island South,SC,Santa Cruz Island,Rock,2003,Inside,97.6667
+GI,Gull Island South,SC,Santa Cruz Island,Rock,2004,Inside,98.1667
+GI,Gull Island South,SC,Santa Cruz Island,Rock,2005,Inside,96.1667
+GI,Gull Island South,SC,Santa Cruz Island,Rock,2006,Inside,93.5
+GI,Gull Island South,SC,Santa Cruz Island,Rock,2007,Inside,98.3333
+GI,Gull Island South,SC,Santa Cruz Island,Rock,2008,Inside,94.3333
+GI,Gull Island South,SC,Santa Cruz Island,Rock,2009,Inside,93.8333
+GI,Gull Island South,SC,Santa Cruz Island,Rock,2010,Inside,94.1667
+GI,Gull Island South,SC,Santa Cruz Island,Rock,2011,Inside,92.8333
+GI,Gull Island South,SC,Santa Cruz Island,Rock,2012,Inside,96.1667
+GI,Gull Island South,SC,Santa Cruz Island,Rock,2013,Inside,96.8333
+GI,Gull Island South,SC,Santa Cruz Island,Rock,2014,Inside,92.1667
+GI,Gull Island South,SC,Santa Cruz Island,Rock,2015,Inside,93.1667
+GI,Gull Island South,SC,Santa Cruz Island,Rock,2016,Inside,97.3333
+GI,Gull Island South,SC,Santa Cruz Island,Rock,2017,Inside,95.5
+GI,Gull Island South,SC,Santa Cruz Island,Rock,2018,Inside,92.5
+GI,Gull Island South,SC,Santa Cruz Island,Rock,2019,Inside,95.6667
+GI,Gull Island South,SC,Santa Cruz Island,Sand,1982,Inside,3.8
+GI,Gull Island South,SC,Santa Cruz Island,Sand,1983,Inside,4.5
+GI,Gull Island South,SC,Santa Cruz Island,Sand,1984,Inside,4.4
+GI,Gull Island South,SC,Santa Cruz Island,Sand,1985,Inside,3.9
+GI,Gull Island South,SC,Santa Cruz Island,Sand,1986,Inside,5.5
+GI,Gull Island South,SC,Santa Cruz Island,Sand,1987,Inside,6.5
+GI,Gull Island South,SC,Santa Cruz Island,Sand,1988,Inside,5
+GI,Gull Island South,SC,Santa Cruz Island,Sand,1989,Inside,1.5
+GI,Gull Island South,SC,Santa Cruz Island,Sand,1990,Inside,4.6
+GI,Gull Island South,SC,Santa Cruz Island,Sand,1991,Inside,4.9
+GI,Gull Island South,SC,Santa Cruz Island,Sand,1992,Inside,3.7
+GI,Gull Island South,SC,Santa Cruz Island,Sand,1993,Inside,3.2
+GI,Gull Island South,SC,Santa Cruz Island,Sand,1994,Inside,4.2
+GI,Gull Island South,SC,Santa Cruz Island,Sand,1995,Inside,3.6
+GI,Gull Island South,SC,Santa Cruz Island,Sand,1996,Inside,8.3333
+GI,Gull Island South,SC,Santa Cruz Island,Sand,1997,Inside,1.3333
+GI,Gull Island South,SC,Santa Cruz Island,Sand,1998,Inside,0.6667
+GI,Gull Island South,SC,Santa Cruz Island,Sand,1999,Inside,1.8333
+GI,Gull Island South,SC,Santa Cruz Island,Sand,2000,Inside,3
+GI,Gull Island South,SC,Santa Cruz Island,Sand,2001,Inside,1.1667
+GI,Gull Island South,SC,Santa Cruz Island,Sand,2002,Inside,1.1667
+GI,Gull Island South,SC,Santa Cruz Island,Sand,2003,Inside,0.5
+GI,Gull Island South,SC,Santa Cruz Island,Sand,2004,Inside,0.8333
+GI,Gull Island South,SC,Santa Cruz Island,Sand,2005,Inside,3.3333
+GI,Gull Island South,SC,Santa Cruz Island,Sand,2006,Inside,3.5
+GI,Gull Island South,SC,Santa Cruz Island,Sand,2007,Inside,1
+GI,Gull Island South,SC,Santa Cruz Island,Sand,2008,Inside,4.6667
+GI,Gull Island South,SC,Santa Cruz Island,Sand,2009,Inside,5
+GI,Gull Island South,SC,Santa Cruz Island,Sand,2010,Inside,4.6667
+GI,Gull Island South,SC,Santa Cruz Island,Sand,2011,Inside,6.5
+GI,Gull Island South,SC,Santa Cruz Island,Sand,2012,Inside,3.3333
+GI,Gull Island South,SC,Santa Cruz Island,Sand,2013,Inside,2.3333
+GI,Gull Island South,SC,Santa Cruz Island,Sand,2014,Inside,5.8333
+GI,Gull Island South,SC,Santa Cruz Island,Sand,2015,Inside,1.3333
+GI,Gull Island South,SC,Santa Cruz Island,Sand,2016,Inside,0.8333
+GI,Gull Island South,SC,Santa Cruz Island,Sand,2017,Inside,2
+GI,Gull Island South,SC,Santa Cruz Island,Sand,2018,Inside,3.8333
+GI,Gull Island South,SC,Santa Cruz Island,Sand,2019,Inside,1.6667
+HR,Hare Rock,SM,San Miguel Island,Cobble,1982,Inside,7.4
+HR,Hare Rock,SM,San Miguel Island,Cobble,1983,Inside,13.5
+HR,Hare Rock,SM,San Miguel Island,Cobble,1984,Inside,31.2
+HR,Hare Rock,SM,San Miguel Island,Cobble,1985,Inside,14
+HR,Hare Rock,SM,San Miguel Island,Cobble,1986,Inside,11.7
+HR,Hare Rock,SM,San Miguel Island,Cobble,1987,Inside,7.5
+HR,Hare Rock,SM,San Miguel Island,Cobble,1988,Inside,21.5
+HR,Hare Rock,SM,San Miguel Island,Cobble,1989,Inside,16.8
+HR,Hare Rock,SM,San Miguel Island,Cobble,1990,Inside,16
+HR,Hare Rock,SM,San Miguel Island,Cobble,1991,Inside,10.4
+HR,Hare Rock,SM,San Miguel Island,Cobble,1992,Inside,23.5
+HR,Hare Rock,SM,San Miguel Island,Cobble,1993,Inside,19.2
+HR,Hare Rock,SM,San Miguel Island,Cobble,1994,Inside,18.7
+HR,Hare Rock,SM,San Miguel Island,Cobble,1995,Inside,20.8
+HR,Hare Rock,SM,San Miguel Island,Cobble,1996,Inside,16.6667
+HR,Hare Rock,SM,San Miguel Island,Cobble,1997,Inside,9.3333
+HR,Hare Rock,SM,San Miguel Island,Cobble,1998,Inside,11.1667
+HR,Hare Rock,SM,San Miguel Island,Cobble,1999,Inside,16.1667
+HR,Hare Rock,SM,San Miguel Island,Cobble,2000,Inside,6.8333
+HR,Hare Rock,SM,San Miguel Island,Cobble,2001,Inside,13
+HR,Hare Rock,SM,San Miguel Island,Cobble,2002,Inside,14.8333
+HR,Hare Rock,SM,San Miguel Island,Cobble,2003,Inside,20.3333
+HR,Hare Rock,SM,San Miguel Island,Cobble,2004,Inside,16.3333
+HR,Hare Rock,SM,San Miguel Island,Cobble,2005,Inside,17.6667
+HR,Hare Rock,SM,San Miguel Island,Cobble,2006,Inside,14.6667
+HR,Hare Rock,SM,San Miguel Island,Cobble,2007,Inside,10.6667
+HR,Hare Rock,SM,San Miguel Island,Cobble,2008,Inside,9
+HR,Hare Rock,SM,San Miguel Island,Cobble,2009,Inside,19.5
+HR,Hare Rock,SM,San Miguel Island,Cobble,2010,Inside,12.6667
+HR,Hare Rock,SM,San Miguel Island,Cobble,2011,Inside,20
+HR,Hare Rock,SM,San Miguel Island,Cobble,2012,Inside,8.1667
+HR,Hare Rock,SM,San Miguel Island,Cobble,2013,Inside,17.5
+HR,Hare Rock,SM,San Miguel Island,Cobble,2014,Inside,18.1667
+HR,Hare Rock,SM,San Miguel Island,Cobble,2015,Inside,5.5
+HR,Hare Rock,SM,San Miguel Island,Cobble,2016,Inside,12.1667
+HR,Hare Rock,SM,San Miguel Island,Cobble,2017,Inside,12.8333
+HR,Hare Rock,SM,San Miguel Island,Cobble,2018,Inside,9.5
+HR,Hare Rock,SM,San Miguel Island,Cobble,2019,Inside,12.6667
+HR,Hare Rock,SM,San Miguel Island,Rock,1982,Inside,70.2
+HR,Hare Rock,SM,San Miguel Island,Rock,1983,Inside,71.25
+HR,Hare Rock,SM,San Miguel Island,Rock,1984,Inside,65.2
+HR,Hare Rock,SM,San Miguel Island,Rock,1985,Inside,79.9
+HR,Hare Rock,SM,San Miguel Island,Rock,1986,Inside,76.8
+HR,Hare Rock,SM,San Miguel Island,Rock,1987,Inside,80.5
+HR,Hare Rock,SM,San Miguel Island,Rock,1988,Inside,75.6
+HR,Hare Rock,SM,San Miguel Island,Rock,1989,Inside,78.8
+HR,Hare Rock,SM,San Miguel Island,Rock,1990,Inside,78.2
+HR,Hare Rock,SM,San Miguel Island,Rock,1991,Inside,86.5
+HR,Hare Rock,SM,San Miguel Island,Rock,1992,Inside,75.3
+HR,Hare Rock,SM,San Miguel Island,Rock,1993,Inside,74.1
+HR,Hare Rock,SM,San Miguel Island,Rock,1994,Inside,73.2
+HR,Hare Rock,SM,San Miguel Island,Rock,1995,Inside,75.7
+HR,Hare Rock,SM,San Miguel Island,Rock,1996,Inside,79.5
+HR,Hare Rock,SM,San Miguel Island,Rock,1997,Inside,89
+HR,Hare Rock,SM,San Miguel Island,Rock,1998,Inside,78.3333
+HR,Hare Rock,SM,San Miguel Island,Rock,1999,Inside,82.3333
+HR,Hare Rock,SM,San Miguel Island,Rock,2000,Inside,83.3333
+HR,Hare Rock,SM,San Miguel Island,Rock,2001,Inside,84.6667
+HR,Hare Rock,SM,San Miguel Island,Rock,2002,Inside,82
+HR,Hare Rock,SM,San Miguel Island,Rock,2003,Inside,76.5
+HR,Hare Rock,SM,San Miguel Island,Rock,2004,Inside,77.8333
+HR,Hare Rock,SM,San Miguel Island,Rock,2005,Inside,80.6667
+HR,Hare Rock,SM,San Miguel Island,Rock,2006,Inside,85.1667
+HR,Hare Rock,SM,San Miguel Island,Rock,2007,Inside,87.3333
+HR,Hare Rock,SM,San Miguel Island,Rock,2008,Inside,86.6667
+HR,Hare Rock,SM,San Miguel Island,Rock,2009,Inside,79.8333
+HR,Hare Rock,SM,San Miguel Island,Rock,2010,Inside,82
+HR,Hare Rock,SM,San Miguel Island,Rock,2011,Inside,76.5
+HR,Hare Rock,SM,San Miguel Island,Rock,2012,Inside,80.6667
+HR,Hare Rock,SM,San Miguel Island,Rock,2013,Inside,82.1667
+HR,Hare Rock,SM,San Miguel Island,Rock,2014,Inside,80.5
+HR,Hare Rock,SM,San Miguel Island,Rock,2015,Inside,86.8333
+HR,Hare Rock,SM,San Miguel Island,Rock,2016,Inside,85.1667
+HR,Hare Rock,SM,San Miguel Island,Rock,2017,Inside,82.5
+HR,Hare Rock,SM,San Miguel Island,Rock,2018,Inside,90.3333
+HR,Hare Rock,SM,San Miguel Island,Rock,2019,Inside,87.1667
+HR,Hare Rock,SM,San Miguel Island,Sand,1982,Inside,22.4
+HR,Hare Rock,SM,San Miguel Island,Sand,1983,Inside,7.75
+HR,Hare Rock,SM,San Miguel Island,Sand,1984,Inside,3.6
+HR,Hare Rock,SM,San Miguel Island,Sand,1985,Inside,6.1
+HR,Hare Rock,SM,San Miguel Island,Sand,1986,Inside,11.5
+HR,Hare Rock,SM,San Miguel Island,Sand,1987,Inside,12
+HR,Hare Rock,SM,San Miguel Island,Sand,1988,Inside,2.9
+HR,Hare Rock,SM,San Miguel Island,Sand,1989,Inside,4.4
+HR,Hare Rock,SM,San Miguel Island,Sand,1990,Inside,5.8
+HR,Hare Rock,SM,San Miguel Island,Sand,1991,Inside,3.1
+HR,Hare Rock,SM,San Miguel Island,Sand,1992,Inside,1.2
+HR,Hare Rock,SM,San Miguel Island,Sand,1993,Inside,6.7
+HR,Hare Rock,SM,San Miguel Island,Sand,1994,Inside,8.1
+HR,Hare Rock,SM,San Miguel Island,Sand,1995,Inside,3.5
+HR,Hare Rock,SM,San Miguel Island,Sand,1996,Inside,3.8333
+HR,Hare Rock,SM,San Miguel Island,Sand,1997,Inside,1.6667
+HR,Hare Rock,SM,San Miguel Island,Sand,1998,Inside,10.5
+HR,Hare Rock,SM,San Miguel Island,Sand,1999,Inside,1.5
+HR,Hare Rock,SM,San Miguel Island,Sand,2000,Inside,9.8333
+HR,Hare Rock,SM,San Miguel Island,Sand,2001,Inside,2.3333
+HR,Hare Rock,SM,San Miguel Island,Sand,2002,Inside,3.1667
+HR,Hare Rock,SM,San Miguel Island,Sand,2003,Inside,3.1667
+HR,Hare Rock,SM,San Miguel Island,Sand,2004,Inside,5.8333
+HR,Hare Rock,SM,San Miguel Island,Sand,2005,Inside,1.6667
+HR,Hare Rock,SM,San Miguel Island,Sand,2006,Inside,0.1667
+HR,Hare Rock,SM,San Miguel Island,Sand,2007,Inside,2
+HR,Hare Rock,SM,San Miguel Island,Sand,2008,Inside,4.3333
+HR,Hare Rock,SM,San Miguel Island,Sand,2009,Inside,0.6667
+HR,Hare Rock,SM,San Miguel Island,Sand,2010,Inside,5.3333
+HR,Hare Rock,SM,San Miguel Island,Sand,2011,Inside,3.5
+HR,Hare Rock,SM,San Miguel Island,Sand,2012,Inside,11.1667
+HR,Hare Rock,SM,San Miguel Island,Sand,2013,Inside,0.3333
+HR,Hare Rock,SM,San Miguel Island,Sand,2014,Inside,1.3333
+HR,Hare Rock,SM,San Miguel Island,Sand,2015,Inside,7.6667
+HR,Hare Rock,SM,San Miguel Island,Sand,2016,Inside,2.6667
+HR,Hare Rock,SM,San Miguel Island,Sand,2017,Inside,4.6667
+HR,Hare Rock,SM,San Miguel Island,Sand,2018,Inside,0.1667
+HR,Hare Rock,SM,San Miguel Island,Sand,2019,Inside,0.1667
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,1982,Outside,3.8
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,1983,Outside,2.5
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,1984,Outside,0.8
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,1985,Outside,1.9
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,1986,Outside,1.7
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,1987,Outside,1.7
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,1988,Outside,3.7
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,1989,Outside,4.5
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,1990,Outside,1.3
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,1991,Outside,1.7
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,1992,Outside,1.2
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,1993,Outside,2.1
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,1994,Outside,3.9
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,1995,Outside,4.9
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,1996,Outside,0.6667
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,1997,Outside,10
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,1998,Outside,3
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,1999,Outside,1.8333
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,2000,Outside,3
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,2001,Outside,1.1667
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,2002,Outside,4.3333
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,2003,Outside,4.1667
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,2004,Outside,1.6667
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,2005,Outside,1.1667
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,2006,Outside,0.8333
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,2007,Outside,3.1667
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,2008,Outside,2
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,2009,Outside,3
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,2010,Outside,1.6667
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,2011,Outside,0.3333
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,2012,Outside,1.6667
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,2013,Outside,2.5
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,2014,Outside,2.1667
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,2015,Outside,2.8333
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,2016,Outside,3
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,2017,Outside,1
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,2018,Outside,2
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Cobble,2019,Outside,0.6667
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,1982,Outside,95.4
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,1983,Outside,95
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,1984,Outside,98.8
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,1985,Outside,93.5
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,1986,Outside,87.5
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,1987,Outside,91
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,1988,Outside,94.9
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,1989,Outside,93.2
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,1990,Outside,90.3
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,1991,Outside,95.5
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,1992,Outside,98.8
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,1993,Outside,92.6
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,1994,Outside,93.6
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,1995,Outside,87.7
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,1996,Outside,86.8333
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,1997,Outside,85
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,1998,Outside,96
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,1999,Outside,94.3333
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,2000,Outside,94.1667
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,2001,Outside,97.3333
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,2002,Outside,94.6667
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,2003,Outside,92.3333
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,2004,Outside,85.6667
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,2005,Outside,97.5
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,2006,Outside,99.1667
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,2007,Outside,94.6667
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,2008,Outside,96.5
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,2009,Outside,96.8333
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,2010,Outside,92.8333
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,2011,Outside,96.6667
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,2012,Outside,96.3333
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,2013,Outside,76.3333
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,2014,Outside,95
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,2015,Outside,96.5
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,2016,Outside,97
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,2017,Outside,99
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,2018,Outside,97.1667
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Rock,2019,Outside,99.3333
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,1982,Outside,0.8
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,1983,Outside,0
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,1984,Outside,0.4
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,1985,Outside,4.6
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,1986,Outside,10.8
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,1987,Outside,7.3
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,1988,Outside,1.4
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,1989,Outside,2.3
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,1990,Outside,8.4
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,1991,Outside,2.8
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,1992,Outside,0
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,1993,Outside,5.3
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,1994,Outside,2.5
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,1995,Outside,7.4
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,1996,Outside,12.5
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,1997,Outside,5
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,1998,Outside,1
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,1999,Outside,3.8333
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,2000,Outside,2.8333
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,2001,Outside,1.5
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,2002,Outside,1
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,2003,Outside,3.5
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,2004,Outside,12.6667
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,2005,Outside,1.3333
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,2006,Outside,0
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,2007,Outside,2.1667
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,2008,Outside,1.5
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,2009,Outside,0.1667
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,2010,Outside,5.5
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,2011,Outside,3
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,2012,Outside,2
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,2013,Outside,21.1667
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,2014,Outside,2.8333
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,2015,Outside,0.6667
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,2016,Outside,0
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,2017,Outside,0
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,2018,Outside,0.8333
+JLNO,Johnson's Lee North,SR,Santa Rosa Island,Sand,2019,Outside,0
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,1982,Outside,1.4
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,1983,Outside,3.75
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,1984,Outside,4.8
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,1985,Outside,2.5
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,1986,Outside,2.3
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,1987,Outside,2.6
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,1988,Outside,3.3
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,1989,Outside,1.4
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,1990,Outside,2.1
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,1991,Outside,2.2
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,1992,Outside,1.7
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,1993,Outside,3.3
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,1994,Outside,2.1
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,1995,Outside,0.4
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,1996,Outside,1.1667
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,1997,Outside,0.1667
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,1998,Outside,0
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,1999,Outside,2
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,2000,Outside,1.5
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,2001,Outside,2.6667
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,2002,Outside,4.5
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,2003,Outside,2.6667
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,2004,Outside,4.1667
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,2005,Outside,5
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,2006,Outside,4.5
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,2007,Outside,1
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,2008,Outside,2.1667
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,2009,Outside,3.1667
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,2010,Outside,0.6667
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,2011,Outside,2
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,2012,Outside,0.8333
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,2013,Outside,1.8333
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,2014,Outside,7.6667
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,2015,Outside,2.8333
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,2016,Outside,3
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,2017,Outside,4.6667
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,2018,Outside,2.5
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Cobble,2019,Outside,9.5
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,1982,Outside,80.6
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,1983,Outside,81.75
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,1984,Outside,78.8
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,1985,Outside,85.3
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,1986,Outside,82
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,1987,Outside,76.3
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,1988,Outside,87
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,1989,Outside,87.5
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,1990,Outside,82.2
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,1991,Outside,74.2
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,1992,Outside,88
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,1993,Outside,80.6
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,1994,Outside,85.7
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,1995,Outside,74.5
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,1996,Outside,69.1667
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,1997,Outside,68.8333
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,1998,Outside,87.1667
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,1999,Outside,81.3333
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,2000,Outside,75.5
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,2001,Outside,67.1667
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,2002,Outside,70.5
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,2003,Outside,75.3333
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,2004,Outside,69.8333
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,2005,Outside,81.1667
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,2006,Outside,81.6667
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,2007,Outside,72.8333
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,2008,Outside,76.8333
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,2009,Outside,77.3333
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,2010,Outside,80.5
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,2011,Outside,79.8333
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,2012,Outside,78.6667
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,2013,Outside,73.3333
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,2014,Outside,82.6667
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,2015,Outside,78.3333
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,2016,Outside,75.1667
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,2017,Outside,88
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,2018,Outside,87.6667
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Rock,2019,Outside,87.3333
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,1982,Outside,17.6
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,1983,Outside,14.25
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,1984,Outside,16.4
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,1985,Outside,12.2
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,1986,Outside,15.7
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,1987,Outside,21.1
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,1988,Outside,9.7
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,1989,Outside,11.1
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,1990,Outside,15.7
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,1991,Outside,22.3
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,1992,Outside,10.3
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,1993,Outside,16.1
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,1994,Outside,12.2
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,1995,Outside,25.2
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,1996,Outside,29.6667
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,1997,Outside,31
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,1998,Outside,12.8333
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,1999,Outside,16.6667
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,2000,Outside,23
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,2001,Outside,30.1667
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,2002,Outside,25
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,2003,Outside,22
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,2004,Outside,26
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,2005,Outside,13.8333
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,2006,Outside,13.8333
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,2007,Outside,26.1667
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,2008,Outside,21
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,2009,Outside,19.5
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,2010,Outside,18.8333
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,2011,Outside,18.1667
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,2012,Outside,20.5
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,2013,Outside,24.8333
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,2014,Outside,9.6667
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,2015,Outside,18.8333
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,2016,Outside,21.8333
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,2017,Outside,7.3333
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,2018,Outside,9.8333
+JLSO,Johnson's Lee South,SR,Santa Rosa Island,Sand,2019,Outside,3.1667
+KH,Keyhole,AN,Anacapa Island,Cobble,2005,Inside,9.3333
+KH,Keyhole,AN,Anacapa Island,Cobble,2006,Inside,5.8333
+KH,Keyhole,AN,Anacapa Island,Cobble,2007,Inside,11.5
+KH,Keyhole,AN,Anacapa Island,Cobble,2008,Inside,5.5
+KH,Keyhole,AN,Anacapa Island,Cobble,2009,Inside,5
+KH,Keyhole,AN,Anacapa Island,Cobble,2010,Inside,11.8333
+KH,Keyhole,AN,Anacapa Island,Cobble,2011,Inside,10
+KH,Keyhole,AN,Anacapa Island,Cobble,2012,Inside,11.8333
+KH,Keyhole,AN,Anacapa Island,Cobble,2013,Inside,17.1667
+KH,Keyhole,AN,Anacapa Island,Cobble,2014,Inside,6.3333
+KH,Keyhole,AN,Anacapa Island,Cobble,2015,Inside,27.5
+KH,Keyhole,AN,Anacapa Island,Cobble,2016,Inside,18.3333
+KH,Keyhole,AN,Anacapa Island,Cobble,2017,Inside,13.8333
+KH,Keyhole,AN,Anacapa Island,Cobble,2018,Inside,21.8333
+KH,Keyhole,AN,Anacapa Island,Cobble,2019,Inside,14.6667
+KH,Keyhole,AN,Anacapa Island,Rock,2005,Inside,77.6667
+KH,Keyhole,AN,Anacapa Island,Rock,2006,Inside,83.5
+KH,Keyhole,AN,Anacapa Island,Rock,2007,Inside,74.1667
+KH,Keyhole,AN,Anacapa Island,Rock,2008,Inside,80.5
+KH,Keyhole,AN,Anacapa Island,Rock,2009,Inside,80.5
+KH,Keyhole,AN,Anacapa Island,Rock,2010,Inside,77.5
+KH,Keyhole,AN,Anacapa Island,Rock,2011,Inside,79.1667
+KH,Keyhole,AN,Anacapa Island,Rock,2012,Inside,75
+KH,Keyhole,AN,Anacapa Island,Rock,2013,Inside,75.1667
+KH,Keyhole,AN,Anacapa Island,Rock,2014,Inside,81.1667
+KH,Keyhole,AN,Anacapa Island,Rock,2015,Inside,67.1667
+KH,Keyhole,AN,Anacapa Island,Rock,2016,Inside,76.3333
+KH,Keyhole,AN,Anacapa Island,Rock,2017,Inside,72
+KH,Keyhole,AN,Anacapa Island,Rock,2018,Inside,66.5
+KH,Keyhole,AN,Anacapa Island,Rock,2019,Inside,73
+KH,Keyhole,AN,Anacapa Island,Sand,2005,Inside,13
+KH,Keyhole,AN,Anacapa Island,Sand,2006,Inside,10.6667
+KH,Keyhole,AN,Anacapa Island,Sand,2007,Inside,14.3333
+KH,Keyhole,AN,Anacapa Island,Sand,2008,Inside,14
+KH,Keyhole,AN,Anacapa Island,Sand,2009,Inside,14.5
+KH,Keyhole,AN,Anacapa Island,Sand,2010,Inside,10.6667
+KH,Keyhole,AN,Anacapa Island,Sand,2011,Inside,10.8333
+KH,Keyhole,AN,Anacapa Island,Sand,2012,Inside,13.1667
+KH,Keyhole,AN,Anacapa Island,Sand,2013,Inside,7.6667
+KH,Keyhole,AN,Anacapa Island,Sand,2014,Inside,12.5
+KH,Keyhole,AN,Anacapa Island,Sand,2015,Inside,5.3333
+KH,Keyhole,AN,Anacapa Island,Sand,2016,Inside,5.3333
+KH,Keyhole,AN,Anacapa Island,Sand,2017,Inside,14.1667
+KH,Keyhole,AN,Anacapa Island,Sand,2018,Inside,11.6667
+KH,Keyhole,AN,Anacapa Island,Sand,2019,Inside,12.3333
+LC,Landing Cove,AN,Anacapa Island,Cobble,1982,Inside,20.6
+LC,Landing Cove,AN,Anacapa Island,Cobble,1983,Inside,30.75
+LC,Landing Cove,AN,Anacapa Island,Cobble,1984,Inside,26
+LC,Landing Cove,AN,Anacapa Island,Cobble,1985,Inside,31.8
+LC,Landing Cove,AN,Anacapa Island,Cobble,1986,Inside,27.8
+LC,Landing Cove,AN,Anacapa Island,Cobble,1987,Inside,14
+LC,Landing Cove,AN,Anacapa Island,Cobble,1988,Inside,24.6
+LC,Landing Cove,AN,Anacapa Island,Cobble,1989,Inside,29.2
+LC,Landing Cove,AN,Anacapa Island,Cobble,1990,Inside,4.5
+LC,Landing Cove,AN,Anacapa Island,Cobble,1991,Inside,12.3
+LC,Landing Cove,AN,Anacapa Island,Cobble,1992,Inside,10.6
+LC,Landing Cove,AN,Anacapa Island,Cobble,1993,Inside,18.8
+LC,Landing Cove,AN,Anacapa Island,Cobble,1994,Inside,12.8
+LC,Landing Cove,AN,Anacapa Island,Cobble,1995,Inside,15.7
+LC,Landing Cove,AN,Anacapa Island,Cobble,1996,Inside,12
+LC,Landing Cove,AN,Anacapa Island,Cobble,1997,Inside,11.8333
+LC,Landing Cove,AN,Anacapa Island,Cobble,1998,Inside,22.1667
+LC,Landing Cove,AN,Anacapa Island,Cobble,1999,Inside,14.5
+LC,Landing Cove,AN,Anacapa Island,Cobble,2000,Inside,21.5
+LC,Landing Cove,AN,Anacapa Island,Cobble,2001,Inside,29.5
+LC,Landing Cove,AN,Anacapa Island,Cobble,2002,Inside,15
+LC,Landing Cove,AN,Anacapa Island,Cobble,2003,Inside,17.8333
+LC,Landing Cove,AN,Anacapa Island,Cobble,2004,Inside,23.5
+LC,Landing Cove,AN,Anacapa Island,Cobble,2005,Inside,26
+LC,Landing Cove,AN,Anacapa Island,Cobble,2006,Inside,9.8333
+LC,Landing Cove,AN,Anacapa Island,Cobble,2007,Inside,5.5
+LC,Landing Cove,AN,Anacapa Island,Cobble,2008,Inside,24.8333
+LC,Landing Cove,AN,Anacapa Island,Cobble,2009,Inside,14.8333
+LC,Landing Cove,AN,Anacapa Island,Cobble,2010,Inside,15
+LC,Landing Cove,AN,Anacapa Island,Cobble,2011,Inside,30.1667
+LC,Landing Cove,AN,Anacapa Island,Cobble,2012,Inside,8.5
+LC,Landing Cove,AN,Anacapa Island,Cobble,2013,Inside,14.6667
+LC,Landing Cove,AN,Anacapa Island,Cobble,2014,Inside,17.6667
+LC,Landing Cove,AN,Anacapa Island,Cobble,2015,Inside,22.3333
+LC,Landing Cove,AN,Anacapa Island,Cobble,2016,Inside,15.6667
+LC,Landing Cove,AN,Anacapa Island,Cobble,2017,Inside,15.6667
+LC,Landing Cove,AN,Anacapa Island,Cobble,2018,Inside,21
+LC,Landing Cove,AN,Anacapa Island,Cobble,2019,Inside,16.1667
+LC,Landing Cove,AN,Anacapa Island,Rock,1982,Inside,75
+LC,Landing Cove,AN,Anacapa Island,Rock,1983,Inside,61
+LC,Landing Cove,AN,Anacapa Island,Rock,1984,Inside,72
+LC,Landing Cove,AN,Anacapa Island,Rock,1985,Inside,61.6
+LC,Landing Cove,AN,Anacapa Island,Rock,1986,Inside,64.3
+LC,Landing Cove,AN,Anacapa Island,Rock,1987,Inside,75.3
+LC,Landing Cove,AN,Anacapa Island,Rock,1988,Inside,63.1
+LC,Landing Cove,AN,Anacapa Island,Rock,1989,Inside,62.3
+LC,Landing Cove,AN,Anacapa Island,Rock,1990,Inside,80
+LC,Landing Cove,AN,Anacapa Island,Rock,1991,Inside,75.6
+LC,Landing Cove,AN,Anacapa Island,Rock,1992,Inside,77.4
+LC,Landing Cove,AN,Anacapa Island,Rock,1993,Inside,70.8
+LC,Landing Cove,AN,Anacapa Island,Rock,1994,Inside,78.5
+LC,Landing Cove,AN,Anacapa Island,Rock,1995,Inside,73.4
+LC,Landing Cove,AN,Anacapa Island,Rock,1996,Inside,79.6667
+LC,Landing Cove,AN,Anacapa Island,Rock,1997,Inside,75.8333
+LC,Landing Cove,AN,Anacapa Island,Rock,1998,Inside,65.8333
+LC,Landing Cove,AN,Anacapa Island,Rock,1999,Inside,78
+LC,Landing Cove,AN,Anacapa Island,Rock,2000,Inside,70.5
+LC,Landing Cove,AN,Anacapa Island,Rock,2001,Inside,57.3333
+LC,Landing Cove,AN,Anacapa Island,Rock,2002,Inside,72.6667
+LC,Landing Cove,AN,Anacapa Island,Rock,2003,Inside,72.6667
+LC,Landing Cove,AN,Anacapa Island,Rock,2004,Inside,58
+LC,Landing Cove,AN,Anacapa Island,Rock,2005,Inside,73.1667
+LC,Landing Cove,AN,Anacapa Island,Rock,2006,Inside,85.6667
+LC,Landing Cove,AN,Anacapa Island,Rock,2007,Inside,89.1667
+LC,Landing Cove,AN,Anacapa Island,Rock,2008,Inside,67.8333
+LC,Landing Cove,AN,Anacapa Island,Rock,2009,Inside,80.3333
+LC,Landing Cove,AN,Anacapa Island,Rock,2010,Inside,74.1667
+LC,Landing Cove,AN,Anacapa Island,Rock,2011,Inside,65.6667
+LC,Landing Cove,AN,Anacapa Island,Rock,2012,Inside,80.1667
+LC,Landing Cove,AN,Anacapa Island,Rock,2013,Inside,72.6667
+LC,Landing Cove,AN,Anacapa Island,Rock,2014,Inside,74.5
+LC,Landing Cove,AN,Anacapa Island,Rock,2015,Inside,64.8333
+LC,Landing Cove,AN,Anacapa Island,Rock,2016,Inside,67
+LC,Landing Cove,AN,Anacapa Island,Rock,2017,Inside,67.8333
+LC,Landing Cove,AN,Anacapa Island,Rock,2018,Inside,72.6667
+LC,Landing Cove,AN,Anacapa Island,Rock,2019,Inside,75.1667
+LC,Landing Cove,AN,Anacapa Island,Sand,1982,Inside,7.8
+LC,Landing Cove,AN,Anacapa Island,Sand,1983,Inside,0.75
+LC,Landing Cove,AN,Anacapa Island,Sand,1984,Inside,2
+LC,Landing Cove,AN,Anacapa Island,Sand,1985,Inside,6.6
+LC,Landing Cove,AN,Anacapa Island,Sand,1986,Inside,7.9
+LC,Landing Cove,AN,Anacapa Island,Sand,1987,Inside,10.7
+LC,Landing Cove,AN,Anacapa Island,Sand,1988,Inside,12.3
+LC,Landing Cove,AN,Anacapa Island,Sand,1989,Inside,8.5
+LC,Landing Cove,AN,Anacapa Island,Sand,1990,Inside,15.5
+LC,Landing Cove,AN,Anacapa Island,Sand,1991,Inside,12.1
+LC,Landing Cove,AN,Anacapa Island,Sand,1992,Inside,12
+LC,Landing Cove,AN,Anacapa Island,Sand,1993,Inside,10.4
+LC,Landing Cove,AN,Anacapa Island,Sand,1994,Inside,8.7
+LC,Landing Cove,AN,Anacapa Island,Sand,1995,Inside,10.9
+LC,Landing Cove,AN,Anacapa Island,Sand,1996,Inside,8.3333
+LC,Landing Cove,AN,Anacapa Island,Sand,1997,Inside,12.3333
+LC,Landing Cove,AN,Anacapa Island,Sand,1998,Inside,12
+LC,Landing Cove,AN,Anacapa Island,Sand,1999,Inside,7.5
+LC,Landing Cove,AN,Anacapa Island,Sand,2000,Inside,8
+LC,Landing Cove,AN,Anacapa Island,Sand,2001,Inside,13.1667
+LC,Landing Cove,AN,Anacapa Island,Sand,2002,Inside,12.3333
+LC,Landing Cove,AN,Anacapa Island,Sand,2003,Inside,9.5
+LC,Landing Cove,AN,Anacapa Island,Sand,2004,Inside,18.5
+LC,Landing Cove,AN,Anacapa Island,Sand,2005,Inside,0.8333
+LC,Landing Cove,AN,Anacapa Island,Sand,2006,Inside,4.5
+LC,Landing Cove,AN,Anacapa Island,Sand,2007,Inside,5.3333
+LC,Landing Cove,AN,Anacapa Island,Sand,2008,Inside,7.3333
+LC,Landing Cove,AN,Anacapa Island,Sand,2009,Inside,4.8333
+LC,Landing Cove,AN,Anacapa Island,Sand,2010,Inside,10.8333
+LC,Landing Cove,AN,Anacapa Island,Sand,2011,Inside,4.1667
+LC,Landing Cove,AN,Anacapa Island,Sand,2012,Inside,11.3333
+LC,Landing Cove,AN,Anacapa Island,Sand,2013,Inside,12.6667
+LC,Landing Cove,AN,Anacapa Island,Sand,2014,Inside,7.8333
+LC,Landing Cove,AN,Anacapa Island,Sand,2015,Inside,12.8333
+LC,Landing Cove,AN,Anacapa Island,Sand,2016,Inside,17.3333
+LC,Landing Cove,AN,Anacapa Island,Sand,2017,Inside,16.5
+LC,Landing Cove,AN,Anacapa Island,Sand,2018,Inside,6.3333
+LC,Landing Cove,AN,Anacapa Island,Sand,2019,Inside,8.6667
+LH,Lighthouse,AN,Anacapa Island,Cobble,2005,Outside,8.5
+LH,Lighthouse,AN,Anacapa Island,Cobble,2006,Outside,3
+LH,Lighthouse,AN,Anacapa Island,Cobble,2007,Outside,13.5
+LH,Lighthouse,AN,Anacapa Island,Cobble,2008,Outside,9.1667
+LH,Lighthouse,AN,Anacapa Island,Cobble,2009,Outside,8.6667
+LH,Lighthouse,AN,Anacapa Island,Cobble,2010,Outside,16.5
+LH,Lighthouse,AN,Anacapa Island,Cobble,2011,Outside,11.5
+LH,Lighthouse,AN,Anacapa Island,Cobble,2012,Outside,14.6667
+LH,Lighthouse,AN,Anacapa Island,Cobble,2013,Outside,13
+LH,Lighthouse,AN,Anacapa Island,Cobble,2014,Outside,5.6667
+LH,Lighthouse,AN,Anacapa Island,Cobble,2015,Outside,5.6667
+LH,Lighthouse,AN,Anacapa Island,Cobble,2016,Outside,7.1667
+LH,Lighthouse,AN,Anacapa Island,Cobble,2017,Outside,9
+LH,Lighthouse,AN,Anacapa Island,Cobble,2018,Outside,2.6667
+LH,Lighthouse,AN,Anacapa Island,Cobble,2019,Outside,7.3333
+LH,Lighthouse,AN,Anacapa Island,Rock,2005,Outside,77.5
+LH,Lighthouse,AN,Anacapa Island,Rock,2006,Outside,73.6667
+LH,Lighthouse,AN,Anacapa Island,Rock,2007,Outside,65.8333
+LH,Lighthouse,AN,Anacapa Island,Rock,2008,Outside,69.5
+LH,Lighthouse,AN,Anacapa Island,Rock,2009,Outside,85.1667
+LH,Lighthouse,AN,Anacapa Island,Rock,2010,Outside,72
+LH,Lighthouse,AN,Anacapa Island,Rock,2011,Outside,80
+LH,Lighthouse,AN,Anacapa Island,Rock,2012,Outside,73.1667
+LH,Lighthouse,AN,Anacapa Island,Rock,2013,Outside,78.8333
+LH,Lighthouse,AN,Anacapa Island,Rock,2014,Outside,73.6667
+LH,Lighthouse,AN,Anacapa Island,Rock,2015,Outside,68.6667
+LH,Lighthouse,AN,Anacapa Island,Rock,2016,Outside,69.1667
+LH,Lighthouse,AN,Anacapa Island,Rock,2017,Outside,57.5
+LH,Lighthouse,AN,Anacapa Island,Rock,2018,Outside,69.1667
+LH,Lighthouse,AN,Anacapa Island,Rock,2019,Outside,87
+LH,Lighthouse,AN,Anacapa Island,Sand,2005,Outside,14
+LH,Lighthouse,AN,Anacapa Island,Sand,2006,Outside,23.3333
+LH,Lighthouse,AN,Anacapa Island,Sand,2007,Outside,20.6667
+LH,Lighthouse,AN,Anacapa Island,Sand,2008,Outside,21.3333
+LH,Lighthouse,AN,Anacapa Island,Sand,2009,Outside,6.1667
+LH,Lighthouse,AN,Anacapa Island,Sand,2010,Outside,11.5
+LH,Lighthouse,AN,Anacapa Island,Sand,2011,Outside,8.5
+LH,Lighthouse,AN,Anacapa Island,Sand,2012,Outside,12.1667
+LH,Lighthouse,AN,Anacapa Island,Sand,2013,Outside,8.1667
+LH,Lighthouse,AN,Anacapa Island,Sand,2014,Outside,20.6667
+LH,Lighthouse,AN,Anacapa Island,Sand,2015,Outside,25.6667
+LH,Lighthouse,AN,Anacapa Island,Sand,2016,Outside,23.6667
+LH,Lighthouse,AN,Anacapa Island,Sand,2017,Outside,33.5
+LH,Lighthouse,AN,Anacapa Island,Sand,2018,Outside,28.1667
+LH,Lighthouse,AN,Anacapa Island,Sand,2019,Outside,5.6667
+LS,Little Scorpion,SC,Santa Cruz Island,Cobble,2005,Outside,10.8333
+LS,Little Scorpion,SC,Santa Cruz Island,Cobble,2006,Outside,6.3333
+LS,Little Scorpion,SC,Santa Cruz Island,Cobble,2007,Outside,21.1667
+LS,Little Scorpion,SC,Santa Cruz Island,Cobble,2008,Outside,22
+LS,Little Scorpion,SC,Santa Cruz Island,Cobble,2009,Outside,11.8333
+LS,Little Scorpion,SC,Santa Cruz Island,Cobble,2010,Outside,18.1667
+LS,Little Scorpion,SC,Santa Cruz Island,Cobble,2011,Outside,21.3333
+LS,Little Scorpion,SC,Santa Cruz Island,Cobble,2012,Outside,13.8333
+LS,Little Scorpion,SC,Santa Cruz Island,Cobble,2013,Outside,8.5
+LS,Little Scorpion,SC,Santa Cruz Island,Cobble,2014,Outside,9.6667
+LS,Little Scorpion,SC,Santa Cruz Island,Cobble,2015,Outside,5.6667
+LS,Little Scorpion,SC,Santa Cruz Island,Cobble,2016,Outside,8.6667
+LS,Little Scorpion,SC,Santa Cruz Island,Cobble,2017,Outside,11.8333
+LS,Little Scorpion,SC,Santa Cruz Island,Cobble,2018,Outside,7.6667
+LS,Little Scorpion,SC,Santa Cruz Island,Cobble,2019,Outside,12
+LS,Little Scorpion,SC,Santa Cruz Island,Rock,2005,Outside,84.5
+LS,Little Scorpion,SC,Santa Cruz Island,Rock,2006,Outside,80.1667
+LS,Little Scorpion,SC,Santa Cruz Island,Rock,2007,Outside,76.5
+LS,Little Scorpion,SC,Santa Cruz Island,Rock,2008,Outside,75.5
+LS,Little Scorpion,SC,Santa Cruz Island,Rock,2009,Outside,78.1667
+LS,Little Scorpion,SC,Santa Cruz Island,Rock,2010,Outside,76.8333
+LS,Little Scorpion,SC,Santa Cruz Island,Rock,2011,Outside,74.8333
+LS,Little Scorpion,SC,Santa Cruz Island,Rock,2012,Outside,85
+LS,Little Scorpion,SC,Santa Cruz Island,Rock,2013,Outside,89.1667
+LS,Little Scorpion,SC,Santa Cruz Island,Rock,2014,Outside,86.6667
+LS,Little Scorpion,SC,Santa Cruz Island,Rock,2015,Outside,91.8333
+LS,Little Scorpion,SC,Santa Cruz Island,Rock,2016,Outside,89.1667
+LS,Little Scorpion,SC,Santa Cruz Island,Rock,2017,Outside,82.8333
+LS,Little Scorpion,SC,Santa Cruz Island,Rock,2018,Outside,90.1667
+LS,Little Scorpion,SC,Santa Cruz Island,Rock,2019,Outside,86.6667
+LS,Little Scorpion,SC,Santa Cruz Island,Sand,2005,Outside,4.6667
+LS,Little Scorpion,SC,Santa Cruz Island,Sand,2006,Outside,13.5
+LS,Little Scorpion,SC,Santa Cruz Island,Sand,2007,Outside,2.3333
+LS,Little Scorpion,SC,Santa Cruz Island,Sand,2008,Outside,2.5
+LS,Little Scorpion,SC,Santa Cruz Island,Sand,2009,Outside,10
+LS,Little Scorpion,SC,Santa Cruz Island,Sand,2010,Outside,5
+LS,Little Scorpion,SC,Santa Cruz Island,Sand,2011,Outside,3.8333
+LS,Little Scorpion,SC,Santa Cruz Island,Sand,2012,Outside,1.1667
+LS,Little Scorpion,SC,Santa Cruz Island,Sand,2013,Outside,2.3333
+LS,Little Scorpion,SC,Santa Cruz Island,Sand,2014,Outside,3.6667
+LS,Little Scorpion,SC,Santa Cruz Island,Sand,2015,Outside,2.5
+LS,Little Scorpion,SC,Santa Cruz Island,Sand,2016,Outside,2.1667
+LS,Little Scorpion,SC,Santa Cruz Island,Sand,2017,Outside,5.3333
+LS,Little Scorpion,SC,Santa Cruz Island,Sand,2018,Outside,2.1667
+LS,Little Scorpion,SC,Santa Cruz Island,Sand,2019,Outside,1.3333
+MM,Miracle Mile,SM,San Miguel Island,Cobble,2003,Outside,5.6667
+MM,Miracle Mile,SM,San Miguel Island,Cobble,2005,Outside,3.8333
+MM,Miracle Mile,SM,San Miguel Island,Cobble,2006,Outside,8.8333
+MM,Miracle Mile,SM,San Miguel Island,Cobble,2007,Outside,3.3333
+MM,Miracle Mile,SM,San Miguel Island,Cobble,2008,Outside,7.8333
+MM,Miracle Mile,SM,San Miguel Island,Cobble,2009,Outside,4.3333
+MM,Miracle Mile,SM,San Miguel Island,Cobble,2010,Outside,6.1667
+MM,Miracle Mile,SM,San Miguel Island,Cobble,2011,Outside,7.6667
+MM,Miracle Mile,SM,San Miguel Island,Cobble,2012,Outside,7.8333
+MM,Miracle Mile,SM,San Miguel Island,Cobble,2013,Outside,3.3333
+MM,Miracle Mile,SM,San Miguel Island,Cobble,2014,Outside,9
+MM,Miracle Mile,SM,San Miguel Island,Cobble,2015,Outside,8.1667
+MM,Miracle Mile,SM,San Miguel Island,Cobble,2016,Outside,9.5
+MM,Miracle Mile,SM,San Miguel Island,Cobble,2017,Outside,10
+MM,Miracle Mile,SM,San Miguel Island,Cobble,2018,Outside,8
+MM,Miracle Mile,SM,San Miguel Island,Cobble,2019,Outside,9.1667
+MM,Miracle Mile,SM,San Miguel Island,Rock,2003,Outside,83.8333
+MM,Miracle Mile,SM,San Miguel Island,Rock,2005,Outside,88.1667
+MM,Miracle Mile,SM,San Miguel Island,Rock,2006,Outside,84.6667
+MM,Miracle Mile,SM,San Miguel Island,Rock,2007,Outside,91.8333
+MM,Miracle Mile,SM,San Miguel Island,Rock,2008,Outside,87
+MM,Miracle Mile,SM,San Miguel Island,Rock,2009,Outside,88.3333
+MM,Miracle Mile,SM,San Miguel Island,Rock,2010,Outside,84
+MM,Miracle Mile,SM,San Miguel Island,Rock,2011,Outside,80.1667
+MM,Miracle Mile,SM,San Miguel Island,Rock,2012,Outside,88.6667
+MM,Miracle Mile,SM,San Miguel Island,Rock,2013,Outside,92.3333
+MM,Miracle Mile,SM,San Miguel Island,Rock,2014,Outside,83.1667
+MM,Miracle Mile,SM,San Miguel Island,Rock,2015,Outside,86.6667
+MM,Miracle Mile,SM,San Miguel Island,Rock,2016,Outside,88.8333
+MM,Miracle Mile,SM,San Miguel Island,Rock,2017,Outside,86.6667
+MM,Miracle Mile,SM,San Miguel Island,Rock,2018,Outside,91.3333
+MM,Miracle Mile,SM,San Miguel Island,Rock,2019,Outside,90.1667
+MM,Miracle Mile,SM,San Miguel Island,Sand,2003,Outside,10.5
+MM,Miracle Mile,SM,San Miguel Island,Sand,2005,Outside,8
+MM,Miracle Mile,SM,San Miguel Island,Sand,2006,Outside,6.5
+MM,Miracle Mile,SM,San Miguel Island,Sand,2007,Outside,4.8333
+MM,Miracle Mile,SM,San Miguel Island,Sand,2008,Outside,5.1667
+MM,Miracle Mile,SM,San Miguel Island,Sand,2009,Outside,7.3333
+MM,Miracle Mile,SM,San Miguel Island,Sand,2010,Outside,9.8333
+MM,Miracle Mile,SM,San Miguel Island,Sand,2011,Outside,12.1667
+MM,Miracle Mile,SM,San Miguel Island,Sand,2012,Outside,3.5
+MM,Miracle Mile,SM,San Miguel Island,Sand,2013,Outside,4.3333
+MM,Miracle Mile,SM,San Miguel Island,Sand,2014,Outside,7.8333
+MM,Miracle Mile,SM,San Miguel Island,Sand,2015,Outside,5.1667
+MM,Miracle Mile,SM,San Miguel Island,Sand,2016,Outside,1.6667
+MM,Miracle Mile,SM,San Miguel Island,Sand,2017,Outside,3.3333
+MM,Miracle Mile,SM,San Miguel Island,Sand,2018,Outside,0.6667
+MM,Miracle Mile,SM,San Miguel Island,Sand,2019,Outside,0.6667
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,1983,Outside,13.25
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,1984,Outside,17.4
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,1985,Outside,21.5
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,1986,Outside,24
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,1987,Outside,22.5
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,1988,Outside,17.8
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,1989,Outside,7.5
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,1990,Outside,14.9
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,1991,Outside,15.3
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,1992,Outside,12.5
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,1993,Outside,10.6
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,1994,Outside,7.2
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,1995,Outside,8.7
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,1996,Outside,15.3333
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,1997,Outside,18.6667
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,1998,Outside,16.1667
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,1999,Outside,11.6667
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,2000,Outside,15.1667
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,2001,Outside,13.3333
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,2002,Outside,23.5
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,2003,Outside,23.3333
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,2004,Outside,9.5
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,2005,Outside,15.5
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,2006,Outside,13.6667
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,2007,Outside,27.1667
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,2008,Outside,21.1667
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,2009,Outside,13.6667
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,2010,Outside,32.1667
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,2011,Outside,17
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,2012,Outside,28.6667
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,2013,Outside,14
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,2014,Outside,16
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,2015,Outside,14
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,2016,Outside,7.8333
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,2017,Outside,11.1667
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,2018,Outside,13
+PB,Pelican Bay,SC,Santa Cruz Island,Cobble,2019,Outside,14.6667
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,1983,Outside,51.5
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,1984,Outside,68.2
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,1985,Outside,49.2
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,1986,Outside,56.5
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,1987,Outside,56.3
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,1988,Outside,63.7
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,1989,Outside,73
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,1990,Outside,63.8
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,1991,Outside,59.1
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,1992,Outside,62.5
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,1993,Outside,61.4
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,1994,Outside,58.7
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,1995,Outside,59.4
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,1996,Outside,56.6667
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,1997,Outside,56.3333
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,1998,Outside,59.8333
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,1999,Outside,59.6667
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,2000,Outside,48.6667
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,2001,Outside,58.3333
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,2002,Outside,57.8333
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,2003,Outside,61.8333
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,2004,Outside,59.3333
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,2005,Outside,56.3333
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,2006,Outside,51.1667
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,2007,Outside,58
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,2008,Outside,53
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,2009,Outside,60.6667
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,2010,Outside,55.6667
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,2011,Outside,41.6667
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,2012,Outside,49.5
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,2013,Outside,37.1667
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,2014,Outside,43.8333
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,2015,Outside,50.5
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,2016,Outside,51.6667
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,2017,Outside,52.5
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,2018,Outside,38.3333
+PB,Pelican Bay,SC,Santa Cruz Island,Rock,2019,Outside,45.6667
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,1983,Outside,21.5
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,1984,Outside,14.4
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,1985,Outside,29.3
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,1986,Outside,19.5
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,1987,Outside,21.2
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,1988,Outside,18.5
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,1989,Outside,19.5
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,1990,Outside,21.2
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,1991,Outside,25.6
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,1992,Outside,24.9
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,1993,Outside,28
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,1994,Outside,34.1
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,1995,Outside,31.9
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,1996,Outside,28
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,1997,Outside,25
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,1998,Outside,24
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,1999,Outside,28.6667
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,2000,Outside,36.1667
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,2001,Outside,28.3333
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,2002,Outside,18.6667
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,2003,Outside,14.8333
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,2004,Outside,31.1667
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,2005,Outside,28.1667
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,2006,Outside,35.1667
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,2007,Outside,14.8333
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,2008,Outside,25.8333
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,2009,Outside,25.6667
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,2010,Outside,12.1667
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,2011,Outside,41.3333
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,2012,Outside,21.8333
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,2013,Outside,48.8333
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,2014,Outside,40.1667
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,2015,Outside,35.5
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,2016,Outside,40.5
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,2017,Outside,36.3333
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,2018,Outside,48.6667
+PB,Pelican Bay,SC,Santa Cruz Island,Sand,2019,Outside,39.6667
+PP,Potato Pasture,SC,Santa Cruz Island,Cobble,2005,Inside,9.3333
+PP,Potato Pasture,SC,Santa Cruz Island,Cobble,2006,Inside,10.1667
+PP,Potato Pasture,SC,Santa Cruz Island,Cobble,2007,Inside,17
+PP,Potato Pasture,SC,Santa Cruz Island,Cobble,2008,Inside,22
+PP,Potato Pasture,SC,Santa Cruz Island,Cobble,2009,Inside,16.3333
+PP,Potato Pasture,SC,Santa Cruz Island,Cobble,2010,Inside,10.1667
+PP,Potato Pasture,SC,Santa Cruz Island,Cobble,2011,Inside,10
+PP,Potato Pasture,SC,Santa Cruz Island,Cobble,2012,Inside,14
+PP,Potato Pasture,SC,Santa Cruz Island,Cobble,2013,Inside,13.1667
+PP,Potato Pasture,SC,Santa Cruz Island,Cobble,2014,Inside,7.8333
+PP,Potato Pasture,SC,Santa Cruz Island,Cobble,2015,Inside,3.3333
+PP,Potato Pasture,SC,Santa Cruz Island,Cobble,2016,Inside,13.1667
+PP,Potato Pasture,SC,Santa Cruz Island,Cobble,2017,Inside,15
+PP,Potato Pasture,SC,Santa Cruz Island,Cobble,2018,Inside,8.6667
+PP,Potato Pasture,SC,Santa Cruz Island,Cobble,2019,Inside,10.8333
+PP,Potato Pasture,SC,Santa Cruz Island,Rock,2005,Inside,79.8333
+PP,Potato Pasture,SC,Santa Cruz Island,Rock,2006,Inside,85.1667
+PP,Potato Pasture,SC,Santa Cruz Island,Rock,2007,Inside,80.3333
+PP,Potato Pasture,SC,Santa Cruz Island,Rock,2008,Inside,73
+PP,Potato Pasture,SC,Santa Cruz Island,Rock,2009,Inside,81.1667
+PP,Potato Pasture,SC,Santa Cruz Island,Rock,2010,Inside,86.5
+PP,Potato Pasture,SC,Santa Cruz Island,Rock,2011,Inside,85.1667
+PP,Potato Pasture,SC,Santa Cruz Island,Rock,2012,Inside,85.3333
+PP,Potato Pasture,SC,Santa Cruz Island,Rock,2013,Inside,85
+PP,Potato Pasture,SC,Santa Cruz Island,Rock,2014,Inside,91.8333
+PP,Potato Pasture,SC,Santa Cruz Island,Rock,2015,Inside,93
+PP,Potato Pasture,SC,Santa Cruz Island,Rock,2016,Inside,84.8333
+PP,Potato Pasture,SC,Santa Cruz Island,Rock,2017,Inside,80.1667
+PP,Potato Pasture,SC,Santa Cruz Island,Rock,2018,Inside,85.5
+PP,Potato Pasture,SC,Santa Cruz Island,Rock,2019,Inside,87.1667
+PP,Potato Pasture,SC,Santa Cruz Island,Sand,2005,Inside,10.8333
+PP,Potato Pasture,SC,Santa Cruz Island,Sand,2006,Inside,4.6667
+PP,Potato Pasture,SC,Santa Cruz Island,Sand,2007,Inside,2.6667
+PP,Potato Pasture,SC,Santa Cruz Island,Sand,2008,Inside,5
+PP,Potato Pasture,SC,Santa Cruz Island,Sand,2009,Inside,2.5
+PP,Potato Pasture,SC,Santa Cruz Island,Sand,2010,Inside,3.3333
+PP,Potato Pasture,SC,Santa Cruz Island,Sand,2011,Inside,4.8333
+PP,Potato Pasture,SC,Santa Cruz Island,Sand,2012,Inside,0.6667
+PP,Potato Pasture,SC,Santa Cruz Island,Sand,2013,Inside,1.8333
+PP,Potato Pasture,SC,Santa Cruz Island,Sand,2014,Inside,0.3333
+PP,Potato Pasture,SC,Santa Cruz Island,Sand,2015,Inside,3.6667
+PP,Potato Pasture,SC,Santa Cruz Island,Sand,2016,Inside,2
+PP,Potato Pasture,SC,Santa Cruz Island,Sand,2017,Inside,4.8333
+PP,Potato Pasture,SC,Santa Cruz Island,Sand,2018,Inside,5.8333
+PP,Potato Pasture,SC,Santa Cruz Island,Sand,2019,Inside,2
+PRF,Pedro Reef,SC,Santa Cruz Island,Cobble,2005,Outside,2.5
+PRF,Pedro Reef,SC,Santa Cruz Island,Cobble,2006,Outside,1.5
+PRF,Pedro Reef,SC,Santa Cruz Island,Cobble,2007,Outside,1.5
+PRF,Pedro Reef,SC,Santa Cruz Island,Cobble,2008,Outside,1.6667
+PRF,Pedro Reef,SC,Santa Cruz Island,Cobble,2009,Outside,6
+PRF,Pedro Reef,SC,Santa Cruz Island,Cobble,2010,Outside,2.3333
+PRF,Pedro Reef,SC,Santa Cruz Island,Cobble,2011,Outside,5.1667
+PRF,Pedro Reef,SC,Santa Cruz Island,Cobble,2012,Outside,1.5
+PRF,Pedro Reef,SC,Santa Cruz Island,Cobble,2013,Outside,3.6667
+PRF,Pedro Reef,SC,Santa Cruz Island,Cobble,2014,Outside,1.5
+PRF,Pedro Reef,SC,Santa Cruz Island,Cobble,2015,Outside,1.3333
+PRF,Pedro Reef,SC,Santa Cruz Island,Cobble,2016,Outside,3
+PRF,Pedro Reef,SC,Santa Cruz Island,Cobble,2017,Outside,0.5
+PRF,Pedro Reef,SC,Santa Cruz Island,Cobble,2018,Outside,4
+PRF,Pedro Reef,SC,Santa Cruz Island,Cobble,2019,Outside,3.1667
+PRF,Pedro Reef,SC,Santa Cruz Island,Rock,2005,Outside,88.1667
+PRF,Pedro Reef,SC,Santa Cruz Island,Rock,2006,Outside,82.8333
+PRF,Pedro Reef,SC,Santa Cruz Island,Rock,2007,Outside,92.5
+PRF,Pedro Reef,SC,Santa Cruz Island,Rock,2008,Outside,80.5
+PRF,Pedro Reef,SC,Santa Cruz Island,Rock,2009,Outside,87.6667
+PRF,Pedro Reef,SC,Santa Cruz Island,Rock,2010,Outside,93.1667
+PRF,Pedro Reef,SC,Santa Cruz Island,Rock,2011,Outside,77.6667
+PRF,Pedro Reef,SC,Santa Cruz Island,Rock,2012,Outside,95
+PRF,Pedro Reef,SC,Santa Cruz Island,Rock,2013,Outside,78.3333
+PRF,Pedro Reef,SC,Santa Cruz Island,Rock,2014,Outside,75.6667
+PRF,Pedro Reef,SC,Santa Cruz Island,Rock,2015,Outside,78.5
+PRF,Pedro Reef,SC,Santa Cruz Island,Rock,2016,Outside,80.8333
+PRF,Pedro Reef,SC,Santa Cruz Island,Rock,2017,Outside,94.5
+PRF,Pedro Reef,SC,Santa Cruz Island,Rock,2018,Outside,80.3333
+PRF,Pedro Reef,SC,Santa Cruz Island,Rock,2019,Outside,95.8333
+PRF,Pedro Reef,SC,Santa Cruz Island,Sand,2005,Outside,9.3333
+PRF,Pedro Reef,SC,Santa Cruz Island,Sand,2006,Outside,15.6667
+PRF,Pedro Reef,SC,Santa Cruz Island,Sand,2007,Outside,6
+PRF,Pedro Reef,SC,Santa Cruz Island,Sand,2008,Outside,17.8333
+PRF,Pedro Reef,SC,Santa Cruz Island,Sand,2009,Outside,6.3333
+PRF,Pedro Reef,SC,Santa Cruz Island,Sand,2010,Outside,4.5
+PRF,Pedro Reef,SC,Santa Cruz Island,Sand,2011,Outside,17.1667
+PRF,Pedro Reef,SC,Santa Cruz Island,Sand,2012,Outside,3.5
+PRF,Pedro Reef,SC,Santa Cruz Island,Sand,2013,Outside,18
+PRF,Pedro Reef,SC,Santa Cruz Island,Sand,2014,Outside,22.8333
+PRF,Pedro Reef,SC,Santa Cruz Island,Sand,2015,Outside,20.1667
+PRF,Pedro Reef,SC,Santa Cruz Island,Sand,2016,Outside,16.1667
+PRF,Pedro Reef,SC,Santa Cruz Island,Sand,2017,Outside,5
+PRF,Pedro Reef,SC,Santa Cruz Island,Sand,2018,Outside,15.6667
+PRF,Pedro Reef,SC,Santa Cruz Island,Sand,2019,Outside,1
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,1983,Outside,14.75
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,1984,Outside,5.6
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,1985,Outside,9.5
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,1986,Outside,14.7
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,1987,Outside,16.1
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,1988,Outside,10.2
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,1989,Outside,10
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,1990,Outside,6.1
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,1991,Outside,6.9
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,1992,Outside,10.8
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,1993,Outside,5
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,1994,Outside,5.8
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,1995,Outside,9.2
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,1996,Outside,14.3333
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,1997,Outside,16.6667
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,1998,Outside,14.1667
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,1999,Outside,14
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,2000,Outside,13.8333
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,2001,Outside,17.6667
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,2002,Outside,24.3333
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,2003,Outside,15
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,2004,Outside,9.1667
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,2005,Outside,7.3333
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,2006,Outside,10.5
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,2007,Outside,15.1667
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,2008,Outside,14.1667
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,2009,Outside,5.5
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,2010,Outside,13.5
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,2011,Outside,9.1667
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,2012,Outside,10.3333
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,2013,Outside,17.3333
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,2014,Outside,17
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,2015,Outside,5.5
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,2016,Outside,10.5
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,2017,Outside,13.1667
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,2018,Outside,11
+RR,Rodes Reef,SR,Santa Rosa Island,Cobble,2019,Outside,12.6667
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,1983,Outside,77.5
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,1984,Outside,92.4
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,1985,Outside,84.9
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,1986,Outside,78.7
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,1987,Outside,79
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,1988,Outside,77.4
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,1989,Outside,84.7
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,1990,Outside,84.1
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,1991,Outside,80.4
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,1992,Outside,80.3
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,1993,Outside,82.3
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,1994,Outside,74.7
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,1995,Outside,71.6
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,1996,Outside,78
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,1997,Outside,70
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,1998,Outside,81.8333
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,1999,Outside,84.1667
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,2000,Outside,84.5
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,2001,Outside,81.8333
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,2002,Outside,74.5
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,2003,Outside,82.6667
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,2004,Outside,87.6667
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,2005,Outside,88.8333
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,2006,Outside,88.6667
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,2007,Outside,77
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,2008,Outside,78.5
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,2009,Outside,89.6667
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,2010,Outside,85.5
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,2011,Outside,84.6667
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,2012,Outside,88.1667
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,2013,Outside,82.3333
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,2014,Outside,82.8333
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,2015,Outside,94
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,2016,Outside,87
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,2017,Outside,85.3333
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,2018,Outside,82
+RR,Rodes Reef,SR,Santa Rosa Island,Rock,2019,Outside,86.8333
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,1983,Outside,3
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,1984,Outside,2
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,1985,Outside,5.6
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,1986,Outside,6.6
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,1987,Outside,4.9
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,1988,Outside,12.4
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,1989,Outside,5.3
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,1990,Outside,9.8
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,1991,Outside,12.7
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,1992,Outside,8.9
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,1993,Outside,12.7
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,1994,Outside,19.5
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,1995,Outside,19.2
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,1996,Outside,7.6667
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,1997,Outside,13.3333
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,1998,Outside,4.1667
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,1999,Outside,1.8333
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,2000,Outside,1.6667
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,2001,Outside,0.5
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,2002,Outside,1.1667
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,2003,Outside,2.3333
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,2004,Outside,3.1667
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,2005,Outside,3.8333
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,2006,Outside,0.8333
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,2007,Outside,7.8333
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,2008,Outside,7.3333
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,2009,Outside,4.8333
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,2010,Outside,1
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,2011,Outside,6.1667
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,2012,Outside,1.5
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,2013,Outside,0.3333
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,2014,Outside,0.1667
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,2015,Outside,0.5
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,2016,Outside,2.5
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,2017,Outside,1.5
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,2018,Outside,0.3333
+RR,Rodes Reef,SR,Santa Rosa Island,Sand,2019,Outside,0.5
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,1982,Inside,2.8
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,1983,Inside,24.75
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,1984,Inside,9.8
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,1985,Inside,9.1
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,1986,Inside,6.9
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,1987,Inside,12.6
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,1988,Inside,3.1
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,1989,Inside,7.4
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,1990,Inside,6.6
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,1991,Inside,4.2
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,1992,Inside,0.4
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,1993,Inside,1.2
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,1994,Inside,1.1
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,1995,Inside,2.5
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,1996,Inside,6.8333
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,1997,Inside,2
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,1998,Inside,2.1667
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,1999,Inside,4
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,2000,Inside,2.5
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,2001,Inside,9.8333
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,2002,Inside,5.1667
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,2003,Inside,3.5
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,2004,Inside,0.5
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,2005,Inside,5.5
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,2006,Inside,3.6667
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,2007,Inside,1.8333
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,2008,Inside,1.8333
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,2009,Inside,2.3333
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,2010,Inside,0.6667
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,2011,Inside,5.6667
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,2012,Inside,1.6667
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,2013,Inside,2.8333
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,2014,Inside,5.5
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,2015,Inside,1.5
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,2016,Inside,5.1667
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,2017,Inside,2.8333
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,2018,Inside,2.5
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Cobble,2019,Inside,9.5
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,1982,Inside,82.6
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,1983,Inside,71.25
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,1984,Inside,84.2
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,1985,Inside,82.4
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,1986,Inside,79.9
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,1987,Inside,76.6
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,1988,Inside,86.2
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,1989,Inside,84.6
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,1990,Inside,83.9
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,1991,Inside,83.9
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,1992,Inside,89.6
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,1993,Inside,89.8
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,1994,Inside,78.9
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,1995,Inside,82.5
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,1996,Inside,82
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,1997,Inside,81.6667
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,1998,Inside,87.1667
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,1999,Inside,82.8333
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,2000,Inside,88.1667
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,2001,Inside,80
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,2002,Inside,86
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,2003,Inside,82.1667
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,2004,Inside,82.3333
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,2005,Inside,73.6667
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,2006,Inside,79.8333
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,2007,Inside,76.3333
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,2008,Inside,88.5
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,2009,Inside,89.3333
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,2010,Inside,73.5
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,2011,Inside,80
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,2012,Inside,92
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,2013,Inside,82.8333
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,2014,Inside,80.5
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,2015,Inside,82
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,2016,Inside,80.1667
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,2017,Inside,83
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,2018,Inside,75.5
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Rock,2019,Inside,87.3333
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,1982,Inside,14.2
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,1983,Inside,3.25
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,1984,Inside,6
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,1985,Inside,8.5
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,1986,Inside,12.2
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,1987,Inside,10.8
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,1988,Inside,9.5
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,1989,Inside,8
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,1990,Inside,9.5
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,1991,Inside,11.9
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,1992,Inside,10
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,1993,Inside,9
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,1994,Inside,20
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,1995,Inside,15
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,1996,Inside,11.1667
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,1997,Inside,16.3333
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,1998,Inside,10.6667
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,1999,Inside,13.1667
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,2000,Inside,9.3333
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,2001,Inside,10.1667
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,2002,Inside,8.8333
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,2003,Inside,14.3333
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,2004,Inside,17.1667
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,2005,Inside,20.8333
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,2006,Inside,16.5
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,2007,Inside,21.8333
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,2008,Inside,9.6667
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,2009,Inside,8.3333
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,2010,Inside,25.8333
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,2011,Inside,14.3333
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,2012,Inside,6.3333
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,2013,Inside,14.3333
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,2014,Inside,14
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,2015,Inside,16.5
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,2016,Inside,14.6667
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,2017,Inside,14.1667
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,2018,Inside,22
+SA,Scorpion Anchorage,SC,Santa Cruz Island,Sand,2019,Inside,3.1667
+SER,Southeast Reef,SB,Santa Barbara Island,Cobble,2005,Inside,7.3333
+SER,Southeast Reef,SB,Santa Barbara Island,Cobble,2006,Inside,10.1667
+SER,Southeast Reef,SB,Santa Barbara Island,Cobble,2007,Inside,5.6667
+SER,Southeast Reef,SB,Santa Barbara Island,Cobble,2008,Inside,4.3333
+SER,Southeast Reef,SB,Santa Barbara Island,Cobble,2009,Inside,3.6667
+SER,Southeast Reef,SB,Santa Barbara Island,Cobble,2010,Inside,2.6667
+SER,Southeast Reef,SB,Santa Barbara Island,Cobble,2011,Inside,7.1667
+SER,Southeast Reef,SB,Santa Barbara Island,Cobble,2012,Inside,4.3333
+SER,Southeast Reef,SB,Santa Barbara Island,Cobble,2013,Inside,4.8333
+SER,Southeast Reef,SB,Santa Barbara Island,Cobble,2014,Inside,4.8333
+SER,Southeast Reef,SB,Santa Barbara Island,Cobble,2015,Inside,4
+SER,Southeast Reef,SB,Santa Barbara Island,Cobble,2016,Inside,5.8333
+SER,Southeast Reef,SB,Santa Barbara Island,Cobble,2017,Inside,9.8333
+SER,Southeast Reef,SB,Santa Barbara Island,Cobble,2018,Inside,9.8333
+SER,Southeast Reef,SB,Santa Barbara Island,Cobble,2019,Inside,5.3333
+SER,Southeast Reef,SB,Santa Barbara Island,Rock,2005,Inside,83.1667
+SER,Southeast Reef,SB,Santa Barbara Island,Rock,2006,Inside,85
+SER,Southeast Reef,SB,Santa Barbara Island,Rock,2007,Inside,92.3333
+SER,Southeast Reef,SB,Santa Barbara Island,Rock,2008,Inside,94.6667
+SER,Southeast Reef,SB,Santa Barbara Island,Rock,2009,Inside,88.5
+SER,Southeast Reef,SB,Santa Barbara Island,Rock,2010,Inside,94.5
+SER,Southeast Reef,SB,Santa Barbara Island,Rock,2011,Inside,91.5
+SER,Southeast Reef,SB,Santa Barbara Island,Rock,2012,Inside,85.6667
+SER,Southeast Reef,SB,Santa Barbara Island,Rock,2013,Inside,91.8333
+SER,Southeast Reef,SB,Santa Barbara Island,Rock,2014,Inside,90.6667
+SER,Southeast Reef,SB,Santa Barbara Island,Rock,2015,Inside,94.3333
+SER,Southeast Reef,SB,Santa Barbara Island,Rock,2016,Inside,90.6667
+SER,Southeast Reef,SB,Santa Barbara Island,Rock,2017,Inside,90
+SER,Southeast Reef,SB,Santa Barbara Island,Rock,2018,Inside,88.6667
+SER,Southeast Reef,SB,Santa Barbara Island,Rock,2019,Inside,92
+SER,Southeast Reef,SB,Santa Barbara Island,Sand,2005,Inside,9.5
+SER,Southeast Reef,SB,Santa Barbara Island,Sand,2006,Inside,4.8333
+SER,Southeast Reef,SB,Santa Barbara Island,Sand,2007,Inside,2
+SER,Southeast Reef,SB,Santa Barbara Island,Sand,2008,Inside,1
+SER,Southeast Reef,SB,Santa Barbara Island,Sand,2009,Inside,7.8333
+SER,Southeast Reef,SB,Santa Barbara Island,Sand,2010,Inside,2.8333
+SER,Southeast Reef,SB,Santa Barbara Island,Sand,2011,Inside,1.3333
+SER,Southeast Reef,SB,Santa Barbara Island,Sand,2012,Inside,10
+SER,Southeast Reef,SB,Santa Barbara Island,Sand,2013,Inside,3.3333
+SER,Southeast Reef,SB,Santa Barbara Island,Sand,2014,Inside,4.5
+SER,Southeast Reef,SB,Santa Barbara Island,Sand,2015,Inside,1.6667
+SER,Southeast Reef,SB,Santa Barbara Island,Sand,2016,Inside,3.5
+SER,Southeast Reef,SB,Santa Barbara Island,Sand,2017,Inside,0.1667
+SER,Southeast Reef,SB,Santa Barbara Island,Sand,2018,Inside,1.5
+SER,Southeast Reef,SB,Santa Barbara Island,Sand,2019,Inside,2.6667
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,1982,Inside,10.2
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,1983,Inside,13.25
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,1984,Inside,6.6
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,1985,Inside,8.7
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,1986,Inside,7.4
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,1987,Inside,6.9
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,1988,Inside,5.1
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,1989,Inside,8.4
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,1990,Inside,8.1
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,1991,Inside,3.1
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,1992,Inside,7.7
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,1993,Inside,2.9
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,1994,Inside,5.2
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,1995,Inside,8.6
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,1996,Inside,2.5
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,1997,Inside,0
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,1998,Inside,3.6667
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,1999,Inside,7
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,2000,Inside,5.6667
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,2001,Inside,3.6667
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,2002,Inside,6.5
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,2003,Inside,2.5
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,2004,Inside,3.8333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,2005,Inside,3.3333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,2006,Inside,2.8333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,2007,Inside,3.3333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,2008,Inside,4.6667
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,2009,Inside,2.8333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,2010,Inside,6.8333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,2011,Inside,5.3333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,2012,Inside,7.8333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,2013,Inside,5.1667
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,2014,Inside,5.3333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,2015,Inside,10.3333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,2016,Inside,4.6667
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,2017,Inside,6.6667
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,2018,Inside,6.1667
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Cobble,2019,Inside,16.5
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,1982,Inside,72.4
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,1983,Inside,77.25
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,1984,Inside,82.2
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,1985,Inside,78.5
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,1986,Inside,78.9
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,1987,Inside,78.6
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,1988,Inside,86.1
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,1989,Inside,85.1
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,1990,Inside,78.2
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,1991,Inside,76.3
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,1992,Inside,83
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,1993,Inside,86.8
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,1994,Inside,82.3
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,1995,Inside,77
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,1996,Inside,87
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,1997,Inside,88.8333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,1998,Inside,86.3333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,1999,Inside,88.5
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,2000,Inside,80.1667
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,2001,Inside,83.5
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,2002,Inside,78.5
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,2003,Inside,77.1667
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,2004,Inside,85.8333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,2005,Inside,84.8333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,2006,Inside,82.8333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,2007,Inside,89.8333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,2008,Inside,89.6667
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,2009,Inside,90.6667
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,2010,Inside,84.1667
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,2011,Inside,80.3333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,2012,Inside,88.3333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,2013,Inside,89
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,2014,Inside,77.8333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,2015,Inside,81.8333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,2016,Inside,88.1667
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,2017,Inside,88
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,2018,Inside,91.1667
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Rock,2019,Inside,79.8333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,1982,Inside,17.4
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,1983,Inside,3.25
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,1984,Inside,11
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,1985,Inside,12.8
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,1986,Inside,13.7
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,1987,Inside,14.4
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,1988,Inside,8.8
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,1989,Inside,6.5
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,1990,Inside,13.7
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,1991,Inside,20.6
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,1992,Inside,9.3
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,1993,Inside,10.3
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,1994,Inside,12.5
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,1995,Inside,14.4
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,1996,Inside,10.5
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,1997,Inside,11.1667
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,1998,Inside,10
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,1999,Inside,4.5
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,2000,Inside,14.1667
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,2001,Inside,12.8333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,2002,Inside,15
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,2003,Inside,20.3333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,2004,Inside,10.3333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,2005,Inside,11.8333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,2006,Inside,14.3333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,2007,Inside,6.8333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,2008,Inside,5.6667
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,2009,Inside,6.5
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,2010,Inside,9
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,2011,Inside,14.3333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,2012,Inside,3.8333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,2013,Inside,5.8333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,2014,Inside,16.8333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,2015,Inside,7.8333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,2016,Inside,7.1667
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,2017,Inside,5.3333
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,2018,Inside,2.6667
+SESL,SE Sea Lion Rookery,SB,Santa Barbara Island,Sand,2019,Inside,3.6667
+SP,South Point,SR,Santa Rosa Island,Cobble,2005,Inside,1.6667
+SP,South Point,SR,Santa Rosa Island,Cobble,2006,Inside,1.5
+SP,South Point,SR,Santa Rosa Island,Cobble,2007,Inside,0.6667
+SP,South Point,SR,Santa Rosa Island,Cobble,2008,Inside,1.1667
+SP,South Point,SR,Santa Rosa Island,Cobble,2009,Inside,1.3333
+SP,South Point,SR,Santa Rosa Island,Cobble,2010,Inside,1.6667
+SP,South Point,SR,Santa Rosa Island,Cobble,2011,Inside,0
+SP,South Point,SR,Santa Rosa Island,Cobble,2012,Inside,1.5
+SP,South Point,SR,Santa Rosa Island,Cobble,2013,Inside,0.8333
+SP,South Point,SR,Santa Rosa Island,Cobble,2014,Inside,0.5
+SP,South Point,SR,Santa Rosa Island,Cobble,2015,Inside,0.3333
+SP,South Point,SR,Santa Rosa Island,Cobble,2016,Inside,0.1667
+SP,South Point,SR,Santa Rosa Island,Cobble,2017,Inside,1
+SP,South Point,SR,Santa Rosa Island,Cobble,2018,Inside,0.6667
+SP,South Point,SR,Santa Rosa Island,Cobble,2019,Inside,0
+SP,South Point,SR,Santa Rosa Island,Rock,2005,Inside,91.8333
+SP,South Point,SR,Santa Rosa Island,Rock,2006,Inside,90.5
+SP,South Point,SR,Santa Rosa Island,Rock,2007,Inside,78.6667
+SP,South Point,SR,Santa Rosa Island,Rock,2008,Inside,94.8333
+SP,South Point,SR,Santa Rosa Island,Rock,2009,Inside,89.8333
+SP,South Point,SR,Santa Rosa Island,Rock,2010,Inside,89.1667
+SP,South Point,SR,Santa Rosa Island,Rock,2011,Inside,91.5
+SP,South Point,SR,Santa Rosa Island,Rock,2012,Inside,78.5
+SP,South Point,SR,Santa Rosa Island,Rock,2013,Inside,85.8333
+SP,South Point,SR,Santa Rosa Island,Rock,2014,Inside,95.6667
+SP,South Point,SR,Santa Rosa Island,Rock,2015,Inside,78.1667
+SP,South Point,SR,Santa Rosa Island,Rock,2016,Inside,73
+SP,South Point,SR,Santa Rosa Island,Rock,2017,Inside,50.8333
+SP,South Point,SR,Santa Rosa Island,Rock,2018,Inside,67.1667
+SP,South Point,SR,Santa Rosa Island,Rock,2019,Inside,70.8333
+SP,South Point,SR,Santa Rosa Island,Sand,2005,Inside,6.5
+SP,South Point,SR,Santa Rosa Island,Sand,2006,Inside,8
+SP,South Point,SR,Santa Rosa Island,Sand,2007,Inside,20.6667
+SP,South Point,SR,Santa Rosa Island,Sand,2008,Inside,4
+SP,South Point,SR,Santa Rosa Island,Sand,2009,Inside,8.8333
+SP,South Point,SR,Santa Rosa Island,Sand,2010,Inside,9.1667
+SP,South Point,SR,Santa Rosa Island,Sand,2011,Inside,8.5
+SP,South Point,SR,Santa Rosa Island,Sand,2012,Inside,20
+SP,South Point,SR,Santa Rosa Island,Sand,2013,Inside,13.3333
+SP,South Point,SR,Santa Rosa Island,Sand,2014,Inside,3.8333
+SP,South Point,SR,Santa Rosa Island,Sand,2015,Inside,21.5
+SP,South Point,SR,Santa Rosa Island,Sand,2016,Inside,26.8333
+SP,South Point,SR,Santa Rosa Island,Sand,2017,Inside,48.1667
+SP,South Point,SR,Santa Rosa Island,Sand,2018,Inside,32.1667
+SP,South Point,SR,Santa Rosa Island,Sand,2019,Inside,29.1667
+TC,Trancion Canyon,SR,Santa Rosa Island,Cobble,2005,Inside,0.1667
+TC,Trancion Canyon,SR,Santa Rosa Island,Cobble,2006,Inside,0.5
+TC,Trancion Canyon,SR,Santa Rosa Island,Cobble,2007,Inside,0.6667
+TC,Trancion Canyon,SR,Santa Rosa Island,Cobble,2008,Inside,0.1667
+TC,Trancion Canyon,SR,Santa Rosa Island,Cobble,2009,Inside,1.1667
+TC,Trancion Canyon,SR,Santa Rosa Island,Cobble,2010,Inside,6
+TC,Trancion Canyon,SR,Santa Rosa Island,Cobble,2011,Inside,6.8333
+TC,Trancion Canyon,SR,Santa Rosa Island,Cobble,2012,Inside,4.5
+TC,Trancion Canyon,SR,Santa Rosa Island,Cobble,2013,Inside,1.6667
+TC,Trancion Canyon,SR,Santa Rosa Island,Cobble,2014,Inside,6.1667
+TC,Trancion Canyon,SR,Santa Rosa Island,Cobble,2015,Inside,0.5
+TC,Trancion Canyon,SR,Santa Rosa Island,Cobble,2016,Inside,0.8333
+TC,Trancion Canyon,SR,Santa Rosa Island,Cobble,2017,Inside,1.8333
+TC,Trancion Canyon,SR,Santa Rosa Island,Cobble,2018,Inside,0.8333
+TC,Trancion Canyon,SR,Santa Rosa Island,Cobble,2019,Inside,1
+TC,Trancion Canyon,SR,Santa Rosa Island,Rock,2005,Inside,72.8333
+TC,Trancion Canyon,SR,Santa Rosa Island,Rock,2006,Inside,80.6667
+TC,Trancion Canyon,SR,Santa Rosa Island,Rock,2007,Inside,78.3333
+TC,Trancion Canyon,SR,Santa Rosa Island,Rock,2008,Inside,92.5
+TC,Trancion Canyon,SR,Santa Rosa Island,Rock,2009,Inside,91
+TC,Trancion Canyon,SR,Santa Rosa Island,Rock,2010,Inside,77.3333
+TC,Trancion Canyon,SR,Santa Rosa Island,Rock,2011,Inside,76.1667
+TC,Trancion Canyon,SR,Santa Rosa Island,Rock,2012,Inside,90.6667
+TC,Trancion Canyon,SR,Santa Rosa Island,Rock,2013,Inside,89.3333
+TC,Trancion Canyon,SR,Santa Rosa Island,Rock,2014,Inside,88.1667
+TC,Trancion Canyon,SR,Santa Rosa Island,Rock,2015,Inside,86.6667
+TC,Trancion Canyon,SR,Santa Rosa Island,Rock,2016,Inside,94.1667
+TC,Trancion Canyon,SR,Santa Rosa Island,Rock,2017,Inside,89
+TC,Trancion Canyon,SR,Santa Rosa Island,Rock,2018,Inside,88.6667
+TC,Trancion Canyon,SR,Santa Rosa Island,Rock,2019,Inside,91.3333
+TC,Trancion Canyon,SR,Santa Rosa Island,Sand,2005,Inside,27
+TC,Trancion Canyon,SR,Santa Rosa Island,Sand,2006,Inside,18.8333
+TC,Trancion Canyon,SR,Santa Rosa Island,Sand,2007,Inside,21
+TC,Trancion Canyon,SR,Santa Rosa Island,Sand,2008,Inside,7.3333
+TC,Trancion Canyon,SR,Santa Rosa Island,Sand,2009,Inside,7.8333
+TC,Trancion Canyon,SR,Santa Rosa Island,Sand,2010,Inside,16.6667
+TC,Trancion Canyon,SR,Santa Rosa Island,Sand,2011,Inside,17
+TC,Trancion Canyon,SR,Santa Rosa Island,Sand,2012,Inside,4.8333
+TC,Trancion Canyon,SR,Santa Rosa Island,Sand,2013,Inside,9
+TC,Trancion Canyon,SR,Santa Rosa Island,Sand,2014,Inside,5.6667
+TC,Trancion Canyon,SR,Santa Rosa Island,Sand,2015,Inside,12.8333
+TC,Trancion Canyon,SR,Santa Rosa Island,Sand,2016,Inside,5
+TC,Trancion Canyon,SR,Santa Rosa Island,Sand,2017,Inside,9.1667
+TC,Trancion Canyon,SR,Santa Rosa Island,Sand,2018,Inside,10.5
+TC,Trancion Canyon,SR,Santa Rosa Island,Sand,2019,Inside,7.6667
+WA,Webster's Arch,SB,Santa Barbara Island,Cobble,2005,Outside,9.3333
+WA,Webster's Arch,SB,Santa Barbara Island,Cobble,2006,Outside,10.5
+WA,Webster's Arch,SB,Santa Barbara Island,Cobble,2007,Outside,2.3333
+WA,Webster's Arch,SB,Santa Barbara Island,Cobble,2008,Outside,3.6667
+WA,Webster's Arch,SB,Santa Barbara Island,Cobble,2009,Outside,1.3333
+WA,Webster's Arch,SB,Santa Barbara Island,Cobble,2010,Outside,2.3333
+WA,Webster's Arch,SB,Santa Barbara Island,Cobble,2011,Outside,3
+WA,Webster's Arch,SB,Santa Barbara Island,Cobble,2012,Outside,2.3333
+WA,Webster's Arch,SB,Santa Barbara Island,Cobble,2013,Outside,3.5
+WA,Webster's Arch,SB,Santa Barbara Island,Cobble,2014,Outside,1.6667
+WA,Webster's Arch,SB,Santa Barbara Island,Cobble,2015,Outside,4.8333
+WA,Webster's Arch,SB,Santa Barbara Island,Cobble,2016,Outside,7.1667
+WA,Webster's Arch,SB,Santa Barbara Island,Cobble,2017,Outside,0.8333
+WA,Webster's Arch,SB,Santa Barbara Island,Cobble,2018,Outside,2.5
+WA,Webster's Arch,SB,Santa Barbara Island,Cobble,2019,Outside,4.6667
+WA,Webster's Arch,SB,Santa Barbara Island,Rock,2005,Outside,88.8333
+WA,Webster's Arch,SB,Santa Barbara Island,Rock,2006,Outside,89
+WA,Webster's Arch,SB,Santa Barbara Island,Rock,2007,Outside,97.5
+WA,Webster's Arch,SB,Santa Barbara Island,Rock,2008,Outside,96
+WA,Webster's Arch,SB,Santa Barbara Island,Rock,2009,Outside,98.5
+WA,Webster's Arch,SB,Santa Barbara Island,Rock,2010,Outside,97.6667
+WA,Webster's Arch,SB,Santa Barbara Island,Rock,2011,Outside,97
+WA,Webster's Arch,SB,Santa Barbara Island,Rock,2012,Outside,97.6667
+WA,Webster's Arch,SB,Santa Barbara Island,Rock,2013,Outside,96.5
+WA,Webster's Arch,SB,Santa Barbara Island,Rock,2014,Outside,98.1667
+WA,Webster's Arch,SB,Santa Barbara Island,Rock,2015,Outside,94.3333
+WA,Webster's Arch,SB,Santa Barbara Island,Rock,2016,Outside,92.8333
+WA,Webster's Arch,SB,Santa Barbara Island,Rock,2017,Outside,99.1667
+WA,Webster's Arch,SB,Santa Barbara Island,Rock,2018,Outside,97.5
+WA,Webster's Arch,SB,Santa Barbara Island,Rock,2019,Outside,95
+WA,Webster's Arch,SB,Santa Barbara Island,Sand,2005,Outside,1.8333
+WA,Webster's Arch,SB,Santa Barbara Island,Sand,2006,Outside,0.5
+WA,Webster's Arch,SB,Santa Barbara Island,Sand,2007,Outside,0.1667
+WA,Webster's Arch,SB,Santa Barbara Island,Sand,2008,Outside,0.3333
+WA,Webster's Arch,SB,Santa Barbara Island,Sand,2009,Outside,0.1667
+WA,Webster's Arch,SB,Santa Barbara Island,Sand,2010,Outside,0
+WA,Webster's Arch,SB,Santa Barbara Island,Sand,2011,Outside,0
+WA,Webster's Arch,SB,Santa Barbara Island,Sand,2012,Outside,0
+WA,Webster's Arch,SB,Santa Barbara Island,Sand,2013,Outside,0
+WA,Webster's Arch,SB,Santa Barbara Island,Sand,2014,Outside,0.1667
+WA,Webster's Arch,SB,Santa Barbara Island,Sand,2015,Outside,0.8333
+WA,Webster's Arch,SB,Santa Barbara Island,Sand,2016,Outside,0
+WA,Webster's Arch,SB,Santa Barbara Island,Sand,2017,Outside,0
+WA,Webster's Arch,SB,Santa Barbara Island,Sand,2018,Outside,0
+WA,Webster's Arch,SB,Santa Barbara Island,Sand,2019,Outside,0.3333
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,1982,Outside,12.4
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,1983,Outside,12
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,1984,Outside,2.6
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,1985,Outside,4.9
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,1986,Outside,2.7
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,1987,Outside,4.8
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,1988,Outside,4.1
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,1989,Outside,2.8
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,1990,Outside,2.3
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,1991,Outside,1.2
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,1992,Outside,4.1
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,1993,Outside,3.3
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,1994,Outside,1.6
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,1995,Outside,2.1
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,1996,Outside,2.1667
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,1997,Outside,1.6667
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,1998,Outside,2.3333
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,1999,Outside,3.5
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,2000,Outside,2.3333
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,2001,Outside,6.1667
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,2002,Outside,7.8333
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,2003,Outside,5.3333
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,2004,Outside,4
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,2005,Outside,1.5
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,2006,Outside,2.6667
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,2007,Outside,3.6667
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,2008,Outside,9.8333
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,2009,Outside,0.6667
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,2010,Outside,1.8333
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,2011,Outside,0.1667
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,2012,Outside,13
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,2013,Outside,0.8333
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,2014,Outside,2.1667
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,2015,Outside,0.5
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,2016,Outside,0.6667
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,2017,Outside,1.8333
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,2018,Outside,4.3333
+WL,Wyckoff Ledge,SM,San Miguel Island,Cobble,2019,Outside,0.3333
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,1982,Outside,62.6
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,1983,Outside,57.75
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,1984,Outside,92
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,1985,Outside,84
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,1986,Outside,88.2
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,1987,Outside,70.7
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,1988,Outside,74.7
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,1989,Outside,77.5
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,1990,Outside,74.3
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,1991,Outside,73.4
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,1992,Outside,71.7
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,1993,Outside,67.2
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,1994,Outside,75.9
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,1995,Outside,72
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,1996,Outside,66
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,1997,Outside,71
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,1998,Outside,74.6667
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,1999,Outside,76
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,2000,Outside,67.1667
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,2001,Outside,66.5
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,2002,Outside,73.5
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,2003,Outside,70.6667
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,2004,Outside,66.5
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,2005,Outside,77.6667
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,2006,Outside,89.1667
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,2007,Outside,74.5
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,2008,Outside,75.1667
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,2009,Outside,72.6667
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,2010,Outside,64.1667
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,2011,Outside,68.1667
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,2012,Outside,61.5
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,2013,Outside,71
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,2014,Outside,74.1667
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,2015,Outside,73.1667
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,2016,Outside,75
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,2017,Outside,87.1667
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,2018,Outside,73.1667
+WL,Wyckoff Ledge,SM,San Miguel Island,Rock,2019,Outside,81.6667
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,1982,Outside,25
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,1983,Outside,1.5
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,1984,Outside,5.4
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,1985,Outside,11.1
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,1986,Outside,9.1
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,1987,Outside,24.5
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,1988,Outside,21.2
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,1989,Outside,19.7
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,1990,Outside,23.4
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,1991,Outside,25.4
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,1992,Outside,24.2
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,1993,Outside,29.5
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,1994,Outside,22.5
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,1995,Outside,25.9
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,1996,Outside,31.8333
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,1997,Outside,27.3333
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,1998,Outside,23
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,1999,Outside,20.5
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,2000,Outside,30.5
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,2001,Outside,27.3333
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,2002,Outside,18.6667
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,2003,Outside,24
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,2004,Outside,29.5
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,2005,Outside,20.8333
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,2006,Outside,8.1667
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,2007,Outside,21.8333
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,2008,Outside,15
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,2009,Outside,26.6667
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,2010,Outside,34
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,2011,Outside,31.6667
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,2012,Outside,25.5
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,2013,Outside,28.1667
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,2014,Outside,23.6667
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,2015,Outside,26.3333
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,2016,Outside,24.3333
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,2017,Outside,11
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,2018,Outside,22.5
+WL,Wyckoff Ledge,SM,San Miguel Island,Sand,2019,Outside,18
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,1986,Outside,12.4
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,1987,Outside,16
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,1988,Outside,23
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,1989,Outside,17.8
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,1990,Outside,15.8
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,1991,Outside,12.8
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,1992,Outside,17
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,1993,Outside,12.8
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,1994,Outside,17
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,1995,Outside,10
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,1996,Outside,19.1667
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,1997,Outside,24.5
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,1998,Outside,1.5
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,1999,Outside,10.6667
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,2000,Outside,10.5
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,2001,Outside,17.6667
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,2002,Outside,15
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,2003,Outside,13.1667
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,2004,Outside,9.1667
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,2005,Outside,18.1667
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,2006,Outside,14.1667
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,2007,Outside,16.5
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,2008,Outside,15.6667
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,2009,Outside,23.1667
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,2010,Outside,24.8333
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,2011,Outside,21.1667
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,2012,Outside,17.5
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,2013,Outside,13
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,2014,Outside,19.3333
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,2015,Outside,11.8333
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,2016,Outside,19.8333
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,2017,Outside,8
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,2018,Outside,18.8333
+YB,Yellow Banks,SC,Santa Cruz Island,Cobble,2019,Outside,13.1667
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,1986,Outside,75.2
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,1987,Outside,72.6
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,1988,Outside,63.6
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,1989,Outside,71.3
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,1990,Outside,76.1
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,1991,Outside,76.8
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,1992,Outside,75.6
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,1993,Outside,73.1
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,1994,Outside,69.1
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,1995,Outside,75.2
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,1996,Outside,69
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,1997,Outside,63.5
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,1998,Outside,91.1667
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,1999,Outside,77.6667
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,2000,Outside,76.6667
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,2001,Outside,71.3333
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,2002,Outside,72.8333
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,2003,Outside,77.6667
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,2004,Outside,79.6667
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,2005,Outside,76.5
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,2006,Outside,79.3333
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,2007,Outside,79.5
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,2008,Outside,80.3333
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,2009,Outside,70.1667
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,2010,Outside,74.6667
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,2011,Outside,71.6667
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,2012,Outside,80
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,2013,Outside,81.1667
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,2014,Outside,66
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,2015,Outside,81.5
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,2016,Outside,73.5
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,2017,Outside,86.1667
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,2018,Outside,76
+YB,Yellow Banks,SC,Santa Cruz Island,Rock,2019,Outside,85.8333
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,1986,Outside,12.4
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,1987,Outside,11.4
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,1988,Outside,13.4
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,1989,Outside,10.9
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,1990,Outside,8.1
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,1991,Outside,10.4
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,1992,Outside,7.3
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,1993,Outside,14.1
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,1994,Outside,13.9
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,1995,Outside,14.8
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,1996,Outside,11.8333
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,1997,Outside,12
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,1998,Outside,7.3333
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,1999,Outside,11.6667
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,2000,Outside,12.8333
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,2001,Outside,11
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,2002,Outside,12.1667
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,2003,Outside,9.1667
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,2004,Outside,11.1667
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,2005,Outside,5.3333
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,2006,Outside,6.5
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,2007,Outside,4
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,2008,Outside,4
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,2009,Outside,6.6667
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,2010,Outside,0.5
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,2011,Outside,7.1667
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,2012,Outside,2.5
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,2013,Outside,5.8333
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,2014,Outside,14.6667
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,2015,Outside,6.6667
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,2016,Outside,6.6667
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,2017,Outside,5.8333
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,2018,Outside,5.1667
+YB,Yellow Banks,SC,Santa Cruz Island,Sand,2019,Outside,1
