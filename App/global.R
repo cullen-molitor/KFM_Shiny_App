@@ -27,6 +27,8 @@
   
 }
 
+source('R/modules.R')
+
 { # Species and Trophic Levels   ----
   
   Species_Info <- readr::read_csv("Meta_Data/Species_Complete.csv")
@@ -169,8 +171,7 @@
 }
 
 { # SST Indicies  ----
-  SST_Anomaly_Index <- dplyr::left_join(pdo, oni) %>% 
-    readr::write_csv("Tidy_Data/SST_Anomaly_Index.csv")
+  SST_Anomaly_Index <- readr::read_csv("Tidy_Data/SST_Anomaly_Index.csv")
 }
 
 { # Dive meta data  ----

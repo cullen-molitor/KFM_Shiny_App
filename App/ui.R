@@ -60,15 +60,15 @@ ui <- dashboardPage(
                tabName = 'sizes')
     ),
     tags$head(tags$style(HTML(
-      '.skin-green .main-sidebar {background-color: black;} 
-      .skin-green .main-sidebar .sidebar .sidebar-menu .active a{background-color: lightslategray;}
-      .tabbable > .nav > li > a {background-color: black;  color:white}
-      .tabbable > .nav > li[class=active]    > a {background-color: lightslategray; color:white}'
-        ))),
-  tags$head(tags$style(
-    type = 'text/css', 
-    ".main-header {position: fixed; width:100%;}",
-    ".content {margin-top: 50px;}"))
+      '.skin-green .main-sidebar {background-color: black;}',
+      '.skin-green .main-sidebar .sidebar .sidebar-menu .active a{background-color: lightslategray;}',
+      '.tabbable>.nav>li>a{background-color: black;  color:white}',
+      '.tabbable>.nav>li[class=active]>a{background-color: lightslategray; color:white}'
+    ))),
+    tags$head(tags$style(
+      type = 'text/css',
+      ".main-header {position: fixed; width:100%;}",
+      ".content {margin-top: 50px;}"))
   ),
   dashboardBody( 
     tabItems(
@@ -102,11 +102,11 @@ ui <- dashboardPage(
                      ),
                      column(
                        4, 
-                       includeMarkdown(path = "Text/kelp.md")
+                       includeMarkdown(path = "Text/Species/kelp.md")
                      ),
                      column(
                        4, 
-                       includeMarkdown(path = "Text/kelp.md")
+                       includeMarkdown(path = "Text/Species/kelp.md")
                      )
                    ),
                    tags$hr(),
@@ -118,11 +118,11 @@ ui <- dashboardPage(
                      ),
                      column(
                        4, 
-                       includeMarkdown(path = "Text/urchin.md")
+                       includeMarkdown(path = "Text/Species/urchin.md")
                      ),
                      column(
                        4, 
-                       includeMarkdown(path = "Text/urchin.md")
+                       includeMarkdown(path = "Text/Species/urchin.md")
                      )
                    )
           ),
@@ -140,29 +140,53 @@ ui <- dashboardPage(
         tabName = 'protocols',
         h1("Kelp Forest Monitoring Protocols"),
         tabsetPanel(
-          tabPanel("1 m² Quadrats"
+          tabPanel(
+            "1 m² Quadrats",
+            protocol_UI(id = "1m")
           ),
-          tabPanel("5 m² Quadrats"
+          tabPanel(
+            "5 m² Quadrats",
+            protocol_UI(id = "5m")
           ),
-          tabPanel("Band Transects"
+          tabPanel(
+            "Band Transects",
+            protocol_UI(id = "bands")
           ),
-          tabPanel("RPCs"
+          tabPanel(
+            "RPCs",
+            protocol_UI(id = "rpcs")
           ),
-          tabPanel("NHSF"
+          tabPanel(
+            "NHSF",
+            protocol_UI(id = "nhsf")
           ),
-          tabPanel("ARMs"
+          tabPanel(
+            "ARMs",
+            protocol_UI(id = "arms")
           ),
-          tabPanel("RDFC"
+          tabPanel(
+            "RDFC",
+            protocol_UI(id = "rdfc")
           ),
-          tabPanel("VFT"
+          tabPanel(
+            "VFT",
+            protocol_UI(id = "vft")
           ),
-          tabPanel("FSF"
+          tabPanel(
+            "FSF",
+            protocol_UI(id = "fsf")
           ),
-          tabPanel("Video Transects"
+          tabPanel(
+            "Video Transects",
+            protocol_UI(id = "vtt")
           ),
-          tabPanel("Temp Loggers"
+          tabPanel(
+            "Temp Loggers",
+            protocol_UI(id = "temp")
           ),
-          tabPanel("Species List"
+          tabPanel(
+            "Species List",
+            protocol_UI(id = "species")
           )
         )
       ),
