@@ -87,5 +87,5 @@ Trididemnun opacum,percent cover,5 to 65,NA,0.423,0.95,<.001,22,NA,NA,Reed 2016,
 Megastraea undosa,shell length,NA,6.50E-04,2.823,NA,NA,NA,NA,NA,See L. Gibberosa,wavy turban snail,W(g)=0.00065*L^2.823
 Tegula regina,shell length,NA,6.50E-04,2.823,NA,NA,NA,NA,NA,See L. Gibberosa,queen tegula,W(g)=0.00065*L^2.823
 Macrocystis pyrifera,stipe density,NA,NA,0.008477333,NA,NA,NA,NA,NA,Rassweiler 2018,giant kelp,W(g)=SD*0.008477333*1000
-Haliotis fulgens,shell length,30 to 171,4.20E-04,2.797,0.95,<.001,25,0.2401,1.03,red abalone,green abalone,W(g)=0.00042*L^2.797
-Haliotis corrugata,shell length,30 to 171,4.20E-04,2.797,0.95,<.001,25,0.2401,1.03,red abalone,pink abalone,W(g)=0.00042*L^2.797
+Haliotis fulgens,shell length,30 to 171,4.20E-04,2.797,0.95,<.001,25,0.2401,1.03,See red abalone,green abalone,W(g)=0.00042*L^2.797
+Haliotis corrugata,shell length,30 to 171,4.20E-04,2.797,0.95,<.001,25,0.2401,1.03,See red abalone,pink abalone,W(g)=0.00042*L^2.797

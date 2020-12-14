@@ -1,6 +1,9 @@
 
 { # Library   ----
   
+  library(shiny)
+  library(shinydashboard)
+  library(shinyWidgets)
   library(tidyverse)
   library(tidymodels)
   library(ggpubr)
@@ -26,9 +29,9 @@
 
 { # Species and Trophic Levels   ----
   
-  Species_Info <- readr::read_csv("App/Meta_Data/Species_Complete.csv")
+  Species_Info <- readr::read_csv("Meta_Data/Species_Complete.csv")
   
-  # Mixed_Data_xRef <- readr::read_csv("App/Meta_Data/Mixed_Data_xref.csv")
+  # Mixed_Data_xRef <- readr::read_csv("Meta_Data/Mixed_Data_xref.csv")
   
   Benthic_Biomass_Species <- c(
     "Crassedoma giganteum", "rock scallop",
@@ -123,7 +126,7 @@
 }
 
 { # Island and Site Information   -----
-  Site_Info <- readr::read_csv("App/Meta_Data/Site_Info.csv")
+  Site_Info <- readr::read_csv("Meta_Data/Site_Info.csv")
   
   Island_Colors <- c("San Miguel" = "darkmagenta", "SM" = "darkmagenta", 
                      "Santa Rosa" = "dodgerblue4", "SR" = "dodgerblue4", 
@@ -167,11 +170,11 @@
 
 { # SST Indicies  ----
   SST_Anomaly_Index <- dplyr::left_join(pdo, oni) %>% 
-    readr::write_csv("App/Tidy_Data/SST_Anomaly_Index.csv")
+    readr::write_csv("Tidy_Data/SST_Anomaly_Index.csv")
 }
 
 { # Dive meta data  ----
-  Dive_Meta_Data <- readr::read_csv("App/Meta_Data/Dive_Totals.csv")
+  Dive_Meta_Data <- readr::read_csv("Meta_Data/Dive_Totals.csv")
   
   Total_Dives <- sum(Dive_Meta_Data$Dives)
   
@@ -291,108 +294,6 @@
                      axis.line.x = element_blank(),
                      strip.text = element_text(size = 10, colour = "black", angle = 90))
   }
-}
-
-{ # Benthic Densities   ----
-  Benthic_Density <- readr::read_csv("App/Tidy_Data/Benthic_Density.csv") %>%
-    mutate(IslandName = gsub(" Island", "", IslandName),
-           IslandName = factor(IslandName, levels = MPA_Levels))
-}
-
-# { # Benthic Site level Counts   ----
-#   Benthic_Counts_Wide <- readr::read_csv("Tidy_Data_Dont_Touch/Benthic_Counts.csv")
-# }
-
-
-
-{ # Fish Site level Counts ----
-  Fish_Counts_Wide <- readr::read_csv("Tidy_Data_Dont_Touch/Fish_Counts.csv")
-}
-
-{ # Benthic Plus Fish Counts for Diversity  ----
-  All_Community_Counts_Wide <- Fish_Counts_Wide %>%
-    full_join(Benthic_Counts_Wide) %>%
-    mutate(IslandName = gsub(" Island", "", IslandName),
-           IslandName = factor(IslandName, levels = MPA_Levels))
-}
-
-{ # Benthic Biomass Wide for Models ----
-  Benthic_Biomass_Wide <- readr::read_csv("Tidy_Data_Dont_Touch/Benthic_Biomass_Wide.csv")  %>% 
-    dplyr::mutate(Date = base::as.Date(base::ISOdate(SurveyYear, 1, 1)))
-}
-
-{ # Benthic Biomass Long for Plots  ----
-  Benthic_Biomass_Long <- readr::read_csv("Tidy_Data_Dont_Touch/Benthic_Biomass_Long.csv") %>% 
-    dplyr::mutate(IslandName = factor(IslandName, levels = MPA_Levels))
-}
-
-{ # Original 16 Data  ----
-  Original_16_Biomass_Data <- readr::read_csv("Tidy_Data_Dont_Touch/Original_16_Benthic_Biomass_Long.csv")
-  Original_16_Density_Data <- readr::read_csv("Tidy_Data_Dont_Touch/Original_16_Benthic.csv") 
-  Original_16_VFT_Data <- readr::read_csv("Tidy_Data_Dont_Touch/Original_16_Fish_Counts.csv") 
-  Original_16_rpcs_Data <- readr::read_csv("Tidy_Data_Dont_Touch/Original_16_Percent_Cover.csv")
-}
-
-{ # Fish Biomass Wide for Models   ----
-  Fish_Biomass_Wide <- readr::read_csv("Tidy_Data_Dont_Touch/Fish_Biomass_Wide.csv") %>% 
-    dplyr::mutate(IslandName = factor(IslandName, levels = MPA_Levels),
-                  Date = base::as.Date(base::ISOdate(SurveyYear, 1, 1)))
-}
-
-{ # Fish Biomass Long for Plots  ----
-  Fish_Biomass_Long <- readr::read_csv("Tidy_Data_Dont_Touch/Fish_Biomass_Long.csv") %>% 
-    dplyr::mutate(IslandName = factor(IslandName, levels = MPA_Levels),
-                  CommonName = factor(CommonName))
-}
-
-{ # RPCs Percent Cover Wide  ----
-  RPC_Cover_Wide <- readr::read_csv("Tidy_Data_Dont_Touch/rpcs_Percent_Cover_Wide.csv") %>%
-    dplyr::mutate(IslandName = gsub(" Island", "", IslandName), 
-                  Date = base::as.Date(base::ISOdate(SurveyYear, 1, 1))) %>%
-    dplyr::left_join(annual_mean_oni, by = c("SurveyYear"))
-  names(RPC_Cover_Wide) <- str_replace_all(names(RPC_Cover_Wide), c(" " = "_" , "," = "" ))
-  
-}
-
-{ # Shannon Index Calculation   ----
-  ShannonIndex <- All_Community_Counts_Wide %>%
-    dplyr::select(-IslandCode, -IslandName, -SiteCode, -SiteName, 
-                  -SurveyYear, -ReserveStatus) %>%
-    vegan::diversity()
-  
-  Diversity <- dplyr::select(All_Community_Counts_Wide, IslandCode, IslandName,
-                             SiteCode, SiteName, SurveyYear, ReserveStatus) %>%
-    cbind("Shannon_Index" = ShannonIndex) %>%
-    dplyr::mutate(Date = base::as.Date(base::ISOdate(SurveyYear, 1, 1)),
-                  ReserveStatus = factor(ReserveStatus),
-                  IslandName = factor(IslandName, levels = MPA_Levels),
-                  IslandName = gsub(" Island", "", IslandName)) %>%
-    dplyr::left_join(annual_mean_oni, by = c("SurveyYear"))
-}  
-
-{ # 1-Simpsons Index Calculation and Analyses ----
-  SimpsonIndex <- RPC_Cover_Wide %>%
-    dplyr::select(-IslandCode, -IslandName, -SiteCode, -SiteName, 
-                  -SurveyYear, -ReserveStatus, -Date, -Mean_ONI_ANOM) %>%
-    vegan::diversity(index= "simpson")
-  
-  Simp_Diversity <- dplyr::select(RPC_Cover_Wide, IslandCode, IslandName,
-                                  SiteCode, SiteName, SurveyYear, ReserveStatus) %>%
-    cbind("Simpson_Index" = SimpsonIndex) %>%
-    dplyr::mutate(Date = base::as.Date(base::ISOdate(SurveyYear, 1, 1)),
-                  IslandName = gsub(" Island", "", IslandName),
-                  IslandName = factor(IslandName, levels = MPA_Levels)) %>%
-    dplyr::left_join(annual_mean_oni, by = c("SurveyYear"))
-}  
-
-{ # Mixed Data For Random Forest Model     ----
-  # (% cover, Count, Biomass, Shannon Index, Simpson Index) 
-  
-  All_Mixed_Data_Wide <- readr::read_csv("Tidy_Data_Dont_Touch/All_Mixed_Data_Wide.csv") %>% 
-    dplyr::left_join(dplyr::select(
-      Diversity, SurveyYear, SiteCode, Shannon_Index)) %>% 
-    dplyr::left_join(dplyr::select(
-      Simp_Diversity, SurveyYear, SiteCode, Simpson_Index))
 }
 
 
