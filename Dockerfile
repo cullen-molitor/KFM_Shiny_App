@@ -28,13 +28,13 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
 
 # Install R packages that are required
  # RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('shinydashboard', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('shinyWidgets', repos='http://cran.rstudio.com/')"
  # RUN R -e "install.packages('tidyverse', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('lubridate', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('glue', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('raster', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('ggridges', repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('shinydashboard', repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('shinyWidgets', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('splitstackshape', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('RColorBrewer', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('measurements', repos='http://cran.rstudio.com/')"

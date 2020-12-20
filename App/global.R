@@ -5,25 +5,23 @@
   library(shinydashboard)
   library(shinyWidgets)
   library(tidyverse)
-  library(tidymodels)
+  # library(tidymodels)
   library(ggpubr)
   library(glue)
   library(lubridate)
   library(rmarkdown)
-  library(zoo)
-  library(MASS)
-  library(vegan)
-  library(labdsv)
-  library(lme4)
-  library(car)
-  library(knitr)
-  library(tinytex)
-  library(Cairo)
-  library(ggnewscale)
+  # library(zoo)
+  # library(MASS)
+  # library(vegan)
+  # library(labdsv)
+  # library(lme4)
+  # library(car)
+  # library(ggnewscale)
   library(randomForest)
   library(pdp)
-  library(broom)
   library(scales)
+  library(sf)
+  library(leaflet)
   
 }
 
@@ -137,14 +135,27 @@ source('R/modules.R')
                      "Santa Barbara" = "firebrick2","SB" = "firebrick2", 
                      "Inside" = "green", "Outside" = "red") 
   
-  Island_Levels <- c(
-    "San Miguel", "San Miguel Island", 
-    "Santa Rosa", "Santa Rosa Island", 
-    "Santa Cruz", "Santa Cruz Island", 
-    "Anacapa", "Anacapa Island",  
-    "Santa Barbara", "Santa Barbara Island")
+  Island_Levels_Short <- c(
+    "San Miguel", 
+    "Santa Rosa", 
+    "Santa Cruz", 
+    "Anacapa", 
+    "Santa Barbara")
+  Island_Levels_Long <- c(
+    "San Miguel Island", 
+    "Santa Rosa Island", 
+    "Santa Cruz Island", 
+    "Anacapa Island",  
+    "Santa Barbara Island")
   
-  MPA_Levels <- c("Santa Rosa", "Santa Cruz", "Anacapa",  "Santa Barbara")
+  MPA_Levels_Short <- c("Santa Rosa", 
+                        "Santa Cruz", 
+                        "Anacapa",  
+                        "Santa Barbara")
+  MPA_Levels_Long <- c("Santa Rosa Island",
+                       "Santa Cruz Island", 
+                       "Anacapa Island",  
+                       "Santa Barbara Island")
   
   SiteLevels <- c(
     # San Miguel
@@ -295,6 +306,40 @@ source('R/modules.R')
                      axis.line.x = element_blank(),
                      strip.text = element_text(size = 10, colour = "black", angle = 90))
   }
+}
+
+{ #  Maps_DF   ----
+  
+  mpa <- st_read("GIS_Data/California_Marine_Protected_Areas.shp")
+  
+  mpa <- st_as_sf(mpa)
+  
+  marine <- mpa %>%
+    filter(Type == "SMR" |
+             Type == "FMCA" |
+             Type == "SMCA" |
+             Type == "FMR") %>%
+    mutate(Color = ifelse(Type == "SMR", "red",
+                          ifelse(Type == "SMCA", "blue",
+                                 ifelse(Type == "FMR", "orange", "purple"))))
+  
+  TransectSites <- Site_Info %>% 
+    filter(SiteNumber != 1 & SiteNumber != 5 & SiteNumber != 11) 
+  
+  transects <- st_read("GIS_Data/KFM_Transects_SmoothLine5.shp")  %>%
+    st_as_sf() %>%
+    mutate(geometry = st_transform(geometry, "+proj=longlat +ellps=WGS84 +datum=WGS84"))
+  
+  Transect_Endpoints <- readr::read_csv("GIS_Data/transect_0_100.csv")
+  
+  NPS_boundary <- st_read("GIS_Data/nps_boundary.shp") %>%
+    st_as_sf()
+  
+  CINMS_boundary <- st_read("GIS_Data/cinms_py.shp") %>%
+    st_as_sf()
+  
+  Buoys_List <- readr::read_csv("GIS_Data/Buoy_Stations.csv")
+    
 }
 
 

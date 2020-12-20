@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><metadata>
+<idinfo>
+<citation>
+<citeinfo>
+<title>Map</title>
+</citeinfo>
+</citation>
+<descript>
+<abstract>These data include all of California's marine protected areas (MPAs) as January 1, 2019. This dataset reflects the Department of Fish and Wildlife's best representation of marine protected areas based upon current California Code of Regulations, Title 14, Section 632: Natural Resources, Division 1: FGC- DFG. This dataset is not intended for navigational use or defining legal boundaries.This version includes records for complementary federal marine protected areas at the northern Channel Islands. Details on these areas can be referenced at http://federalregister.gov/a/E7-10096.</abstract>
+<purpose>The boundaries described are solely intended as a visual representation of the areas included and do not replace or supercede the legal definitions.</purpose>
+</descript>
+<keywords>
+<theme>
+<themekt>None</themekt>
+<themekey>MPA existing</themekey>
+<themekey>Protected Areas</themekey>
+<themekey>Marine Life Protection Act</themekey>
+<themekey>Marine Protected Areas</themekey>
+<themekey>State Marine Park</themekey>
+<themekey>Auth_CDFW</themekey>
+</theme>
+</keywords>
+<accconst>None</accconst>
+<useconst/>
+<datacred>_ Marine Region GIS; ; California Department of Fish and Wildlife (CDFW); ; ; (831) 649-7143; ; ; mr_gis@wildlife.ca.gov; </datacred>
+</idinfo>
+<metainfo>
+<metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+<metstdv>FGDC-STD-001-1998</metstdv>
+<mettc>local time</mettc>
+</metainfo>
+</metadata>
