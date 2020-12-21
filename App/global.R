@@ -4,6 +4,7 @@
   library(shiny)
   library(shinydashboard)
   library(shinyWidgets)
+  library(plotly)
   library(tidyverse)
   # library(tidymodels)
   library(ggpubr)
@@ -381,6 +382,10 @@ source('R/modules.R')
   Shannon_Index <- readr::read_csv("Tidy_Data/Diversity_Shannon.csv")
   
   Simpson_Index <- readr::read_csv("Tidy_Data/Diversity_Simpson.csv")
+}
+
+{ # Community Similarity    ----
+  nMDS_3D <- readr::read_csv("Tidy_Data/nMDS_3D.csv")
 }
 
 

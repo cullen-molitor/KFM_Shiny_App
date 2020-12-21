@@ -222,4 +222,19 @@ server <- function(input, output, session) {
     
   })
   
+  output$Three_D <- renderPlotly({
+    
+      plotly::plot_ly(nMDS_3D, x = ~`Dim 1`, y = ~`Dim 2`, z = ~`Dim 3`,
+                      frame = ~SurveyYear, text = ~SiteName, hoverinfo = "text",
+                      color = ~ReserveStatus, colors = Island_Colors) %>%
+      plotly::add_markers(symbol = ~ReserveStatus,
+                          symbols = c('Inside' = "cross-open", 'Outside' = "square")) %>%
+      plotly::add_text(text = ~SiteCode) %>%
+      plotly::layout(scene = list(xaxis = list(title = 'Dim 1'),
+                                  yaxis = list(title = 'Dim 2'),
+                                  zaxis = list(title = 'Dim 3'))) %>%
+      plotly::animation_opts(1500, easing = "linear")
+    
+  })
+  
 } 

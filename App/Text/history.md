@@ -1,6 +1,7 @@
 
 
-## **Background**
+## Background
+
 Kelp forests constitute one of the largest, most complex, and most threatened ecosystems in the Channel Islands National Park (CINP). Located at the boundary of two major biogeographical provinces and near unusually persistent upwelling features, the park is endowed with marine ecosystems of exceptional diversity. The five park islands are surrounded by extensive kelp forest habitat with high productivity, which supports large and diverse seabird and pinniped populations. As a result of these conditions and the relative isolation from the mainland, kelp forests in the park are among the best examples of this important ecosystem in southern California.
 
 The park boundary extends one nautical mile around each of the five islands, including the waters and submerged lands therein. The living marine resources in the park are managed by the State of California. The National Park Service (NPS), in cooperation with the State of California and the U. S. Department of Commerce, are charged with the responsibility of monitoring the health of park ecosystems and recommending actions to better protect those systems (16 USC 41Off Sec. 203).
@@ -25,9 +26,7 @@ In the 1990’s, the state of California began using data collected by this prog
 
 From 2005 to 2007, fish abundance and size monitoring surveys were conducted by University of California Santa Barbara’s Partnership for Interdisciplinary Studies of Coastal Oceans (UCSB/PISCO) under a cooperative agreement at 24 of the monitoring sites, as part of a fine scale Marine Reserve evaluation that was designed by the park. PISCO has published several scientific papers using data collected during this time period. 
 
-## **Acknowledgments**
 
-The design of this ecological monitoring program was supported by the National Park Service in cooperation with the California Department of Fish and Game, the U.S. Department of Commerce and the National Oceanographic and Atmospheric Administration’s National Marine Sanctuary Program. More than 350 scientists, resource managers and boat captains from many academic institutions and resource management agencies participated in this endeavor. Of particular note were the sustained efforts of G. E. Davis, D. V. Richards, J. M Morgan, J. E. Mondragon, D. Lerma, M. D. Moss, K. J. Moore, J. M. Engle, M. D. Conlin, T. J. Herrlinger, T. W. Anderson, J. D. Lewis, D. C. Canestro, S. L. Kim, D. Forcucci, and J. W. Trone. Their broad experience greatly strengthened the experimental design and resulting monitoring protocols. Additionally, we want to thank D. G. Baldwin, L. E. Cullen, T. I. McClure, C. D. Molitor, and L. J. Montgomery for their contributions for their assistance with publishing this third revision of the KFM Handbook. 
 
 
 

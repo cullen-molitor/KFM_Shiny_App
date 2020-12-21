@@ -1,5 +1,5 @@
 
-### **Choosing Indicator Species**
+## Choosing Indicator Species
 
 Specific kelp forest plants and animals were selected for monitoring from a list of nearly 1,000 species compiled by Dr. John M. Engle of the Tatman Foundation. The list was derived from scientific literature and data collected during a series of Tatman Foundation supported cruises in the Channel Islands while Dr. Engle was working for the University of Southern California Catalina Marine Science Center. The primary objective in selecting taxa for monitoring was to provide a representative cross section of the ecological roles present in the park kelp forests. These taxa serve as ecological "vital signs" of system health. To fulfill this objective, selected species needed to include representatives of all trophic levels, a variety of reproductive strategies, both sessile and mobile organisms, and variety of feeding strategies
 

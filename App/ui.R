@@ -82,20 +82,73 @@ ui <- dashboardPage(
         tabsetPanel(
           # ............ Tab - Disclaimer  ----
           tabPanel("Disclaimer",
-                   tags$hr(),
-                   includeMarkdown(path = "Text/about.md"),
-                   tags$hr(),
-                   tags$img(height = 772.72, width = 1000, 
-                            src = 'Photos/Kelp_Forest_Scenes/Laurie_Montgomery/1 (2).jpg'),
-                   h2("Diver in a kelp forest on Santa Barbara Island, photographed by Laurie Montgomery")
-          ),
-          # ............ Tab - KFMP History  ----
-          tabPanel("Introduction",
-                   includeMarkdown(path = "Text/introduction.md")
+                   fluidRow(
+                     column(
+                       8, includeMarkdown(path = "Text/about.md")
+                     ),
+                     column(
+                       4, tags$img(height = 332, width = 500, 
+                                   src = 'Photos/Kelp_Forest_Scenes/Laurie_Montgomery/1 (2).jpg'),
+                       h5("Diver in a kelp forest on Santa Barbara Island"),
+                       h5("Photographed by Laurie Montgomery (NPS KFMP Diver)")
+                     )
+                   )
           ),
           # ............ Tab - KFMP History  ----
           tabPanel("KFMP History",
-                   includeMarkdown(path = "Text/history.md")
+                   fluidRow(
+                     column(
+                       8, includeMarkdown(path = "Text/history.md")
+                     ),
+                     column(
+                       4, tags$img(height = 332, width = 500, 
+                                   src = 'Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (3).jpg'),
+                       h5("Antler kelp (Pelagophycus porra) on Santa Cruz Island"),
+                       h5("Photographed by Brett Seymour (NPS Submerged Resources Center)")
+                     )
+                   )
+          ),
+          # ............ Tab - Acknowledgments  ----
+          tabPanel("Acknowledgments",
+                   fluidRow(
+                     column(
+                       8, includeMarkdown(path = "Text/acknowledgments.md")
+                     ),
+                     column(
+                       4, tags$img(height = 332, width = 500, 
+                                   src = 'Photos/Kelp_Forest_Scenes/Laurie_Montgomery/1 (3).jpg'),
+                       h5("California sea lion swimming through the kelp forest on Santa Barbara Island"),
+                       h5("Photographed by Laurie Montgomery (NPS KFMP Diver)")
+                     )
+                   )
+          ),
+          # ............ Tab - Introduction  ----
+          tabPanel("Introduction",
+                   fluidRow(
+                     column(
+                       8, includeMarkdown(path = "Text/introduction.md")
+                     ),
+                     column(
+                       4, tags$img(height = 332, width = 500, 
+                                   src = 'Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (4).jpg'),
+                       h5("California sea lion swimming through the kelp forest on Santa Barbara Island"),
+                       h5("Photographed by Brett Seymour (NPS Submerged Resources Center)")
+                     )
+                   )
+          ),
+          # ............ Tab - Acronyms  ----
+          tabPanel("Acronyms",
+                   fluidRow(
+                     column(
+                       8, includeMarkdown(path = "Text/acronyms.md")
+                     ),
+                     column(
+                       4, tags$img(height = 332, width = 500, 
+                                   src = 'Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (6).jpg'),
+                       h5("California sea lion playing with southern sea palm (Eisenia arborea) on Santa Barbara Island"),
+                       h5("Photographed by Brett Seymour (NPS Submerged Resources Center)")
+                     )
+                   )
           ),
           # ............ Tab - FAQ  ----
           tabPanel("FAQ",
@@ -111,7 +164,18 @@ ui <- dashboardPage(
           # ............ Tab - KFM Species Selection  ----
           tabPanel(
             "KFM Species Selection",
-            includeMarkdown("Text/Species/species_selection.md")
+            fluidRow(
+              column(
+                6, 
+                includeMarkdown("Text/Species/species_selection.md") 
+              ),
+              column(
+                6, tags$hr(),
+                tags$img(height = 400, width = 600, src = 'Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (2).jpg'),
+                tags$br(), tags$hr(),
+                tags$img(height = 400, width = 600, src = 'Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (10).jpg')
+              )
+            )
           ),
           # ............ Tab - Foundation Species  ----
           tabPanel(
@@ -173,7 +237,30 @@ ui <- dashboardPage(
           # ............ Tab - Protocol Selection  ----
           tabPanel(
             title = "KFM Protocol Selection",
-            includeMarkdown("Text/Protocols/protocol_selection.md")
+            fluidRow(
+              column(
+                6, 
+                includeMarkdown("Text/Protocols/protocol_selection.md") 
+              ),
+              column(
+                6, 
+                tags$hr(),
+                tags$img(height = 400, width = 600, src = 'Photos/Protocols/1m (2).jpg'),
+                tags$br(), tags$hr(),
+                tags$img(height = 400, width = 600, src = 'Photos/Protocols/5m (1).jpg')
+              )
+            ),
+            tags$hr(),
+            fluidRow(
+              column(
+                6,
+                tags$img(height = 400, width = 600, src = 'Photos/Protocols/bands (1).jpg'), 
+              ),
+              column(
+                6, 
+                tags$img(height = 400, width = 600, src = 'Photos/Protocols/rpcs (1).jpg')
+              )
+            )
           ),
           # ............ Tab - 1 m² Quadrats  ----
           tabPanel(
@@ -372,7 +459,34 @@ ui <- dashboardPage(
       tabItem(
         tabName = 'com_sim',
         h1("Kelp Forest Community Similarity"),
-        tags$img(height = 533, width = 800, src = 'Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (3).jpg')
+        tabsetPanel(
+          tabPanel(
+            title = "About",
+            tags$hr(),
+            fluidRow(
+              column(
+                6, tags$img(height = 332, width = 500, src = 'Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (3).jpg')
+              ),
+              column(
+                6, tags$img(height = 332, width = 500, src = 'Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (15).jpg')
+              )
+            )
+          ),
+          tabPanel(
+            title = "3-Dimensional",
+            tags$hr(),
+            radioButtons(inputId = "radio_3D_years",
+                         label = "Options:",
+                         choices = c("All Years (Fewer Species)",
+                                     "Years > 2004 (All Species)")),
+            plotlyOutput(outputId = "Three_D",
+                         height = 600, width = '50%')
+          ),
+          tabPanel(
+            title = "2-Dimensional",
+            tags$hr()
+          )
+        )
       ),
       # ...... Body - Indicator Species    ---- 
       tabItem(

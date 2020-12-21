@@ -1,7 +1,7 @@
 
 
 
-{ # Data ----
+{ # Data  ----
   
   { # Inverts and Algae Only (all years)  ----
     Mixed_Data_Fish_Density <- readr::read_csv("App/Tidy_Data/Mixed_Data_Fish_Density.csv") %>%
@@ -23,7 +23,7 @@
 }
 
       
-{ # Model all years  ----
+{ # Model all years   ----
   set.seed(100)
   train <- sample(nrow(Random_Kelp_Forest), 
                   0.7 * nrow(Random_Kelp_Forest), replace = FALSE)
@@ -89,7 +89,7 @@
   
 }
 
-{ # Model > 2004  ----
+{ # Model > 2004   ----
   
   set.seed(100)
   train <- sample(nrow(Mixed_Data_Fish_Biomass), 
@@ -157,28 +157,45 @@
 }
 
 
-
-library(plotly)
-
-x <- randomForest::MDSplot(
-  RF_Reserve_Model, fac = Random_Kelp_Forest$ReserveStatus,
-  k = 3, palette = rep(1, 2),
-  pch = as.numeric(Random_Kelp_Forest$ReserveStatus))
-
-x <- unlist(x$points) %>%
-  as.data.frame() %>%
-  cbind(dplyr::select(
-    All_Mixed_Data_Wide, SiteCode, SiteName, IslandName, ReserveStatus, SurveyYear))
-
-fig <-
-  plotly::plot_ly(x, x = ~`Dim 1`, y = ~`Dim 2`, z = ~`Dim 3`,
-                  frame = ~SurveyYear, text = ~SiteName, hoverinfo = "text",
-                  color = ~ReserveStatus, colors = Island_Colors) %>%
-  plotly::add_markers(symbol = ~ReserveStatus,
-                      symbols = c('Inside' = "triangle", 'Outside' = "square")) %>%
-  plotly::add_text(text = ~SiteCode) %>%
-  plotly::layout(scene = list(xaxis = list(title = 'Dim 1'),
-                              yaxis = list(title = 'Dim 2'),
-                              zaxis = list(title = 'Dim 3'))) %>%
-  plotly::animation_opts(1500, easing = "linear")
-fig
+{ # 3-D nMDS Plot  ----
+  library(plotly)
+  
+  Mixed_Data_Fish_Biomass <- readr::read_csv("App/Tidy_Data/Mixed_Data_Fish_Biomass.csv") 
+  
+  Random_Kelp_Forest <- Mixed_Data_Fish_Biomass%>%
+    dplyr::mutate(SurveyYear = factor(SurveyYear),
+                  IslandName = factor(IslandName),
+                  ReserveStatus = factor(ReserveStatus)) %>% 
+    dplyr::select(-SiteNumber, -SiteName, 
+                  -IslandCode, -SiteCode) 
+  
+  RF_Reserve_Model <- randomForest::randomForest(
+    data = Random_Kelp_Forest,
+    ReserveStatus ~ ., ntree = 3000, mtry = 8,
+    importance = TRUE, proximity = TRUE, keep.forest = TRUE)
+  
+  nMDS_3D <- randomForest::MDSplot(
+    RF_Reserve_Model, fac = Random_Kelp_Forest$ReserveStatus,
+    k = 3, palette = rep(1, 2),
+    pch = as.numeric(Random_Kelp_Forest$ReserveStatus))
+  
+  nMDS_3D <- unlist(nMDS_3D$points) %>%
+    as.data.frame() %>%
+    cbind(dplyr::select(
+      Mixed_Data_Fish_Biomass, SiteCode, SiteName, IslandName, ReserveStatus, SurveyYear)) %>% 
+    readr::write_csv("App/Tidy_Data/nMDS_3D.csv")
+  
+  fig <-
+    plotly::plot_ly(nMDS_3D, x = ~`Dim 1`, y = ~`Dim 2`, z = ~`Dim 3`,
+                    frame = ~SurveyYear, text = ~SiteName, hoverinfo = "text",
+                    color = ~ReserveStatus, colors = Island_Colors) %>%
+    plotly::add_markers(symbol = ~ReserveStatus,
+                        symbols = c('Inside' = "triangle", 'Outside' = "square")) %>%
+    plotly::add_text(text = ~SiteCode) %>%
+    plotly::layout(scene = list(xaxis = list(title = 'Dim 1'),
+                                yaxis = list(title = 'Dim 2'),
+                                zaxis = list(title = 'Dim 3'))) %>%
+    plotly::animation_opts(1500, easing = "linear")
+  fig
+  
+}

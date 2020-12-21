@@ -1,5 +1,5 @@
 
 
-## **Why are we here?**
+## Why are we here?
 
 #### Existence is pain
