@@ -128,4 +128,98 @@ server <- function(input, output, session) {
     }
   }
   
+  output$Shannon_Plot <- renderPlot({ # Biodiversity  ----
+    
+   
+    Shannon_Split <- base::split(Shannon_Index, f = Shannon_Index$IslandName) 
+    p1 <- ggplot(Shannon_Split$`San Miguel Island`,
+                 aes(x = Date, y = Shannon_Index, color = SiteCode, linetype = SiteCode)) + 
+      # geom_line(size = .5) +
+      geom_smooth(size = .5, se = FALSE, method = 'loess', formula = 'y ~ x') +
+      ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0),
+                            limits = c(lubridate::ymd(min(Shannon_Index$Date)),
+                                       lubridate::ymd(max(Shannon_Index$Date)))) +
+      scale_y_continuous(limits = c(0, NA), 
+        expand = expansion(mult = c(0, .1))) +
+      labs(title = "Shannon-Weiner Diversity Index",  
+           color = "Site Code", linetype = "Site Code",
+           x = NULL, y = NULL) +
+      facet_grid(rows = vars(IslandName), scales = "fixed") +
+      scale_color_manual(values = SiteColor, guide = guide_legend(ncol = 2)) +
+      scale_linetype_manual(values = SiteLine, guide = guide_legend(ncol = 2)) +
+      all_sites_theme()
+    p2 <- p1 %+% Shannon_Split$`Santa Rosa Island` +
+      labs(title = NULL, subtitle = NULL)
+    p3 <- p1 %+% Shannon_Split$`Santa Cruz Island` +
+      labs(title = NULL, subtitle = NULL)
+    p4 <- p1 %+% Shannon_Split$`Anacapa Island` +
+      labs(title = NULL, subtitle = NULL)
+    p5 <- p1 %+% Shannon_Split$`Santa Barbara Island`  +
+      labs(title = NULL, subtitle = NULL, x = "Year") +
+      theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1, size = 10))
+    arrange_plot <- ggpubr::ggarrange(
+      p1, p2, p3, p4, p5, ncol = 1, heights = c(.9, .75, .75, .75, 1),
+      align = "v", common.legend = FALSE)
+    annotate_plot <- ggpubr::annotate_figure(
+      arrange_plot, left = text_grob("Index Value", color = "black", rot = 90, size = 16)
+    )
+    print(annotate_plot)
+    
+    
+    
+    
+    
+    # p1 <- ggplot2::ggplot(Shannon_Index, aes(x = Date, y = Shannon_Index, linetype = ReserveStatus)) +
+    #   ggplot2::geom_smooth(size = 1, span = 0.75,
+    #                        aes(color = ReserveStatus)) +
+    #   ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0)) +
+    #   ggplot2::scale_y_continuous(limits = c(0, NA), expand = c(0, 0), oob = squish) +
+    #   ggplot2::scale_colour_manual(values = Island_Colors) +
+    #   ggplot2::labs(title = "Shannon-Weiner Diversity Index",
+    #                 x = NULL, y = NULL,
+    #                 linetype = "Reserve Status",
+    #                 color = "Reserve Status") +
+    #   timeseries_top_theme()
+    # 
+    # p2 <- ggplot2::ggplot(Shannon_Index, aes(x = Date, y = Shannon_Index, color = IslandName)) +
+    #   ggplot2::geom_smooth(size = 1, span = .75) +
+    #   ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0)) +
+    #   ggplot2::scale_y_continuous(limits = c(0, NA), expand = c(0, 0), oob = squish) +
+    #   ggplot2::scale_colour_manual(values = Island_Colors) +
+    #   ggplot2::labs(x = NULL, y = NULL,
+    #                 color = "Island") +
+    #   timeseries_top_theme()
+    # 
+    # p3 <- ggplot2::ggplot() +
+    #   geom_rect(data = SST_Anomaly_Index,
+    #             aes(xmin = DateStart, xmax = DateEnd, ymin = -Inf, ymax = 0, fill = ONI_ANOM)) +
+    #   scale_fill_gradient2(high = "darkred", mid = "white", low = "navyblue", midpoint = 0,
+    #                        guide = guide_colorbar(direction = "horizontal", title.position = "top",
+    #                                               order = 3, barheight = unit(.2, "cm"))) +
+    #   ggplot2::geom_smooth(data = Shannon_Index, method = 'loess', formula = 'y~x', size = 1, se = F, span = .75,
+    #                        aes(x = Date, y = Shannon_Index, color = IslandName, linetype = ReserveStatus)) +
+    #   ggplot2::geom_hline(aes(yintercept = 0)) +
+    #   ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0),
+    #                         limits = c(lubridate::ymd(min(Shannon_Index$Date)), 
+    #                                    lubridate::ymd(max(Shannon_Index$Date)))) +
+    #   ggplot2::scale_y_continuous(expand = expansion(mult = c(.1, 0)),
+    #                               limits = c(0, NA), oob = squish) +
+    #   ggplot2::guides(color = guide_legend(order = 1), 
+    #                   linetype = guide_legend(order = 2, override.aes = list(col = 'black'))) +
+    #   ggplot2::scale_colour_manual(values = Island_Colors) +
+    #   ggplot2::labs(x = "Survey Year", y = NULL,
+    #                 color = "Island",
+    #                 fill = "Oceanic Niño Index",
+    #                 linetype = "Reserve Status") +
+    #   timeseries_bottom_theme() 
+    # Diversity_Plot <-ggarrange(p1, p2, p3, ncol = 1, align = "v", heights = c(.8, .8, 1))
+    # Diversity_annotated <- ggpubr::annotate_figure(
+    #   Diversity_Plot,
+    #   left = text_grob("Diversity Index Value", 
+    #                    family ="Cambria", color = "black", rot = 90, size = 13))
+    # print(Diversity_annotated)
+    
+    
+  })
+  
 } 

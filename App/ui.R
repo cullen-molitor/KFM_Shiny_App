@@ -36,7 +36,7 @@ ui <- dashboardPage(
                badgeColor = 'green',
                tabName = 'protocols'),
       # ...... Sidebar - Maps  ----
-      menuItem(text = 'Maps', 
+      menuItem(text = 'Sampling Locations', 
                icon = icon('globe'),
                badgeColor = 'green',
                tabName = 'maps'),
@@ -108,9 +108,16 @@ ui <- dashboardPage(
         tabName = 'species',
         h1("Kelp Forest Species"),
         tabsetPanel(
+          # ............ Tab - KFM Species Selection  ----
+          tabPanel(
+            "KFM Species Selection",
+            includeMarkdown("Text/Species/species_selection.md")
+          ),
           # ............ Tab - Foundation Species  ----
           tabPanel(
             "Foundation Species",
+            tags$hr(),
+            includeMarkdown(path = "Text/Species/foundation.md"),
             tags$hr(),
             fluidRow(
               column(
@@ -144,13 +151,9 @@ ui <- dashboardPage(
               )
             )
           ),
-          # ............ Tab - KFM Species List  ----
+          # ............ Tab - Species Guides  ----
           tabPanel(
-            "KFM Species List"
-          ),
-          # ............ Tab - Protocol Species Guides  ----
-          tabPanel(
-            "Protocol Species Guides"
+            "KFM Indicator Species"
           ),
           # ............ Tab - Common Diseases  ----
           tabPanel(
@@ -167,6 +170,11 @@ ui <- dashboardPage(
         tabName = 'protocols',
         h1("Kelp Forest Monitoring Protocols"),
         tabsetPanel(
+          # ............ Tab - Protocol Selection  ----
+          tabPanel(
+            title = "KFM Protocol Selection",
+            includeMarkdown("Text/Protocols/protocol_selection.md")
+          ),
           # ............ Tab - 1 m² Quadrats  ----
           tabPanel(
             title = "1 m² Quadrats",
@@ -234,6 +242,12 @@ ui <- dashboardPage(
         tabName = 'maps',
         h1("Kelp Forest Monitoring Sampling Locations"),
         tabsetPanel(
+          # ............ Tab - Site Selection and History  ----
+          tabPanel(
+            title = "Site History",
+            tags$hr(),
+            includeMarkdown(path = "Text/site_history.md")
+          ),
           # ............ Tab - Leaflet  ----
           tabPanel(
             title = "Leaflet Maps",
@@ -310,10 +324,39 @@ ui <- dashboardPage(
         tabName = 'diversity',
         h1("Kelp Forest Community Biodiversity"),
         tabsetPanel(
+          # ............ Tab - Shannon's Index  ----
           tabPanel(
             title = "Shannon-Wiener Diversity Index",
-            tags$hr()
+            tags$hr(),
+            fluidRow(
+              column(
+                2, radioButtons(inputId = "Shannon_Options",
+                                label = "Choose a Category:",
+                                choices = c("All Sites",
+                                            "Original 16 Sites",
+                                            "MPA Reference Sites", 
+                                            "Individual Site"))
+              ),
+              column(
+                2, radioButtons(inputId = "Shannon_Plots",
+                                label = "Choose a Plot Type:",
+                                choices = c("Smooth Line (LOESS)",
+                                            "Line",
+                                            "Map Bubbles"))
+              )
+            ),
+            fluidRow(
+              column(
+                4, includeMarkdown(path = "Text/Shannon_Index.md")
+              ),
+              column(
+                8, plotOutput(outputId = "Shannon_Plot",
+                       height = 750)
+              )
+            )
+            
           ),
+          # ............ Tab - Simpson's Index  ----
           tabPanel(
             title = "Gini–Simpson Diversity Index",
             tags$hr()
@@ -323,7 +366,7 @@ ui <- dashboardPage(
             tags$hr()
           )
         ),
-        tags$img(height = 533, width = 800, src = 'Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (2).jpg')
+        tags$hr()
       ),
       # ...... Body - Community Similarity    ---- 
       tabItem(

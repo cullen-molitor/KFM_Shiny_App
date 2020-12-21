@@ -81,6 +81,23 @@ source('R/modules.R')
     "Sebastes serriceps", "treefish",
     "Semicossyphus pulcher", "California sheephead, male", "California sheephead, female")
   
+  VFT_Species <- c(
+    "blacksmith", 
+    "black_surfperch", 
+    "striped_surfperch", 
+    "opaleye",                     
+    "garibaldi", 
+    "senorita",
+    "kelp_bass", 
+    "pile_perch",                 
+    "kelp_rockfish", 
+    "blue_rockfish", 
+    "olive_rockfish", 
+    "California_sheephead_female",
+    "California_sheephead_male", 
+    "rock_wrasse_female", 
+    "rock_wrasse_male")
+  
   BenthicBiomassColor <- c(
     'Lithopoma gibberosa' = "deeppink", 
     'Megastraea undosa' = "grey40", 
@@ -128,12 +145,13 @@ source('R/modules.R')
 { # Island and Site Information   -----
   Site_Info <- readr::read_csv("Meta_Data/Site_Info.csv")
   
-  Island_Colors <- c("San Miguel" = "darkmagenta", "SM" = "darkmagenta", 
-                     "Santa Rosa" = "dodgerblue4", "SR" = "dodgerblue4", 
-                     "Santa Cruz" = "forestgreen", "SC" = "forestgreen", 
-                     "Anacapa" = "darkorange", "AN" = "darkorange", 
-                     "Santa Barbara" = "firebrick2","SB" = "firebrick2", 
-                     "Inside" = "green", "Outside" = "red") 
+  Island_Colors <- 
+    c("San Miguel" = "darkmagenta", "San Miguel Island" = "darkmagenta", "SM" = "darkmagenta", 
+      "Santa Rosa" = "dodgerblue4", "Santa Rosa Island" = "dodgerblue4", "SR" = "dodgerblue4", 
+      "Santa Cruz" = "forestgreen", "Santa Cruz Island" = "forestgreen", "SC" = "forestgreen", 
+      "Anacapa" = "darkorange", "Anacapa Island" = "darkorange", "AN" = "darkorange", 
+      "Santa Barbara" = "firebrick2", "Santa Barbara Island" = "firebrick2", "SB" = "firebrick2", 
+      "Inside" = "green", "Outside" = "red") 
   
   Island_Levels_Short <- c(
     "San Miguel", 
@@ -174,11 +192,11 @@ source('R/modules.R')
     "Arch Point", "Cat Canyon", "Webster's Arch",  # Out
     "SE Sea Lion Rookery", "Graveyard Canyon", "Southeast Reef") # In
   
-  SiteColor <- as.character(Site_Info$Color)
-  names(SiteColor) <- Site_Info$SiteName
+  SiteColor <- c(as.character(Site_Info$Color), as.character(Site_Info$Color))
+  names(SiteColor) <- c(Site_Info$SiteName, Site_Info$SiteCode)
   
-  SiteLine <- Site_Info$LineType
-  names(SiteLine) <- Site_Info$SiteName
+  SiteLine <- c(Site_Info$LineType, Site_Info$LineType)
+  names(SiteLine) <- c(Site_Info$SiteName, Site_Info$SiteCode)
 }
 
 { # SST Indicies  ----
@@ -208,9 +226,26 @@ source('R/modules.R')
       mean(sample$Mean_Biomass[sample$ReserveStatus == "Outside"])
     return(ratio)
   }
+  all_sites_theme <- function () {
+    ggpubr::theme_classic2() +
+      ggplot2::theme(
+        plot.title = element_text(hjust = 0.5, size = 18),
+        plot.subtitle = element_text(hjust = 0.5, size = 16),
+        legend.position = "right",
+        panel.grid.major = element_line(),
+        legend.justification = c(0,0.5),
+        legend.key.width = unit(.75, "cm"),
+        legend.background = element_rect(size = unit(5, "cm")),
+        legend.title = element_text(size = 12, color = "black"),
+        legend.text = element_text(size = 10, colour = "black"),
+        axis.title = element_text(hjust = .5, size = 18),
+        axis.text.x = element_blank(),
+        axis.text.y = element_text(size = 10),
+        strip.text = element_text(size = 10, colour = "black", angle = 90))
+  }
   timeseries_top_theme <- function () {
     ggpubr::theme_classic2() +
-      ggplot2::theme(text = element_text(color="black", family ="Cambria"),
+      ggplot2::theme(text = element_text(color="black"),
                      plot.caption = element_text(size = 11),
                      legend.justification = c(0, 0.5),
                      legend.key.width = unit(.75, "cm"),
@@ -223,7 +258,7 @@ source('R/modules.R')
   }
   timeseries_bottom_theme <- function (){
     ggpubr::theme_classic2() +
-      ggplot2::theme(text = element_text(color="black", family ="Cambria"),
+      ggplot2::theme(text = element_text(color="black"),
                      plot.caption = element_text(size = 13),
                      legend.justification = c(0, 0.5),
                      legend.key.width = unit(.75, "cm"),
@@ -279,7 +314,7 @@ source('R/modules.R')
   }
   Original_16_top_theme <- function () {
     ggpubr::theme_classic2() +
-      ggplot2::theme(text = element_text(color="black", family ="Cambria"),
+      ggplot2::theme(text = element_text(color="black"),
                      legend.position = "right",
                      legend.justification = c(0, 0.5),
                      legend.key.width = unit(.75, "cm"),
@@ -292,7 +327,7 @@ source('R/modules.R')
   }
   Original_16_bottom_theme <- function () {
     ggpubr::theme_classic2() +
-      ggplot2::theme(text = element_text(color="black", family ="Cambria"),
+      ggplot2::theme(text = element_text(color="black"),
                      legend.position = "right",
                      legend.justification = c(0,0.5),
                      legend.key.width = unit(.75, "cm"),
@@ -342,6 +377,11 @@ source('R/modules.R')
     
 }
 
+{ # Biodiversity  ----
+  Shannon_Index <- readr::read_csv("Tidy_Data/Diversity_Shannon.csv")
+  
+  Simpson_Index <- readr::read_csv("Tidy_Data/Diversity_Simpson.csv")
+}
 
 
 

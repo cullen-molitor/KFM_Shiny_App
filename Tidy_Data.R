@@ -279,6 +279,7 @@ Export_END_Year <- 2019
       dplyr::group_by(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, Date, 
                       ScientificName, CommonName, ReserveStatus, Reference) %>%
       dplyr::summarise(Count = mean(Count, na.rm = TRUE)) %>% 
+      dplyr::mutate(Count = ifelse(Count > 0 & Count < 1, 1, Count)) %>% 
       dplyr::ungroup() %>% 
       readr::write_csv("App/Tidy_Data/RDFC_Count.csv")
     
@@ -307,12 +308,12 @@ Export_END_Year <- 2019
       dplyr::select(-T3, -T4) %>%
       tidyr::pivot_longer(cols = c(T1, T2), values_to = "Count", names_to = "Transect_Number") %>%
       dplyr::ungroup() %>% 
-      dplyr::group_by(IslandCode, IslandName, SiteCode, SiteName, CommonName, ScientificName,
-                      SurveyYear, ReserveStatus, Reference, ReserveYear) %>%
+      dplyr::group_by(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, 
+                      CommonName, ScientificName, ReserveStatus, Reference, ReserveYear) %>%
       dplyr::summarise(Mean_Density = round(sum(Count, na.rm = TRUE) / 600, 4)) %>% 
       dplyr::ungroup() %>%  
-      dplyr::distinct(IslandCode, IslandName, SiteCode, SiteName, SurveyYear, 
-                      CommonName, ScientificName, Mean_Density, ReserveStatus) %>%
+      dplyr::distinct(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, 
+                      CommonName, ScientificName, Mean_Density, ReserveStatus, Reference) %>%
       readr::write_csv("App/Tidy_Data/VFT_Density.csv") 
     
   }
@@ -326,13 +327,14 @@ Export_END_Year <- 2019
                      CountC = col_number(), CountD = col_number())) %>%
     tidyr::pivot_longer(cols = c(CountA, CountB, CountC, CountD), values_to = "Count") %>%
     tidyr::separate(SurveyDate, c('Date','Time'),' ') %>%
-    dplyr::filter(!ScientificName %in% c(
-      "Macrocystis, Pterygophora, and Eisenia combined",
-      "Leucetta losangelensis",
-      "Hydrozoa", "Balanus",
-      "Sargassum muticum",
-      "Polymastia pachymastia",
-      "Spirobranchus spinosus")) %>%
+    dplyr::filter(IslandCode != "CL",
+                  !ScientificName %in% c(
+                    "Macrocystis, Pterygophora, and Eisenia combined",
+                    "Leucetta losangelensis",
+                    "Hydrozoa", "Balanus",
+                    "Sargassum muticum",
+                    "Polymastia pachymastia",
+                    "Spirobranchus spinosus")) %>%
     dplyr::mutate(Date = lubridate::mdy(Date),  
       ScientificName = dplyr::case_when(
         CommonName == "encrusting coralline algae" ~ "encrusting coralline algae",
@@ -340,7 +342,7 @@ Export_END_Year <- 2019
         TRUE ~ ScientificName)) %>% 
     dplyr::left_join(Site_Info) %>% 
     dplyr::group_by(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, 
-                    Species, ScientificName, CommonName, ReserveStatus) %>%
+                    Species, ScientificName, CommonName, ReserveStatus, Reference) %>%
     dplyr::filter(!is.na(Count), !is.na(CommonName), Date == base::max(Date)) %>% 
     dplyr::summarise(
       Date = Date,
@@ -378,12 +380,14 @@ Export_END_Year <- 2019
         "Sargassum horneri, adult (>50cm or recepticles present)",
         "Sargassum horneri, juvenile (<50cm and no recepticles)")) %>% 
       dplyr::mutate(Count = Mean_Density * 2000) %>% 
-      dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, 
-                      ScientificName, SurveyYear, Count, ReserveStatus)
+      dplyr::group_by(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, 
+                      ScientificName, SurveyYear, ReserveStatus, Reference) %>% 
+      dplyr::summarise(Count = sum(Count)) %>% 
+      dplyr::ungroup()
   
     Fish_Counts <- RDFC_Density %>%
       dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, 
-                    ScientificName, SurveyYear, Count, ReserveStatus) %>% 
+                    ScientificName, SurveyYear, Count, ReserveStatus, Reference) %>% 
       dplyr::filter(!ScientificName %in% 
                       c('Alloclinus holderi', 'Coryphopterus nicholsi', 
                         'Lythrypnus dalli', 'Sebastes')) 
@@ -394,12 +398,12 @@ Export_END_Year <- 2019
 
     ShannonIndex <- All_Counts %>%
       dplyr::select(-IslandCode, -IslandName, -SiteCode, -SiteName, 
-                    -SurveyYear, -ReserveStatus) %>%
+                    -SurveyYear, -ReserveStatus, -Reference) %>%
       vegan::diversity()
     
     Diversity_Shannon <- All_Counts %>% 
       dplyr::select(IslandCode, IslandName, SiteCode, 
-                    SiteName, SurveyYear, ReserveStatus) %>%
+                    SiteName, SurveyYear, ReserveStatus, Reference) %>%
       base::cbind("Shannon_Index" = ShannonIndex) %>%
       dplyr::mutate(Date = base::as.Date(base::ISOdate(SurveyYear, 7, 1))) %>% 
       readr::write_csv("App/Tidy_Data/Diversity_Shannon.csv")
@@ -554,7 +558,9 @@ Export_END_Year <- 2019
     
     Benthic_Mean_Biomass <- Benthic_Biomass %>% 
       left_join(Benthic_Regression) %>% 
+      dplyr::left_join(dplyr::distinct(Species_Info, ScientificName, CommonNameSimple)) %>% 
       dplyr::mutate(
+        CommonName = CommonNameSimple,
         Mean_Biomass = dplyr::case_when(
           is.na(Mean_Biomass) ~ yint + Mean_Density * b,
           TRUE ~ Mean_Biomass)) %>% 
@@ -564,17 +570,6 @@ Export_END_Year <- 2019
                     Mean_Biomass, Survey_Type, ReserveStatus, Reference) %>% 
       readr::write_csv("App/Tidy_Data/Benthic_Biomass.csv")
   }
-  
-  { # Benthic Biomass Wide   ----
-    Benthic_Mean_Biomass_Wide <- Benthic_Mean_Biomass %>% 
-      dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, 
-                    SurveyYear, Date, ScientificName, Mean_Biomass, ReserveStatus, Reference) %>%
-      tidyr::pivot_wider(names_from = ScientificName, values_from = Mean_Biomass, values_fill = 0) %>%
-      dplyr::rename_with(~ base::gsub(",", "", .)) %>% 
-      dplyr::rename_with(~ base::gsub(" ", "_", .)) # %>%
-    # Do fish and make a single wide biomass table
-      readr::write_csv("App/Tidy_Data/Benthic_Biomass_Wide.csv") 
-  } 
   
   { # Fish Density for Biomass   ----
     RDFC_Biomass <-  
@@ -620,10 +615,14 @@ Export_END_Year <- 2019
         CommonName = base::as.character(CommonName),
         CommonName = base::gsub(", adult", "", CommonName),
         CommonName = base::gsub(", subadult", "", CommonName),
-        CommonName = base::gsub(", juvenile", "", CommonName)) %>% 
+        CommonName = base::gsub(", juvenile", "", CommonName)) %>%
+      dplyr::group_by(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, Date,
+                      ScientificName, CommonName, ReserveStatus, Reference, PermanentObserverNumber) %>%
+      dplyr::summarise(Count = sum(Count, na.rm = TRUE)) %>%
       dplyr::group_by(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, Date, 
                       ScientificName, CommonName, ReserveStatus, Reference) %>%
       dplyr::summarise(Count = mean(Count, na.rm = TRUE)) %>% 
+      dplyr::mutate(Count = ifelse(Count > 0 & Count < 1, 1, Count)) %>% 
       dplyr::ungroup() 
   }
   
@@ -649,10 +648,7 @@ Export_END_Year <- 2019
       dplyr::select(SiteNumber, IslandCode, SiteCode, IslandName, SiteName, SurveyYear, 
                     ScientificName, CommonName, Size_cm, ReserveStatus, Reference) %>% 
       readr::write_csv("App/Tidy_Data/Fish_Sizes.csv")
-      
-    
-    
-    
+     
     Fish_Biomass <- Fish_Sizes %>% 
       dplyr::filter(ScientificName %in% Fish_Biomass_Species) %>%
       dplyr::mutate(
@@ -691,8 +687,7 @@ Export_END_Year <- 2019
         Mean_Biomass = case_when(
           Count == 0 & is.na(Mean_Biomass) ~ 0,
           is.na(Count) & is.na(Mean_Biomass) ~ 0,
-          TRUE ~ Mean_Biomass)) %>%
-      dplyr::mutate(
+          TRUE ~ Mean_Biomass),
         Count = case_when(
           Mean_Biomass == 0 & is.na(Count) ~ 0,
           TRUE ~ Count)) %>%
@@ -700,303 +695,178 @@ Export_END_Year <- 2019
     
     
   }
-  #  stopped here
-  { # Fish Biomass Long ----- 
-    
-    Fish_Regression_Tidy <- FSF_Raw %>%
-      group_by(CommonName, IslandName) %>%
-      do(broom::tidy(lm(Mean_Biomass ~ 0 + Mean_Count, ., na.action = na.exclude)))
-    
-    Fish_Regression <- FSF_Raw %>%
-      group_by(CommonName, IslandName) %>%
-      do(broom::glance(lm(Mean_Biomass ~ 0 + Mean_Count, ., na.action = na.exclude)))  %>% 
-      dplyr::select(-statistic, -p.value) %>% 
-      dplyr::full_join(Fish_Regression_Tidy) %>% 
-      readr::write_csv("Meta_Data/Fish_Regression_Table.csv")
-    
-    Fish_Biomass_Long <- FSF_Raw %>% 
-      left_join(Fish_Regression) %>% 
-      dplyr::mutate(
-        Mean_Biomass = dplyr::case_when(
-          is.na(Mean_Biomass) ~ Mean_Count * estimate,
-          TRUE ~ Mean_Biomass)) %>%
-      dplyr::left_join(Fish_Trophic_Levels) %>% 
-      dplyr::select(SiteNumber, IslandCode, SiteCode,  IslandName, SiteName, SurveyYear, 
-                    ScientificName, CommonName, Mean_Biomass, Mean_Count, Targeted, Trophic_Full,
-                    ReserveStatus, Reference, MeanDepth) %>%
-      dplyr::mutate(Date = base::as.Date(base::ISOdate(SurveyYear, 1, 1)),
-                    IslandName = gsub(" Island", "", IslandName)) %>% 
-      readr::write_csv("App/Tidy_Data/Fish_Biomass_Long.csv")
-  }
-  
-  { # Fish Biomass Wide   -----
-    Fish_Biomass_Wide <- Fish_Biomass_Long %>%  
-      dplyr::filter(Reference == TRUE, SurveyYear > 2004, SiteCode != "KH") %>%
-      dplyr::group_by(IslandCode, IslandName, SiteCode, SiteName, 
-                      CommonName, SurveyYear, ReserveStatus) %>%
-      dplyr::summarise(Mean_Biomass = base::sum(Mean_Biomass)) %>%
-      dplyr::ungroup() %>% 
-      tidyr::pivot_wider(names_from = CommonName, values_from = Mean_Biomass, values_fill = 0) %>%
-      dplyr::left_join(annual_mean_oni, by = c("SurveyYear")) %>% 
-      dplyr::rename_with(~ base::gsub(",", "", .)) %>% 
-      dplyr::rename_with(~ base::gsub(" ", "_", .)) %>%
-      readr::write_csv("App/Tidy_Data/Fish_Biomass_Wide.csv") 
-  }
-  
-}
-
-
-
-
-
-
-
-{ # Fish Biomass Tables (Wide for models, Long for plots)   ----
   
   { # Fish Biomass Long ----- 
     
-    Fish_Regression_Tidy <- FSF_Raw %>%
-      group_by(CommonName, IslandName) %>%
-      do(broom::tidy(lm(Mean_Biomass ~ 0 + Mean_Count, ., na.action = na.exclude)))
+    Fish_Regression <- Fish_Biomass %>%
+      dplyr::group_by(CommonName, ReserveStatus) %>%
+      dplyr::do(broom::tidy(lm(Mean_Biomass ~ Count, ., na.action = na.exclude))) %>% 
+      dplyr::select(-statistic, -p.value, -std.error) %>%
+      tidyr::pivot_wider(names_from = term, values_from = estimate) %>%
+      dplyr::rename(yint = "(Intercept)", b = Count) %>%
+      dplyr::mutate(yint = ifelse(yint < 0, 0, yint))
     
-    Fish_Regression <- FSF_Raw %>%
-      group_by(CommonName, IslandName) %>%
-      do(broom::glance(lm(Mean_Biomass ~ 0 + Mean_Count, ., na.action = na.exclude)))  %>% 
-      dplyr::select(-statistic, -p.value) %>% 
-      dplyr::full_join(Fish_Regression_Tidy) %>% 
-      readr::write_csv("Meta_Data/Fish_Regression_Table.csv")
-    
-    Fish_Biomass_Long <- FSF_Raw %>% 
-      left_join(Fish_Regression) %>% 
+    Fish_Mean_Biomass <- Fish_Biomass %>%
+      left_join(Fish_Regression) %>%
       dplyr::mutate(
         Mean_Biomass = dplyr::case_when(
-          is.na(Mean_Biomass) ~ Mean_Count * estimate,
+          is.na(Mean_Biomass) ~ yint + Count * b,
+          Count == 0 ~ 0,
           TRUE ~ Mean_Biomass)) %>%
-      dplyr::left_join(Fish_Trophic_Levels) %>% 
-      dplyr::select(SiteNumber, IslandCode, SiteCode,  IslandName, SiteName, SurveyYear, 
-                    ScientificName, CommonName, Mean_Biomass, Mean_Count, Targeted, Trophic_Full,
-                    ReserveStatus, Reference, MeanDepth) %>%
-      dplyr::mutate(Date = base::as.Date(base::ISOdate(SurveyYear, 1, 1)),
-                    IslandName = gsub(" Island", "", IslandName)) %>% 
-      readr::write_csv("App/Tidy_Data/Fish_Biomass_Long.csv")
+      dplyr::mutate(Date = base::as.Date(base::ISOdate(SurveyYear, 7, 1))) %>%
+      dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName,
+                    SurveyYear, Date, ScientificName, CommonName, Count,
+                    Mean_Biomass, ReserveStatus, Reference) %>%
+      readr::write_csv("App/Tidy_Data/Fish_Biomass.csv")
+    
   }
   
-  { # Fish Biomass Wide   -----
-    Fish_Biomass_Wide <- Fish_Biomass_Long %>%  
-      dplyr::filter(Reference == TRUE, SurveyYear > 2004, SiteCode != "KH") %>%
-      dplyr::group_by(IslandCode, IslandName, SiteCode, SiteName, 
-                      CommonName, SurveyYear, ReserveStatus) %>%
-      dplyr::summarise(Mean_Biomass = base::sum(Mean_Biomass)) %>%
-      dplyr::ungroup() %>% 
+  { # Biomass All Wide   ----
+    Mean_Biomass_Wide <- Benthic_Mean_Biomass %>% 
+      dplyr::select(-Mean_Density, -Survey_Type) %>% 
+      base::rbind(dplyr::select(Fish_Mean_Biomass, -Count)) %>% 
+      dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, 
+                    SurveyYear, CommonName, Mean_Biomass, ReserveStatus, Reference) %>%
       tidyr::pivot_wider(names_from = CommonName, values_from = Mean_Biomass, values_fill = 0) %>%
-      dplyr::left_join(annual_mean_oni, by = c("SurveyYear")) %>% 
       dplyr::rename_with(~ base::gsub(",", "", .)) %>% 
-      dplyr::rename_with(~ base::gsub(" ", "_", .)) %>%
-      readr::write_csv("App/Tidy_Data/Fish_Biomass_Wide.csv") 
-  }
+      dplyr::rename_with(~ base::gsub(" ", "_", .)) 
+    
+    # readr::write_csv("App/Tidy_Data/Benthic_Biomass_Wide.csv") 
+  } 
   
 }
 
 { # Mixed Data (% Cover, Count, Biomass) for Random Forest Model  ----
   
-  # Run Benthic Count Block 
-  # Run Both Biomass Blocks First
-  
-  { # RDFC Count Data  ---- 
-    RDFC_Wide <- data.table::fread(
-      glue("Raw_Data/KFM_RovingDiverFishCount_RawData_1982-{Export_END_Year}.txt")) %>%
-      dplyr::left_join(Site_Info) %>%
-      tidyr::separate(SurveyDate, c('Date','Time'),' ') %>%
-      dplyr::mutate(Date = lubridate::mdy(Date),
-                    CommonName = factor(CommonName)) %>% 
-      dplyr::group_by(SurveyYear, SiteNumber) %>% 
-      dplyr::filter(Date == base::max(Date), 
-                    IslandCode != "CL", SurveyYear > 2004, 
-                    ExperienceLevel == "E",) %>% 
-      dplyr::ungroup() %>% 
-      dplyr::mutate(CommonName = gsub('ñ', 'n', CommonName),
-                    Abundance = gsub("c", "C", Abundance),
-                    Abundance = gsub("f", "F", Abundance),
-                    Abundance = gsub("s", "S", Abundance),
-                    Abundance = gsub("m", "M", Abundance),
-                    Abundance = gsub("^$", NA, Abundance),
-                    Abundance = gsub("-", NA, Abundance)) %>%
-      dplyr::filter(! CommonName %in% c( 
-        "black surfperch, adult", "black surfperch, juvenile",
-        "blacksmith, adult", "blacksmith, juvenile",
-        "blue rockfish, all",
-        "kelp bass, adult", "kelp bass, juvenile",
-        "kelp rockfish, all",
-        "olive rockfish, all",
-        "opaleye, adult", "opaleye, juvenile",
-        "pile perch, adult", "pile perch, juvenile",
-        "senorita, adult", "senorita, juvenile",
-        "striped surfperch, adult", "striped surfperch, juvenile",
-        "copper rockfish, all",
-        "goby spp.",
-        "kelp greenling, adult",
-        "rockfish spp.", "rockfish spp., adult")) %>% 
+  { # RDFC Counts for Mixed Data ---- 
+    
+    RDFC_Wide <- RDFC_Density %>% 
+      dplyr::filter(SurveyYear > 2004,
+                    !ScientificName %in% Fish_Biomass_Species,
+                    !CommonName %in% c( 
+                      "blackeye goby", "blue-banded goby",
+                      "island kelpfish", "copper rockfish, all",
+                      "goby spp.", "kelp greenling, adult",
+                      "rockfish spp.", "rockfish spp., adult")) %>% 
       dplyr::mutate(
+        CommonName = factor(CommonName),
         CommonName = forcats::fct_collapse(
           CommonName,
-          "blue rockfish" = c("blue rockfish, adult"),
-          "kelp rockfish" = c("kelp rockfish, adult"),
-          "olive rockfish" = c("olive rockfish, adult"),
-          "treefish" = c("treefish, adult"),
-          "black and yellow rockfish" = c("black and yellow rockfish, adult"),
-          "black rockfish" = c("black rockfish, adult"),
-          "bocaccio" = c("bocaccio, adult"),
-          "brown rockfish" = c("brown rockfish, adult"),
-          "calico rockfish" = c("calico rockfish, adult"),
-          "canary rockfish" = c("canary rockfish, adult"),
-          "copper rockfish" = c("copper rockfish, adult"),
-          "gopher rockfish" = c("gopher rockfish, adult"),
-          "grass rockfish" = c("grass rockfish, adult"),
-          "halfbanded rockfish" = c("halfbanded rockfish, adult"),
-          "vermillion rockfish" = c("vermillion rockfish, adult"),
-          "Rockfish YOY" = c("blue rockfish, juvenile",
-                             "kelp rockfish, juvenile",
-                             "olive rockfish, juvenile",
-                             "black and yellow/gopher rockfish, juvenile", 
-                             "kelp/gopher/copper/black and yellow rockfish, juvenile",
-                             "olive/yellowtail rockfish, juvenile",
-                             "rockfish spp., juvenile",
-                             "rosy rockfish, juvenile",
-                             "squarespot rockfish, juvenile",
-                             "stripetail rockfish, juvenile",
-                             "splitnose rockfish, juvenile",
-                             "bocaccio, juvenile",
-                             "brown rockfish, juvenile", 
-                             "calico rockfish, juvenile", 
-                             "canary rockfish, juvenile", 
-                             "copper rockfish, juvenile",
-                             "gopher rockfish, juvenile", 
-                             "grass rockfish, juvenile", 
-                             "vermillion rockfish, juvenile",
-                             "halfbanded rockfish, juvenile", 
-                             "treefish, juvenile"), 
-          "cabezon" = c("cabezon, adult","cabezon, juvenile"),
-          "California scorpionfish" = c("California scorpionfish, adult",  "California scorpionfish, juvenile"),
-          "California sheephead, female" = c("California sheephead, female",  "California sheephead, juvenile"),
-          "halfmoon" = c("halfmoon, adult", "halfmoon, juvenile"),
-          "garibaldi" = c("garibaldi, adult", "garibaldi, subadult", "garibaldi, juvenile"),
-          "lingcod" = c("lingcod, adult"),
-          "ocean whitefish" = c("ocean whitefish, adult", "ocean whitefish, juvenile"),
-          "rock wrasse, female" = c("rock wrasse, female", "rock wrasse, juvenile"),
           "baitfish spp." = c("baitfish unidentified", "Pacific sardine", "northern anchovy"),
-          "finescale triggerfish" = c("finescale triggerfish, adult",  "finescale triggerfish, juvenile"),
-          "giant black sea bass" = c("giant black sea bass, adult",  "giant black sea bass, juvenile"),
-          "giant kelpfish" = c("giant kelpfish, adult", "giant kelpfish, juvenile"),
           "kelp greenling" = c("kelp greenling, male", "kelp greenling, female",  "kelp greenling, juvenile"),
-          "sculpin spp." = c("lavender sculpin",
-                             "sailfin sculpin",
-                             "snubnose sculpin",
-                             "sculpin spp.",
-                             "spotfin sculpin",
-                             "scalyhead sculpin"),
-          "surfperch spp." = c("surfperch spp., adult",
-                               "surfperch spp., juvenile",
-                               "sharpnose surfperch",
-                               "sharpnose/white surfperch",
-                               "white surfperch"),
-          "top smelt" = c("top smelt, adult", "top smelt, juvenile"),
-          "tubesnout" = c("tubesnout, adult", "tubesnout, juvenile"),
+          "Rockfish YOY" = c(
+            "black and yellow/gopher rockfish, juvenile", 
+            "kelp/gopher/copper/black and yellow rockfish, juvenile",
+            "olive/yellowtail rockfish, juvenile",
+            "rockfish spp., juvenile",
+            "rosy rockfish, juvenile",
+            "squarespot rockfish, juvenile",
+            "stripetail rockfish, juvenile",
+            "splitnose rockfish, juvenile",
+            "bocaccio, juvenile",
+            "brown rockfish, juvenile", 
+            "calico rockfish, juvenile", 
+            "canary rockfish, juvenile",
+            "grass rockfish, juvenile", 
+            "halfbanded rockfish, juvenile"), 
+          "sculpin spp." = c(
+            "lavender sculpin",
+            "sailfin sculpin",
+            "snubnose sculpin",
+            "sculpin spp.",
+            "spotfin sculpin",
+            "scalyhead sculpin"),
+          "surfperch spp." = c(
+            "surfperch spp., adult",
+            "surfperch spp., juvenile",
+            "sharpnose surfperch",
+            "sharpnose/white surfperch",
+            "white surfperch"),
           "c_o turbot" = c("c-o turbot")),
-        CommonName = gsub(", all", "", CommonName),
-        CommonName = factor(CommonName)) %>%
-      dplyr::group_by(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, 
-                      CommonName, SurveyYear, Date, ReserveStatus, MeanDepth, Reference) %>%
-      dplyr::summarise(Mean_Count = as.double(mean(Count))) %>%
+        CommonName = as.character(CommonName),
+        CommonName = gsub(", juvenile", "", CommonName),
+        CommonName = gsub(", adult", "", CommonName)) %>%
+      dplyr::group_by(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, 
+                      CommonName, ReserveStatus, Reference) %>%
+      dplyr::summarise(Mean_Density = sum(Count)) %>%
       dplyr::ungroup() %>%
-      dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, 
-                    CommonName, SurveyYear, Date, Mean_Count, ReserveStatus, Reference) %>%
-      dplyr::filter(Reference == TRUE, SurveyYear > 2004, SiteCode != "KH") %>%
-      dplyr::select(IslandCode, IslandName, SiteCode, SiteName, 
-                    CommonName, SurveyYear, Mean_Count, ReserveStatus) %>%
-      tidyr::pivot_wider(names_from = CommonName, values_from = Mean_Count, values_fill = 0) %>% 
-      dplyr::select(-'blackeye goby', -'blue-banded goby', -'island kelpfish')  %>% 
-      replace(is.na(.), 0)
+      dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear,
+                    CommonName, Mean_Density, ReserveStatus, Reference) %>%
+      tidyr::pivot_wider(names_from = CommonName, values_from = Mean_Density, values_fill = 0) %>% 
+      dplyr::rename_with(~ base::gsub(",", "", .)) %>% 
+      dplyr::rename_with(~ base::gsub(" ", "_", .)) %>% 
+      dplyr::rename_with(~ base::gsub("-", "_", .)) %>% 
+      dplyr::rename_with(~ base::gsub("'", "", .)) 
   }
   
   { # Counts and Biomass  ----
-    Counts <- base::rbind(oneM_Count_Data, fiveM_Count_Data, bands_Count_Data) %>%
-      dplyr::mutate(Mean_Density = Mean_Density * 2000) 
-    Biomasses <- dplyr::full_join(Benthic_Biomass_Wide, Fish_Biomass_Wide) %>% 
-      dplyr::select(-Mean_ONI_ANOM)  
-    remove <- c('SiteCode', 'SiteName', 'IslandCode', 'IslandName', 
-                'SurveyYear', 'ReserveStatus', 'Date', 'Mean_ONI_ANOM')
-    Biomass_Species <- unique(factor(c(names(Benthic_Biomass_Wide), names(Fish_Biomass_Wide))))
-    Biomass_Species <- droplevels(Biomass_Species[! Biomass_Species %in% remove])
-    levels(Biomass_Species)
+    
+    VFT_Counts <- VFT_Density %>% 
+      dplyr::mutate(
+        CommonName = gsub(
+          "California sheephead, juvenile", "California sheephead, female", CommonName),
+        CommonName = gsub(
+          "rock wrasse, juvenile", "rock wrasse, female", CommonName),
+        CommonName = gsub(", juvenile", "", CommonName),
+        CommonName = gsub(", subadult", "", CommonName),
+        CommonName = gsub(", adult", "", CommonName)) %>% 
+      dplyr::group_by(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, 
+                      ScientificName, CommonName, ReserveStatus, Reference) %>% 
+      dplyr::summarise(Mean_Density = sum(Mean_Density * 2000))
+    
+    Counts <- Benthic_Counts %>%
+      dplyr::left_join(dplyr::distinct(Species_Info, ScientificName, CommonNameSimple)) %>% 
+      dplyr::mutate(CommonName = CommonNameSimple,
+                    Mean_Density = Count) %>%  
+      base::rbind(VFT_Counts) %>% 
+      dplyr::select(-CommonNameSimple, -Count) %>%
+      dplyr::filter(!CommonName %in% Benthic_Mean_Biomass$CommonName)
+    
   }
   
   { # Mixed Data Wide  -----
-    All_Mixed_Data_Wide <- readr::read_csv(
-      glue("Raw_Data/KFM_RandomPointContact_RawData_1982-{Export_END_Year}.txt"), 
-      col_types = cols(CountA = col_number(), CountB = col_number(), CountC = col_number(), CountD = col_number())) %>%
-      dplyr::filter(IslandCode != "CL") %>%
-      dplyr::left_join(Site_Info) %>%
-      tidyr::separate(SurveyDate, c('Date','Time'),' ') %>%
-      dplyr::mutate(Date = lubridate::mdy(Date),
-                    ScientificName = dplyr::case_when(
-                      CommonName == "encrusting coralline algae" ~ "encrusting coralline algae",
-                      CommonName == "articulated coralline algae" ~ "articulated coralline algae",
-                      TRUE ~ ScientificName)) %>%
-      tidyr::pivot_longer(cols = c(CountA, CountB, CountC, CountD), values_to = "Count") %>% 
-      dplyr::filter(!is.na(Count), !is.na(CommonName),
-                    ScientificName != "Macrocystis, Pterygophora, and Eisenia combined",
-                    ScientificName != "Macrocystis pyrifera",
-                    ScientificName != "Eisenia arborea",
-                    ScientificName != "Pterygophora californica",
-                    ScientificName != "Laminaria farlowii",
-                    ScientificName != "Sargassum horneri",
-                    ScientificName != "Leucetta losangelensis",
-                    ScientificName != "Hydrozoa",
-                    ScientificName != "Bare Substrate",
-                    ScientificName != "Rock",
-                    ScientificName != "Cobble",
-                    ScientificName != "Sand",
-                    ScientificName != "Balanus",
-                    ScientificName != "Sargassum muticum",
-                    ScientificName != "Polymastia pachymastia",
-                    ScientificName != "Spirobranchus spinosus") %>% 
-      dplyr::group_by(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, Species, ScientificName,
-                      CommonName, SurveyYear, Date, ReserveStatus, MeanDepth, Reference) %>%
-      dplyr::summarise(
-        Area_Surveyed = 
-          ifelse(SurveyYear == 1982, 5, 
-                 ifelse(SurveyYear == 1983, 4,
-                        ifelse(SurveyYear == 1984, 5,
-                               ifelse(SurveyYear > 1984 & SurveyYear <= 1995, 10, 6)))),
-        Total_Count = sum(Count),
-        Mean_Density = 
-          ifelse(SurveyYear == 1982, round((Total_Count / Area_Surveyed), 4), 
-                 ifelse(SurveyYear == 1983, round((Total_Count / Area_Surveyed), 4),
-                        ifelse(SurveyYear == 1984, round((Total_Count / Area_Surveyed), 4),
-                               ifelse(SurveyYear > 1984 & SurveyYear <= 1995, round((Total_Count / Area_Surveyed), 4), 
-                                      round((Total_Count / Area_Surveyed), 4)))))) %>% 
-      dplyr::ungroup() %>%  
-      dplyr::distinct(SiteNumber, ScientificName, CommonName, SurveyYear, Mean_Density, .keep_all = TRUE)  %>% 
-      dplyr::arrange(SiteNumber, SurveyYear, ScientificName) %>%
-      dplyr::select(IslandCode, IslandName, SiteCode, SiteName, ScientificName,
-                    SurveyYear, Mean_Density, ReserveStatus, Reference) %>% 
-      base::rbind(oneM_Count_Data, fiveM_Count_Data, bands_Count_Data, Counts) %>% 
-      dplyr::filter(Reference == TRUE, SurveyYear > 2004, SiteCode != "KH") %>% 
-      dplyr::group_by(IslandCode, IslandName, SiteCode, SiteName, ScientificName, SurveyYear, ReserveStatus) %>%
-      dplyr::summarise(Mean_Density = base::sum(Mean_Density)) %>%
-      dplyr::ungroup() %>% 
-      tidyr::pivot_wider(names_from = ScientificName, values_from = Mean_Density, values_fill = 0) %>%
-      dplyr::full_join(RDFC_Wide) %>%
-      dplyr::mutate(IslandName = gsub(" Island", "", IslandName),
-                    IslandName = factor(IslandName, levels = MPA_Levels)) %>%   
+    
+    All_Mixed_Data_Wide <- RPC_Cover %>% 
+      dplyr::filter(
+        !ScientificName %in% c(
+          "Macrocystis pyrifera", "Eisenia arborea",
+          "Pterygophora californica", "Laminaria farlowii",
+          "Sargassum horneri", "Bare Substrate",
+          "Rock", "Cobble", "Sand")) %>% 
+      dplyr::left_join(dplyr::distinct(Species_Info, ScientificName, CommonNameSimple)) %>% 
+      dplyr::mutate(CommonName = CommonNameSimple,
+                    Mean_Density = Percent_Cover) %>% 
+      dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, 
+                    ScientificName, CommonName, Mean_Density, ReserveStatus, Reference) %>% 
+      base::rbind(Counts, dplyr::select(Benthic_Mean_Biomass, -Date, -Mean_Density, -Survey_Type) %>% 
+                    dplyr::mutate(Mean_Density = Mean_Biomass) %>% 
+                    dplyr::select(-Mean_Biomass)) %>% 
+      dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, 
+                    CommonName, Mean_Density, ReserveStatus, Reference) %>% 
+      tidyr::pivot_wider(names_from = CommonName, values_from = Mean_Density, values_fill = 0) %>% 
+      dplyr::mutate(
+        ReserveStatus = case_when(
+          SurveyYear < 2003 & SiteCode == "LC" ~ "Inside",
+          SurveyYear < 2003 & SiteCode == "CC" ~ "Inside",
+          SurveyYear < 2003 ~ "Outside",
+          TRUE ~ ReserveStatus)) %>% 
+      dplyr::left_join(Diversity_Shannon %>% 
+                         dplyr::select(-Date) %>% 
+                         dplyr::filter(SurveyYear > 2004)) %>%
+      dplyr::left_join(Diversity_Simpson %>% 
+                         dplyr::select(-Date) %>% 
+                         dplyr::filter(SurveyYear > 2004)) %>%
       dplyr::rename_with(~ base::gsub(",", "", .)) %>% 
-      dplyr::rename_with(~ base::gsub(" ", "_", .)) %>%
-      dplyr::select(-tidyselect::all_of(Biomass_Species)) %>% 
-      dplyr::full_join(Biomasses) %>% 
-      dplyr::rename("island_kelpfish" = "Alloclinus_holderi",
-                    "blackeye_goby" = "Coryphopterus_nicholsi",
-                    "blue_banded_goby" = "Lythrypnus_dalli") %>% 
-      readr::write_csv("App/Tidy_Data/All_Mixed_Data_Wide.csv") 
+      dplyr::rename_with(~ base::gsub(" ", "_", .)) %>% 
+      dplyr::rename_with(~ base::gsub("-", "_", .)) %>% 
+      dplyr::rename_with(~ base::gsub("'", "", .)) %>% 
+      readr::write_csv("App/Tidy_Data/Mixed_Data_Fish_Density.csv") %>% 
+      dplyr::select(-all_of(VFT_Species)) %>% 
+      dplyr::filter(SurveyYear > 2004) %>%
+      dplyr::left_join(RDFC_Wide) %>% 
+      base::replace(is.na(.), 0) %>%
+      readr::write_csv("App/Tidy_Data/Mixed_Data_Fish_Biomass.csv")
+    
   }
   
 }
