@@ -32,8 +32,6 @@ source('R/modules.R')
   
   Species_Info <- readr::read_csv("Meta_Data/Species_Complete.csv")
   
-  # Mixed_Data_xRef <- readr::read_csv("Meta_Data/Mixed_Data_xref.csv")
-  
   Benthic_Biomass_Species <- c(
     "Crassedoma giganteum", "rock scallop",
     "Haliotis rufescens", "red abalone",
@@ -141,6 +139,9 @@ source('R/modules.R')
   SpeciesColor <- c(as.character(Species_Info$Color))
   names(SpeciesColor) <- c(Species_Info$CommonName)
   SpeciesColor <- SpeciesColor[!is.na(SpeciesColor)]
+  
+  Target_Colors <- c("Index Value" = "dodgerblue2", "Categorical" = "darkgoldenrod3",
+                     "Targeted" = "mediumvioletred", "Non-targeted" = "mediumseagreen")
 }
 
 { # Island and Site Information   -----
@@ -152,7 +153,7 @@ source('R/modules.R')
       "Santa Cruz" = "forestgreen", "Santa Cruz Island" = "forestgreen", "SC" = "forestgreen", 
       "Anacapa" = "darkorange", "Anacapa Island" = "darkorange", "AN" = "darkorange", 
       "Santa Barbara" = "firebrick2", "Santa Barbara Island" = "firebrick2", "SB" = "firebrick2", 
-      "Inside" = "green", "Outside" = "red") 
+      "Inside" = "green", "Outside" = "red", "1978" = "green", "2003" = "dodgerblue2") 
   
   Island_Levels_Short <- c(
     "San Miguel", 
@@ -344,7 +345,7 @@ source('R/modules.R')
   }
 }
 
-{ #  Maps_DF   ----
+{ # Maps Data   ----
   
   mpa <- st_read("GIS_Data/California_Marine_Protected_Areas.shp")
   
@@ -378,14 +379,21 @@ source('R/modules.R')
     
 }
 
-{ # Biodiversity  ----
-  Shannon_Index <- readr::read_csv("Tidy_Data/Diversity_Shannon.csv")
-  
-  Simpson_Index <- readr::read_csv("Tidy_Data/Diversity_Simpson.csv")
+{ # Biodiversity Data    ----
+  Diversity <- readr::read_csv("Tidy_Data/Diversity.csv")
 }
 
-{ # Community Similarity    ----
-  nMDS_3D <- readr::read_csv("Tidy_Data/nMDS_3D.csv")
+{ # Community Similarity Data   ----
+  nMDS_3D_2005_now <- readr::read_csv("Tidy_Data/nMDS_3D_2005_now.csv")
+  nMDS_3D_all_years <- readr::read_csv("Tidy_Data/nMDS_3D_all_years.csv") 
+  
+}
+
+{ # Important Species Data  ---
+  RF_Importance_All_Years <- 
+    readr::read_csv("Tidy_Data/Species_Importance_All_Years.csv")
+  RF_Importance_2005 <-
+    readr::read_csv("Tidy_Data/Species_Importance_2005.csv")
 }
 
 

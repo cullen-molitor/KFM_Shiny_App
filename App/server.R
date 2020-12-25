@@ -2,22 +2,24 @@
 # Define server logic
 server <- function(input, output, session) {
   
-  protocol_Server(id = "1m")
-  protocol_Server(id = "5m")
-  protocol_Server(id = "bands")
-  protocol_Server(id = "rpcs")
-  protocol_Server(id = "nhsf")
-  protocol_Server(id = "arms")
-  protocol_Server(id = "rdfc")
-  protocol_Server(id = "vft")
-  protocol_Server(id = "fsf")
-  protocol_Server(id = "vtt")
-  protocol_Server(id = "temp")
-  protocol_Server(id = "species")
+  { # Protocols  -----
+    protocol_Server(id = "1m")
+    protocol_Server(id = "5m")
+    protocol_Server(id = "bands")
+    protocol_Server(id = "rpcs")
+    protocol_Server(id = "nhsf")
+    protocol_Server(id = "arms")
+    protocol_Server(id = "rdfc")
+    protocol_Server(id = "vft")
+    protocol_Server(id = "fsf")
+    protocol_Server(id = "vtt")
+    protocol_Server(id = "temp")
+    protocol_Server(id = "species") 
+  }
   
-  { # ........ Map_Servers ........   ----
+  { # Maps   ----
     
-    { # Leaflet Maps     ----
+    { # .... Leaflet Maps     ----
       
       output$Leaflet <- renderLeaflet({
         leaflet() %>%
@@ -57,7 +59,7 @@ server <- function(input, output, session) {
       
     }
     
-    { # Satellite Site Maps  -----
+    { # .... Satellite Site Maps  -----
       
       satMapCode <- reactive({
         if (input$Sat_Isl_Site == "Park") {
@@ -84,7 +86,7 @@ server <- function(input, output, session) {
       }, deleteFile = FALSE)
     }
     
-    { # Bathymetry Maps   ----
+    { # .... Bathymetry Maps   ----
       Bath_Site <- reactive(
         dplyr::filter(Site_Info, SiteName == input$Bath_Maps_Site)$SiteNumber)
       
@@ -100,7 +102,7 @@ server <- function(input, output, session) {
       
     }
     
-    { # ARM Maps   ----
+    { # .... ARM Maps   ----
       
       ARM_Site <- reactive(
         dplyr::filter(Site_Info, SiteName == input$Arm_Maps_Site)$SiteNumber)
@@ -116,7 +118,7 @@ server <- function(input, output, session) {
       
     }
     
-    { # Site Descriptions   ----
+    { # .... Site Descriptions   ----
       
       output$SitePDF <- renderUI({
         tags$iframe(
@@ -128,113 +130,109 @@ server <- function(input, output, session) {
     }
   }
   
-  output$Shannon_Plot <- renderPlot({ # Biodiversity  ----
-    
-   
-    Shannon_Split <- base::split(Shannon_Index, f = Shannon_Index$IslandName) 
-    p1 <- ggplot(Shannon_Split$`San Miguel Island`,
-                 aes(x = Date, y = Shannon_Index, color = SiteCode, linetype = SiteCode)) + 
-      # geom_line(size = .5) +
-      geom_smooth(size = .5, se = FALSE, method = 'loess', formula = 'y ~ x') +
-      ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0),
-                            limits = c(lubridate::ymd(min(Shannon_Index$Date)),
-                                       lubridate::ymd(max(Shannon_Index$Date)))) +
-      scale_y_continuous(limits = c(0, NA), 
-        expand = expansion(mult = c(0, .1))) +
-      labs(title = "Shannon-Weiner Diversity Index",  
-           color = "Site Code", linetype = "Site Code",
-           x = NULL, y = NULL) +
-      facet_grid(rows = vars(IslandName), scales = "fixed") +
-      scale_color_manual(values = SiteColor, guide = guide_legend(ncol = 2)) +
-      scale_linetype_manual(values = SiteLine, guide = guide_legend(ncol = 2)) +
-      all_sites_theme()
-    p2 <- p1 %+% Shannon_Split$`Santa Rosa Island` +
-      labs(title = NULL, subtitle = NULL)
-    p3 <- p1 %+% Shannon_Split$`Santa Cruz Island` +
-      labs(title = NULL, subtitle = NULL)
-    p4 <- p1 %+% Shannon_Split$`Anacapa Island` +
-      labs(title = NULL, subtitle = NULL)
-    p5 <- p1 %+% Shannon_Split$`Santa Barbara Island`  +
-      labs(title = NULL, subtitle = NULL, x = "Year") +
-      theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1, size = 10))
-    arrange_plot <- ggpubr::ggarrange(
-      p1, p2, p3, p4, p5, ncol = 1, heights = c(.9, .75, .75, .75, 1),
-      align = "v", common.legend = FALSE)
-    annotate_plot <- ggpubr::annotate_figure(
-      arrange_plot, left = text_grob("Index Value", color = "black", rot = 90, size = 16)
-    )
-    print(annotate_plot)
-    
-    
-    
-    
-    
-    # p1 <- ggplot2::ggplot(Shannon_Index, aes(x = Date, y = Shannon_Index, linetype = ReserveStatus)) +
-    #   ggplot2::geom_smooth(size = 1, span = 0.75,
-    #                        aes(color = ReserveStatus)) +
-    #   ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0)) +
-    #   ggplot2::scale_y_continuous(limits = c(0, NA), expand = c(0, 0), oob = squish) +
-    #   ggplot2::scale_colour_manual(values = Island_Colors) +
-    #   ggplot2::labs(title = "Shannon-Weiner Diversity Index",
-    #                 x = NULL, y = NULL,
-    #                 linetype = "Reserve Status",
-    #                 color = "Reserve Status") +
-    #   timeseries_top_theme()
-    # 
-    # p2 <- ggplot2::ggplot(Shannon_Index, aes(x = Date, y = Shannon_Index, color = IslandName)) +
-    #   ggplot2::geom_smooth(size = 1, span = .75) +
-    #   ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0)) +
-    #   ggplot2::scale_y_continuous(limits = c(0, NA), expand = c(0, 0), oob = squish) +
-    #   ggplot2::scale_colour_manual(values = Island_Colors) +
-    #   ggplot2::labs(x = NULL, y = NULL,
-    #                 color = "Island") +
-    #   timeseries_top_theme()
-    # 
-    # p3 <- ggplot2::ggplot() +
-    #   geom_rect(data = SST_Anomaly_Index,
-    #             aes(xmin = DateStart, xmax = DateEnd, ymin = -Inf, ymax = 0, fill = ONI_ANOM)) +
-    #   scale_fill_gradient2(high = "darkred", mid = "white", low = "navyblue", midpoint = 0,
-    #                        guide = guide_colorbar(direction = "horizontal", title.position = "top",
-    #                                               order = 3, barheight = unit(.2, "cm"))) +
-    #   ggplot2::geom_smooth(data = Shannon_Index, method = 'loess', formula = 'y~x', size = 1, se = F, span = .75,
-    #                        aes(x = Date, y = Shannon_Index, color = IslandName, linetype = ReserveStatus)) +
-    #   ggplot2::geom_hline(aes(yintercept = 0)) +
-    #   ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0),
-    #                         limits = c(lubridate::ymd(min(Shannon_Index$Date)), 
-    #                                    lubridate::ymd(max(Shannon_Index$Date)))) +
-    #   ggplot2::scale_y_continuous(expand = expansion(mult = c(.1, 0)),
-    #                               limits = c(0, NA), oob = squish) +
-    #   ggplot2::guides(color = guide_legend(order = 1), 
-    #                   linetype = guide_legend(order = 2, override.aes = list(col = 'black'))) +
-    #   ggplot2::scale_colour_manual(values = Island_Colors) +
-    #   ggplot2::labs(x = "Survey Year", y = NULL,
-    #                 color = "Island",
-    #                 fill = "Oceanic Niño Index",
-    #                 linetype = "Reserve Status") +
-    #   timeseries_bottom_theme() 
-    # Diversity_Plot <-ggarrange(p1, p2, p3, ncol = 1, align = "v", heights = c(.8, .8, 1))
-    # Diversity_annotated <- ggpubr::annotate_figure(
-    #   Diversity_Plot,
-    #   left = text_grob("Diversity Index Value", 
-    #                    family ="Cambria", color = "black", rot = 90, size = 13))
-    # print(Diversity_annotated)
-    
-    
-  })
+  { # Biodiversity   ----
+    diversity_Server(id = "shannon")
+    diversity_Server(id = "simpson") 
+  }
   
-  output$Three_D <- renderPlotly({
+  output$Three_D <- renderPlotly({ # Community Similarity   ----
+    com_sim_data <- reactive({
+      if (input$radio_3D_years == "All Years (Fewer Species)") {
+        nMDS_3D_all_years
+      } else {nMDS_3D_2005_now}
+    })
     
-      plotly::plot_ly(nMDS_3D, x = ~`Dim 1`, y = ~`Dim 2`, z = ~`Dim 3`,
-                      frame = ~SurveyYear, text = ~SiteName, hoverinfo = "text",
-                      color = ~ReserveStatus, colors = Island_Colors) %>%
+    plotly::plot_ly(com_sim_data(), x = ~`Dim 1`, y = ~`Dim 2`, z = ~`Dim 3`,
+                    frame = ~SurveyYear, text = ~SiteName, hoverinfo = "text", mode = 'markers') %>%
+      plotly::add_markers(color = ~ReserveStatus,
+                          colors = Island_Colors) %>% 
       plotly::add_markers(symbol = ~ReserveStatus,
                           symbols = c('Inside' = "cross-open", 'Outside' = "square")) %>%
       plotly::add_text(text = ~SiteCode) %>%
       plotly::layout(scene = list(xaxis = list(title = 'Dim 1'),
                                   yaxis = list(title = 'Dim 2'),
                                   zaxis = list(title = 'Dim 3'))) %>%
-      plotly::animation_opts(1500, easing = "linear")
+      plotly::animation_opts(frame = 1500, transition = 500, easing = "elastic")
     
   })
   
+  Variable_Importance <- reactive({
+      if (input$radio_ISA_years == "All Years (Fewer Species)") {
+        RF_Importance_All_Years %>% 
+          head(30) %>% 
+          droplevels()
+      } else {
+        RF_Importance_2005 %>% 
+          head(30) %>% 
+          droplevels()
+      }
+    })
+  
+  output$ISA_plot <- renderPlot({
+    
+    Accuracy <- 
+      ggplot(
+        Variable_Importance(), aes(x = MeanDecreaseAccuracy, color = Targeted,
+                    y = reorder(CommonName, MeanDecreaseAccuracy))) +
+      geom_point() +
+      geom_segment(
+        size = 1, 
+        aes(x = min(MeanDecreaseAccuracy) - .5, xend = MeanDecreaseAccuracy, 
+            y = CommonName, yend = CommonName)) +
+      labs(x = "Mean Decrease in % Accuracy", y = NULL, 
+           color = NULL, linetype = NULL) +
+      scale_x_continuous(expand = expansion(mult = c(0,.1)), 
+                         limits = c(min(Variable_Importance()$MeanDecreaseAccuracy) - .5, NA)) +
+      scale_color_manual(values = Target_Colors) +
+      theme_classic() +
+      theme(axis.text = element_text(size = 12),
+            axis.title = element_text(size = 12),
+            legend.text = element_text(size = 12))
+    
+    Gini <- ggplot(Variable_Importance(), aes(x = MeanDecreaseGini, color = Targeted, 
+                               y = reorder(CommonName, MeanDecreaseGini))) +
+      geom_point() +
+      geom_segment(size = 1,
+                   aes(x = min(MeanDecreaseGini) - .5, xend = MeanDecreaseGini,
+                       y = CommonName, yend = CommonName)) +
+      labs(x = "Mean Decrease in Gini Index", y = NULL, 
+           color = NULL, linetype = NULL) +
+      scale_x_continuous(expand = expansion(mult = c(0,.1)), 
+                         limits = c(min(Variable_Importance()$MeanDecreaseGini) - .5, NA)) +
+      scale_color_manual(values = Target_Colors) +
+      theme_classic() +
+      theme(axis.text = element_text(size = 12),
+            axis.title = element_text(size = 12),
+            legend.text = element_text(size = 12))
+    ggarrange(Accuracy, Gini, ncol = 2, align = "h", common.legend = TRUE, legend = "bottom")
+  })
+  
 } 
+
+
+# nMDS_3D_all_years <- nMDS_3D_2005_now %>%
+#   dplyr::left_join(Diversity_Shannon)
+# 
+# plotly::plot_ly(nMDS_3D_all_years, x = ~`Dim 1`, y = ~`Dim 2`, # z = ~`Dim 3`,
+#                 color = ~IslandCode, colors = Island_Colors,
+#                 size = ~Shannon_Index, sizes = c(5, 50), mode = 'markers',
+#                 symbol = ~ReserveStatus, frame = ~SurveyYear,
+#                 marker = list(symbols = c('Inside' = "circle", 'Outside' = "square"), sizemode = 'diameter'), 
+#                 text = ~SiteName, hoverinfo = "text") %>%
+#   plotly::add_markers() %>%
+#   # plotly::add_text(text = ~SiteCode, marker = list(color = "black", size = NA)) %>%
+#   plotly::layout(scene = list(xaxis = list(title = 'Dim 1'),
+#                               yaxis = list(title = 'Dim 2'),
+#                               zaxis = list(title = 'Dim 3'))) %>%
+#   plotly::animation_opts(frame = 1000, easing = "linear")
+
+
+
+
+
+
+
+
+
+
+

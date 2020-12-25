@@ -1,0 +1,90 @@
+Common_Name,CommonName,ScientificName,Data_Type,Category,Targeted
+SiteNumber,Site Number,SiteNumber,Categorical,Meta data,Categorical
+IslandCode,Island Code,IslandCode,Categorical,Meta data,Categorical
+IslandName,Island Name,IslandName,Categorical,Meta data,Categorical
+SiteCode,Site Code,SiteCode,Categorical,Meta data,Categorical
+SiteName,Site Name,SiteName,Categorical,Meta data,Categorical
+SurveyYear,Survey Year,SurveyYear,Categorical,Meta data,Categorical
+ReserveStatus,Reserve Status,ReserveStatus,Categorical,Meta data,Categorical
+Reference,Reference,Reference,Categorical,Meta data,Categorical
+brown_algae,brown algae,Phaeophyta,Percent Cover,Algae,Non-targeted
+bladder_chain_kelp,bladder chain kelp,Cystoseira,Percent Cover,Algae,Non-targeted
+red_algae,red algae,Rhodophyta,Percent Cover,Algae,Non-targeted
+articulated_coralline_algae,articulated coralline algae,articulated coralline algae,Percent Cover,Algae,Non-targeted
+encrusting_coralline_algae,encrusting coralline algae,encrusting coralline algae,Percent Cover,Algae,Non-targeted
+sea_tongue,sea tongue,Gigartina,Percent Cover,Algae,Non-targeted
+orange_cup_coral,orange cup coral,Balanophyllia elegans,Percent Cover,Invertebrate,Non-targeted
+La_Jolla_cup_coral,La Jolla cup coral,Astrangia lajollaensis,Percent Cover,Invertebrate,Non-targeted
+ornate_tube_worm,ornate tube worm,Diopatra ornata,Percent Cover,Invertebrate,Non-targeted
+scaled_wormsnail,scaled wormsnail,Serpulorbis squamigerus,Percent Cover,Invertebrate,Non-targeted
+tunicates,tunicates,Tunicata,Percent Cover,Invertebrate,Non-targeted
+Miscellaneous_Invertebrates_w_spiny_brittle_stars,Misc. Inv. including spiny brittle stars,Misc. Inv. including Ophiothrix spiculata,Percent Cover,Invertebrate,Non-targeted
+acid_weed,acid weed,Desmarestia,Percent Cover,Algae,Non-targeted
+green_algae,green algae,Chlorophyta,Percent Cover,Algae,Non-targeted
+agar_weed,agar weed,Gelidium,Percent Cover,Algae,Non-targeted
+miscellaneous_plants,miscellaneous plants,Plantae,Percent Cover,Algae,Non-targeted
+sponges,sponges,Porifera,Percent Cover,Invertebrate,Non-targeted
+club_tipped_anemone,club-tipped anemone,Corynactis californicus,Percent Cover,Invertebrate,Non-targeted
+colonial_sand_tube_worm,colonial sand-tube worm,Phragmatopoma californica,Percent Cover,Invertebrate,Non-targeted
+bryozoans,bryozoans,Bryozoa,Percent Cover,Invertebrate,Non-targeted
+Southern_staghorn_bryozoan,Southern staghorn bryozoan,Diaperoecia californica,Percent Cover,Invertebrate,Non-targeted
+aggregated_red_sea_cucumber,aggregated red sea cucumber,Pachythyone rubra,Percent Cover,Invertebrate,Non-targeted
+spiny_brittle_star,spiny brittle star,Ophiothrix spiculata,Percent Cover,Invertebrate,Non-targeted
+Miscellaneous_Invertebrates_wo_spiny_brittle_stars,Misc. Inv. excluding spiny brittle stars,Misc. Inv. excluding Ophiothrix spiculata,Percent Cover,Invertebrate,Non-targeted
+island_kelpfish,island kelpfish,Alloclinus holderi,Count,Fish,Non-targeted
+California_brown_sea_hare,California brown sea hare,Aplysia californica,Count,Invertebrate,Non-targeted
+Coronado_urchin,Coronado urchin,Centrostephanus coronatus,Count,Invertebrate,Non-targeted
+blackeye_goby,blackeye goby,Coryphopterus nicholsi,Count,Invertebrate,Non-targeted
+gumboot_chiton,gumboot chiton,Cryptochiton stelleri,Count,Invertebrate,Non-targeted
+chestnut_cowrie,chestnut cowrie,Cypraea spadicea,Count,Invertebrate,Non-targeted
+Southern_sea_palm,Southern sea palm,Eisenia arborea,Count,Algae,Non-targeted
+threaded_abalone,threaded abalone,Haliotis assimilis,Count,Invertebrate,Targeted
+white_abalone,white abalone,Haliotis sorenseni,Count,Invertebrate,Targeted
+oar_weed,oar weed,Laminaria farlowii,Count,Algae,Non-targeted
+blue_banded_goby,blue-banded goby,Lythrypnus dalli,Count,Fish,Non-targeted
+California_spiny_lobster,California spiny lobster,Panulirus interruptus,Count,Invertebrate,Targeted
+ochre_sea_star,ochre sea star,Pisaster ochraceus,Count,Invertebrate,Non-targeted
+California_sea_palm,California sea palm,Pterygophora californica,Count,Algae,Non-targeted
+devil_weed,devil weed,Sargassum horneri,Count,Algae,Non-targeted
+stalked_tunicate,stalked tunicate,Styela montereyensis,Count,Invertebrate,Non-targeted
+California_hydrocoral,California hydrocoral,Stylaster californicus,Count,Invertebrate,Non-targeted
+white_spotted_rose_anemone,white-spotted rose anemone,Urticina lofotensis,Count,Invertebrate,Non-targeted
+wakame,wakame,Undaria pinnatifida,Count,Algae,Non-targeted
+wavy_turban_snail,wavy turban snail,Megastraea undosa,Biomass,Invertebrate,Targeted
+warty_sea_cucumber,warty sea cucumber,Parastichopus parvimensis,Count,Invertebrate,Targeted
+bat_star,bat star,Patiria miniata,Biomass,Invertebrate,Non-targeted
+giant_spined_sea_star,giant-spined sea star,Pisaster giganteus,Biomass,Invertebrate,Non-targeted
+red_sea_urchin,red sea urchin,Strongylocentrotus franciscanus,Biomass,Invertebrate,Targeted
+purple_sea_urchin,purple sea urchin,Strongylocentrotus purpuratus,Biomass,Invertebrate,Non-targeted
+rock_scallop,rock scallop,Crassedoma giganteum,Biomass,Invertebrate,Targeted
+pink_abalone,pink abalone,Haliotis corrugata,Biomass,Invertebrate,Targeted
+green_abalone,green abalone,Haliotis fulgens,Biomass,Invertebrate,Targeted
+red_abalone,red abalone,Haliotis rufescens,Biomass,Invertebrate,Targeted
+Kellets_whelk,Kellet's whelk,Kelletia kelletii,Biomass,Invertebrate,Targeted
+red_gorgonian,red gorgonian,Lophogorgia chilensis,Biomass,Invertebrate,Non-targeted
+white_sea_urchin,white sea urchin,Lytechinus anamesus,Biomass,Invertebrate,Non-targeted
+giant_kelp,giant kelp,Macrocystis pyrifera,Biomass,Algae,Targeted
+giant_keyhole_limpet,giant keyhole limpet,Megathura crenulata,Biomass,Invertebrate,Non-targeted
+brown_gorgonian,brown gorgonian,Muricea fruticosa,Biomass,Invertebrate,Non-targeted
+sunflower_star,sunflower star,Pycnopodia helianthoides,Biomass,Invertebrate,Non-targeted
+orange_puffball_sponge,orange puffball sponge,Tethya aurantia,Biomass,Invertebrate,Non-targeted
+red_turban_snail,red turban snail,Lithopoma gibberosa,Biomass,Invertebrate,Targeted
+California_golden_gorgonian,California golden gorgonian,Muricea californica,Biomass,Invertebrate,Non-targeted
+queen_tegula,queen tegula,Tegula regina,Biomass,Invertebrate,Non-targeted
+Shannon_Index,Shannon Index,Shannon Index,Index Value,Calculated Value,Index Value
+Simpson_Index,Simpson Index,Simpson Index,Index Value,Calculated Value,Index Value
+black_surfperch,black surfperch,Embiotoca jacksoni,Count,Fish,Targeted
+blacksmith,blacksmith,Chromis punctipinnis,Count,Fish,Non-targeted
+blue_rockfish,blue rockfish,Sebastes mystinus,Count,Fish,Targeted
+California_sheephead_female,California sheephead female,Semicossyphus pulcher,Count,Fish,Targeted
+California_sheephead_male,California sheephead male,Semicossyphus pulcher,Count,Fish,Targeted
+garibaldi,garibaldi,Hypsypops rubicundus,Count,Fish,Non-targeted
+kelp_bass,kelp bass,Paralabrax clathratus,Count,Fish,Targeted
+kelp_rockfish,kelp rockfish,Sebastes atrovirens,Count,Fish,Targeted
+olive_rockfish,olive rockfish,Sebastes serranoides,Count,Fish,Targeted
+opaleye,opaleye,Girella nigricans,Count,Fish,Targeted
+pile_perch,pile perch,Rhacochilus vacca,Count,Fish,Targeted
+rock_wrasse_female,rock wrasse female,Halichoeres semicinctus,Count,Fish,Non-targeted
+rock_wrasse_male,rock wrasse male,Halichoeres semicinctus,Count,Fish,Non-targeted
+senorita,senorita,Oxyjulis californica,Count,Fish,Non-targeted
+striped_surfperch,striped surfperch,Embiotoca lateralis,Count,Fish,Targeted

@@ -414,39 +414,12 @@ ui <- dashboardPage(
           # ............ Tab - Shannon's Index  ----
           tabPanel(
             title = "Shannon-Wiener Diversity Index",
-            tags$hr(),
-            fluidRow(
-              column(
-                2, radioButtons(inputId = "Shannon_Options",
-                                label = "Choose a Category:",
-                                choices = c("All Sites",
-                                            "Original 16 Sites",
-                                            "MPA Reference Sites", 
-                                            "Individual Site"))
-              ),
-              column(
-                2, radioButtons(inputId = "Shannon_Plots",
-                                label = "Choose a Plot Type:",
-                                choices = c("Smooth Line (LOESS)",
-                                            "Line",
-                                            "Map Bubbles"))
-              )
-            ),
-            fluidRow(
-              column(
-                4, includeMarkdown(path = "Text/Shannon_Index.md")
-              ),
-              column(
-                8, plotOutput(outputId = "Shannon_Plot",
-                       height = 750)
-              )
-            )
-            
+            diversity_UI(id = "shannon")
           ),
           # ............ Tab - Simpson's Index  ----
           tabPanel(
             title = "Gini–Simpson Diversity Index",
-            tags$hr()
+            diversity_UI(id = "simpson")
           ),
           tabPanel(
             title = "Species Richness",
@@ -475,12 +448,33 @@ ui <- dashboardPage(
           tabPanel(
             title = "3-Dimensional",
             tags$hr(),
-            radioButtons(inputId = "radio_3D_years",
-                         label = "Options:",
-                         choices = c("All Years (Fewer Species)",
-                                     "Years > 2004 (All Species)")),
-            plotlyOutput(outputId = "Three_D",
-                         height = 600, width = '50%')
+            fluidRow(
+              column(6),
+              column(
+                3, radioButtons(inputId = "radio_3D_years",
+                                label = "Data Options:",
+                                choices = c("All Years (Fewer Species)",
+                                            "Years > 2004 (All Species)"))
+              ),
+              column(
+                3, radioButtons(inputId = "radio_3D_color",
+                                label = "Color sites by:",
+                                choiceNames = c("Reserve Status",
+                                            "Island"),
+                                choiceValues = c("ReserveStatus",
+                                                 "IslandName"))
+              )
+            ),
+            fluidRow(
+              column(
+                6,
+              ),
+              column(
+                6, plotlyOutput(outputId = "Three_D",
+                         height = 600, width = '100%')
+              )
+            ),
+            
           ),
           tabPanel(
             title = "2-Dimensional",
@@ -493,10 +487,55 @@ ui <- dashboardPage(
         tabName = 'ind_spe',
         h1("Kelp Forest Indicator Species"),
         tabsetPanel(
-          tabPanel("Marine Reserve Indicator Species"),
-          tabPanel("Island Indicator Species")
+          tabPanel(
+            title = "Marine Reserve Indicator Species",
+            tags$hr(),
+            fluidRow(
+              column(
+                4
+              ),
+              column(
+                3,
+                radioButtons(inputId = "radio_ISA_years",
+                             label = "Data Options:",
+                             choices = c("All Years (Fewer Species)",
+                                         "Years > 2004 (All Species)"))
+              ),
+              column(
+                3, 
+                radioButtons(inputId = "radio_ISA_plot_type",
+                             label = "Plot Options",
+                             choices = c("Variable Importance", 
+                                         "Partial Dependence"))
+              ),
+              column(
+                3,
+                conditionalPanel(condition = "input.radio_ISA_plot_type == 'Partial Dependence' 
+                                 & input.radio_ISA_years == 'All Years (Fewer Species)'",
+                                 selectInput(inputId = "select_ISA_species_all",
+                                             label = "Choose a species",
+                                             choices = RF_Importance_All_Years$CommonName)),
+                conditionalPanel(condition = "input.radio_ISA_plot_type == 'Partial Dependence' 
+                                 & input.radio_ISA_years == 'Years > 2004 (All Species)'",
+                                 selectInput(inputId = "select_ISA_species_2005",
+                                             label = "Choose a species",
+                                             choices = RF_Importance_2005$CommonName))
+              )
+            ),
+            fluidRow(
+              column(
+                4, includeMarkdown(path = "Text/variable_importance.md")
+              ),
+              column(
+                8, 
+                conditionalPanel(condition = "input.radio_ISA_plot_type == 'Variable Importance'",
+                                 plotOutput(outputId = "ISA_plot", height = 600))
+                
+              )
+            )
           ),
-        tags$img(height = 533, width = 800, src = 'Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (4).jpg')
+          tabPanel("Island Indicator Species")
+          )
       ),
       # ...... Body - Biomass    ---- 
       tabItem(

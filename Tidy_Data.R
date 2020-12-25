@@ -40,32 +40,53 @@ Export_END_Year <- 2019
   
   Species_Info <- readr::read_csv("App/Meta_Data/Species_Complete.csv")
   
-  Mixed_Data_xRef <- readr::read_csv("App/Meta_Data/Mixed_Data_xref.csv")
+  Mixed_Data_xRef_Biomass <- readr::read_csv("App/Meta_Data/Mixed_Data_xref_Fish_Biomass.csv")
+  
+  Mixed_Data_xRef_Density <- readr::read_csv("App/Meta_Data/Mixed_Data_xref_Fish_Density.csv")
   
   Site_Info <- readr::read_csv("App/Meta_Data/Site_Info.csv")
   
   Fish_Biomass_Species <- c(
-    "Caulolatilus princeps", "ocean whitefish",
-    "Chromis punctipinnis", "blacksmith",
-    "Embiotoca jacksoni", "black surfperch",
-    "Embiotoca lateralis", "striped surfperch",
-    "Girella nigricans", "opaleye",
-    "Halichoeres semicinctus", "rock wrasse, female", "rock wrasse, male",     
+    "Caulolatilus princeps", "ocean whitefish", "ocean_whitefish",
+    "Chromis punctipinnis", "blacksmith", 
+    "Embiotoca jacksoni", "black surfperch", "black_surfperch",
+    "Embiotoca lateralis", "striped surfperch", "striped_surfperch",
+    "Girella nigricans", "opaleye", 
+    "Halichoeres semicinctus", "rock wrasse, female", "rock wrasse, male",   
+                              "rock_wrasse_female", "rock_wrasse_male",  
     "Hypsypops rubicundus", "garibaldi",
-    "Medialuna californiensis", "halfmoon",
-    "Ophiodon elongatus", "lingcod",
+    "Medialuna californiensis", "halfmoon", 
+    "Ophiodon elongatus", "lingcod", 
     "Oxyjulis californica", "senorita",
-    "Paralabrax clathratus", "kelp bass",
-    "Rhacochilus toxotes", "rubberlip surfperch",
-    "Rhacochilus vacca", "pile perch",
-    "Scorpaena guttata", "California scorpionfish",
+    "Paralabrax clathratus", "kelp bass", "kelp_bass",
+    "Rhacochilus toxotes", "rubberlip surfperch", "rubberlip_surfperch",
+    "Rhacochilus vacca", "pile perch", "pile_perch",
+    "Scorpaena guttata", "California scorpionfish", "California_scorpionfish",
     "Scorpaenichthys marmoratus", "cabezon",
-    "Sebastes atrovirens", "kelp rockfish",
-    "Sebastes chrysomelas", "black and yellow rockfish",
-    "Sebastes mystinus", "blue rockfish",  
-    "Sebastes serranoides", "olive rockfish",
-    "Sebastes serriceps", "treefish",
-    "Semicossyphus pulcher", "California sheephead, male", "California sheephead, female")
+    "Sebastes atrovirens", "kelp rockfish", "kelp_rockfish",
+    "Sebastes chrysomelas", "black and yellow rockfish", "black_and_yellow_rockfish",
+    "Sebastes mystinus", "blue rockfish", "blue_rockfish",  
+    "Sebastes serranoides", "olive rockfish", "olive_rockfish",
+    "Sebastes serriceps", "treefish", 
+    "Semicossyphus pulcher", "California sheephead, male", "California sheephead, female",
+                             "California_sheephead_male", "California_sheephead_female")
+  
+  VFT_Species <- c(
+    "blacksmith", 
+    "black_surfperch", 
+    "striped_surfperch", 
+    "opaleye",                     
+    "garibaldi", 
+    "senorita",
+    "kelp_bass", 
+    "pile_perch",                 
+    "kelp_rockfish", 
+    "blue_rockfish", 
+    "olive_rockfish", 
+    "California_sheephead_female",
+    "California_sheephead_male", 
+    "rock_wrasse_female", 
+    "rock_wrasse_male")
 
 }
 
@@ -315,7 +336,6 @@ Export_END_Year <- 2019
       dplyr::distinct(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, 
                       CommonName, ScientificName, Mean_Density, ReserveStatus, Reference) %>%
       readr::write_csv("App/Tidy_Data/VFT_Density.csv") 
-    
   }
   
 }
@@ -397,16 +417,17 @@ Export_END_Year <- 2019
                          values_from = Count, values_fill = 0)
 
     ShannonIndex <- All_Counts %>%
-      dplyr::select(-IslandCode, -IslandName, -SiteCode, -SiteName, 
+      dplyr::select(-SiteNumber, -IslandCode, -IslandName, -SiteCode, -SiteName, 
                     -SurveyYear, -ReserveStatus, -Reference) %>%
       vegan::diversity()
     
     Diversity_Shannon <- All_Counts %>% 
-      dplyr::select(IslandCode, IslandName, SiteCode, 
+      dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, 
                     SiteName, SurveyYear, ReserveStatus, Reference) %>%
-      base::cbind("Shannon_Index" = ShannonIndex) %>%
-      dplyr::mutate(Date = base::as.Date(base::ISOdate(SurveyYear, 7, 1))) %>% 
-      readr::write_csv("App/Tidy_Data/Diversity_Shannon.csv")
+      base::cbind("shannon" = ShannonIndex) %>%
+      dplyr::mutate(Date = base::as.Date(base::ISOdate(SurveyYear, 7, 1)))
+    # %>% 
+      # readr::write_csv("App/Tidy_Data/Diversity_Shannon.csv")
   }
   
   { # Simpson's Index  ----
@@ -417,17 +438,28 @@ Export_END_Year <- 2019
                          values_from = Percent_Cover, values_fill = 0)
     
     SimpsonIndex <- RPC_Cover_Wide %>%
-      dplyr::select(-IslandCode, -IslandName, -SiteCode, -SiteName,
-                    -SurveyYear, -ReserveStatus) %>%
+      dplyr::select(-SiteNumber, -IslandCode, -IslandName, -SiteCode, -SiteName,
+                    -SurveyYear, -ReserveStatus, -Reference) %>%
       vegan::diversity(index = "simpson")
 
     Diversity_Simpson <- RPC_Cover_Wide %>% 
-      dplyr::select(IslandCode, IslandName,
-                    SiteCode, SiteName, SurveyYear, ReserveStatus) %>%
-      base::cbind("Simpson_Index" = SimpsonIndex) %>%
-      dplyr::mutate(Date = base::as.Date(base::ISOdate(SurveyYear, 7, 1))) %>% 
-      readr::write_csv("App/Tidy_Data/Diversity_Simpson.csv")
+      dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, 
+                    SiteName, SurveyYear, ReserveStatus, Reference) %>%
+      base::cbind("simpson" = SimpsonIndex) %>%
+      dplyr::mutate(Date = base::as.Date(base::ISOdate(SurveyYear, 7, 1))) 
+    # %>% 
+      # readr::write_csv("App/Tidy_Data/Diversity_Simpson.csv")
   }
+  
+  { # Diversity Complete   ----
+    Diversity <- Diversity_Shannon  %>% 
+      dplyr::left_join(Diversity_Simpson) %>% 
+      dplyr::left_join(Site_Info %>% 
+                         dplyr::select(SiteNumber, ReserveYear)) %>% 
+      readr::write_csv("App/Tidy_Data/Diversity.csv")
+  }
+  
+ # Miracle Mile only is missing RPCs for 2001, 2002, and 2004. 
   
 }
 
@@ -512,6 +544,7 @@ Export_END_Year <- 2019
         TRUE ~ a * Size ^ b)) %>% 
       dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, Date,
                     ScientificName, CommonName, Size, Biomass, ReserveStatus, Reference)
+   
     
   }
   
@@ -529,6 +562,7 @@ Export_END_Year <- 2019
       dplyr::filter(!ScientificName %in% c(
         "Haliotis assimilis",
         "Cypraea spadicea",
+        # "Parastichopus parvimensis", # This can potential be commented out but they were only measured in early years
         "Centrostephanus coronatus",
         "Stylaster californicus")) %>% 
       dplyr::group_by(SiteCode, ScientificName, SurveyYear) %>% 
@@ -721,15 +755,14 @@ Export_END_Year <- 2019
     
   }
   
-  { # Biomass All Wide   ----
-    Mean_Biomass_Wide <- Benthic_Mean_Biomass %>% 
-      dplyr::select(-Mean_Density, -Survey_Type) %>% 
-      base::rbind(dplyr::select(Fish_Mean_Biomass, -Count)) %>% 
-      dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, 
+  { # Fish Biomass Wide   ----
+    Fish_Biomass_Wide <- Fish_Mean_Biomass %>%
+      dplyr::select(-Count) %>%
+      dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName,
                     SurveyYear, CommonName, Mean_Biomass, ReserveStatus, Reference) %>%
       tidyr::pivot_wider(names_from = CommonName, values_from = Mean_Biomass, values_fill = 0) %>%
-      dplyr::rename_with(~ base::gsub(",", "", .)) %>% 
-      dplyr::rename_with(~ base::gsub(" ", "_", .)) 
+      dplyr::rename_with(~ base::gsub(",", "", .)) %>%
+      dplyr::rename_with(~ base::gsub(" ", "_", .))
     
     # readr::write_csv("App/Tidy_Data/Benthic_Biomass_Wide.csv") 
   } 
@@ -818,8 +851,8 @@ Export_END_Year <- 2019
       dplyr::left_join(dplyr::distinct(Species_Info, ScientificName, CommonNameSimple)) %>% 
       dplyr::mutate(CommonName = CommonNameSimple,
                     Mean_Density = Count) %>%  
-      base::rbind(VFT_Counts) %>% 
       dplyr::select(-CommonNameSimple, -Count) %>%
+      base::rbind(VFT_Counts) %>% 
       dplyr::filter(!CommonName %in% Benthic_Mean_Biomass$CommonName)
     
   }
@@ -838,35 +871,123 @@ Export_END_Year <- 2019
                     Mean_Density = Percent_Cover) %>% 
       dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, 
                     ScientificName, CommonName, Mean_Density, ReserveStatus, Reference) %>% 
-      base::rbind(Counts, dplyr::select(Benthic_Mean_Biomass, -Date, -Mean_Density, -Survey_Type) %>% 
+      base::rbind(Counts, Benthic_Mean_Biomass %>% 
+                    dplyr::select(-Date, -Mean_Density, -Survey_Type) %>% 
                     dplyr::mutate(Mean_Density = Mean_Biomass) %>% 
                     dplyr::select(-Mean_Biomass)) %>% 
       dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, 
                     CommonName, Mean_Density, ReserveStatus, Reference) %>% 
-      tidyr::pivot_wider(names_from = CommonName, values_from = Mean_Density, values_fill = 0) %>% 
+      tidyr::pivot_wider(names_from = CommonName, values_from = Mean_Density, values_fill = 0) %>%
+      dplyr::left_join(dplyr::select(Diversity_Shannon, -Date)) %>%
+      dplyr::left_join(dplyr::select(Diversity_Simpson, -Date)) %>% 
       dplyr::mutate(
         ReserveStatus = case_when(
           SurveyYear < 2003 & SiteCode == "LC" ~ "Inside",
           SurveyYear < 2003 & SiteCode == "CC" ~ "Inside",
           SurveyYear < 2003 ~ "Outside",
           TRUE ~ ReserveStatus)) %>% 
-      dplyr::left_join(Diversity_Shannon %>% 
-                         dplyr::select(-Date) %>% 
-                         dplyr::filter(SurveyYear > 2004)) %>%
-      dplyr::left_join(Diversity_Simpson %>% 
-                         dplyr::select(-Date) %>% 
-                         dplyr::filter(SurveyYear > 2004)) %>%
       dplyr::rename_with(~ base::gsub(",", "", .)) %>% 
       dplyr::rename_with(~ base::gsub(" ", "_", .)) %>% 
       dplyr::rename_with(~ base::gsub("-", "_", .)) %>% 
-      dplyr::rename_with(~ base::gsub("'", "", .)) %>% 
+      dplyr::rename_with(~ base::gsub("'", "", .)) %>%
       readr::write_csv("App/Tidy_Data/Mixed_Data_Fish_Density.csv") %>% 
       dplyr::select(-all_of(VFT_Species)) %>% 
       dplyr::filter(SurveyYear > 2004) %>%
       dplyr::left_join(RDFC_Wide) %>% 
+      dplyr::left_join(Fish_Biomass_Wide) %>% 
       base::replace(is.na(.), 0) %>%
       readr::write_csv("App/Tidy_Data/Mixed_Data_Fish_Biomass.csv")
+      
+    # which(is.na(All_Mixed_Data_Wide), arr.ind=TRUE)
+  }
+  
+}
+
+{ # Mixed Data nMDS Dimensions    ----
+  
+  { # All Years nMDS Dimensions    -----
     
+    Mixed_Data_Fish_Density <- readr::read_csv("App/Tidy_Data/Mixed_Data_Fish_Density.csv") %>% 
+      dplyr::filter(SiteCode != "MM" | SurveyYear > 2004)
+    
+    RKF_All_Years <- Mixed_Data_Fish_Density  %>% 
+      dplyr::mutate(SurveyYear = factor(SurveyYear),
+                    IslandName = factor(IslandName),
+                    ReserveStatus = factor(ReserveStatus)) %>%
+      dplyr::select(-SiteNumber, -SiteName, 
+                    -IslandCode, -SiteCode)
+    
+    which(is.na(RKF_All_Years), arr.ind=TRUE)
+    
+    RF_Reserve_Model_All_Years <- randomForest::randomForest(
+      data = RKF_All_Years,
+      ReserveStatus ~ ., ntree = 3000, mtry = 8,
+      importance = TRUE, proximity = TRUE, keep.forest = TRUE)
+    
+    nMDS_3D_ay <- randomForest::MDSplot(
+      RF_Reserve_Model_All_Years, fac = RKF_All_Years$ReserveStatus,
+      k = 3, palette = rep(1, 2),
+      pch = as.numeric(RKF_All_Years$ReserveStatus))
+    
+    nMDS_3D_all_years <- unlist(nMDS_3D_ay$points) %>%
+      as.data.frame() %>%
+      cbind(dplyr::select(
+        Mixed_Data_Fish_Density, SiteCode, SiteName, IslandName, ReserveStatus, SurveyYear)) %>% 
+      readr::write_csv("App/Tidy_Data/nMDS_3D_all_years.csv")
+    
+  }
+  
+  { # > 2004 nMDS Dimensions    -----
+    
+    Mixed_Data_Fish_Biomass <- readr::read_csv("App/Tidy_Data/Mixed_Data_Fish_Biomass.csv") 
+    
+    RKF_2005 <- Mixed_Data_Fish_Biomass%>%
+      dplyr::mutate(SurveyYear = factor(SurveyYear),
+                    IslandName = factor(IslandName),
+                    ReserveStatus = factor(ReserveStatus)) %>% 
+      dplyr::select(-SiteNumber, -SiteName, 
+                    -IslandCode, -SiteCode) 
+    
+    RF_Reserve_Model_2005 <- randomForest::randomForest(
+      data = RKF_2005,
+      ReserveStatus ~ ., ntree = 3000, mtry = 8,
+      importance = TRUE, proximity = TRUE, keep.forest = TRUE)
+    
+    nMDS_3D_2005 <- randomForest::MDSplot(
+      RF_Reserve_Model_2005, fac = RKF_2005$ReserveStatus,
+      k = 3, palette = rep(1, 2),
+      pch = as.numeric(RKF_2005$ReserveStatus))
+    
+    nMDS_3D_2005_now <- unlist(nMDS_3D_2005$points) %>%
+      as.data.frame() %>%
+      cbind(dplyr::select(
+        Mixed_Data_Fish_Biomass, SiteCode, SiteName, IslandName, ReserveStatus, SurveyYear)) %>% 
+      readr::write_csv("App/Tidy_Data/nMDS_3D_2005_now.csv")
+  }
+  
+}
+
+{ # Random Forest Important Species    ----
+  
+  { # All Years RF Important Species   -----
+    RF_Importance_All_Years <- randomForest::importance(RF_Reserve_Model_All_Years) %>%
+      as.data.frame() %>%
+      tibble::rownames_to_column("Common_Name") %>%
+      dplyr::arrange(desc(MeanDecreaseAccuracy)) %>%
+      dplyr::left_join(Mixed_Data_xRef_Density) %>% 
+      readr::write_csv("App/Tidy_Data/Species_Importance_All_Years.csv")
+  }
+  
+  { # > 2004 RF Model Important Species -----
+    RF_Importance_2005 <- randomForest::importance(RF_Reserve_Model_2005) %>%
+      as.data.frame() %>%
+      tibble::rownames_to_column("Common_Name") %>%
+      dplyr::arrange(desc(MeanDecreaseAccuracy)) %>% 
+      dplyr::left_join(Mixed_Data_xRef_Biomass) %>% 
+      readr::write_csv("App/Tidy_Data/Species_Importance_2005.csv")
+    # %>%
+    #   dplyr::mutate(CommonName = factor(CommonName),
+    #                 ScientificName = factor(ScientificName))
   }
   
 }
