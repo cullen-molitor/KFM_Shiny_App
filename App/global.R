@@ -231,8 +231,8 @@ source('R/modules.R')
   all_sites_theme <- function () {
     ggpubr::theme_classic2() +
       ggplot2::theme(
-        plot.title = element_text(hjust = 0.5, size = 18),
-        plot.subtitle = element_text(hjust = 0.5, size = 16),
+        # plot.title = element_text(hjust = 0.5, size = 18),
+        # plot.subtitle = element_text(hjust = 0.5, size = 16),
         legend.position = "right",
         panel.grid.major = element_line(),
         legend.justification = c(0,0.5),

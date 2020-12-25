@@ -455,9 +455,17 @@ Export_END_Year <- 2019
     Diversity <- Diversity_Shannon  %>% 
       dplyr::left_join(Diversity_Simpson) %>% 
       dplyr::left_join(Site_Info %>% 
-                         dplyr::select(SiteNumber, ReserveYear)) %>% 
+                         dplyr::select(SiteNumber, ReserveYear, Latitude, Longitude)) %>% 
+      dplyr::mutate(
+        ReserveStatus = case_when(
+          SurveyYear < 2003 & SiteCode == "LC" ~ "Inside",
+          SurveyYear < 2003 & SiteCode == "CC" ~ "Inside",
+          SurveyYear < 2003 ~ "Outside",
+          TRUE ~ ReserveStatus),
+        ReserveColor = ifelse(ReserveStatus == "Inside", "green", "red")) %>% 
       readr::write_csv("App/Tidy_Data/Diversity.csv")
   }
+  
   
  # Miracle Mile only is missing RPCs for 2001, 2002, and 2004. 
   

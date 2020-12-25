@@ -133,7 +133,6 @@
   } 
 }
 
-
 { # Biodiversity Tab Module  ----
   diversity_UI <- function(id, label = "bio") {
     ns <- NS(id)
@@ -147,25 +146,39 @@
           fluidRow(
             tags$hr(),
             column(
-              3, radioButtons(inputId = ns("Data_Options"),
-                              label = "Choose a Category:",
-                              choices = c("All Sites",
-                                          "Original 16 Sites",
-                                          "MPA Reference Sites",
-                                          "Individual Site"))
-            ),
-            column(
               3, radioButtons(inputId = ns("Diversity_Plot_Options"),
                               label = "Choose a Plot Type:",
                               choices = c("Smooth Line (LOESS)",
-                                          "Line",
                                           "Map Bubbles"))
             ),
             column(
-              2, conditionalPanel(condition = "input.Diversity_Plot_Options != 'Map Bubbles'", ns = ns,
-                                  radioButtons(inputId = ns("Sclaes_Selector"),
-                                              label = "Scale Opitions:",
-                                              choices = c("Free Y", "Fixed Y")))
+              3, conditionalPanel(condition = "input.Diversity_Plot_Options == 'Smooth Line (LOESS)'", ns = ns,
+                                  radioButtons(inputId = ns("Data_Options"),
+                                               label = "Choose a Data Summary:",
+                                               choices = c("All Sites",
+                                                           "Original 16 Sites",
+                                                           "MPA Reference Sites",
+                                                           "Individual Site"))),
+              conditionalPanel(condition = "input.Diversity_Plot_Options == 'Map Bubbles'", ns = ns,
+                               selectInput(inputId = ns("map_center"),
+                                            label = "Center Map on:",
+                                            choices = c("North Islands",
+                                                        unique(Site_Info$IslandName))))
+            ),
+            conditionalPanel(condition = "input.Diversity_Plot_Options == 'Smooth Line (LOESS)'", ns = ns,
+                             column(
+                               2, radioButtons(inputId = ns("Sclaes_Selector"),
+                                               label = "Scale Opitions:",
+                                               choices = c("Free Y", "Fixed Y")))
+            ),
+            conditionalPanel(condition = "input.Diversity_Plot_Options == 'Map Bubbles'", ns = ns,
+                             column(
+                               4, sliderInput(inputId = ns("map_slider"),
+                                              label = "Select a Year:",
+                                              min = min(Diversity$SurveyYear),
+                                              max = max(Diversity$SurveyYear),
+                                              value = min(Diversity$SurveyYear),
+                                              sep = "", step = 1, animate = TRUE))
             ),
             column(
               3, conditionalPanel(condition = "input.Data_Options == 'Individual Site'", ns = ns,
@@ -175,7 +188,11 @@
             )
           ),
           fluidRow(
-            uiOutput(outputId = ns('plotUI'))
+            conditionalPanel(condition = "input.Diversity_Plot_Options == 'Smooth Line (LOESS)'", ns = ns,
+                             uiOutput(outputId = ns('plotUI'))),
+            conditionalPanel(condition = "input.Diversity_Plot_Options == 'Map Bubbles'", ns = ns,
+                             leafletOutput(outputId = ns("Diversity_leaf"),
+                                           height = 500))
             
           )
         ) 
@@ -223,7 +240,7 @@
             data()
           } else if (input$Data_Options == "Original 16 Sites") {
             data() %>% 
-              dplyr::filter(SiteNumber < 17)
+              dplyr::filter(SiteNumber < 17) 
           } else if (input$Data_Options == "MPA Reference Sites") {
             data() %>% 
               dplyr::filter(Reference == TRUE, SurveyYear > 2004)
@@ -233,12 +250,16 @@
           }
         })
         
-        output$Diversity_Plot <- renderPlot({ # Biodiversity Plot ----
+        map_data <- reactive({
+          data() %>% dplyr::filter(SurveyYear == input$map_slider)
+        })
+        
+        
+        output$Diversity_Plot <- renderPlot({ # Biodiversity Plot     ----
           if (input$Data_Options == "All Sites") {
             Split <- base::split(data_subset(), f = data_subset()$IslandName) 
             p1 <- ggplot(Split$`San Miguel Island`,
                          aes(x = Date, y = Index, color = SiteCode, linetype = SiteCode)) + 
-              # geom_line(size = .5) +
               geom_smooth(size = .5, se = FALSE, method = 'loess', formula = 'y ~ x') +
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0),
                                     limits = c(lubridate::ymd(min(data_subset()$Date)),
@@ -271,10 +292,10 @@
           } 
           else if (input$Data_Options == "Original 16 Sites") {
             p1 <- ggplot2::ggplot(data_subset(), aes(x = Date, y = Index, linetype = ReserveYear)) +
-              ggplot2::geom_smooth(size = 1, span = 0.75,
+              ggplot2::geom_smooth(size = 1, span = 0.75, method = 'loess', formula = 'y ~ x',
                                    aes(color = ReserveYear)) +
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0)) +
-              ggplot2::scale_y_continuous(limits = c(0, NA), expand = c(0, 0), oob = squish) +
+              ggplot2::scale_y_continuous(limits = c(0, NA), expand = c(0, 0.1), oob = squish) +
               ggplot2::scale_colour_manual(values = Island_Colors) +
               ggplot2::labs(title = plot_title(),
                             x = NULL, y = NULL,
@@ -283,9 +304,9 @@
               timeseries_top_theme()
             
             p2 <- ggplot2::ggplot(data_subset(), aes(x = Date, y = Index, color = IslandName)) +
-              ggplot2::geom_smooth(size = 1, span = .75) +
+              ggplot2::geom_smooth(size = 1, span = .75, method = 'loess', formula = 'y ~ x') +
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0)) +
-              ggplot2::scale_y_continuous(limits = c(0, NA), expand = c(0, 0), oob = squish) +
+              ggplot2::scale_y_continuous(limits = c(0, NA), expand = c(0, 0.1), oob = squish) +
               ggplot2::scale_colour_manual(values = Island_Colors) +
               ggplot2::labs(x = NULL, y = NULL,
                             color = "Island") +
@@ -322,10 +343,10 @@
           } 
           else if (input$Data_Options == "MPA Reference Sites") {
             p1 <- ggplot2::ggplot(data_subset(), aes(x = Date, y = Index, linetype = ReserveStatus)) +
-              ggplot2::geom_smooth(size = 1, span = 0.75,
+              ggplot2::geom_smooth(size = 1, span = 0.75, method = 'loess', formula = 'y ~ x',
                                    aes(color = ReserveStatus)) +
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0)) +
-              ggplot2::scale_y_continuous(limits = c(0, NA), expand = c(0, 0), oob = squish) +
+              ggplot2::scale_y_continuous(limits = c(0, NA), expand = c(0, 0.1), oob = squish) +
               ggplot2::scale_colour_manual(values = Island_Colors) +
               ggplot2::labs(title = plot_title(),
                             x = NULL, y = NULL,
@@ -334,9 +355,9 @@
               timeseries_top_theme()
             
             p2 <- ggplot2::ggplot(data_subset(), aes(x = Date, y = Index, color = IslandName)) +
-              ggplot2::geom_smooth(size = 1, span = .75) +
+              ggplot2::geom_smooth(size = 1, span = .75, method = 'loess', formula = 'y ~ x') +
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0)) +
-              ggplot2::scale_y_continuous(limits = c(0, NA), expand = c(0, 0), oob = squish) +
+              ggplot2::scale_y_continuous(limits = c(0, NA), expand = c(0, 0.1), oob = squish) +
               ggplot2::scale_colour_manual(values = Island_Colors) +
               ggplot2::labs(x = NULL, y = NULL,
                             color = "Island") +
@@ -371,7 +392,7 @@
                                family ="Cambria", color = "black", rot = 90, size = 13))
             print(Diversity_annotated)
           } 
-          else {
+          else if (input$Data_Options == "Individual Site") {
             ggplot2::ggplot() +
               geom_rect(data = SST_Anomaly_Index,
                         aes(xmin = DateStart, xmax = DateEnd, ymin = -Inf, ymax = 0, fill = ONI_ANOM)) +
@@ -397,10 +418,20 @@
                             linetype = "Reserve Status") +
               timeseries_bottom_theme()
           }
-          
         })
         
-        
+        output$Diversity_leaf <- renderLeaflet({
+          leaflet() %>%
+            setView(lng = -119.85, lat = 34, zoom = 10) %>%
+            addProviderTiles(providers$Esri.OceanBasemap, group = "Ocean Base") %>%
+            # addProviderTiles(providers$Esri.WorldImagery, group = "Imagery") %>%
+            addPolygons(data = marine, color = marine$Color, weight = 1,
+                        fillOpacity = 0.1, opacity = 0.25, label = marine$NAME, group = "MPA Boundaries")  %>%
+            addCircles(data = map_data(), radius = rescale(map_data()$Index, to = c(1, 2)) * 750, 
+                       group = "Diveristy", color = map_data()$ReserveColor)  %>%
+            addCircles(data = map_data(), radius = 1, 
+                       group = "Diveristy", color = map_data()$ReserveColor) 
+        })
       }
     )
   } 
