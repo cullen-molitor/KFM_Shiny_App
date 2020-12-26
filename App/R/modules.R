@@ -162,7 +162,7 @@
               conditionalPanel(condition = "input.Diversity_Plot_Options == 'Map Bubbles'", ns = ns,
                                selectInput(inputId = ns("map_center"),
                                             label = "Center Map on:",
-                                            choices = c("North Islands",
+                                            choices = c(#"North Islands",
                                                         unique(Site_Info$IslandName))))
             ),
             conditionalPanel(condition = "input.Diversity_Plot_Options == 'Smooth Line (LOESS)'", ns = ns,
@@ -173,11 +173,12 @@
             ),
             conditionalPanel(condition = "input.Diversity_Plot_Options == 'Map Bubbles'", ns = ns,
                              column(
-                               4, sliderInput(inputId = ns("map_slider"),
+                               6, sliderInput(inputId = ns("map_slider"),
                                               label = "Select a Year:",
                                               min = min(Diversity$SurveyYear),
                                               max = max(Diversity$SurveyYear),
                                               value = min(Diversity$SurveyYear),
+                                              width = "100%",
                                               sep = "", step = 1, animate = TRUE))
             ),
             column(
@@ -191,9 +192,10 @@
             conditionalPanel(condition = "input.Diversity_Plot_Options == 'Smooth Line (LOESS)'", ns = ns,
                              uiOutput(outputId = ns('plotUI'))),
             conditionalPanel(condition = "input.Diversity_Plot_Options == 'Map Bubbles'", ns = ns,
-                             leafletOutput(outputId = ns("Diversity_leaf"),
-                                           height = 500))
-            
+                             plotOutput(outputId = ns("map"))
+                             # leafletOutput(outputId = ns("Diversity_leaf"),
+                                           # height = 500)
+            )
           )
         ) 
       )
@@ -251,11 +253,20 @@
         })
         
         map_data <- reactive({
-          data() %>% dplyr::filter(SurveyYear == input$map_slider)
+          data() %>% 
+            dplyr::filter(SurveyYear == input$map_slider, IslandName == input$map_center)
         })
         
+        yscale <- reactive({
+          if (input$Sclaes_Selector == "Fixed Y") {
+            c(min(data_subset()$Index), max(data_subset()$Index))
+          }
+          else {
+            c(min(data_subset()$Index), NA)
+          }
+        })
         
-        output$Diversity_Plot <- renderPlot({ # Biodiversity Plot     ----
+        output$Diversity_Plot <- renderPlot({ # Plot     ----
           if (input$Data_Options == "All Sites") {
             Split <- base::split(data_subset(), f = data_subset()$IslandName) 
             p1 <- ggplot(Split$`San Miguel Island`,
@@ -264,8 +275,8 @@
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0),
                                     limits = c(lubridate::ymd(min(data_subset()$Date)),
                                                lubridate::ymd(max(data_subset()$Date)))) +
-              scale_y_continuous(limits = c(0, NA), 
-                                 expand = expansion(mult = c(0, .1))) +
+              scale_y_continuous(limits = yscale(), 
+                                 expand = expansion(mult =0.1)) +
               labs(title = plot_title(),  
                    color = "Site Code", linetype = "Site Code",
                    x = NULL, y = NULL) +
@@ -295,7 +306,7 @@
               ggplot2::geom_smooth(size = 1, span = 0.75, method = 'loess', formula = 'y ~ x',
                                    aes(color = ReserveYear)) +
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0)) +
-              ggplot2::scale_y_continuous(limits = c(0, NA), expand = c(0, 0.1), oob = squish) +
+              ggplot2::scale_y_continuous(limits = yscale(), expand = expansion(mult =0.1), oob = squish) +
               ggplot2::scale_colour_manual(values = Island_Colors) +
               ggplot2::labs(title = plot_title(),
                             x = NULL, y = NULL,
@@ -306,7 +317,7 @@
             p2 <- ggplot2::ggplot(data_subset(), aes(x = Date, y = Index, color = IslandName)) +
               ggplot2::geom_smooth(size = 1, span = .75, method = 'loess', formula = 'y ~ x') +
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0)) +
-              ggplot2::scale_y_continuous(limits = c(0, NA), expand = c(0, 0.1), oob = squish) +
+              ggplot2::scale_y_continuous(limits = yscale(), expand = expansion(mult =0.1), oob = squish) +
               ggplot2::scale_colour_manual(values = Island_Colors) +
               ggplot2::labs(x = NULL, y = NULL,
                             color = "Island") +
@@ -324,8 +335,8 @@
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0),
                                     limits = c(lubridate::ymd(min(data_subset()$Date)),
                                                lubridate::ymd(max(data_subset()$Date)))) +
-              ggplot2::scale_y_continuous(expand = expansion(mult = c(.1, 0)),
-                                          limits = c(0, NA), oob = squish) +
+              ggplot2::scale_y_continuous(expand = expansion(mult =0.1),
+                                          limits = yscale(), oob = squish) +
               ggplot2::guides(color = guide_legend(order = 1),
                               linetype = guide_legend(order = 2, override.aes = list(col = 'black'))) +
               ggplot2::scale_colour_manual(values = Island_Colors) +
@@ -346,7 +357,7 @@
               ggplot2::geom_smooth(size = 1, span = 0.75, method = 'loess', formula = 'y ~ x',
                                    aes(color = ReserveStatus)) +
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0)) +
-              ggplot2::scale_y_continuous(limits = c(0, NA), expand = c(0, 0.1), oob = squish) +
+              ggplot2::scale_y_continuous(limits = yscale(), expand = expansion(mult =0.1), oob = squish) +
               ggplot2::scale_colour_manual(values = Island_Colors) +
               ggplot2::labs(title = plot_title(),
                             x = NULL, y = NULL,
@@ -357,7 +368,7 @@
             p2 <- ggplot2::ggplot(data_subset(), aes(x = Date, y = Index, color = IslandName)) +
               ggplot2::geom_smooth(size = 1, span = .75, method = 'loess', formula = 'y ~ x') +
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0)) +
-              ggplot2::scale_y_continuous(limits = c(0, NA), expand = c(0, 0.1), oob = squish) +
+              ggplot2::scale_y_continuous(limits = yscale(), expand = expansion(mult =0.1), oob = squish) +
               ggplot2::scale_colour_manual(values = Island_Colors) +
               ggplot2::labs(x = NULL, y = NULL,
                             color = "Island") +
@@ -375,8 +386,8 @@
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0),
                                     limits = c(lubridate::ymd(min(data_subset()$Date)),
                                                lubridate::ymd(max(data_subset()$Date)))) +
-              ggplot2::scale_y_continuous(expand = expansion(mult = c(.1, 0)),
-                                          limits = c(0, NA), oob = squish) +
+              ggplot2::scale_y_continuous(expand = expansion(mult =0.1),
+                                          limits = yscale(), oob = squish) +
               ggplot2::guides(color = guide_legend(order = 1),
                               linetype = guide_legend(order = 2, override.aes = list(col = 'black'))) +
               ggplot2::scale_colour_manual(values = Island_Colors) +
@@ -405,8 +416,8 @@
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0),
                                     limits = c(lubridate::ymd(min(data_subset()$Date)),
                                                lubridate::ymd(max(data_subset()$Date)))) +
-              ggplot2::scale_y_continuous(expand = expansion(mult = c(.1, 0.1)),
-                                          limits = c(0, NA), oob = squish) +
+              ggplot2::scale_y_continuous(expand = expansion(mult =0.1),
+                                          limits = yscale(), oob = squish) +
               ggplot2::guides(color = guide_legend(order = 1),
                               linetype = guide_legend(order = 2, override.aes = list(col = 'black'))) +
               ggplot2::scale_colour_manual(values = SiteColor) +
@@ -420,17 +431,22 @@
           }
         })
         
-        output$Diversity_leaf <- renderLeaflet({
-          leaflet() %>%
-            setView(lng = -119.85, lat = 34, zoom = 10) %>%
-            addProviderTiles(providers$Esri.OceanBasemap, group = "Ocean Base") %>%
-            # addProviderTiles(providers$Esri.WorldImagery, group = "Imagery") %>%
-            addPolygons(data = marine, color = marine$Color, weight = 1,
-                        fillOpacity = 0.1, opacity = 0.25, label = marine$NAME, group = "MPA Boundaries")  %>%
-            addCircles(data = map_data(), radius = rescale(map_data()$Index, to = c(1, 2)) * 750, 
-                       group = "Diveristy", color = map_data()$ReserveColor)  %>%
-            addCircles(data = map_data(), radius = 1, 
-                       group = "Diveristy", color = map_data()$ReserveColor) 
+        output$map <-  renderPlot({ # Map     ----
+          ggplot()+  
+            geom_sf(data = dplyr::filter(CINP, IslandName == input$map_center)) +
+            geom_text(data = dplyr::distinct(dplyr::filter(Site_Info, IslandName == input$map_center)),
+                      aes(x = Island_Longitude, y = Island_Latitude - .003, label = IslandName), size = 5) +
+            geom_text(data = map_data(), size = 3,
+                       aes(x = Longitude, y = Latitude, label = SiteCode)) +
+            geom_point(data = map_data(),
+              aes(x = Longitude, y = Latitude, size = Index , color = ReserveStatus),
+              shape = 1, stroke = 1) +
+            scale_color_manual(values = Island_Colors) +
+            scale_y_continuous(expand = expansion(mult = 0.1)) +
+            scale_x_continuous(expand = expansion(mult = 0.1)) +
+            scale_size_continuous(range = c(10, 25), guide = guide_legend()) +
+            theme_void() +
+            theme(legend.position = "none")
         })
       }
     )

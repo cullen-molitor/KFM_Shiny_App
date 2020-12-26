@@ -347,6 +347,19 @@ source('R/modules.R')
 
 { # Maps Data   ----
   
+  
+  CINP <- st_read("GIS_Data/california_islands.shp") %>%
+    st_as_sf() %>%
+    mutate(geometry = st_transform(geometry, "+proj=longlat +ellps=WGS84 +datum=WGS84")) %>%
+    dplyr::filter(COUNTY_ID %in% c(520, 530, 519, 527, 528, 556, 557)) %>%
+    dplyr::mutate(
+      IslandName = case_when(
+        COUNTY_ID == 520 ~ "San Miguel Island",
+        COUNTY_ID == 530 ~ "Santa Rosa Island",
+        COUNTY_ID == 519 ~ "Santa Cruz Island",
+        COUNTY_ID == 527 | COUNTY_ID == 528 ~ "Anacapa Island",
+        COUNTY_ID == 556 | COUNTY_ID == 557 ~ "Santa Barbara Island"))
+  
   mpa <- st_read("GIS_Data/California_Marine_Protected_Areas.shp")
   
   mpa <- st_as_sf(mpa)
@@ -389,19 +402,12 @@ source('R/modules.R')
   
 }
 
-{ # Important Species Data  ---
+{ # Important Species Data  ---- 
   RF_Importance_All_Years <- 
     readr::read_csv("Tidy_Data/Species_Importance_All_Years.csv")
   RF_Importance_2005 <-
     readr::read_csv("Tidy_Data/Species_Importance_2005.csv")
 }
-
-
-
-
-
-
-
 
 
 
