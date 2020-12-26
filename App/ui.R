@@ -1,5 +1,5 @@
 
-
+# Use ALT + O to see outline
 
 
 # Define the User Interface for application 
@@ -183,37 +183,9 @@ ui <- dashboardPage(
             tags$hr(),
             includeMarkdown(path = "Text/Species/foundation.md"),
             tags$hr(),
-            fluidRow(
-              column(
-                4, tags$img(
-                  width = 400,
-                  src = 'Photos/Indicator_Species/2002.jpg')
-              ),
-              column(
-                4, 
-                includeMarkdown(path = "Text/Species/kelp.md")
-              ),
-              column(
-                4, 
-                includeMarkdown(path = "Text/Species/kelp.md")
-              )
-            ),
+            foundation_UI(id = "kelp"),
             tags$hr(),
-            fluidRow(
-              column(
-                4, tags$img(
-                  width = 400,
-                  src = 'Photos/Indicator_Species/11006.jpg')
-              ),
-              column(
-                4, 
-                includeMarkdown(path = "Text/Species/urchin.md")
-              ),
-              column(
-                4, 
-                includeMarkdown(path = "Text/Species/urchin.md")
-              )
-            )
+            foundation_UI(id = "p_urchin")
           ),
           # ............ Tab - Species Guides  ----
           tabPanel(
@@ -411,6 +383,11 @@ ui <- dashboardPage(
         tabName = 'diversity',
         h1("Kelp Forest Community Biodiversity"),
         tabsetPanel(
+          # ............ Tab - Species Richness  ----
+          tabPanel(
+            title = "Species Richness",
+            diversity_UI(id = "richness")
+          ),
           # ............ Tab - Shannon's Index  ----
           tabPanel(
             title = "Shannon-Wiener Diversity Index",
@@ -420,10 +397,6 @@ ui <- dashboardPage(
           tabPanel(
             title = "Gini–Simpson Diversity Index",
             diversity_UI(id = "simpson")
-          ),
-          tabPanel(
-            title = "Species Richness",
-            tags$hr()
           )
         ),
         tags$hr()
@@ -554,6 +527,12 @@ ui <- dashboardPage(
         tabName = 'sizes',
         h1("Kelp Forest Natural Habitat Size Frequency Distributions"),
         tags$img(height = 533, width = 800, src = 'Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (13).jpg')
+      ),
+      # ...... Body - Literature Cited    ---- 
+      tabItem(
+        tabName = 'lit',
+        h1("Literature Cited"),
+        tags$img(height = 533, width = 800, src = 'Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (12).jpg')
       )
     ),
     # .. Styles   ----

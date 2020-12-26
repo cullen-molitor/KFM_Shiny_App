@@ -5,17 +5,17 @@ Specific kelp forest plants and animals were selected for monitoring from a list
 
 Six criteria were used to select species from the list. Species were selected that were: 
 
-  •	specifically mentioned in the park's enabling legislation or protected by law (e.g. threatened or endangered)
+  1.	specifically mentioned in the park's enabling legislation or protected by law (e.g. threatened or endangered)
 
-  •	legally harvested
+  2.	legally harvested
 
-  •	exceptionally common or characteristic of entire communities
+  3.	exceptionally common or characteristic of entire communities
 
-  •	alien to the park/invasive species
+  4.	alien to the park/invasive species
 
-  •	endemic to the park, or extremely limited in distribution
+  5.	endemic to the park, or extremely limited in distribution
 
-  •	well known or "charismatic"
+  6.	well known or "charismatic"
 
 Using these criteria, 15 algae, 38 invertebrate and 15 fish taxa were originally selected for long-term monitoring. Since its conception, the list of taxa has been modified through the process of statistical and peer reviews (Davis et. al, 1996. Rassweiler 2016). Some taxa have been removed from the list while others have been added. Changes to the original list of taxa have been minor to maintain consistency of year to year data comparisons. There are currently 16 algae or groups of algae, 41 invertebrates, and all identifiable fish (113 species as of 2011) taxa monitored (Appendix A). The changes to the original list of taxa are discussed in the data history section of this handbook.
 

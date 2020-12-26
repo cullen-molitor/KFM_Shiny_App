@@ -71,8 +71,9 @@ orange_puffball_sponge,orange puffball sponge,Tethya aurantia,Biomass,Invertebra
 red_turban_snail,red turban snail,Lithopoma gibberosa,Biomass,Invertebrate,Targeted
 California_golden_gorgonian,California golden gorgonian,Muricea californica,Biomass,Invertebrate,Non-targeted
 queen_tegula,queen tegula,Tegula regina,Biomass,Invertebrate,Non-targeted
-Shannon_Index,Shannon Index,Shannon Index,Index Value,Calculated Value,Index Value
-Simpson_Index,Simpson Index,Simpson Index,Index Value,Calculated Value,Index Value
+shannon_all,Shannon Index,Shannon Index,Index Value,Calculated Value,Index Value
+richness_all,Richness,Richness,Index Value,Calculated Value,Index Value
+simpson,Simpson Index,Simpson Index,Index Value,Calculated Value,Index Value
 black_surfperch,black surfperch,Embiotoca jacksoni,Count,Fish,Targeted
 blacksmith,blacksmith,Chromis punctipinnis,Count,Fish,Non-targeted
 blue_rockfish,blue rockfish,Sebastes mystinus,Count,Fish,Targeted

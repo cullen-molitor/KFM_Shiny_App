@@ -17,6 +17,11 @@ server <- function(input, output, session) {
     protocol_Server(id = "species") 
   }
   
+  { # Species   ----
+    foundation_Sever(id = "kelp")
+    foundation_Sever(id = "p_urchin")
+  }
+  
   { # Maps   ----
     
     { # .... Leaflet Maps     ----
@@ -131,6 +136,7 @@ server <- function(input, output, session) {
   }
   
   { # Biodiversity   ----
+    diversity_Server(id = "richness") 
     diversity_Server(id = "shannon")
     diversity_Server(id = "simpson") 
   }

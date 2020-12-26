@@ -162,8 +162,7 @@
               conditionalPanel(condition = "input.Diversity_Plot_Options == 'Map Bubbles'", ns = ns,
                                selectInput(inputId = ns("map_center"),
                                             label = "Center Map on:",
-                                            choices = c(#"North Islands",
-                                                        unique(Site_Info$IslandName))))
+                                            choices = c(unique(Site_Info$IslandName))))
             ),
             conditionalPanel(condition = "input.Diversity_Plot_Options == 'Smooth Line (LOESS)'", ns = ns,
                              column(
@@ -193,8 +192,6 @@
                              uiOutput(outputId = ns('plotUI'))),
             conditionalPanel(condition = "input.Diversity_Plot_Options == 'Map Bubbles'", ns = ns,
                              plotOutput(outputId = ns("map"))
-                             # leafletOutput(outputId = ns("Diversity_leaf"),
-                                           # height = 500)
             )
           )
         ) 
@@ -213,18 +210,36 @@
                        350} else {750})
         })
         
-        filename_text <- reactive(glue("Text/{id}_index.md"))
+        filename_text <- reactive(glue("Text/Biodiversity/{id}_index.md"))
         
         output$Diversity_Text <- renderUI(includeMarkdown(path = filename_text()))
         
         data <- reactive({
-          if (id == "shannon") {
+          if (id == "shannon" & (input$Data_Options == "All Sites" | 
+                                 input$Data_Options == "Original 16 Sites" |
+                                 input$Data_Options == "Individual Site")) {
             Diversity %>% 
-              dplyr::rename(Index = shannon) 
+              dplyr::rename(Index = shannon_all) 
           } 
+          else if (id == "shannon" & input$Data_Options == "MPA Reference Sites") {
+            Diversity %>% 
+              dplyr::rename(Index = shannon_2005) 
+          }
           else if (id == "simpson") {
             Diversity %>% 
               dplyr::rename(Index = simpson)
+          }
+          else if (id == "richness" & (input$Data_Options == "All Sites" | 
+                                      input$Data_Options == "Original 16 Sites" |
+                                      input$Data_Options == "Individual Site")) {
+            Diversity %>% 
+              dplyr::rename(Index = richness_all) %>% 
+              dplyr::filter(SurveyYear > 1986, SiteCode != "MM" | SurveyYear > 2004) 
+          } 
+          else if (id == "richness" & input$Data_Options == "MPA Reference Sites") {
+            Diversity %>% 
+              dplyr::rename(Index = richness_2005) %>% 
+              dplyr::filter(SurveyYear > 1986)  
           }
         })
         
@@ -234,6 +249,9 @@
           } 
           else if (id == "simpson") {
             "Gini-Simpson Diversity Index" 
+          }
+          else if (id == "richness") {
+            "Species Richness" 
           }
         })
         
@@ -253,8 +271,21 @@
         })
         
         map_data <- reactive({
-          data() %>% 
-            dplyr::filter(SurveyYear == input$map_slider, IslandName == input$map_center)
+          if (id == "shannon") {
+            Diversity %>% 
+              dplyr::rename(Index = shannon_all) %>% 
+            dplyr::filter(SurveyYear == input$map_slider, IslandName == input$map_center) 
+          } 
+          else if (id == "simpson") {
+            Diversity %>% 
+              dplyr::rename(Index = simpson) %>% 
+              dplyr::filter(SurveyYear == input$map_slider, IslandName == input$map_center)
+          }
+          else if (id == "richness") {
+            Diversity %>% 
+              dplyr::rename(Index = richness_all) %>% 
+              dplyr::filter(SurveyYear == input$map_slider, IslandName == input$map_center)
+          }
         })
         
         yscale <- reactive({
@@ -262,7 +293,7 @@
             c(min(data_subset()$Index), max(data_subset()$Index))
           }
           else {
-            c(min(data_subset()$Index), NA)
+            c(NA, NA)
           }
         })
         
@@ -422,9 +453,9 @@
                               linetype = guide_legend(order = 2, override.aes = list(col = 'black'))) +
               ggplot2::scale_colour_manual(values = SiteColor) +
               ggplot2::labs(x = "Survey Year", y = "Index Value",
-                            title = glue("{data_subset()$SiteName} {data_subset()$IslandName}"),
-                            subtitle = plot_title(),
-                            color = "Island",
+                            title = plot_title(),
+                            subtitle = glue("{data_subset()$SiteName} {data_subset()$IslandName}"),
+                            color = "Site",
                             fill = "Oceanic Niño Index",
                             linetype = "Reserve Status") +
               timeseries_bottom_theme()
@@ -434,8 +465,8 @@
         output$map <-  renderPlot({ # Map     ----
           ggplot()+  
             geom_sf(data = dplyr::filter(CINP, IslandName == input$map_center)) +
-            geom_text(data = dplyr::distinct(dplyr::filter(Site_Info, IslandName == input$map_center)),
-                      aes(x = Island_Longitude, y = Island_Latitude - .003, label = IslandName), size = 5) +
+            geom_text(data = dplyr::filter(Site_Info, IslandName == input$map_center), size = 5,
+                      aes(x = Island_Longitude, y = Island_Latitude - .003, label = IslandName)) +
             geom_text(data = map_data(), size = 3,
                        aes(x = Longitude, y = Latitude, label = SiteCode)) +
             geom_point(data = map_data(),
@@ -453,7 +484,87 @@
   } 
 }
 
-
+{ # Foundation Species module
+  foundation_UI <- function(id, label = "species") {
+    ns <- NS(id)
+    tagList(
+      fluidRow(
+        column(
+          4, 
+          imageOutput(outputId = ns("pic"))
+          
+        ),
+        column(
+          4, 
+          uiOutput(outputId = ns("text"))
+          
+        ),
+        column(
+          4, 
+          DTOutput(outputId = ns("table"))
+        )
+      )
+    )
+  }
+  
+  foundation_Sever <- function(id) {
+    moduleServer(
+      id,
+      function(input, output, session) {
+        # kelp 2002
+        # red urchin 11005
+        # purple urchin 11006 
+        # abalone ?
+        # lobster
+        # pycnopodia
+        # pisaster giganteus
+        # sheephead
+        # otters
+        
+        Species_Code <- reactive({
+          if (id == "kelp") {
+            2002
+          }
+          else if (id == "p_urchin") {
+            11006
+          }
+          # else if (id == "r_urchin") {11006}
+        })
+        
+        pic_filename <- reactive(glue::glue("www/Photos/Indicator_Species/{Species_Code()}.jpg"))
+        text_filname <- reactive(glue::glue("Text/Species/{id}.md"))
+        
+        output$pic <- renderImage({list(src = pic_filename(), width = 400)}, delete = FALSE)
+        
+        output$text <- renderUI(includeMarkdown(path = text_filname()))
+        
+        table_data <- reactive({
+          Species_Info %>%
+            dplyr::filter(Species == Species_Code()) %>%
+            dplyr::select(ScientificName, Geographic_Range, ID_Short, Habitat_Broad, Size_Range, Trophic_Broad, Abundance) %>%
+            tidyr::pivot_longer(-ScientificName, names_to = "Category", values_to = "Information") %>%
+            dplyr::select(Category, Information)
+        }) 
+        
+        output$table <- renderDT({
+          datatable(table_data(), rownames = FALSE,  
+                    options = list(searching = FALSE, lengthChange = FALSE, paging = FALSE,
+                                   ordering = FALSE, info = FALSE, 
+                                   initComplete = JS(
+                                     "function(settings, json) {",
+                                     "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                     "}"))) %>%
+            formatStyle(names(table_data()),
+                        color = "black",
+                        backgroundColor = 'white',
+                        backgroundPosition = 'center'
+            )
+        })
+        
+      }
+    )
+  }
+}
 
 
 

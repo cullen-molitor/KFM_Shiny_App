@@ -23,6 +23,7 @@
   library(scales)
   library(sf)
   library(leaflet)
+  library(DT)
   
 }
 
@@ -266,7 +267,7 @@ source('R/modules.R')
                      legend.key.width = unit(.75, "cm"),
                      legend.title = element_text(size = 12, color = "black"),
                      legend.text = element_text(size = 11, color = "black"),
-                     legend.margin = unit(0.1, "cm"),
+                     legend.margin = ggplot2::margin(unit(0.1, "cm")),
                      axis.title = element_text(size = 12, color = "black"),
                      axis.text.y = element_text(size = 12, color = "black"),
                      axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1, size = 11, color="black"),
@@ -346,7 +347,6 @@ source('R/modules.R')
 }
 
 { # Maps Data   ----
-  
   
   CINP <- st_read("GIS_Data/california_islands.shp") %>%
     st_as_sf() %>%

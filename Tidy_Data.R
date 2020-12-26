@@ -304,8 +304,6 @@ Export_END_Year <- 2019
       dplyr::ungroup() %>% 
       readr::write_csv("App/Tidy_Data/RDFC_Count.csv")
     
-    
-
   }
   
   { # VFT ----
@@ -405,29 +403,55 @@ Export_END_Year <- 2019
       dplyr::summarise(Count = sum(Count)) %>% 
       dplyr::ungroup()
   
-    Fish_Counts <- RDFC_Density %>%
+    Fish_Counts_All <- VFT_Density %>%
+      dplyr::group_by(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, 
+                      ScientificName, SurveyYear, ReserveStatus, Reference) %>% 
+      dplyr::summarise(Count = Mean_Density * 2000) %>% 
+      dplyr::ungroup() %>% 
+      dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, 
+                    ScientificName, SurveyYear, Count, ReserveStatus, Reference)
+    
+    Counts_All <- rbind(Benthic_Counts, Fish_Counts_All) %>%
+      dplyr::group_by(SiteNumber, SurveyYear) %>% 
+      dplyr::mutate(richness_all = length(Count > 0)) %>% 
+      dplyr::ungroup() %>% 
+      tidyr::pivot_wider(names_from = ScientificName, values_fn = sum,
+                         values_from = Count, values_fill = 0) 
+    
+    ShannonIndex_All <- Counts_All %>%
+      dplyr::select(-SiteNumber, -IslandCode, -IslandName, -SiteCode, -SiteName, 
+                    -SurveyYear, -ReserveStatus, -Reference, -richness_all) %>%
+      vegan::diversity()
+    
+    Diversity_Shannon_All <- Counts_All %>% 
+      dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, 
+                    SiteName, SurveyYear, ReserveStatus, Reference, richness_all) %>%
+      base::cbind("shannon_all" = ShannonIndex_All)
+    
+    Fish_Counts_2005 <- RDFC_Density %>%
       dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, 
                     ScientificName, SurveyYear, Count, ReserveStatus, Reference) %>% 
       dplyr::filter(!ScientificName %in% 
                       c('Alloclinus holderi', 'Coryphopterus nicholsi', 
                         'Lythrypnus dalli', 'Sebastes')) 
 
-    All_Counts <- rbind(Benthic_Counts, Fish_Counts) %>%
+    Counts_2005 <- rbind(Benthic_Counts, Fish_Counts_2005) %>%
+      dplyr::group_by(SiteNumber, SurveyYear) %>% 
+      dplyr::mutate(richness_2005 = length(Count > 0)) %>% 
+      dplyr::ungroup() %>% 
       tidyr::pivot_wider(names_from = ScientificName, values_fn = sum,
-                         values_from = Count, values_fill = 0)
+                         values_from = Count, values_fill = 0) %>% 
+      dplyr::filter(SurveyYear > 2004)
 
-    ShannonIndex <- All_Counts %>%
+    ShannonIndex_2005 <- Counts_2005 %>%
       dplyr::select(-SiteNumber, -IslandCode, -IslandName, -SiteCode, -SiteName, 
-                    -SurveyYear, -ReserveStatus, -Reference) %>%
+                    -SurveyYear, -ReserveStatus, -Reference, richness_2005) %>%
       vegan::diversity()
     
-    Diversity_Shannon <- All_Counts %>% 
+    Diversity_Shannon_2005 <- Counts_2005 %>% 
       dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, 
-                    SiteName, SurveyYear, ReserveStatus, Reference) %>%
-      base::cbind("shannon" = ShannonIndex) %>%
-      dplyr::mutate(Date = base::as.Date(base::ISOdate(SurveyYear, 7, 1)))
-    # %>% 
-      # readr::write_csv("App/Tidy_Data/Diversity_Shannon.csv")
+                    SiteName, SurveyYear, ReserveStatus, Reference, richness_2005) %>%
+      base::cbind("shannon_2005" = ShannonIndex_2005)
   }
   
   { # Simpson's Index  ----
@@ -445,15 +469,13 @@ Export_END_Year <- 2019
     Diversity_Simpson <- RPC_Cover_Wide %>% 
       dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, 
                     SiteName, SurveyYear, ReserveStatus, Reference) %>%
-      base::cbind("simpson" = SimpsonIndex) %>%
-      dplyr::mutate(Date = base::as.Date(base::ISOdate(SurveyYear, 7, 1))) 
-    # %>% 
-      # readr::write_csv("App/Tidy_Data/Diversity_Simpson.csv")
+      base::cbind("simpson" = SimpsonIndex) 
   }
   
   { # Diversity Complete   ----
-    Diversity <- Diversity_Shannon  %>% 
+    Diversity <- Diversity_Shannon_All  %>% 
       dplyr::left_join(Diversity_Simpson) %>% 
+      dplyr::left_join(Diversity_Shannon_2005) %>% 
       dplyr::left_join(Site_Info %>% 
                          dplyr::select(SiteNumber, ReserveYear, Latitude, Longitude)) %>% 
       dplyr::mutate(
@@ -462,7 +484,8 @@ Export_END_Year <- 2019
           SurveyYear < 2003 & SiteCode == "CC" ~ "Inside",
           SurveyYear < 2003 ~ "Outside",
           TRUE ~ ReserveStatus),
-        ReserveColor = ifelse(ReserveStatus == "Inside", "green", "red")) %>% 
+        ReserveColor = ifelse(ReserveStatus == "Inside", "green", "red")) %>%
+      dplyr::mutate(Date = base::as.Date(base::ISOdate(SurveyYear, 7, 1)))  %>% 
       readr::write_csv("App/Tidy_Data/Diversity.csv")
   }
   
@@ -886,8 +909,8 @@ Export_END_Year <- 2019
       dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, 
                     CommonName, Mean_Density, ReserveStatus, Reference) %>% 
       tidyr::pivot_wider(names_from = CommonName, values_from = Mean_Density, values_fill = 0) %>%
-      dplyr::left_join(dplyr::select(Diversity_Shannon, -Date)) %>%
-      dplyr::left_join(dplyr::select(Diversity_Simpson, -Date)) %>% 
+      dplyr::left_join(Diversity_Shannon_All) %>%
+      dplyr::left_join(Diversity_Simpson) %>% 
       dplyr::mutate(
         ReserveStatus = case_when(
           SurveyYear < 2003 & SiteCode == "LC" ~ "Inside",
@@ -899,8 +922,9 @@ Export_END_Year <- 2019
       dplyr::rename_with(~ base::gsub("-", "_", .)) %>% 
       dplyr::rename_with(~ base::gsub("'", "", .)) %>%
       readr::write_csv("App/Tidy_Data/Mixed_Data_Fish_Density.csv") %>% 
-      dplyr::select(-all_of(VFT_Species)) %>% 
+      dplyr::select(-all_of(VFT_Species), -richness_all, -shannon_all) %>% 
       dplyr::filter(SurveyYear > 2004) %>%
+      dplyr::left_join(Diversity_Shannon_2005) %>% 
       dplyr::left_join(RDFC_Wide) %>% 
       dplyr::left_join(Fish_Biomass_Wide) %>% 
       base::replace(is.na(.), 0) %>%

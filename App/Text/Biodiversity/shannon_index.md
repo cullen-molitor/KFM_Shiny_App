@@ -1,6 +1,6 @@
 
 
-## Count Data
+## Richness and Relative Abundance
 
 There are several metrics for quantifying diversity. The Shannon-Wiener diversity index is a measure which combines species richness (the number of species present in the dataset) with their relative abundance. Higher numbers in this index correspond to higher diversity. These numbers are derived from a select list of indicator species which have count data. This does not account for the true biodiversity but rather quantifies the relative diversity as all sites share the same list of indicator species. The Shannon-Wiener index is one of the most commonly used metrics of diversity in ecological datasets. 
 
