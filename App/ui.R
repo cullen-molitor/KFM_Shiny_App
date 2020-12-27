@@ -179,25 +179,41 @@ ui <- dashboardPage(
           ),
           # ............ Tab - Foundation Species  ----
           tabPanel(
-            "Foundation Species",
+            title = "Foundation Species",
             tags$hr(),
             includeMarkdown(path = "Text/Species/foundation.md"),
             tags$hr(),
             foundation_UI(id = "kelp"),
             tags$hr(),
-            foundation_UI(id = "p_urchin")
+            foundation_UI(id = "p_urchin"),
+            tags$hr(),
+            foundation_UI(id = "r_urchin"),
+            tags$hr(),
+            foundation_UI(id = "r_abalone"),
+            tags$hr(),
+            foundation_UI(id = "lobsta"),
+            tags$hr(),
+            foundation_UI(id = "sheep"),
+            tags$hr(),
+            foundation_UI(id = "sunflower"),
+            tags$hr(),
+            foundation_UI(id = "giant")
           ),
-          # ............ Tab - Species Guides  ----
+          # ............ Tab - Invasive Species  ----
           tabPanel(
-            "KFM Indicator Species"
+            title = "Invasive Species"
           ),
           # ............ Tab - Common Diseases  ----
           tabPanel(
-            "Common Diseases"
+            title = "Common Diseases"
+          ),
+          # ............ Tab - Species Guides  ----
+          tabPanel(
+            title = "KFM Indicator Species"
           ),
           # ............ Tab - External Resources  ----
           tabPanel(
-            "External Resources"
+            title = "External Resources"
           )
         )
       ),

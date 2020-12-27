@@ -20,6 +20,12 @@ server <- function(input, output, session) {
   { # Species   ----
     foundation_Sever(id = "kelp")
     foundation_Sever(id = "p_urchin")
+    foundation_Sever(id = "r_urchin")
+    foundation_Sever(id = "r_abalone")
+    foundation_Sever(id = "lobsta")
+    foundation_Sever(id = "sheep")
+    foundation_Sever(id = "sunflower")
+    foundation_Sever(id = "giant")
   }
   
   { # Maps   ----

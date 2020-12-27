@@ -293,7 +293,7 @@
             c(min(data_subset()$Index), max(data_subset()$Index))
           }
           else {
-            c(NA, NA)
+            c(min(data_subset()$Index), NA)
           }
         })
         
@@ -522,13 +522,14 @@
         # otters
         
         Species_Code <- reactive({
-          if (id == "kelp") {
-            2002
-          }
-          else if (id == "p_urchin") {
-            11006
-          }
-          # else if (id == "r_urchin") {11006}
+          if (id == "kelp") {2002}
+          else if (id == "p_urchin") {11006}
+          else if (id == "r_urchin") {11005}
+          else if (id == "r_abalone") {9002}
+          else if (id == "lobsta") {8001}
+          else if (id == "sheep") {14013}
+          else if (id == "sunflower") {11003}
+          else if (id == "giant") {11002}
         })
         
         pic_filename <- reactive(glue::glue("www/Photos/Indicator_Species/{Species_Code()}.jpg"))
@@ -541,23 +542,34 @@
         table_data <- reactive({
           Species_Info %>%
             dplyr::filter(Species == Species_Code()) %>%
-            dplyr::select(ScientificName, Geographic_Range, ID_Short, Habitat_Broad, Size_Range, Trophic_Broad, Abundance) %>%
+            dplyr::select(ScientificName, Trophic_Broad, Habitat_Broad, 
+                          Geographic_Range, Size_Range, ID_Short, Abundance,
+                          Commercial_Fishery, Recreational_Fishery) %>%
+            dplyr::rename(`Trophic Level` = Trophic_Broad, 
+                          Habitat = Habitat_Broad,
+                          Range = Geographic_Range, 
+                          `Size Range` = Size_Range, 
+                          Identification = ID_Short, 
+                          `Commercial Fishery` = Commercial_Fishery,
+                          `Recreational Fishery` = Recreational_Fishery) %>% 
             tidyr::pivot_longer(-ScientificName, names_to = "Category", values_to = "Information") %>%
             dplyr::select(Category, Information)
         }) 
         
         output$table <- renderDT({
-          datatable(table_data(), rownames = FALSE,  
-                    options = list(searching = FALSE, lengthChange = FALSE, paging = FALSE,
-                                   ordering = FALSE, info = FALSE, 
-                                   initComplete = JS(
-                                     "function(settings, json) {",
-                                     "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
-                                     "}"))) %>%
-            formatStyle(names(table_data()),
-                        color = "black",
-                        backgroundColor = 'white',
-                        backgroundPosition = 'center'
+          datatable(
+            table_data(), rownames = FALSE,  
+            options = list(
+              searching = FALSE, lengthChange = FALSE, paging = FALSE,
+              ordering = FALSE, info = FALSE, 
+              initComplete = JS(
+                "function(settings, json) {",
+                "$(this.api().table().header()).css({'background-color': '#3c8dbc', 'color': '#fff'});",
+                "}"))) %>%
+            formatStyle(
+              names(table_data()),
+              color = "black",
+              backgroundColor = 'white'
             )
         })
         
