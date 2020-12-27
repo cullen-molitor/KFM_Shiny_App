@@ -489,21 +489,10 @@
     ns <- NS(id)
     tagList(
       fluidRow(
-        column(
-          4, 
-          imageOutput(outputId = ns("pic"))
-          
-        ),
-        column(
-          4, 
-          uiOutput(outputId = ns("text"))
-          
-        ),
-        column(
-          4, 
-          DTOutput(outputId = ns("table"))
-        )
-      )
+        column(4, imageOutput(outputId = ns("pic"))),
+        column(4, uiOutput(outputId = ns("text"))),
+        column(4, DTOutput(outputId = ns("table")))
+      ), tags$hr()
     )
   }
   
@@ -511,16 +500,7 @@
     moduleServer(
       id,
       function(input, output, session) {
-        # kelp 2002
-        # red urchin 11005
-        # purple urchin 11006 
-        # abalone ?
-        # lobster
-        # pycnopodia
-        # pisaster giganteus
-        # sheephead
         # otters
-        
         Species_Code <- reactive({
           if (id == "kelp") {2002}
           else if (id == "p_urchin") {11006}
@@ -535,7 +515,7 @@
         pic_filename <- reactive(glue::glue("www/Photos/Indicator_Species/{Species_Code()}.jpg"))
         text_filname <- reactive(glue::glue("Text/Species/{id}.md"))
         
-        output$pic <- renderImage({list(src = pic_filename(), width = 400)}, delete = FALSE)
+        output$pic <- renderImage({list(src = pic_filename(), width = "100%", height = "100%")}, delete = FALSE)
         
         output$text <- renderUI(includeMarkdown(path = text_filname()))
         
