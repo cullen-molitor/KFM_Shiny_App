@@ -38,3 +38,6 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+# Cloud Build Key
+kfmapp-428ef08101fd.json
