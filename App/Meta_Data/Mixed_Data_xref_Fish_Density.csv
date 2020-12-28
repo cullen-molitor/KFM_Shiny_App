@@ -51,7 +51,7 @@ California_hydrocoral,California hydrocoral,Stylaster californicus,Count,Inverte
 white_spotted_rose_anemone,white-spotted rose anemone,Urticina lofotensis,Count,Invertebrate,Non-targeted
 wakame,wakame,Undaria pinnatifida,Count,Algae,Non-targeted
 wavy_turban_snail,wavy turban snail,Megastraea undosa,Biomass,Invertebrate,Targeted
-warty_sea_cucumber,warty sea cucumber,Parastichopus parvimensis,Count,Invertebrate,Targeted
+warty_sea_cucumber,warty sea cucumber,Parastichopus parvimensis,Biomass,Invertebrate,Targeted
 bat_star,bat star,Patiria miniata,Biomass,Invertebrate,Non-targeted
 giant_spined_sea_star,giant-spined sea star,Pisaster giganteus,Biomass,Invertebrate,Non-targeted
 red_sea_urchin,red sea urchin,Strongylocentrotus franciscanus,Biomass,Invertebrate,Targeted
@@ -71,9 +71,9 @@ orange_puffball_sponge,orange puffball sponge,Tethya aurantia,Biomass,Invertebra
 red_turban_snail,red turban snail,Lithopoma gibberosa,Biomass,Invertebrate,Targeted
 California_golden_gorgonian,California golden gorgonian,Muricea californica,Biomass,Invertebrate,Non-targeted
 queen_tegula,queen tegula,Tegula regina,Biomass,Invertebrate,Non-targeted
-shannon_all,Shannon Index,Shannon Index,Index Value,Calculated Value,Index Value
-richness_all,Richness,Richness,Index Value,Calculated Value,Index Value
-simpson,Simpson Index,Simpson Index,Index Value,Calculated Value,Index Value
+shannon_all,Shannon Index,Shannon Index,Index Value,Calculated Value,Calculated Value
+richness_all,Richness,Richness,Index Value,Calculated Value,Calculated Value
+simpson,Simpson Index,Simpson Index,Index Value,Calculated Value,Calculated Value
 black_surfperch,black surfperch,Embiotoca jacksoni,Count,Fish,Targeted
 blacksmith,blacksmith,Chromis punctipinnis,Count,Fish,Non-targeted
 blue_rockfish,blue rockfish,Sebastes mystinus,Count,Fish,Targeted
@@ -89,3 +89,4 @@ rock_wrasse_female,rock wrasse female,Halichoeres semicinctus,Count,Fish,Non-tar
 rock_wrasse_male,rock wrasse male,Halichoeres semicinctus,Count,Fish,Non-targeted
 senorita,senorita,Oxyjulis californica,Count,Fish,Non-targeted
 striped_surfperch,striped surfperch,Embiotoca lateralis,Count,Fish,Targeted
+Benthic_Biomass_Total,total benthic biomass,total benthic biomass,Biomass,Invertebrate/Algae,Calculated Value

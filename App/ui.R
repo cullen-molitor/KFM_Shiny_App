@@ -475,48 +475,53 @@ ui <- dashboardPage(
         tabsetPanel(
           tabPanel(
             title = "Marine Reserve Indicator Species",
-            tags$hr(),
-            fluidRow(
-              column(
-                4
-              ),
-              column(
-                3,
-                radioButtons(inputId = "radio_ISA_years",
-                             label = "Data Options:",
-                             choices = c("All Years (Fewer Species)",
-                                         "Years > 2004 (All Species)"))
-              ),
-              column(
-                3, 
-                radioButtons(inputId = "radio_ISA_plot_type",
-                             label = "Plot Options",
-                             choices = c("Variable Importance", 
-                                         "Partial Dependence"))
-              ),
-              column(
-                3,
-                conditionalPanel(condition = "input.radio_ISA_plot_type == 'Partial Dependence' 
-                                 & input.radio_ISA_years == 'All Years (Fewer Species)'",
-                                 selectInput(inputId = "select_ISA_species_all",
-                                             label = "Choose a species",
-                                             choices = RF_Importance_All_Years$CommonName)),
-                conditionalPanel(condition = "input.radio_ISA_plot_type == 'Partial Dependence' 
-                                 & input.radio_ISA_years == 'Years > 2004 (All Species)'",
-                                 selectInput(inputId = "select_ISA_species_2005",
-                                             label = "Choose a species",
-                                             choices = RF_Importance_2005$CommonName))
-              )
-            ),
             fluidRow(
               column(
                 4, includeMarkdown(path = "Text/variable_importance.md")
               ),
               column(
-                8, 
-                conditionalPanel(condition = "input.radio_ISA_plot_type == 'Variable Importance'",
-                                 plotOutput(outputId = "ISA_plot", height = 600))
-                
+                8,
+                fluidRow(
+                  tags$hr(),
+                  column(
+                    3,
+                    radioButtons(inputId = "radio_ISA_years",
+                                 label = "Data Options:",
+                                 choices = c("All Years (Fewer Species)",
+                                             "Years > 2004 (All Species)"))
+                  ),
+                  column(
+                    3, 
+                    radioButtons(inputId = "radio_ISA_plot_type",
+                                 label = "Plot Options",
+                                 choices = c("Variable Importance", 
+                                             "Partial Dependence"))
+                  ),
+                  column(
+                    4,
+                    conditionalPanel(condition = "input.radio_ISA_plot_type == 'Partial Dependence' 
+                                 & input.radio_ISA_years == 'All Years (Fewer Species)'",
+                                     selectInput(inputId = "select_ISA_species_all",
+                                                 label = "Choose a species",
+                                                 choices = rf_species_all)),
+                    conditionalPanel(
+                      condition = "input.radio_ISA_plot_type == 'Partial Dependence' 
+                                 & input.radio_ISA_years == 'Years > 2004 (All Species)'",
+                      selectInput(inputId = "select_ISA_species_2005",
+                                  label = "Choose a species",
+                                  choices = rf_species_2005))
+                  )
+                ),
+                fluidRow(
+                  conditionalPanel(condition = "input.radio_ISA_plot_type == 'Variable Importance'",
+                                   plotOutput(outputId = "ISA_plot", height = 600)),
+                  conditionalPanel(condition = "input.radio_ISA_plot_type == 'Partial Dependence' 
+                                   & input.radio_ISA_years == 'All Years (Fewer Species)'",
+                                   plotOutput(outputId = "PDP_plot_all", height = 350)),
+                  conditionalPanel(condition = "input.radio_ISA_plot_type == 'Partial Dependence' 
+                                   & input.radio_ISA_years == 'Years > 2004 (All Species)'",
+                                   plotOutput(outputId = "PDP_plot_2005", height = 350))
+                )
               )
             )
           ),

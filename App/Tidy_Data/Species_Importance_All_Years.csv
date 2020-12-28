@@ -1,86 +1,87 @@
 Common_Name,Inside,Outside,MeanDecreaseAccuracy,MeanDecreaseGini,CommonName,ScientificName,Data_Type,Category,Targeted
-Kellets_whelk,47.88378545370299,46.851954498511994,53.21882316537649,21.891879852003388,Kellet's whelk,Kelletia kelletii,Biomass,Invertebrate,Targeted
-warty_sea_cucumber,42.89402928681973,44.40004348753264,51.248779066689266,18.069632791487336,warty sea cucumber,Parastichopus parvimensis,Count,Invertebrate,Targeted
-California_spiny_lobster,42.745834185628894,43.30512625813419,49.52589913302315,26.264144987012905,California spiny lobster,Panulirus interruptus,Count,Invertebrate,Targeted
-red_sea_urchin,40.60460538480351,30.717512909495028,43.1713557747847,14.49652947627056,red sea urchin,Strongylocentrotus franciscanus,Biomass,Invertebrate,Targeted
-white_sea_urchin,38.27850755671037,27.256792034053387,39.57502125396452,15.140126308162767,white sea urchin,Lytechinus anamesus,Biomass,Invertebrate,Non-targeted
-rock_scallop,32.54089746783259,28.659421337251267,37.42331432702971,11.105561802352064,rock scallop,Crassedoma giganteum,Biomass,Invertebrate,Targeted
-IslandName,33.06189429154049,31.702762726998216,36.90949491157287,9.504531752432326,Island Name,IslandName,Categorical,Meta data,Categorical
-orange_puffball_sponge,22.7368519054134,29.206137396716564,33.92090374800396,6.587597556426832,orange puffball sponge,Tethya aurantia,Biomass,Invertebrate,Non-targeted
-simpson,28.18475778198372,26.574499661881507,33.628426671584236,10.307211141994397,Simpson Index,Simpson Index,Index Value,Calculated Value,Index Value
-Miscellaneous_Invertebrates_wo_spiny_brittle_stars,28.6831242792274,26.168242535950142,30.1247547334227,10.523472511483968,Misc. Inv. excluding spiny brittle stars,Misc. Inv. excluding Ophiothrix spiculata,Percent Cover,Invertebrate,Non-targeted
-La_Jolla_cup_coral,29.017564934324017,19.938677820708385,30.084966543204338,6.55607159943406,La Jolla cup coral,Astrangia lajollaensis,Percent Cover,Invertebrate,Non-targeted
-oar_weed,22.28640240329521,27.472028771916246,29.71328651427336,9.176605469228482,oar weed,Laminaria farlowii,Count,Algae,Non-targeted
-richness_all,27.913673210307376,26.10165917626233,29.67506290637217,8.83733660814665,Richness,Richness,Index Value,Calculated Value,Index Value
-giant_keyhole_limpet,19.37587816413704,23.197806490052834,27.560262198206928,5.09112276553223,giant keyhole limpet,Megathura crenulata,Biomass,Invertebrate,Non-targeted
-bat_star,21.184624878861733,19.476317116281603,26.634956599997125,7.163519474454025,bat star,Patiria miniata,Biomass,Invertebrate,Non-targeted
-SurveyYear,28.840424940046862,17.000763398412904,25.698037421010188,20.043042985152987,Survey Year,SurveyYear,Categorical,Meta data,Categorical
-red_gorgonian,24.32984526338738,16.411038142199388,25.544088931487348,4.905469575115808,red gorgonian,Lophogorgia chilensis,Biomass,Invertebrate,Non-targeted
-California_golden_gorgonian,25.00674718824245,15.414862924576846,25.323499139715135,3.877330838192499,California golden gorgonian,Muricea californica,Biomass,Invertebrate,Non-targeted
-Miscellaneous_Invertebrates_w_spiny_brittle_stars,23.99349718104488,21.562131496202596,25.258398923140575,5.875469202855284,Misc. Inv. including spiny brittle stars,Misc. Inv. including Ophiothrix spiculata,Percent Cover,Invertebrate,Non-targeted
-purple_sea_urchin,19.414069258575566,20.31953505160658,25.122717415964782,5.9318471223376195,purple sea urchin,Strongylocentrotus purpuratus,Biomass,Invertebrate,Non-targeted
-wavy_turban_snail,20.051491066383946,16.88389974811376,24.901492122583193,4.51854792135999,wavy turban snail,Megastraea undosa,Biomass,Invertebrate,Targeted
-California_hydrocoral,23.063242373116502,19.40350307467648,24.708745219146888,2.44436132342993,California hydrocoral,Stylaster californicus,Count,Invertebrate,Non-targeted
-orange_cup_coral,20.55306133875922,20.688591311554397,24.530125987715397,5.578999895898528,orange cup coral,Balanophyllia elegans,Percent Cover,Invertebrate,Non-targeted
-articulated_coralline_algae,21.628082496649796,15.344220885791843,24.518710832648072,4.8813145197164864,articulated coralline algae,articulated coralline algae,Percent Cover,Algae,Non-targeted
-giant_kelp,20.077887586852718,17.157547857455242,24.233264673275453,5.4669383460001155,giant kelp,Macrocystis pyrifera,Biomass,Algae,Targeted
-giant_spined_sea_star,19.79548762192693,18.514290754628906,24.081048645940978,6.211260669254872,giant-spined sea star,Pisaster giganteus,Biomass,Invertebrate,Non-targeted
-spiny_brittle_star,22.41971627762962,15.334305566269217,23.90114129047748,3.556350213446214,spiny brittle star,Ophiothrix spiculata,Percent Cover,Invertebrate,Non-targeted
-white_spotted_rose_anemone,16.71880611300076,19.949260141758018,23.70019832607936,3.6150845389193527,white-spotted rose anemone,Urticina lofotensis,Count,Invertebrate,Non-targeted
-Southern_sea_palm,17.721590334692436,20.799807236316276,23.498441523712586,5.405429377555635,Southern sea palm,Eisenia arborea,Count,Algae,Non-targeted
-shannon_all,13.884779951684786,20.415113382927245,23.37579316610205,4.41358529498848,Shannon Index,Shannon Index,Index Value,Calculated Value,Index Value
-club_tipped_anemone,18.312394919792755,16.851113478043192,22.77020065976649,3.9192334516818814,club-tipped anemone,Corynactis californicus,Percent Cover,Invertebrate,Non-targeted
-agar_weed,14.758093768507226,18.446696661339853,21.198074891957454,3.8639719227434233,agar weed,Gelidium,Percent Cover,Algae,Non-targeted
-bladder_chain_kelp,17.58531458841266,13.905374965208186,20.917995975000263,3.495089630026603,bladder chain kelp,Cystoseira,Percent Cover,Algae,Non-targeted
-California_brown_sea_hare,7.439980224424923,19.968413636723515,20.741223262030495,3.5278820543023723,California brown sea hare,Aplysia californica,Count,Invertebrate,Non-targeted
-brown_algae,17.349463523134187,13.583079363774056,20.528693110191718,4.288877746595454,brown algae,Phaeophyta,Percent Cover,Algae,Non-targeted
-garibaldi,16.079150895472154,14.53293195616455,20.059953761959015,3.1487132111117555,garibaldi,Hypsypops rubicundus,Count,Fish,Non-targeted
-tunicates,15.62688544576385,14.385837824637264,19.90574806334288,4.381155390571884,tunicates,Tunicata,Percent Cover,Invertebrate,Non-targeted
-ornate_tube_worm,16.27680330288909,13.345814967813807,19.707153060196227,3.1765078100960995,ornate tube worm,Diopatra ornata,Percent Cover,Invertebrate,Non-targeted
-red_abalone,14.329017323979482,14.702062785242948,19.486804460687388,2.6366645015091956,red abalone,Haliotis rufescens,Biomass,Invertebrate,Targeted
-bryozoans,13.586561511604033,14.526154138133446,18.954789868074286,3.6942509795742207,bryozoans,Bryozoa,Percent Cover,Invertebrate,Non-targeted
-blackeye_goby,15.359744724672161,12.191986995253053,18.833606632714975,3.3063799781045926,blackeye goby,Coryphopterus nicholsi,Count,Invertebrate,Non-targeted
-sponges,10.78568382253444,14.874484688328351,18.488035596443243,3.343790969256475,sponges,Porifera,Percent Cover,Invertebrate,Non-targeted
-red_turban_snail,14.048126153898632,13.921976449798628,18.01562887667249,2.497698940895042,red turban snail,Lithopoma gibberosa,Biomass,Invertebrate,Targeted
-sunflower_star,12.32818470594109,14.330797961241144,17.67229095462189,2.7417285914824703,sunflower star,Pycnopodia helianthoides,Biomass,Invertebrate,Non-targeted
-red_algae,10.363014244526283,13.403907619004867,17.58581076963723,3.5086721795661444,red algae,Rhodophyta,Percent Cover,Algae,Non-targeted
-Southern_staghorn_bryozoan,14.221550216120878,12.328851081289848,17.422595733612912,2.799124406096352,Southern staghorn bryozoan,Diaperoecia californica,Percent Cover,Invertebrate,Non-targeted
-queen_tegula,6.382425014848709,17.457721897261187,17.2712034579947,2.7945372798929924,queen tegula,Tegula regina,Biomass,Invertebrate,Non-targeted
-Reference,15.352504427288835,13.86740159152612,16.79041274653466,1.99093998575525,Reference,Reference,Categorical,Meta data,Categorical
-stalked_tunicate,4.817169916134828,15.139390088798589,15.33868995398893,1.7592550629035635,stalked tunicate,Styela montereyensis,Count,Invertebrate,Non-targeted
-Coronado_urchin,9.329665150932717,13.283315342118746,15.28615981089459,2.0827889273616194,Coronado urchin,Centrostephanus coronatus,Count,Invertebrate,Non-targeted
-scaled_wormsnail,10.70484964877146,10.629975540702384,14.688644640399033,2.1802813200728055,scaled wormsnail,Serpulorbis squamigerus,Percent Cover,Invertebrate,Non-targeted
-chestnut_cowrie,11.454584956462043,10.001176598149229,14.684934887932284,2.8658392981320113,chestnut cowrie,Cypraea spadicea,Count,Invertebrate,Non-targeted
-island_kelpfish,10.109696674582255,9.97314013541,14.01619377408842,1.9476593596191139,island kelpfish,Alloclinus holderi,Count,Fish,Non-targeted
-brown_gorgonian,9.708031541396647,10.940628260554124,13.843865860378088,1.8249063200139946,brown gorgonian,Muricea fruticosa,Biomass,Invertebrate,Non-targeted
-pink_abalone,11.521371051463403,5.753119816093538,13.612333868721311,1.683683211082838,pink abalone,Haliotis corrugata,Biomass,Invertebrate,Targeted
-kelp_bass,12.33531585113792,6.626388314093847,13.198186800719297,1.6714277503488915,kelp bass,Paralabrax clathratus,Count,Fish,Targeted
-devil_weed,7.708672049627432,10.751539786040345,11.763851733205179,1.5649959358979808,devil weed,Sargassum horneri,Count,Algae,Non-targeted
-green_algae,8.501400897954102,8.233518308748938,11.54200609220674,2.5594211940324207,green algae,Chlorophyta,Percent Cover,Algae,Non-targeted
-sea_tongue,0.7610021096390126,12.23689927026192,11.4783887932786,1.4116893643751307,sea tongue,Gigartina,Percent Cover,Algae,Non-targeted
-California_sheephead_female,7.524111954204897,8.731648901027816,11.451526611899567,1.8936739521213128,California sheephead female,Semicossyphus pulcher,Count,Fish,Targeted
-blacksmith,8.31407495693617,7.553928324544536,11.381271024555419,2.2370545642430377,blacksmith,Chromis punctipinnis,Count,Fish,Non-targeted
-California_sea_palm,7.074615547126481,7.486789816690653,10.250635483580394,1.200585324396696,California sea palm,Pterygophora californica,Count,Algae,Non-targeted
-encrusting_coralline_algae,10.589060043066288,3.176210529936441,10.081643884366162,3.1455261228579783,encrusting coralline algae,encrusting coralline algae,Percent Cover,Algae,Non-targeted
-striped_surfperch,4.714357213006965,7.60163176678202,9.860075576266802,0.9629518631747535,striped surfperch,Embiotoca lateralis,Count,Fish,Targeted
-California_sheephead_male,4.268605933775151,8.89748067385259,9.416272084939632,1.340316001063771,California sheephead male,Semicossyphus pulcher,Count,Fish,Targeted
-black_surfperch,4.405690142492075,8.088304831899304,8.92123812411484,1.5303975942585655,black surfperch,Embiotoca jacksoni,Count,Fish,Targeted
-acid_weed,2.5606771383916196,8.148409450190472,8.423676232470298,0.9957478156213387,acid weed,Desmarestia,Percent Cover,Algae,Non-targeted
-blue_banded_goby,4.909309303176085,6.477366570590711,8.167546850555768,0.6616079099681504,blue-banded goby,Lythrypnus dalli,Count,Fish,Non-targeted
-blue_rockfish,7.423688952688333,4.011665772648072,8.120188505225466,1.3464993680049018,blue rockfish,Sebastes mystinus,Count,Fish,Targeted
-aggregated_red_sea_cucumber,4.242797029513944,6.238844038163042,7.309226633456916,0.7614595084504364,aggregated red sea cucumber,Pachythyone rubra,Percent Cover,Invertebrate,Non-targeted
-colonial_sand_tube_worm,8.629437029804771,0.7889370274403067,6.85652753341092,1.2630875302157103,colonial sand-tube worm,Phragmatopoma californica,Percent Cover,Invertebrate,Non-targeted
-olive_rockfish,4.455989458575588,4.702557292563699,6.441695754286847,1.1441823880059712,olive rockfish,Sebastes serranoides,Count,Fish,Targeted
-rock_wrasse_female,1.8347702566409214,6.255130466832285,6.200260863982724,0.9512402458288316,rock wrasse female,Halichoeres semicinctus,Count,Fish,Non-targeted
-rock_wrasse_male,1.459331646487847,6.52003494187264,6.121395008488932,0.7417001966954796,rock wrasse male,Halichoeres semicinctus,Count,Fish,Non-targeted
-wakame,4.746889533654641,4.36550599681074,5.5511891769065596,0.21936579811191223,wakame,Undaria pinnatifida,Count,Algae,Non-targeted
-miscellaneous_plants,4.988926055058653,1.9827162917651375,5.200028516752307,1.7980018762435106,miscellaneous plants,Plantae,Percent Cover,Algae,Non-targeted
-pile_perch,1.6119888610239728,4.868453059037824,5.038580896801604,0.9524315384872866,pile perch,Rhacochilus vacca,Count,Fish,Targeted
-kelp_rockfish,4.108385211794041,2.9665253865770316,4.844459316398392,0.791752878694005,kelp rockfish,Sebastes atrovirens,Count,Fish,Targeted
-opaleye,2.781260060042517,3.4712280372797055,4.533792908465837,0.8353769381252993,opaleye,Girella nigricans,Count,Fish,Targeted
-senorita,1.996520073258756,1.8163289135195988,2.760477621966616,1.6055350559943,senorita,Oxyjulis californica,Count,Fish,Non-targeted
-gumboot_chiton,1.4104221071200593,2.5378227992850717,2.257707068552609,0.07996974392323497,gumboot chiton,Cryptochiton stelleri,Count,Invertebrate,Non-targeted
-green_abalone,-3.930806216940298,5.472919222134093,1.8525673303161916,0.33035059469474254,green abalone,Haliotis fulgens,Biomass,Invertebrate,Targeted
-ochre_sea_star,0.4702026236415884,1.9030834485186612,1.8241271641197623,0.300845041497887,ochre sea star,Pisaster ochraceus,Count,Invertebrate,Non-targeted
+Kellets_whelk,47.114792084989354,45.86912752952686,52.14473790892375,21.25131249582357,Kellet's whelk,Kelletia kelletii,Biomass,Invertebrate,Targeted
+warty_sea_cucumber,41.30508765567337,42.54533654231539,49.07907611368317,16.91620239616007,warty sea cucumber,Parastichopus parvimensis,Biomass,Invertebrate,Targeted
+California_spiny_lobster,42.61693273167179,43.12574544860402,48.77561587440875,26.065346651488518,California spiny lobster,Panulirus interruptus,Count,Invertebrate,Targeted
+white_sea_urchin,38.52501834690188,27.229359110571497,40.696239722726226,15.184883718976137,white sea urchin,Lytechinus anamesus,Biomass,Invertebrate,Non-targeted
+red_sea_urchin,35.089687834702275,26.634454366373816,38.243628136247736,13.101240753780804,red sea urchin,Strongylocentrotus franciscanus,Biomass,Invertebrate,Targeted
+rock_scallop,32.75411863812365,28.10495222270165,36.57029299299628,10.820336012819485,rock scallop,Crassedoma giganteum,Biomass,Invertebrate,Targeted
+IslandName,32.57434739308487,29.251763060047747,34.97579235783081,9.101597109501666,Island Name,IslandName,Categorical,Meta data,Categorical
+orange_puffball_sponge,22.03891280575628,27.70105030655738,33.52438425077243,6.274219056621477,orange puffball sponge,Tethya aurantia,Biomass,Invertebrate,Non-targeted
+simpson,27.873674910899453,27.120668672321255,33.26661744966605,10.630339044880717,Simpson Index,Simpson Index,Index Value,Calculated Value,Calculated Value
+Benthic_Biomass_Total,27.07537791841645,24.78673645923447,32.48176700588832,9.194125309388506,total benthic biomass,total benthic biomass,Biomass,Invertebrate/Algae,Calculated Value
+La_Jolla_cup_coral,28.65096498959413,21.40532594339382,30.915463668975068,6.502419975690921,La Jolla cup coral,Astrangia lajollaensis,Percent Cover,Invertebrate,Non-targeted
+oar_weed,22.826569169164628,27.433402254663278,29.823390184470625,8.893317734991372,oar weed,Laminaria farlowii,Count,Algae,Non-targeted
+Miscellaneous_Invertebrates_wo_spiny_brittle_stars,27.952172985000978,25.62222373394947,29.53463600594256,10.095001837270425,Misc. Inv. excluding spiny brittle stars,Misc. Inv. excluding Ophiothrix spiculata,Percent Cover,Invertebrate,Non-targeted
+richness_all,26.521709192280007,25.71772326752304,28.717891835597214,8.477759547175461,Richness,Richness,Index Value,Calculated Value,Calculated Value
+giant_keyhole_limpet,19.460813732130905,23.04155567040325,27.47766589651848,5.071848417061311,giant keyhole limpet,Megathura crenulata,Biomass,Invertebrate,Non-targeted
+SurveyYear,29.047684754198496,17.686687722555327,26.588267129558705,20.274238988347506,Survey Year,SurveyYear,Categorical,Meta data,Categorical
+bat_star,21.088497517979405,19.15403331163595,25.607405242526855,7.2315551437475,bat star,Patiria miniata,Biomass,Invertebrate,Non-targeted
+purple_sea_urchin,18.807917516968853,20.440927170954218,25.222947263480698,5.946776023423858,purple sea urchin,Strongylocentrotus purpuratus,Biomass,Invertebrate,Non-targeted
+orange_cup_coral,20.75960351588936,20.218277603426014,24.447086701722352,5.895412692115879,orange cup coral,Balanophyllia elegans,Percent Cover,Invertebrate,Non-targeted
+red_gorgonian,23.068699865909476,15.754278658842724,24.41428596723513,4.682192193656483,red gorgonian,Lophogorgia chilensis,Biomass,Invertebrate,Non-targeted
+spiny_brittle_star,24.326624230002146,15.084768302602985,24.226968898465532,3.877948696973172,spiny brittle star,Ophiothrix spiculata,Percent Cover,Invertebrate,Non-targeted
+white_spotted_rose_anemone,16.511754794842876,19.905991500245218,24.083768623148373,3.341119536117179,white-spotted rose anemone,Urticina lofotensis,Count,Invertebrate,Non-targeted
+Miscellaneous_Invertebrates_w_spiny_brittle_stars,22.485107598624136,20.65780060954849,24.015360860906085,5.2707624535944015,Misc. Inv. including spiny brittle stars,Misc. Inv. including Ophiothrix spiculata,Percent Cover,Invertebrate,Non-targeted
+California_hydrocoral,22.736775101218473,19.275275814790305,23.785340952735293,2.448664655116219,California hydrocoral,Stylaster californicus,Count,Invertebrate,Non-targeted
+Southern_sea_palm,18.228167665995134,21.019880901915517,23.780398465799223,5.4207510998792285,Southern sea palm,Eisenia arborea,Count,Algae,Non-targeted
+wavy_turban_snail,18.97261853204714,15.73112320383243,23.480587962709713,4.435020258759921,wavy turban snail,Megastraea undosa,Biomass,Invertebrate,Targeted
+club_tipped_anemone,17.796934495572472,18.311900654028275,23.415132370176867,3.7446021124474616,club-tipped anemone,Corynactis californicus,Percent Cover,Invertebrate,Non-targeted
+giant_spined_sea_star,21.031360374780103,17.375600808814966,23.371832701598414,6.259953626878757,giant-spined sea star,Pisaster giganteus,Biomass,Invertebrate,Non-targeted
+articulated_coralline_algae,19.996597952912243,13.855719464743519,23.16741418884866,4.782351706606884,articulated coralline algae,articulated coralline algae,Percent Cover,Algae,Non-targeted
+California_golden_gorgonian,22.10923191849141,14.083597982470952,22.989060633861033,3.8145874839239666,California golden gorgonian,Muricea californica,Biomass,Invertebrate,Non-targeted
+giant_kelp,19.117378625040445,16.327522776539357,22.916692513890293,5.102995576770169,giant kelp,Macrocystis pyrifera,Biomass,Algae,Targeted
+shannon_all,13.795136508400546,18.814381636851554,22.862389164464318,4.312701711017526,Shannon Index,Shannon Index,Index Value,Calculated Value,Calculated Value
+California_brown_sea_hare,9.06540313137939,19.911302651827686,21.29079474220398,3.2022370835582503,California brown sea hare,Aplysia californica,Count,Invertebrate,Non-targeted
+agar_weed,14.203163408365125,18.293239269723262,20.75710141287129,3.5735650222363033,agar weed,Gelidium,Percent Cover,Algae,Non-targeted
+brown_algae,16.232717857582987,13.472047022649383,20.125420144448235,3.930811467597657,brown algae,Phaeophyta,Percent Cover,Algae,Non-targeted
+bladder_chain_kelp,16.451308582558614,14.455945959425486,19.702050809336182,3.5180764194866447,bladder chain kelp,Cystoseira,Percent Cover,Algae,Non-targeted
+red_abalone,15.198574835350893,14.770717560003082,19.586396765830287,2.7932719389052836,red abalone,Haliotis rufescens,Biomass,Invertebrate,Targeted
+sponges,11.421468495531787,16.202931253450313,19.340875973570206,3.412053817005554,sponges,Porifera,Percent Cover,Invertebrate,Non-targeted
+ornate_tube_worm,15.446776256526334,12.382189135084682,19.268391872972973,2.9703843145600533,ornate tube worm,Diopatra ornata,Percent Cover,Invertebrate,Non-targeted
+red_algae,12.139800913887752,14.557704867176161,19.087106089992126,3.526853881833007,red algae,Rhodophyta,Percent Cover,Algae,Non-targeted
+bryozoans,14.70929615626546,13.570196445557668,19.02401905496522,3.691883569224807,bryozoans,Bryozoa,Percent Cover,Invertebrate,Non-targeted
+garibaldi,16.091942445865456,13.621651273806393,18.928928050648867,2.7646379391880487,garibaldi,Hypsypops rubicundus,Count,Fish,Non-targeted
+red_turban_snail,15.606517069654657,14.162018865032818,18.89735580247171,2.513413470605559,red turban snail,Lithopoma gibberosa,Biomass,Invertebrate,Targeted
+tunicates,14.173412001566795,13.478700603251259,18.043158863676997,4.0257592520820324,tunicates,Tunicata,Percent Cover,Invertebrate,Non-targeted
+sunflower_star,13.666020948086548,13.72022049767111,17.928788701880165,2.731855841777395,sunflower star,Pycnopodia helianthoides,Biomass,Invertebrate,Non-targeted
+Southern_staghorn_bryozoan,12.401902120769268,12.641320086485438,17.10245378858949,2.563369244295443,Southern staghorn bryozoan,Diaperoecia californica,Percent Cover,Invertebrate,Non-targeted
+blackeye_goby,13.93717160236086,10.727789533196008,16.924277787942785,3.1717269748816053,blackeye goby,Coryphopterus nicholsi,Count,Invertebrate,Non-targeted
+Reference,15.502239394707852,13.579904350623213,16.497608451314075,1.7817637264793096,Reference,Reference,Categorical,Meta data,Categorical
+chestnut_cowrie,13.810327730387687,8.977763448664906,15.989689243166417,2.732546214448621,chestnut cowrie,Cypraea spadicea,Count,Invertebrate,Non-targeted
+queen_tegula,7.715656204998324,14.850943927417406,15.631673326083549,2.5437297088819277,queen tegula,Tegula regina,Biomass,Invertebrate,Non-targeted
+island_kelpfish,11.703492981135408,10.185514609255343,14.842692319139813,2.008008454112315,island kelpfish,Alloclinus holderi,Count,Fish,Non-targeted
+Coronado_urchin,10.175119507936804,12.423309331087372,14.566228424427285,2.1825179448558396,Coronado urchin,Centrostephanus coronatus,Count,Invertebrate,Non-targeted
+brown_gorgonian,11.0993363646835,9.506903174007928,14.128424873409497,1.809254801996353,brown gorgonian,Muricea fruticosa,Biomass,Invertebrate,Non-targeted
+pink_abalone,12.171593750218552,6.316491026543744,13.521041304759047,1.6597460952688097,pink abalone,Haliotis corrugata,Biomass,Invertebrate,Targeted
+stalked_tunicate,4.919420260255086,13.349370928019264,13.3493437841016,1.6240850606431294,stalked tunicate,Styela montereyensis,Count,Invertebrate,Non-targeted
+scaled_wormsnail,9.04069348643277,9.766829947969772,13.01907389107965,2.0531469128002744,scaled wormsnail,Serpulorbis squamigerus,Percent Cover,Invertebrate,Non-targeted
+sea_tongue,1.8405769430775456,12.725906069567515,12.269115654865056,1.5135999397209399,sea tongue,Gigartina,Percent Cover,Algae,Non-targeted
+kelp_bass,10.185098904463512,7.26868698242383,12.19849460218106,1.6404450575435767,kelp bass,Paralabrax clathratus,Count,Fish,Targeted
+devil_weed,7.4552643361522675,11.36969790622296,12.026889087433435,1.7146264363843617,devil weed,Sargassum horneri,Count,Algae,Non-targeted
+green_algae,9.269417553251051,7.925160777644501,11.340225839286093,2.3887402221705973,green algae,Chlorophyta,Percent Cover,Algae,Non-targeted
+blacksmith,7.401346572063965,8.265374054380612,11.14029015499293,2.243717665221903,blacksmith,Chromis punctipinnis,Count,Fish,Non-targeted
+California_sheephead_female,8.42148157773107,6.944268899324996,10.599394597822563,2.0359392507498555,California sheephead female,Semicossyphus pulcher,Count,Fish,Targeted
+black_surfperch,3.3835921987381092,10.815271383729382,10.383891258384846,1.6051756765416143,black surfperch,Embiotoca jacksoni,Count,Fish,Targeted
+encrusting_coralline_algae,12.13913200783933,2.228832474099744,10.291895042875042,2.954884185603784,encrusting coralline algae,encrusting coralline algae,Percent Cover,Algae,Non-targeted
+California_sea_palm,6.322329971882211,7.477501236794859,9.802147327906175,1.140730467693193,California sea palm,Pterygophora californica,Count,Algae,Non-targeted
+California_sheephead_male,4.85443763247302,8.599270148270548,9.254016882774037,1.2899710841998602,California sheephead male,Semicossyphus pulcher,Count,Fish,Targeted
+striped_surfperch,5.030257158340043,6.925879213707143,9.091550289643306,0.8412234038426387,striped surfperch,Embiotoca lateralis,Count,Fish,Targeted
+acid_weed,3.833494835120928,7.02814802575408,7.816004363183416,0.9873257049906073,acid weed,Desmarestia,Percent Cover,Algae,Non-targeted
+aggregated_red_sea_cucumber,7.112005133688594,4.844061020442039,7.78662674491483,0.7118955463691181,aggregated red sea cucumber,Pachythyone rubra,Percent Cover,Invertebrate,Non-targeted
+colonial_sand_tube_worm,8.119288949663892,2.1716961180975245,7.715889288204372,1.2069323043365572,colonial sand-tube worm,Phragmatopoma californica,Percent Cover,Invertebrate,Non-targeted
+blue_banded_goby,4.971878119720568,5.763730456793467,7.5886325297680495,0.5944105098616956,blue-banded goby,Lythrypnus dalli,Count,Fish,Non-targeted
+wakame,6.446109399565656,4.922729942862907,7.195987496769527,0.23665492605760577,wakame,Undaria pinnatifida,Count,Algae,Non-targeted
+blue_rockfish,8.814711393983359,0.49205644989863273,6.910506724024772,1.3000951651695525,blue rockfish,Sebastes mystinus,Count,Fish,Targeted
+rock_wrasse_female,4.8005450042170095,4.361144198595274,6.655962832163222,0.9863780372595861,rock wrasse female,Halichoeres semicinctus,Count,Fish,Non-targeted
+senorita,4.7474994011154035,4.009906959470757,6.373372514302307,1.4782154879524776,senorita,Oxyjulis californica,Count,Fish,Non-targeted
+opaleye,3.2018371893988515,5.256974005483761,5.94263529544203,0.8523383697890526,opaleye,Girella nigricans,Count,Fish,Targeted
+olive_rockfish,3.898606286420949,3.8385338131535445,5.618618915846146,1.1999010097520344,olive rockfish,Sebastes serranoides,Count,Fish,Targeted
+kelp_rockfish,4.494069784599129,2.8912787110604494,5.411286915204327,0.8006512183001145,kelp rockfish,Sebastes atrovirens,Count,Fish,Targeted
+pile_perch,3.1044330451411257,3.448473891040815,4.6824349746424865,0.9261361205469165,pile perch,Rhacochilus vacca,Count,Fish,Targeted
+rock_wrasse_male,0.286817604646232,5.102296383165521,3.957625303309314,0.6987613853658716,rock wrasse male,Halichoeres semicinctus,Count,Fish,Non-targeted
+miscellaneous_plants,4.846499071995852,0.8971021779116942,3.9517675298588015,1.750908179613323,miscellaneous plants,Plantae,Percent Cover,Algae,Non-targeted
+gumboot_chiton,1.4914304313402658,4.055830847583131,3.659919575597376,0.08752582324332599,gumboot chiton,Cryptochiton stelleri,Count,Invertebrate,Non-targeted
+green_abalone,-2.2142791260346555,5.31814452133476,2.890648019927063,0.31448234310329365,green abalone,Haliotis fulgens,Biomass,Invertebrate,Targeted
+ochre_sea_star,0.17392072730607036,1.3890299622288866,1.372166230274915,0.29486691120969705,ochre sea star,Pisaster ochraceus,Count,Invertebrate,Non-targeted
 white_abalone,0,0,0,0,white abalone,Haliotis sorenseni,Count,Invertebrate,Targeted
-threaded_abalone,-1.3423024669422061,-1.5791726115421392,-1.9537562542047933,0.046165592444757826,threaded abalone,Haliotis assimilis,Count,Invertebrate,Targeted
+threaded_abalone,-0.5321095560397856,-0.9574273692791867,-1.1552984028321573,0.03664828507038376,threaded abalone,Haliotis assimilis,Count,Invertebrate,Targeted

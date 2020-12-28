@@ -17048,3 +17048,861 @@ SiteNumber,IslandCode,IslandName,SiteCode,SiteName,SurveyYear,Date,ScientificNam
 37,SB,Santa Barbara Island,SER,Southeast Reef,2019,2019-07-01,Strongylocentrotus purpuratus,purple sea urchin,2,49.428390088368594,One_Meter,Inside,TRUE
 37,SB,Santa Barbara Island,SER,Southeast Reef,2019,2019-07-01,Tegula regina,queen tegula,0.0417,1.339722250908317,One_Meter,Inside,TRUE
 37,SB,Santa Barbara Island,SER,Southeast Reef,2019,2019-07-01,Tethya aurantia,orange puffball sponge,0.0014,0.03299572294516869,Bands,Inside,TRUE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,1982,1982-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,318.1903229315375,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,1983,1983-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,413.80377609048895,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,1984,1984-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,331.326021971035,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,1985,1985-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,429.1690659359191,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,1986,1986-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,653.0413566858076,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,1987,1987-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,390.9062084423804,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,1988,1988-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,589.3120353395726,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,1989,1989-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,488.9592426930354,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,1990,1990-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,476.96207843491163,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,1991,1991-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,326.4397738516419,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,1992,1992-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,322.66324576054495,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,1993,1993-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,474.45041281179766,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,1994,1994-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,261.2220128374671,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,1995,1995-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,183.14351343234117,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,1996,1996-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,145.85256399125038,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,1997,1997-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,229.479806460705,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,1998,1998-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,476.9776362582963,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,1999,1999-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,352.511794666225,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2000,2000-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,298.30859264848675,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2001,2001-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1065.3952115657028,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2002,2002-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1237.9442344896179,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2003,2003-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1284.2097584330174,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2004,2004-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1007.3921915525947,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,224.84269566958258,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,751.5746201084487,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,333.25046120637273,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,233.38628708141943,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,354.2960124897128,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,319.791742749895,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,479.82962200762466,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,551.2421183538675,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,559.876490069239,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,436.31322393265816,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,269.93435222032406,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,808.9407687751315,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,376.775057187545,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1441.4377963296329,NA,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,891.5210636893331,NA,Outside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,1982,1982-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1129.9115722188053,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,1983,1983-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1010.7879448271972,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,1984,1984-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,972.179744206174,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,1985,1985-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,888.5055472580913,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,1986,1986-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1342.4489866104454,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,1987,1987-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,771.2170101865095,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,1988,1988-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1215.7272656238956,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,1989,1989-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1204.0661306846573,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,1990,1990-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1104.0061163156308,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,1991,1991-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1228.2501528342164,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,1992,1992-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,980.6104772981107,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,1993,1993-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,869.0787107293614,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,1994,1994-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1196.0798594024957,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,1995,1995-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,816.8455229737262,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,1996,1996-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,644.222390412057,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,1997,1997-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,760.0160128499067,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,1998,1998-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,819.2672130669611,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,1999,1999-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1104.523962198498,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2000,2000-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,743.0954159608789,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2001,2001-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1036.3651024662925,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2002,2002-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,945.0837020440661,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2003,2003-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,496.39997235007104,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2004,2004-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,707.1500180728981,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1026.255674380868,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,3043.2353515231034,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1418.9429964357414,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2646.6706462862826,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2107.635691519028,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1548.217549317018,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1769.443338918208,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1816.8519734395525,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1706.047801375814,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2069.9960022050736,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2220.4343689417487,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1205.505609034177,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1073.0609162977862,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,906.4067231136193,NA,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1073.3912249123046,NA,Inside,FALSE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,1982,1982-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,691.8895733572265,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,1983,1983-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,735.5727529828984,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,1984,1984-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,777.740660445808,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,1985,1985-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2551.190713764679,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,1986,1986-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1521.0178964393378,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,1987,1987-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,856.0239949137311,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,1988,1988-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,655.722070196717,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,1989,1989-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1080.3408735503006,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,1990,1990-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,351.68215687644744,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,1991,1991-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,362.22310262018726,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,1992,1992-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,276.93084045808473,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,1993,1993-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,229.3444885185247,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,1994,1994-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,286.63050999105747,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,1995,1995-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,239.3640628064346,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,1996,1996-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,228.30731127820235,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,1997,1997-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,276.1640594447275,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,1998,1998-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,748.2712045987964,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,1999,1999-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1035.8900241855674,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2000,2000-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1742.3206075410656,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2001,2001-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,731.1883780368379,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2002,2002-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,407.69111249101195,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2003,2003-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,763.4545257169909,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2004,2004-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,496.4342003412389,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,298.48725277247115,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,446.13679835015,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,391.25238613155625,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,145.8964014307975,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,199.71085497214798,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,604.0823131720025,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,303.06300866987874,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,205.00375431383978,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,216.60520519085554,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,773.5603282762908,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1979.4526288023712,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1276.0269221872973,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,831.675441932798,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1039.3870293344703,NA,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,893.966668287734,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,1982,1982-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,441.71989166598803,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,1983,1983-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,591.0230342223342,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,1984,1984-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,555.0280604578851,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,1985,1985-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1484.776288287415,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,1986,1986-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1811.2509134719119,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,1987,1987-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,506.4626197774671,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,1988,1988-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,616.9086679859118,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,1989,1989-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,483.17784938956163,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,1990,1990-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,580.0886072424724,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,1991,1991-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,327.2660841853968,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,1992,1992-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,302.80274926272915,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,1993,1993-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,465.4948654308249,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,1994,1994-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,203.02018251128558,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,1995,1995-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,321.9348832004037,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,1996,1996-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,337.480104069469,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,1997,1997-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,187.3540121337581,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,1998,1998-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,750.0622313598998,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,1999,1999-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,552.4361322393503,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2000,2000-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,443.63222683165526,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2001,2001-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1210.905912101498,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2002,2002-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,390.0407757731211,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2003,2003-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1060.8134182826257,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2004,2004-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,287.42067594787574,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,173.71146173690602,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,237.01542181466425,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,282.4035311616105,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,530.7399057396324,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,249.06725774639222,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,390.3292513723553,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,409.1627990080488,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,441.15432952994,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,763.0885708885829,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,367.40917204722365,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,921.0140682667279,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,3197.2083771211946,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,501.27985104743163,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,739.7661516847286,NA,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,363.6437729628386,NA,Outside,TRUE
+5,SR,Santa Rosa Island,RR,Rodes Reef,1983,1983-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,453.44731749546855,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,1984,1984-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,594.9875420997826,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,1985,1985-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,840.3671683899472,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,1986,1986-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1427.141598763071,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,1987,1987-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,623.0775190605108,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,1988,1988-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,429.9720234203737,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,1989,1989-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,813.5806259990992,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,1990,1990-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1106.0477848650094,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,1991,1991-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,465.57409392615693,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,1992,1992-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,588.9150544262839,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,1993,1993-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,899.4586321632845,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,1994,1994-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,520.8096164474885,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,1995,1995-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,569.3997056978362,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,1996,1996-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,511.80282213447964,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,1997,1997-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,311.8649663591562,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,1998,1998-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,662.2371338395454,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,1999,1999-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,635.3197963757746,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2000,2000-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,813.2865899925703,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2001,2001-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,573.3754944827499,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2002,2002-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,555.0082435756271,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2003,2003-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,261.87567002776075,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2004,2004-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,546.856558875089,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,764.257244045421,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,844.2224599806358,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,257.4235909685552,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1990.1948103973334,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1547.4453414088694,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,686.783847655658,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1015.3517425938837,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1228.1763128970958,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,922.9396813345627,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,968.9234437473225,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,737.2109767759182,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,420.9938132789534,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,396.8835078064066,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,549.2965803771823,NA,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,364.76057298545635,NA,Outside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,1982,1982-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,947.2572885068952,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,1983,1983-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,948.4403088063052,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,1984,1984-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1183.6740562773846,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,1985,1985-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,3605.5927185405358,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,1986,1986-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1515.6486170704893,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,1987,1987-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1772.3658552552665,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,1988,1988-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,705.5424617910779,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,1989,1989-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,646.391986783786,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,1990,1990-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,732.9848960535874,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,1991,1991-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,652.2006417342809,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,1992,1992-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,584.5146745630118,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,1993,1993-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,885.9087732737672,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,1994,1994-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,809.2941213999311,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,1995,1995-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1376.3437077174412,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,1996,1996-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,916.2840192270335,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,1997,1997-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1025.8191375792837,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,1998,1998-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,688.0741670200204,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,1999,1999-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,952.5135598799263,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2000,2000-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,629.7217304595878,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2001,2001-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,457.7938668309119,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2002,2002-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,311.9886435977703,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2003,2003-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,142.50904474717413,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2004,2004-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,208.20262181393656,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,279.226019843653,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,261.25907000205723,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,494.01529257542944,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,571.7535790377157,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,397.39575734222467,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,527.3881392554248,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1536.3758163461766,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1726.1751837915324,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1228.1481967879001,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1348.57871206671,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,852.1651899571137,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,897.5186449599342,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1246.8282113017722,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,652.3486131514867,NA,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1098.7833307193177,NA,Inside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,1982,1982-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,872.2919051068966,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,1983,1983-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1010.9781790135552,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,1984,1984-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1015.019891601603,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,1985,1985-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1214.8167841820143,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,1986,1986-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,998.5480697689956,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,1987,1987-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,966.18102160295,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,1988,1988-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1133.5692144262036,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,1989,1989-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,833.9664470847682,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,1990,1990-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,992.5260307003402,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,1991,1991-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,808.200575479812,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,1992,1992-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,645.3557048925373,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,1993,1993-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,416.84310026948316,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,1994,1994-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,389.01820789287484,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,1995,1995-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,527.6278673592976,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,1996,1996-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,584.8304887880921,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,1997,1997-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,345.9731997311202,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,1998,1998-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,476.93235260263407,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,1999,1999-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,623.4947394832318,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2000,2000-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,632.1088226441859,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2001,2001-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,563.1731884332285,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2002,2002-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,492.0900557304296,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2003,2003-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,296.3666710101204,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2004,2004-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,131.97658915637976,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,145.9855474247309,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,116.96044296165373,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,183.01544853195364,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,220.67778608384853,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,240.57469890945157,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,228.43707636072523,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,424.83111027147163,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,296.86846617706004,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,247.8274351286276,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,637.5844465088559,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,394.31572385228276,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,170.92626519078655,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,373.98054476838763,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,401.4495979216033,NA,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,538.8025943567482,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,1982,1982-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,579.5705659539917,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,1983,1983-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,542.1680168584276,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,1984,1984-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,878.1769637430885,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,1985,1985-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1347.1803572190001,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,1986,1986-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1704.0878233181504,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,1987,1987-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,859.3373209733645,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,1988,1988-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,657.0108382232845,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,1989,1989-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1077.8333153853255,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,1990,1990-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,674.6700221678943,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,1991,1991-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,518.1626938945094,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,1992,1992-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,293.15896982186746,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,1993,1993-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,522.1717092323481,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,1994,1994-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1041.6071293715986,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,1995,1995-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,808.2353232150584,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,1996,1996-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,454.4034963846305,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,1997,1997-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,615.6361145936437,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,1998,1998-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,397.3021620426627,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,1999,1999-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,391.1446589910049,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2000,2000-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,406.58554701866916,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2001,2001-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,504.85789398299335,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2002,2002-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,434.40667111736497,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2003,2003-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,362.4653948384375,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2004,2004-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,450.45602097521993,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,304.52727755009874,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,243.0449359931078,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,333.18023119460196,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,316.51135101617285,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,186.10507506637697,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,519.751883123721,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,610.6966295501052,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,749.1536329969301,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,678.6053553652035,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,393.40257790754947,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,299.83744707214254,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,101.84941413303403,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,209.60020505751294,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,411.41267861478786,NA,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,401.36803615655765,NA,Outside,FALSE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,1982,1982-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,721.3101288670437,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,1983,1983-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,755.500306603483,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,1984,1984-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,708.9559915617692,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,1985,1985-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1386.9566391423623,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,1986,1986-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2169.625653740159,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,1987,1987-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1180.0590039255144,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,1988,1988-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1295.0323930280786,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,1989,1989-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1253.6416446444537,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,1990,1990-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,640.3919003523777,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,1991,1991-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,801.6782037292354,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,1992,1992-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,632.8739854648659,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,1993,1993-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,743.2412766472647,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,1994,1994-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,581.651625017454,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,1995,1995-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,811.7855469581605,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,1996,1996-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,598.7081078774404,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,1997,1997-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,716.281318509329,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,1998,1998-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,561.7929061950612,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,1999,1999-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,493.0020849750694,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2000,2000-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,681.7231423957215,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2001,2001-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,618.2919333382603,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2002,2002-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,577.3443628322173,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2003,2003-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,809.8159046750355,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2004,2004-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,600.7973935452071,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,651.6984486241624,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,538.9608909559154,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,897.0437041010023,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,874.3890720259386,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,743.7472026717778,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1327.759580068107,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1309.9222110429582,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1764.995374682102,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1062.1848262471508,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,734.5433681602071,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,399.16755069782334,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,372.9527046746217,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,620.4641736331583,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,863.3094950811629,NA,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,554.5450100261119,NA,Inside,TRUE
+10,SC,Santa Cruz Island,YB,Yellow Banks,1986,1986-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,852.0232390725341,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,1987,1987-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,938.7428563164716,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,1988,1988-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,761.032402434654,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,1989,1989-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,773.0099092625077,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,1990,1990-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,511.92887387177376,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,1991,1991-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,889.1937087259197,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,1992,1992-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,262.13232369483734,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,1993,1993-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,637.8039644390382,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,1994,1994-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,597.6597436167643,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,1995,1995-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,476.4043930846713,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,1996,1996-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,638.4358407033382,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,1997,1997-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,864.645472908252,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,1998,1998-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,536.1092544759704,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,1999,1999-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,540.9878718635829,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2000,2000-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,583.9349365201318,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2001,2001-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,507.5435337819103,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2002,2002-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,260.9903354969974,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2003,2003-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,268.02438444971335,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2004,2004-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,232.76872533739814,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,146.45182108527155,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,319.0170938364916,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,153.48684992355163,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,326.1633650262943,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,374.420470564168,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,287.5076884425468,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,787.950434469752,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,286.96096143496584,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,453.65376231901985,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1366.1718716365253,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,652.3165014439575,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,326.0417520011272,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,289.83094340538116,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,417.12969585098074,NA,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,394.8072591165688,NA,Outside,FALSE
+11,AN,Anacapa Island,AR,Admiral's Reef,1982,1982-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,672.7936623708389,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,1983,1983-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,795.0049505287839,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,1984,1984-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,964.208875301661,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,1985,1985-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1060.1104508642486,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,1986,1986-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1484.367545458255,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,1987,1987-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1092.2717680574926,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,1988,1988-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1813.6736188507227,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,1989,1989-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1161.8698034696133,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,1990,1990-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1896.0338781109315,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,1991,1991-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1428.0219525470297,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,1992,1992-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1264.6689917771048,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,1993,1993-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1925.1081330773823,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,1994,1994-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1790.3051378074845,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,1995,1995-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2140.4871342111287,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,1996,1996-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1404.9660809502036,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,1997,1997-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1394.4851453303145,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,1998,1998-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1121.3829408073148,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,1999,1999-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1640.4174412047068,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2000,2000-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1029.1219938933962,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2001,2001-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,525.697330458087,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2002,2002-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,452.6084138657924,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2003,2003-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,247.23403364572533,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2004,2004-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,323.4526350324391,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,397.0167260154201,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,816.8723823819931,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,537.841461209276,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,732.3918546040552,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,586.0202807372323,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,633.297475437116,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,613.111949371455,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,505.827171977285,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,355.7811540437148,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,261.4935704347173,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,309.16973371451644,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,313.36161722412464,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,350.23353221777774,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,505.37833510541907,NA,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,683.9650729098721,NA,Outside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,1982,1982-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,831.0805356167917,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,1983,1983-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,929.9532046284475,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,1984,1984-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1138.8925211649357,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,1985,1985-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2164.348337654192,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,1986,1986-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1638.660065722742,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,1987,1987-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1437.2042157541946,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,1988,1988-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1966.7378375747387,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,1989,1989-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1748.1996730853589,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,1990,1990-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1900.139028207774,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,1991,1991-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1609.598088651013,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,1992,1992-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,987.3592189962438,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,1993,1993-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1427.2668209156325,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,1994,1994-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1623.1080586533444,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,1995,1995-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2105.0845097802917,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,1996,1996-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2173.70187454141,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,1997,1997-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1707.320090308919,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,1998,1998-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1659.1094946049473,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,1999,1999-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2152.5022378625868,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2000,2000-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2201.890173567847,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2001,2001-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2932.278183668717,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2002,2002-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1580.5163968660406,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2003,2003-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1596.9444695495545,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2004,2004-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2122.6650255568948,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2077.8681667547967,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2216.178675180831,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1575.22617685737,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1602.3687934606864,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1081.2774169491197,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1599.035094982297,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1946.2510201567818,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1840.4498299661375,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1425.515877920813,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1563.067813572994,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,790.3160742422424,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,375.490991901475,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,262.08051089471326,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,356.03698935510363,NA,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,321.3019958755436,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,1982,1982-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,582.5112071684315,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,1983,1983-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,755.1217824041366,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,1984,1984-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,588.8299028411326,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,1985,1985-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,874.1318289879022,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,1986,1986-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1073.1646221280835,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,1987,1987-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1365.111848169565,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,1988,1988-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1271.235228769506,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,1989,1989-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1257.8194559220497,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,1990,1990-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,785.5778917143003,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,1991,1991-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1252.357583789127,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,1992,1992-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,714.2725349407511,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,1993,1993-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1138.9560876904684,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,1994,1994-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1451.4132608505624,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,1995,1995-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1432.376247944531,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,1996,1996-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2005.0327702640177,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,1997,1997-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1433.1433110146295,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,1998,1998-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1370.748389901245,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,1999,1999-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1654.049485470305,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2000,2000-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1318.4798438184691,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2001,2001-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2220.7624595620305,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2002,2002-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1850.9720781647034,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2003,2003-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1601.320842633771,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2004,2004-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1386.2991824651963,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1245.7698120583582,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1306.6420203345426,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1579.038736216146,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,734.8736614695847,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,903.4211069863317,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1080.5841223816017,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1294.8628913696189,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,661.8962116075943,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1118.743728882304,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,761.5172480920085,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,437.97675959644425,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,228.0546888506355,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,151.0838392050359,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,203.8029725587835,NA,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,345.28964737616695,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1982,1982-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,970.5624783332862,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1983,1983-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1270.9950729250172,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1984,1984-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1068.3771722620027,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1985,1985-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,853.7715394585324,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1986,1986-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,883.0485656919466,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1987,1987-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,746.6290192433879,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1988,1988-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,558.8982343131206,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1989,1989-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,530.578755944768,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1990,1990-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,558.1429751766291,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1991,1991-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,712.3143607263141,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1992,1992-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,648.148721185871,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1993,1993-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,407.73870077484,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1994,1994-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,671.5380414316488,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1995,1995-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,920.9259665985362,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1996,1996-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,499.6038533089527,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1997,1997-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,465.44839219268204,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1998,1998-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,353.6315435754982,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,1999,1999-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,442.97847158056544,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2000,2000-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,441.4867459766201,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2001,2001-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,301.0512714383628,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2002,2002-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,255.07326875655764,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2003,2003-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,336.5573704647652,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2004,2004-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,647.6783365662415,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,658.1988659291366,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,453.11683403996886,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,393.99765897796016,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,369.54401522746997,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,237.4407142422633,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,285.17243574010575,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,643.0835839066351,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,328.5165138282217,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,206.60089746390204,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,338.2362459877881,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,261.27255229413,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,174.07293956098204,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,280.85080044351565,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,330.9146723565249,NA,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,519.1728226876161,NA,Inside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,1982,1982-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,660.2304166540471,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,1983,1983-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,534.3346722303817,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,1984,1984-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,609.3772662123149,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,1985,1985-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,604.9746269541527,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,1986,1986-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,795.2958412014452,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,1987,1987-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,969.103213975867,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,1988,1988-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,902.1639928081742,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,1989,1989-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,825.1623405669105,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,1990,1990-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,632.5887553703677,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,1991,1991-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,908.3199508463287,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,1992,1992-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,774.7166315254814,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,1993,1993-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,314.9836887754073,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,1994,1994-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,509.4753566988202,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,1995,1995-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,927.4058418349393,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,1996,1996-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,590.8339741457617,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,1997,1997-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,712.4076956267314,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,1998,1998-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,502.862346895698,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,1999,1999-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,883.5459210117839,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2000,2000-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,579.3101148865422,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2001,2001-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,852.0939205247547,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2002,2002-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,878.0996005589884,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2003,2003-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,375.3134721952906,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2004,2004-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1145.915996747268,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1495.1939419776493,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,851.1309929322258,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,573.5330081487004,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,818.799606755424,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,496.03906226694374,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,714.6255895008576,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,757.5303988204392,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,544.5883738642004,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,846.4444599721767,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,705.4585662706816,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,295.8861265079833,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,211.80411261575728,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,355.5158450847009,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,842.1445618665068,NA,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1004.9602221205504,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,1986,1986-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,368.6036731971756,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,1987,1987-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,705.8966698983992,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,1988,1988-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1148.057755103133,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,1989,1989-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,947.3578813007141,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,1990,1990-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1040.4415307635747,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,1991,1991-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1046.3441262246577,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,1992,1992-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1375.8827807563653,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,1993,1993-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,731.7837050344775,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,1994,1994-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,605.4529710686276,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,1995,1995-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1412.2878196992997,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,1996,1996-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2138.514926602119,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,1997,1997-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2973.078373331847,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,1998,1998-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1148.3207013746767,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,1999,1999-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1195.175566303371,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2000,2000-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1483.9446963723972,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2001,2001-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1072.1782208671934,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2002,2002-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,968.2265554293313,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2003,2003-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,325.2595962428416,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2004,2004-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1515.222351718626,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1089.719374732978,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,756.7352872110675,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,527.2083622732134,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,528.6709889062273,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,457.79355346844267,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,432.0834219936076,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,961.7187671222837,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,465.0500230697501,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,455.15599572457575,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,916.4617952837348,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,702.1311759334998,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,321.37876461603986,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,570.2966465470478,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,704.9033958470683,NA,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,367.12112425377944,NA,Outside,TRUE
+21,SM,San Miguel Island,MM,Miracle Mile,2001,2001-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,866.2183709684856,NA,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2002,2002-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1178.1226616391707,NA,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2003,2003-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1285.3307678577605,NA,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2004,2004-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1569.1670362920559,NA,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2333.138537761362,NA,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1486.9207935198026,NA,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1749.2246606183476,NA,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2235.114931177541,NA,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2133.710462405307,NA,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1491.8970185753742,NA,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1359.3090903211335,NA,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1480.8190641040508,NA,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1837.7417857830105,NA,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1760.5747678298162,NA,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1773.1534103116471,NA,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1632.471575177636,NA,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1669.1141654243916,NA,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2423.630675253214,NA,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1804.1280908826461,NA,Outside,FALSE
+22,SR,Santa Rosa Island,CP,Cluster Point,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,282.11904773988596,NA,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,412.47744192700407,NA,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,863.7962009970273,NA,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,929.9346606592247,NA,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1280.32203738079,NA,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1076.4590389066673,NA,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1562.4800097143693,NA,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,814.5108802744122,NA,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1102.951131175857,NA,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1073.3272474016605,NA,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1370.7492139351618,NA,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1478.3418572110363,NA,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,898.1817388729756,NA,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,901.6624916890715,NA,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,715.6306033562853,NA,Outside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2042.4600724845639,NA,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1292.6978193884702,NA,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1380.1817362200943,NA,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1950.3244681422846,NA,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2478.0652288975475,NA,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2815.711268592584,NA,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,3044.9771373411527,NA,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1800.9035985784697,NA,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1759.3832373643736,NA,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1701.2846517270632,NA,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2749.511182637106,NA,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,4597.58357161921,NA,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2017.3201613860665,NA,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2571.7090959826737,NA,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1873.4907311675179,NA,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,220.56194510925405,NA,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,287.96085319080504,NA,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,596.7777103997911,NA,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,536.9956256303886,NA,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,967.3766348643985,NA,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,842.8600820247862,NA,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1165.1742478549238,NA,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1597.3840293769488,NA,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1977.312192626635,NA,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1599.0286011759993,NA,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2306.220361632228,NA,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2142.226375108775,NA,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1645.7930557825011,NA,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1906.8147026738693,NA,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,3487.5607386783,NA,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,167.21221166138773,NA,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,259.10317056713956,NA,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,202.01904938579014,NA,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,285.0745810359502,NA,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,423.756902270148,NA,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,762.6414259562117,NA,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,714.334827676066,NA,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,492.0546818222521,NA,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,337.7254708780434,NA,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1084.5145234376062,NA,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1378.4007471549467,NA,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,674.3320194400138,NA,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,679.2390953839121,NA,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,850.3263228621701,NA,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,385.2948900991154,NA,Inside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,383.1701139700933,NA,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,397.25756963261415,NA,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,532.9614966812093,NA,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,669.1857866335943,NA,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,746.0507757525205,NA,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,493.51252569999184,NA,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,610.2352015590641,NA,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,696.1388756295469,NA,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,582.149402488287,NA,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,537.2797279583026,NA,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,432.45527763423445,NA,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,216.7722934911459,NA,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,264.5561569238137,NA,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1031.4500778173476,NA,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,436.96511464518903,NA,Outside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,531.1456250980234,NA,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,591.9647109909291,NA,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,832.2064286920152,NA,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,542.5218919207663,NA,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,747.2934467993708,NA,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,698.9987530690207,NA,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,874.3827215511956,NA,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,785.8285896963005,NA,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1066.2450885236256,NA,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,658.2306469233116,NA,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,305.18221306060974,NA,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,318.09136711466255,NA,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,252.8762810728893,NA,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,318.62420768680647,NA,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,395.4762384240139,NA,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,721.9559467453222,NA,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,865.9458583869839,NA,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,839.3251104504258,NA,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,874.2452228482381,NA,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,905.863875994348,NA,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,802.1156088609793,NA,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1048.8581005444091,NA,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1307.5790752632681,NA,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1258.9607337047873,NA,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1404.1618366565604,NA,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1114.4440502524335,NA,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,394.5493193292752,NA,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,515.5392196657618,NA,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,415.465670589371,NA,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,410.12590041087805,NA,Inside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1463.2224739123126,NA,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1185.4464063985963,NA,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1222.5814479930596,NA,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,955.9670276979274,NA,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,867.8009441981279,NA,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,972.5306996811142,NA,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,943.1400160318029,NA,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1074.2100576807877,NA,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,676.4672691241556,NA,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,937.217019524517,NA,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,641.0622034381595,NA,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,296.37927858047914,NA,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,466.9087493391277,NA,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,605.109508819539,NA,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,738.1313886356419,NA,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,503.11328022108916,NA,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,582.0514929698551,NA,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,397.71280891766605,NA,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,666.9725759125608,NA,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,659.1001576129654,NA,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,513.6604158426197,NA,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,883.0312781326604,NA,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,727.978536776251,NA,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,675.4253786811788,NA,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,385.49022930833786,NA,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,437.6419813541822,NA,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,458.4526953950244,NA,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,512.610737784232,NA,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,603.584501474575,NA,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,664.8937760877027,NA,Outside,TRUE
+31,AN,Anacapa Island,KH,Keyhole,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,570.9033103131704,NA,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,465.2687264706268,NA,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,890.1543218515013,NA,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,874.925390159646,NA,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,448.8691914263677,NA,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1187.9935542590906,NA,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,904.5785272837384,NA,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1213.7963649280443,NA,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,869.2489871365107,NA,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,858.6516574134246,NA,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,381.1313539538031,NA,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,291.83668442303144,NA,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,484.25177951673174,NA,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,462.00867748878017,NA,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,486.69965654134353,NA,Inside,FALSE
+32,AN,Anacapa Island,EFC,East Fish Camp,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,592.3623708164313,NA,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,499.11235666887546,NA,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,452.30852905937473,NA,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,603.610709990691,NA,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,523.4452912626633,NA,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,583.0648636835904,NA,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,636.7239414556693,NA,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,417.68894662694527,NA,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,580.3070520914085,NA,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,358.2930899559242,NA,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,348.4594883898924,NA,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,519.0340753592767,NA,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,472.0827718949994,NA,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,608.8633295216761,NA,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,567.741410583132,NA,Outside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,315.0994621595485,NA,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,372.0198999118031,NA,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,362.1165999684318,NA,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,362.354714904004,NA,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,628.6868268694011,NA,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,852.640288303754,NA,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,707.3129099309563,NA,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,467.48258234959945,NA,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,308.0821058097055,NA,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,286.1411818665753,NA,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,202.57215193142545,NA,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,120.77228364158633,NA,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,151.9395842819444,NA,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,308.60937728915707,NA,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,305.6872580979275,NA,Inside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1015.6465214177996,NA,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1547.2742916380055,NA,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,814.1452017311808,NA,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,703.4610374956372,NA,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,858.9224885367564,NA,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,691.301901957993,NA,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,978.0332343027827,NA,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,926.9361543277156,NA,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,815.0577714916776,NA,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,782.6609659417645,NA,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,426.86088328686697,NA,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,216.79603855821475,NA,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,206.9337573174107,NA,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,434.4323130260044,NA,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,944.5843234696569,NA,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,664.464501711562,NA,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,821.4797080814946,NA,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,480.8673079219578,NA,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,595.1646362646953,NA,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,634.6956354518403,NA,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,471.93019490644957,NA,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,513.4712676136635,NA,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,319.4690186635117,NA,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,444.6872121205784,NA,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,454.43557522750945,NA,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,625.6756337783404,NA,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,576.5846915537528,NA,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,664.0626392463405,NA,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,701.4585778733361,NA,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,879.3810510188976,NA,Outside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,301.59478595514685,NA,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,215.6073433189715,NA,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,194.95246799198682,NA,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,301.352835187879,NA,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,139.48270431795342,NA,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,182.57416504435773,NA,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,443.0471029876352,NA,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,378.815067510455,NA,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,115.36061949046382,NA,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,280.8081222240849,NA,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,142.77740215018946,NA,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,30.846840147053868,NA,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,36.469955171872265,NA,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,58.47953647245277,NA,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,192.8287338382077,NA,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2005,2005-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1340.5063523331341,NA,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2006,2006-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2013.550066358885,NA,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2007,2007-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1897.3042585686062,NA,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2008,2008-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1351.3838272136668,NA,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2009,2009-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1355.63174693578,NA,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2010,2010-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1435.2037663609865,NA,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2011,2011-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,944.6230504491456,NA,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2012,2012-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1466.7311567197216,NA,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2013,2013-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1858.9742779496662,NA,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2014,2014-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,2324.5774207674726,NA,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2015,2015-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,1271.8106403081238,NA,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2016,2016-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,434.6935374752436,NA,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2017,2017-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,536.0944676541867,NA,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2018,2018-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,345.40088610488726,NA,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2019,2019-07-01,Benthic_Biomass_Total,Benthic_Biomass_Total,NA,568.1182809813888,NA,Inside,TRUE

@@ -165,7 +165,7 @@ server <- function(input, output, session) {
   output$Three_D <- renderPlotly({ # Community Similarity   ----
     com_sim_data <- reactive({
       if (input$radio_3D_years == "All Years (Fewer Species)") {
-        nMDS_3D_all_years
+        nMDS_3D_all
       } else {nMDS_3D_2005_now}
     })
     
@@ -183,55 +183,111 @@ server <- function(input, output, session) {
     
   })
   
-  Variable_Importance <- reactive({
+  Variable_Accuracy <- reactive({
       if (input$radio_ISA_years == "All Years (Fewer Species)") {
-        RF_Importance_All_Years %>% 
+        RF_Importance_All %>% 
+          dplyr::arrange(desc(MeanDecreaseAccuracy)) %>%  
+          dplyr::mutate(CommonName1 = paste(CommonName, row_number())) %>% 
           head(30) %>% 
           droplevels()
       } else {
         RF_Importance_2005 %>% 
+          dplyr::arrange(desc(MeanDecreaseAccuracy)) %>%  
+          dplyr::mutate(CommonName1 = paste(CommonName, row_number())) %>% 
           head(30) %>% 
           droplevels()
+        
       }
     })
+  
+  Variable_Gini <- reactive({
+    if (input$radio_ISA_years == "All Years (Fewer Species)") {
+      RF_Importance_All %>% 
+        dplyr::arrange(desc(MeanDecreaseGini)) %>%  
+        dplyr::mutate(CommonName1 = paste(CommonName, row_number()))  %>% 
+        head(30) %>% 
+        droplevels()
+    } else {
+      RF_Importance_2005 %>% 
+        dplyr::arrange(desc(MeanDecreaseGini)) %>%  
+        dplyr::mutate(CommonName1 = paste(CommonName, row_number()))  %>% 
+        head(30) %>% 
+        droplevels()
+      
+    }
+  })
   
   output$ISA_plot <- renderPlot({
     
     Accuracy <- 
       ggplot(
-        Variable_Importance(), aes(x = MeanDecreaseAccuracy, color = Targeted,
-                    y = reorder(CommonName, MeanDecreaseAccuracy))) +
+        Variable_Accuracy(), aes(x = MeanDecreaseAccuracy, color = Targeted,
+                    y = reorder(CommonName1, MeanDecreaseAccuracy))) +
       geom_point() +
       geom_segment(
         size = 1, 
         aes(x = min(MeanDecreaseAccuracy) - .5, xend = MeanDecreaseAccuracy, 
-            y = CommonName, yend = CommonName)) +
+            y = CommonName1, yend = CommonName1)) +
       labs(x = "Mean Decrease in % Accuracy", y = NULL, 
            color = NULL, linetype = NULL) +
       scale_x_continuous(expand = expansion(mult = c(0,.1)), 
-                         limits = c(min(Variable_Importance()$MeanDecreaseAccuracy) - .5, NA)) +
+                         limits = c(min(Variable_Accuracy()$MeanDecreaseAccuracy) - .5, NA)) +
       scale_color_manual(values = Target_Colors) +
       theme_classic() +
       theme(axis.text = element_text(size = 12),
             axis.title = element_text(size = 12),
             legend.text = element_text(size = 12))
     
-    Gini <- ggplot(Variable_Importance(), aes(x = MeanDecreaseGini, color = Targeted, 
-                               y = reorder(CommonName, MeanDecreaseGini))) +
+    Gini <- ggplot(Variable_Gini(), aes(x = MeanDecreaseGini, color = Targeted, 
+                               y = reorder(CommonName1, MeanDecreaseGini))) +
       geom_point() +
       geom_segment(size = 1,
                    aes(x = min(MeanDecreaseGini) - .5, xend = MeanDecreaseGini,
-                       y = CommonName, yend = CommonName)) +
+                       y = CommonName1, yend = CommonName1)) +
       labs(x = "Mean Decrease in Gini Index", y = NULL, 
            color = NULL, linetype = NULL) +
       scale_x_continuous(expand = expansion(mult = c(0,.1)), 
-                         limits = c(min(Variable_Importance()$MeanDecreaseGini) - .5, NA)) +
+                         limits = c(min(Variable_Gini()$MeanDecreaseGini) - .5, NA)) +
       scale_color_manual(values = Target_Colors) +
       theme_classic() +
       theme(axis.text = element_text(size = 12),
             axis.title = element_text(size = 12),
             legend.text = element_text(size = 12))
     ggarrange(Accuracy, Gini, ncol = 2, align = "h", common.legend = TRUE, legend = "bottom")
+  })
+  
+  pdp_labels_all <- reactive(
+    RF_Importance_All %>% 
+      dplyr::filter(Common_Name == input$select_ISA_species_all))
+  
+  output$PDP_plot_all <- renderPlot({
+    pdp::partial(RF_Reserve_Model_All, 
+                 pred.var = input$select_ISA_species_all, 
+                 train = Mixed_All, plot = TRUE, rug = TRUE, 
+                 plot.engine = "ggplot2") +
+      labs(title = pdp_labels_all()$CommonName,
+           x = pdp_labels_all()$Data_Type, y = NULL, color = NULL) +
+      theme_classic() +
+      theme(plot.title = element_text(hjust = .5, size = 16),
+            axis.title = element_text(size = 14),
+            axis.text = element_text(size = 12))
+  })
+  
+  pdp_labels_2005 <- reactive(
+    RF_Importance_2005 %>% 
+      dplyr::filter(Common_Name == input$select_ISA_species_2005))
+  
+  output$PDP_plot_2005 <- renderPlot({
+    pdp::partial(RF_Reserve_Model_2005, 
+                 pred.var = input$select_ISA_species_2005, 
+                 train = Mixed_2005, plot = TRUE, rug = TRUE, 
+                 plot.engine = "ggplot2") +
+      labs(title = pdp_labels_2005()$CommonName,
+           x = pdp_labels_2005()$Data_Type, y = NULL, color = NULL) +
+      theme_classic() +
+      theme(plot.title = element_text(hjust = .5, size = 16),
+            axis.title = element_text(size = 14),
+            axis.text = element_text(size = 12))
   })
   
 } 

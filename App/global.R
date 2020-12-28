@@ -13,7 +13,7 @@
   library(sf)
   library(leaflet)
   library(DT)
-  # library(pdp)
+  library(pdp)
   # library(randomForest)
   # library(tidymodels)
   # library(rmarkdown)
@@ -141,7 +141,10 @@ source('R/modules.R')
   names(SpeciesColor) <- c(Species_Info$CommonName)
   SpeciesColor <- SpeciesColor[!is.na(SpeciesColor)]
   
-  Target_Colors <- c("Index Value" = "dodgerblue2", "Categorical" = "darkgoldenrod3",
+  
+  
+  
+  Target_Colors <- c("Calculated Value" = "dodgerblue2", "Categorical" = "darkgoldenrod3",
                      "Targeted" = "mediumvioletred", "Non-targeted" = "mediumseagreen")
   
   Protocols <- c("1 m² Quadrats" = "1m", 
@@ -409,17 +412,42 @@ source('R/modules.R')
   Diversity <- readr::read_csv("Tidy_Data/Diversity.csv")
 }
 
-{ # Community Similarity Data   ----
-  nMDS_3D_2005_now <- readr::read_csv("Tidy_Data/nMDS_3D_2005_now.csv")
-  nMDS_3D_all_years <- readr::read_csv("Tidy_Data/nMDS_3D_all_years.csv") 
+{ # Mixed Data   ----
+  Mixed_2005 <- readr::read_csv("Tidy_Data/Mixed_Data_Fish_Biomass.csv") %>%
+    dplyr::mutate(SurveyYear = factor(SurveyYear),
+                  IslandName = factor(IslandName),
+                  ReserveStatus = factor(ReserveStatus)) %>% 
+    dplyr::select(-SiteNumber, -SiteName, 
+                  -IslandCode, -SiteCode) 
+  RF_Reserve_Model_2005 <- base::readRDS("Models/RF_Reserve_Model_2005.rds")
+  
+  Mixed_All <- readr::read_csv("Tidy_Data/Mixed_Data_Fish_Density.csv")  %>%
+    dplyr::mutate(SurveyYear = factor(SurveyYear),
+                  IslandName = factor(IslandName),
+                  ReserveStatus = factor(ReserveStatus)) %>% 
+    dplyr::select(-SiteNumber, -SiteName, 
+                  -IslandCode, -SiteCode) 
+  RF_Reserve_Model_All <- base::readRDS("Models/RF_Reserve_Model_All_Years.rds")
   
 }
 
+{ # Community Similarity Data   ----
+  nMDS_3D_2005 <- readr::read_csv("Tidy_Data/nMDS_3D_2005_now.csv")
+  nMDS_3D_all <- readr::read_csv("Tidy_Data/nMDS_3D_all_years.csv") 
+}
+
 { # Important Species Data  ---- 
-  RF_Importance_All_Years <- 
+  RF_Importance_All <- 
     readr::read_csv("Tidy_Data/Species_Importance_All_Years.csv")
   RF_Importance_2005 <-
     readr::read_csv("Tidy_Data/Species_Importance_2005.csv")
+  
+  rf_species_all <- c(as.character(RF_Importance_All$Common_Name))
+  names(rf_species_all) <- c(RF_Importance_All$CommonName)
+  
+  
+  rf_species_2005 <- c(as.character(RF_Importance_2005$Common_Name))
+  names(rf_species_2005) <- c(RF_Importance_2005$CommonName)
 }
 
 { # NPS Tags   ------

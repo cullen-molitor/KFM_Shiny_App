@@ -5,7 +5,7 @@
 #     Use for Manipulating data frames 
 #
 #
-#
+#     Use ALT + O to see outline
 #
 #
 
@@ -632,7 +632,18 @@ Export_END_Year <- 2019
       dplyr::mutate(Date = base::as.Date(base::ISOdate(SurveyYear, 7, 1))) %>%
       dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName,
                     SurveyYear, Date, ScientificName, CommonName, Mean_Density, 
-                    Mean_Biomass, Survey_Type, ReserveStatus, Reference) %>% 
+                    Mean_Biomass, Survey_Type, ReserveStatus, Reference)
+    
+    Benthic_total_Biomass <- Benthic_Mean_Biomass %>% 
+      dplyr::group_by(SiteNumber, IslandCode, IslandName, SiteCode, SiteName,
+                      SurveyYear, Date, ReserveStatus, Reference) %>% 
+      dplyr::summarise(Mean_Biomass = sum(Mean_Biomass, na.rm = TRUE)) %>% 
+      dplyr::mutate(ScientificName = "Benthic_Biomass_Total",
+                    CommonName = "Benthic_Biomass_Total",
+                    Mean_Density = NA, Survey_Type = NA) %>% 
+      dplyr::ungroup()
+    
+    Benthic_Mean_Biomass <- rbind(Benthic_Mean_Biomass, Benthic_total_Biomass) %>% 
       readr::write_csv("App/Tidy_Data/Benthic_Biomass.csv")
   }
   
@@ -781,7 +792,18 @@ Export_END_Year <- 2019
       dplyr::mutate(Date = base::as.Date(base::ISOdate(SurveyYear, 7, 1))) %>%
       dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName,
                     SurveyYear, Date, ScientificName, CommonName, Count,
-                    Mean_Biomass, ReserveStatus, Reference) %>%
+                    Mean_Biomass, ReserveStatus, Reference) 
+    
+    Fish_total_Biomass <- Fish_Mean_Biomass %>% 
+      dplyr::group_by(SiteNumber, IslandCode, IslandName, SiteCode, SiteName,
+                      SurveyYear, Date, ReserveStatus, Reference) %>% 
+      dplyr::summarise(Mean_Biomass = sum(Mean_Biomass, na.rm = TRUE)) %>% 
+      dplyr::mutate(ScientificName = "Fish_Biomass_Total",
+                    CommonName = "Fish_Biomass_Total",
+                    Count = NA) %>% 
+      dplyr::ungroup()
+    
+    Fish_Mean_Biomass <- rbind(Fish_Mean_Biomass, Fish_total_Biomass) %>%
       readr::write_csv("App/Tidy_Data/Fish_Biomass.csv")
     
   }
@@ -863,7 +885,7 @@ Export_END_Year <- 2019
       dplyr::rename_with(~ base::gsub("'", "", .)) 
   }
   
-  { # Counts and Biomass  ----
+  { # VFT and Benthic Counts for Mixed Data   ----
     
     VFT_Counts <- VFT_Density %>% 
       dplyr::mutate(
@@ -956,6 +978,8 @@ Export_END_Year <- 2019
       ReserveStatus ~ ., ntree = 3000, mtry = 8,
       importance = TRUE, proximity = TRUE, keep.forest = TRUE)
     
+    saveRDS(RF_Reserve_Model_All_Years, "App/Models/RF_Reserve_Model_All_Years.rds")
+    
     nMDS_3D_ay <- randomForest::MDSplot(
       RF_Reserve_Model_All_Years, fac = RKF_All_Years$ReserveStatus,
       k = 3, palette = rep(1, 2),
@@ -973,7 +997,7 @@ Export_END_Year <- 2019
     
     Mixed_Data_Fish_Biomass <- readr::read_csv("App/Tidy_Data/Mixed_Data_Fish_Biomass.csv") 
     
-    RKF_2005 <- Mixed_Data_Fish_Biomass%>%
+    RKF_2005 <- Mixed_Data_Fish_Biomass %>%
       dplyr::mutate(SurveyYear = factor(SurveyYear),
                     IslandName = factor(IslandName),
                     ReserveStatus = factor(ReserveStatus)) %>% 
@@ -984,6 +1008,8 @@ Export_END_Year <- 2019
       data = RKF_2005,
       ReserveStatus ~ ., ntree = 3000, mtry = 8,
       importance = TRUE, proximity = TRUE, keep.forest = TRUE)
+    
+    saveRDS(RF_Reserve_Model_2005, "App/Models/RF_Reserve_Model_2005.rds")
     
     nMDS_3D_2005 <- randomForest::MDSplot(
       RF_Reserve_Model_2005, fac = RKF_2005$ReserveStatus,
