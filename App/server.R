@@ -3,18 +3,7 @@
 server <- function(input, output, session) {
   
   { # Protocols  -----
-    protocol_Server(id = "1m")
-    protocol_Server(id = "5m")
-    protocol_Server(id = "bands")
-    protocol_Server(id = "rpcs")
-    protocol_Server(id = "nhsf")
-    protocol_Server(id = "arms")
-    protocol_Server(id = "rdfc")
-    protocol_Server(id = "vft")
-    protocol_Server(id = "fsf")
-    protocol_Server(id = "vtt")
-    protocol_Server(id = "temp")
-    protocol_Server(id = "species") 
+    protocol_Server(id = "protocol")
   }
   
   { # Species   ----
@@ -26,6 +15,32 @@ server <- function(input, output, session) {
     foundation_Sever(id = "sheep")
     foundation_Sever(id = "sunflower")
     foundation_Sever(id = "giant")
+    
+    # Invasives
+    foundation_Sever(id = "sargassum")
+    foundation_Sever(id = "undaria")
+    
+    # Disease
+    output$SSWD <- renderUI({tags$iframe(
+      style = "height:650px; width:100%; scrolling=yes",
+      src = "Handbook/Outside_Program_Guides/stars_disease_guide.pdf")
+    })
+    
+    output$urchins <- renderUI({tags$iframe(
+      style = "height:650px; width:100%; scrolling=yes",
+      src = "Handbook/Outside_Program_Guides/urchin_disease_guide.pdf")
+    })
+    
+    output$abalone <- renderImage({list(
+      src = "www/Handbook/Outside_Program_Guides/healthyVshrunken.jpg", 
+      width = "100%", height = "100%")}, delete = FALSE)
+    
+    # Species List
+    # output$Species_List <- renderUI({tags$iframe(
+    #   style = "height:650px; width:100%; scrolling=yes",
+    #   src = "Handbook/Species_Guides/species_species_guide.pdf")
+    # })
+    species_guide_Server(id = "species")
   }
   
   { # Maps   ----
@@ -222,25 +237,10 @@ server <- function(input, output, session) {
 } 
 
 
-# nMDS_3D_all_years <- nMDS_3D_2005_now %>%
-#   dplyr::left_join(Diversity_Shannon)
-# 
-# plotly::plot_ly(nMDS_3D_all_years, x = ~`Dim 1`, y = ~`Dim 2`, # z = ~`Dim 3`,
-#                 color = ~IslandCode, colors = Island_Colors,
-#                 size = ~Shannon_Index, sizes = c(5, 50), mode = 'markers',
-#                 symbol = ~ReserveStatus, frame = ~SurveyYear,
-#                 marker = list(symbols = c('Inside' = "circle", 'Outside' = "square"), sizemode = 'diameter'), 
-#                 text = ~SiteName, hoverinfo = "text") %>%
-#   plotly::add_markers() %>%
-#   # plotly::add_text(text = ~SiteCode, marker = list(color = "black", size = NA)) %>%
-#   plotly::layout(scene = list(xaxis = list(title = 'Dim 1'),
-#                               yaxis = list(title = 'Dim 2'),
-#                               zaxis = list(title = 'Dim 3'))) %>%
-#   plotly::animation_opts(frame = 1000, easing = "linear")
 
 
-
-
+# add kelp and gorgonian species guide and protocol guide
+# add shell size frequency guides
 
 
 

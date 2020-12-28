@@ -6,11 +6,17 @@
   library(shinyWidgets)
   library(plotly)
   library(tidyverse)
-  # library(tidymodels)
   library(ggpubr)
   library(glue)
   library(lubridate)
-  library(rmarkdown)
+  library(scales)
+  library(sf)
+  library(leaflet)
+  library(DT)
+  # library(pdp)
+  # library(randomForest)
+  # library(tidymodels)
+  # library(rmarkdown)
   # library(zoo)
   # library(MASS)
   # library(vegan)
@@ -18,12 +24,6 @@
   # library(lme4)
   # library(car)
   # library(ggnewscale)
-  library(randomForest)
-  library(pdp)
-  library(scales)
-  library(sf)
-  library(leaflet)
-  library(DT)
   
 }
 
@@ -143,6 +143,19 @@ source('R/modules.R')
   
   Target_Colors <- c("Index Value" = "dodgerblue2", "Categorical" = "darkgoldenrod3",
                      "Targeted" = "mediumvioletred", "Non-targeted" = "mediumseagreen")
+  
+  Protocols <- c("1 m² Quadrats" = "1m", 
+                 "5 m² Quadrats" = "5m",  
+                 "Band Transects" = "bands", 
+                 "Random Point Contacts" = "rpcs",
+                 "Natural Habitat Size Frequencies" = "nhsf",
+                 "Artificial Recruitment Modules" = "arms", 
+                 "Roving Diver Fish Count" = "rdfc", 
+                 "Visual Fish Transect" = "vft", 
+                 "Fish Size Frequencies" = "fsf", 
+                 "Video Taped Transects" = "vtt",
+                 "Temperature Loggers" = "temp",
+                 "Species List" = "species")
 }
 
 { # Island and Site Information   -----
@@ -409,6 +422,48 @@ source('R/modules.R')
     readr::read_csv("Tidy_Data/Species_Importance_2005.csv")
 }
 
+{ # NPS Tags   ------
+  NPS_Blog_tagList <- tagList(  
+    tags$h4(
+      "Our World Underwater Scholarship Society's (OWUSS) NPS Intern Blogs:",
+      tags$br(),
+      tags$a(href="http://blog.owuscholarship.org/2011/11/channel-islands-national-park/", 
+             "2011 - Naomi Blinick", target = "_blank"),
+      tags$br(),
+      tags$a(href="http://blog.owuscholarship.org/2012/09/channel-islands-national-park-a-paradise-hidden-in-plain-sight/", 
+             "2012 - Tim White", target = "_blank"),
+      tags$br(),
+      tags$a(href="http://blog.owuscholarship.org/2013/08/kelp-forest-monitoring-in-the-channel-islands/", 
+             "2013 - Julia Mason", target = "_blank"),
+      tags$br(),
+      tags$a(href="http://blog.owuscholarship.org/2014/08/exploring-the-mysteries-of-the-channel-islands/", 
+             "2014 - Yasmeen Smalley", target = "_blank"),
+      tags$br(),
+      tags$a(href="http://blog.owuscholarship.org/2015/07/cruising-monitoring-at-the-channel-islands/", 
+             "2015 - Michael Spector", target = "_blank"),
+      tags$br(),
+      tags$a(href="http://blog.owuscholarship.org/2016/10/ventura-channel-islands-national-park/", 
+             "2016 - Garret Fundakowski", target = "_blank"),
+      tags$br(),
+      tags$a(href="https://blog.owuscholarship.org/2018/02/a-kelp-forest-homecoming-at-channel-islands-national-park/", 
+             "2017 - Shaun Wolfe", target = "_blank"),
+      tags$br(),
+      tags$a(href="http://blog.owuscholarship.org/2018/06/channel-islands-national-parks-exploring-the-majestic-kelp-forests/", 
+             "2018 - Shannon Brown", target = "_blank"),
+      tags$br(),
+      tags$a(href="http://blog.owuscholarship.org/2019/10/exploring-submerged-forests-at-channel-islands-national-park/", 
+             "2019 - Michael Langhans", target = "_blank"),
+      tags$br(), tags$br(),
+      "Channel Islands National Park's lectures and videos:",
+      tags$br(),
+      tags$a(href="https://www.youtube.com/watch?v=86foiSxQmVU", "KFM Lecture Part 1", target = "_blank"),
+      tags$br(),
+      tags$a(href="https://www.youtube.com/watch?v=pv9N2xDu0y8", "KFM Lecture Part 2", target = "_blank"),
+      tags$br(),
+      tags$a(href="https://www.nps.gov/im/medn/index.htm", "Mediterranean Coast Inventory & Monitoring Network Video", target = "_blank")
+    )
+  )
+}
 
 
 

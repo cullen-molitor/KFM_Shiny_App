@@ -1,15 +1,23 @@
 
 
-
 { # Protocol Tab Panel Module   ----
   protocol_UI <- function(id, label = "proto") {
     ns <- NS(id)
     tagList(
       tags$hr(),
-      radioButtons(inputId = ns("Overview_Practical"),
-                   label = "Choose:",
-                   inline = TRUE,
-                   choices = c("Overview", "Pratical Guide", "Species Guide")),
+      fluidRow(
+        column(
+          3, selectInput(inputId = ns("protocol_selector"),
+                  label = "Choose a Protocol:",
+                  choices = Protocols)
+        ),
+        column(
+          3,
+          radioButtons(inputId = ns("Overview_Practical"),
+                   label = "View:", inline = TRUE,
+                   choices = c("Overview", "Pratical Guide", "Data Sheet"))
+        )
+      ),
       conditionalPanel(
         condition = "input.Overview_Practical == 'Overview'", ns = ns,
         fluidRow(
@@ -35,8 +43,8 @@
         uiOutput(outputId = ns("protocol_guide"))
       ),
       conditionalPanel(
-        condition = "input.Overview_Practical == 'Species Guide'", ns = ns,
-        uiOutput(outputId = ns("species_guide"))
+        condition = "input.Overview_Practical == 'Data Sheet'", ns = ns,
+        uiOutput(outputId = ns("data_sheet"))
       )
     )
   }
@@ -46,12 +54,12 @@
       id,
       function(input, output, session) {
         
-        filename_text <- reactive(glue("Text/Protocols/{id}.md"))
-        filename_pic_1 <- reactive({glue::glue("www/Photos/Protocols/{id} (1).jpg")})
-        filename_pic_2 <- reactive({glue::glue("www/Photos/Protocols/{id} (2).jpg")})
-        filename_pic_3 <- reactive({glue::glue("www/Photos/Protocols/{id} (3).jpg")})
-        filename_pic_4 <- reactive({glue::glue("www/Photos/Protocols/{id} (4).jpg")})
-        filename_pic_5 <- reactive({glue::glue("www/Photos/Protocols/{id} (5).jpg")})
+        filename_text <- reactive(glue("Text/Protocols/{input$protocol_selector}.md"))
+        filename_pic_1 <- reactive({glue::glue("www/Photos/Protocols/{input$protocol_selector} (1).jpg")})
+        filename_pic_2 <- reactive({glue::glue("www/Photos/Protocols/{input$protocol_selector} (2).jpg")})
+        filename_pic_3 <- reactive({glue::glue("www/Photos/Protocols/{input$protocol_selector} (3).jpg")})
+        filename_pic_4 <- reactive({glue::glue("www/Photos/Protocols/{input$protocol_selector} (4).jpg")})
+        filename_pic_5 <- reactive({glue::glue("www/Photos/Protocols/{input$protocol_selector} (5).jpg")})
         
         output$text <- renderUI(
           includeMarkdown(path = filename_text()))
@@ -80,16 +88,15 @@
           tags$iframe(
             style = "height:600px; width:100%; scrolling=yes",
             src = glue::glue(
-              "Handbook/Protocol_Guides/{id}_protocol_guide.pdf"))
+              "Handbook/Protocol_Guides/{input$protocol_selector}_protocol_guide.pdf"))
         })
         
-        output$species_guide <- renderUI({
+        output$data_sheet <- renderUI({
           tags$iframe(
             style = "height:600px; width:100%; scrolling=yes",
             src = glue::glue(
-              "Handbook/Species_Guides/{id}_species_guide.pdf"))
+              "Handbook/Datasheets/{input$protocol_selector}.pdf"))
         })
-        
       }
     )
   } 
@@ -484,8 +491,8 @@
   } 
 }
 
-{ # Foundation Species module
-  foundation_UI <- function(id, label = "species") {
+{ # Foundation Species Module  -----
+  foundation_UI <- function(id, label = "foundation_species") {
     ns <- NS(id)
     tagList(
       fluidRow(
@@ -510,6 +517,8 @@
           else if (id == "sheep") {14013}
           else if (id == "sunflower") {11003}
           else if (id == "giant") {11002}
+          else if (id == "sargassum") {2017}
+          else if (id == "undaria") {2009}
         })
         
         pic_filename <- reactive(glue::glue("www/Photos/Indicator_Species/{Species_Code()}.jpg"))
@@ -556,6 +565,32 @@
       }
     )
   }
+}
+
+{ # Species Guides Module   ----
+  species_guide_UI <- function(id, label = "species_guide") {
+    ns <- NS(id)
+    tagList(
+      selectInput(inputId = ns("protocol_selector"),
+                  label = "Choose a Protocol:",
+                  choices = Protocols),
+      uiOutput(outputId = ns("guide"))
+    )
+  }
+  
+  species_guide_Server <- function(id) {
+    moduleServer(
+      id,
+      function(input, output, session) {
+        
+        output$guide <- renderUI({tags$iframe(
+          style = "height:650px; width:100%; scrolling=yes",
+          src = glue::glue_col("Handbook/Species_Guides/{input$protocol_selector}_species_guide.pdf"))
+        })
+      }
+    )
+  }
+  
 }
 
 

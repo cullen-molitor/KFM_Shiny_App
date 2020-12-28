@@ -150,6 +150,21 @@ ui <- dashboardPage(
                      )
                    )
           ),
+          # ............ Tab - Blogs  ----
+          tabPanel("Blog Posts",
+                   tags$hr(), 
+                   fluidRow(
+                     column(
+                       8, NPS_Blog_tagList
+                     ),
+                     column(
+                       4, tags$img(height = 332, width = 500, 
+                                   src = 'Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (6).jpg'),
+                       h5("California sea lion playing with southern sea palm (Eisenia arborea) on Santa Barbara Island"),
+                       h5("Photographed by Brett Seymour (NPS Submerged Resources Center)")
+                     )
+                   )
+          ),
           # ............ Tab - FAQ  ----
           tabPanel("FAQ",
                    includeMarkdown(path = "Text/FAQ.md")
@@ -194,19 +209,63 @@ ui <- dashboardPage(
           ),
           # ............ Tab - Invasive Species  ----
           tabPanel(
-            title = "Invasive Species"
+            title = "Invasive Species",
+            tags$hr(),
+            includeMarkdown(path = "Text/Species/invasive.md"),
+            tags$hr(),
+            foundation_UI(id = "sargassum"),
+            foundation_UI(id = "undaria")
           ),
           # ............ Tab - Common Diseases  ----
           tabPanel(
-            title = "Common Diseases"
+            title = "Diseases Guides",
+            tags$hr(),
+            radioButtons(inputId = "disease",
+                         label = "Choose a Taxa:", 
+                         inline = TRUE,
+                         choices = c("Sea Stars",
+                                     "Sea Urchin",
+                                     "Abalone")),
+            conditionalPanel(condition = "input.disease == 'Sea Stars'",
+                             uiOutput(outputId = "SSWD")),
+            conditionalPanel(condition = "input.disease == 'Sea Urchin'",
+                             uiOutput(outputId = "urchins")),
+            conditionalPanel(condition = "input.disease == 'Abalone'",
+                             fluidRow(
+                               column(
+                                 8,
+                                 includeMarkdown("Text/Species/abalone_disease.md")
+                               ),
+                               column(
+                                 4,
+                                 imageOutput(outputId = "abalone"),
+                                 h4("Farmed red abalone (Haliotis rufescens). The animal on the right shows classic signs of WS."),
+                                 h5("Photo Credit: CDFW")
+                               )
+                             )
+            )
           ),
           # ............ Tab - Species Guides  ----
           tabPanel(
-            title = "KFM Indicator Species"
+            title = "KFM Indicator Species",
+            tags$hr(),
+            
+            species_guide_UI(id = "species")
           ),
           # ............ Tab - External Resources  ----
           tabPanel(
-            title = "External Resources"
+            title = "External Resources",
+            tags$hr(),
+            h2("Coming soon... "),
+            h4("PISCO"),
+            h4("SBC LTER"),
+            h4("RCCA"),
+            h4("Vantuna"),
+            h4("MARINE"),
+            h4("SIMoN"),
+            h4("SEANET"),
+            h4("CDFW Marine Species Portal"),
+            h4("Macro Algae Herbarium Portal")
           )
         )
       ),
@@ -243,65 +302,10 @@ ui <- dashboardPage(
               )
             )
           ),
-          # ............ Tab - 1 m² Quadrats  ----
+          # ............ Tab - KFM Protocols  ----
           tabPanel(
-            title = "1 m² Quadrats",
-            protocol_UI(id = "1m")
-          ),
-          # ............ Tab - 5 m² Quadrats  ----
-          tabPanel(
-            title = "5 m² Quadrats",
-            protocol_UI(id = "5m")
-          ),
-          # ............ Tab - Band Transects  ----
-          tabPanel(
-            title = "Band Transects",
-            protocol_UI(id = "bands")
-          ),
-          # ............ Tab - RPCs  ----
-          tabPanel(
-            title = "RPCs",
-            protocol_UI(id = "rpcs")
-          ),
-          # ............ Tab - NHSF  ----
-          tabPanel(
-            title = "NHSF",
-            protocol_UI(id = "nhsf")
-          ),
-          # ............ Tab - ARMs  ----
-          tabPanel(
-            title = "ARMs",
-            protocol_UI(id = "arms")
-          ),
-          # ............ Tab - RDFC  ----
-          tabPanel(
-            title = "RDFC",
-            protocol_UI(id = "rdfc")
-          ),
-          # ............ Tab - VFT  ----
-          tabPanel(
-            title = "VFT",
-            protocol_UI(id = "vft")
-          ),
-          # ............ Tab - FSF  ----
-          tabPanel(
-            title = "FSF",
-            protocol_UI(id = "fsf")
-          ),
-          # ............ Tab - Video Transects  ----
-          tabPanel(
-            title = "Video Transects",
-            protocol_UI(id = "vtt")
-          ),
-          # ............ Tab - Temp Loggers  ----
-          tabPanel(
-            title = "Temp Loggers",
-            protocol_UI(id = "temp")
-          ),
-          # ............ Tab - Species List  ----
-          tabPanel(
-            title = "Species List",
-            protocol_UI(id = "species")
+            title = "KFM Protocols",
+            protocol_UI(id = "protocol")
           )
         )
       ),
