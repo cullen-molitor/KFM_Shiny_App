@@ -11615,3 +11615,531 @@ SiteNumber,IslandCode,IslandName,SiteCode,SiteName,SurveyYear,Date,ScientificNam
 37,SB,Santa Barbara Island,SER,Southeast Reef,2017,2017-07-01,Semicossyphus pulcher,"California sheephead, male",6.75,22175.06173778271,Inside,TRUE
 37,SB,Santa Barbara Island,SER,Southeast Reef,2018,2018-07-01,Semicossyphus pulcher,"California sheephead, male",5.5,20577.920996079156,Inside,TRUE
 37,SB,Santa Barbara Island,SER,Southeast Reef,2019,2019-07-01,Semicossyphus pulcher,"California sheephead, male",5.75,24840.630772424167,Inside,TRUE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,32647.21651194138,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,29609.59404790672,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,24861.921765744017,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,23021.05364823649,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,25087.614149675712,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,18044.608958825484,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,17878.299045935426,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,29955.798804584105,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,43423.395126372125,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,70281.60156412699,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,55810.29944571115,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,54570.11322294979,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,57938.32465030465,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,76241.93988121855,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,40734.40427974142,Outside,FALSE
+1,SM,San Miguel Island,WL,Wyckoff Ledge,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,28633.059858440753,Outside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,50252.212922017046,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,52071.0434762727,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,42973.5183056048,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,41267.62299518151,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,41220.81480159208,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,52459.69838513345,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,52208.02413805273,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,43785.23640060442,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,101459.9440315269,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,91755.01573303409,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,60192.237160592354,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,100919.04313747972,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,104137.73860107597,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,63717.379352303265,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,122760.68062161903,Inside,FALSE
+2,SM,San Miguel Island,HR,Hare Rock,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,62114.66214151161,Inside,FALSE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,46009.861934590954,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,42302.884738449975,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,48003.99230305578,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,26184.42893870091,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,25484.922181100406,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,45489.659606133966,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,58617.20583093778,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,116790.20343343655,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,59366.73619100147,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,66749.66757759308,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,90135.36586320706,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,160781.25656251566,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,128602.37317918718,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,80661.82339385056,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,160539.08932434174,Outside,TRUE
+3,SR,Santa Rosa Island,JLNO,Johnson's Lee North,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,93995.49922456796,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,44688.84208987249,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,64667.16095603214,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,63268.98828892062,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,25892.07366154411,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,35823.693187022494,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,92971.6701958849,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,79340.18489479988,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,84059.09938373348,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,141190.00161142866,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,117922.71269260484,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,177260.75226066637,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,176468.48322539055,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,82372.63188012023,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,212395.80269083675,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,75059.04799989493,Outside,TRUE
+4,SR,Santa Rosa Island,JLSO,Johnson's Lee South,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,75682.36551060952,Outside,TRUE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,37010.009932785026,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,35255.41580888301,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,28083.223671713033,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,32941.480749406575,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,36829.40291656031,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,42419.515837785606,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,30519.12106059401,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,94019.21489134437,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,79475.17253627688,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,53939.67409003326,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,49695.44385238901,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,125333.01342881078,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,95531.85214561857,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,79460.57039194723,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,70746.48968813651,Outside,FALSE
+5,SR,Santa Rosa Island,RR,Rodes Reef,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,104753.22119085203,Outside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,44616.694266013634,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,54418.6407107384,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,51937.328260519396,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,19773.73918361955,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,35684.23325209337,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,59002.41038636725,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,135363.4500601075,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,93537.771876634,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,62931.98255105133,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,65054.048240638906,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,68857.34198722245,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,69341.65194028636,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,113668.01500513208,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,98549.69781569456,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,61044.11045182109,Inside,FALSE
+6,SC,Santa Cruz Island,GI,Gull Island South,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,33389.18251055754,Inside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,44307.35634354149,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,42309.81803964108,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,67919.939746336,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,54523.16433699648,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,41285.04456674551,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,53514.33537579381,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,91278.7507165438,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,84795.4608443876,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,160850.6636176054,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,176936.48682767048,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,136915.0536098543,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,101742.31388044877,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,118207.8173506273,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,97848.10820235343,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,70012.55845087634,Outside,FALSE
+7,SC,Santa Cruz Island,FH,Fry's Harbor,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,97250.53037822514,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,42325.96363867,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,33913.821251437475,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,69325.46791614377,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,24589.926469805083,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,11580.98948063092,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,34373.51855877589,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,37329.635799373384,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,37806.36233354312,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,44604.16179541924,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,83444.45516729125,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,59736.7942912642,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,42514.28155695374,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,64713.443475098604,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,87662.00832458967,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,119670.0728866525,Outside,FALSE
+8,SC,Santa Cruz Island,PB,Pelican Bay,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,32603.08886356545,Outside,FALSE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,35552.61532469638,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,47516.802556149625,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,46142.08080231013,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,41670.695163675955,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,16613.61761861813,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,53250.7429744067,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,41217.707262961325,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,35881.2456180422,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,68676.8200853089,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,35388.36869180514,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,42332.32199540067,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,62017.856891057934,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,48216.590430570315,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,34085.535702529916,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,27256.675571787153,Inside,TRUE
+9,SC,Santa Cruz Island,SA,Scorpion Anchorage,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,93086.06791006705,Inside,TRUE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,20136.136801907138,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,13197.306981862987,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,23477.208192174763,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,7087.225201389651,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,9510.03603656959,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,19918.866241531236,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,27487.61510545633,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,8146.348905589542,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,14859.100608137054,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,18541.221386325502,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,42761.90050789436,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,30524.949395821368,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,49018.57937263351,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,30154.04363849603,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,28701.894204381217,Outside,FALSE
+10,SC,Santa Cruz Island,YB,Yellow Banks,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,14229.815659391037,Outside,FALSE
+11,AN,Anacapa Island,AR,Admiral's Reef,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,53439.49933525602,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,47946.54977224414,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,66723.31253112649,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,62288.39360207749,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,66959.89497010235,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,30080.354959046337,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,64411.18236402576,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,55722.56354988724,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,59037.81928293568,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,67708.99874984797,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,264633.21782871726,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,149130.31639111866,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,100650.22403954441,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,85239.81107658711,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,80274.76961995297,Outside,TRUE
+11,AN,Anacapa Island,AR,Admiral's Reef,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,110805.73330696885,Outside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,61472.295311428985,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,44147.824047687674,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,38051.53912771878,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,24407.48767671173,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,20108.375899413433,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,20983.243548053913,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,58289.532094798335,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,79799.70232205576,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,97954.12677834023,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,101559.85331968438,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,111760.7523766981,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,78710.03655735115,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,104448.56344283979,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,125794.20168708106,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,152174.55620915393,Inside,TRUE
+12,AN,Anacapa Island,CC,Cathedral Cove,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,32402.234440333094,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,64746.87092240582,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,54688.80062370916,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,78494.43489714291,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,40994.116474813774,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,29942.016074588566,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,48449.613006153515,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,51447.37395761233,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,77082.35632568625,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,52908.612227633406,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,108243.51173157938,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,123615.46405573699,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,62032.00301060275,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,94269.36391426848,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,94075.1470198947,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,123262.9254246167,Inside,TRUE
+13,AN,Anacapa Island,LC,Landing Cove,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,41012.415366034475,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,22393.28258347225,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,11079.980871182559,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,1763.2002844258752,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,8733.814416446048,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,24717.915997938504,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,5951.4246385893375,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,30245.440184770803,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,3953.9638123246714,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,5179.8195404780345,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,10130.97740091752,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,17253.155031770584,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,62272.968447852276,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,55945.40687782003,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,40242.44574656819,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,23968.664164373193,Inside,TRUE
+14,SB,Santa Barbara Island,SESL,SE Sea Lion Rookery,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,36443.05849497325,Inside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,90305.9743657213,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,37680.3581692817,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,38158.96570155224,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,16624.447247541702,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,56931.43754500122,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,50659.19148408917,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,34907.42703436263,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,159029.12171926553,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,27666.206699605766,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,25624.42833938214,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,25014.031449883758,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,75381.47515166462,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,48900.971717851986,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,45084.05350124692,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,77717.08277392016,Outside,TRUE
+15,SB,Santa Barbara Island,AP,Arch Point,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,45530.14802999633,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,44398.593158306605,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,21273.766655204694,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,57622.81274870677,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,6721.353213810471,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,28839.544133551084,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,17612.221510678988,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,23598.644821767633,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,23196.688318046326,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,23784.083701225238,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,40494.66611230567,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,42427.27964129831,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,32158.057219447852,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,27944.876282187146,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,33292.45829037327,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,51917.19625994583,Outside,TRUE
+16,SB,Santa Barbara Island,CAT,Cat Canyon,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,36601.20606105058,Outside,TRUE
+21,SM,San Miguel Island,MM,Miracle Mile,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,0,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,0,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,29116.590190118255,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,0,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,19841.91830540865,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,13346.886997256164,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,24510.611436988413,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,29391.667517620434,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,72235.00296311046,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,63799.032875661454,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,68194.311631764693,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,104308.1913986479,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,45102.60828713014,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,128720.84407695074,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,61130.83178922168,Outside,FALSE
+21,SM,San Miguel Island,MM,Miracle Mile,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,78472.17746537516,Outside,FALSE
+22,SR,Santa Rosa Island,CP,Cluster Point,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,0,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,38910.16740780632,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,40065.23920773031,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,35946.032897267265,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,39164.93132135849,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,44302.44677528489,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,38630.565940006,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,70880.91848187042,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,68131.91469684988,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,191647.6825102831,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,124719.007081905,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,57357.10642630786,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,68000.4987226683,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,65482.1300635077,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,126561.17845712867,Outside,TRUE
+22,SR,Santa Rosa Island,CP,Cluster Point,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,62889.16828497145,Outside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,0,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,59911.537581499324,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,48609.30578232564,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,29940.283908004236,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,31990.89590518817,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,60265.95235560131,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,96900.67713461671,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,103811.25595607593,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,199956.21071701238,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,100743.47455044772,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,121794.08794008524,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,244802.49521959503,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,101629.25266935588,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,143338.14201903794,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,112701.90580167562,Inside,TRUE
+23,SR,Santa Rosa Island,TC,Trancion Canyon,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,89778.40340574668,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,0,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,56618.79460590772,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,61227.04105248048,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,29352.417904463524,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,16755.638025868073,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,33335.50141034118,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,65488.92614845915,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,90391.04705701052,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,80880.93953419571,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,83222.57095984396,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,90905.00211500886,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,133515.01144163034,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,70368.03865364169,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,73294.45049381064,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,177919.66758630486,Inside,TRUE
+24,SR,Santa Rosa Island,CSAW,Chickasaw,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,70145.33642331963,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,0,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,47648.810767313655,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,44791.46043831408,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,22699.365349393305,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,21777.980155867423,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,57433.29561801746,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,107294.34020541696,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,127185.4324384406,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,89702.08202092125,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,105269.42557438271,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,164360.62650844207,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,222686.5567633043,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,132376.11983437426,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,132857.49811700746,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,121114.4022997619,Inside,TRUE
+25,SR,Santa Rosa Island,SP,South Point,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,73139.06336639203,Inside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,0,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,47403.76938361845,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,77471.41003327158,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,50907.02613792593,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,48037.45644080814,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,50443.95845712294,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,42765.58592713983,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,67176.35348863051,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,119728.20068692934,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,67607.92119575979,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,109232.07623851697,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,64022.70646639597,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,63906.52003925473,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,72108.24607545663,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,71856.11960146094,Outside,TRUE
+26,SC,Santa Cruz Island,DPM,Devil's Peak Member,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,61942.248970029184,Outside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,0,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,59149.40459178123,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,71586.04614570232,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,78173.98195293029,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,24639.474932960824,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,54536.90831871698,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,101735.79094594484,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,77526.72335989682,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,237504.3529647573,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,101482.16523390397,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,133355.57927395147,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,72392.14898641773,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,67384.99299074012,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,86872.44678329307,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,41020.18460249238,Inside,TRUE
+27,SC,Santa Cruz Island,PP,Potato Pasture,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,25995.776571478542,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,0,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,49130.46068750517,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,49920.6347768445,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,94423.85195820458,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,19092.715702557904,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,34274.99510830635,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,85663.35426536523,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,64078.41552045576,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,140295.73785971,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,77547.9941310884,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,78787.6673677769,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,112317.45065184539,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,80596.03660696548,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,183260.39773341923,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,232389.45182696445,Inside,TRUE
+28,SC,Santa Cruz Island,CVP,Cavern Point,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,126016.16650497536,Inside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,0,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,46950.547216341925,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,52683.76985215512,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,44422.23161696232,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,33025.39894085317,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,36755.92666729262,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,38527.79544677097,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,71745.96842677733,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,103593.24711145175,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,33905.986852338494,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,172194.73985934135,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,119902.56204178168,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,111343.33646867255,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,134225.48085751195,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,118371.70005907558,Outside,TRUE
+29,SC,Santa Cruz Island,LS,Little Scorpion,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,65270.54511440661,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,0,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,46048.90296973067,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,41180.92032981972,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,22185.24738872592,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,27385.739328174215,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,40900.65877958025,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,71904.57204164905,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,39808.41575505728,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,135236.6124469393,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,51298.24079207463,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,88143.40593346463,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,125849.47165485402,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,96377.54047748448,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,96726.0019070342,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,9522.349479862372,Outside,TRUE
+30,SC,Santa Cruz Island,PRF,Pedro Reef,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,20426.901419901744,Outside,TRUE
+31,AN,Anacapa Island,KH,Keyhole,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,0,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,53230.11332479384,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,66799.82282289039,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,23340.473124042957,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,15205.248801052441,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,26868.215319658397,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,37462.1114157484,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,28894.149616551153,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,71464.65956020157,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,199221.4834886807,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,153734.0365340193,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,155532.77516196875,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,193977.66835118062,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,121283.20798316546,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,96574.07930567453,Inside,FALSE
+31,AN,Anacapa Island,KH,Keyhole,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,173450.5200226222,Inside,FALSE
+32,AN,Anacapa Island,EFC,East Fish Camp,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,0,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,38234.574971166316,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,32665.33352872188,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,33865.192327290504,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,16279.883030165787,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,32839.513816762286,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,35464.23767411155,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,26262.58969297025,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,19708.4543471868,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,18932.66877000798,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,56500.82383175796,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,79831.54831021171,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,143826.8236718801,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,30595.163241058744,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,27123.21059999467,Outside,TRUE
+32,AN,Anacapa Island,EFC,East Fish Camp,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,25840.574155691982,Outside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,0,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,73669.74001628139,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,64801.36222711949,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,22993.864644411453,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,81736.43066098963,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,21474.55111701468,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,214806.03028464556,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,62836.82894422283,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,61726.86718655048,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,105215.29999322134,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,276528.52956321475,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,213393.46504672,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,205707.4283586619,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,143408.21726393653,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,244151.8629945086,Inside,TRUE
+33,AN,Anacapa Island,BSBR,Black Sea Bass Reef,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,131421.4985730951,Inside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,0,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,48006.573697288666,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,72137.4773498014,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,81564.0484455107,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,49222.31347521299,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,23408.148293372873,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,53822.10944019047,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,122714.90267866346,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,88943.54319969878,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,81402.18339179087,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,152641.00677236874,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,276047.0258929252,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,82305.73016425126,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,121186.75880122295,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,117226.76834145254,Outside,TRUE
+34,AN,Anacapa Island,LH,Lighthouse,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,94221.06417397318,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,0,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,40567.76232928989,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,34694.90386754719,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,15200.391070680866,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,19371.88610071972,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,15720.533284072266,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,17371.930925474306,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,35129.76520755959,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,29112.31894236799,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,27652.2989938937,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,46432.645936248286,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,64955.21138537697,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,113561.43027910218,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,110086.19778511992,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,126569.19567602332,Outside,TRUE
+35,SB,Santa Barbara Island,WA,Webster's Arch,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,107989.49351653921,Outside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,0,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,29153.853318103247,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,21594.07658897031,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,8455.856783769876,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,0,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,1077.6982126828932,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,43193.46559774115,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,4445.697344175553,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,4798.151880890916,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,71266.81154841481,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,96192.0757606399,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,65302.31089132095,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,133765.99344968848,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,209979.33038181852,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,66053.8055183145,Inside,TRUE
+36,SB,Santa Barbara Island,GC,Graveyard Canyon,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,49878.48318924267,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2004,2004-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,0,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2005,2005-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,68818.15626247578,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2006,2006-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,83037.74497321491,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2007,2007-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,36973.294553806576,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2008,2008-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,22870.16138283794,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2009,2009-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,72013.37912056992,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2010,2010-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,108377.25977194596,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2011,2011-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,84575.44928955055,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2012,2012-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,72080.07233992084,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2013,2013-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,130293.43793298445,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2014,2014-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,68601.55747537027,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2015,2015-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,87595.54116954895,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2016,2016-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,81146.65454106347,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2017,2017-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,70047.8233527006,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2018,2018-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,82774.0018912011,Inside,TRUE
+37,SB,Santa Barbara Island,SER,Southeast Reef,2019,2019-07-01,Fish_Biomass_Total,Fish_Biomass_Total,NA,80666.20645238475,Inside,TRUE
