@@ -162,28 +162,99 @@ server <- function(input, output, session) {
     diversity_Server(id = "simpson") 
   }
   
-  output$Three_D <- renderPlotly({ # Community Similarity   ----
-    com_sim_data <- reactive({
-      if (input$radio_3D_years == "All Years (Fewer Species)") {
-        nMDS_3D_all
-      } else {nMDS_3D_2005_now}
+  { # Community Similarity  ----
+    
+    Two_D_data <- reactive({
+      if (input$radio_2D_years == "All Years (Fewer Species)" 
+          & input$radio_2D_color == "Reserve Status") {
+        nMDS_2D_All %>% 
+          dplyr::filter(SurveyYear == input$slider2d_all) %>% 
+          dplyr::mutate(Color = ReserveStatus)
+      } 
+      else if (input$radio_2D_years == "All Years (Fewer Species)" 
+               & input$radio_2D_color == "Island Name") {
+        nMDS_2D_All %>% 
+          dplyr::filter(SurveyYear == input$slider2d_all) %>% 
+          dplyr::mutate(Color = IslandName)
+      }
+      else if (input$radio_2D_years == "Years > 2004 (All Species)" 
+               & input$radio_2D_color == "Reserve Status") {
+        nMDS_2D_2005 %>% 
+          dplyr::filter(SurveyYear == input$slider2d_2005) %>% 
+          dplyr::mutate(Color = ReserveStatus)
+      }
+      else if (input$radio_2D_years == "Years > 2004 (All Species)" 
+               & input$radio_2D_color == "Island Name") {
+        nMDS_2D_2005 %>% 
+          dplyr::filter(SurveyYear == input$slider2d_2005) %>% 
+          dplyr::mutate(Color = IslandName)
+      }
     })
     
-    plotly::plot_ly(com_sim_data(), x = ~`Dim 1`, y = ~`Dim 2`, z = ~`Dim 3`,
-                    frame = ~SurveyYear, text = ~SiteName, hoverinfo = "text", mode = 'markers') %>%
-      plotly::add_markers(color = ~ReserveStatus,
-                          colors = Island_Colors) %>% 
-      plotly::add_markers(symbol = ~ReserveStatus,
-                          symbols = c('Inside' = "cross-open", 'Outside' = "square")) %>%
-      plotly::add_text(text = ~SiteCode) %>%
-      plotly::layout(scene = list(xaxis = list(title = 'Dim 1'),
-                                  yaxis = list(title = 'Dim 2'),
-                                  zaxis = list(title = 'Dim 3'))) %>%
-      plotly::animation_opts(frame = 1500, transition = 500, easing = "elastic")
+    output$Two_D <- renderPlot({
+      ggplot(data = Two_D_data(),
+             aes(x = NMDS1, y = NMDS2)) + 
+        geom_point(size = 4, aes(shape = ReserveStatus, color = Color)) + 
+        geom_text(size = 3, vjust = 2, aes(label = SiteCode)) +  
+        # stat_ellipse(aes(color = IslandName), level = 0.95) +
+        # stat_stars(aes(color = ReserveStatus)) +
+        scale_colour_manual(values = Island_Colors) +
+        coord_fixed() +
+        coord_flip() +
+        labs(title = input$slider2d, 
+             color = input$radio_2D_color, 
+             shape = "Reserve Status") +
+        nMDS_theme()
+    })
     
-  })
+    
+    Three_D_data <- reactive({
+      if (input$radio_3D_years == "All Years (Fewer Species)" 
+          & input$radio_3D_color == "Reserve Status") {
+        nMDS_3D_All %>%  
+          dplyr::filter(SurveyYear == input$slider3d_all) %>% 
+          dplyr::mutate(Color = ReserveStatus)
+      } 
+      else if (input$radio_3D_years == "All Years (Fewer Species)" 
+               & input$radio_3D_color == "Island Name") {
+        nMDS_3D_All %>% 
+          dplyr::filter(SurveyYear == input$slider3d_all) %>% 
+          dplyr::mutate(Color = IslandName)
+      }
+      else if (input$radio_3D_years == "Years > 2004 (All Species)" 
+               & input$radio_3D_color == "Reserve Status") {
+        nMDS_3D_2005 %>% 
+          dplyr::filter(SurveyYear == input$slider3d_2005) %>% 
+          dplyr::mutate(Color = ReserveStatus)
+      }
+      else if (input$radio_3D_years == "Years > 2004 (All Species)" 
+               & input$radio_3D_color == "Island Name") {
+        nMDS_3D_2005 %>% 
+          dplyr::filter(SurveyYear == input$slider3d_2005) %>% 
+          dplyr::mutate(Color = IslandName)
+      }
+    })
+    
+    output$Three_D <- renderPlotly({
+      plotly::plot_ly(Three_D_data(), x = ~`Dim 1`, y = ~`Dim 2`, z = ~`Dim 3`,
+                      # frame = ~SurveyYear, 
+                      text = ~SiteName, hoverinfo = "text",
+                      color = ~Color, colors = Island_Colors) %>%
+        plotly::add_markers(symbol = ~ReserveStatus, 
+                            symbols = c('Inside' = "cross-open", 'Outside' = "square")) %>%
+        plotly::add_text(text = ~SiteCode, showlegend = FALSE) %>%
+        plotly::layout(scene = list(xaxis = list(title = 'X'),
+                                    yaxis = list(title = 'Y'),
+                                    zaxis = list(title = 'Z'))) 
+      # %>%
+      #   plotly::animation_opts(1500, easing = "linear")
+    })
+    
+  }
   
-  Variable_Accuracy <- reactive({
+  { # Variable Importance  ----
+    
+    Variable_Accuracy <- reactive({
       if (input$radio_ISA_years == "All Years (Fewer Species)") {
         RF_Importance_All %>% 
           dplyr::arrange(desc(MeanDecreaseAccuracy)) %>%  
@@ -199,97 +270,99 @@ server <- function(input, output, session) {
         
       }
     })
-  
-  Variable_Gini <- reactive({
-    if (input$radio_ISA_years == "All Years (Fewer Species)") {
-      RF_Importance_All %>% 
-        dplyr::arrange(desc(MeanDecreaseGini)) %>%  
-        dplyr::mutate(CommonName1 = paste(CommonName, row_number()))  %>% 
-        head(30) %>% 
-        droplevels()
-    } else {
-      RF_Importance_2005 %>% 
-        dplyr::arrange(desc(MeanDecreaseGini)) %>%  
-        dplyr::mutate(CommonName1 = paste(CommonName, row_number()))  %>% 
-        head(30) %>% 
-        droplevels()
+    
+    Variable_Gini <- reactive({
+      if (input$radio_ISA_years == "All Years (Fewer Species)") {
+        RF_Importance_All %>% 
+          dplyr::arrange(desc(MeanDecreaseGini)) %>%  
+          dplyr::mutate(CommonName1 = paste(CommonName, row_number()))  %>% 
+          head(30) %>% 
+          droplevels()
+      } else {
+        RF_Importance_2005 %>% 
+          dplyr::arrange(desc(MeanDecreaseGini)) %>%  
+          dplyr::mutate(CommonName1 = paste(CommonName, row_number()))  %>% 
+          head(30) %>% 
+          droplevels()
+        
+      }
+    })
+    
+    output$ISA_plot <- renderPlot({
       
-    }
-  })
-  
-  output$ISA_plot <- renderPlot({
+      Accuracy <- 
+        ggplot(
+          Variable_Accuracy(), aes(x = MeanDecreaseAccuracy, color = Targeted,
+                                   y = reorder(CommonName1, MeanDecreaseAccuracy))) +
+        geom_point() +
+        geom_segment(
+          size = 1, 
+          aes(x = min(MeanDecreaseAccuracy) - .5, xend = MeanDecreaseAccuracy, 
+              y = CommonName1, yend = CommonName1)) +
+        labs(x = "Mean Decrease in % Accuracy", y = NULL, 
+             color = NULL, linetype = NULL) +
+        scale_x_continuous(expand = expansion(mult = c(0,.1)), 
+                           limits = c(min(Variable_Accuracy()$MeanDecreaseAccuracy) - .5, NA)) +
+        scale_color_manual(values = Target_Colors) +
+        theme_classic() +
+        theme(axis.text = element_text(size = 12),
+              axis.title = element_text(size = 12),
+              legend.text = element_text(size = 12))
+      
+      Gini <- ggplot(Variable_Gini(), aes(x = MeanDecreaseGini, color = Targeted, 
+                                          y = reorder(CommonName1, MeanDecreaseGini))) +
+        geom_point() +
+        geom_segment(size = 1,
+                     aes(x = min(MeanDecreaseGini) - .5, xend = MeanDecreaseGini,
+                         y = CommonName1, yend = CommonName1)) +
+        labs(x = "Mean Decrease in Gini Index", y = NULL, 
+             color = NULL, linetype = NULL) +
+        scale_x_continuous(expand = expansion(mult = c(0,.1)), 
+                           limits = c(min(Variable_Gini()$MeanDecreaseGini) - .5, NA)) +
+        scale_color_manual(values = Target_Colors) +
+        theme_classic() +
+        theme(axis.text = element_text(size = 12),
+              axis.title = element_text(size = 12),
+              legend.text = element_text(size = 12))
+      ggarrange(Accuracy, Gini, ncol = 2, align = "h", common.legend = TRUE, legend = "bottom")
+    })
     
-    Accuracy <- 
-      ggplot(
-        Variable_Accuracy(), aes(x = MeanDecreaseAccuracy, color = Targeted,
-                    y = reorder(CommonName1, MeanDecreaseAccuracy))) +
-      geom_point() +
-      geom_segment(
-        size = 1, 
-        aes(x = min(MeanDecreaseAccuracy) - .5, xend = MeanDecreaseAccuracy, 
-            y = CommonName1, yend = CommonName1)) +
-      labs(x = "Mean Decrease in % Accuracy", y = NULL, 
-           color = NULL, linetype = NULL) +
-      scale_x_continuous(expand = expansion(mult = c(0,.1)), 
-                         limits = c(min(Variable_Accuracy()$MeanDecreaseAccuracy) - .5, NA)) +
-      scale_color_manual(values = Target_Colors) +
-      theme_classic() +
-      theme(axis.text = element_text(size = 12),
-            axis.title = element_text(size = 12),
-            legend.text = element_text(size = 12))
+    pdp_labels_all <- reactive({
+      RF_Importance_All %>% 
+        dplyr::filter(Common_Name == input$select_ISA_species_all)})
     
-    Gini <- ggplot(Variable_Gini(), aes(x = MeanDecreaseGini, color = Targeted, 
-                               y = reorder(CommonName1, MeanDecreaseGini))) +
-      geom_point() +
-      geom_segment(size = 1,
-                   aes(x = min(MeanDecreaseGini) - .5, xend = MeanDecreaseGini,
-                       y = CommonName1, yend = CommonName1)) +
-      labs(x = "Mean Decrease in Gini Index", y = NULL, 
-           color = NULL, linetype = NULL) +
-      scale_x_continuous(expand = expansion(mult = c(0,.1)), 
-                         limits = c(min(Variable_Gini()$MeanDecreaseGini) - .5, NA)) +
-      scale_color_manual(values = Target_Colors) +
-      theme_classic() +
-      theme(axis.text = element_text(size = 12),
-            axis.title = element_text(size = 12),
-            legend.text = element_text(size = 12))
-    ggarrange(Accuracy, Gini, ncol = 2, align = "h", common.legend = TRUE, legend = "bottom")
-  })
-  
-  pdp_labels_all <- reactive(
-    RF_Importance_All %>% 
-      dplyr::filter(Common_Name == input$select_ISA_species_all))
-  
-  output$PDP_plot_all <- renderPlot({
-    pdp::partial(RF_Reserve_Model_All, 
-                 pred.var = input$select_ISA_species_all, 
-                 train = Mixed_All, plot = TRUE, rug = TRUE, 
-                 plot.engine = "ggplot2") +
-      labs(title = pdp_labels_all()$CommonName,
-           x = pdp_labels_all()$Data_Type, y = NULL, color = NULL) +
-      theme_classic() +
-      theme(plot.title = element_text(hjust = .5, size = 16),
-            axis.title = element_text(size = 14),
-            axis.text = element_text(size = 12))
-  })
-  
-  pdp_labels_2005 <- reactive(
-    RF_Importance_2005 %>% 
-      dplyr::filter(Common_Name == input$select_ISA_species_2005))
-  
-  output$PDP_plot_2005 <- renderPlot({
-    pdp::partial(RF_Reserve_Model_2005, 
-                 pred.var = input$select_ISA_species_2005, 
-                 train = Mixed_2005, plot = TRUE, rug = TRUE, 
-                 plot.engine = "ggplot2") +
-      labs(title = pdp_labels_2005()$CommonName,
-           x = pdp_labels_2005()$Data_Type, y = NULL, color = NULL) +
-      theme_classic() +
-      theme(plot.title = element_text(hjust = .5, size = 16),
-            axis.title = element_text(size = 14),
-            axis.text = element_text(size = 12))
-  })
-  
+    output$PDP_plot_all <- renderPlot({
+      pdp::partial(RF_Reserve_Model_All, 
+                   pred.var = input$select_ISA_species_all, 
+                   train = RF_All, plot = TRUE, rug = TRUE, 
+                   plot.engine = "ggplot2") +
+        labs(title = pdp_labels_all()$CommonName,
+             x = pdp_labels_all()$Data_Type, y = NULL, color = NULL) +
+        theme_classic() +
+        theme(plot.title = element_text(hjust = .5, size = 16),
+              axis.title = element_text(size = 14),
+              axis.text = element_text(size = 12))
+    })
+    
+    pdp_labels_2005 <- reactive({
+      RF_Importance_2005 %>% 
+        dplyr::filter(Common_Name == input$select_ISA_species_2005)})
+    
+    output$PDP_plot_2005 <- renderPlot({
+      pdp::partial(RF_Reserve_Model_2005, 
+                   pred.var = input$select_ISA_species_2005, 
+                   train = Mixed_2005, plot = TRUE, rug = TRUE, 
+                   plot.engine = "ggplot2") +
+        labs(title = pdp_labels_2005()$CommonName,
+             x = pdp_labels_2005()$Data_Type, y = NULL, color = NULL) +
+        theme_classic() +
+        theme(plot.title = element_text(hjust = .5, size = 16),
+              axis.title = element_text(size = 14),
+              axis.text = element_text(size = 12))
+    })
+    
+  }
+ 
 } 
 
 

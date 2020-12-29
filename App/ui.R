@@ -69,7 +69,12 @@ ui <- dashboardPage(
       menuItem(text = 'Size Frequency', 
                icon = icon('ruler'),
                badgeColor = 'green',
-               tabName = 'sizes')
+               tabName = 'sizes'),
+      # ...... Sidebar - Literature Cited  ----
+      menuItem(text = 'Literature Cited', 
+               icon = icon('book-reader'),
+               badgeColor = 'green',
+               tabName = 'lit')
     )
   ),
   # .. Dashboard Body  ----
@@ -419,6 +424,7 @@ ui <- dashboardPage(
         tabName = 'com_sim',
         h1("Kelp Forest Community Similarity"),
         tabsetPanel(
+          # ............ Tab - About  ----
           tabPanel(
             title = "About",
             tags$hr(),
@@ -431,39 +437,116 @@ ui <- dashboardPage(
               )
             )
           ),
-          tabPanel(
-            title = "3-Dimensional",
-            tags$hr(),
-            fluidRow(
-              column(6),
-              column(
-                3, radioButtons(inputId = "radio_3D_years",
-                                label = "Data Options:",
-                                choices = c("All Years (Fewer Species)",
-                                            "Years > 2004 (All Species)"))
-              ),
-              column(
-                3, radioButtons(inputId = "radio_3D_color",
-                                label = "Color sites by:",
-                                choiceNames = c("Reserve Status",
-                                            "Island"),
-                                choiceValues = c("ReserveStatus",
-                                                 "IslandName"))
-              )
-            ),
-            fluidRow(
-              column(
-                6,
-              ),
-              column(
-                6, plotlyOutput(outputId = "Three_D",
-                         height = 600, width = '100%')
-              )
-            ),
-            
-          ),
+          # ............ Tab - 2D  ----
           tabPanel(
             title = "2-Dimensional",
+            fluidRow(
+              column(
+                4, includeMarkdown("Text/nMDS/2d.md")
+                
+              ),
+              column(
+                8,
+                fluidRow(
+                  column(
+                    3, 
+                    radioButtons(inputId = "radio_2D_years",
+                                 label = "Data Options:",
+                                 choices = c("All Years (Fewer Species)",
+                                             "Years > 2004 (All Species)"))
+                  ),
+                  column(
+                    3, 
+                    radioButtons(inputId = "radio_2D_color",
+                                 label = "Color sites by:",
+                                 choices = c("Reserve Status",
+                                             "Island Name"))
+                  ),
+                  column(
+                    6,
+                    conditionalPanel(
+                      condition = "input.radio_2D_years == 'All Years (Fewer Species)'",
+                      sliderInput(inputId = "slider2d_all",
+                                  label = "Select a Year:",
+                                  min = min(nMDS_2D_All$SurveyYear),
+                                  max = max(nMDS_2D_All$SurveyYear),
+                                  value = min(nMDS_2D_All$SurveyYear),
+                                  width = "100%",
+                                  sep = "", step = 1, animate = TRUE)
+                    ),
+                    conditionalPanel(
+                      condition = "input.radio_2D_years == 'Years > 2004 (All Species)'",
+                      sliderInput(inputId = "slider2d_2005",
+                                  label = "Select a Year:",
+                                  min = min(nMDS_2D_2005$SurveyYear),
+                                  max = max(nMDS_2D_2005$SurveyYear),
+                                  value = min(nMDS_2D_2005$SurveyYear),
+                                  width = "100%",
+                                  sep = "", step = 1, animate = TRUE)
+                    )
+                  )
+                ),
+                fluidRow(
+                  plotOutput(outputId = "Two_D", height = 500)
+                )
+              )
+            ),
+            tags$hr()
+          ),
+          # ............ Tab - 3D  ----
+          tabPanel(
+            title = "3-Dimensional",
+            fluidRow(
+              column(
+                4, 
+                includeMarkdown("Text/nMDS/3d.md")),
+              column(
+                8,
+                fluidRow(
+                  column(
+                    3, 
+                    radioButtons(inputId = "radio_3D_years",
+                                 label = "Data Options:",
+                                 choices = c("All Years (Fewer Species)",
+                                             "Years > 2004 (All Species)"))
+                  ),
+                  column(
+                    3, 
+                    radioButtons(inputId = "radio_3D_color",
+                                 label = "Color sites by:",
+                                 choices = c("Reserve Status",
+                                             "Island Name"))
+                  ),
+                  column(
+                    6,
+                    conditionalPanel(
+                      condition = "input.radio_3D_years == 'All Years (Fewer Species)'",
+                      sliderInput(inputId = "slider3d_all",
+                                  label = "Select a Year:",
+                                  min = min(nMDS_3D_All$SurveyYear),
+                                  max = max(nMDS_3D_All$SurveyYear),
+                                  value = min(nMDS_3D_All$SurveyYear),
+                                  width = "100%",
+                                  sep = "", step = 1, animate = TRUE)
+                    ),
+                    conditionalPanel(
+                      condition = "input.radio_3D_years == 'Years > 2004 (All Species)'",
+                      sliderInput(inputId = "slider3d_2005",
+                                  label = "Select a Year:",
+                                  min = min(nMDS_3D_2005$SurveyYear),
+                                  max = max(nMDS_3D_2005$SurveyYear),
+                                  value = min(nMDS_3D_2005$SurveyYear),
+                                  width = "100%",
+                                  sep = "", step = 1, animate = TRUE)
+                    )
+                  )
+                ),
+                fluidRow(
+                  plotlyOutput(outputId = "Three_D",
+                               height = 600, width = '100%')
+                ) 
+              )
+            ),
             tags$hr()
           )
         )

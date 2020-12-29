@@ -292,7 +292,7 @@ source('R/modules.R')
   }
   nMDS_theme <- function () {
     theme_bw() + 
-      theme(plot.title = element_text(size = 10, hjust = 0.5),
+      theme(plot.title = element_text(size = 16, hjust = 0.5),
             axis.text = element_blank(), 
             axis.ticks = element_blank(), 
             axis.title = element_blank(), 
@@ -421,7 +421,9 @@ source('R/modules.R')
                   -IslandCode, -SiteCode) 
   RF_Reserve_Model_2005 <- base::readRDS("Models/RF_Reserve_Model_2005.rds")
   
-  Mixed_All <- readr::read_csv("Tidy_Data/Mixed_Data_Fish_Density.csv")  %>%
+  Mixed_All <- readr::read_csv("Tidy_Data/Mixed_Data_Fish_Density.csv") %>% 
+    dplyr::filter(SiteCode != "MM" | SurveyYear > 2004)  
+  RF_All <- Mixed_All %>%
     dplyr::mutate(SurveyYear = factor(SurveyYear),
                   IslandName = factor(IslandName),
                   ReserveStatus = factor(ReserveStatus)) %>% 
@@ -432,8 +434,11 @@ source('R/modules.R')
 }
 
 { # Community Similarity Data   ----
-  nMDS_3D_2005 <- readr::read_csv("Tidy_Data/nMDS_3D_2005_now.csv")
-  nMDS_3D_all <- readr::read_csv("Tidy_Data/nMDS_3D_all_years.csv") 
+  nMDS_2D_2005 <- readr::read_csv("Tidy_Data/nMDS_2d_2005.csv")
+  nMDS_2D_All <- readr::read_csv("Tidy_Data/nMDS_2d_All.csv")
+  
+  nMDS_3D_2005 <- readr::read_csv("Tidy_Data/nMDS_3D_2005.csv")
+  nMDS_3D_All <- readr::read_csv("Tidy_Data/nMDS_3D_All.csv") 
 }
 
 { # Important Species Data  ---- 

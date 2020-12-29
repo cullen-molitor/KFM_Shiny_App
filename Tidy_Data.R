@@ -959,7 +959,61 @@ Export_END_Year <- 2019
 
 { # Mixed Data nMDS Dimensions    ----
   
-  { # All Years nMDS Dimensions    -----
+  { # 2005 2D nMDS Dimensions  -----
+    data_scores_complete <- data.frame(
+      NMDS1 = double(),NMDS2 = double(),SiteCode = character(),
+      IslandName = character(), ReserveStatus = character(), SurveyYear = integer())
+    
+    for (k in unique(Mixed_Data_Fish_Biomass$SurveyYear)) {
+      nMDS_Table <- Mixed_Data_Fish_Biomass %>%
+        filter(SurveyYear %in% k)  %>%
+        arrange(IslandName) %>% 
+        droplevels()
+      
+      nMDS <- nMDS_Table %>%
+        dplyr::select(-IslandCode, - IslandName, -SiteCode, -SiteName, - SurveyYear, - ReserveStatus, -Reference) %>%
+        metaMDS(k = 2, trymax = 100)
+      stress_score <- nMDS$stress
+      
+      data_scores <- as.data.frame(scores(nMDS))
+      data_scores$SiteCode <- nMDS_Table$SiteCode
+      data_scores$IslandName <- nMDS_Table$IslandName
+      data_scores$ReserveStatus <- nMDS_Table$ReserveStatus
+      data_scores$SurveyYear <- k
+      
+      data_scores_complete <- rbind(data_scores, data_scores_complete)
+    }
+    readr::write_csv(data_scores_complete, "App/Tidy_Data/nMDS_2d_2005.csv")
+  }
+  
+  { # All 2D nMDS Dimensions  -----
+    data_scores_complete <- data.frame(
+      NMDS1 = double(),NMDS2 = double(),SiteCode = character(),
+      IslandName = character(), ReserveStatus = character(), SurveyYear = integer())
+    
+    for (k in unique(Mixed_Data_Fish_Density$SurveyYear)) {
+      nMDS_Table <- Mixed_Data_Fish_Density %>%
+        filter(SurveyYear %in% k)  %>%
+        arrange(IslandName) %>% 
+        droplevels()
+      
+      nMDS <- nMDS_Table %>%
+        dplyr::select(-IslandCode, - IslandName, -SiteCode, -SiteName, - SurveyYear, - ReserveStatus, -Reference) %>%
+        metaMDS(k = 2, trymax = 100)
+      stress_score <- nMDS$stress
+      
+      data_scores <- as.data.frame(scores(nMDS))
+      data_scores$SiteCode <- nMDS_Table$SiteCode
+      data_scores$IslandName <- nMDS_Table$IslandName
+      data_scores$ReserveStatus <- nMDS_Table$ReserveStatus
+      data_scores$SurveyYear <- k
+      
+      data_scores_complete <- rbind(data_scores, data_scores_complete)
+    }
+    readr::write_csv(data_scores_complete, "App/Tidy_Data/nMDS_2d_All.csv")
+  }
+  
+  { # All 3D nMDS Dimensions    -----
     
     Mixed_Data_Fish_Density <- readr::read_csv("App/Tidy_Data/Mixed_Data_Fish_Density.csv") %>% 
       dplyr::filter(SiteCode != "MM" | SurveyYear > 2004)
@@ -993,7 +1047,7 @@ Export_END_Year <- 2019
     
   }
   
-  { # > 2004 nMDS Dimensions    -----
+  { # 2005 3D nMDS Dimensions    -----
     
     Mixed_Data_Fish_Biomass <- readr::read_csv("App/Tidy_Data/Mixed_Data_Fish_Biomass.csv") 
     

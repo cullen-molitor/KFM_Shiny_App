@@ -213,8 +213,7 @@
        
         output$plotUI <- renderUI({
           plotOutput(outputId = session$ns("Diversity_Plot"),
-                     height = if (input$Data_Options == "Individual Site"){
-                       350} else {750})
+                     height = if (input$Data_Options == "Individual Site"){350} else {750})
         })
         
         filename_text <- reactive(glue("Text/Biodiversity/{id}_index.md"))
