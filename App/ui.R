@@ -646,7 +646,7 @@ ui <- dashboardPage(
       ".content {margin-top: 50px;}")))
   )
 )  
-# End UI  ----
+# End UI  ----+
   
   
   
