@@ -1044,7 +1044,6 @@ Export_END_Year <- 2019
       cbind(dplyr::select(
         Mixed_Data_Fish_Density, SiteCode, SiteName, IslandName, ReserveStatus, SurveyYear)) %>% 
       readr::write_csv("App/Tidy_Data/nMDS_3D_all_years.csv")
-    
   }
   
   { # 2005 3D nMDS Dimensions    -----
