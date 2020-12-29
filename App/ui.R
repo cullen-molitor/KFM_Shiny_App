@@ -71,6 +71,11 @@ ui <- dashboardPage(
                badgeColor = 'green',
                tabName = 'sizes'),
       # ...... Sidebar - Literature Cited  ----
+      menuItem(text = 'Reports', 
+               icon = icon('newspaper'),
+               badgeColor = 'green',
+               tabName = 'reports'),
+      # ...... Sidebar - Literature Cited  ----
       menuItem(text = 'Literature Cited', 
                icon = icon('book-reader'),
                badgeColor = 'green',
@@ -262,15 +267,17 @@ ui <- dashboardPage(
             title = "External Resources",
             tags$hr(),
             h2("Coming soon... "),
-            h4("PISCO"),
-            h4("SBC LTER"),
-            h4("RCCA"),
+            h4("PISCO - Partnership for Interdisciplinary Studies of Coastal Oceans"),
+            h4("SBC LTER - Santa Barbara Coastal Term Ecological Research"),
+            h4("RCCA - Reef Check California"),
             h4("Vantuna"),
-            h4("MARINE"),
-            h4("SIMoN"),
-            h4("SEANET"),
-            h4("CDFW Marine Species Portal"),
-            h4("Macro Algae Herbarium Portal")
+            h4("MARINE - Multi-Agency Rocky Intertidal Network"),
+            h4("SIMoN - Sanctuary Integrated Monitoring Network"),
+            h4("SEANET - Hopkins Marine Station's Guide to Nearshore Plants and Animals of the Monterey Bay"),
+            h4("CDFW MSP - California Department of Fish and Wild Life Marine Species Portal"),
+            h4("SCB MBON - Southern California Bight Marine Biodiversity Observation Network"),
+            h4("Macro Algae Herbarium Portal"),
+            h4("Spotting Giant Sea Bass")
           )
         )
       ),
@@ -556,6 +563,7 @@ ui <- dashboardPage(
         tabName = 'ind_spe',
         h1("Kelp Forest Indicator Species"),
         tabsetPanel(
+          # ............ Tab - Marine Reserve Indicators   ----
           tabPanel(
             title = "Marine Reserve Indicator Species",
             fluidRow(
@@ -582,11 +590,12 @@ ui <- dashboardPage(
                   ),
                   column(
                     4,
-                    conditionalPanel(condition = "input.radio_ISA_plot_type == 'Partial Dependence' 
+                    conditionalPanel(
+                      condition = "input.radio_ISA_plot_type == 'Partial Dependence' 
                                  & input.radio_ISA_years == 'All Years (Fewer Species)'",
-                                     selectInput(inputId = "select_ISA_species_all",
-                                                 label = "Choose a species",
-                                                 choices = rf_species_all)),
+                      selectInput(inputId = "select_ISA_species_all",
+                                  label = "Choose a species",
+                                  choices = rf_species_all)),
                     conditionalPanel(
                       condition = "input.radio_ISA_plot_type == 'Partial Dependence' 
                                  & input.radio_ISA_years == 'Years > 2004 (All Species)'",
@@ -608,6 +617,7 @@ ui <- dashboardPage(
               )
             )
           ),
+          # ............ Tab - Island Indicators   ----
           tabPanel("Island Indicator Species")
           )
       ),
@@ -615,6 +625,16 @@ ui <- dashboardPage(
       tabItem(
         tabName = 'biomass',
         h1("Kelp Forest Biomass Trends"),
+        tabsetPanel(
+          # ............ Tab - Time Series   ----
+          tabPanel(
+            title = "Time Series"
+          ),
+          # ............ Tab - Ratios   ----
+          tabPanel(
+            title = "Ratios"
+          )
+        ),
         tags$img(height = 533, width = 800, src = 'Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (5).jpg')
       ),
       # ...... Body - Density    ---- 
@@ -629,6 +649,30 @@ ui <- dashboardPage(
         h1("Kelp Forest Natural Habitat Size Frequency Distributions"),
         tags$img(height = 533, width = 800, src = 'Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (13).jpg')
       ),
+      # ...... Body - Reports    ---- 
+      tabItem(
+        tabName = 'reports',
+        h1("Published Reports and Documents"),
+        tabsetPanel(
+          # ............ Tab - Annual Reports  ----
+          tabPanel(
+          title = "Annual Reports"  
+          ),
+          # ............ Tab - Handbook   ----
+          tabPanel(
+            title = "Handbook"  
+          ),
+          # ............ Tab - Program Reviews   ----
+          tabPanel(
+            title = "Program Reviews"  
+          ),
+          # ............ Tab - Collaborative Reports   ----
+          tabPanel(
+            title = "Collaborative Reports"  
+          )
+        ),
+        tags$img(height = 533, width = 800, src = 'Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (6).jpg')
+      ),
       # ...... Body - Literature Cited    ---- 
       tabItem(
         tabName = 'lit',
@@ -636,17 +680,18 @@ ui <- dashboardPage(
         tags$img(height = 533, width = 800, src = 'Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (12).jpg')
       )
     ),
+    tags$hr(),
     # .. Styles   ----
     tags$head(tags$style(HTML(
-      '.skin-green .main-sidebar {background-color: black;}',
-      '.skin-green .main-sidebar .sidebar .sidebar-menu .active a{background-color: lightslategray;}',
+      '.skin-blue .main-sidebar {background-color: black;}',
+      '.skin-blue .main-sidebar .sidebar .sidebar-menu .active a{background-color: #3c8dbc;}',
       '.tabbable>.nav>li>a{background-color: #3c8dbc;  color:white}',
       '.tabbable>.nav>li[class=active]>a{background-color: lightslategray; color:white}',
       ".main-header {position: fixed; width:100%;}",
       ".content {margin-top: 50px;}")))
   )
 )  
-# End UI  ----+
+# End UI  ----
   
   
   

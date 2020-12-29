@@ -422,8 +422,7 @@ source('R/modules.R')
   RF_Reserve_Model_2005 <- base::readRDS("Models/RF_Reserve_Model_2005.rds")
   
   Mixed_All <- readr::read_csv("Tidy_Data/Mixed_Data_Fish_Density.csv") %>% 
-    dplyr::filter(SiteCode != "MM" | SurveyYear > 2004)  
-  RF_All <- Mixed_All %>%
+    dplyr::filter(SiteCode != "MM" | SurveyYear > 2004) %>%
     dplyr::mutate(SurveyYear = factor(SurveyYear),
                   IslandName = factor(IslandName),
                   ReserveStatus = factor(ReserveStatus)) %>% 

@@ -13,13 +13,11 @@ RUN /rocker_scripts/install_geospatial.sh
 # Install R packages that are required
 RUN R -e "install.packages('shinydashboard', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('shinyWidgets', repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('tidyverse', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('plotly', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('ggpubr', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('glue', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('lubridate', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('scales', repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('sf', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('leaflet', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('DT', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('pdp', repos='http://cran.rstudio.com/')"

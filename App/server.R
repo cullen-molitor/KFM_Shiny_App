@@ -200,7 +200,8 @@ server <- function(input, output, session) {
         # stat_stars(aes(color = ReserveStatus)) +
         scale_colour_manual(values = Island_Colors) +
         coord_fixed() +
-        coord_flip() +
+        scale_x_reverse() +
+        # coord_flip() +
         labs(title = input$slider2d, 
              color = input$radio_2D_color, 
              shape = "Reserve Status") +
@@ -334,14 +335,16 @@ server <- function(input, output, session) {
     output$PDP_plot_all <- renderPlot({
       pdp::partial(RF_Reserve_Model_All, 
                    pred.var = input$select_ISA_species_all, 
-                   train = RF_All, plot = TRUE, rug = TRUE, 
-                   plot.engine = "ggplot2") +
-        labs(title = pdp_labels_all()$CommonName,
-             x = pdp_labels_all()$Data_Type, y = NULL, color = NULL) +
-        theme_classic() +
-        theme(plot.title = element_text(hjust = .5, size = 16),
-              axis.title = element_text(size = 14),
-              axis.text = element_text(size = 12))
+                   train = Mixed_All, plot = TRUE,
+                   # plot.engine = "ggplot2",
+                   rug = TRUE) 
+      # +
+      #   labs(title = pdp_labels_all()$CommonName,
+      #        x = pdp_labels_all()$Data_Type, y = NULL, color = NULL) +
+      #   theme_classic() +
+      #   theme(plot.title = element_text(hjust = .5, size = 16),
+      #         axis.title = element_text(size = 14),
+      #         axis.text = element_text(size = 12))
     })
     
     pdp_labels_2005 <- reactive({
