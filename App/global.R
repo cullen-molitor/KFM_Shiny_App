@@ -14,7 +14,7 @@
   library(leaflet)
   library(DT)
   library(pdp)
-  # library(randomForest)
+  library(randomForest)
   # library(tidymodels)
   # library(rmarkdown)
   # library(zoo)

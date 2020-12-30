@@ -70,7 +70,7 @@ ui <- dashboardPage(
                icon = icon('ruler'),
                badgeColor = 'green',
                tabName = 'sizes'),
-      # ...... Sidebar - Literature Cited  ----
+      # ...... Sidebar - Reports  ----
       menuItem(text = 'Reports', 
                icon = icon('newspaper'),
                badgeColor = 'green',
@@ -691,7 +691,7 @@ ui <- dashboardPage(
       ".content {margin-top: 50px;}")))
   )
 )  
-# End UI  ----
+# End UI   ----
   
   
   

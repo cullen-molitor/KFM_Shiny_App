@@ -1050,7 +1050,7 @@ Export_END_Year <- 2019
     
     Mixed_Data_Fish_Biomass <- readr::read_csv("App/Tidy_Data/Mixed_Data_Fish_Biomass.csv") 
     
-    RKF_2005 <- Mixed_Data_Fish_Biomass %>%
+    Mixed_2005 <- Mixed_Data_Fish_Biomass %>%
       dplyr::mutate(SurveyYear = factor(SurveyYear),
                     IslandName = factor(IslandName),
                     ReserveStatus = factor(ReserveStatus)) %>% 
@@ -1058,16 +1058,16 @@ Export_END_Year <- 2019
                     -IslandCode, -SiteCode) 
     
     RF_Reserve_Model_2005 <- randomForest::randomForest(
-      data = RKF_2005,
+      data = Mixed_2005,
       ReserveStatus ~ ., ntree = 3000, mtry = 8,
       importance = TRUE, proximity = TRUE, keep.forest = TRUE)
     
     saveRDS(RF_Reserve_Model_2005, "App/Models/RF_Reserve_Model_2005.rds")
     
     nMDS_3D_2005 <- randomForest::MDSplot(
-      RF_Reserve_Model_2005, fac = RKF_2005$ReserveStatus,
+      RF_Reserve_Model_2005, fac = Mixed_2005$ReserveStatus,
       k = 3, palette = rep(1, 2),
-      pch = as.numeric(RKF_2005$ReserveStatus))
+      pch = as.numeric(Mixed_2005$ReserveStatus))
     
     nMDS_3D_2005_now <- unlist(nMDS_3D_2005$points) %>%
       as.data.frame() %>%
@@ -1075,6 +1075,15 @@ Export_END_Year <- 2019
         Mixed_Data_Fish_Biomass, SiteCode, SiteName, IslandName, ReserveStatus, SurveyYear)) %>% 
       readr::write_csv("App/Tidy_Data/nMDS_3D_2005_now.csv")
   }
+  
+  RF_Reserve_Model_2005 <- randomForest::randomForest(
+    data = Mixed_2005,
+    IslandName ~ ., ntree = 3000, mtry = 8,
+    importance = TRUE, proximity = TRUE, keep.forest = TRUE)
+ 
+  
+    
+    
   
 }
 

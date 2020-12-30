@@ -332,19 +332,14 @@ server <- function(input, output, session) {
       RF_Importance_All %>% 
         dplyr::filter(Common_Name == input$select_ISA_species_all)})
     
+    
     output$PDP_plot_all <- renderPlot({
-      pdp::partial(RF_Reserve_Model_All, 
-                   pred.var = input$select_ISA_species_all, 
-                   train = Mixed_All, plot = TRUE,
-                   # plot.engine = "ggplot2",
-                   rug = TRUE) 
-      # +
-      #   labs(title = pdp_labels_all()$CommonName,
-      #        x = pdp_labels_all()$Data_Type, y = NULL, color = NULL) +
-      #   theme_classic() +
-      #   theme(plot.title = element_text(hjust = .5, size = 16),
-      #         axis.title = element_text(size = 14),
-      #         axis.text = element_text(size = 12))
+      do.call(
+        "partialPlot", 
+        list(x = RF_Reserve_Model_All, pred.data = as.data.frame(Mixed_All), 
+             x.var = pdp_labels_all()$Common_Name,
+             main = paste("Partial Dependence on", pdp_labels_all()$CommonName),
+             xlab = pdp_labels_all()$Data_Type))
     })
     
     pdp_labels_2005 <- reactive({
@@ -352,16 +347,20 @@ server <- function(input, output, session) {
         dplyr::filter(Common_Name == input$select_ISA_species_2005)})
     
     output$PDP_plot_2005 <- renderPlot({
-      pdp::partial(RF_Reserve_Model_2005, 
-                   pred.var = input$select_ISA_species_2005, 
-                   train = Mixed_2005, plot = TRUE, rug = TRUE, 
-                   plot.engine = "ggplot2") +
-        labs(title = pdp_labels_2005()$CommonName,
-             x = pdp_labels_2005()$Data_Type, y = NULL, color = NULL) +
-        theme_classic() +
-        theme(plot.title = element_text(hjust = .5, size = 16),
-              axis.title = element_text(size = 14),
-              axis.text = element_text(size = 12))
+      do.call(
+        "partialPlot", 
+        list(x = RF_Reserve_Model_2005, pred.data = as.data.frame(Mixed_2005), 
+             x.var = pdp_labels_2005()$Common_Name,
+             main = paste("Partial Dependence on", pdp_labels_2005()$CommonName),
+             xlab = pdp_labels_2005()$Data_Type))
+     
+      # +
+        # labs(title = pdp_labels_2005()$CommonName,
+        #      x = pdp_labels_2005()$Data_Type, y = NULL, color = NULL) +
+        # theme_classic() +
+        # theme(plot.title = element_text(hjust = .5, size = 16),
+        #       axis.title = element_text(size = 14),
+        #       axis.text = element_text(size = 12))
     })
     
   }
