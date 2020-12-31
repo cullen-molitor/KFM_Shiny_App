@@ -592,6 +592,195 @@
   
 }
 
+{ # Variable Importance Module   -----
+  
+  VI_UI <- function(id){
+    ns <- NS(id)
+    tagList(
+      fluidRow(
+        column(
+          4, includeMarkdown(path = "Text/Variable Importance/Island_importance.md")
+        ),
+        column(
+          8,
+          fluidRow(
+            tags$hr(),
+            column(
+              3,
+              radioButtons(inputId = ns("Data_VI_Isl_All"),
+                           label = "Data Options:",
+                           choices = c("All Years (Fewer Species)",
+                                       "Years > 2004 (All Species)"))
+            ),
+            column(
+              3,
+              selectInput(inputId = ns("VI_Isl"),
+                          label = "Island Options:",
+                          choices = c("All Islands", Site_Info$IslandName))
+            ),
+            column(
+              3, 
+              radioButtons(inputId = ns("VI_Plot_Type_Isl"),
+                           label = "Plot Options",
+                           choices = c("Variable Importance", 
+                                       "Partial Dependence"))
+            ),
+            column(
+              3,
+              conditionalPanel(
+                condition = "input.VI_Plot_Type_Isl == 'Partial Dependence' 
+                                 & input.Data_VI_Isl_All == 'All Years (Fewer Species)'", ns = ns,
+                selectInput(inputId = ns("VI_Species_Isl_All"),
+                            label = "Choose a species",
+                            choices = rf_species_all)),
+              conditionalPanel(
+                condition = "input.VI_Plot_Type_Isl == 'Partial Dependence' 
+                                 & input.Data_VI_Isl_All == 'Years > 2004 (All Species)'", ns = ns,
+                selectInput(inputId = ns("VI_Species_Isl_2005"),
+                            label = "Choose a species",
+                            choices = rf_species_2005))
+            )
+          ),
+          fluidRow(
+            conditionalPanel(
+              condition = "input.VI_Plot_Type_Isl == 'Variable Importance'", ns = ns,
+              plotOutput(outputId = ns("VI_Plot_Isl"), height = 600)),
+            conditionalPanel(
+              condition = "input.VI_Plot_Type_Isl == 'Partial Dependence' 
+                                   & input.Data_VI_Isl_All == 'All Years (Fewer Species)'", ns = ns,
+              plotOutput(outputId = ns("PDP_Plot_Isl_All"), height = 350)),
+            conditionalPanel(
+              condition = "input.VI_Plot_Type_Isl == 'Partial Dependence' 
+                                   & input.Data_VI_Isl_All == 'Years > 2004 (All Species)'", ns = ns,
+              plotOutput(outputId = ns("PDP_Plot_Isl_2005"), height = 350))
+          )
+        )
+      )
+    )
+  } 
+
+  VI_Server <- function(id) {
+    moduleServer(
+      id,
+      function(input, output, session) {
+        
+        Variable_Accuracy_Isl <- reactive({
+          if (input$Data_VI_Isl_All == "All Years (Fewer Species)" & input$VI_Isl == "All Islands") {
+            RF_Importance_All %>% 
+              dplyr::arrange(desc(MeanDecreaseAccuracy_Isl)) %>%  
+              dplyr::mutate(CommonName1 = paste(CommonName, row_number()),
+                            CommonName1 = factor(CommonName1, levels = rev(CommonName1)),
+                            xvalue = MeanDecreaseAccuracy_Isl) %>% 
+              head(30) %>% 
+              droplevels()
+          } 
+          else if (input$Data_VI_Isl_All == "All Years (Fewer Species)") {
+            RF_Importance_All %>% 
+              dplyr::rename(xvalue = input$VI_Isl) %>% 
+              dplyr::arrange(desc(xvalue)) %>%  
+              dplyr::mutate(CommonName1 = paste(CommonName, row_number()),
+                            CommonName1 = factor(CommonName1, levels = rev(CommonName1))) %>% 
+              head(30) %>% 
+              droplevels()
+          } 
+          else {
+            RF_Importance_2005 %>% 
+              dplyr::arrange(desc(MeanDecreaseAccuracy_Isl)) %>%  
+              dplyr::mutate(CommonName1 = paste(CommonName, row_number())) %>% 
+              head(30) %>% 
+              droplevels()
+            
+          }
+        })
+        
+        Variable_Gini_Isl <- reactive({
+          if (input$Data_VI_Isl_All == "All Years (Fewer Species)") {
+            RF_Importance_All %>% 
+              dplyr::arrange(desc(MeanDecreaseGini_Isl)) %>%  
+              dplyr::mutate(CommonName1 = paste(CommonName, row_number()))  %>% 
+              head(30) %>% 
+              droplevels()
+          } else {
+            RF_Importance_2005 %>% 
+              dplyr::arrange(desc(MeanDecreaseGini_Isl)) %>%  
+              dplyr::mutate(CommonName1 = paste(CommonName, row_number()))  %>% 
+              head(30) %>% 
+              droplevels()
+            
+          }
+        })
+        
+        output$VI_Plot_Isl <- renderPlot({
+          
+          Accuracy <- 
+            ggplot(
+              Variable_Accuracy_Isl(), aes(x = xvalue, y = CommonName1, color = Targeted)) +
+            geom_point() +
+            geom_segment(
+              size = 1, 
+              aes(x = min(xvalue) - .5, xend = xvalue, 
+                  y = CommonName1, yend = CommonName1)) +
+            labs(x = "Mean Decrease in % Accuracy", y = NULL, 
+                 color = NULL, linetype = NULL) +
+            scale_x_continuous(expand = expansion(mult = c(0,.1)), 
+                               limits = c(min(Variable_Accuracy_Isl()$xvalue) - .5, NA)) +
+            scale_color_manual(values = Target_Colors) +
+            theme_classic() +
+            theme(axis.text = element_text(size = 12),
+                  axis.title = element_text(size = 12),
+                  legend.text = element_text(size = 12))
+          
+          Gini <- ggplot(Variable_Gini_Isl(), aes(x = MeanDecreaseGini_Isl, color = Targeted, 
+                                                  y = reorder(CommonName1, MeanDecreaseGini_Isl))) +
+            geom_point() +
+            geom_segment(size = 1,
+                         aes(x = min(MeanDecreaseGini_Isl) - .5, xend = MeanDecreaseGini_Isl,
+                             y = CommonName1, yend = CommonName1)) +
+            labs(x = "Mean Decrease in Gini Index", y = NULL, 
+                 color = NULL, linetype = NULL) +
+            scale_x_continuous(expand = expansion(mult = c(0,.1)), 
+                               limits = c(min(Variable_Gini_Isl()$MeanDecreaseGini_Isl) - .5, NA)) +
+            scale_color_manual(values = Target_Colors) +
+            theme_classic() +
+            theme(axis.text = element_text(size = 12),
+                  axis.title = element_text(size = 12),
+                  legend.text = element_text(size = 12))
+          ggarrange(Accuracy, Gini, ncol = 2, align = "h", common.legend = TRUE, legend = "bottom")
+        })
+        
+        pdp_labels_Isl_all <- reactive({
+          RF_Importance_All %>% 
+            dplyr::filter(Common_Name == input$VI_Species_Isl_All)})
+        
+        
+        output$PDP_Plot_Isl_All <- renderPlot({
+          do.call(
+            "partialPlot", 
+            list(x = RF_Island_Model_All, pred.data = as.data.frame(Mixed_All), 
+                 x.var = pdp_labels_Isl_all()$Common_Name,
+                 main = paste("Partial Dependence on", pdp_labels_Isl_all()$CommonName),
+                 xlab = pdp_labels_Isl_all()$Data_Type))
+        })
+        
+        pdp_labels_Isl_2005 <- reactive({
+          RF_Importance_2005 %>% 
+            dplyr::filter(Common_Name == input$VI_Species_Isl_2005)})
+        
+        output$PDP_Plot_Isl_2005 <- renderPlot({
+          do.call(
+            "partialPlot", 
+            list(x = RF_Island_Model_2005, pred.data = as.data.frame(Mixed_2005), 
+                 x.var = pdp_labels_Isl_2005()$Common_Name,
+                 main = paste("Partial Dependence on", pdp_labels_Isl_2005()$CommonName),
+                 xlab = pdp_labels_Isl_2005()$Data_Type))
+          
+        })
+      }
+    )
+  }
+  
+}
+
 { # Time Series Module   -----
   
   # Time_UI <- function(id){

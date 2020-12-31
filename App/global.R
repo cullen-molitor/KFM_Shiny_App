@@ -419,7 +419,6 @@ source('R/modules.R')
                   ReserveStatus = factor(ReserveStatus)) %>% 
     dplyr::select(-SiteNumber, -SiteName, 
                   -IslandCode, -SiteCode) 
-  RF_Reserve_Model_2005 <- base::readRDS("Models/RF_Reserve_Model_2005.rds")
   
   Mixed_All <- readr::read_csv("Tidy_Data/Mixed_Data_Fish_Density.csv") %>% 
     dplyr::filter(SiteCode != "MM" | SurveyYear > 2004) %>%
@@ -428,8 +427,14 @@ source('R/modules.R')
                   ReserveStatus = factor(ReserveStatus)) %>% 
     dplyr::select(-SiteNumber, -SiteName, 
                   -IslandCode, -SiteCode) 
-  RF_Reserve_Model_All <- base::readRDS("Models/RF_Reserve_Model_All_Years.rds")
   
+}
+
+{ # Random Forest Models   ----
+  RF_Reserve_Model_All <- base::readRDS("Models/RF_Reserve_Model_All.rds")
+  RF_Reserve_Model_2005 <- base::readRDS("Models/RF_Reserve_Model_2005.rds")
+  RF_Island_Model_All <- base::readRDS("Models/RF_Island_Model_All.rds")
+  RF_Island_Model_2005 <- base::readRDS("Models/RF_Island_Model_2005.rds")
 }
 
 { # Community Similarity Data   ----
@@ -441,14 +446,11 @@ source('R/modules.R')
 }
 
 { # Important Species Data  ---- 
-  RF_Importance_All <- 
-    readr::read_csv("Tidy_Data/Species_Importance_All_Years.csv")
-  RF_Importance_2005 <-
-    readr::read_csv("Tidy_Data/Species_Importance_2005.csv")
+  RF_Importance_All <- readr::read_csv("Tidy_Data/Species_Importance_All.csv")
+  RF_Importance_2005 <- readr::read_csv("Tidy_Data/Species_Importance_2005.csv")
   
   rf_species_all <- c(as.character(RF_Importance_All$Common_Name))
   names(rf_species_all) <- c(RF_Importance_All$CommonName)
-  
   
   rf_species_2005 <- c(as.character(RF_Importance_2005$Common_Name))
   names(rf_species_2005) <- c(RF_Importance_2005$CommonName)

@@ -50,11 +50,11 @@ ui <- dashboardPage(
                icon = icon('balance-scale'),
                badgeColor = 'green',
                tabName = 'com_sim'),
-      # ...... Sidebar - Indicator Species  ----
-      menuItem(text = 'Indicator Species', 
+      # ...... Sidebar - Important Species  ----
+      menuItem(text = 'Important Species', 
                icon = icon('otter'),
                badgeColor = 'green',
-               tabName = 'ind_spe'),
+               tabName = 'imp_spe'),
       # ...... Sidebar - Biomass  ----
       menuItem(text = 'Biomass', 
                icon = icon('hippo'),
@@ -550,7 +550,7 @@ ui <- dashboardPage(
                 ),
                 fluidRow(
                   plotlyOutput(outputId = "Three_D",
-                               height = 600, width = '100%')
+                               height = 450, width = '100%')
                 ) 
               )
             ),
@@ -560,15 +560,28 @@ ui <- dashboardPage(
       ),
       # ...... Body - Indicator Species    ---- 
       tabItem(
-        tabName = 'ind_spe',
-        h1("Kelp Forest Indicator Species"),
+        tabName = 'imp_spe',
+        h1("Species with Strong Reserve or Island Effects"),
         tabsetPanel(
+          # ............ Tab - About   ----
+          tabPanel(
+            title = "About",
+            fluidRow(
+              column(
+                6,
+                includeMarkdown(path = "Text/Variable Importance/variable_importance.md")
+              ),
+              column(
+                6
+              )
+            )
+          ),
           # ............ Tab - Marine Reserve Indicators   ----
           tabPanel(
             title = "Marine Reserve Indicator Species",
             fluidRow(
               column(
-                4, includeMarkdown(path = "Text/variable_importance.md")
+                4, includeMarkdown(path = "Text/Variable Importance/reserve_importance.md")
               ),
               column(
                 8,
@@ -618,8 +631,72 @@ ui <- dashboardPage(
             )
           ),
           # ............ Tab - Island Indicators   ----
-          tabPanel("Island Indicator Species")
+          tabPanel(
+            title = "Island Indicator Species",
+            VI_UI(id = "Island")
+            
+            
+            # fluidRow(
+            #   column(
+            #     4, includeMarkdown(path = "Text/Variable Importance/Island_importance.md")
+            #   ),
+            #   column(
+            #     8,
+            #     fluidRow(
+            #       tags$hr(),
+            #       column(
+            #         3,
+            #         radioButtons(inputId = "Data_VI_Isl_All",
+            #                      label = "Data Options:",
+            #                      choices = c("All Years (Fewer Species)",
+            #                                  "Years > 2004 (All Species)"))
+            #       ),
+            #       column(
+            #         3,
+            #         selectInput(inputId = "VI_Isl",
+            #                     label = "Island Options:",
+            #                     choices = c("All Islands", Site_Info$IslandName))
+            #       ),
+            #       column(
+            #         3, 
+            #         radioButtons(inputId = "VI_Plot_Type_Isl",
+            #                      label = "Plot Options",
+            #                      choices = c("Variable Importance", 
+            #                                  "Partial Dependence"))
+            #       ),
+            #       column(
+            #         3,
+            #         conditionalPanel(
+            #           condition = "input.VI_Plot_Type_Isl == 'Partial Dependence' 
+            #                      & input.Data_VI_Isl_All == 'All Years (Fewer Species)'",
+            #           selectInput(inputId = "VI_Species_Isl_All",
+            #                       label = "Choose a species",
+            #                       choices = rf_species_all)),
+            #         conditionalPanel(
+            #           condition = "input.VI_Plot_Type_Isl == 'Partial Dependence' 
+            #                      & input.Data_VI_Isl_All == 'Years > 2004 (All Species)'",
+            #           selectInput(inputId = "VI_Species_Isl_2005",
+            #                       label = "Choose a species",
+            #                       choices = rf_species_2005))
+            #       )
+            #     ),
+            #     fluidRow(
+            #       conditionalPanel(
+            #         condition = "input.VI_Plot_Type_Isl == 'Variable Importance'",
+            #         plotOutput(outputId = "VI_Plot_Isl", height = 600)),
+            #       conditionalPanel(
+            #         condition = "input.VI_Plot_Type_Isl == 'Partial Dependence' 
+            #                        & input.Data_VI_Isl_All == 'All Years (Fewer Species)'",
+            #         plotOutput(outputId = "PDP_Plot_Isl_All", height = 350)),
+            #       conditionalPanel(
+            #         condition = "input.VI_Plot_Type_Isl == 'Partial Dependence' 
+            #                        & input.Data_VI_Isl_All == 'Years > 2004 (All Species)'",
+            #         plotOutput(outputId = "PDP_Plot_Isl_2005", height = 350))
+            #     )
+            #   )
+            # )
           )
+        )
       ),
       # ...... Body - Biomass    ---- 
       tabItem(

@@ -951,8 +951,110 @@ Export_END_Year <- 2019
       dplyr::left_join(Fish_Biomass_Wide) %>% 
       base::replace(is.na(.), 0) %>%
       readr::write_csv("App/Tidy_Data/Mixed_Data_Fish_Biomass.csv")
-      
+    
     # which(is.na(All_Mixed_Data_Wide), arr.ind=TRUE)
+  }
+  
+}
+
+{ # Random Forest Important Species    ----
+  
+  { # All Years Reserve Model   -----
+    
+    Mixed_Data_Fish_Density <- readr::read_csv("App/Tidy_Data/Mixed_Data_Fish_Density.csv") %>% 
+      dplyr::filter(SiteCode != "MM" | SurveyYear > 2004)
+    
+    RKF_All_Years <- Mixed_Data_Fish_Density  %>% 
+      dplyr::mutate(SurveyYear = factor(SurveyYear),
+                    IslandName = factor(IslandName),
+                    ReserveStatus = factor(ReserveStatus)) %>%
+      dplyr::select(-SiteNumber, -SiteName, 
+                    -IslandCode, -SiteCode)
+    
+    # which(is.na(RKF_All_Years), arr.ind=TRUE)
+    
+    RF_Reserve_Model_All_Years <- randomForest::randomForest(
+      data = RKF_All_Years,
+      ReserveStatus ~ ., ntree = 3000, mtry = 8,
+      importance = TRUE, proximity = TRUE, keep.forest = TRUE)
+    
+    saveRDS(RF_Reserve_Model_All_Years, "App/Models/RF_Reserve_Model_All.rds")
+    
+    RF_Importance_All <- randomForest::importance(RF_Reserve_Model_All_Years) %>%
+      as.data.frame() %>%
+      tibble::rownames_to_column("Common_Name")
+  }
+  
+  { # 2005 Reserve Model   -----
+    
+    Mixed_Data_Fish_Biomass <- readr::read_csv("App/Tidy_Data/Mixed_Data_Fish_Biomass.csv") 
+    
+    Mixed_2005 <- Mixed_Data_Fish_Biomass %>%
+      dplyr::mutate(SurveyYear = factor(SurveyYear),
+                    IslandName = factor(IslandName),
+                    ReserveStatus = factor(ReserveStatus)) %>% 
+      dplyr::select(-SiteNumber, -SiteName, 
+                    -IslandCode, -SiteCode) 
+    
+    RF_Reserve_Model_2005 <- randomForest::randomForest(
+      data = Mixed_2005,
+      ReserveStatus  ~ ., ntree = 3000, mtry = 8,
+      importance = TRUE, proximity = TRUE, keep.forest = TRUE)
+    
+    saveRDS(RF_Reserve_Model_2005, "App/Models/RF_Reserve_Model_2005.rds")
+    
+    RF_Importance_2005 <- randomForest::importance(RF_Reserve_Model_2005) %>%
+      as.data.frame() %>%
+      tibble::rownames_to_column("Common_Name")
+  }
+  
+  { # All Years Island Model   -----
+    
+    RF_Island_Model_All <- randomForest::randomForest(
+      data = Mixed_All,
+      IslandName ~ ., ntree = 3000, mtry = 8,
+      importance = TRUE, proximity = TRUE, keep.forest = TRUE)
+    
+    saveRDS(RF_Island_Model_All, "App/Models/RF_Island_Model_All.rds")
+    
+    RF_VI_Isl_All <- randomForest::importance(RF_Island_Model_All) %>%
+      as.data.frame() %>%
+      tibble::rownames_to_column("Common_Name") %>% 
+      dplyr::rename(MeanDecreaseAccuracy_Isl = MeanDecreaseAccuracy,
+                    MeanDecreaseGini_Isl = MeanDecreaseGini)  %>%
+      dplyr::full_join(RF_Importance_All)  %>%
+      dplyr::left_join(Mixed_Data_xRef_Density)%>% 
+      dplyr::select(Common_Name, CommonName, ScientificName, Inside, Outside, 
+                    `Anacapa Island`, `San Miguel Island`, `Santa Barbara Island`, `Santa Cruz Island`,  `Santa Rosa Island`, 
+                    MeanDecreaseAccuracy, MeanDecreaseGini, MeanDecreaseAccuracy_Isl, MeanDecreaseGini_Isl,             
+                    Data_Type, Category, Targeted) %>% 
+      dplyr::arrange(desc(MeanDecreaseAccuracy)) %>% 
+      readr::write_csv("App/Tidy_Data/Species_Importance_All.csv")
+  }
+  
+  { # 2005 Island Model   -----
+    
+    RF_Island_Model_2005 <- randomForest::randomForest(
+      data = Mixed_2005,
+      IslandName ~ ., ntree = 3000, mtry = 8,
+      importance = TRUE, proximity = TRUE, keep.forest = TRUE)
+    
+    saveRDS(RF_Island_Model_2005, "App/Models/RF_Island_Model_2005.rds")
+    
+    RF_VI_Isl_2005 <- randomForest::importance(RF_Island_Model_2005) %>%
+      as.data.frame() %>%
+      tibble::rownames_to_column("Common_Name") %>% 
+      dplyr::rename(MeanDecreaseAccuracy_Isl = MeanDecreaseAccuracy,
+                    MeanDecreaseGini_Isl = MeanDecreaseGini)  %>% 
+      dplyr::full_join(RF_Importance_2005)  %>%
+      dplyr::left_join(Mixed_Data_xRef_Biomass)%>% 
+      dplyr::select(Common_Name, CommonName, ScientificName, Inside, Outside, 
+                    `Anacapa Island`, `San Miguel Island`, `Santa Barbara Island`, `Santa Cruz Island`,  `Santa Rosa Island`, 
+                    MeanDecreaseAccuracy, MeanDecreaseGini, MeanDecreaseAccuracy_Isl, MeanDecreaseGini_Isl,             
+                    Data_Type, Category, Targeted) %>% 
+      dplyr::arrange(desc(MeanDecreaseAccuracy)) %>% 
+      readr::write_csv("App/Tidy_Data/Species_Importance_2005.csv")
+    
   }
   
 }
@@ -1015,25 +1117,6 @@ Export_END_Year <- 2019
   
   { # All 3D nMDS Dimensions    -----
     
-    Mixed_Data_Fish_Density <- readr::read_csv("App/Tidy_Data/Mixed_Data_Fish_Density.csv") %>% 
-      dplyr::filter(SiteCode != "MM" | SurveyYear > 2004)
-    
-    RKF_All_Years <- Mixed_Data_Fish_Density  %>% 
-      dplyr::mutate(SurveyYear = factor(SurveyYear),
-                    IslandName = factor(IslandName),
-                    ReserveStatus = factor(ReserveStatus)) %>%
-      dplyr::select(-SiteNumber, -SiteName, 
-                    -IslandCode, -SiteCode)
-    
-    which(is.na(RKF_All_Years), arr.ind=TRUE)
-    
-    RF_Reserve_Model_All_Years <- randomForest::randomForest(
-      data = RKF_All_Years,
-      ReserveStatus ~ ., ntree = 3000, mtry = 8,
-      importance = TRUE, proximity = TRUE, keep.forest = TRUE)
-    
-    saveRDS(RF_Reserve_Model_All_Years, "App/Models/RF_Reserve_Model_All_Years.rds")
-    
     nMDS_3D_ay <- randomForest::MDSplot(
       RF_Reserve_Model_All_Years, fac = RKF_All_Years$ReserveStatus,
       k = 3, palette = rep(1, 2),
@@ -1048,22 +1131,6 @@ Export_END_Year <- 2019
   
   { # 2005 3D nMDS Dimensions    -----
     
-    Mixed_Data_Fish_Biomass <- readr::read_csv("App/Tidy_Data/Mixed_Data_Fish_Biomass.csv") 
-    
-    Mixed_2005 <- Mixed_Data_Fish_Biomass %>%
-      dplyr::mutate(SurveyYear = factor(SurveyYear),
-                    IslandName = factor(IslandName),
-                    ReserveStatus = factor(ReserveStatus)) %>% 
-      dplyr::select(-SiteNumber, -SiteName, 
-                    -IslandCode, -SiteCode) 
-    
-    RF_Reserve_Model_2005 <- randomForest::randomForest(
-      data = Mixed_2005,
-      ReserveStatus ~ ., ntree = 3000, mtry = 8,
-      importance = TRUE, proximity = TRUE, keep.forest = TRUE)
-    
-    saveRDS(RF_Reserve_Model_2005, "App/Models/RF_Reserve_Model_2005.rds")
-    
     nMDS_3D_2005 <- randomForest::MDSplot(
       RF_Reserve_Model_2005, fac = Mixed_2005$ReserveStatus,
       k = 3, palette = rep(1, 2),
@@ -1074,40 +1141,6 @@ Export_END_Year <- 2019
       cbind(dplyr::select(
         Mixed_Data_Fish_Biomass, SiteCode, SiteName, IslandName, ReserveStatus, SurveyYear)) %>% 
       readr::write_csv("App/Tidy_Data/nMDS_3D_2005_now.csv")
-  }
-  
-  RF_Reserve_Model_2005 <- randomForest::randomForest(
-    data = Mixed_2005,
-    IslandName ~ ., ntree = 3000, mtry = 8,
-    importance = TRUE, proximity = TRUE, keep.forest = TRUE)
- 
-  
-    
-    
-  
-}
-
-{ # Random Forest Important Species    ----
-  
-  { # All Years RF Important Species   -----
-    RF_Importance_All_Years <- randomForest::importance(RF_Reserve_Model_All_Years) %>%
-      as.data.frame() %>%
-      tibble::rownames_to_column("Common_Name") %>%
-      dplyr::arrange(desc(MeanDecreaseAccuracy)) %>%
-      dplyr::left_join(Mixed_Data_xRef_Density) %>% 
-      readr::write_csv("App/Tidy_Data/Species_Importance_All_Years.csv")
-  }
-  
-  { # > 2004 RF Model Important Species -----
-    RF_Importance_2005 <- randomForest::importance(RF_Reserve_Model_2005) %>%
-      as.data.frame() %>%
-      tibble::rownames_to_column("Common_Name") %>%
-      dplyr::arrange(desc(MeanDecreaseAccuracy)) %>% 
-      dplyr::left_join(Mixed_Data_xRef_Biomass) %>% 
-      readr::write_csv("App/Tidy_Data/Species_Importance_2005.csv")
-    # %>%
-    #   dplyr::mutate(CommonName = factor(CommonName),
-    #                 ScientificName = factor(ScientificName))
   }
   
 }
