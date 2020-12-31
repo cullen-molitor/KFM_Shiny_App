@@ -569,7 +569,7 @@ ui <- dashboardPage(
             fluidRow(
               column(
                 6,
-                includeMarkdown(path = "Text/Variable Importance/variable_importance.md")
+                includeMarkdown(path = "Text/Variable_Importance/variable_importance.md")
               ),
               column(
                 6
@@ -581,7 +581,7 @@ ui <- dashboardPage(
             title = "Marine Reserve Indicator Species",
             fluidRow(
               column(
-                4, includeMarkdown(path = "Text/Variable Importance/reserve_importance.md")
+                4, includeMarkdown(path = "Text/Variable_Importance/reserve_importance.md")
               ),
               column(
                 8,

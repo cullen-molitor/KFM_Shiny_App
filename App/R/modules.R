@@ -599,7 +599,7 @@
     tagList(
       fluidRow(
         column(
-          4, includeMarkdown(path = "Text/Variable Importance/Island_importance.md")
+          4, includeMarkdown(path = "Text/Variable_Importance/island_importance.md")
         ),
         column(
           8,
