@@ -368,7 +368,6 @@ server <- function(input, output, session) {
     
     { # Island Model -----
       
-      
       VI_Server(id = "Island")
       # Variable_Accuracy_Isl <- reactive({
       #   if (input$Data_VI_Isl_All == "All Years (Fewer Species)" & input$VI_Isl == "All Islands") {
