@@ -186,22 +186,6 @@ ui <- dashboardPage(
         tabName = 'species',
         h1("Kelp Forest Species"),
         tabsetPanel(
-          # ............ Tab - KFM Species Selection  ----
-          tabPanel(
-            "KFM Species Selection",
-            fluidRow(
-              column(
-                6, 
-                includeMarkdown("Text/Species/species_selection.md") 
-              ),
-              column(
-                6, tags$hr(),
-                tags$img(height = 400, width = 600, src = 'Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (2).jpg'),
-                tags$br(), tags$hr(),
-                tags$img(height = 400, width = 600, src = 'Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (10).jpg')
-              )
-            )
-          ),
           # ............ Tab - Foundation Species  ----
           tabPanel(
             title = "Foundation Species",
@@ -225,6 +209,50 @@ ui <- dashboardPage(
             tags$hr(),
             foundation_UI(id = "sargassum"),
             foundation_UI(id = "undaria")
+          ),
+          # ............ Tab - KFM Species Selection  ----
+          tabPanel(
+            title = "KFM Taxa",
+            tags$hr(),
+            radioButtons(inputId = "Species_Options",
+                         label = "Choose a Category",
+                         inline = TRUE,
+                         choices = c("Overview", "Protocol Taxa Guides", "Taxa")),
+            conditionalPanel(
+              condition = "input.Species_Options == 'Overview'",
+              fluidRow(
+                column(
+                  6, 
+                  includeMarkdown("Text/Species/species_selection.md") 
+                ),
+                column(
+                  6, tags$hr(),
+                  tags$img(height = 400, width = 600, src = 'Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (2).jpg'),
+                  tags$br(), tags$hr(),
+                  tags$img(height = 400, width = 600, src = 'Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (10).jpg')
+                )
+              ),
+              tags$hr(),
+              fluidRow(
+                column(
+                  6,
+                  tags$img(height = 400, width = 600, src = 'Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (7).jpg'), 
+                ),
+                column(
+                  6, 
+                  tags$img(height = 400, width = 600, src = 'Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (8).jpg')
+                )
+              )
+            ),
+            conditionalPanel(
+              condition = "input.Species_Options == 'Protocol Taxa Guides'",
+              tags$hr(),
+              species_guide_UI(id = "species")
+            ),
+            conditionalPanel(
+              condition = "input.Species_Options == 'Taxa'",
+              Taxa_UI(id = "species")
+            )
           ),
           # ............ Tab - Common Diseases  ----
           tabPanel(
@@ -254,13 +282,6 @@ ui <- dashboardPage(
                                )
                              )
             )
-          ),
-          # ............ Tab - Species Guides  ----
-          tabPanel(
-            title = "KFM Indicator Species",
-            tags$hr(),
-            
-            species_guide_UI(id = "species")
           ),
           # ............ Tab - External Resources  ----
           tabPanel(
@@ -300,7 +321,7 @@ ui <- dashboardPage(
                 tags$img(height = 400, width = 600, src = 'Photos/Protocols/1m (2).jpg'),
                 tags$br(), tags$hr(),
                 tags$img(height = 400, width = 600, src = 'Photos/Protocols/5m (1).jpg')
-              )
+              ),
             ),
             tags$hr(),
             fluidRow(
@@ -576,125 +597,24 @@ ui <- dashboardPage(
               )
             )
           ),
-          # ............ Tab - Marine Reserve Indicators   ----
+          # ............ Tab - Marine Reserve Model   ----
           tabPanel(
-            title = "Marine Reserve Indicator Species",
-            fluidRow(
-              column(
-                4, includeMarkdown(path = "Text/Variable_Importance/reserve_importance.md")
-              ),
-              column(
-                8,
-                fluidRow(
-                  tags$hr(),
-                  column(
-                    3,
-                    radioButtons(inputId = "radio_ISA_years",
-                                 label = "Data Options:",
-                                 choices = c("All Years (Fewer Species)",
-                                             "Years > 2004 (All Species)"))
-                  ),
-                  column(
-                    3, 
-                    radioButtons(inputId = "radio_ISA_plot_type",
-                                 label = "Plot Options",
-                                 choices = c("Variable Importance", 
-                                             "Partial Dependence"))
-                  ),
-                  column(
-                    4,
-                    conditionalPanel(
-                      condition = "input.radio_ISA_plot_type == 'Partial Dependence' 
-                                 & input.radio_ISA_years == 'All Years (Fewer Species)'",
-                      selectInput(inputId = "select_ISA_species_all",
-                                  label = "Choose a species",
-                                  choices = rf_species_all)),
-                    conditionalPanel(
-                      condition = "input.radio_ISA_plot_type == 'Partial Dependence' 
-                                 & input.radio_ISA_years == 'Years > 2004 (All Species)'",
-                      selectInput(inputId = "select_ISA_species_2005",
-                                  label = "Choose a species",
-                                  choices = rf_species_2005))
-                  )
-                ),
-                fluidRow(
-                  conditionalPanel(condition = "input.radio_ISA_plot_type == 'Variable Importance'",
-                                   plotOutput(outputId = "ISA_plot", height = 600)),
-                  conditionalPanel(condition = "input.radio_ISA_plot_type == 'Partial Dependence' 
-                                   & input.radio_ISA_years == 'All Years (Fewer Species)'",
-                                   plotOutput(outputId = "PDP_plot_all", height = 350)),
-                  conditionalPanel(condition = "input.radio_ISA_plot_type == 'Partial Dependence' 
-                                   & input.radio_ISA_years == 'Years > 2004 (All Species)'",
-                                   plotOutput(outputId = "PDP_plot_2005", height = 350))
-                )
-              )
-            )
+            title = "Marine Reserve Model",
+            VI_UI(id = "reserve")
           ),
-          # ............ Tab - Island Indicators   ----
+          # ............ Tab - Island Model   ----
           tabPanel(
-            title = "Island Indicator Species",
-            VI_UI(id = "Island")
-            
-            
-            # fluidRow(
-            #   column(
-            #     4, includeMarkdown(path = "Text/Variable Importance/Island_importance.md")
-            #   ),
-            #   column(
-            #     8,
-            #     fluidRow(
-            #       tags$hr(),
-            #       column(
-            #         3,
-            #         radioButtons(inputId = "Data_VI_Isl_All",
-            #                      label = "Data Options:",
-            #                      choices = c("All Years (Fewer Species)",
-            #                                  "Years > 2004 (All Species)"))
-            #       ),
-            #       column(
-            #         3,
-            #         selectInput(inputId = "VI_Isl",
-            #                     label = "Island Options:",
-            #                     choices = c("All Islands", Site_Info$IslandName))
-            #       ),
-            #       column(
-            #         3, 
-            #         radioButtons(inputId = "VI_Plot_Type_Isl",
-            #                      label = "Plot Options",
-            #                      choices = c("Variable Importance", 
-            #                                  "Partial Dependence"))
-            #       ),
-            #       column(
-            #         3,
-            #         conditionalPanel(
-            #           condition = "input.VI_Plot_Type_Isl == 'Partial Dependence' 
-            #                      & input.Data_VI_Isl_All == 'All Years (Fewer Species)'",
-            #           selectInput(inputId = "VI_Species_Isl_All",
-            #                       label = "Choose a species",
-            #                       choices = rf_species_all)),
-            #         conditionalPanel(
-            #           condition = "input.VI_Plot_Type_Isl == 'Partial Dependence' 
-            #                      & input.Data_VI_Isl_All == 'Years > 2004 (All Species)'",
-            #           selectInput(inputId = "VI_Species_Isl_2005",
-            #                       label = "Choose a species",
-            #                       choices = rf_species_2005))
-            #       )
-            #     ),
-            #     fluidRow(
-            #       conditionalPanel(
-            #         condition = "input.VI_Plot_Type_Isl == 'Variable Importance'",
-            #         plotOutput(outputId = "VI_Plot_Isl", height = 600)),
-            #       conditionalPanel(
-            #         condition = "input.VI_Plot_Type_Isl == 'Partial Dependence' 
-            #                        & input.Data_VI_Isl_All == 'All Years (Fewer Species)'",
-            #         plotOutput(outputId = "PDP_Plot_Isl_All", height = 350)),
-            #       conditionalPanel(
-            #         condition = "input.VI_Plot_Type_Isl == 'Partial Dependence' 
-            #                        & input.Data_VI_Isl_All == 'Years > 2004 (All Species)'",
-            #         plotOutput(outputId = "PDP_Plot_Isl_2005", height = 350))
-            #     )
-            #   )
-            # )
+            title = "Island Model",
+            VI_UI(id = "island")
+          ),
+          # ............ Tab - Indicator Species Analysis   ----
+          tabPanel(
+            title = "Indicator Species Analysis",
+            h2("Coming Soon..."),
+            h5("Indicator species analysis (ISA) will identify species that are significantly associated with"),
+            h5("specific island and marine reserve groupings. This is a more targeted approach to "),
+            h5("identifying species than the random forest models. The output is more specific and will "),
+            h5("tell a user which exactly which island a species is strongly associated with.")
           )
         )
       ),
@@ -705,20 +625,38 @@ ui <- dashboardPage(
         tabsetPanel(
           # ............ Tab - Time Series   ----
           tabPanel(
-            title = "Time Series"
+            title = "Time Series",
+            Time_UI(id = "biomass")
           ),
           # ............ Tab - Ratios   ----
           tabPanel(
             title = "Ratios"
+          ),
+          # ............ Tab - Map Bubbles   ----
+          tabPanel(
+            title = "Map Bubbles"
           )
-        ),
-        tags$img(height = 533, width = 800, src = 'Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (5).jpg')
+        )
       ),
       # ...... Body - Density    ---- 
       tabItem(
         tabName = 'density',
         h1("Kelp Forest Density Trends"),
-        tags$img(height = 533, width = 800, src = 'Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (6).jpg')
+        tabsetPanel(
+          # ............ Tab - Time Series   ----
+          tabPanel(
+            title = "Time Series",
+            Time_UI(id = "density")
+          ),
+          # ............ Tab - Ratios   ----
+          tabPanel(
+            title = "Ratios"
+          ),
+          # ............ Tab - Map Bubbles   ----
+          tabPanel(
+            title = "Map Bubbles"
+          )
+        )
       ),
       # ...... Body - Size Frequencies    ---- 
       tabItem(

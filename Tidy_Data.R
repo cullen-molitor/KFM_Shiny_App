@@ -387,8 +387,9 @@ Export_END_Year <- 2019
 { # Diversity  ----
   
   { # Shannon's Index   ---- 
-    Benthic_Density <- base::rbind(One_M_Density, Five_M_Density, Bands_Density) %>% 
-      readr::write_csv("App/Tidy_Data/Benthic_Density.csv") 
+    Benthic_Density <- base::rbind(One_M_Density, Five_M_Density, Bands_Density) 
+    # %>% 
+      # readr::write_csv("App/Tidy_Data/Benthic_Density.csv") 
     
     Benthic_Counts <- Benthic_Density %>% 
       dplyr::filter(!CommonName %in% c(
@@ -587,13 +588,14 @@ Export_END_Year <- 2019
   { # Benthic Biomass Long  ----
     Benthic_Biomass <- Benthic_Density %>% 
       dplyr::filter(CommonName %in% unique(Benthic_Sizes$CommonName)) %>%
-      dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear,        
-                    ScientificName, CommonName, Mean_Density, Survey_Type, ReserveStatus, Reference) %>%
+      dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, ScientificName, CommonName,        
+                    Mean_Density, SE, SD, Survey_Type, ReserveStatus, Reference) %>%
       dplyr::full_join(Benthic_Sizes) %>%
       dplyr::filter(!ScientificName %in% c(
         "Haliotis assimilis",
         "Cypraea spadicea",
-        # "Parastichopus parvimensis", # This can potential be commented out but they were only measured in early years
+        # "Parastichopus parvimensis", # Only measured in early years, Not sure if should leave as count (Uncommented) 
+        # or as biomass (commented). The R values look good on the regression, grouped by species and reserve status.
         "Centrostephanus coronatus",
         "Stylaster californicus")) %>% 
       dplyr::group_by(SiteCode, ScientificName, SurveyYear) %>% 
@@ -609,7 +611,7 @@ Export_END_Year <- 2019
           TRUE ~ Mean_Density)) %>% 
       dplyr::ungroup() %>% 
       dplyr::group_by(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear,
-                      ScientificName, CommonName, Mean_Density, Survey_Type, ReserveStatus, Reference) %>% 
+                      ScientificName, CommonName, Mean_Density, SE, SD, Survey_Type, ReserveStatus, Reference) %>% 
       dplyr::summarise(Mean_Biomass = sum(1/n() * Biomass * Mean_Density)) %>% 
       dplyr::ungroup() 
     
@@ -631,7 +633,7 @@ Export_END_Year <- 2019
           TRUE ~ Mean_Biomass)) %>% 
       dplyr::mutate(Date = base::as.Date(base::ISOdate(SurveyYear, 7, 1))) %>%
       dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName,
-                    SurveyYear, Date, ScientificName, CommonName, Mean_Density, 
+                    SurveyYear, Date, ScientificName, CommonName, Mean_Density, SE, SD,
                     Mean_Biomass, Survey_Type, ReserveStatus, Reference)
     
     Benthic_total_Biomass <- Benthic_Mean_Biomass %>% 
@@ -640,11 +642,11 @@ Export_END_Year <- 2019
       dplyr::summarise(Mean_Biomass = sum(Mean_Biomass, na.rm = TRUE)) %>% 
       dplyr::mutate(ScientificName = "Benthic_Biomass_Total",
                     CommonName = "Benthic_Biomass_Total",
-                    Mean_Density = NA, Survey_Type = NA) %>% 
+                    Mean_Density = NA, Survey_Type = NA, SE = NA, SD = NA) %>% 
       dplyr::ungroup()
     
     Benthic_Mean_Biomass <- rbind(Benthic_Mean_Biomass, Benthic_total_Biomass) %>% 
-      readr::write_csv("App/Tidy_Data/Benthic_Biomass.csv")
+      readr::write_csv("App/Tidy_Data/Benthic_Data.csv")
   }
   
   { # Fish Density for Biomass   ----
@@ -925,7 +927,7 @@ Export_END_Year <- 2019
       dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, 
                     ScientificName, CommonName, Mean_Density, ReserveStatus, Reference) %>% 
       base::rbind(Counts, Benthic_Mean_Biomass %>% 
-                    dplyr::select(-Date, -Mean_Density, -Survey_Type) %>% 
+                    dplyr::select(-Date, -Mean_Density, -SE, -SD, -Survey_Type) %>% 
                     dplyr::mutate(Mean_Density = Mean_Biomass) %>% 
                     dplyr::select(-Mean_Biomass)) %>% 
       dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, 

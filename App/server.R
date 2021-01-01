@@ -7,18 +7,18 @@ server <- function(input, output, session) {
   }
   
   { # Species   ----
-    foundation_Sever(id = "kelp")
-    foundation_Sever(id = "p_urchin")
-    foundation_Sever(id = "r_urchin")
-    foundation_Sever(id = "r_abalone")
-    foundation_Sever(id = "lobsta")
-    foundation_Sever(id = "sheep")
-    foundation_Sever(id = "sunflower")
-    foundation_Sever(id = "giant")
+    foundation_Server(id = "kelp")
+    foundation_Server(id = "p_urchin")
+    foundation_Server(id = "r_urchin")
+    foundation_Server(id = "r_abalone")
+    foundation_Server(id = "lobsta")
+    foundation_Server(id = "sheep")
+    foundation_Server(id = "sunflower")
+    foundation_Server(id = "giant")
     
     # Invasives
-    foundation_Sever(id = "sargassum")
-    foundation_Sever(id = "undaria")
+    foundation_Server(id = "sargassum")
+    foundation_Server(id = "undaria")
     
     # Disease
     output$SSWD <- renderUI({tags$iframe(
@@ -42,6 +42,9 @@ server <- function(input, output, session) {
     # })
     species_guide_Server(id = "species")
   }
+  
+  
+  Taxa_Server(id = "species")
   
   { # Maps   ----
     
@@ -255,235 +258,20 @@ server <- function(input, output, session) {
   
   { # Variable Importance  ----
     
-    { # Reserve Model -----
-    Variable_Accuracy <- reactive({
-      if (input$radio_ISA_years == "All Years (Fewer Species)") {
-        RF_Importance_All %>% 
-          dplyr::arrange(desc(MeanDecreaseAccuracy)) %>%  
-          dplyr::mutate(CommonName1 = paste(CommonName, row_number())) %>% 
-          head(30) %>% 
-          droplevels()
-      } else {
-        RF_Importance_2005 %>% 
-          dplyr::arrange(desc(MeanDecreaseAccuracy)) %>%  
-          dplyr::mutate(CommonName1 = paste(CommonName, row_number())) %>% 
-          head(30) %>% 
-          droplevels()
-        
-      }
-    })
+    { # Random Forest Models ----
+      VI_Server(id = "reserve")
+      VI_Server(id = "island")
+    }
     
-    Variable_Gini <- reactive({
-      if (input$radio_ISA_years == "All Years (Fewer Species)") {
-        RF_Importance_All %>% 
-          dplyr::arrange(desc(MeanDecreaseGini)) %>%  
-          dplyr::mutate(CommonName1 = paste(CommonName, row_number()))  %>% 
-          head(30) %>% 
-          droplevels()
-      } else {
-        RF_Importance_2005 %>% 
-          dplyr::arrange(desc(MeanDecreaseGini)) %>%  
-          dplyr::mutate(CommonName1 = paste(CommonName, row_number()))  %>% 
-          head(30) %>% 
-          droplevels()
-        
-      }
-    })
-    
-    output$ISA_plot <- renderPlot({
-      
-      Accuracy <- 
-        ggplot(
-          Variable_Accuracy(), aes(x = MeanDecreaseAccuracy, color = Targeted,
-                                   y = reorder(CommonName1, MeanDecreaseAccuracy))) +
-        geom_point() +
-        geom_segment(
-          size = 1, 
-          aes(x = min(MeanDecreaseAccuracy) - .5, xend = MeanDecreaseAccuracy, 
-              y = CommonName1, yend = CommonName1)) +
-        labs(x = "Mean Decrease in % Accuracy", y = NULL, 
-             color = NULL, linetype = NULL) +
-        scale_x_continuous(expand = expansion(mult = c(0,.1)), 
-                           limits = c(min(Variable_Accuracy()$MeanDecreaseAccuracy) - .5, NA)) +
-        scale_color_manual(values = Target_Colors) +
-        theme_classic() +
-        theme(axis.text = element_text(size = 12),
-              axis.title = element_text(size = 12),
-              legend.text = element_text(size = 12))
-      
-      Gini <- ggplot(Variable_Gini(), aes(x = MeanDecreaseGini, color = Targeted, 
-                                          y = reorder(CommonName1, MeanDecreaseGini))) +
-        geom_point() +
-        geom_segment(size = 1,
-                     aes(x = min(MeanDecreaseGini) - .5, xend = MeanDecreaseGini,
-                         y = CommonName1, yend = CommonName1)) +
-        labs(x = "Mean Decrease in Gini Index", y = NULL, 
-             color = NULL, linetype = NULL) +
-        scale_x_continuous(expand = expansion(mult = c(0,.1)), 
-                           limits = c(min(Variable_Gini()$MeanDecreaseGini) - .5, NA)) +
-        scale_color_manual(values = Target_Colors) +
-        theme_classic() +
-        theme(axis.text = element_text(size = 12),
-              axis.title = element_text(size = 12),
-              legend.text = element_text(size = 12))
-      ggarrange(Accuracy, Gini, ncol = 2, align = "h", common.legend = TRUE, legend = "bottom")
-    })
-    
-    pdp_labels_all <- reactive({
-      RF_Importance_All %>% 
-        dplyr::filter(Common_Name == input$select_ISA_species_all)})
-    
-    
-    output$PDP_plot_all <- renderPlot({
-      do.call(
-        "partialPlot", 
-        list(x = RF_Reserve_Model_All, pred.data = as.data.frame(Mixed_All), 
-             x.var = pdp_labels_all()$Common_Name,
-             main = paste("Partial Dependence on", pdp_labels_all()$CommonName),
-             xlab = pdp_labels_all()$Data_Type))
-    })
-    
-    pdp_labels_2005 <- reactive({
-      RF_Importance_2005 %>% 
-        dplyr::filter(Common_Name == input$select_ISA_species_2005)})
-    
-    output$PDP_plot_2005 <- renderPlot({
-      do.call(
-        "partialPlot", 
-        list(x = RF_Reserve_Model_2005, pred.data = as.data.frame(Mixed_2005), 
-             x.var = pdp_labels_2005()$Common_Name,
-             main = paste("Partial Dependence on", pdp_labels_2005()$CommonName),
-             xlab = pdp_labels_2005()$Data_Type))
-     
-      # +
-        # labs(title = pdp_labels_2005()$CommonName,
-        #      x = pdp_labels_2005()$Data_Type, y = NULL, color = NULL) +
-        # theme_classic() +
-        # theme(plot.title = element_text(hjust = .5, size = 16),
-        #       axis.title = element_text(size = 14),
-        #       axis.text = element_text(size = 12))
-    })
+    { # Indicator Species Analysis   ----
       
     }
     
-    { # Island Model -----
-      
-      VI_Server(id = "Island")
-      # Variable_Accuracy_Isl <- reactive({
-      #   if (input$Data_VI_Isl_All == "All Years (Fewer Species)" & input$VI_Isl == "All Islands") {
-      #     RF_Importance_All %>% 
-      #       dplyr::arrange(desc(MeanDecreaseAccuracy_Isl)) %>%  
-      #       dplyr::mutate(CommonName1 = paste(CommonName, row_number()),
-      #                     CommonName1 = factor(CommonName1, levels = rev(CommonName1)),
-      #                     xvalue = MeanDecreaseAccuracy_Isl) %>% 
-      #       head(30) %>% 
-      #       droplevels()
-      #   } 
-      #   else if (input$Data_VI_Isl_All == "All Years (Fewer Species)") {
-      #     RF_Importance_All %>% 
-      #       dplyr::rename(xvalue = input$VI_Isl) %>% 
-      #       dplyr::arrange(desc(xvalue)) %>%  
-      #       dplyr::mutate(CommonName1 = paste(CommonName, row_number()),
-      #                     CommonName1 = factor(CommonName1, levels = rev(CommonName1))) %>% 
-      #       head(30) %>% 
-      #       droplevels()
-      #   } 
-      #   else {
-      #     RF_Importance_2005 %>% 
-      #       dplyr::arrange(desc(MeanDecreaseAccuracy_Isl)) %>%  
-      #       dplyr::mutate(CommonName1 = paste(CommonName, row_number())) %>% 
-      #       head(30) %>% 
-      #       droplevels()
-      #     
-      #   }
-      # })
-      # 
-      # Variable_Gini_Isl <- reactive({
-      #   if (input$Data_VI_Isl_All == "All Years (Fewer Species)") {
-      #     RF_Importance_All %>% 
-      #       dplyr::arrange(desc(MeanDecreaseGini_Isl)) %>%  
-      #       dplyr::mutate(CommonName1 = paste(CommonName, row_number()))  %>% 
-      #       head(30) %>% 
-      #       droplevels()
-      #   } else {
-      #     RF_Importance_2005 %>% 
-      #       dplyr::arrange(desc(MeanDecreaseGini_Isl)) %>%  
-      #       dplyr::mutate(CommonName1 = paste(CommonName, row_number()))  %>% 
-      #       head(30) %>% 
-      #       droplevels()
-      #     
-      #   }
-      # })
-      # 
-      # output$VI_Plot_Isl <- renderPlot({
-      #   
-      #   Accuracy <- 
-      #     ggplot(
-      #       Variable_Accuracy_Isl(), aes(x = xvalue, y = CommonName1, color = Targeted)) +
-      #     geom_point() +
-      #     geom_segment(
-      #       size = 1, 
-      #       aes(x = min(xvalue) - .5, xend = xvalue, 
-      #           y = CommonName1, yend = CommonName1)) +
-      #     labs(x = "Mean Decrease in % Accuracy", y = NULL, 
-      #          color = NULL, linetype = NULL) +
-      #     # scale_y_reverse(limits = rev(levels(Variable_Accuracy_Isl()$CommonName1))) +
-      #     scale_x_continuous(expand = expansion(mult = c(0,.1)), 
-      #                        limits = c(min(Variable_Accuracy_Isl()$xvalue) - .5, NA)) +
-      #     scale_color_manual(values = Target_Colors) +
-      #     theme_classic() +
-      #     theme(axis.text = element_text(size = 12),
-      #           axis.title = element_text(size = 12),
-      #           legend.text = element_text(size = 12))
-      #   
-      #   Gini <- ggplot(Variable_Gini_Isl(), aes(x = MeanDecreaseGini_Isl, color = Targeted, 
-      #                                       y = reorder(CommonName1, MeanDecreaseGini_Isl))) +
-      #     geom_point() +
-      #     geom_segment(size = 1,
-      #                  aes(x = min(MeanDecreaseGini_Isl) - .5, xend = MeanDecreaseGini_Isl,
-      #                      y = CommonName1, yend = CommonName1)) +
-      #     labs(x = "Mean Decrease in Gini Index", y = NULL, 
-      #          color = NULL, linetype = NULL) +
-      #     scale_x_continuous(expand = expansion(mult = c(0,.1)), 
-      #                        limits = c(min(Variable_Gini_Isl()$MeanDecreaseGini_Isl) - .5, NA)) +
-      #     scale_color_manual(values = Target_Colors) +
-      #     theme_classic() +
-      #     theme(axis.text = element_text(size = 12),
-      #           axis.title = element_text(size = 12),
-      #           legend.text = element_text(size = 12))
-      #   ggarrange(Accuracy, Gini, ncol = 2, align = "h", common.legend = TRUE, legend = "bottom")
-      # })
-      # 
-      # pdp_labels_Isl_all <- reactive({
-      #   RF_Importance_All %>% 
-      #     dplyr::filter(Common_Name == input$VI_Species_Isl_All)})
-      # 
-      # 
-      # output$PDP_Plot_Isl_All <- renderPlot({
-      #   do.call(
-      #     "partialPlot", 
-      #     list(x = RF_Island_Model_All, pred.data = as.data.frame(Mixed_All), 
-      #          x.var = pdp_labels_Isl_all()$Common_Name,
-      #          main = paste("Partial Dependence on", pdp_labels_Isl_all()$CommonName),
-      #          xlab = pdp_labels_Isl_all()$Data_Type))
-      # })
-      # 
-      # pdp_labels_Isl_2005 <- reactive({
-      #   RF_Importance_2005 %>% 
-      #     dplyr::filter(Common_Name == input$VI_Species_Isl_2005)})
-      # 
-      # output$PDP_Plot_Isl_2005 <- renderPlot({
-      #   do.call(
-      #     "partialPlot", 
-      #     list(x = RF_Island_Model_2005, pred.data = as.data.frame(Mixed_2005), 
-      #          x.var = pdp_labels_Isl_2005()$Common_Name,
-      #          main = paste("Partial Dependence on", pdp_labels_Isl_2005()$CommonName),
-      #          xlab = pdp_labels_Isl_2005()$Data_Type))
-      #   
-      # })
-      
-    }
-    
+  }
+  
+  { # Biomass and Density   ----
+    Time_Server(id = "biomass")
+    Time_Server(id = "density")
   }
  
 } 

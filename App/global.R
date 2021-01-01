@@ -15,6 +15,7 @@
   library(DT)
   library(pdp)
   library(randomForest)
+  # library(iml)
   # library(tidymodels)
   # library(rmarkdown)
   # library(zoo)
@@ -147,7 +148,8 @@ source('R/modules.R')
   Target_Colors <- c("Calculated Value" = "dodgerblue2", "Categorical" = "darkgoldenrod3",
                      "Targeted" = "mediumvioletred", "Non-targeted" = "mediumseagreen")
   
-  Protocols <- c("1 m² Quadrats" = "1m", 
+  Protocols <- c("Species List" = "species",
+                 "1 m² Quadrats" = "1m", 
                  "5 m² Quadrats" = "5m",  
                  "Band Transects" = "bands", 
                  "Random Point Contacts" = "rpcs",
@@ -157,8 +159,7 @@ source('R/modules.R')
                  "Visual Fish Transect" = "vft", 
                  "Fish Size Frequencies" = "fsf", 
                  "Video Taped Transects" = "vtt",
-                 "Temperature Loggers" = "temp",
-                 "Species List" = "species")
+                 "Temperature Loggers" = "temp")
 }
 
 { # Island and Site Information   -----
@@ -449,11 +450,11 @@ source('R/modules.R')
   RF_Importance_All <- readr::read_csv("Tidy_Data/Species_Importance_All.csv")
   RF_Importance_2005 <- readr::read_csv("Tidy_Data/Species_Importance_2005.csv")
   
-  rf_species_all <- c(as.character(RF_Importance_All$Common_Name))
-  names(rf_species_all) <- c(RF_Importance_All$CommonName)
   
-  rf_species_2005 <- c(as.character(RF_Importance_2005$Common_Name))
-  names(rf_species_2005) <- c(RF_Importance_2005$CommonName)
+}
+
+{ # Density Data
+  Benthic_Data <- readr::read_csv("Tidy_Data/Benthic_Data.csv")
 }
 
 { # NPS Tags   ------

@@ -7,15 +7,16 @@
       tags$hr(),
       fluidRow(
         column(
-          3, selectInput(inputId = ns("protocol_selector"),
-                  label = "Choose a Protocol:",
-                  choices = Protocols)
+          3, 
+          selectInput(inputId = ns("protocol_selector"),
+                      label = "Choose a Protocol:",
+                      choices = Protocols)
         ),
         column(
           3,
           radioButtons(inputId = ns("Overview_Practical"),
-                   label = "View:", inline = TRUE,
-                   choices = c("Overview", "Pratical Guide", "Data Sheet"))
+                       label = "View:", inline = TRUE,
+                       choices = c("Overview", "Pratical Guide", "Data Sheet"))
         )
       ),
       conditionalPanel(
@@ -25,16 +26,12 @@
             6, uiOutput(outputId = ns("text"))
           ),
           column(
-            6, tags$hr(),
-            imageOutput(outputId = ns("proto_pic1")),
-            tags$br(),
-            imageOutput(outputId = ns("proto_pic2")),
-            tags$br(),
-            imageOutput(outputId = ns("proto_pic3")),
-            tags$br(),
-            imageOutput(outputId = ns("proto_pic4")),
-            tags$br(),
-            imageOutput(outputId = ns("proto_pic5"))
+            6, 
+            tags$hr(), imageOutput(outputId = ns("proto_pic1")),
+            tags$br(), imageOutput(outputId = ns("proto_pic2")),
+            tags$br(), imageOutput(outputId = ns("proto_pic3")),
+            tags$br(), imageOutput(outputId = ns("proto_pic4")),
+            tags$br(), imageOutput(outputId = ns("proto_pic5"))
           )
         )
       ),
@@ -60,42 +57,24 @@
         filename_pic_3 <- reactive({glue::glue("www/Photos/Protocols/{input$protocol_selector} (3).jpg")})
         filename_pic_4 <- reactive({glue::glue("www/Photos/Protocols/{input$protocol_selector} (4).jpg")})
         filename_pic_5 <- reactive({glue::glue("www/Photos/Protocols/{input$protocol_selector} (5).jpg")})
+        filename_proto <- reactive({glue::glue("Handbook/Protocol_Guides/{input$protocol_selector}_protocol_guide.pdf")})
+        filename_data <- reactive({glue::glue("Handbook/Datasheets/{input$protocol_selector}.pdf")})
         
-        output$text <- renderUI(
-          includeMarkdown(path = filename_text()))
+        output$text <- renderUI(includeMarkdown(path = filename_text()))
         
-        output$proto_pic1 <- renderImage({
-          list(src = filename_pic_1(), width = 600, height = 400)
-        }, deleteFile = FALSE)
+        output$proto_pic1 <- renderImage({list(src = filename_pic_1(), width = 600, height = 400)}, deleteFile = FALSE)
         
-        output$proto_pic2 <- renderImage({
-          list(src = filename_pic_2(), width = 600, height = 400)
-        }, deleteFile = FALSE)
+        output$proto_pic2 <- renderImage({list(src = filename_pic_2(), width = 600, height = 400)}, deleteFile = FALSE)
         
-        output$proto_pic3 <- renderImage({
-          list(src = filename_pic_3(), width = 600, height = 400)
-        }, deleteFile = FALSE)
+        output$proto_pic3 <- renderImage({list(src = filename_pic_3(), width = 600, height = 400)}, deleteFile = FALSE)
         
-        output$proto_pic4 <- renderImage({
-          list(src = filename_pic_4(), width = 600, height = 400)
-        }, deleteFile = FALSE)
+        output$proto_pic4 <- renderImage({list(src = filename_pic_4(), width = 600, height = 400)}, deleteFile = FALSE)
         
-        output$proto_pic5 <- renderImage({
-          list(src = filename_pic_5(), width = 600, height = 400)
-        }, deleteFile = FALSE)
+        output$proto_pic5 <- renderImage({list(src = filename_pic_5(), width = 600, height = 400)}, deleteFile = FALSE)
         
-        output$protocol_guide <- renderUI({
-          tags$iframe(
-            style = "height:600px; width:100%; scrolling=yes",
-            src = glue::glue(
-              "Handbook/Protocol_Guides/{input$protocol_selector}_protocol_guide.pdf"))
-        })
+        output$protocol_guide <- renderUI({tags$iframe(style = "height:600px; width:100%; scrolling=yes", src = glue::glue(filename_proto()))})
         
-        output$data_sheet <- renderUI({
-          tags$iframe(
-            style = "height:600px; width:100%; scrolling=yes",
-            src = glue::glue(
-              "Handbook/Datasheets/{input$protocol_selector}.pdf"))
+        output$data_sheet <- renderUI({tags$iframe(style = "height:600px; width:100%; scrolling=yes", src = glue::glue(filename_data()))
         })
       }
     )
@@ -502,7 +481,7 @@
     )
   }
   
-  foundation_Sever <- function(id) {
+  foundation_Server <- function(id) {
     moduleServer(
       id,
       function(input, output, session) {
@@ -592,6 +571,120 @@
   
 }
 
+
+{ # Taxa Module  -----
+  Taxa_UI <- function(id, label = "taxa") {
+    ns <- NS(id)
+    tagList(
+      fluidRow(
+        column(
+          3,
+          radioButtons(inputId = ns("category"), label = "Choose a Category:", choices = c("Invertebrates", "Algae", "Fish"))
+        ),
+        column(
+          3, 
+          uiOutput(outputId = ns("species_ui"))
+        )
+      ),
+      
+      fluidRow(
+        column(4, imageOutput(outputId = ns("pic")), h5("Not all taxa currently have photos yet.")),
+        column(4, DTOutput(outputId = ns("taxonomy_table"))),
+        column(4, DTOutput(outputId = ns("meta_table")))
+      ), tags$hr()
+    )
+  }
+  
+  Taxa_Server <- function(id) {
+    moduleServer(
+      id,
+      function(input, output, session) {
+        
+        species_subset <- reactive({
+          Species_Info %>% 
+            dplyr::filter(Classification == input$category) %>% 
+            dplyr::arrange(CommonName)
+        })
+        
+        output$species_ui <- renderUI({
+          selectInput(inputId = session$ns("species"), label = "Select a Taxa:", choices = species_subset()$CommonName)
+        })
+        
+        Species_Code <- reactive({
+          Species_Info %>% 
+            dplyr::filter(CommonName == input$species) %>% 
+            dplyr::distinct(CommonName, .keep_all = TRUE)
+        })
+        
+        pic_filename <- reactive(glue::glue("www/Photos/Indicator_Species/{Species_Code()$Species}.jpg"))
+        
+        output$pic <- renderImage({list(src = pic_filename(), width = "100%", height = "100%")}, delete = FALSE)
+        
+        taxonomy_table_data <- reactive({
+          Species_Info %>%
+            dplyr::filter(Species == Species_Code()$Species) %>%
+            dplyr::select(Species, Kingdom, Phylum, Subphylum, Class, Order, Family, Genus, `Species (Used by KFM)`,
+                          `Currently Accepted Name`, `Authority (Accepted)`) %>%
+            tidyr::pivot_longer(-Species, names_to = "Category", values_to = "Information") %>%
+            dplyr::select(Category, Information)
+        }) 
+        
+        output$taxonomy_table <- renderDT({
+          datatable(
+            taxonomy_table_data(), rownames = FALSE,  
+            options = list(
+              searching = FALSE, lengthChange = FALSE, paging = FALSE,
+              ordering = FALSE, info = FALSE, 
+              initComplete = JS(
+                "function(settings, json) {",
+                "$(this.api().table().header()).css({'background-color': '#3c8dbc', 'color': '#fff'});",
+                "}"))) %>%
+            formatStyle(
+              names(taxonomy_table_data()),
+              color = "black",
+              backgroundColor = 'white'
+            )
+        })
+        
+        meta_table_data <- reactive({
+          Species_Info %>%
+            dplyr::filter(Species == Species_Code()$Species) %>%
+            dplyr::select(ScientificName, Trophic_Broad, Habitat_Broad, 
+                          Geographic_Range, Size_Range, ID_Short, Abundance,
+                          Commercial_Fishery, Recreational_Fishery) %>%
+            dplyr::rename(`Trophic Level` = Trophic_Broad, 
+                          Habitat = Habitat_Broad,
+                          Range = Geographic_Range, 
+                          `Size Range` = Size_Range, 
+                          Identification = ID_Short, 
+                          `Commercial Fishery` = Commercial_Fishery,
+                          `Recreational Fishery` = Recreational_Fishery) %>% 
+            tidyr::pivot_longer(-ScientificName, names_to = "Category", values_to = "Information") %>%
+            dplyr::select(Category, Information)
+        }) 
+        
+        output$meta_table <- renderDT({
+          datatable(
+            meta_table_data(), rownames = FALSE,  
+            options = list(
+              searching = FALSE, lengthChange = FALSE, paging = FALSE,
+              ordering = FALSE, info = FALSE, 
+              initComplete = JS(
+                "function(settings, json) {",
+                "$(this.api().table().header()).css({'background-color': '#3c8dbc', 'color': '#fff'});",
+                "}"))) %>%
+            formatStyle(
+              names(meta_table_data()),
+              color = "black",
+              backgroundColor = 'white'
+            )
+        })
+        
+      }
+    )
+  }
+}
+
 { # Variable Importance Module   -----
   
   VI_UI <- function(id){
@@ -599,7 +692,7 @@
     tagList(
       fluidRow(
         column(
-          4, includeMarkdown(path = "Text/Variable_Importance/island_importance.md")
+          4, uiOutput(outputId = ns("text")) 
         ),
         column(
           8,
@@ -607,53 +700,31 @@
             tags$hr(),
             column(
               3,
-              radioButtons(inputId = ns("Data_VI_Isl_All"),
+              radioButtons(inputId = ns("Data_VI"),
                            label = "Data Options:",
                            choices = c("All Years (Fewer Species)",
                                        "Years > 2004 (All Species)"))
             ),
             column(
-              3,
-              selectInput(inputId = ns("VI_Isl"),
-                          label = "Island Options:",
-                          choices = c("All Islands", Site_Info$IslandName))
-            ),
-            column(
               3, 
-              radioButtons(inputId = ns("VI_Plot_Type_Isl"),
+              radioButtons(inputId = ns("VI_Plot_Type"),
                            label = "Plot Options",
                            choices = c("Variable Importance", 
                                        "Partial Dependence"))
             ),
             column(
-              3,
-              conditionalPanel(
-                condition = "input.VI_Plot_Type_Isl == 'Partial Dependence' 
-                                 & input.Data_VI_Isl_All == 'All Years (Fewer Species)'", ns = ns,
-                selectInput(inputId = ns("VI_Species_Isl_All"),
-                            label = "Choose a species",
-                            choices = rf_species_all)),
-              conditionalPanel(
-                condition = "input.VI_Plot_Type_Isl == 'Partial Dependence' 
-                                 & input.Data_VI_Isl_All == 'Years > 2004 (All Species)'", ns = ns,
-                selectInput(inputId = ns("VI_Species_Isl_2005"),
-                            label = "Choose a species",
-                            choices = rf_species_2005))
+              3, uiOutput(outputId = ns("VI_Isl_Options"))
             )
           ),
-          fluidRow(
+          
             conditionalPanel(
-              condition = "input.VI_Plot_Type_Isl == 'Variable Importance'", ns = ns,
-              plotOutput(outputId = ns("VI_Plot_Isl"), height = 600)),
+              condition = "input.VI_Plot_Type == 'Variable Importance'", ns = ns,
+              fluidRow(plotOutput(outputId = ns("VI_Plot"), height = 600))),
             conditionalPanel(
-              condition = "input.VI_Plot_Type_Isl == 'Partial Dependence' 
-                                   & input.Data_VI_Isl_All == 'All Years (Fewer Species)'", ns = ns,
-              plotOutput(outputId = ns("PDP_Plot_Isl_All"), height = 350)),
-            conditionalPanel(
-              condition = "input.VI_Plot_Type_Isl == 'Partial Dependence' 
-                                   & input.Data_VI_Isl_All == 'Years > 2004 (All Species)'", ns = ns,
-              plotOutput(outputId = ns("PDP_Plot_Isl_2005"), height = 350))
-          )
+              condition = "input.VI_Plot_Type == 'Partial Dependence'", ns = ns,
+              fluidRow(h5("Ignore error message and be patient, these take a while to plot")),
+              fluidRow(plotOutput(outputId = ns("PD_Plot"), height = 350)))
+          
         )
       )
     )
@@ -664,8 +735,79 @@
       id,
       function(input, output, session) {
         
-        Variable_Accuracy_Isl <- reactive({
-          if (input$Data_VI_Isl_All == "All Years (Fewer Species)" & input$VI_Isl == "All Islands") {
+        filename_text <- reactive(glue::glue("Text/Variable_Importance/{id}_importance.md"))
+        
+        output$text <- renderUI({
+          if (input$VI_Plot_Type == 'Variable Importance')
+          includeMarkdown(path = filename_text())
+          else {includeMarkdown(path = "Text/Variable_Importance/pd_plot.md")}
+          })
+        
+        rf_species <- reactive({
+          if (id == 'reserve' & input$Data_VI == 'All Years (Fewer Species)') {
+            RF_Importance <- RF_Importance_All %>% 
+              arrange(desc(MeanDecreaseAccuracy))
+            a <- c(as.character(RF_Importance$Common_Name))
+            names(a) <- c(RF_Importance$CommonName)
+            return(a)
+          } 
+          else if (id == 'reserve' & input$Data_VI == 'Years > 2004 (All Species)') {
+            RF_Importance <- RF_Importance_2005 %>% 
+              arrange(desc(MeanDecreaseAccuracy))
+            a <- c(as.character(RF_Importance$Common_Name))
+            names(a) <- c(RF_Importance$CommonName)
+            return(a)
+          }
+          else if (id == 'island' & input$Data_VI == 'All Years (Fewer Species)') {
+            RF_Importance <- RF_Importance_All %>% 
+              arrange(desc(MeanDecreaseAccuracy_Isl))
+            a <- c(as.character(RF_Importance$Common_Name))
+            names(a) <- c(RF_Importance$CommonName)
+            return(a)
+          } 
+          else if (id == 'island' & input$Data_VI == 'Years > 2004 (All Species)') {
+            RF_Importance <- RF_Importance_2005 %>% 
+              arrange(desc(MeanDecreaseAccuracy_Isl))
+            a <- c(as.character(RF_Importance$Common_Name))
+            names(a) <- c(RF_Importance$CommonName)
+            return(a)
+          }
+        })
+        
+        output$VI_Isl_Options <- renderUI({
+          if (id == 'island' & input$VI_Plot_Type == 'Variable Importance') {
+           selectInput(inputId = session$ns("VI_Isl"),
+                      label = "Island Options:",
+                      choices = c("All Islands", Site_Info$IslandName)) 
+          } 
+          else if (input$VI_Plot_Type == 'Partial Dependence') {
+            selectInput(inputId = session$ns("VI_Species_Input"),
+                        label = "Choose a species",
+                        choices = rf_species()) 
+            }
+          
+        })
+        
+        Variable_Accuracy <- reactive({
+          if (id == 'reserve' & input$Data_VI == "All Years (Fewer Species)") {
+            RF_Importance_All %>% 
+              dplyr::arrange(desc(MeanDecreaseAccuracy)) %>%  
+              dplyr::mutate(CommonName1 = paste(CommonName, row_number()),
+                            CommonName1 = factor(CommonName1, levels = rev(CommonName1)),
+                            xvalue = MeanDecreaseAccuracy) %>% 
+              head(30) %>% 
+              droplevels()
+          } 
+          else  if (id == 'reserve' & input$Data_VI == "Years > 2004 (All Species)") {
+            RF_Importance_2005 %>% 
+              dplyr::arrange(desc(MeanDecreaseAccuracy)) %>%  
+              dplyr::mutate(CommonName1 = paste(CommonName, row_number()),
+                            CommonName1 = factor(CommonName1, levels = rev(CommonName1)),
+                            xvalue = MeanDecreaseAccuracy) %>% 
+              head(30) %>% 
+              droplevels()
+          } 
+          else  if (id == 'island' & input$Data_VI == "All Years (Fewer Species)" & input$VI_Isl == "All Islands") {
             RF_Importance_All %>% 
               dplyr::arrange(desc(MeanDecreaseAccuracy_Isl)) %>%  
               dplyr::mutate(CommonName1 = paste(CommonName, row_number()),
@@ -674,7 +816,7 @@
               head(30) %>% 
               droplevels()
           } 
-          else if (input$Data_VI_Isl_All == "All Years (Fewer Species)") {
+          else if (id == 'island' & input$Data_VI == "All Years (Fewer Species)" & input$VI_Isl != "All Islands") {
             RF_Importance_All %>% 
               dplyr::rename(xvalue = input$VI_Isl) %>% 
               dplyr::arrange(desc(xvalue)) %>%  
@@ -683,18 +825,29 @@
               head(30) %>% 
               droplevels()
           } 
-          else {
-            RF_Importance_2005 %>% 
+          else if (id == 'island' & input$Data_VI == "Years > 2004 (All Species)" & input$VI_Isl == "All Islands") {
+            RF_Importance_2005  %>% 
               dplyr::arrange(desc(MeanDecreaseAccuracy_Isl)) %>%  
-              dplyr::mutate(CommonName1 = paste(CommonName, row_number())) %>% 
+              dplyr::mutate(CommonName1 = paste(CommonName, row_number()),
+                            CommonName1 = factor(CommonName1, levels = rev(CommonName1)),
+                            xvalue = MeanDecreaseAccuracy_Isl) %>% 
               head(30) %>% 
               droplevels()
-            
           }
+          else if (id == 'island' & input$Data_VI == "Years > 2004 (All Species)" & input$VI_Isl != "All Islands") {
+            RF_Importance_All %>% 
+              dplyr::rename(xvalue = input$VI_Isl) %>% 
+              dplyr::arrange(desc(xvalue)) %>%  
+              dplyr::mutate(CommonName1 = paste(CommonName, row_number()),
+                            CommonName1 = factor(CommonName1, levels = rev(CommonName1))) %>% 
+              head(30) %>% 
+              droplevels()
+          } 
+          
         })
         
-        Variable_Gini_Isl <- reactive({
-          if (input$Data_VI_Isl_All == "All Years (Fewer Species)") {
+        Variable_Gini <- reactive({
+          if (input$Data_VI == "All Years (Fewer Species)") {
             RF_Importance_All %>% 
               dplyr::arrange(desc(MeanDecreaseGini_Isl)) %>%  
               dplyr::mutate(CommonName1 = paste(CommonName, row_number()))  %>% 
@@ -706,15 +859,14 @@
               dplyr::mutate(CommonName1 = paste(CommonName, row_number()))  %>% 
               head(30) %>% 
               droplevels()
-            
           }
         })
         
-        output$VI_Plot_Isl <- renderPlot({
+        output$VI_Plot <- renderPlot({
           
           Accuracy <- 
             ggplot(
-              Variable_Accuracy_Isl(), aes(x = xvalue, y = CommonName1, color = Targeted)) +
+              Variable_Accuracy(), aes(x = xvalue, y = CommonName1, color = Targeted)) +
             geom_point() +
             geom_segment(
               size = 1, 
@@ -723,14 +875,14 @@
             labs(x = "Mean Decrease in % Accuracy", y = NULL, 
                  color = NULL, linetype = NULL) +
             scale_x_continuous(expand = expansion(mult = c(0,.1)), 
-                               limits = c(min(Variable_Accuracy_Isl()$xvalue) - .5, NA)) +
+                               limits = c(min(Variable_Accuracy()$xvalue) - .5, NA)) +
             scale_color_manual(values = Target_Colors) +
             theme_classic() +
             theme(axis.text = element_text(size = 12),
                   axis.title = element_text(size = 12),
                   legend.text = element_text(size = 12))
           
-          Gini <- ggplot(Variable_Gini_Isl(), aes(x = MeanDecreaseGini_Isl, color = Targeted, 
+          Gini <- ggplot(Variable_Gini(), aes(x = MeanDecreaseGini_Isl, color = Targeted, 
                                                   y = reorder(CommonName1, MeanDecreaseGini_Isl))) +
             geom_point() +
             geom_segment(size = 1,
@@ -739,7 +891,7 @@
             labs(x = "Mean Decrease in Gini Index", y = NULL, 
                  color = NULL, linetype = NULL) +
             scale_x_continuous(expand = expansion(mult = c(0,.1)), 
-                               limits = c(min(Variable_Gini_Isl()$MeanDecreaseGini_Isl) - .5, NA)) +
+                               limits = c(min(Variable_Gini()$MeanDecreaseGini_Isl) - .5, NA)) +
             scale_color_manual(values = Target_Colors) +
             theme_classic() +
             theme(axis.text = element_text(size = 12),
@@ -748,33 +900,37 @@
           ggarrange(Accuracy, Gini, ncol = 2, align = "h", common.legend = TRUE, legend = "bottom")
         })
         
-        pdp_labels_Isl_all <- reactive({
-          RF_Importance_All %>% 
-            dplyr::filter(Common_Name == input$VI_Species_Isl_All)})
+        pdp_labels <- reactive({
+          if (input$Data_VI == 'All Years (Fewer Species)') {
+            RF_Importance_All %>% 
+              dplyr::filter(Common_Name == input$VI_Species_Input)
+          } 
+          else if (input$Data_VI == 'Years > 2004 (All Species)') {
+            RF_Importance_2005 %>% 
+              dplyr::filter(Common_Name == input$VI_Species_Input)
+          }
+        })
         
-        
-        output$PDP_Plot_Isl_All <- renderPlot({
-          do.call(
+        output$PD_Plot <- renderPlot({
+          if (input$Data_VI == 'All Years (Fewer Species)') {
+            do.call(
             "partialPlot", 
             list(x = RF_Island_Model_All, pred.data = as.data.frame(Mixed_All), 
-                 x.var = pdp_labels_Isl_all()$Common_Name,
-                 main = paste("Partial Dependence on", pdp_labels_Isl_all()$CommonName),
-                 xlab = pdp_labels_Isl_all()$Data_Type))
-        })
-        
-        pdp_labels_Isl_2005 <- reactive({
-          RF_Importance_2005 %>% 
-            dplyr::filter(Common_Name == input$VI_Species_Isl_2005)})
-        
-        output$PDP_Plot_Isl_2005 <- renderPlot({
-          do.call(
-            "partialPlot", 
-            list(x = RF_Island_Model_2005, pred.data = as.data.frame(Mixed_2005), 
-                 x.var = pdp_labels_Isl_2005()$Common_Name,
-                 main = paste("Partial Dependence on", pdp_labels_Isl_2005()$CommonName),
-                 xlab = pdp_labels_Isl_2005()$Data_Type))
+                 x.var = pdp_labels()$Common_Name,
+                 main = paste("Partial Dependence on", pdp_labels()$CommonName),
+                 xlab = pdp_labels()$Data_Type))
+          } 
+          else if (input$Data_VI == 'Years > 2004 (All Species)') {
+            do.call(
+              "partialPlot", 
+              list(x = RF_Island_Model_2005, pred.data = as.data.frame(Mixed_2005), 
+                   x.var = pdp_labels()$Common_Name,
+                   main = paste("Partial Dependence on", pdp_labels()$CommonName),
+                   xlab = pdp_labels()$Data_Type))
+          }
           
         })
+        
       }
     )
   }
@@ -783,14 +939,147 @@
 
 { # Time Series Module   -----
   
-  # Time_UI <- function(id){
-  #   ns <- NS(id)
-  #   tagList(
-  #     
-  #   )
-  # }
-  # 
-  # Time
+  Time_UI <- function(id, label = "time") {
+    ns <- NS(id)
+    tagList(
+      fluidRow(
+        column(
+          4,
+          uiOutput(outputId = ns('text'))
+        ),
+        column(
+          8,
+          fluidRow(
+            column(
+              3,
+              radioButtons(inputId = ns("Data_Options"),
+                           label = "Choose a Data Summary:",
+                           choices = c("All Sites", "Original 16 Sites", "MPA Reference Sites", "Individual Site"))
+            ),
+            column(
+              2,
+              radioButtons(inputId = ns("taxa"), label = "Choose a Category:", choices = c('Invertebrates', 'Algae', 'Fish'))
+            ),
+            column(
+              3,
+              selectInput(inputId = ns("species"), label = "Choose a Species:", choices = Benthic_Data$CommonName)
+            ),
+            column(
+              2,
+              radioButtons(inputId = ns("line"), label = "Line Type:", choices = c('Smooth', 'Sharp'))
+            ),
+            column(
+              2,
+              radioButtons(inputId = ns("axis"), label = "Y Scale:", choices = c('Fixed', 'Free'))
+            )
+          ),
+          fluidRow(
+            plotOutput(outputId = ns("time_plot"))
+          )
+        )
+      ),
+      tags$hr(),
+      fluidRow(
+        column(4, imageOutput(outputId = ns("pic")), h5("Not all taxa currently have photos yet.")),
+        column(4, DTOutput(outputId = ns("taxonomy_table"))),
+        column(4, DTOutput(outputId = ns("meta_table")))
+      ), 
+      tags$hr()  
+    )
+  }
+  
+  Time_Server <- function(id) {
+    moduleServer(
+      id,
+      function(input, output, session) {
+        
+        filename_text <- reactive(glue::glue("Text/{id}.md"))
+        
+        output$text <- renderUI(includeMarkdown(path = filename_text()))
+        
+        data <- reactive({
+          Benthic_Data %>% 
+            dplyr::filter(CommonName == input$species)
+        })
+        
+        output$time_plot <- renderPlot({
+          ggplot2::ggplot(
+            data = data(), aes(x = Date, y = Mean_Biomass, color = ReserveStatus)) + 
+            geom_smooth()
+        })
+        
+        Species_Code <- reactive({
+          Species_Info %>% 
+            dplyr::filter(CommonName == input$species) %>% 
+            dplyr::distinct(CommonName, .keep_all = TRUE)
+        })
+        
+        pic_filename <- reactive(glue::glue("www/Photos/Indicator_Species/{Species_Code()$Species}.jpg"))
+        
+        output$pic <- renderImage({list(src = pic_filename(), width = "100%", height = "100%")}, delete = FALSE)
+        
+        taxonomy_table_data <- reactive({
+          Species_Info %>%
+            dplyr::filter(Species == Species_Code()$Species) %>%
+            dplyr::select(Species, Kingdom, Phylum, Subphylum, Class, Order, Family, Genus, `Species (Used by KFM)`,
+                          `Currently Accepted Name`, `Authority (Accepted)`) %>%
+            tidyr::pivot_longer(-Species, names_to = "Category", values_to = "Information") %>%
+            dplyr::select(Category, Information)
+        }) 
+        
+        output$taxonomy_table <- renderDT({
+          datatable(
+            taxonomy_table_data(), rownames = FALSE,  
+            options = list(
+              searching = FALSE, lengthChange = FALSE, paging = FALSE,
+              ordering = FALSE, info = FALSE, 
+              initComplete = JS(
+                "function(settings, json) {",
+                "$(this.api().table().header()).css({'background-color': '#3c8dbc', 'color': '#fff'});",
+                "}"))) %>%
+            formatStyle(
+              names(taxonomy_table_data()),
+              color = "black",
+              backgroundColor = 'white'
+            )
+        })
+        
+        meta_table_data <- reactive({
+          Species_Info %>%
+            dplyr::filter(Species == Species_Code()$Species) %>%
+            dplyr::select(ScientificName, Trophic_Broad, Habitat_Broad, 
+                          Geographic_Range, Size_Range, ID_Short, Abundance,
+                          Commercial_Fishery, Recreational_Fishery) %>%
+            dplyr::rename(`Trophic Level` = Trophic_Broad, 
+                          Habitat = Habitat_Broad,
+                          Range = Geographic_Range, 
+                          `Size Range` = Size_Range, 
+                          Identification = ID_Short, 
+                          `Commercial Fishery` = Commercial_Fishery,
+                          `Recreational Fishery` = Recreational_Fishery) %>% 
+            tidyr::pivot_longer(-ScientificName, names_to = "Category", values_to = "Information") %>%
+            dplyr::select(Category, Information)
+        }) 
+        
+        output$meta_table <- renderDT({
+          datatable(
+            meta_table_data(), rownames = FALSE,  
+            options = list(
+              searching = FALSE, lengthChange = FALSE, paging = FALSE,
+              ordering = FALSE, info = FALSE, 
+              initComplete = JS(
+                "function(settings, json) {",
+                "$(this.api().table().header()).css({'background-color': '#3c8dbc', 'color': '#fff'});",
+                "}"))) %>%
+            formatStyle(
+              names(meta_table_data()),
+              color = "black",
+              backgroundColor = 'white'
+            )
+        })
+      }
+    )
+  }
   
 }
 
