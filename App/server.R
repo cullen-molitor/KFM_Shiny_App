@@ -46,6 +46,7 @@ server <- function(input, output, session) {
   
   Taxa_Server(id = "species")
   
+  
   { # Maps   ----
     
     { # .... Leaflet Maps     ----
