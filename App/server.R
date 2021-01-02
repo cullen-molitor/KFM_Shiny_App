@@ -263,7 +263,6 @@ server <- function(input, output, session) {
       VI_Server(id = "island")
     }
     
-    
     { # Indicator Species Analysis   ----
       
     }
