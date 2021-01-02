@@ -703,7 +703,9 @@ ui <- dashboardPage(
       '.tabbable>.nav>li>a{background-color: #3c8dbc;  color:white}',
       '.tabbable>.nav>li[class=active]>a{background-color: lightslategray; color:white}',
       ".main-header {position: fixed; width:100%;}",
-      ".content {margin-top: 50px;}")))
+      ".content {margin-top: 50px;}",
+      ".shiny-output-error { visibility: hidden; }",
+      ".shiny-output-error:before { visibility: hidden; }")))
   )
 )  
 # End UI   ----

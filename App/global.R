@@ -453,8 +453,11 @@ source('R/modules.R')
   
 }
 
-{ # Density Data
-  Benthic_Data <- readr::read_csv("Tidy_Data/Benthic_Data.csv")
+{ # Density and Biomass Data    ----
+  Benthic_Density <- readr::read_csv("Tidy_Data/Benthic_Density.csv")
+  Benthic_Biomass <- readr::read_csv("Tidy_Data/Benthic_Biomass.csv") %>% 
+    dplyr::mutate(CommonName = gsub("giant kelp", "giant kelp, adult (>1m)", CommonName),
+                  CommonName = gsub("Benthic_Biomass_Total", "total benthic biomass", CommonName))
 }
 
 { # NPS Tags   ------

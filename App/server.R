@@ -41,10 +41,9 @@ server <- function(input, output, session) {
     #   src = "Handbook/Species_Guides/species_species_guide.pdf")
     # })
     species_guide_Server(id = "species")
+    
+    Taxa_Server(id = "species")
   }
-  
-  
-  Taxa_Server(id = "species")
   
   { # Maps   ----
     
@@ -262,7 +261,6 @@ server <- function(input, output, session) {
       VI_Server(id = "reserve")
       VI_Server(id = "island")
     }
-    
     
     { # Indicator Species Analysis   ----
       

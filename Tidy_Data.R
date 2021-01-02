@@ -163,7 +163,7 @@ Export_END_Year <- 2019
                        Mean_Density = base::round(Total_Count / Area_Surveyed, 4), 
                        SD = base::round(stats::sd(Count), 4),
                        SE = base::round(SD / base::sqrt(Area_Surveyed), 4),
-                       Survey_Type = "One_Meter") %>% 
+                       Survey_Type = "1 m² quads") %>% 
       dplyr::ungroup() %>%  
       dplyr::distinct(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, ScientificName, SurveyYear, 
                       Total_Count, Mean_Density, SD, SE, Area_Surveyed, .keep_all = TRUE)  %>% 
@@ -216,7 +216,7 @@ Export_END_Year <- 2019
                        Mean_Density = base::round(Total_Count / Area_Surveyed, 4), 
                        SD = base::round(stats::sd(Count), 4),
                        SE = base::round(SD / base::sqrt(Area_Surveyed), 4),
-                       Survey_Type = "Five_Meter") %>% 
+                       Survey_Type = "5 m² quads") %>% 
       dplyr::ungroup() %>%
       dplyr::distinct(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, CommonName,
                       ScientificName, SurveyYear, Total_Count, Mean_Density, SD, SE, Area_Surveyed, .keep_all = TRUE)  %>% 
@@ -254,7 +254,7 @@ Export_END_Year <- 2019
                        Mean_Density = base::round(Total_Count / Area_Surveyed, 4), 
                        SD = base::round(stats::sd(Count), 4),
                        SE = base::round(SD / base::sqrt(Area_Surveyed), 4),
-                       Survey_Type = "Bands") %>% 
+                       Survey_Type = "bands transects") %>% 
       dplyr::ungroup() %>% 
       dplyr::distinct(IslandCode, IslandName, SiteCode, SiteName, ScientificName,
                       SurveyYear,  Mean_Density, ReserveStatus, Reference, .keep_all = TRUE) %>%
@@ -262,6 +262,23 @@ Export_END_Year <- 2019
                     Species, ScientificName, CommonName, Mean_Density, SD, SE, 
                     Area_Surveyed, MeanDepth, Survey_Type, ReserveStatus, Reference) 
     
+  }
+  
+  { # Benthic Density   ----
+    Benthic_Density <- base::rbind(One_M_Density, Five_M_Density, Bands_Density) 
+    
+    Benthic_Density_CSV <- Benthic_Density  %>%
+      dplyr::mutate(
+        ReserveStatus = case_when(
+          SurveyYear < 2003 & SiteCode == "LC" ~ "Inside",
+          SurveyYear < 2003 & SiteCode == "CC" ~ "Inside",
+          SurveyYear < 2003 ~ "Outside",
+          TRUE ~ ReserveStatus)) %>% 
+      dplyr::left_join(
+        Site_Info %>% 
+          dplyr::select(SiteName, ReserveYear)
+      ) %>%  
+      readr::write_csv("App/Tidy_Data/Benthic_Density.csv")
   }
   
 }
@@ -387,9 +404,6 @@ Export_END_Year <- 2019
 { # Diversity  ----
   
   { # Shannon's Index   ---- 
-    Benthic_Density <- base::rbind(One_M_Density, Five_M_Density, Bands_Density) 
-    # %>% 
-      # readr::write_csv("App/Tidy_Data/Benthic_Density.csv") 
     
     Benthic_Counts <- Benthic_Density %>% 
       dplyr::filter(!CommonName %in% c(
@@ -589,7 +603,7 @@ Export_END_Year <- 2019
     Benthic_Biomass <- Benthic_Density %>% 
       dplyr::filter(CommonName %in% unique(Benthic_Sizes$CommonName)) %>%
       dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, ScientificName, CommonName,        
-                    Mean_Density, SE, SD, Survey_Type, ReserveStatus, Reference) %>%
+                    Mean_Density, Survey_Type, ReserveStatus, Reference) %>%
       dplyr::full_join(Benthic_Sizes) %>%
       dplyr::filter(!ScientificName %in% c(
         "Haliotis assimilis",
@@ -608,10 +622,15 @@ Export_END_Year <- 2019
           Biomass > 0 & Mean_Density == 0 ~ n()/2000,
           Biomass > 0 & is.na(Mean_Density) ~ n()/2000,
           Biomass == 0 & is.na(Mean_Density) ~ 0,
-          TRUE ~ Mean_Density)) %>% 
+          TRUE ~ Mean_Density),
+        ReserveStatus = case_when(
+          SurveyYear < 2003 & SiteCode == "LC" ~ "Inside",
+          SurveyYear < 2003 & SiteCode == "CC" ~ "Inside",
+          SurveyYear < 2003 ~ "Outside",
+          TRUE ~ ReserveStatus)) %>% 
       dplyr::ungroup() %>% 
       dplyr::group_by(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear,
-                      ScientificName, CommonName, Mean_Density, SE, SD, Survey_Type, ReserveStatus, Reference) %>% 
+                      ScientificName, CommonName, Mean_Density, Survey_Type, ReserveStatus, Reference) %>% 
       dplyr::summarise(Mean_Biomass = sum(1/n() * Biomass * Mean_Density)) %>% 
       dplyr::ungroup() 
     
@@ -633,7 +652,7 @@ Export_END_Year <- 2019
           TRUE ~ Mean_Biomass)) %>% 
       dplyr::mutate(Date = base::as.Date(base::ISOdate(SurveyYear, 7, 1))) %>%
       dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName,
-                    SurveyYear, Date, ScientificName, CommonName, Mean_Density, SE, SD,
+                    SurveyYear, Date, ScientificName, CommonName, Mean_Density,
                     Mean_Biomass, Survey_Type, ReserveStatus, Reference)
     
     Benthic_total_Biomass <- Benthic_Mean_Biomass %>% 
@@ -642,11 +661,18 @@ Export_END_Year <- 2019
       dplyr::summarise(Mean_Biomass = sum(Mean_Biomass, na.rm = TRUE)) %>% 
       dplyr::mutate(ScientificName = "Benthic_Biomass_Total",
                     CommonName = "Benthic_Biomass_Total",
-                    Mean_Density = NA, Survey_Type = NA, SE = NA, SD = NA) %>% 
+                    Mean_Density = NA, Survey_Type = NA) %>% 
       dplyr::ungroup()
     
-    Benthic_Mean_Biomass <- rbind(Benthic_Mean_Biomass, Benthic_total_Biomass) %>% 
-      readr::write_csv("App/Tidy_Data/Benthic_Data.csv")
+    Benthic_Mean_Biomass <- Benthic_Mean_Biomass %>% 
+      rbind(Benthic_total_Biomass) 
+    
+    Benthic_Mean_Biomass_CSV <- Benthic_Mean_Biomass %>% 
+      dplyr::left_join(
+        Site_Info %>% 
+          dplyr::select(SiteName, ReserveYear)
+      ) %>% 
+      readr::write_csv("App/Tidy_Data/Benthic_Biomass.csv")
   }
   
   { # Fish Density for Biomass   ----
@@ -749,7 +775,12 @@ Export_END_Year <- 2019
         Count = case_when(
           Biomass > 0 & is.na(Count) ~ as.double(dplyr::n()),
           Biomass == 0 & is.na(Count) ~ 0,
-          TRUE ~ Count)) %>%
+          TRUE ~ Count),
+        ReserveStatus = case_when(
+          SurveyYear < 2003 & SiteCode == "LC" ~ "Inside",
+          SurveyYear < 2003 & SiteCode == "CC" ~ "Inside",
+          SurveyYear < 2003 ~ "Outside",
+          TRUE ~ ReserveStatus)) %>%
       dplyr::ungroup() %>%
       dplyr::group_by(SiteNumber, IslandCode, SiteCode,  IslandName, SiteName, SurveyYear, 
                       ScientificName, CommonName, Count, ReserveStatus, Reference) %>% 
