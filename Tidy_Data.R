@@ -40,11 +40,11 @@ Export_END_Year <- 2019
   
   Species_Info <- readr::read_csv("App/Meta_Data/Species_Complete.csv")
   
+  Site_Info <- readr::read_csv("App/Meta_Data/Site_Info.csv")
+  
   Mixed_Data_xRef_Biomass <- readr::read_csv("App/Meta_Data/Mixed_Data_xref_Fish_Biomass.csv")
   
   Mixed_Data_xRef_Density <- readr::read_csv("App/Meta_Data/Mixed_Data_xref_Fish_Density.csv")
-  
-  Site_Info <- readr::read_csv("App/Meta_Data/Site_Info.csv")
   
   Fish_Biomass_Species <- c(
     "Caulolatilus princeps", "ocean whitefish", "ocean_whitefish",
@@ -126,7 +126,7 @@ Export_END_Year <- 2019
   
 }
 
-{ # Benthic Density   ----
+{ # Density   ----
   
   { # 1 m Density     ----
     One_M_Density <- readr::read_csv(
@@ -266,26 +266,9 @@ Export_END_Year <- 2019
   
   { # Benthic Density   ----
     Benthic_Density <- base::rbind(One_M_Density, Five_M_Density, Bands_Density) 
-    
-    Benthic_Density_CSV <- Benthic_Density  %>%
-      dplyr::mutate(
-        ReserveStatus = case_when(
-          SurveyYear < 2003 & SiteCode == "LC" ~ "Inside",
-          SurveyYear < 2003 & SiteCode == "CC" ~ "Inside",
-          SurveyYear < 2003 ~ "Outside",
-          TRUE ~ ReserveStatus)) %>% 
-      dplyr::left_join(
-        Site_Info %>% 
-          dplyr::select(SiteName, ReserveYear)
-      ) %>%  
-      readr::write_csv("App/Tidy_Data/Benthic_Density.csv")
   }
   
-}
-
-{ # Fish Density   ----
-  
-  { # RDFC  ----
+  { # RDFC    ----
     RDFC_Density <- 
       readr::read_csv(
         glue("Raw_Data/KFM_RovingDiverFishCount_RawData_1982-{Export_END_Year}.txt"),
@@ -318,12 +301,13 @@ Export_END_Year <- 2019
                       ScientificName, CommonName, ReserveStatus, Reference) %>%
       dplyr::summarise(Count = mean(Count, na.rm = TRUE)) %>% 
       dplyr::mutate(Count = ifelse(Count > 0 & Count < 1, 1, Count)) %>% 
-      dplyr::ungroup() %>% 
-      readr::write_csv("App/Tidy_Data/RDFC_Count.csv")
+      dplyr::ungroup() 
+    # %>% 
+      # readr::write_csv("App/Tidy_Data/RDFC_Count.csv")
     
   }
   
-  { # VFT ----
+  { # VFT   ----
     VFT_Density <- 
       readr::read_csv(
         glue("Raw_Data/KFM_VisualFishTransect_RawData_1985-{Export_END_Year}.txt"),
@@ -344,13 +328,74 @@ Export_END_Year <- 2019
       dplyr::select(-T3, -T4) %>%
       tidyr::pivot_longer(cols = c(T1, T2), values_to = "Count", names_to = "Transect_Number") %>%
       dplyr::ungroup() %>% 
-      dplyr::group_by(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, 
+      dplyr::group_by(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, Date,
                       CommonName, ScientificName, ReserveStatus, Reference, ReserveYear) %>%
-      dplyr::summarise(Mean_Density = round(sum(Count, na.rm = TRUE) / 600, 4)) %>% 
+      dplyr::summarise(Mean_Density = round(sum(Count, na.rm = TRUE) / 600, 4))  %>% 
       dplyr::ungroup() %>%  
-      dplyr::distinct(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, 
-                      CommonName, ScientificName, Mean_Density, ReserveStatus, Reference) %>%
-      readr::write_csv("App/Tidy_Data/VFT_Density.csv") 
+      dplyr::distinct(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, Date,
+                      CommonName, ScientificName, Mean_Density, ReserveStatus, Reference) 
+    # %>%
+      # readr::write_csv("App/Tidy_Data/VFT_Density.csv") 
+  }
+  
+  { # All Density    ----
+      
+    RDFC_Density_CSV <- RDFC_Density %>% 
+      dplyr::select(-ScientificName) %>%
+      tidyr::pivot_wider(names_from = CommonName, values_from = Count, values_fill = 0) %>%
+      tidyr::pivot_longer(cols = 10:161, names_to = "CommonName", values_to = "Count") %>%
+      dplyr::distinct(.keep_all = TRUE) %>% 
+      dplyr::left_join(
+        Species_Info %>%
+          dplyr::select(ScientificName, CommonName) %>%
+          dplyr::distinct()) %>%
+      dplyr::mutate(Survey_Type = "RDFC", 
+                    Mean_Density = Count / 2000)
+    
+    VFT_Density_CSV <- VFT_Density %>% 
+      dplyr::mutate(Survey_Type = "VFT", 
+                    Count = Mean_Density * 2000)
+    
+    Fish_Density_CSV <- RDFC_Density_CSV %>% 
+      base::rbind(VFT_Density_CSV) %>% 
+      dplyr::left_join(
+        Species_Info %>%
+          dplyr::select(ScientificName, Species, Classification) %>%
+          dplyr::distinct()) %>%
+      dplyr::filter(!is.na(Species)) %>%    
+      dplyr::left_join(
+        Site_Info %>%
+          dplyr::select(SiteName, ReserveYear, MeanDepth)) %>% 
+      dplyr::mutate(SE = NA, SD = NA) %>%
+      dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, Date,
+                    Species, ScientificName, CommonName, Mean_Density, SD, SE, Count,
+                    MeanDepth, Survey_Type, ReserveStatus, Reference, ReserveYear, Classification)
+    
+    # a <- subset(Fish_Density_CSV, is.na(Species))
+    # unique(a$ScientificName)
+
+    Benthic_Density_CSV <- Benthic_Density  %>%
+      dplyr::mutate(
+        ReserveStatus = case_when(
+          SurveyYear < 2003 & SiteCode == "LC" ~ "Inside",
+          SurveyYear < 2003 & SiteCode == "CC" ~ "Inside",
+          SurveyYear < 2003 ~ "Outside",
+          TRUE ~ ReserveStatus),
+        Count = Mean_Density * 2000) %>% 
+      dplyr::select(-Area_Surveyed) %>%    
+      dplyr::left_join(
+        Site_Info %>%
+          dplyr::select(SiteName, ReserveYear)) %>%
+      dplyr::left_join(
+        Species_Info %>%
+          dplyr::select(CommonName, Classification))
+    
+    names(Benthic_Density_CSV)
+    names(Fish_Density_CSV)
+    
+    Density_CSV <- Benthic_Density_CSV %>% 
+      base::rbind(Fish_Density_CSV) %>% 
+      readr::write_csv("App/Tidy_Data/Density.csv")
   }
   
 }
@@ -398,6 +443,16 @@ Export_END_Year <- 2019
     dplyr::ungroup() %>%  
     dplyr::distinct(SiteCode, ScientificName, CommonName, SurveyYear, Percent_Cover, .keep_all = TRUE)  %>%
     readr::write_csv("App/Tidy_Data/RPC_Cover.csv")
+  
+  # RPC_Substrate <- RPC_Cover %>%
+  #   dplyr::filter(ScientificName %in% c("Rock", "Cobble", "Sand")) %>%
+  #   dplyr::group_by(SiteNumber, ScientificName) %>%
+  #   dplyr::summarise(Percent_Cover = round(mean(Percent_Cover), 2)) %>%
+  #   tidyr::pivot_wider(names_from = ScientificName, values_from = Percent_Cover)
+  # 
+  # Site_Info <- Site_Info %>%
+  #   left_join(RPC_Substrate) %>%
+  #   readr::write_csv("App/Meta_Data/Site_Info.csv")
   
 }
 
@@ -642,7 +697,7 @@ Export_END_Year <- 2019
       dplyr::rename(yint = "(Intercept)", b = Mean_Density) %>% 
       dplyr::mutate(yint = ifelse(yint < 0, 0, yint))
     
-    Benthic_Mean_Biomass <- Benthic_Biomass %>% 
+    Benthic_parital_Biomass <- Benthic_Biomass %>% 
       left_join(Benthic_Regression) %>% 
       dplyr::left_join(dplyr::distinct(Species_Info, ScientificName, CommonNameSimple)) %>% 
       dplyr::mutate(
@@ -655,7 +710,7 @@ Export_END_Year <- 2019
                     SurveyYear, Date, ScientificName, CommonName, Mean_Density,
                     Mean_Biomass, Survey_Type, ReserveStatus, Reference)
     
-    Benthic_total_Biomass <- Benthic_Mean_Biomass %>% 
+    Benthic_total_Biomass <- Benthic_parital_Biomass %>% 
       dplyr::group_by(SiteNumber, IslandCode, IslandName, SiteCode, SiteName,
                       SurveyYear, Date, ReserveStatus, Reference) %>% 
       dplyr::summarise(Mean_Biomass = sum(Mean_Biomass, na.rm = TRUE)) %>% 
@@ -664,15 +719,9 @@ Export_END_Year <- 2019
                     Mean_Density = NA, Survey_Type = NA) %>% 
       dplyr::ungroup()
     
-    Benthic_Mean_Biomass <- Benthic_Mean_Biomass %>% 
+    Benthic_Mean_Biomass <- Benthic_parital_Biomass %>% 
       rbind(Benthic_total_Biomass) 
     
-    Benthic_Mean_Biomass_CSV <- Benthic_Mean_Biomass %>% 
-      dplyr::left_join(
-        Site_Info %>% 
-          dplyr::select(SiteName, ReserveYear)
-      ) %>% 
-      readr::write_csv("App/Tidy_Data/Benthic_Biomass.csv")
   }
   
   { # Fish Density for Biomass   ----
@@ -815,7 +864,7 @@ Export_END_Year <- 2019
       dplyr::rename(yint = "(Intercept)", b = Count) %>%
       dplyr::mutate(yint = ifelse(yint < 0, 0, yint))
     
-    Fish_Mean_Biomass <- Fish_Biomass %>%
+    Fish_partial_Biomass <- Fish_Biomass %>%
       left_join(Fish_Regression) %>%
       dplyr::mutate(
         Mean_Biomass = dplyr::case_when(
@@ -827,7 +876,7 @@ Export_END_Year <- 2019
                     SurveyYear, Date, ScientificName, CommonName, Count,
                     Mean_Biomass, ReserveStatus, Reference) 
     
-    Fish_total_Biomass <- Fish_Mean_Biomass %>% 
+    Fish_total_Biomass <- Fish_partial_Biomass %>% 
       dplyr::group_by(SiteNumber, IslandCode, IslandName, SiteCode, SiteName,
                       SurveyYear, Date, ReserveStatus, Reference) %>% 
       dplyr::summarise(Mean_Biomass = sum(Mean_Biomass, na.rm = TRUE)) %>% 
@@ -836,9 +885,7 @@ Export_END_Year <- 2019
                     Count = NA) %>% 
       dplyr::ungroup()
     
-    Fish_Mean_Biomass <- rbind(Fish_Mean_Biomass, Fish_total_Biomass) %>%
-      readr::write_csv("App/Tidy_Data/Fish_Biomass.csv")
-    
+    Fish_Mean_Biomass <- rbind(Fish_partial_Biomass, Fish_total_Biomass) 
   }
   
   { # Fish Biomass Wide   ----
@@ -849,9 +896,27 @@ Export_END_Year <- 2019
       tidyr::pivot_wider(names_from = CommonName, values_from = Mean_Biomass, values_fill = 0) %>%
       dplyr::rename_with(~ base::gsub(",", "", .)) %>%
       dplyr::rename_with(~ base::gsub(" ", "_", .))
-    
-    # readr::write_csv("App/Tidy_Data/Benthic_Biomass_Wide.csv") 
   } 
+  
+  { # Biomass All   -----
+    
+    Benthic_Mean_Biomass_CSV <- Benthic_Mean_Biomass %>% 
+      dplyr::mutate(Count = Mean_Density * 2000) %>% 
+      dplyr::select(-Mean_Density)
+    
+    Mean_Biomass_CSV <- Fish_Mean_Biomass %>% 
+      dplyr::mutate(Survey_Type = "RDFC") %>% 
+      base::rbind(Benthic_Mean_Biomass_CSV) %>% 
+      dplyr::left_join(
+        Site_Info %>% 
+          dplyr::select(SiteName, ReserveYear)) %>% 
+      dplyr::left_join(
+        Species_Info %>% 
+          dplyr::select(ScientificName, Classification) %>% 
+          dplyr::distinct()) %>%
+      readr::write_csv("App/Tidy_Data/Biomass.csv")
+    
+  }
   
 }
 

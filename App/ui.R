@@ -94,7 +94,7 @@ ui <- dashboardPage(
           tabPanel("Disclaimer",
                    fluidRow(
                      column(
-                       8, includeMarkdown(path = "Text/about.md")
+                       8, includeMarkdown(path = "Text/About/about.md")
                      ),
                      column(
                        4, tags$img(height = 332, width = 500, 
@@ -108,7 +108,7 @@ ui <- dashboardPage(
           tabPanel("KFMP History",
                    fluidRow(
                      column(
-                       8, includeMarkdown(path = "Text/history.md")
+                       8, includeMarkdown(path = "Text/About/history.md")
                      ),
                      column(
                        4, tags$img(height = 332, width = 500, 
@@ -122,7 +122,7 @@ ui <- dashboardPage(
           tabPanel("Acknowledgments",
                    fluidRow(
                      column(
-                       8, includeMarkdown(path = "Text/acknowledgments.md")
+                       8, includeMarkdown(path = "Text/About/acknowledgments.md")
                      ),
                      column(
                        4, tags$img(height = 332, width = 500, 
@@ -136,7 +136,7 @@ ui <- dashboardPage(
           tabPanel("Introduction",
                    fluidRow(
                      column(
-                       8, includeMarkdown(path = "Text/introduction.md")
+                       8, includeMarkdown(path = "Text/About/introduction.md")
                      ),
                      column(
                        4, tags$img(height = 332, width = 500, 
@@ -150,7 +150,7 @@ ui <- dashboardPage(
           tabPanel("Acronyms",
                    fluidRow(
                      column(
-                       8, includeMarkdown(path = "Text/acronyms.md")
+                       8, includeMarkdown(path = "Text/About/acronyms.md")
                      ),
                      column(
                        4, tags$img(height = 332, width = 500, 
@@ -177,7 +177,7 @@ ui <- dashboardPage(
           ),
           # ............ Tab - FAQ  ----
           tabPanel("FAQ",
-                   includeMarkdown(path = "Text/FAQ.md")
+                   includeMarkdown(path = "Text/About/FAQ.md")
                    )
         )
       ),
@@ -351,7 +351,7 @@ ui <- dashboardPage(
           tabPanel(
             title = "Site History",
             tags$hr(),
-            includeMarkdown(path = "Text/site_history.md")
+            includeMarkdown(path = "Text/Sites/site_history.md")
           ),
           # ............ Tab - Leaflet  ----
           tabPanel(
@@ -362,7 +362,7 @@ ui <- dashboardPage(
           ),
           # ............ Tab - Satellite Imagery  ----
           tabPanel(
-            title = "Satellite Imagery",
+            title = "Static Imagery",
             tags$hr(),
             fluidRow(
               column(
@@ -388,12 +388,44 @@ ui <- dashboardPage(
                 ),
                 conditionalPanel(
                   condition = "input.Sat_Isl_Site == 'Site'",
-                  Site_Selector_UI(id = "Site_Sat"),
+                  Site_Selector_UI(id = "Site_Sat")
+                )
+              ),
+              conditionalPanel(
+                condition = "input.Sat_Isl_Site != 'Park'",
+                column(
+                  5,
+                  h5("Known bug: Site selector can become stuck. Simply choose a different category to the left and come back to reset.")
                 )
               )
             ),
-            imageOutput(outputId = "satMap",
-                        height = 1000)
+            fluidRow(
+              column(
+                7,
+                imageOutput(outputId = "satMap", height = 800)
+              ),
+            conditionalPanel(
+              condition = "input.Sat_Isl_Site == 'Site'",
+              fluidRow(
+                column(
+                  5,
+                  includeMarkdown(path = "Text/Sites/gps_transects.md")
+                )
+              )
+            )
+            ),
+            conditionalPanel(
+              condition = "input.Sat_Isl_Site == 'Park'",
+              fluidRow(
+                DTOutput(outputId = "Park_Table")
+              )
+            ),
+            conditionalPanel(
+              condition = "input.Sat_Isl_Site != 'Park'",
+              fluidRow(
+                DTOutput(outputId = "Site_Table")
+              )
+            )
           ),
           # ............ Tab - Bathymetric Imagery  ----
           tabPanel(
@@ -731,7 +763,7 @@ ui <- dashboardPage(
               column(
                 2,
                 radioButtons(inputId = "collab", label = "Select a Version:", 
-                             choices = c("Wave Energy"))
+                             choices = c("2018 - Wave Energy"))
               ),
               column(
                 10,

@@ -112,6 +112,63 @@ server <- function(input, output, session) {
           height = if (input$Sat_Isl_Site == "Park") {772.72} else {750}
         )
       }, deleteFile = FALSE)
+      
+      site_data <- Site_Info %>%
+        dplyr::mutate(Island = IslandName) %>% 
+        dplyr::select(SiteNumber, Island, IslandName, SiteCode, SiteName, Reference, ReserveStatus, ARMs, ReserveYear,
+                      Latitude, Longitude, MeanDepth, Rock, Cobble, Sand) %>%
+        dplyr::rename(`Site #` = SiteNumber, 
+                      `Site Code` = SiteCode,
+                      `Site` = SiteName,
+                      Reference = Reference,
+                      `Reserve Status` = ReserveStatus, 
+                      `Mean Depth` = MeanDepth, 
+                      `Rock (%)` = Rock, 
+                      `Cobble (%)` = Cobble, 
+                      `Sand (%)` =  Sand) %>% 
+        dplyr::mutate(Island = gsub(" Island", "", Island)) 
+      
+      site_table_data <- reactive({
+        if (input$Sat_Isl_Site == 'Island') {
+          site_data %>% 
+            dplyr::filter(IslandName == input$Sat_Isl) %>% 
+            dplyr::select(-IslandName)
+        }
+        else if (input$Sat_Isl_Site == 'MPA') {
+          site_data %>%
+            dplyr::filter(IslandName == input$Sat_MPA, Reference == TRUE) %>% 
+            dplyr::select(-IslandName)
+        }
+        else if (input$Sat_Isl_Site == 'Site') {
+          site_data %>% 
+            dplyr::filter(Site == Site_Selector_Server(id = 'Site_Sat')()$SiteName) %>% 
+            dplyr::select(-IslandName) 
+        }
+        
+      }) 
+      
+      output$Site_Table <- renderDT({
+        datatable(
+          site_table_data(), rownames = FALSE,  
+          options = list(searching = FALSE,  paging = FALSE,
+                         ordering = TRUE, info = FALSE, scrollX = TRUE, 
+                         initComplete = JS(
+                           "function(settings, json) {",
+                           "$(this.api().table().header()).css({'background-color': '#3c8dbc', 'color': '#fff'});}"))) %>%
+          formatStyle(names(site_table_data()), color = "black", backgroundColor = 'white')
+      })
+      
+      output$Park_Table <- renderDT({
+        datatable(
+          dplyr::select(site_data, -IslandName), rownames = FALSE, extensions = 'ColReorder',
+          options = list(
+            scrollY = "500px", scrollX = TRUE, paging = FALSE,
+            ordering = TRUE, info = FALSE, dom = 'Bfrtip', colReorder = TRUE,
+                         initComplete = JS(
+                           "function(settings, json) {",
+                           "$(this.api().table().header()).css({'background-color': '#3c8dbc', 'color': '#fff'});}"))) %>%
+          formatStyle(names(dplyr::select(site_data, -IslandName)), color = "black", backgroundColor = 'white')
+      })
     }
     
     { # .... Bathymetry Maps   ----
