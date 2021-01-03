@@ -165,10 +165,10 @@ Export_END_Year <- 2019
                        SE = base::round(SD / base::sqrt(Area_Surveyed), 4),
                        Survey_Type = "1 m² quads") %>% 
       dplyr::ungroup() %>%  
-      dplyr::distinct(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, ScientificName, SurveyYear, 
-                      Total_Count, Mean_Density, SD, SE, Area_Surveyed, .keep_all = TRUE)  %>% 
+      dplyr::distinct(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, ScientificName, CommonName, SurveyYear, 
+                      Total_Count, Mean_Density, SD, SE, Area_Surveyed, .keep_all = TRUE) %>% 
       dplyr::filter(ScientificName != "Pisaster giganteus" | SurveyYear < 1996,
-                    ScientificName != "Macrocystis pyrifera" | SurveyYear < 1996) %>%
+                    CommonName != "giant kelp, adult (>1m)" | SurveyYear < 1996) %>%
       dplyr::arrange(SiteNumber, SurveyYear, ScientificName) %>%
       dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, Date,
                     Species, ScientificName, CommonName, Mean_Density, SD, SE, 
@@ -256,7 +256,7 @@ Export_END_Year <- 2019
                        SE = base::round(SD / base::sqrt(Area_Surveyed), 4),
                        Survey_Type = "bands transects") %>% 
       dplyr::ungroup() %>% 
-      dplyr::distinct(IslandCode, IslandName, SiteCode, SiteName, ScientificName,
+      dplyr::distinct(IslandCode, IslandName, SiteCode, SiteName, ScientificName, CommonName, 
                       SurveyYear,  Mean_Density, ReserveStatus, Reference, .keep_all = TRUE) %>%
       dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, Date,
                     Species, ScientificName, CommonName, Mean_Density, SD, SE, 

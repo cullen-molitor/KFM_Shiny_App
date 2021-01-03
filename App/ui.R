@@ -342,7 +342,7 @@ ui <- dashboardPage(
           )
         )
       ),
-      # ...... Body - Maps    ---- 
+      # ...... Body - Sampling Locations    ---- 
       tabItem(
         tabName = 'maps',
         h1("Kelp Forest Monitoring Sampling Locations"),
@@ -421,6 +421,13 @@ ui <- dashboardPage(
             tags$hr(),
             Site_Selector_UI(id = "Site_Descriptions"),
             htmlOutput(outputId = 'SitePDF')
+          ),
+          # ............ Tab - Transportation  ----
+          tabPanel(
+            title = "Transportation",
+            tags$hr(),
+            h2("Coming Soon..."),
+            h5("Information and pictures about the NPS dive boat Sea Ranger II.")
           )
         )
       ),
@@ -671,22 +678,68 @@ ui <- dashboardPage(
         tabsetPanel(
           # ............ Tab - Annual Reports  ----
           tabPanel(
-          title = "Annual Reports"  
+            title = "Annual Reports",
+            tags$hr(),
+            fluidRow(
+              column(
+                2,
+                radioButtons(inputId = "Report", label = "Select a Year:", choices = c(2013:1990, "1982-1989"))
+              ),
+              column(
+                10,
+                htmlOutput(outputId = "Annual_Report", height = 750)
+              )
+            )
           ),
           # ............ Tab - Handbook   ----
           tabPanel(
-            title = "Handbook"  
+            title = "Handbook",
+            tags$hr(),
+            fluidRow(
+              column(
+                2,
+                radioButtons(inputId = "old_handy", label = "Select a Version:", 
+                             choices = c("1997 - Revision Volume 1", "1997 - Revision Volume 2", "1988 - Original"))
+              ),
+              column(
+                10,
+                htmlOutput(outputId = "Handbook", height = 750)
+              )  
+            )
           ),
           # ............ Tab - Program Reviews   ----
           tabPanel(
-            title = "Program Reviews"  
+            title = "Program Reviews",
+            tags$hr(),
+            fluidRow(
+              column(
+                2,
+                radioButtons(inputId = "reviews", label = "Select a Version:", 
+                             choices = c("1996 Design Review", "1994 Evaluation"))
+              ),
+              column(
+                10,
+                htmlOutput(outputId = "ReviewsOutput", height = 750)
+              )  
+            )
           ),
           # ............ Tab - Collaborative Reports   ----
           tabPanel(
-            title = "Collaborative Reports"  
+            title = "Collaborative Reports",
+            tags$hr(),
+            fluidRow(
+              column(
+                2,
+                radioButtons(inputId = "collab", label = "Select a Version:", 
+                             choices = c("Wave Energy"))
+              ),
+              column(
+                10,
+                htmlOutput(outputId = "CollaborativeOutput", height = 750)
+              )  
+            )  
           )
-        ),
-        tags$img(height = 533, width = 800, src = 'Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (6).jpg')
+        )
       ),
       # ...... Body - Literature Cited    ---- 
       tabItem(

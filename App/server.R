@@ -273,7 +273,23 @@ server <- function(input, output, session) {
     Time_Server(id = "density")
   }
  
-  
+  { # Reports   -----
+    output$Annual_Report <- renderUI({ 
+      tags$iframe(style="height:750px; width:100%; scrolling=yes", src = glue("Annual_Reports/{input$Report}.pdf"))
+    })
+    
+    output$Handbook <- renderUI({ 
+      tags$iframe(style="height:750px; width:100%; scrolling=yes", src = glue("Handbook/Full_Versions/{input$old_handy}.pdf"))
+    })
+    
+    output$ReviewsOutput <- renderUI({ 
+      tags$iframe(style="height:750px; width:100%; scrolling=yes", src = glue("Handbook/Reviews/{input$reviews}.pdf"))
+    })
+    
+    output$CollaborativeOutput <- renderUI({ 
+      tags$iframe(style="height:750px; width:100%; scrolling=yes", src = glue("Handbook/Collaborative_Reports/{input$collab}.pdf"))
+    })
+  }
 } 
 
 
