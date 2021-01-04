@@ -236,7 +236,7 @@ ui <- dashboardPage(
               fluidRow(
                 column(
                   6,
-                  tags$img(height = 400, width = 600, src = 'Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (7).jpg'), 
+                  tags$img(height = 400, width = 600, src = 'Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (7).jpg')
                 ),
                 column(
                   6, 
@@ -321,13 +321,13 @@ ui <- dashboardPage(
                 tags$img(height = 400, width = 600, src = 'Photos/Protocols/1m (2).jpg'),
                 tags$br(), tags$hr(),
                 tags$img(height = 400, width = 600, src = 'Photos/Protocols/5m (1).jpg')
-              ),
+              )
             ),
             tags$hr(),
             fluidRow(
               column(
                 6,
-                tags$img(height = 400, width = 600, src = 'Photos/Protocols/bands (1).jpg'), 
+                tags$img(height = 400, width = 600, src = 'Photos/Protocols/bands (1).jpg') 
               ),
               column(
                 6, 
@@ -662,6 +662,16 @@ ui <- dashboardPage(
         tabName = 'biomass',
         h1("Kelp Forest Biomass Trends"),
         tabsetPanel(
+          # ............ Tab - About   ----
+          tabPanel(
+            title = "About",
+            fluidRow(
+              column(
+                6,
+                includeMarkdown(path = "Text/Biomass_Density/biomass.md")
+              )
+            )
+          ),
           # ............ Tab - Time Series   ----
           tabPanel(
             title = "Time Series",
@@ -682,6 +692,16 @@ ui <- dashboardPage(
         tabName = 'density',
         h1("Kelp Forest Density Trends"),
         tabsetPanel(
+          # ............ Tab - About   ----
+          tabPanel(
+            title = "About",
+            fluidRow(
+              column(
+                6,
+                includeMarkdown(path = "Text/Biomass_Density/density.md")
+              )
+            )
+          ),
           # ............ Tab - Time Series   ----
           tabPanel(
             title = "Time Series",

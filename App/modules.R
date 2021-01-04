@@ -9,7 +9,7 @@
         column(
           3, 
           selectInput(inputId = ns("protocol_selector"),
-                      label = "Choose a Protocol:",
+                      label = "Protocol:",
                       choices = Protocols)
         ),
         column(
@@ -85,7 +85,7 @@
   Site_Selector_UI <- function(id, label = "site") {
     ns <- NS(id)
     selectInput(inputId = ns("Site_Selector"),
-                label = "Choose a Site:",
+                label = "Site:",
                 choices = Site_Info$Isl_SiteName)
     # dplyr::arrange(Site_Info, Longitude)$Isl_SiteName   # arrange choices by longitude
   }
@@ -104,7 +104,7 @@
   Species_Selector_UI <- function(id, label = "species") {
     ns <- NS(id)
     selectInput(inputId = ns("Species_Selector"),
-                label = "Choose a Species:",
+                label = "Species:",
                 choices = Site_Info$Isl_SiteName)
     # dplyr::arrange(Site_Info, Longitude)$Isl_SiteName   # arrange choices by longitude
   }
@@ -133,14 +133,14 @@
             tags$hr(),
             column(
               3, radioButtons(inputId = ns("Diversity_Plot_Options"),
-                              label = "Choose a Plot Type:",
+                              label = "Plot Type:",
                               choices = c("Smooth Line (LOESS)",
                                           "Map Bubbles"))
             ),
             column(
               3, conditionalPanel(condition = "input.Diversity_Plot_Options == 'Smooth Line (LOESS)'", ns = ns,
                                   radioButtons(inputId = ns("Data_Options"),
-                                               label = "Choose a Data Summary:",
+                                               label = "Data Summary:",
                                                choices = c("All Sites",
                                                            "Original 16 Sites",
                                                            "MPA Reference Sites",
@@ -169,7 +169,7 @@
             column(
               3, conditionalPanel(condition = "input.Data_Options == 'Individual Site'", ns = ns,
                                   selectInput(inputId = ns("Site_Selector"),
-                                              label = "Choose a Site:",
+                                              label = "Site:",
                                               choices = Site_Info$SiteName))
             )
           ),
@@ -291,8 +291,7 @@
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0),
                                     limits = c(lubridate::ymd(min(data_subset()$Date)),
                                                lubridate::ymd(max(data_subset()$Date)))) +
-              scale_y_continuous(limits = yscale(), 
-                                 expand = expansion(mult =0.1)) +
+              scale_y_continuous(limits = yscale(), oob = squish, expand = expansion(mult =0.1)) +
               labs(title = plot_title(),  
                    color = "Site Code", linetype = "Site Code",
                    x = NULL, y = NULL) +
@@ -313,7 +312,7 @@
               p1, p2, p3, p4, p5, ncol = 1, heights = c(.9, .75, .75, .75, 1),
               align = "v", common.legend = FALSE)
             annotate_plot <- ggpubr::annotate_figure(
-              arrange_plot, left = text_grob("Index Value", color = "black", rot = 90, size = 16)
+              arrange_plot, left = text_grob("Index Value", color = "black", rot = 90, size = 12)
             )
             print(annotate_plot)
           } 
@@ -351,21 +350,20 @@
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0),
                                     limits = c(lubridate::ymd(min(data_subset()$Date)),
                                                lubridate::ymd(max(data_subset()$Date)))) +
-              ggplot2::scale_y_continuous(expand = expansion(mult =0.1),
-                                          limits = yscale(), oob = squish) +
+              ggplot2::scale_y_continuous(expand = expansion(mult =0.1), limits = yscale(), oob = squish) +
               ggplot2::guides(color = guide_legend(order = 1),
                               linetype = guide_legend(order = 2, override.aes = list(col = 'black'))) +
               ggplot2::scale_colour_manual(values = Island_Colors) +
               ggplot2::labs(x = "Survey Year", y = NULL,
                             color = "Island",
-                            fill = "Oceanic Niño Index",
+                            fill = "Oceanic Ni\u00f1o Index",
                             linetype = "Reserve Status") +
               timeseries_bottom_theme()
             Diversity_Plot <-ggarrange(p1, p2, p3, ncol = 1, align = "v", heights = c(.8, .8, 1))
             Diversity_annotated <- ggpubr::annotate_figure(
               Diversity_Plot,
               left = text_grob("Index Value",
-                               family ="Cambria", color = "black", rot = 90, size = 13))
+                               family ="Cambria", color = "black", rot = 90, size = 12))
             print(Diversity_annotated)
           } 
           else if (input$Data_Options == "MPA Reference Sites") {
@@ -402,21 +400,20 @@
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0),
                                     limits = c(lubridate::ymd(min(data_subset()$Date)),
                                                lubridate::ymd(max(data_subset()$Date)))) +
-              ggplot2::scale_y_continuous(expand = expansion(mult =0.1),
-                                          limits = yscale(), oob = squish) +
+              ggplot2::scale_y_continuous(expand = expansion(mult =0.1), limits = yscale(), oob = squish) +
               ggplot2::guides(color = guide_legend(order = 1),
                               linetype = guide_legend(order = 2, override.aes = list(col = 'black'))) +
               ggplot2::scale_colour_manual(values = Island_Colors) +
               ggplot2::labs(x = "Survey Year", y = NULL,
                             color = "Island",
-                            fill = "Oceanic Niño Index",
+                            fill = "Oceanic Ni\u00f1o Index",
                             linetype = "Reserve Status") +
               timeseries_bottom_theme()
             Diversity_Plot <-ggarrange(p1, p2, p3, ncol = 1, align = "v", heights = c(.8, .8, 1))
             Diversity_annotated <- ggpubr::annotate_figure(
               Diversity_Plot,
               left = text_grob("Index Value",
-                               family ="Cambria", color = "black", rot = 90, size = 13))
+                               family ="Cambria", color = "black", rot = 90, size = 12))
             print(Diversity_annotated)
           } 
           else if (input$Data_Options == "Individual Site") {
@@ -432,8 +429,7 @@
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0),
                                     limits = c(lubridate::ymd(min(data_subset()$Date)),
                                                lubridate::ymd(max(data_subset()$Date)))) +
-              ggplot2::scale_y_continuous(expand = expansion(mult =0.1),
-                                          limits = yscale(), oob = squish) +
+              ggplot2::scale_y_continuous(expand = expansion(mult =0.1), limits = yscale(), oob = squish) +
               ggplot2::guides(color = guide_legend(order = 1),
                               linetype = guide_legend(order = 2, override.aes = list(col = 'black'))) +
               ggplot2::scale_colour_manual(values = SiteColor) +
@@ -441,7 +437,7 @@
                             title = plot_title(),
                             subtitle = glue("{data_subset()$SiteName} {data_subset()$IslandName}"),
                             color = "Site",
-                            fill = "Oceanic Niño Index",
+                            fill = "Oceanic Ni\u00f1o Index",
                             linetype = "Reserve Status") +
               timeseries_bottom_theme()
           }
@@ -550,7 +546,7 @@
     ns <- NS(id)
     tagList(
       selectInput(inputId = ns("protocol_selector"),
-                  label = "Choose a Protocol:",
+                  label = "Protocol:",
                   choices = Protocols),
       uiOutput(outputId = ns("guide"))
     )
@@ -571,7 +567,6 @@
   
 }
 
-
 { # Taxa Module  -----
   Taxa_UI <- function(id, label = "taxa") {
     ns <- NS(id)
@@ -579,7 +574,7 @@
       fluidRow(
         column(
           3,
-          radioButtons(inputId = ns("category"), label = "Choose a Category:", choices = c("Invertebrates", "Algae", "Fish"))
+          radioButtons(inputId = ns("category"), label = "Category:", choices = c("Invertebrates", "Algae", "Fish"))
         ),
         column(
           3, 
@@ -782,7 +777,7 @@
           } 
           else if (input$VI_Plot_Type == 'Partial Dependence') {
             selectInput(inputId = session$ns("VI_Species_Input"),
-                        label = "Choose a species",
+                        label = "Species",
                         choices = rf_species()) 
             }
           
@@ -942,51 +937,65 @@
   Time_UI <- function(id, label = "time") {
     ns <- NS(id)
     tagList(
+      tags$hr(),
       fluidRow(
         column(
           4,
-          uiOutput(outputId = ns('text'))
-        ),
-        column(
-          8,
           fluidRow(
             column(
-              3,
+              5,
               radioButtons(inputId = ns("Data_Options"),
-                           label = "Choose a Data Summary:",
+                           label = "Data Summary:",
                            choices = c("All Sites", "Original 16 Sites", "MPA Reference Sites", "Individual Site"))
             ),
             column(
-              2,
-              radioButtons(inputId = ns("taxa"), label = "Choose a Category:", choices = c('Invertebrates', 'Algae', 'Fish')),
+              3,
+              radioButtons(inputId = ns("taxa"), label = "Category:", choices = c('Invertebrates', 'Algae', 'Fish'))
+            ),
+            column(
+              3,
               conditionalPanel(
                 condition = "input.taxa == 'Fish'", ns = ns,
                 uiOutput(outputId = ns("Fishy"))
               )
+            )
+          ),
+          fluidRow(
+            column(
+              6,
+              uiOutput(outputId = ns("speciesUI")),
+              
             ),
             column(
-              3,
-              uiOutput(outputId = ns("speciesUI")),
+              6,
               conditionalPanel(
                 condition = "input.Data_Options == 'Individual Site'", ns = ns,
                 uiOutput(outputId = ns("siteUI"))
               )
-            ),
-            column(
-              2,
-              radioButtons(inputId = ns("axis"), label = "Y Scale:", choices = c('Free', 'Fixed'))
-            ),
-            conditionalPanel(
-              condition = "input.Data_Options == 'All Sites' | input.Data_Options == 'Individual Site'", ns = ns,
-              column(
-                2,
-                radioButtons(inputId = ns("line"), label = "Line Type:", choices = c('Smooth', 'Sharp'))
-              )
             )
           ),
           fluidRow(
-            uiOutput(outputId = ns('plotUI'))
+            column(
+              3,
+              radioButtons(inputId = ns("axis"), label = "Y Scale:", choices = c('Free', 'Fixed'))
+            ),
+            # column(
+            #   3,
+            #   radioButtons(inputId = ns('error'), label = "Error Bars:", choices = c("Show", "Hide"))
+            # ),
+            column(
+              3,
+              conditionalPanel(
+                condition = "input.Data_Options == 'All Sites' | input.Data_Options == 'Individual Site'", ns = ns,
+                
+                radioButtons(inputId = ns("line"), label = "Line Type:", choices = c('Smooth', 'Sharp'))
+              )
+            )
           )
+        ),
+        column(
+          8,
+          uiOutput(outputId = ns('plotUI'))
         )
       ),
       tags$hr(),
@@ -1011,7 +1020,7 @@
             NULL
           }
           else if (id == "density"){
-            radioButtons(inputId = session$ns("Fish_Survey"), inline = T, label = "Survey Type:", choices = c("RDFC", "VFT"))
+            radioButtons(inputId = session$ns("Fish_Survey"), label = "Survey Type:", choices = c("RDFC", "VFT"))
           }
         })
         
@@ -1035,7 +1044,7 @@
         })
         
         output$speciesUI <- renderUI({
-            selectInput(inputId = session$ns("species"), label = "Choose a Species:",
+            selectInput(inputId = session$ns("species"), label = "Species:",
                         choices = unique(species_subset()$CommonName))
           
         })
@@ -1049,19 +1058,22 @@
         
         site <- Site_Selector_Server("site_selector")
         
-        filename_text <- reactive(glue::glue("Text/Biomass_Density/{id}.md"))
-        
-        output$text <- renderUI(includeMarkdown(path = filename_text()))
-        
         data <- reactive({
           if (id == "biomass") {
             Biomass %>% 
               dplyr::filter(CommonName == input$species) %>% 
               dplyr::mutate(yvalue = Mean_Biomass)
           }
-          else if (id == "density") {
+          else if (id == "density" & input$taxa != "Fish") {
             Density %>% 
               dplyr::filter(CommonName == input$species) %>% 
+              dplyr::mutate(yvalue = Mean_Density)
+          }
+          else if (id == "density" & input$taxa == "Fish") {
+            Density %>% 
+              dplyr::filter(CommonName == input$species,
+                            Survey_Type == input$Fish_Survey) %>%
+              dplyr::arrange(CommonName)  %>% 
               dplyr::mutate(yvalue = Mean_Density)
           }
         })
@@ -1073,26 +1085,29 @@
           else {data() %>% dplyr::filter(SiteName == site()$SiteName)}
         })
         
-        ylab <- reactive({if (id == "biomass") {"Mean Biomass (g/m²)"} else {"Mean Density (#/m²)"}})
+        ylab <- reactive({if (id == "biomass") {expression(paste( "Mean Biomass (g/", m^2, ")", sep=""))}
+          else {expression(paste( "Mean Density (#/", m^2, ")", sep=""))}})
         
         yscale <- reactive({if (input$axis == "Fixed") {c(0, max(data_subset()$yvalue))} else {c(0, NA)}})
+        
+        # errorbars <- reactive({if (input$error == "Show") {.4} else {0}})
         
         output$time_plot <- renderPlot({
           if (input$Data_Options == "All Sites" & input$line == "Smooth") {
             Split <- base::split(data_subset(), f = data_subset()$IslandName) 
             p1 <- ggplot2::ggplot(Split$`San Miguel Island`,
-                                  aes(x = Date, y = yvalue, color = SiteCode, linetype = SiteCode)) + 
+                                  aes(x = Date, y = yvalue, color = SiteCode, linetype = ReserveStatus)) + 
               ggplot2::geom_smooth(size = .5, se = FALSE, method = 'loess', formula = 'y ~ x') +
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0),
                                     limits = c(lubridate::ymd(min(data_subset()$Date)),
                                                lubridate::ymd(max(data_subset()$Date)))) +
-              ggplot2::scale_y_continuous(limits = yscale(), expand = expansion(mult = c(0, .01))) +
+              ggplot2::scale_y_continuous(limits = yscale(), expand = expansion(mult = c(0, .01)), oob = squish) +
               ggplot2::labs(title = Split$`San Miguel Island`$CommonName,  
-                            color = "Site Code", linetype = "Site Code",
+                            color = "Site Code", linetype = NULL,
                             x = NULL, y = NULL) +
               ggplot2::facet_grid(rows = vars(IslandName), scales = "fixed") +
               ggplot2::scale_color_manual(values = SiteColor, guide = guide_legend(ncol = 2)) +
-              ggplot2::scale_linetype_manual(values = SiteLine, guide = guide_legend(ncol = 2)) +
+              ggplot2::guides(linetype = guide_legend(order = 2, ncol = 2, override.aes = list(col = 'black'))) +
               all_sites_theme()
             p2 <- p1 %+% Split$`Santa Rosa Island` +
               ggplot2::labs(title = NULL, subtitle = NULL)
@@ -1100,32 +1115,52 @@
               ggplot2::labs(title = NULL, subtitle = NULL)
             p4 <- p1 %+% Split$`Anacapa Island` +
               ggplot2::labs(title = NULL, subtitle = NULL)
-            p5 <- p1 %+% Split$`Santa Barbara Island`  +
-              ggplot2::labs(title = NULL, subtitle = NULL, x = "Year") +
-              ggplot2::theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1, size = 10))
+            p5 <- ggplot2::ggplot() + 
+              ggplot2::geom_rect(data = SST_Anomaly_Index, aes(xmin = DateStart, xmax = DateEnd, ymin = -Inf, ymax = 0, fill = ONI_ANOM)) +
+              ggplot2::scale_fill_gradient2(high = "darkred", mid = "white", low = "navyblue", midpoint = 0,
+                                            guide = guide_colorbar(direction = "horizontal", title.position = "top",
+                                                                   order = 3, barheight = unit(.2, "cm"))) +
+              ggplot2::geom_smooth(data = Split$`Santa Barbara Island`, size = .5, se = FALSE, method = 'loess', formula = 'y ~ x',
+                                   aes(x = Date, y = yvalue, color = SiteCode, linetype = ReserveStatus)) +
+              ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0),
+                                    limits = c(lubridate::ymd(min(data_subset()$Date)),
+                                               lubridate::ymd(max(data_subset()$Date)))) +
+              ggplot2::scale_y_continuous(limits = yscale(), expand = expansion(mult = c(0.1, .01)), oob = squish) +
+              ggplot2::labs(title = NULL, x = "Year", y = NULL, 
+                            color = "Site Code", linetype = NULL,
+                           fill = "Oceanic Ni\u00f1o Index") +
+              ggplot2::facet_grid(rows = vars(IslandName), scales = "fixed") +
+              ggplot2::scale_color_manual(values = SiteColor, guide = guide_legend(order = 1, ncol = 2)) +
+              ggplot2::guides(linetype = guide_legend(order = 2, ncol = 2, override.aes = list(col = 'black'))) +
+              ggplot2::geom_hline(aes(yintercept = 0)) +
+              all_sites_theme() +
+              ggplot2::theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1, size = 10),
+                             axis.line.x = element_blank())
+              
             arrange_plot <- ggpubr::ggarrange(
-              p1, p2, p3, p4, p5, ncol = 1, heights = c(.9, .75, .75, .75, 1),
+              p1, p2, p3, p4, p5, ncol = 1, heights = c(.85, .75, .75, .75, 1),
               align = "v", common.legend = FALSE)
             annotate_plot <- ggpubr::annotate_figure(
-              arrange_plot, left = text_grob(paste(ylab()), color = "black", rot = 90, size = 16)
+              arrange_plot, left = text_grob(ylab(), rot = 90, size = 12)
             )
             print(annotate_plot)
           } 
           else if (input$Data_Options == "All Sites" & input$line == "Sharp") {
             Split <- base::split(data_subset(), f = data_subset()$IslandName) 
             p1 <- ggplot2::ggplot(Split$`San Miguel Island`,
-                                  aes(x = Date, y = yvalue, color = SiteCode, linetype = SiteCode)) + 
+                                  aes(x = Date, y = yvalue, color = SiteCode, linetype = ReserveStatus)) + 
               ggplot2::geom_line(size = .5) +
+              # ggplot2::geom_errorbar(alpha = errorbars(), aes(xmin = yvalue - SE, xmax = yvalue + SE)) +
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0),
                                     limits = c(lubridate::ymd(min(data_subset()$Date)),
                                                lubridate::ymd(max(data_subset()$Date)))) +
               ggplot2::scale_y_continuous(limits = yscale(), expand = expansion(mult = c(0, .01))) +
               ggplot2::labs(title = Split$`San Miguel Island`$CommonName,  
-                            color = "Site Code", linetype = "Site Code",
+                            color = "Site Code", linetype = NULL,
                             x = NULL, y = NULL) +
               ggplot2::facet_grid(rows = vars(IslandName), scales = "fixed") +
               ggplot2::scale_color_manual(values = SiteColor, guide = guide_legend(ncol = 2)) +
-              ggplot2::scale_linetype_manual(values = SiteLine, guide = guide_legend(ncol = 2)) +
+              ggplot2::scale_linetype(guide = guide_legend(ncol = 2)) +
               all_sites_theme()
             p2 <- p1 %+% Split$`Santa Rosa Island` +
               labs(title = NULL, subtitle = NULL)
@@ -1133,32 +1168,50 @@
               labs(title = NULL, subtitle = NULL)
             p4 <- p1 %+% Split$`Anacapa Island` +
               labs(title = NULL, subtitle = NULL)
-            p5 <- p1 %+% Split$`Santa Barbara Island`  +
-              labs(title = NULL, subtitle = NULL, x = "Year") +
-              theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1, size = 10))
+            p5 <- ggplot2::ggplot() + 
+              ggplot2::geom_rect(data = SST_Anomaly_Index, aes(xmin = DateStart, xmax = DateEnd, ymin = -Inf, ymax = 0, fill = ONI_ANOM)) +
+              ggplot2::scale_fill_gradient2(high = "darkred", mid = "white", low = "navyblue", midpoint = 0,
+                                            guide = guide_colorbar(direction = "horizontal", title.position = "top",
+                                                                   order = 3, barheight = unit(.2, "cm"))) +
+              ggplot2::geom_line(data = Split$`Santa Barbara Island`, size = .5, 
+                                   aes(x = Date, y = yvalue, color = SiteCode, linetype = ReserveStatus)) +
+              ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0),
+                                    limits = c(lubridate::ymd(min(data_subset()$Date)),
+                                               lubridate::ymd(max(data_subset()$Date)))) +
+              ggplot2::scale_y_continuous(limits = yscale(), expand = expansion(mult = c(0.1, .01)), oob = squish) +
+              ggplot2::labs(title = NULL, x = "Year", y = NULL, 
+                            color = "Site Code", linetype = NULL,
+                            fill = "Oceanic Ni\u00f1o Index") +
+              ggplot2::facet_grid(rows = vars(IslandName), scales = "fixed") +
+              ggplot2::scale_color_manual(values = SiteColor, guide = guide_legend(order = 1, ncol = 2)) +
+              ggplot2::guides(linetype = guide_legend(order = 2, ncol = 2, override.aes = list(col = 'black'))) +
+              ggplot2::geom_hline(aes(yintercept = 0)) +
+              all_sites_theme() +
+              ggplot2::theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1, size = 10),
+                             axis.line.x = element_blank())
+              
             arrange_plot <- ggpubr::ggarrange(
-              p1, p2, p3, p4, p5, ncol = 1, heights = c(.9, .75, .75, .75, 1),
+              p1, p2, p3, p4, p5, ncol = 1, heights = c(.85, .75, .75, .75, 1),
               align = "v", common.legend = FALSE)
             annotate_plot <- ggpubr::annotate_figure(
-              arrange_plot, left = text_grob(paste(ylab()), color = "black", rot = 90, size = 16)
+              arrange_plot, left = text_grob(ylab(), rot = 90, size = 12)
             )
             print(annotate_plot)
           } 
           else if (input$Data_Options == "Original 16 Sites") {
-            p1 <- ggplot2::ggplot(data_subset(), aes(x = Date, y = yvalue, linetype = ReserveYear)) +
-              ggplot2::geom_smooth(size = 1, span = 0.75, method = 'loess', formula = 'y ~ x',
-                                   aes(color = ReserveYear)) +
+            p1 <- ggplot2::ggplot(data_subset(), aes(x = Date, y = yvalue, linetype = ReserveStatus, color = ReserveYear)) +
+              ggplot2::geom_smooth(size = 1, span = 0.75, method = 'loess', formula = 'y ~ x', se = FALSE) +
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0)) +
               ggplot2::scale_y_continuous(limits = yscale(), expand = expansion(mult = c(0, .01)), oob = squish) +
               ggplot2::scale_colour_manual(values = Island_Colors) +
               ggplot2::labs(title = data_subset()$CommonName,
                             x = NULL, y = NULL,
                             linetype = "Reserve Status",
-                            color = "Reserve Status") +
+                            color = "Reserve Year") +
               timeseries_top_theme()
             
             p2 <- ggplot2::ggplot(data_subset(), aes(x = Date, y = yvalue, color = IslandName)) +
-              ggplot2::geom_smooth(size = 1, span = .75, method = 'loess', formula = 'y ~ x') +
+              ggplot2::geom_smooth(size = 1, span = .75, se = FALSE, method = 'loess', formula = 'y ~ x') +
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0)) +
               ggplot2::scale_y_continuous(limits = yscale(), expand = expansion(mult = c(0, .01)), oob = squish) +
               ggplot2::scale_colour_manual(values = Island_Colors) +
@@ -1172,7 +1225,7 @@
               ggplot2::scale_fill_gradient2(high = "darkred", mid = "white", low = "navyblue", midpoint = 0,
                                             guide = guide_colorbar(direction = "horizontal", title.position = "top",
                                                                    order = 3, barheight = unit(.2, "cm"))) +
-              ggplot2::geom_smooth(data = data_subset(), method = 'loess', formula = 'y~x', size = 1, se = F, span = .75,
+              ggplot2::geom_smooth(data = data_subset(), method = 'loess', formula = 'y~x', size = 1, se = FALSE, span = .75,
                                    aes(x = Date, y = yvalue, color = IslandName, linetype = ReserveStatus)) +
               ggplot2::geom_hline(aes(yintercept = 0)) +
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0),
@@ -1185,19 +1238,18 @@
               ggplot2::scale_colour_manual(values = Island_Colors) +
               ggplot2::labs(x = "Survey Year", y = NULL,
                             color = "Island",
-                            fill = "Oceanic Niño Index",
+                            fill = "Oceanic Ni\u00f1o Index",
                             linetype = "Reserve Status") +
               timeseries_bottom_theme()
             Diversity_Plot <-ggarrange(p1, p2, p3, ncol = 1, align = "v", heights = c(.8, .8, 1))
             Diversity_annotated <- ggpubr::annotate_figure(
               Diversity_Plot,
-              left = text_grob(ylab(), color = "black", rot = 90, size = 13))
+              left = text_grob(ylab(), color = "black", rot = 90, size = 12))
             print(Diversity_annotated)
           } 
           else if (input$Data_Options == "MPA Reference Sites") {
-            p1 <- ggplot2::ggplot(data_subset(), aes(x = Date, y = yvalue, linetype = ReserveStatus)) +
-              ggplot2::geom_smooth(size = 1, span = 0.75, method = 'loess', formula = 'y ~ x',
-                                   aes(color = ReserveStatus)) +
+            p1 <- ggplot2::ggplot(data_subset(), aes(x = Date, y = yvalue, linetype = ReserveStatus, color = ReserveStatus)) +
+              ggplot2::geom_smooth(size = 1, span = 0.75, method = 'loess', formula = 'y ~ x', se = FALSE) +
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0)) +
               ggplot2::scale_y_continuous(limits = yscale(), expand = expansion(mult = c(0, .01)), oob = squish) +
               ggplot2::scale_colour_manual(values = Island_Colors) +
@@ -1208,7 +1260,7 @@
               timeseries_top_theme()
             
             p2 <- ggplot2::ggplot(data_subset(), aes(x = Date, y = yvalue, color = IslandName)) +
-              ggplot2::geom_smooth(size = 1, span = .75, method = 'loess', formula = 'y ~ x') +
+              ggplot2::geom_smooth(size = 1, span = .75, se = FALSE, method = 'loess', formula = 'y ~ x') +
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0)) +
               ggplot2::scale_y_continuous(limits = yscale(), expand = expansion(mult = c(0, .01)), oob = squish) +
               ggplot2::scale_colour_manual(values = Island_Colors) +
@@ -1222,7 +1274,7 @@
               ggplot2::scale_fill_gradient2(high = "darkred", mid = "white", low = "navyblue", midpoint = 0,
                                             guide = guide_colorbar(direction = "horizontal", title.position = "top",
                                                                    order = 3, barheight = unit(.2, "cm"))) +
-              ggplot2::geom_smooth(data = data_subset(), method = 'loess', formula = 'y~x', size = 1, se = F, span = .75,
+              ggplot2::geom_smooth(data = data_subset(), method = 'loess', formula = 'y~x', size = 1, se = FALSE, span = .75,
                                    aes(x = Date, y = yvalue, color = IslandName, linetype = ReserveStatus)) +
               ggplot2::geom_hline(aes(yintercept = 0)) +
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0),
@@ -1234,13 +1286,13 @@
               ggplot2::scale_colour_manual(values = Island_Colors) +
               ggplot2::labs(x = "Survey Year", y = NULL,
                             color = "Island",
-                            fill = "Oceanic Niño Index",
+                            fill = "Oceanic Ni\u00f1o Index",
                             linetype = "Reserve Status") +
               timeseries_bottom_theme()
             Diversity_Plot <- ggarrange(p1, p2, p3, ncol = 1, align = "v", heights = c(.8, .8, 1))
             Diversity_annotated <- ggpubr::annotate_figure(
               Diversity_Plot,
-              left = text_grob(ylab(), color = "black", rot = 90, size = 13))
+              left = text_grob(ylab(), color = "black", rot = 90, size = 12))
             print(Diversity_annotated)
           } 
           else if (input$Data_Options == "Individual Site" & input$line == "Smooth") {
@@ -1250,14 +1302,13 @@
               ggplot2::scale_fill_gradient2(high = "darkred", mid = "white", low = "navyblue", midpoint = 0,
                                             guide = guide_colorbar(direction = "horizontal", title.position = "top",
                                                                    order = 3, barheight = unit(.2, "cm"))) +
-              ggplot2::geom_smooth(data = data_subset(), method = 'loess', formula = 'y~x', size = 1, se = F, span = .75,
+              ggplot2::geom_smooth(data = data_subset(), method = 'loess', formula = 'y~x', size = 1, se = FALSE, span = .75,
                                    aes(x = Date, y = yvalue, color = SiteName, linetype = ReserveStatus)) +
               ggplot2::geom_hline(aes(yintercept = 0)) +
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0),
                                     limits = c(lubridate::ymd(min(data_subset()$Date)),
                                                lubridate::ymd(max(data_subset()$Date)))) +
-              ggplot2::scale_y_continuous(expand = expansion(mult = c(0.1, .01)),
-                                          limits = yscale(), oob = squish) +
+              ggplot2::scale_y_continuous(expand = expansion(mult = c(0.1, .01)), limits = yscale(), oob = squish) +
               ggplot2::guides(color = guide_legend(order = 1),
                               linetype = guide_legend(order = 2, override.aes = list(col = 'black'))) +
               ggplot2::scale_colour_manual(values = SiteColor) +
@@ -1265,7 +1316,7 @@
                             title = data_subset()$CommonName,
                             subtitle = glue("{data_subset()$SiteName} {data_subset()$IslandName}"),
                             color = "Site",
-                            fill = "Oceanic Niño Index",
+                            fill = "Oceanic Ni\u00f1o Index",
                             linetype = "Reserve Status") +
               timeseries_bottom_theme()
           }
@@ -1282,8 +1333,7 @@
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0),
                                     limits = c(lubridate::ymd(min(data_subset()$Date)),
                                                lubridate::ymd(max(data_subset()$Date)))) +
-              ggplot2::scale_y_continuous(expand = expansion(mult = c(0.1, .01)),
-                                          limits = yscale(), oob = squish) +
+              ggplot2::scale_y_continuous(expand = expansion(mult = c(0.1, .01)), limits = yscale(), oob = squish) +
               ggplot2::guides(color = guide_legend(order = 1),
                               linetype = guide_legend(order = 2, override.aes = list(col = 'black'))) +
               ggplot2::scale_colour_manual(values = SiteColor) +
@@ -1291,7 +1341,7 @@
                             title = data_subset()$CommonName,
                             subtitle = glue("{data_subset()$SiteName} {data_subset()$IslandName}"),
                             color = "Site",
-                            fill = "Oceanic Niño Index",
+                            fill = "Oceanic Ni\u00f1o Index",
                             linetype = "Reserve Status") +
               timeseries_bottom_theme()
           }
@@ -1372,18 +1422,19 @@
                             `Survey Type` = Survey_Type,
                             `Survey Year` = SurveyYear, 
                             `Common Name` = CommonName, 
-                            `Mean Biomass (g/m²)` = Mean_Biomass, 
+                            'Mean Biomass (g/\u33a1)' = Mean_Biomass,
                             `Reserve Status` = ReserveStatus)
           }
           else if (id == "density") {
             data_subset() %>% 
-              dplyr::select(IslandName, SiteName, Survey_Type, SurveyYear, CommonName, Mean_Density, ReserveStatus) %>% 
+              dplyr::select(IslandName, SiteName, Survey_Type, SurveyYear, CommonName, Mean_Density, Count, ReserveStatus) %>% 
               dplyr::rename(`Island Name` = IslandName, 
                             `Site Name` = SiteName,
                             `Survey Type` = Survey_Type,
                             `Survey Year` = SurveyYear, 
                             `Common Name` = CommonName, 
-                            `Mean Density (#/m²)` = Mean_Density,
+                            'Mean Density (#/\u33a1)'= Mean_Density,
+                            `Site Count` = Count,
                             `Reserve Status` = ReserveStatus)
           }
         })

@@ -249,18 +249,18 @@ source('modules.R')
   all_sites_theme <- function () {
     ggpubr::theme_classic2() +
       ggplot2::theme(
-        # plot.title = element_text(hjust = 0.5, size = 18),
-        # plot.subtitle = element_text(hjust = 0.5, size = 16),
         legend.position = "right",
         panel.grid.major = element_line(),
-        legend.justification = c(0,0.5),
+        legend.justification = c(0, 0.5),
         legend.key.width = unit(.75, "cm"),
         legend.background = element_rect(size = unit(5, "cm")),
         legend.title = element_text(size = 12, color = "black"),
         legend.text = element_text(size = 10, colour = "black"),
+        legend.spacing.y = unit(.01, 'cm'),
+        legend.margin = ggplot2::margin(unit(0.1, "cm")),
         axis.title = element_text(hjust = .5, size = 18),
         axis.text.x = element_blank(),
-        axis.text.y = element_text(size = 10),
+        axis.text.y = element_text(size = 12),
         strip.text = element_text(size = 10, colour = "black", angle = 90))
   }
   timeseries_top_theme <- function () {
@@ -270,7 +270,7 @@ source('modules.R')
                      legend.justification = c(0, 0.5),
                      legend.key.width = unit(.75, "cm"),
                      legend.title = element_text(size = 12, color = "black"),
-                     legend.text = element_text(size = 11, color = "black"),
+                     legend.text = element_text(size = 10, color = "black"),
                      axis.title = element_text(size = 12, color="black"),
                      axis.text.y = element_text(size = 12, color="black"),
                      axis.text.x = element_blank(),
