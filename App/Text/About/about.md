@@ -6,3 +6,7 @@ This application is under development and as such many of the features are incom
 
 This application is not paid for by the National Park Service, nor is it endorsed by them in any way.
 
+## Patience Required
+
+This application is hosted on a free google cloud service with minimal resources allocated. Many of the features of this app may load slowly. Some features require significant computation to plot and will load even slower than others.  
+

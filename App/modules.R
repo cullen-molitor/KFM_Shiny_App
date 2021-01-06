@@ -545,10 +545,19 @@
   species_guide_UI <- function(id, label = "species_guide") {
     ns <- NS(id)
     tagList(
-      selectInput(inputId = ns("protocol_selector"),
-                  label = "Protocol:",
-                  choices = Protocols),
-      uiOutput(outputId = ns("guide"))
+      fluidRow(
+        column(
+          2,
+          radioButtons(inputId = ns("protocol_selector"),
+                      label = "Protocol:",
+                      choices = Protocols)
+        ),
+        column(
+          10,
+          uiOutput(outputId = ns("guide")) 
+        )
+      )
+      
     )
   }
   
@@ -574,7 +583,8 @@
       fluidRow(
         column(
           3,
-          radioButtons(inputId = ns("category"), label = "Category:", choices = c("Invertebrates", "Algae", "Fish"))
+          radioButtons(inputId = ns("category"), label = "Category:",
+                       inline = TRUE, choices = c("Invertebrates", "Algae", "Fish"))
         ),
         column(
           3, 
@@ -1103,10 +1113,9 @@
                                                lubridate::ymd(max(data_subset()$Date)))) +
               ggplot2::scale_y_continuous(limits = yscale(), expand = expansion(mult = c(0, .01)), oob = squish) +
               ggplot2::labs(title = Split$`San Miguel Island`$CommonName,  
-                            color = "Site Code", linetype = NULL,
-                            x = NULL, y = NULL) +
+                            color = "Site Code", linetype = NULL, x = NULL, y = NULL) +
               ggplot2::facet_grid(rows = vars(IslandName), scales = "fixed") +
-              ggplot2::scale_color_manual(values = SiteColor, guide = guide_legend(ncol = 2)) +
+              ggplot2::scale_color_manual(values = SiteColor, guide = guide_legend(order = 1, ncol = 2)) +
               ggplot2::guides(linetype = guide_legend(order = 2, ncol = 2, override.aes = list(col = 'black'))) +
               all_sites_theme()
             p2 <- p1 %+% Split$`Santa Rosa Island` +
@@ -1159,8 +1168,8 @@
                             color = "Site Code", linetype = NULL,
                             x = NULL, y = NULL) +
               ggplot2::facet_grid(rows = vars(IslandName), scales = "fixed") +
-              ggplot2::scale_color_manual(values = SiteColor, guide = guide_legend(ncol = 2)) +
-              ggplot2::scale_linetype(guide = guide_legend(ncol = 2)) +
+              ggplot2::scale_color_manual(values = SiteColor, guide = guide_legend(order = 1, ncol = 2)) +
+              ggplot2::guides(linetype = guide_legend(order = 2, ncol = 2, override.aes = list(col = 'black'))) +
               all_sites_theme()
             p2 <- p1 %+% Split$`Santa Rosa Island` +
               labs(title = NULL, subtitle = NULL)
@@ -1203,20 +1212,18 @@
               ggplot2::geom_smooth(size = 1, span = 0.75, method = 'loess', formula = 'y ~ x', se = FALSE) +
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0)) +
               ggplot2::scale_y_continuous(limits = yscale(), expand = expansion(mult = c(0, .01)), oob = squish) +
-              ggplot2::scale_colour_manual(values = Island_Colors) +
+              ggplot2::scale_colour_manual(values = Island_Colors, guide = guide_legend(order = 1)) +
+              ggplot2::guides(linetype = guide_legend(order = 2, ncol = 1, override.aes = list(col = 'black'))) +
               ggplot2::labs(title = data_subset()$CommonName,
-                            x = NULL, y = NULL,
-                            linetype = "Reserve Status",
-                            color = "Reserve Year") +
+                            x = NULL, y = NULL, linetype = "Reserve Status", color = "Reserve Year") +
               timeseries_top_theme()
             
             p2 <- ggplot2::ggplot(data_subset(), aes(x = Date, y = yvalue, color = IslandName)) +
               ggplot2::geom_smooth(size = 1, span = .75, se = FALSE, method = 'loess', formula = 'y ~ x') +
               ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = c(0, 0)) +
               ggplot2::scale_y_continuous(limits = yscale(), expand = expansion(mult = c(0, .01)), oob = squish) +
-              ggplot2::scale_colour_manual(values = Island_Colors) +
-              ggplot2::labs(x = NULL, y = NULL,
-                            color = "Island") +
+              ggplot2::scale_colour_manual(values = Island_Colors, guide = guide_legend(order = 1)) +
+              ggplot2::labs(x = NULL, y = NULL, color = "Island") +
               timeseries_top_theme()
             
             p3 <- ggplot2::ggplot() +
@@ -1309,15 +1316,11 @@
                                     limits = c(lubridate::ymd(min(data_subset()$Date)),
                                                lubridate::ymd(max(data_subset()$Date)))) +
               ggplot2::scale_y_continuous(expand = expansion(mult = c(0.1, .01)), limits = yscale(), oob = squish) +
-              ggplot2::guides(color = guide_legend(order = 1),
-                              linetype = guide_legend(order = 2, override.aes = list(col = 'black'))) +
-              ggplot2::scale_colour_manual(values = SiteColor) +
-              ggplot2::labs(x = "Survey Year", y = ylab(),
-                            title = data_subset()$CommonName,
+              ggplot2::guides(linetype = guide_legend(order = 2, override.aes = list(col = 'black'))) +
+              ggplot2::scale_colour_manual(values = SiteColor, guide = guide_legend(order = 1)) +
+              ggplot2::labs(x = "Survey Year", y = ylab(), title = data_subset()$CommonName,
                             subtitle = glue("{data_subset()$SiteName} {data_subset()$IslandName}"),
-                            color = "Site",
-                            fill = "Oceanic Ni\u00f1o Index",
-                            linetype = "Reserve Status") +
+                            color = "Site", fill = "Oceanic Ni\u00f1o Index", linetype = "Reserve Status") +
               timeseries_bottom_theme()
           }
           else if (input$Data_Options == "Individual Site" & input$line == "Sharp") {
@@ -1334,15 +1337,11 @@
                                     limits = c(lubridate::ymd(min(data_subset()$Date)),
                                                lubridate::ymd(max(data_subset()$Date)))) +
               ggplot2::scale_y_continuous(expand = expansion(mult = c(0.1, .01)), limits = yscale(), oob = squish) +
-              ggplot2::guides(color = guide_legend(order = 1),
-                              linetype = guide_legend(order = 2, override.aes = list(col = 'black'))) +
-              ggplot2::scale_colour_manual(values = SiteColor) +
-              ggplot2::labs(x = "Survey Year", y = ylab(),
-                            title = data_subset()$CommonName,
+              ggplot2::guides(linetype = guide_legend(order = 2, override.aes = list(col = 'black'))) +
+              ggplot2::scale_colour_manual(values = SiteColor, guide = guide_legend(order = 1)) +
+              ggplot2::labs(x = "Survey Year", y = ylab(), title = data_subset()$CommonName,
                             subtitle = glue("{data_subset()$SiteName} {data_subset()$IslandName}"),
-                            color = "Site",
-                            fill = "Oceanic Ni\u00f1o Index",
-                            linetype = "Reserve Status") +
+                            color = "Site", fill = "Oceanic Ni\u00f1o Index", linetype = "Reserve Status") +
               timeseries_bottom_theme()
           }
         })
@@ -1456,6 +1455,83 @@
     )
   }
   
+}
+
+{ # Ratio Module   -----
+  Ratio_UI <- function(id, label = 'ratio') {
+    ns <- NS(id)
+    tagList(
+      tags$hr(),
+      fluidRow(
+        column(
+          3,
+          fluidRow(
+            column(
+              5,
+              radioButtons(inputId = ns("category"), label = 'Show:',
+                           choices = c("All Species", "Single Species"))
+            ),
+            column(
+              5,
+              radioButtons(inputId = ns("taxa"), label = "Category:", 
+                           choices = c('Invertebrates', 'Algae', 'Fish', "Mixed"))
+            )
+          ),
+          fluidRow(
+            column(
+              10,
+              uiOutput(outputId = ns("speciesUI"))
+            )
+          )
+        ),
+        column(
+          9,
+          plotOutput(outputId = ns("plot"))
+        )
+      )
+    )
+  }
+  
+  Ratio_Server <- function(id) {
+    moduleServer(
+      id,
+      function(input, output, session) {
+        
+        Data <- reactive({All_Ratios %>% dplyr::filter(Metric == id, Classification == input$taxa)})
+        
+        output$speciesUI <- renderUI({
+          selectInput(inputId = session$ns("species"), label = 'Species:', choices = unique(Data()$CommonName))
+        })
+        
+        Ratios <- reactive({Data() %>% dplyr::filter(CommonName == input$species)}) 
+        
+        output$plot <- renderPlot({
+          ggplot2::ggplot(data = Ratios(), aes(x = Date, y = Mean_Ratio, color = Targeted_Broad)) +
+            ggplot2::geom_point(size = 3, stroke = 1, aes(shape = Targeted_Broad), fill = "blue") +
+            ggplot2::geom_errorbar(width = 100, aes(ymin = Mean_Ratio - CI_minus, ymax = Mean_Ratio + CI_plus)) +
+            ggplot2::geom_hline(aes(yintercept = 1)) +
+            ggplot2::geom_vline(aes(xintercept = lubridate::mdy('1-1-2003'))) +
+            ggplot2::geom_label(aes(x = lubridate::mdy('1-1-2003'), y = Inf), label = "New MPAs", 
+                                hjust = 1, vjust = 1, color = 'black', size = 3) +
+            ggplot2::geom_vline(aes(xintercept = lubridate::mdy('1-1-2005'))) +
+            ggplot2::geom_label(aes(x = lubridate::mdy('1-1-2005'), y = Inf), label = "New Sites", 
+                                hjust = 0, vjust = 1, color = 'black', size = 3) +
+            ggplot2::scale_color_manual(values = Target_Colors) +
+            ggplot2::scale_shape_manual(values = Target_Shapes) +
+            ggplot2::facet_grid(rows = vars(Targeted_Broad), space = "free", scales = "free") +
+            ggplot2:: labs(title = paste(Ratios()$CommonName, " (", id, ")", sep = ""),
+                           color = NULL, shape = NULL, x = NULL, y = NULL) +
+            ggplot2::scale_y_continuous(trans = 'log10', expand = expansion(mult = 1)) +
+            ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = expansion(mult = .05),
+                                  limits = c(lubridate::ymd(min(Ratios()$Date)),
+                                             lubridate::ymd(max(Ratios()$Date)))) +
+            ggplot2::coord_cartesian(ylim = c(min(Ratios()$Mean_Ratio), max(Ratios()$Mean_Ratio))) +
+            Ratio_theme()
+        })
+        
+      }
+    )
+  }
 }
 
 

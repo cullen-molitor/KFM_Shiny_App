@@ -145,8 +145,14 @@ source('modules.R')
   
   
   
-  Target_Colors <- c("Calculated Value" = "dodgerblue2", "Categorical" = "darkgoldenrod3",
-                     "Targeted" = "mediumvioletred", "Non-targeted" = "mediumseagreen")
+  Target_Colors <- c("Calculated Value" = "dodgerblue2", 
+                     "Categorical" = "darkgoldenrod3",
+                     "Targeted" = "mediumvioletred", 
+                     "Non-targeted" = "mediumseagreen",
+                     'Mixed' = "darkorchid")
+  Target_Shapes <- c("Targeted" = 10, 
+                     "Non-targeted" = 5, 
+                     'Mixed' = 9)
   
   Protocols <- c("Species List" = "species",
                  "1 m² Quadrats" = "1m", 
@@ -314,7 +320,8 @@ source('modules.R')
             legend.title = element_text(size = 14, color = "black"),
             legend.text = element_text(size = 13, colour = "black"),
             axis.title = element_blank(),
-            axis.text = element_text(size = 12),
+            axis.text.y = element_text(size = 12),
+            axis.text.x = element_text(size = 12, vjust = 1, hjust = 1, angle = 45),
             strip.text = element_text(size = 12, colour = "black", angle = 90))
   }
   Biomass_Summary_theme <- function () {
@@ -414,14 +421,14 @@ source('modules.R')
 }
 
 { # Mixed Data   ----
-  Mixed_2005 <- readr::read_csv("Tidy_Data/Mixed_Data_Fish_Biomass.csv") %>%
+  Mixed_2005 <- readr::read_csv("Tidy_Data/Mixed_Data_2005.csv") %>%
     dplyr::mutate(SurveyYear = factor(SurveyYear),
                   IslandName = factor(IslandName),
                   ReserveStatus = factor(ReserveStatus)) %>% 
     dplyr::select(-SiteNumber, -SiteName, 
                   -IslandCode, -SiteCode) 
   
-  Mixed_All <- readr::read_csv("Tidy_Data/Mixed_Data_Fish_Density.csv") %>% 
+  Mixed_All <- readr::read_csv("Tidy_Data/Mixed_Data_All.csv") %>% 
     dplyr::filter(SiteCode != "MM" | SurveyYear > 2004) %>%
     dplyr::mutate(SurveyYear = factor(SurveyYear),
                   IslandName = factor(IslandName),
@@ -439,8 +446,8 @@ source('modules.R')
 }
 
 { # Community Similarity Data   ----
-  nMDS_2D_2005 <- readr::read_csv("Tidy_Data/nMDS_2d_2005.csv")
-  nMDS_2D_All <- readr::read_csv("Tidy_Data/nMDS_2d_All.csv")
+  nMDS_2D_2005 <- readr::read_csv("Tidy_Data/nMDS_2D_2005.csv")
+  nMDS_2D_All <- readr::read_csv("Tidy_Data/nMDS_2D_All.csv")
   
   nMDS_3D_2005 <- readr::read_csv("Tidy_Data/nMDS_3D_2005.csv")
   nMDS_3D_All <- readr::read_csv("Tidy_Data/nMDS_3D_All.csv") 
@@ -459,6 +466,8 @@ source('modules.R')
     dplyr::mutate(CommonName = gsub("giant kelp", "giant kelp, adult (>1m)", CommonName),
                   CommonName = gsub("Benthic_Biomass_Total", "total benthic biomass", CommonName),
                   CommonName = gsub("Fish_Biomass_Total", "total fish biomass", CommonName))
+  
+  All_Ratios <- readr::read_csv("Tidy_Data/Ratios.csv")
 }
 
 { # NPS Tags   ------

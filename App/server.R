@@ -328,6 +328,9 @@ server <- function(input, output, session) {
   { # Biomass and Density   ----
     Time_Server(id = "biomass")
     Time_Server(id = "density")
+    
+    Ratio_Server(id = 'biomass_ratio')
+    Ratio_Server(id = 'density_ratio')
   }
  
   { # Reports   -----

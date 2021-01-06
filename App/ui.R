@@ -210,7 +210,7 @@ ui <- dashboardPage(
             foundation_UI(id = "sargassum"),
             foundation_UI(id = "undaria")
           ),
-          # ............ Tab - KFM Species Selection  ----
+          # ............ Tab - KFM Taxa   ----
           tabPanel(
             title = "KFM Taxa",
             tags$hr(),
@@ -679,7 +679,8 @@ ui <- dashboardPage(
           ),
           # ............ Tab - Ratios   ----
           tabPanel(
-            title = "Ratios"
+            title = "Ratios",
+            Ratio_UI(id = 'biomass_ratio')
           ),
           # ............ Tab - Map Bubbles   ----
           tabPanel(
@@ -709,7 +710,8 @@ ui <- dashboardPage(
           ),
           # ............ Tab - Ratios   ----
           tabPanel(
-            title = "Ratios"
+            title = "Ratios",
+            Ratio_UI(id = 'density_ratio')
           ),
           # ............ Tab - Map Bubbles   ----
           tabPanel(
