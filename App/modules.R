@@ -1474,7 +1474,7 @@
             column(
               5,
               radioButtons(inputId = ns("taxa"), label = "Category:", 
-                           choices = c('Invertebrates', 'Algae', 'Fish', "Mixed"))
+                           choices = c('Invertebrates', 'Algae', 'Fish'))
             )
           ),
           fluidRow(
@@ -1497,6 +1497,10 @@
       id,
       function(input, output, session) {
         
+        # 
+        # Fix Fish Survey Type Problem 
+        # 
+        # 
         Data <- reactive({All_Ratios %>% dplyr::filter(Metric == id, Classification == input$taxa)})
         
         output$speciesUI <- renderUI({
