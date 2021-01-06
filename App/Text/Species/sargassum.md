@@ -1,6 +1,6 @@
 
-### Giant Kelp 
-#### *Macrocystis pyrifera*
+### Devil Weed 
+#### *Sargassum horneri*
 
-Giant kelp is the foundation and namesake of the kelp forest ecosystem at the Channel Islands. This species of brown algae is canopy forming and gives the distinctive forest-like appearance and structure associated with diving in California. Giant kelp lacks roots, and instead uses a holdfast to anchor itself to the rocky substrate. Giant kelp is photoautotrophic which means it synthesizes food from inorganic substances using sunlight as the energy source. In ideal conditions, giant kelp can grow two feet in a single day. Giant kelp provides habitat and food to many of the species which make up the kelp forest ecosystem. Herbivorous grazers like sea urchins, abalone, and some fish feed on the blades of kelp. These blades are not easy to digest, and grazers help other species such as detritivores by breaking kelp down into nutrients which are more easily digested. Even when giant kelp becomes dislodged, the floating mats known as paddies provide habitat for larval fish to take shelter in the open ocean.
+Devil weed is seldom referred to by its common name. Generally, we just use the genus name *Sargassum* which is telling of how prolific this species has become in Southern California. 
 

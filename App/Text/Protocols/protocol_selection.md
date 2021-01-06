@@ -9,15 +9,15 @@ At the time of this publication, the technology for remote sensing or sampling o
      
 In January 1982, a workshop to review potential sampling techniques was held at the Marine Science Institute, UCSB. Thirty-seven scientists participated in the two-day workshop. Sampling techniques for kelp forest organisms were evaluated using the following criteria:
 
-•	ability to sample target species accurately and precisely
++ ability to sample target species accurately and precisely
 
-•	impacts on target and other species
++ impacts on target and other species
 
-•	efficiency (cost effectiveness)
++ efficiency (cost effectiveness)
 
-•	ability to create permanent records of samples for confirmation and future analysis
++ ability to create permanent records of samples for confirmation and future analysis
 
-•	requirements for highly trained observers or extremely complex procedures or equipment
++ requirements for highly trained observers or extremely complex procedures or equipment
 
 Permanent transects were used to reduce within-site variability and provide precise measurements of population dynamics where the major variable is time. Each transect of 12-mm diameter lead-filled woven nylon line was permanently affixed to the bedrock with stainless steel eyebolts positioned about every 10 meters along the transect (a detailed description on transect installation is found in the Data History Section). The permanent transects are relocated each time with GPS coordinates. The transects provide a reference for divers and for sample plot orientation which facilitates data collection during the limited bottom time available to divers.
 

@@ -52,11 +52,11 @@
       function(input, output, session) {
         
         filename_text <- reactive(glue("Text/Protocols/{input$protocol_selector}.md"))
-        filename_pic_1 <- reactive({glue::glue("www/Photos/Protocols/{input$protocol_selector} (1).jpg")})
-        filename_pic_2 <- reactive({glue::glue("www/Photos/Protocols/{input$protocol_selector} (2).jpg")})
-        filename_pic_3 <- reactive({glue::glue("www/Photos/Protocols/{input$protocol_selector} (3).jpg")})
-        filename_pic_4 <- reactive({glue::glue("www/Photos/Protocols/{input$protocol_selector} (4).jpg")})
-        filename_pic_5 <- reactive({glue::glue("www/Photos/Protocols/{input$protocol_selector} (5).jpg")})
+        filename_pic_1 <- reactive({glue::glue("www/Photos/Protocols/{input$protocol_selector}/{input$protocol_selector} (1).jpg")})
+        filename_pic_2 <- reactive({glue::glue("www/Photos/Protocols/{input$protocol_selector}/{input$protocol_selector} (2).jpg")})
+        filename_pic_3 <- reactive({glue::glue("www/Photos/Protocols/{input$protocol_selector}/{input$protocol_selector} (3).jpg")})
+        filename_pic_4 <- reactive({glue::glue("www/Photos/Protocols/{input$protocol_selector}/{input$protocol_selector} (4).jpg")})
+        filename_pic_5 <- reactive({glue::glue("www/Photos/Protocols/{input$protocol_selector}/{input$protocol_selector} (5).jpg")})
         filename_proto <- reactive({glue::glue("Handbook/Protocol_Guides/{input$protocol_selector}_protocol_guide.pdf")})
         filename_data <- reactive({glue::glue("Handbook/Datasheets/{input$protocol_selector}.pdf")})
         
@@ -490,7 +490,7 @@
           else if (id == "lobsta") {8001}
           else if (id == "sheep") {14013}
           else if (id == "sunflower") {11003}
-          else if (id == "giant") {11002}
+          else if (id == "giant-spined") {11002}
           else if (id == "sargassum") {2017}
           else if (id == "undaria") {2009}
         })

@@ -199,7 +199,7 @@ ui <- dashboardPage(
             foundation_UI(id = "lobsta"),
             foundation_UI(id = "sheep"),
             foundation_UI(id = "sunflower"),
-            foundation_UI(id = "giant")
+            foundation_UI(id = "giant-spined")
           ),
           # ............ Tab - Invasive Species  ----
           tabPanel(
@@ -258,29 +258,37 @@ ui <- dashboardPage(
           tabPanel(
             title = "Diseases Guides",
             tags$hr(),
-            radioButtons(inputId = "disease",
-                         label = "Choose a Taxa:", 
-                         inline = TRUE,
-                         choices = c("Sea Stars",
-                                     "Sea Urchin",
-                                     "Abalone")),
-            conditionalPanel(condition = "input.disease == 'Sea Stars'",
-                             uiOutput(outputId = "SSWD")),
-            conditionalPanel(condition = "input.disease == 'Sea Urchin'",
-                             uiOutput(outputId = "urchins")),
-            conditionalPanel(condition = "input.disease == 'Abalone'",
-                             fluidRow(
-                               column(
-                                 8,
-                                 includeMarkdown("Text/Species/abalone_disease.md")
-                               ),
-                               column(
-                                 4,
-                                 imageOutput(outputId = "abalone"),
-                                 h4("Farmed red abalone (Haliotis rufescens). The animal on the right shows classic signs of WS."),
-                                 h5("Photo Credit: CDFW")
-                               )
-                             )
+            fluidRow(
+              column(
+                2,
+                radioButtons(inputId = "disease",
+                             label = "Choose a Taxa:", 
+                             choices = c("Sea Stars", "Sea Urchin", "Abalone"))
+              ),
+              column(
+                10,
+                conditionalPanel(
+                  condition = "input.disease == 'Sea Stars'",
+                  uiOutput(outputId = "SSWD")),
+                conditionalPanel(
+                  condition = "input.disease == 'Sea Urchin'",
+                  uiOutput(outputId = "urchins")),
+                conditionalPanel(
+                  condition = "input.disease == 'Abalone'",
+                  fluidRow(
+                    column(
+                      6,
+                      includeMarkdown("Text/Species/abalone_disease.md")
+                    ),
+                    column(
+                      6,
+                      imageOutput(outputId = "abalone", height = 400),
+                      h4("Farmed red abalone (Haliotis rufescens). The animal on the right shows classic signs of WS."),
+                      h5("Photo Credit: CDFW")
+                    )
+                  )
+                )
+              )
             )
           ),
           # ............ Tab - External Resources  ----
@@ -441,18 +449,34 @@ ui <- dashboardPage(
           tabPanel(
             title = "ARM Location Graphics",
             tags$hr(),
-            selectInput(inputId = "Arm_Maps_Site",
-                        label = "Choose a Site:",
-                        choices = dplyr::filter(Site_Info, ARMs == TRUE)$SiteName),
-            imageOutput(outputId = "ARM_Map",
-                        height = 800)
+            fluidRow(
+              column(
+                2,
+                radioButtons(inputId = "Arm_Maps_Site",
+                             label = "Choose a Site:",
+                             choices = dplyr::filter(dplyr::arrange(Site_Info, Longitude), ARMs == TRUE)$Isl_SiteName)
+              ),
+              column(
+                10,
+                imageOutput(outputId = "ARM_Map", height = 750)
+              )
+            )
           ),
           # ............ Tab - Site Descriptions  ----
           tabPanel(
             title = "Site Descriptions",
             tags$hr(),
-            Site_Selector_UI(id = "Site_Descriptions"),
-            htmlOutput(outputId = 'SitePDF')
+            fluidRow(
+              column(
+                2,
+                radioButtons(inputId = "Site_Description_Site", label = "Choose a Site:",
+                             choices = dplyr::arrange(Site_Info, Longitude)$Isl_SiteName)
+              ),
+              column(
+                10,
+                imageOutput(outputId = "Site_Description", height = 1000)
+              )
+            )
           ),
           # ............ Tab - Transportation  ----
           tabPanel(
@@ -602,7 +626,7 @@ ui <- dashboardPage(
           )
         )
       ),
-      # ...... Body - Indicator Species    ---- 
+      # ...... Body - Important Species    ---- 
       tabItem(
         tabName = 'imp_spe',
         h1("Species with Strong Reserve or Island Effects"),
@@ -612,11 +636,27 @@ ui <- dashboardPage(
             title = "About",
             fluidRow(
               column(
-                6,
+                8,
                 includeMarkdown(path = "Text/Variable_Importance/variable_importance.md")
               ),
               column(
-                6
+                4,
+                fluidRow(
+                  imageOutput(outputId = "cucumba", height = 400)
+                ),
+                h5("Warty sea cucumber, a highly targeted species"), 
+                fluidRow(
+                  imageOutput(outputId = "lobsta", height = 400)
+                ),
+                h5("California spiny lobster, a highly targeted species"),
+                fluidRow(
+                  imageOutput(outputId = "rose", height = 400)
+                ),
+                h5("White-spotted rose anemone, a cold water species typical of the Oregonian province"),
+                fluidRow(
+                  imageOutput(outputId = "kelkel", height = 400)
+                ),
+                h5("Kellet's whelk, a fished species, though most catch is incidental to trap fisheries")
               )
             )
           ),

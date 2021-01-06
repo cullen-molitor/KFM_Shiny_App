@@ -1,6 +1,8 @@
 
 
-## Species Dominance
+## Richness and Relative Abundance
+
+#### Using Percent Cover Data
 
 UPDATE ME 
 

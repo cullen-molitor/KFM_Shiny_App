@@ -14,7 +14,7 @@ server <- function(input, output, session) {
     foundation_Server(id = "lobsta")
     foundation_Server(id = "sheep")
     foundation_Server(id = "sunflower")
-    foundation_Server(id = "giant")
+    foundation_Server(id = "giant-spined")
     
     # Invasives
     foundation_Server(id = "sargassum")
@@ -33,19 +33,14 @@ server <- function(input, output, session) {
     
     output$abalone <- renderImage({list(
       src = "www/Handbook/Outside_Program_Guides/healthyVshrunken.jpg", 
-      width = "100%", height = "100%")}, delete = FALSE)
+      height = "100%")}, delete = FALSE)
     
-    # Species List
-    # output$Species_List <- renderUI({tags$iframe(
-    #   style = "height:650px; width:100%; scrolling=yes",
-    #   src = "Handbook/Species_Guides/species_species_guide.pdf")
-    # })
     species_guide_Server(id = "species")
     
     Taxa_Server(id = "species")
   }
   
-  { # Maps   ----
+  { # Sampling Locations   ----
     
     { # .... Leaflet Maps     ----
       
@@ -189,29 +184,24 @@ server <- function(input, output, session) {
     
     { # .... ARM Maps   ----
       
-      ARM_Site <- reactive(
-        dplyr::filter(Site_Info, SiteName == input$Arm_Maps_Site)$SiteNumber)
+      ARM_Site <- reactive(dplyr::filter(Site_Info, Isl_SiteName == input$Arm_Maps_Site)$SiteNumber)
       
       output$ARM_Map <- renderImage({
-        list(
-          src = glue("www/Maps/ARMs/{ARM_Site()}.png"),
-          contentType = "image/png",
-          width = 1000,
-          height = 750
-        )
+        list(src = glue("www/Maps/ARMs/{ARM_Site()}.png"),
+             contentType = "image/png", height = '100%')
       }, deleteFile = FALSE)
       
     }
     
     { # .... Site Descriptions   ----
+      Site_Desc_Site <- reactive(dplyr::filter(Site_Info, Isl_SiteName == input$Site_Description_Site)$SiteNumber)
       
-      output$SitePDF <- renderUI({
-        tags$iframe(
-          style = "height:700px; width:100%; scrolling=yes",
-          src = glue::glue(
-            "Handbook/Site_Descriptions/{ 
-            Site_Selector_Server(id = 'Site_Descriptions')()$SiteNumber}.pdf"))
-      })
+      output$Site_Description <- renderImage({
+        list(src = glue::glue(
+            "www/Handbook/Site_Descriptions/{Site_Desc_Site()}.png"),
+            contentType = "image/png", height = '100%')
+      }, deleteFile = FALSE)
+      
     }
   }
   
@@ -320,6 +310,24 @@ server <- function(input, output, session) {
   
   { # Variable Importance  ----
     
+    {
+      output$cucumba <- renderImage({list(
+        src = "www/Photos/Indicator_Species/11007.jpg", 
+        height = "100%")}, delete = FALSE)
+      
+      output$lobsta <- renderImage({list(
+        src = "www/Photos/Indicator_Species/8001.jpg", 
+        height = "100%")}, delete = FALSE)
+      
+      output$rose <- renderImage({list(
+        src = "www/Photos/Indicator_Species/6002.jpg", 
+        height = "100%")}, delete = FALSE)
+      
+      output$kelkel <- renderImage({list(
+        src = "www/Photos/Indicator_Species/9006.jpg", 
+        height = "100%")}, delete = FALSE)
+      
+    }
     { # Random Forest Models ----
       VI_Server(id = "reserve")
       VI_Server(id = "island")
