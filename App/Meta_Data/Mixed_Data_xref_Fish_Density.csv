@@ -1,4 +1,4 @@
-Common_Name,CommonName,ScientificName,Data_Type,Category,Targeted
+Common_Name,CommonName,ScientificName,Data_Type,Classification,Targeted
 SiteNumber,Site Number,SiteNumber,Categorical,Meta data,Categorical
 IslandCode,Island Code,IslandCode,Categorical,Meta data,Categorical
 IslandName,Island Name,IslandName,Categorical,Meta data,Categorical
@@ -89,4 +89,5 @@ rock_wrasse_female,rock wrasse female,Halichoeres semicinctus,Count,Fish,Non-tar
 rock_wrasse_male,rock wrasse male,Halichoeres semicinctus,Count,Fish,Non-targeted
 senorita,senorita,Oxyjulis californica,Count,Fish,Non-targeted
 striped_surfperch,striped surfperch,Embiotoca lateralis,Count,Fish,Targeted
-Benthic_Biomass_Total,total benthic biomass,total benthic biomass,Biomass,Invertebrate/Algae,Calculated Value
+total_benthic_biomass,total benthic biomass,total benthic biomass,Biomass,Invertebrate,Calculated Value
+total_biomass,total biomass,total biomass,Biomass,Mixed,Calculated Value

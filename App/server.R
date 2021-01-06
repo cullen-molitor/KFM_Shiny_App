@@ -226,33 +226,36 @@ server <- function(input, output, session) {
     Two_D_data <- reactive({
       if (input$radio_2D_years == "All Years (Fewer Species)" 
           & input$radio_2D_color == "Reserve Status") {
-        nMDS_2D_All %>% 
-          dplyr::filter(SurveyYear == input$slider2d_all) %>% 
+        nMDS %>% 
+          dplyr::filter(SurveyYear == input$slider2d_all,
+                        Type == '2D_All') %>% 
           dplyr::mutate(Color = ReserveStatus)
       } 
       else if (input$radio_2D_years == "All Years (Fewer Species)" 
                & input$radio_2D_color == "Island Name") {
-        nMDS_2D_All %>% 
-          dplyr::filter(SurveyYear == input$slider2d_all) %>% 
+        nMDS %>% 
+          dplyr::filter(SurveyYear == input$slider2d_all,
+                        Type == '2D_All') %>% 
           dplyr::mutate(Color = IslandName)
       }
       else if (input$radio_2D_years == "Years > 2004 (All Species)" 
                & input$radio_2D_color == "Reserve Status") {
-        nMDS_2D_2005 %>% 
-          dplyr::filter(SurveyYear == input$slider2d_2005) %>% 
+        nMDS %>% 
+          dplyr::filter(SurveyYear == input$slider2d_2005,
+                        Type == '2D_2005') %>% 
           dplyr::mutate(Color = ReserveStatus)
       }
       else if (input$radio_2D_years == "Years > 2004 (All Species)" 
                & input$radio_2D_color == "Island Name") {
-        nMDS_2D_2005 %>% 
-          dplyr::filter(SurveyYear == input$slider2d_2005) %>% 
+        nMDS %>% 
+          dplyr::filter(SurveyYear == input$slider2d_2005,
+                        Type == '2D_2005') %>% 
           dplyr::mutate(Color = IslandName)
       }
     })
     
     output$Two_D <- renderPlot({
-      ggplot(data = Two_D_data(),
-             aes(x = NMDS1, y = NMDS2)) + 
+      ggplot(data = Two_D_data(), aes(x = `Dim 1`, y = `Dim 2`)) + 
         geom_point(size = 4, aes(shape = ReserveStatus, color = Color)) + 
         geom_text(size = 3, vjust = 2, aes(label = SiteCode)) +  
         # stat_ellipse(aes(color = IslandName), level = 0.95) +
@@ -267,30 +270,33 @@ server <- function(input, output, session) {
         nMDS_theme()
     })
     
-    
     Three_D_data <- reactive({
       if (input$radio_3D_years == "All Years (Fewer Species)" 
           & input$radio_3D_color == "Reserve Status") {
-        nMDS_3D_All %>%  
-          dplyr::filter(SurveyYear == input$slider3d_all) %>% 
+        nMDS %>%  
+          dplyr::filter(SurveyYear == input$slider3d_all,
+                        Type == '3D_All') %>% 
           dplyr::mutate(Color = ReserveStatus)
       } 
       else if (input$radio_3D_years == "All Years (Fewer Species)" 
                & input$radio_3D_color == "Island Name") {
-        nMDS_3D_All %>% 
-          dplyr::filter(SurveyYear == input$slider3d_all) %>% 
+        nMDS %>% 
+          dplyr::filter(SurveyYear == input$slider3d_all,
+                        Type == '3D_All') %>% 
           dplyr::mutate(Color = IslandName)
       }
       else if (input$radio_3D_years == "Years > 2004 (All Species)" 
                & input$radio_3D_color == "Reserve Status") {
-        nMDS_3D_2005 %>% 
-          dplyr::filter(SurveyYear == input$slider3d_2005) %>% 
+        nMDS %>% 
+          dplyr::filter(SurveyYear == input$slider3d_2005,
+                        Type == '3D_2005') %>% 
           dplyr::mutate(Color = ReserveStatus)
       }
       else if (input$radio_3D_years == "Years > 2004 (All Species)" 
                & input$radio_3D_color == "Island Name") {
-        nMDS_3D_2005 %>% 
-          dplyr::filter(SurveyYear == input$slider3d_2005) %>% 
+        nMDS %>% 
+          dplyr::filter(SurveyYear == input$slider3d_2005,
+                        Type == '3D_2005') %>% 
           dplyr::mutate(Color = IslandName)
       }
     })
@@ -350,6 +356,7 @@ server <- function(input, output, session) {
       tags$iframe(style="height:750px; width:100%; scrolling=yes", src = glue("Handbook/Collaborative_Reports/{input$collab}.pdf"))
     })
   }
+  
 } 
 
 

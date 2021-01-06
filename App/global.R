@@ -422,19 +422,16 @@ source('modules.R')
 
 { # Mixed Data   ----
   Mixed_2005 <- readr::read_csv("Tidy_Data/Mixed_Data_2005.csv") %>%
-    dplyr::mutate(SurveyYear = factor(SurveyYear),
+    dplyr::mutate(SurveyYear = factor(SurveyYear), 
                   IslandName = factor(IslandName),
                   ReserveStatus = factor(ReserveStatus)) %>% 
-    dplyr::select(-SiteNumber, -SiteName, 
-                  -IslandCode, -SiteCode) 
+    dplyr::select(-SiteNumber, -SiteName,  -IslandCode, -SiteCode) 
   
-  Mixed_All <- readr::read_csv("Tidy_Data/Mixed_Data_All.csv") %>% 
-    dplyr::filter(SiteCode != "MM" | SurveyYear > 2004) %>%
+  Mixed_All <- readr::read_csv("Tidy_Data/Mixed_Data_All.csv") %>%
     dplyr::mutate(SurveyYear = factor(SurveyYear),
                   IslandName = factor(IslandName),
                   ReserveStatus = factor(ReserveStatus)) %>% 
-    dplyr::select(-SiteNumber, -SiteName, 
-                  -IslandCode, -SiteCode) 
+    dplyr::select(-SiteNumber, -SiteName,  -IslandCode, -SiteCode) 
   
 }
 
@@ -446,18 +443,11 @@ source('modules.R')
 }
 
 { # Community Similarity Data   ----
-  nMDS_2D_2005 <- readr::read_csv("Tidy_Data/nMDS_2D_2005.csv")
-  nMDS_2D_All <- readr::read_csv("Tidy_Data/nMDS_2D_All.csv")
-  
-  nMDS_3D_2005 <- readr::read_csv("Tidy_Data/nMDS_3D_2005.csv")
-  nMDS_3D_All <- readr::read_csv("Tidy_Data/nMDS_3D_All.csv") 
+  nMDS <- readr::read_csv('Tidy_Data/nMDS.csv')
 }
 
 { # Important Species Data  ---- 
-  RF_Importance_All <- readr::read_csv("Tidy_Data/Species_Importance_All.csv")
-  RF_Importance_2005 <- readr::read_csv("Tidy_Data/Species_Importance_2005.csv")
-  
-  
+  RF_Importance <- readr::read_csv("Tidy_Data/RF_Importance.csv")
 }
 
 { # Density and Biomass Data    ----

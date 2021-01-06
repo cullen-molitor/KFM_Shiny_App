@@ -533,23 +533,15 @@ ui <- dashboardPage(
                     6,
                     conditionalPanel(
                       condition = "input.radio_2D_years == 'All Years (Fewer Species)'",
-                      sliderInput(inputId = "slider2d_all",
-                                  label = "Select a Year:",
-                                  min = min(nMDS_2D_All$SurveyYear),
-                                  max = max(nMDS_2D_All$SurveyYear),
-                                  value = min(nMDS_2D_All$SurveyYear),
-                                  width = "100%",
-                                  sep = "", step = 1, animate = TRUE)
+                      sliderInput(inputId = "slider2d_all", label = "Select a Year:",
+                                  min = 1982, max = max(nMDS$SurveyYear), value = 1982,
+                                  width = "100%", sep = "", step = 1, animate = TRUE)
                     ),
                     conditionalPanel(
                       condition = "input.radio_2D_years == 'Years > 2004 (All Species)'",
-                      sliderInput(inputId = "slider2d_2005",
-                                  label = "Select a Year:",
-                                  min = min(nMDS_2D_2005$SurveyYear),
-                                  max = max(nMDS_2D_2005$SurveyYear),
-                                  value = min(nMDS_2D_2005$SurveyYear),
-                                  width = "100%",
-                                  sep = "", step = 1, animate = TRUE)
+                      sliderInput(inputId = "slider2d_2005", label = "Select a Year:",
+                                  min = 2005, max = max(nMDS$SurveyYear), value = 2005,
+                                  width = "100%", sep = "", step = 1, animate = TRUE)
                     )
                   )
                 ),
@@ -588,23 +580,15 @@ ui <- dashboardPage(
                     6,
                     conditionalPanel(
                       condition = "input.radio_3D_years == 'All Years (Fewer Species)'",
-                      sliderInput(inputId = "slider3d_all",
-                                  label = "Select a Year:",
-                                  min = min(nMDS_3D_All$SurveyYear),
-                                  max = max(nMDS_3D_All$SurveyYear),
-                                  value = min(nMDS_3D_All$SurveyYear),
-                                  width = "100%",
-                                  sep = "", step = 1, animate = TRUE)
+                      sliderInput(inputId = "slider3d_all", label = "Select a Year:",
+                                  min = 1982, max = max(nMDS$SurveyYear), value = 1982,
+                                  width = "100%", sep = "", step = 1, animate = TRUE)
                     ),
                     conditionalPanel(
                       condition = "input.radio_3D_years == 'Years > 2004 (All Species)'",
-                      sliderInput(inputId = "slider3d_2005",
-                                  label = "Select a Year:",
-                                  min = min(nMDS_3D_2005$SurveyYear),
-                                  max = max(nMDS_3D_2005$SurveyYear),
-                                  value = min(nMDS_3D_2005$SurveyYear),
-                                  width = "100%",
-                                  sep = "", step = 1, animate = TRUE)
+                      sliderInput(inputId = "slider3d_2005", label = "Select a Year:",
+                                  min = 2005, max = max(nMDS$SurveyYear), value = 2005,
+                                  width = "100%", sep = "", step = 1, animate = TRUE)
                     )
                   )
                 ),

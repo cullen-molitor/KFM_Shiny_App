@@ -705,31 +705,25 @@
             tags$hr(),
             column(
               3,
-              radioButtons(inputId = ns("Data_VI"),
-                           label = "Data Options:",
-                           choices = c("All Years (Fewer Species)",
-                                       "Years > 2004 (All Species)"))
+              radioButtons(inputId = ns("Data_VI"), label = "Data Options:",
+                           choices = c("All Years (Fewer Species)", "Years > 2004 (All Species)"))
             ),
             column(
               3, 
-              radioButtons(inputId = ns("VI_Plot_Type"),
-                           label = "Plot Options",
-                           choices = c("Variable Importance", 
-                                       "Partial Dependence"))
+              radioButtons(inputId = ns("VI_Plot_Type"), label = "Plot Options",
+                           choices = c("Variable Importance", "Partial Dependence"))
             ),
             column(
-              3, uiOutput(outputId = ns("VI_Isl_Options"))
+              4, uiOutput(outputId = ns("VI_Isl_Options"))
             )
           ),
-          
-            conditionalPanel(
-              condition = "input.VI_Plot_Type == 'Variable Importance'", ns = ns,
-              fluidRow(plotOutput(outputId = ns("VI_Plot"), height = 600))),
-            conditionalPanel(
-              condition = "input.VI_Plot_Type == 'Partial Dependence'", ns = ns,
-              fluidRow(h5("Please be patient, these take a while to calculate and plot")),
-              fluidRow(plotOutput(outputId = ns("PD_Plot"), height = 350)))
-          
+          conditionalPanel(
+            condition = "input.VI_Plot_Type == 'Variable Importance'", ns = ns,
+            fluidRow(plotOutput(outputId = ns("VI_Plot"), height = 600))),
+          conditionalPanel(
+            condition = "input.VI_Plot_Type == 'Partial Dependence'", ns = ns,
+            fluidRow(h5("Please be patient, these take a while to calculate and plot")),
+            fluidRow(plotOutput(outputId = ns("PD_Plot"), height = 350)))
         )
       )
     )
@@ -750,28 +744,32 @@
         
         rf_species <- reactive({
           if (id == 'reserve' & input$Data_VI == 'All Years (Fewer Species)') {
-            RF_Importance <- RF_Importance_All %>% 
+            RF_Importance <- RF_Importance %>% 
+              dplyr::filter(Type == "RF_All") %>% 
               arrange(desc(MeanDecreaseAccuracy))
             a <- c(as.character(RF_Importance$Common_Name))
             names(a) <- c(RF_Importance$CommonName)
             return(a)
           } 
           else if (id == 'reserve' & input$Data_VI == 'Years > 2004 (All Species)') {
-            RF_Importance <- RF_Importance_2005 %>% 
+            RF_Importance <- RF_Importance %>% 
+              dplyr::filter(Type == "RF_2005") %>% 
               arrange(desc(MeanDecreaseAccuracy))
             a <- c(as.character(RF_Importance$Common_Name))
             names(a) <- c(RF_Importance$CommonName)
             return(a)
           }
           else if (id == 'island' & input$Data_VI == 'All Years (Fewer Species)') {
-            RF_Importance <- RF_Importance_All %>% 
+            RF_Importance <- RF_Importance %>% 
+              dplyr::filter(Type == "RF_All") %>% 
               arrange(desc(MeanDecreaseAccuracy_Isl))
             a <- c(as.character(RF_Importance$Common_Name))
             names(a) <- c(RF_Importance$CommonName)
             return(a)
           } 
           else if (id == 'island' & input$Data_VI == 'Years > 2004 (All Species)') {
-            RF_Importance <- RF_Importance_2005 %>% 
+            RF_Importance <- RF_Importance %>% 
+              dplyr::filter(Type == "RF_2005") %>% 
               arrange(desc(MeanDecreaseAccuracy_Isl))
             a <- c(as.character(RF_Importance$Common_Name))
             names(a) <- c(RF_Importance$CommonName)
@@ -795,7 +793,8 @@
         
         Variable_Accuracy <- reactive({
           if (id == 'reserve' & input$Data_VI == "All Years (Fewer Species)") {
-            RF_Importance_All %>% 
+            RF_Importance %>% 
+              dplyr::filter(Type == "RF_All") %>% 
               dplyr::arrange(desc(MeanDecreaseAccuracy)) %>%  
               dplyr::mutate(CommonName1 = paste(CommonName, row_number()),
                             CommonName1 = factor(CommonName1, levels = rev(CommonName1)),
@@ -804,7 +803,8 @@
               droplevels()
           } 
           else  if (id == 'reserve' & input$Data_VI == "Years > 2004 (All Species)") {
-            RF_Importance_2005 %>% 
+            RF_Importance %>% 
+              dplyr::filter(Type == "RF_2005") %>% 
               dplyr::arrange(desc(MeanDecreaseAccuracy)) %>%  
               dplyr::mutate(CommonName1 = paste(CommonName, row_number()),
                             CommonName1 = factor(CommonName1, levels = rev(CommonName1)),
@@ -813,7 +813,8 @@
               droplevels()
           } 
           else  if (id == 'island' & input$Data_VI == "All Years (Fewer Species)" & input$VI_Isl == "All Islands") {
-            RF_Importance_All %>% 
+            RF_Importance %>% 
+              dplyr::filter(Type == "RF_All") %>% 
               dplyr::arrange(desc(MeanDecreaseAccuracy_Isl)) %>%  
               dplyr::mutate(CommonName1 = paste(CommonName, row_number()),
                             CommonName1 = factor(CommonName1, levels = rev(CommonName1)),
@@ -822,7 +823,8 @@
               droplevels()
           } 
           else if (id == 'island' & input$Data_VI == "All Years (Fewer Species)" & input$VI_Isl != "All Islands") {
-            RF_Importance_All %>% 
+            RF_Importance %>% 
+              dplyr::filter(Type == "RF_All") %>% 
               dplyr::rename(xvalue = input$VI_Isl) %>% 
               dplyr::arrange(desc(xvalue)) %>%  
               dplyr::mutate(CommonName1 = paste(CommonName, row_number()),
@@ -831,7 +833,8 @@
               droplevels()
           } 
           else if (id == 'island' & input$Data_VI == "Years > 2004 (All Species)" & input$VI_Isl == "All Islands") {
-            RF_Importance_2005  %>% 
+            RF_Importance  %>% 
+              dplyr::filter(Type == "RF_2005") %>% 
               dplyr::arrange(desc(MeanDecreaseAccuracy_Isl)) %>%  
               dplyr::mutate(CommonName1 = paste(CommonName, row_number()),
                             CommonName1 = factor(CommonName1, levels = rev(CommonName1)),
@@ -840,7 +843,8 @@
               droplevels()
           }
           else if (id == 'island' & input$Data_VI == "Years > 2004 (All Species)" & input$VI_Isl != "All Islands") {
-            RF_Importance_All %>% 
+            RF_Importance %>% 
+              dplyr::filter(Type == "RF_2005") %>% 
               dplyr::rename(xvalue = input$VI_Isl) %>% 
               dplyr::arrange(desc(xvalue)) %>%  
               dplyr::mutate(CommonName1 = paste(CommonName, row_number()),
@@ -853,13 +857,15 @@
         
         Variable_Gini <- reactive({
           if (input$Data_VI == "All Years (Fewer Species)") {
-            RF_Importance_All %>% 
+            RF_Importance %>% 
+              dplyr::filter(Type == "RF_All") %>% 
               dplyr::arrange(desc(MeanDecreaseGini_Isl)) %>%  
               dplyr::mutate(CommonName1 = paste(CommonName, row_number()))  %>% 
               head(30) %>% 
               droplevels()
           } else {
-            RF_Importance_2005 %>% 
+            RF_Importance %>% 
+              dplyr::filter(Type == "RF_2005") %>% 
               dplyr::arrange(desc(MeanDecreaseGini_Isl)) %>%  
               dplyr::mutate(CommonName1 = paste(CommonName, row_number()))  %>% 
               head(30) %>% 
@@ -907,12 +913,23 @@
         
         pdp_labels <- reactive({
           if (input$Data_VI == 'All Years (Fewer Species)') {
-            RF_Importance_All %>% 
+            RF_Importance %>% 
+              dplyr::filter(Type == "RF_All") %>% 
               dplyr::filter(Common_Name == input$VI_Species_Input)
           } 
           else if (input$Data_VI == 'Years > 2004 (All Species)') {
-            RF_Importance_2005 %>% 
+            RF_Importance %>% 
+              dplyr::filter(Type == "RF_2005") %>% 
               dplyr::filter(Common_Name == input$VI_Species_Input)
+          }
+        })
+        
+        Mixed <- reactive({
+          if (input$Data_VI == 'All Years (Fewer Species)') {
+            Mixed %>% dplyr::filter(Type == '')
+          } 
+          else if (input$Data_VI == 'Years > 2004 (All Species)') {
+            Mixed %>% dplyr::filter(Type == '')
           }
         })
         
