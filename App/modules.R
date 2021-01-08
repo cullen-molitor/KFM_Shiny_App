@@ -981,10 +981,7 @@
             ),
             column(
               3,
-              conditionalPanel(
-                condition = "input.taxa == 'Fish'", ns = ns,
-                uiOutput(outputId = ns("Fishy"))
-              )
+              uiOutput(outputId = ns("Fishy"))
             )
           ),
           fluidRow(
@@ -1008,13 +1005,12 @@
             ),
             # column(
             #   3,
-            #   radioButtons(inputId = ns('error'), label = "Error Bars:", choices = c("Show", "Hide"))
+            #   radioButtons(inputId = ns('plot'), label = "Plot Type:", choices = c("Line", "Stacked"))
             # ),
             column(
               3,
               conditionalPanel(
                 condition = "input.Data_Options == 'All Sites' | input.Data_Options == 'Individual Site'", ns = ns,
-                
                 radioButtons(inputId = ns("line"), label = "Line Type:", choices = c('Smooth', 'Sharp'))
               )
             )
@@ -1043,10 +1039,8 @@
       function(input, output, session) {
         
         output$Fishy <- renderUI({
-          if (id == "biomass") {
-            NULL
-          }
-          else if (id == "density"){
+          if (id == "biomass") {NULL}
+          else if (id == "density" & input$taxa == 'Fish'){
             radioButtons(inputId = session$ns("Fish_Survey"), label = "Survey Type:", choices = c("RDFC", "VFT"))
           }
         })
@@ -1486,24 +1480,35 @@
             column(
               5,
               radioButtons(inputId = ns("category"), label = 'Show:',
-                           choices = c("All Species", "Single Species"))
+                           choices = c("Single Species", "All Species"))
             ),
             column(
-              5,
-              radioButtons(inputId = ns("taxa"), label = "Category:", 
+              4,
+              radioButtons(inputId = ns("taxa"), label = "in Category:", 
                            choices = c('Invertebrates', 'Algae', 'Fish'))
+            ),
+            column(
+              3,
+              uiOutput(outputId = ns("Fishy"))
             )
           ),
           fluidRow(
             column(
               10,
-              uiOutput(outputId = ns("speciesUI"))
+              uiOutput(outputId = ns("species_year_UI"))
             )
           )
         ),
         column(
           9,
-          plotOutput(outputId = ns("plot"))
+          conditionalPanel(
+            condition = "input.category == 'Single Species'", ns = ns,
+            plotOutput(outputId = ns("plot_single"))
+          ),
+          conditionalPanel(
+            condition = "input.category == 'All Species'", ns = ns,
+            uiOutput(outputId = ns("plot_all_UI"))
+          )
         )
       )
     )
@@ -1514,19 +1519,65 @@
       id,
       function(input, output, session) {
         
-        # 
-        # Fix Fish Survey Type Problem 
-        # 
-        # 
-        Data <- reactive({All_Ratios %>% dplyr::filter(Metric == id, Classification == input$taxa)})
+        output$Fishy <- renderUI({
+          if (id == "bimass_ratio") {NULL}
+          else if (id == "density_ratio" & input$taxa == 'Fish'){
+            radioButtons(inputId = session$ns("Fish_Survey"), label = "Survey:", choices = c("RDFC", "VFT"))
+          }
+        })
         
-        output$speciesUI <- renderUI({
-          selectInput(inputId = session$ns("species"), label = 'Species:', choices = unique(Data()$CommonName))
+        Data <- reactive({
+          if (id == "biomass_ratio") {
+            All_Ratios %>% dplyr::filter(Metric == id, Classification == input$taxa)
+          }
+          else if (id == "density_ratio" & input$taxa != 'Fish') {
+            All_Ratios %>% dplyr::filter(Metric == id, Classification == input$taxa)
+          }
+          else if (id == "density_ratio" & input$taxa == 'Fish') {
+            All_Ratios %>% dplyr::filter(Metric == id, Classification == input$taxa, Survey_Type == input$Fish_Survey)
+          }
+        })
+        
+        output$species_year_UI <- renderUI({
+          if (input$category == "Single Species") {
+            selectInput(inputId = session$ns("species"), label = 'Species:', choices = unique(Data()$CommonName))
+          }
+          else if (input$category == "All Species") {
+            sliderInput(inputId = session$ns("year"),label = "Select a Year:",
+                        min = min(Data()$SurveyYear), max = max(Data()$SurveyYear),
+                        value = min(Data()$SurveyYear), width = "100%", sep = "", step = 1, animate = TRUE)
+          }
         })
         
         Ratios <- reactive({Data() %>% dplyr::filter(CommonName == input$species)}) 
         
-        output$plot <- renderPlot({
+        output$plot_all_UI <- renderUI({
+          plotOutput(outputId = session$ns("plot_all"), 
+                     height = if (input$taxa == "Invertebrates") {600}
+                     else if(input$taxa == "Algae") {200}
+                     else if(id == "biomass_ratio" & input$taxa == "Fish") {600}
+                     else if(id == "density_ratio" & input$taxa == "Fish" & input$Fish_Survey == 'RDFC') {1200}
+                     else if(id == "density_ratio" & input$taxa == "Fish" & input$Fish_Survey == 'VFT') {600}) 
+        })
+        
+        
+        All_Data <- reactive({Data() %>% dplyr::filter(SurveyYear == input$year)})
+          
+        output$plot_all <- renderPlot({
+          ggplot2::ggplot(data = All_Data(), aes(x = Mean_Ratio, y = CommonName, color = Targeted_Broad)) +
+            ggplot2::geom_vline(aes(xintercept = 1)) +
+            ggplot2::geom_point(size = 3, stroke = 1, aes(shape = Targeted_Broad), fill = "blue") +
+            ggplot2::geom_errorbar(aes(y = CommonName, xmin = Mean_Ratio - CI_minus, xmax = Mean_Ratio + CI_plus)) +
+            ggplot2::scale_shape_manual(values = Target_Shapes) +
+            ggplot2::scale_color_manual(values = Target_Colors) +
+            ggplot2::scale_x_continuous(trans = 'log10', expand = expansion(mult = 1)) +
+            ggplot2::coord_cartesian(xlim = c(min(All_Data()$Mean_Ratio), max(All_Data()$Mean_Ratio))) +
+            ggplot2::facet_grid(rows = vars(Targeted_Broad), space = "free", scales = "free") +
+            ggplot2::labs(title = input$year, color = NULL, shape = NULL, x = "Biomass Ratio", y = "Common Name") +
+            Ratio_Long_theme()
+        })
+        
+        output$plot_single <- renderPlot({
           ggplot2::ggplot(data = Ratios(), aes(x = Date, y = Mean_Ratio, color = Targeted_Broad)) +
             ggplot2::geom_point(size = 3, stroke = 1, aes(shape = Targeted_Broad), fill = "blue") +
             ggplot2::geom_errorbar(width = 100, aes(ymin = Mean_Ratio - CI_minus, ymax = Mean_Ratio + CI_plus)) +
@@ -1540,14 +1591,14 @@
             ggplot2::scale_color_manual(values = Target_Colors) +
             ggplot2::scale_shape_manual(values = Target_Shapes) +
             ggplot2::facet_grid(rows = vars(Targeted_Broad), space = "free", scales = "free") +
-            ggplot2:: labs(title = paste(Ratios()$CommonName, " (", id, ")", sep = ""),
+            ggplot2::labs(title = paste(Ratios()$CommonName, " (", id, ")", sep = ""),
                            color = NULL, shape = NULL, x = NULL, y = NULL) +
             ggplot2::scale_y_continuous(trans = 'log10', expand = expansion(mult = 1)) +
             ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = expansion(mult = .05),
                                   limits = c(lubridate::ymd(min(Ratios()$Date)),
                                              lubridate::ymd(max(Ratios()$Date)))) +
             ggplot2::coord_cartesian(ylim = c(min(Ratios()$Mean_Ratio), max(Ratios()$Mean_Ratio))) +
-            Ratio_theme()
+            Ratio_Wide_theme()
         })
         
       }

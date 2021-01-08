@@ -271,102 +271,125 @@ source('modules.R')
   }
   timeseries_top_theme <- function () {
     ggpubr::theme_classic2() +
-      ggplot2::theme(text = element_text(color="black"),
-                     plot.caption = element_text(size = 11),
-                     legend.justification = c(0, 0.5),
-                     legend.key.width = unit(.75, "cm"),
-                     legend.title = element_text(size = 12, color = "black"),
-                     legend.text = element_text(size = 10, color = "black"),
-                     axis.title = element_text(size = 12, color="black"),
-                     axis.text.y = element_text(size = 12, color="black"),
-                     axis.text.x = element_blank(),
-                     panel.grid.major= element_line())
+      ggplot2::theme(
+        text = element_text(color="black"),
+        plot.caption = element_text(size = 11),
+        legend.justification = c(0, 0.5),
+        legend.key.width = unit(.75, "cm"),
+        legend.title = element_text(size = 12, color = "black"),
+        legend.text = element_text(size = 10, color = "black"),
+        axis.title = element_text(size = 12, color="black"),
+        axis.text.y = element_text(size = 12, color="black"),
+        axis.text.x = element_blank(),
+        panel.grid.major= element_line())
   }
   timeseries_bottom_theme <- function (){
     ggpubr::theme_classic2() +
-      ggplot2::theme(text = element_text(color="black"),
-                     plot.caption = element_text(size = 13),
-                     legend.justification = c(0, 0.5),
-                     legend.key.width = unit(.75, "cm"),
-                     legend.title = element_text(size = 12, color = "black"),
-                     legend.text = element_text(size = 11, color = "black"),
-                     legend.margin = ggplot2::margin(unit(0.1, "cm")),
-                     axis.title = element_text(size = 12, color = "black"),
-                     axis.text.y = element_text(size = 12, color = "black"),
-                     axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1, size = 11, color="black"),
-                     axis.line.x = element_blank(),
-                     panel.grid.major= element_line())
+      ggplot2::theme(
+        text = element_text(color="black"),
+        plot.caption = element_text(size = 13),
+        legend.justification = c(0, 0.5),
+        legend.key.width = unit(.75, "cm"),
+        legend.title = element_text(size = 12, color = "black"),
+        legend.text = element_text(size = 11, color = "black"),
+        legend.margin = ggplot2::margin(unit(0.1, "cm")),
+        axis.title = element_text(size = 12, color = "black"),
+        axis.text.y = element_text(size = 12, color = "black"),
+        axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1, size = 11, color="black"),
+        axis.line.x = element_blank(),
+        panel.grid.major= element_line())
   }
   nMDS_theme <- function () {
-    theme_bw() + 
-      theme(plot.title = element_text(size = 16, hjust = 0.5),
-            axis.text = element_blank(), 
-            axis.ticks = element_blank(), 
-            axis.title = element_blank(), 
-            panel.background = element_blank(), 
-            panel.grid.major = element_blank(),  
-            panel.grid.minor = element_blank(),  
-            plot.background = element_blank(),
-            plot.caption = element_text(size=9, hjust = 0),
-            aspect.ratio=1) 
+    ggplot2::theme_bw() + 
+      ggplot2::theme(
+        plot.title = element_text(size = 16, hjust = 0.5),
+        axis.text = element_blank(), 
+        axis.ticks = element_blank(), 
+        axis.title = element_blank(), 
+        panel.background = element_blank(), 
+        panel.grid.major = element_blank(),  
+        panel.grid.minor = element_blank(),  
+        plot.background = element_blank(),
+        plot.caption = element_text(size=9, hjust = 0),
+        aspect.ratio=1) 
   }
-  Ratio_theme <- function () {
-    theme_classic2() +
-      theme(plot.title = element_text(hjust = 0.5, size = 16),
-            panel.grid.major = element_line(),
-            legend.position = "none",
-            legend.justification = c(0.5,0.5),
-            legend.background = element_rect(size = unit(5, "cm")),
-            legend.title = element_text(size = 14, color = "black"),
-            legend.text = element_text(size = 13, colour = "black"),
-            axis.title = element_blank(),
-            axis.text.y = element_text(size = 12),
-            axis.text.x = element_text(size = 12, vjust = 1, hjust = 1, angle = 45),
-            strip.text = element_text(size = 12, colour = "black", angle = 90))
+  Ratio_Wide_theme <- function () {
+    ggpubr::theme_classic2() +
+      ggplot2::theme(
+        plot.title = element_text(hjust = 0.5, size = 16),
+        panel.grid.major = element_line(),
+        legend.position = "none",
+        legend.justification = c(0.5,0.5),
+        legend.background = element_rect(size = unit(5, "cm")),
+        legend.title = element_text(size = 14, color = "black"),
+        legend.text = element_text(size = 13, colour = "black"),
+        axis.title = element_blank(),
+        axis.text.y = element_text(size = 12),
+        axis.text.x = element_text(size = 12, vjust = 1, hjust = 1, angle = 45),
+        strip.text = element_text(size = 12, colour = "black", angle = 90))
+  }
+  Ratio_Long_theme <- function () {
+    ggpubr::theme_classic2() +
+      ggplot2::theme(
+        plot.title = element_text(hjust = 0.5, size = 16),
+        plot.subtitle = element_text(hjust = 0.5, size = 16),
+        legend.position = "right",
+        panel.grid.major = element_line(),
+        legend.justification = c(0,0.5),
+        legend.key.width = unit(.75, "cm"),
+        legend.background = element_rect(size = unit(5, "cm")),
+        legend.title = element_text(size = 14, color = "black"),
+        legend.text = element_text(size = 13, colour = "black"),
+        axis.title = element_text(hjust = .5, size = 18),
+        axis.text = element_text(size = 12),
+        strip.text = element_text(size = 14, colour = "black", angle = 90))
   }
   Biomass_Summary_theme <- function () {
-    ggplot2::theme_classic() +
-      ggplot2::theme(plot.title = element_text(hjust = 0.5, size = 18),
-                     plot.subtitle = element_text(hjust = 0.5, size = 16),
-                     plot.caption = element_text(hjust = 0),
-                     panel.border = element_rect(fill = FALSE),
-                     legend.position = "bottom",
-                     legend.justification = c(0.5, 0.5),
-                     legend.title = element_text(size = 12, color = "black"),
-                     legend.text = element_text(size = 9, color = "black"),
-                     axis.title = element_text(size = 16),
-                     axis.text.y = element_text(size = 12), 
-                     axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1, size = 12),
-                     strip.text = element_text(size = 10, colour = "black"))
+    ggpubr::theme_classic() +
+      ggplot2::theme(
+        plot.title = element_text(hjust = 0.5, size = 18),
+        plot.subtitle = element_text(hjust = 0.5, size = 16),
+        plot.caption = element_text(hjust = 0),
+        panel.border = element_rect(fill = FALSE),
+        legend.position = "bottom",
+        legend.justification = c(0.5, 0.5),
+        legend.title = element_text(size = 12, color = "black"),
+        legend.text = element_text(size = 9, color = "black"),
+        axis.title = element_text(size = 16),
+        axis.text.y = element_text(size = 12), 
+        axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1, size = 12),
+        strip.text = element_text(size = 10, colour = "black"))
   }
   Original_16_top_theme <- function () {
     ggpubr::theme_classic2() +
-      ggplot2::theme(text = element_text(color="black"),
-                     legend.position = "right",
-                     legend.justification = c(0, 0.5),
-                     legend.key.width = unit(.75, "cm"),
-                     legend.title = element_text(size = 12, color = "black"),
-                     legend.text = element_text(size = 11, color = "black"),
-                     axis.title = element_text(hjust = .5, size = 12),
-                     axis.text.y = element_text(size = 12, color="black"),
-                     axis.text.x = element_blank(),
-                     panel.grid.major= element_line())
+      ggplot2::theme(
+        text = element_text(color="black"),
+        legend.position = "right",
+        legend.justification = c(0, 0.5),
+        legend.key.width = unit(.75, "cm"),
+        legend.title = element_text(size = 12, color = "black"),
+        legend.text = element_text(size = 11, color = "black"),
+        axis.title = element_text(hjust = .5, size = 12),
+        axis.text.y = element_text(size = 12, color="black"),
+        axis.text.x = element_blank(),
+        panel.grid.major= element_line())
   }
   Original_16_bottom_theme <- function () {
     ggpubr::theme_classic2() +
-      ggplot2::theme(text = element_text(color="black"),
-                     legend.position = "right",
-                     legend.justification = c(0,0.5),
-                     legend.key.width = unit(.75, "cm"),
-                     legend.background = element_rect(size = unit(5, "cm")),
-                     legend.title = element_text(size = 12, color = "black"),
-                     legend.text = element_text(size = 11, colour = "black"),
-                     panel.grid.major = element_line(),
-                     axis.title = element_text(hjust = .5, size = 12),
-                     axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1, size = 12, color="black"),
-                     axis.text.y = element_text(size = 12, color="black"),
-                     axis.line.x = element_blank(),
-                     strip.text = element_text(size = 10, colour = "black", angle = 90))
+      ggplot2::theme(
+        text = element_text(color="black"),
+        legend.position = "right",
+        legend.justification = c(0,0.5),
+        legend.key.width = unit(.75, "cm"),
+        legend.background = element_rect(size = unit(5, "cm")),
+        legend.title = element_text(size = 12, color = "black"),
+        legend.text = element_text(size = 11, colour = "black"),
+        panel.grid.major = element_line(),
+        axis.title = element_text(hjust = .5, size = 12),
+        axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1, size = 12, color="black"),
+        axis.text.y = element_text(size = 12, color="black"),
+        axis.line.x = element_blank(),
+        strip.text = element_text(size = 10, colour = "black", angle = 90))
   }
 }
 

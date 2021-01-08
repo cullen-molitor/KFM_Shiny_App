@@ -310,7 +310,7 @@ server <- function(input, output, session) {
   
   { # Variable Importance  ----
     
-    {
+    { # Images   -----
       output$cucumba <- renderImage({list(
         src = "www/Photos/Indicator_Species/11007.jpg", 
         height = "100%")}, delete = FALSE)
@@ -340,6 +340,49 @@ server <- function(input, output, session) {
   }
   
   { # Biomass and Density   ----
+    
+    { # Images  ----
+      output$Biomass_pic_1 <- renderImage({list(
+        src = "www/Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (4).jpg", 
+        height = "100%")}, delete = FALSE)
+      
+      output$Biomass_pic_2 <- renderImage({list(
+        src = "www/Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (10).jpg", 
+        height = "100%")}, delete = FALSE)
+      
+      output$Biomass_pic_3 <- renderImage({list(
+        src = "www/Photos/Kelp_Forest_Scenes/Shaun_Wolfe/1 (1).jpg", 
+        height = "100%")}, delete = FALSE)
+      
+      output$Biomass_pic_4 <- renderImage({list(
+        src = "www/Photos/Kelp_Forest_Scenes/Shaun_Wolfe/1 (3).jpg", 
+        height = "100%")}, delete = FALSE)
+      
+      output$Biomass_pic_5 <- renderImage({list(
+        src = "www/Photos/Kelp_Forest_Scenes/Shaun_Wolfe/1 (5).jpg", 
+        height = "100%")}, delete = FALSE)
+      
+      output$Density_pic_1 <- renderImage({list(
+        src = "www/Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (3).jpg", 
+        height = "100%")}, delete = FALSE)
+      
+      # output$Density_pic_2 <- renderImage({list(
+      #   src = "www/Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (6).jpg", 
+      #   height = "100%")}, delete = FALSE)
+      
+      output$Density_pic_3 <- renderImage({list(
+        src = "www/Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (8).jpg", 
+        height = "100%")}, delete = FALSE)
+      
+      output$Density_pic_4 <- renderImage({list(
+        src = "www/Photos/Kelp_Forest_Scenes/Shaun_Wolfe/1 (4).jpg", 
+        height = "100%")}, delete = FALSE)
+      
+      output$Density_pic_5 <- renderImage({list(
+        src = "www/Photos/Kelp_Forest_Scenes/Shaun_Wolfe/1 (2).jpg", 
+        height = "100%")}, delete = FALSE)
+    }
+    
     Time_Server(id = "biomass")
     Time_Server(id = "density")
     

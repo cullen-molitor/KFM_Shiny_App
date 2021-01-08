@@ -691,8 +691,32 @@ ui <- dashboardPage(
             title = "About",
             fluidRow(
               column(
-                6,
+                8,
                 includeMarkdown(path = "Text/Biomass_Density/biomass.md")
+              ),
+              column(
+                4,
+                imageOutput(outputId = "Biomass_pic_1", height = 400),
+                h5("Photo: Kenan Chan"),
+                imageOutput(outputId = "Biomass_pic_2", height = 400),
+                h5("Photo: Kenan Chan"),
+              ),
+            ),
+            fluidRow(
+              column(
+                4,
+                imageOutput(outputId = "Biomass_pic_3", height = 400),
+                h5("Photo: Shaun Wolfe")
+              ),
+              column(
+                4,
+                imageOutput(outputId = "Biomass_pic_4", height = 400),
+                h5("Photo: Shaun Wolfe")
+              ),
+              column(
+                4,
+                imageOutput(outputId = "Biomass_pic_5", height = 400),
+                h5("Photo: Shaun Wolfe")
               )
             )
           ),
@@ -706,9 +730,14 @@ ui <- dashboardPage(
             title = "Ratios",
             Ratio_UI(id = 'biomass_ratio')
           ),
+          # ............ Tab - Stacked   ----
+          # tabPanel(
+          #   title = "Stacked"
+          # ),
           # ............ Tab - Map Bubbles   ----
           tabPanel(
-            title = "Map Bubbles"
+            title = "Map Bubbles",
+            h2("Coming soon...")
           )
         )
       ),
@@ -722,8 +751,33 @@ ui <- dashboardPage(
             title = "About",
             fluidRow(
               column(
-                6,
+                8,
                 includeMarkdown(path = "Text/Biomass_Density/density.md")
+              ),
+              column(
+                4,
+                imageOutput(outputId = "Density_pic_1", height = 400),
+                h5("Photo: Brett Seymour")
+                # ,
+                # imageOutput(outputId = "Density_pic_2", height = 400),
+                # h5("Photo: Brett Seymour"),
+              ),
+            ),
+            fluidRow(
+              column(
+                4,
+                imageOutput(outputId = "Density_pic_3", height = 400),
+                h5("Photo: Brett Seymour")
+              ),
+              column(
+                4,
+                imageOutput(outputId = "Density_pic_4", height = 400),
+                h5("Photo: Shaun Wolfe")
+              ),
+              column(
+                4,
+                imageOutput(outputId = "Density_pic_5", height = 400),
+                h5("Photo: Shaun Wolfe")
               )
             )
           ),
@@ -739,7 +793,8 @@ ui <- dashboardPage(
           ),
           # ............ Tab - Map Bubbles   ----
           tabPanel(
-            title = "Map Bubbles"
+            title = "Map Bubbles",
+            h2("Coming soon...")
           )
         )
       ),
