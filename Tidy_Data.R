@@ -365,11 +365,11 @@ Export_END_Year <- 2019
       dplyr::filter(!is.na(Species)) %>%    
       dplyr::left_join(
         Site_Info %>%
-          dplyr::select(SiteName, ReserveYear, MeanDepth)) %>% 
+          dplyr::select(SiteName, ReserveYear, MeanDepth, Latitude, Longitude)) %>% 
       dplyr::mutate(SE = NA, SD = NA) %>%
       dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, Date,
                     Species, ScientificName, CommonName, Mean_Density, SD, SE, Count,
-                    MeanDepth, Survey_Type, ReserveStatus, Reference, ReserveYear, Classification)
+                    MeanDepth, Survey_Type, ReserveStatus, Reference, ReserveYear, Latitude, Longitude, Classification)
     
     # a <- subset(Fish_Density_CSV, is.na(Species))
     # unique(a$ScientificName)
@@ -385,13 +385,13 @@ Export_END_Year <- 2019
       dplyr::select(-Area_Surveyed) %>%    
       dplyr::left_join(
         Site_Info %>%
-          dplyr::select(SiteName, ReserveYear)) %>%
+          dplyr::select(SiteName, ReserveYear, Latitude, Longitude)) %>%
       dplyr::left_join(
         Species_Info %>%
           dplyr::select(CommonName, Classification))
     
     Density_CSV <- Benthic_Density_CSV %>% 
-      base::rbind(Fish_Density_CSV) %>% 
+      base::rbind(Fish_Density_CSV) %>%
       readr::write_csv("App/Tidy_Data/Density.csv")
   }
   
@@ -922,7 +922,7 @@ Export_END_Year <- 2019
       base::rbind(total_biomass, Benthic_Mean_Biomass_CSV) %>% 
       dplyr::left_join(
         Site_Info %>% 
-          dplyr::select(SiteName, ReserveYear)) %>% 
+          dplyr::select(SiteName, ReserveYear, Latitude, Longitude)) %>% 
       dplyr::left_join(
         Species_Info %>% 
           dplyr::select(ScientificName, Classification) %>% 

@@ -383,11 +383,21 @@ server <- function(input, output, session) {
         height = "100%")}, delete = FALSE)
     }
     
-    Time_Server(id = "biomass")
-    Time_Server(id = "density")
+    { # Time Series   ----
+      Time_Server(id = "biomass")
+      Time_Server(id = "density")
+    }
     
-    Ratio_Server(id = 'biomass_ratio')
-    Ratio_Server(id = 'density_ratio')
+    { # Ratios   ----
+      Ratio_Server(id = 'biomass_ratio')
+      Ratio_Server(id = 'density_ratio')
+    }
+    
+    { # Map Bubbles    ----
+      bubbles_Server(id = "biomass_bubbles")
+      bubbles_Server(id = "density_bubbles")
+    }
+    
   }
  
   { # Reports   -----

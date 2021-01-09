@@ -1606,6 +1606,127 @@
   }
 }
 
+{ # Map Bubbles Module   ----
+  
+  bubbles_UI <- function(id, label = "bubbles") {
+    ns <- NS(id)
+    tagList(
+      tags$hr(),
+      fluidRow(
+        column(
+          3,
+          fluidRow(
+            column(
+              4,
+              radioButtons(inputId = ns("taxa"), label = "Category:", 
+                           choices = c('Invertebrates', 'Algae', 'Fish'))
+            ),
+            column(
+              3,
+              uiOutput(outputId = ns("Fishy"))
+            )
+          ),
+          fluidRow(
+            column(
+              10,
+              selectInput(inputId = ns("map_center"), label = "Center Map on:",
+                          choices = c(unique(Site_Info$IslandName)))
+            )
+          ),
+          fluidRow(
+            column(
+              10,
+              uiOutput(outputId = ns("species_UI"))
+            )
+          ),
+          fluidRow(
+            column(
+              10,
+              uiOutput(outputId = ns("year_UI"))
+            )
+          )
+        ),
+        column(
+          9,
+          plotOutput(outputId = ns("plot"))
+        )
+      )
+    )
+  }
+  
+  bubbles_Server <- function(id) {
+    moduleServer(
+      id,
+      function(input, output, session) {
+        
+        output$Fishy <- renderUI({
+          if (id == "biomass_bubbles") {NULL}
+          else if (id == "density_bubbles" & input$taxa == 'Fish'){
+            radioButtons(inputId = session$ns("Fish_Survey"), label = "Survey:", choices = c("RDFC", "VFT"))
+          }
+        })
+        
+        Data <- reactive({
+          if (id == "biomass_bubbles") {
+            Biomass %>%
+              dplyr::filter(Classification == input$taxa, 
+                            IslandName == input$map_center) %>% 
+              dplyr::mutate(Index = Mean_Biomass)
+          }
+          else if (id == "density_bubbles" & input$taxa != 'Fish') {
+            Density %>% 
+              dplyr::filter(Classification == input$taxa, 
+                            IslandName == input$map_center) %>% 
+              dplyr::mutate(Index = Mean_Density)
+          }
+          else if (id == "density_bubbles" & input$taxa == 'Fish') {
+            Density %>%
+              dplyr::filter(Classification == input$taxa, 
+                            IslandName == input$map_center, 
+                            Survey_Type == input$Fish_Survey) %>% 
+              dplyr::mutate(Index = Mean_Density)
+          }
+        })
+        
+        output$year_UI <- renderUI({
+          sliderInput(inputId = session$ns("year"), label = "Select a Year:",
+                      min = min(Data()$SurveyYear), max = max(Data()$SurveyYear),
+                      value = min(Data()$SurveyYear), width = "100%", sep = "", step = 1, animate = TRUE)
+        })
+        
+        output$species_UI <- renderUI({
+            selectInput(inputId = session$ns("species"), label = "Species:", choices = unique(Data()$CommonName))
+        })
+        
+        Data_Sub1 <- reactive({Data() %>% dplyr::filter(CommonName == input$species)})
+        
+        Data_Subset <- reactive(Data_Sub1() %>% dplyr::filter(SurveyYear == input$year))
+        
+        output$plot <- renderPlot({
+          ggplot2::ggplot()+  
+            ggplot2::geom_sf(data = dplyr::filter(CINP, IslandName == input$map_center)) +
+            ggplot2::geom_text(data = dplyr::filter(Site_Info, IslandName == input$map_center), size = 5,
+                      aes(x = Island_Longitude, y = Island_Latitude - .003, label = IslandName)) +
+            ggplot2::geom_text(data = Data_Subset(), size = 3,
+                      aes(x = Longitude, y = Latitude, label = SiteCode)) +
+            ggplot2::geom_point(data = Data_Subset(), shape = 1, stroke = 1,
+                       aes(x = Longitude, y = Latitude, size = Index , color = ReserveStatus)) +
+            ggplot2::scale_y_continuous(expand = expansion(mult = 0.2)) +
+            ggplot2::scale_x_continuous(expand = expansion(mult = 0.1)) +
+            ggplot2::scale_size_continuous(limits = c(0, max(Data_Sub1()$Index)), range = c(5, 25), guide = guide_legend(order = 1)) +
+            ggplot2::scale_color_manual(values = Island_Colors, guide = guide_legend(order = 2)) +
+            ggplot2::theme_void() +
+            ggplot2::theme(legend.position = "right")
+        })
+        
+        
+        
+      }
+    )
+  }
+  
+}
+
 
 
 
