@@ -213,6 +213,16 @@ server <- function(input, output, session) {
   
   { # Community Similarity  ----
     
+    { # Images -----
+      output$com_pic_1 <- renderImage({list(
+        src = 'www/Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (3).jpg', 
+        height = "100%")}, delete = FALSE)
+      
+      output$com_pic_2 <- renderImage({list(
+        src = "www/Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (15).jpg", 
+        height = "100%")}, delete = FALSE)
+    }
+    
     Two_D_data <- reactive({
       if (input$radio_2D_years == "All Years (Fewer Species)" 
           & input$radio_2D_color == "Reserve Status") {
@@ -328,6 +338,7 @@ server <- function(input, output, session) {
         height = "100%")}, delete = FALSE)
       
     }
+    
     { # Random Forest Models ----
       VI_Server(id = "reserve")
       VI_Server(id = "island")

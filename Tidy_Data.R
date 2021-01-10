@@ -846,7 +846,8 @@ Export_END_Year <- 2019
         Count = case_when(
           Mean_Biomass == 0 & is.na(Count) ~ 0,
           TRUE ~ Count)) %>%
-      dplyr::ungroup()
+      dplyr::ungroup() %>% 
+      dplyr::filter(SurveyYear > 2004)
     
     
   }

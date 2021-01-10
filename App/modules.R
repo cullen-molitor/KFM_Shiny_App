@@ -1065,7 +1065,7 @@
         })
         
         output$speciesUI <- renderUI({
-            selectInput(inputId = session$ns("species"), label = "Species:",
+            selectInput(inputId = session$ns("species"), label = "Species:", 
                         choices = unique(species_subset()$CommonName))
           
         })
@@ -1695,7 +1695,8 @@
         })
         
         output$species_UI <- renderUI({
-            selectInput(inputId = session$ns("species"), label = "Species:", choices = unique(Data()$CommonName))
+            selectInput(inputId = session$ns("species"), label = "Species:",
+                        choices = unique(Data()$CommonName))
         })
         
         Data_Sub1 <- reactive({Data() %>% dplyr::filter(CommonName == input$species)})

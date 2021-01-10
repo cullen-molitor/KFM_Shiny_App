@@ -326,20 +326,20 @@ ui <- dashboardPage(
               column(
                 6, 
                 tags$hr(),
-                tags$img(height = 400, width = 600, src = 'Photos/Protocols/1m (2).jpg'),
+                tags$img(height = 400, width = 600, src = 'Photos/Protocols/1m/1m (2).jpg'),
                 tags$br(), tags$hr(),
-                tags$img(height = 400, width = 600, src = 'Photos/Protocols/5m (1).jpg')
+                tags$img(height = 400, width = 600, src = 'Photos/Protocols/5m/5m (1).jpg')
               )
             ),
             tags$hr(),
             fluidRow(
               column(
                 6,
-                tags$img(height = 400, width = 600, src = 'Photos/Protocols/bands (1).jpg') 
+                tags$img(height = 400, width = 600, src = 'Photos/Protocols/bands/bands (1).jpg') 
               ),
               column(
                 6, 
-                tags$img(height = 400, width = 600, src = 'Photos/Protocols/rpcs (1).jpg')
+                tags$img(height = 400, width = 600, src = 'Photos/Protocols/rpcs/rpcs (1).jpg')
               )
             )
           ),
@@ -518,13 +518,19 @@ ui <- dashboardPage(
           # ............ Tab - About  ----
           tabPanel(
             title = "About",
-            tags$hr(),
+            # tags$hr(),
             fluidRow(
               column(
-                6, tags$img(height = 332, width = 500, src = 'Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (3).jpg')
+                6, includeMarkdown("Text/nMDS/com_sim.md")
               ),
               column(
-                6, tags$img(height = 332, width = 500, src = 'Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (15).jpg')
+                6, 
+                imageOutput(outputId = "com_pic_1", height = 400), 
+                h5("Healthy kelp forest with mature canopy forming plants."),
+                h5("Photo: Kenan Chan"),
+                imageOutput(outputId = "com_pic_2", height = 400), 
+                h5("A once forested reef, now a barren area dominated by sea urchins."),
+                h5("Photo: Kenan Chan")
               )
             )
           ),
