@@ -171,6 +171,15 @@ source('modules.R')
 { # Island and Site Information   -----
   Site_Info <- readr::read_csv("Meta_Data/Site_Info.csv")
   
+  site_data <- Site_Info %>%
+    dplyr::mutate(Island = IslandName) %>% 
+    dplyr::select(SiteNumber, Island, IslandName, SiteCode, SiteName, Reference, ReserveStatus, ARMs, ReserveYear,
+                  Latitude, Longitude, MeanDepth, Rock, Cobble, Sand) %>%
+    dplyr::rename(`Site #` = SiteNumber, `Site Code` = SiteCode, `Site` = SiteName,
+                  Reference = Reference, `Reserve Status` = ReserveStatus, `Mean Depth` = MeanDepth, 
+                  `Rock (%)` = Rock, `Cobble (%)` = Cobble, `Sand (%)` =  Sand) %>% 
+    dplyr::mutate(Island = gsub(" Island", "", Island)) 
+  
   Island_Colors <- 
     c("San Miguel" = "darkmagenta", "San Miguel Island" = "darkmagenta", "SM" = "darkmagenta", 
       "Santa Rosa" = "dodgerblue4", "Santa Rosa Island" = "dodgerblue4", "SR" = "dodgerblue4", 
@@ -244,14 +253,14 @@ source('modules.R')
 
 { # Custom Functions   ----
   is.even <- function(x) x %% 2 == 0
+  
   is.odd <- function(x) x %% 2 != 0 
   
-  boot_ratio <- function (data, indices) {
-    sample = data[indices, ]
-    ratio = mean(sample$Mean_Biomass[sample$ReserveStatus == "Inside"])/
-      mean(sample$Mean_Biomass[sample$ReserveStatus == "Outside"])
-    return(ratio)
+  map_bubble_theme <- function() {
+    ggplot2::theme_void() +
+      ggplot2::theme(legend.position = "right", plot.title = element_text(hjust = .5))
   }
+  
   all_sites_theme <- function () {
     ggpubr::theme_classic2() +
       ggplot2::theme(
@@ -269,10 +278,11 @@ source('modules.R')
         axis.text.y = element_text(size = 12),
         strip.text = element_text(size = 10, colour = "black", angle = 90))
   }
+  
   timeseries_top_theme <- function () {
     ggpubr::theme_classic2() +
       ggplot2::theme(
-        text = element_text(color="black"),
+        text = element_text(color = "black"),
         plot.caption = element_text(size = 11),
         legend.justification = c(0, 0.5),
         legend.key.width = unit(.75, "cm"),
@@ -283,6 +293,7 @@ source('modules.R')
         axis.text.x = element_blank(),
         panel.grid.major= element_line())
   }
+  
   timeseries_bottom_theme <- function (){
     ggpubr::theme_classic2() +
       ggplot2::theme(
@@ -299,6 +310,7 @@ source('modules.R')
         axis.line.x = element_blank(),
         panel.grid.major= element_line())
   }
+  
   nMDS_theme <- function () {
     ggplot2::theme_bw() + 
       ggplot2::theme(
@@ -313,6 +325,7 @@ source('modules.R')
         plot.caption = element_text(size=9, hjust = 0),
         aspect.ratio=1) 
   }
+  
   Ratio_Wide_theme <- function () {
     ggpubr::theme_classic2() +
       ggplot2::theme(
@@ -328,6 +341,7 @@ source('modules.R')
         axis.text.x = element_text(size = 12, vjust = 1, hjust = 1, angle = 45),
         strip.text = element_text(size = 12, colour = "black", angle = 90))
   }
+  
   Ratio_Long_theme <- function () {
     ggpubr::theme_classic2() +
       ggplot2::theme(
@@ -344,6 +358,7 @@ source('modules.R')
         axis.text = element_text(size = 12),
         strip.text = element_text(size = 14, colour = "black", angle = 90))
   }
+  
   Biomass_Summary_theme <- function () {
     ggpubr::theme_classic() +
       ggplot2::theme(
@@ -360,6 +375,7 @@ source('modules.R')
         axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1, size = 12),
         strip.text = element_text(size = 10, colour = "black"))
   }
+  
   Original_16_top_theme <- function () {
     ggpubr::theme_classic2() +
       ggplot2::theme(
@@ -374,6 +390,7 @@ source('modules.R')
         axis.text.x = element_blank(),
         panel.grid.major= element_line())
   }
+  
   Original_16_bottom_theme <- function () {
     ggpubr::theme_classic2() +
       ggplot2::theme(
@@ -391,13 +408,14 @@ source('modules.R')
         axis.line.x = element_blank(),
         strip.text = element_text(size = 10, colour = "black", angle = 90))
   }
+  
 }
 
 { # Maps Data   ----
   
-  CINP <- st_read("GIS_Data/california_islands.shp") %>%
-    st_as_sf() %>%
-    mutate(geometry = st_transform(geometry, "+proj=longlat +ellps=WGS84 +datum=WGS84")) %>%
+  CINP <- sf::st_read("GIS_Data/california_islands.shp") %>%
+    sf::st_as_sf() %>%
+    dplyr::mutate(geometry = st_transform(geometry, "+proj=longlat +ellps=WGS84 +datum=WGS84")) %>%
     dplyr::filter(COUNTY_ID %in% c(520, 530, 519, 527, 528, 556, 557)) %>%
     dplyr::mutate(
       IslandName = case_when(
@@ -407,33 +425,23 @@ source('modules.R')
         COUNTY_ID == 527 | COUNTY_ID == 528 ~ "Anacapa Island",
         COUNTY_ID == 556 | COUNTY_ID == 557 ~ "Santa Barbara Island"))
   
-  mpa <- st_read("GIS_Data/California_Marine_Protected_Areas.shp")
+  mpa <- sf::st_read("GIS_Data/California_Marine_Protected_Areas.shp") %>% 
+    sf::st_as_sf(mpa) %>%
+    dplyr::mutate(geometry = st_transform(geometry, "+proj=longlat +ellps=WGS84 +datum=WGS84")) %>%
+    dplyr::filter(Type == "SMR" | Type == "FMCA" | Type == "SMCA" | Type == "FMR") %>%
+    dplyr::mutate(Color = ifelse(Type == "SMR", "red", ifelse(Type == "SMCA", "blue", ifelse(Type == "FMR", "orange", "purple"))))
   
-  mpa <- st_as_sf(mpa)
+  GPS_Transects <- sf::st_read("GIS_Data/KFM_Transects_SmoothLine5.shp")  %>%
+    sf::st_as_sf() %>%
+    dplyr::mutate(geometry = st_transform(geometry, "+proj=longlat +ellps=WGS84 +datum=WGS84"))
   
-  marine <- mpa %>%
-    filter(Type == "SMR" |
-             Type == "FMCA" |
-             Type == "SMCA" |
-             Type == "FMR") %>%
-    mutate(Color = ifelse(Type == "SMR", "red",
-                          ifelse(Type == "SMCA", "blue",
-                                 ifelse(Type == "FMR", "orange", "purple"))))
+  NPS_boundary <- sf::st_read("GIS_Data/nps_boundary.shp") %>%
+    sf::st_as_sf() %>%
+    dplyr::mutate(geometry = st_transform(geometry, "+proj=longlat +ellps=WGS84 +datum=WGS84"))
   
-  TransectSites <- Site_Info %>% 
-    filter(SiteNumber != 1 & SiteNumber != 5 & SiteNumber != 11) 
-  
-  transects <- st_read("GIS_Data/KFM_Transects_SmoothLine5.shp")  %>%
-    st_as_sf() %>%
-    mutate(geometry = st_transform(geometry, "+proj=longlat +ellps=WGS84 +datum=WGS84"))
-  
-  Transect_Endpoints <- readr::read_csv("GIS_Data/transect_0_100.csv")
-  
-  NPS_boundary <- st_read("GIS_Data/nps_boundary.shp") %>%
-    st_as_sf()
-  
-  CINMS_boundary <- st_read("GIS_Data/cinms_py.shp") %>%
-    st_as_sf()
+  CINMS_boundary <- sf::st_read("GIS_Data/cinms_py.shp") %>%
+    sf::st_as_sf() %>%
+    dplyr::mutate(geometry = st_transform(geometry, "+proj=longlat +ellps=WGS84 +datum=WGS84"))
   
   Buoys_List <- readr::read_csv("GIS_Data/Buoy_Stations.csv")
     

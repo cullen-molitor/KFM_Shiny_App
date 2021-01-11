@@ -1,9 +1,7 @@
 
 # GPS Transects
 
-So far 30 of the 33 active KFM sites have been mapped with GPS across the length of the transect. 
-
-The three sites missing GPS transect data are:
+So far 30 of the 33 active KFM sites have been mapped with GPS across the length of the transect. The three missing sites are:
 
 1. Wyckoff Ledge on San Miguel Island
 

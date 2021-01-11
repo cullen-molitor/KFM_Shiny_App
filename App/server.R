@@ -47,42 +47,37 @@ server <- function(input, output, session) {
       output$Leaflet <- renderLeaflet({
         leaflet() %>%
           setView(lng = -119.7277, lat = 33.76416, zoom = 9) %>%
-          addTiles(group = "OSM (default)") %>% 
-          addProviderTiles(providers$Esri, group = "ESRI") %>%
           addProviderTiles(providers$Esri.OceanBasemap, group = "Ocean Base") %>%
-          addProviderTiles(providers$Esri.WorldImagery, group = "Imagery") %>%
+          addTiles(group = "OSM") %>% 
+          addProviderTiles(providers$Esri, group = "ESRI") %>%
+          addProviderTiles(providers$Esri.WorldImagery, group = "Sat. Imagery") %>%
           addProviderTiles(providers$Esri.WorldTopoMap, group = "Topography") %>%
           addProviderTiles(providers$Esri.NatGeoWorldMap, group = "Nat. Geo.") %>%
-          addPolygons(data = marine, color = marine$Color, weight = 1,
-                      fillOpacity = 0.1, opacity = 0.25, label = marine$NAME, group = "MPA Boundaries")  %>%
+          addPolygons(data = mpa, color = mpa$Color, weight = 1,
+                      fillOpacity = 0.1, opacity = 0.25, label = mpa$NAME, group = "MPA Boundaries")  %>%
           addPolygons(data = NPS_boundary, weight = 2, color = "green", fill = FALSE,
                       label = "Channel Islands National Park (CINP) Boundary", group = "CINP Boundary") %>%
           addPolygons(data = CINMS_boundary, weight = 2, color = "blue", fill = FALSE,
                       label = "Channel Islands National Marine Sanctuary (CINMS) Boundary", group = "CINMS Boundary") %>%
-          addPolylines(data = transects, group = "Transects")  %>%
+          addPolylines(data = GPS_Transects, group = "Transects")  %>%
           addCircles(radius = 1, group = "Transect End Points", color = "green",
-                     lng = Transect_Endpoints$Start_Long, lat = Transect_Endpoints$Start_Lat, 
-                     label = Transect_Endpoints$Start_Label) %>%
+                     lng = Site_Info$Start_Longitude, lat = Site_Info$Start_Latitude, label = Site_Info$Start_Label) %>%
           addCircles(radius = 1, group = "Transect End Points", color = "red",
-                     lng = Transect_Endpoints$End_Long, lat = Transect_Endpoints$End_Lat, 
-                     label = Transect_Endpoints$End_Label) %>%
+                     lng = Site_Info$End_Longitude, lat = Site_Info$End_Latitude, label = Site_Info$End_Label) %>%
           addMarkers(data = Site_Info, label = paste(Site_Info$IslandCode, Site_Info$SiteName), group = "Site Markers") %>% 
           addCircleMarkers(data = Buoys_List, label = Buoys_List$DC.description, group = "Buoy Stations") %>% 
           addLayersControl(
-            baseGroups = c("OSM (default)", "ESRI", "Ocean Base", "Imagery", "Topography", "Nat. Geo."),
+            baseGroups = c("Ocean Base", "OSM", "ESRI", "Sat. Imagery", "Topography", "Nat. Geo."),
             overlayGroups = c("Site Markers", "Transects", "Transect End Points",
                               "MPA Boundaries", "CINP Boundary", "CINMS Boundary",  "Buoy Stations"),
             options = layersControlOptions(collapsed = TRUE)) %>%
-          addMeasure(position = "bottomleft",
-                     primaryLengthUnit = "meters",
-                     primaryAreaUnit = "sqmeters",
-                     activeColor = "#3D535D",
-                     completedColor = "#7D4479")
+          addMeasure(position = "bottomleft", primaryLengthUnit = "meters", primaryAreaUnit = "sqmeters",
+                     activeColor = "#3D535D", completedColor = "#7D4479")
       })
       
     }
     
-    { # .... Satellite Site Maps  -----
+    { # .... Static Imagery  -----
       
       satMapCode <- reactive({
         if (input$Sat_Isl_Site == "Park") {
@@ -108,20 +103,12 @@ server <- function(input, output, session) {
         )
       }, deleteFile = FALSE)
       
-      site_data <- Site_Info %>%
-        dplyr::mutate(Island = IslandName) %>% 
-        dplyr::select(SiteNumber, Island, IslandName, SiteCode, SiteName, Reference, ReserveStatus, ARMs, ReserveYear,
-                      Latitude, Longitude, MeanDepth, Rock, Cobble, Sand) %>%
-        dplyr::rename(`Site #` = SiteNumber, 
-                      `Site Code` = SiteCode,
-                      `Site` = SiteName,
-                      Reference = Reference,
-                      `Reserve Status` = ReserveStatus, 
-                      `Mean Depth` = MeanDepth, 
-                      `Rock (%)` = Rock, 
-                      `Cobble (%)` = Cobble, 
-                      `Sand (%)` =  Sand) %>% 
-        dplyr::mutate(Island = gsub(" Island", "", Island)) 
+      map_text_filename <- reactive({
+        if (input$Sat_Isl_Site == 'Site') {"Text/Sites/gps_transects.md"}
+        else {glue::glue("Text/Sites/{satMapCode()}.md")}
+      })
+      
+      output$map_text <- renderUI({includeMarkdown(path = map_text_filename())})
       
       site_table_data <- reactive({
         if (input$Sat_Isl_Site == 'Island') {
@@ -206,6 +193,30 @@ server <- function(input, output, session) {
   }
   
   { # Biodiversity   ----
+    
+    { # Images -----
+      output$diversity_pic1 <- renderImage({list(
+        src = 'www/Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (3).jpg', 
+        height = "100%")}, delete = FALSE)
+      
+      output$diversity_pic2 <- renderImage({list(
+        src = "www/Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (15).jpg", 
+        height = "100%")}, delete = FALSE)
+      
+      output$diversity_pic3 <- renderImage({list(
+        src = 'www/Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (6).jpg', 
+        height = "100%")}, delete = FALSE)
+      
+      output$diversity_pic4 <- renderImage({list(
+        src = "www/Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (2).jpg", 
+        height = "100%")}, delete = FALSE)
+      
+      output$diversity_pic5 <- renderImage({list(
+        src = "www/Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (1).jpg", 
+        height = "100%")}, delete = FALSE)
+      
+    }
+    
     diversity_Server(id = "richness") 
     diversity_Server(id = "shannon")
     diversity_Server(id = "simpson") 
@@ -223,98 +234,106 @@ server <- function(input, output, session) {
         height = "100%")}, delete = FALSE)
     }
     
-    Two_D_data <- reactive({
-      if (input$radio_2D_years == "All Years (Fewer Species)" 
-          & input$radio_2D_color == "Reserve Status") {
-        nMDS %>% 
-          dplyr::filter(SurveyYear == input$slider2d_all,
-                        Type == '2D_All') %>% 
-          dplyr::mutate(Color = ReserveStatus)
-      } 
-      else if (input$radio_2D_years == "All Years (Fewer Species)" 
-               & input$radio_2D_color == "Island Name") {
-        nMDS %>% 
-          dplyr::filter(SurveyYear == input$slider2d_all,
-                        Type == '2D_All') %>% 
-          dplyr::mutate(Color = IslandName)
-      }
-      else if (input$radio_2D_years == "Years > 2004 (All Species)" 
-               & input$radio_2D_color == "Reserve Status") {
-        nMDS %>% 
-          dplyr::filter(SurveyYear == input$slider2d_2005,
-                        Type == '2D_2005') %>% 
-          dplyr::mutate(Color = ReserveStatus)
-      }
-      else if (input$radio_2D_years == "Years > 2004 (All Species)" 
-               & input$radio_2D_color == "Island Name") {
-        nMDS %>% 
-          dplyr::filter(SurveyYear == input$slider2d_2005,
-                        Type == '2D_2005') %>% 
-          dplyr::mutate(Color = IslandName)
-      }
-    })
+    { # 2D  ----
+      
+      Two_D_data <- reactive({
+        if (input$radio_2D_years == "All Years (Fewer Species)" 
+            & input$radio_2D_color == "Reserve Status") {
+          nMDS %>% 
+            dplyr::filter(SurveyYear == input$slider2d_all,
+                          Type == '2D_All') %>% 
+            dplyr::mutate(Color = ReserveStatus)
+        } 
+        else if (input$radio_2D_years == "All Years (Fewer Species)" 
+                 & input$radio_2D_color == "Island Name") {
+          nMDS %>% 
+            dplyr::filter(SurveyYear == input$slider2d_all,
+                          Type == '2D_All') %>% 
+            dplyr::mutate(Color = IslandName)
+        }
+        else if (input$radio_2D_years == "Years > 2004 (All Species)" 
+                 & input$radio_2D_color == "Reserve Status") {
+          nMDS %>% 
+            dplyr::filter(SurveyYear == input$slider2d_2005,
+                          Type == '2D_2005') %>% 
+            dplyr::mutate(Color = ReserveStatus)
+        }
+        else if (input$radio_2D_years == "Years > 2004 (All Species)" 
+                 & input$radio_2D_color == "Island Name") {
+          nMDS %>% 
+            dplyr::filter(SurveyYear == input$slider2d_2005,
+                          Type == '2D_2005') %>% 
+            dplyr::mutate(Color = IslandName)
+        }
+      })
+      
+      output$Two_D <- renderPlot({
+        ggplot(data = Two_D_data(), aes(x = `Dim 1`, y = `Dim 2`)) + 
+          geom_point(size = 4, aes(shape = ReserveStatus, color = Color)) + 
+          geom_text(size = 3, vjust = 2, aes(label = SiteCode)) +  
+          # stat_ellipse(aes(color = IslandName), level = 0.95) +
+          # stat_stars(aes(color = ReserveStatus)) +
+          scale_colour_manual(values = Island_Colors) +
+          coord_fixed() +
+          scale_x_reverse() +
+          # coord_flip() +
+          labs(title = input$slider2d, 
+               color = input$radio_2D_color, 
+               shape = "Reserve Status") +
+          nMDS_theme()
+      })
+      
+    }
     
-    output$Two_D <- renderPlot({
-      ggplot(data = Two_D_data(), aes(x = `Dim 1`, y = `Dim 2`)) + 
-        geom_point(size = 4, aes(shape = ReserveStatus, color = Color)) + 
-        geom_text(size = 3, vjust = 2, aes(label = SiteCode)) +  
-        # stat_ellipse(aes(color = IslandName), level = 0.95) +
-        # stat_stars(aes(color = ReserveStatus)) +
-        scale_colour_manual(values = Island_Colors) +
-        coord_fixed() +
-        scale_x_reverse() +
-        # coord_flip() +
-        labs(title = input$slider2d, 
-             color = input$radio_2D_color, 
-             shape = "Reserve Status") +
-        nMDS_theme()
-    })
-    
-    Three_D_data <- reactive({
-      if (input$radio_3D_years == "All Years (Fewer Species)" 
-          & input$radio_3D_color == "Reserve Status") {
-        nMDS %>%  
-          dplyr::filter(SurveyYear == input$slider3d_all,
-                        Type == '3D_All') %>% 
-          dplyr::mutate(Color = ReserveStatus)
-      } 
-      else if (input$radio_3D_years == "All Years (Fewer Species)" 
-               & input$radio_3D_color == "Island Name") {
-        nMDS %>% 
-          dplyr::filter(SurveyYear == input$slider3d_all,
-                        Type == '3D_All') %>% 
-          dplyr::mutate(Color = IslandName)
-      }
-      else if (input$radio_3D_years == "Years > 2004 (All Species)" 
-               & input$radio_3D_color == "Reserve Status") {
-        nMDS %>% 
-          dplyr::filter(SurveyYear == input$slider3d_2005,
-                        Type == '3D_2005') %>% 
-          dplyr::mutate(Color = ReserveStatus)
-      }
-      else if (input$radio_3D_years == "Years > 2004 (All Species)" 
-               & input$radio_3D_color == "Island Name") {
-        nMDS %>% 
-          dplyr::filter(SurveyYear == input$slider3d_2005,
-                        Type == '3D_2005') %>% 
-          dplyr::mutate(Color = IslandName)
-      }
-    })
-    
-    output$Three_D <- renderPlotly({
-      plotly::plot_ly(Three_D_data(), x = ~`Dim 1`, y = ~`Dim 2`, z = ~`Dim 3`,
-                      # frame = ~SurveyYear, 
-                      text = ~SiteName, hoverinfo = "text",
-                      color = ~Color, colors = Island_Colors) %>%
-        plotly::add_markers(symbol = ~ReserveStatus, 
-                            symbols = c('Inside' = "cross-open", 'Outside' = "square")) %>%
-        plotly::add_text(text = ~SiteCode, showlegend = FALSE) %>%
-        plotly::layout(scene = list(xaxis = list(title = 'X'),
-                                    yaxis = list(title = 'Y'),
-                                    zaxis = list(title = 'Z'))) 
-      # %>%
-      #   plotly::animation_opts(1500, easing = "linear")
-    })
+    { # 3D  ----
+      
+      Three_D_data <- reactive({
+        if (input$radio_3D_years == "All Years (Fewer Species)" 
+            & input$radio_3D_color == "Reserve Status") {
+          nMDS %>%  
+            dplyr::filter(SurveyYear == input$slider3d_all,
+                          Type == '3D_All') %>% 
+            dplyr::mutate(Color = ReserveStatus)
+        } 
+        else if (input$radio_3D_years == "All Years (Fewer Species)" 
+                 & input$radio_3D_color == "Island Name") {
+          nMDS %>% 
+            dplyr::filter(SurveyYear == input$slider3d_all,
+                          Type == '3D_All') %>% 
+            dplyr::mutate(Color = IslandName)
+        }
+        else if (input$radio_3D_years == "Years > 2004 (All Species)" 
+                 & input$radio_3D_color == "Reserve Status") {
+          nMDS %>% 
+            dplyr::filter(SurveyYear == input$slider3d_2005,
+                          Type == '3D_2005') %>% 
+            dplyr::mutate(Color = ReserveStatus)
+        }
+        else if (input$radio_3D_years == "Years > 2004 (All Species)" 
+                 & input$radio_3D_color == "Island Name") {
+          nMDS %>% 
+            dplyr::filter(SurveyYear == input$slider3d_2005,
+                          Type == '3D_2005') %>% 
+            dplyr::mutate(Color = IslandName)
+        }
+      })
+      
+      output$Three_D <- renderPlotly({
+        plotly::plot_ly(Three_D_data(), x = ~`Dim 1`, y = ~`Dim 2`, z = ~`Dim 3`,
+                        # frame = ~SurveyYear, 
+                        text = ~SiteName, hoverinfo = "text",
+                        color = ~Color, colors = Island_Colors) %>%
+          plotly::add_markers(symbol = ~ReserveStatus, 
+                              symbols = c('Inside' = "cross-open", 'Outside' = "square")) %>%
+          plotly::add_text(text = ~SiteCode, showlegend = FALSE) %>%
+          plotly::layout(scene = list(xaxis = list(title = 'X'),
+                                      yaxis = list(title = 'Y'),
+                                      zaxis = list(title = 'Z'))) 
+        # %>%
+        #   plotly::animation_opts(1500, easing = "linear")
+      })
+      
+    }
     
   }
   
@@ -373,13 +392,14 @@ server <- function(input, output, session) {
         src = "www/Photos/Kelp_Forest_Scenes/Shaun_Wolfe/1 (5).jpg", 
         height = "100%")}, delete = FALSE)
       
+      
       output$Density_pic_1 <- renderImage({list(
         src = "www/Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (3).jpg", 
         height = "100%")}, delete = FALSE)
       
-      # output$Density_pic_2 <- renderImage({list(
-      #   src = "www/Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (6).jpg", 
-      #   height = "100%")}, delete = FALSE)
+      output$Density_pic_2 <- renderImage({list(
+        src = "www/Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (6).jpg",
+        height = "100%")}, delete = FALSE)
       
       output$Density_pic_3 <- renderImage({list(
         src = "www/Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (8).jpg", 
@@ -389,9 +409,6 @@ server <- function(input, output, session) {
         src = "www/Photos/Kelp_Forest_Scenes/Shaun_Wolfe/1 (4).jpg", 
         height = "100%")}, delete = FALSE)
       
-      output$Density_pic_5 <- renderImage({list(
-        src = "www/Photos/Kelp_Forest_Scenes/Shaun_Wolfe/1 (2).jpg", 
-        height = "100%")}, delete = FALSE)
     }
     
     { # Time Series   ----

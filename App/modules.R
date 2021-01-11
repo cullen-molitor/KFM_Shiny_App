@@ -86,7 +86,7 @@
     ns <- NS(id)
     selectInput(inputId = ns("Site_Selector"),
                 label = "Site:",
-                choices = Site_Info$Isl_SiteName)
+                choices = dplyr::arrange(Site_Info, Longitude)$Isl_SiteName)
     # dplyr::arrange(Site_Info, Longitude)$Isl_SiteName   # arrange choices by longitude
   }
   
@@ -125,71 +125,79 @@
     tagList(
       fluidRow(
         column(
-          4, uiOutput(outputId = ns("Diversity_Text"))
-        ),
-        column(
-          8,
+          3,
           fluidRow(
             tags$hr(),
             column(
-              3, radioButtons(inputId = ns("Diversity_Plot_Options"),
-                              label = "Plot Type:",
-                              choices = c("Smooth Line (LOESS)",
-                                          "Map Bubbles"))
+              4, 
+              radioButtons(inputId = ns("Diversity_Plot_Options"),
+                           label = "Plot Type:",
+                           choices = c("Line",
+                                       "Map Bubbles"))
             ),
             column(
-              3, conditionalPanel(condition = "input.Diversity_Plot_Options == 'Smooth Line (LOESS)'", ns = ns,
-                                  radioButtons(inputId = ns("Data_Options"),
-                                               label = "Data Summary:",
-                                               choices = c("All Sites",
-                                                           "Original 16 Sites",
-                                                           "MPA Reference Sites",
-                                                           "Individual Site"))),
+              8, 
+              conditionalPanel(condition = "input.Diversity_Plot_Options == 'Line'", ns = ns,
+                               radioButtons(inputId = ns("Data_Options"),
+                                            label = "Data Summary:",
+                                            choices = c("All Sites",
+                                                        "Original 16 Sites",
+                                                        "MPA Reference Sites",
+                                                        "Individual Site"))),
               conditionalPanel(condition = "input.Diversity_Plot_Options == 'Map Bubbles'", ns = ns,
                                selectInput(inputId = ns("map_center"),
-                                            label = "Center Map on:",
-                                            choices = c(unique(Site_Info$IslandName))))
-            ),
-            conditionalPanel(condition = "input.Diversity_Plot_Options == 'Smooth Line (LOESS)'", ns = ns,
+                                           label = "Center Map on:",
+                                           choices = c(unique(Site_Info$IslandName))))
+            )
+          ),
+          fluidRow(
+            conditionalPanel(condition = "input.Diversity_Plot_Options == 'Line'", ns = ns,
                              column(
-                               2, radioButtons(inputId = ns("Sclaes_Selector"),
+                               6, radioButtons(inputId = ns("Sclaes_Selector"),
                                                label = "Scale Opitions:",
                                                choices = c("Free Y", "Fixed Y")))
             ),
             conditionalPanel(condition = "input.Diversity_Plot_Options == 'Map Bubbles'", ns = ns,
                              column(
-                               6, sliderInput(inputId = ns("map_slider"),
+                               12, sliderInput(inputId = ns("map_slider"),
                                               label = "Select a Year:",
                                               min = min(Diversity$SurveyYear),
                                               max = max(Diversity$SurveyYear),
                                               value = min(Diversity$SurveyYear),
                                               width = "100%",
                                               sep = "", step = 1, animate = TRUE))
-            ),
-            column(
-              3, conditionalPanel(condition = "input.Data_Options == 'Individual Site'", ns = ns,
-                                  selectInput(inputId = ns("Site_Selector"),
-                                              label = "Site:",
-                                              choices = Site_Info$SiteName))
-            )
+            ) 
           ),
           fluidRow(
-            conditionalPanel(condition = "input.Diversity_Plot_Options == 'Smooth Line (LOESS)'", ns = ns,
-                             uiOutput(outputId = ns('plotUI'))),
-            conditionalPanel(condition = "input.Diversity_Plot_Options == 'Map Bubbles'", ns = ns,
-                             plotOutput(outputId = ns("map"))
-            )
+            column(
+              10, 
+              conditionalPanel(condition = "input.Data_Options == 'Individual Site'", ns = ns,
+                               selectInput(inputId = ns("Site_Selector"),
+                                           label = "Site:",
+                                           choices = Site_Info$SiteName))
+            ) 
           )
-        ) 
-      )
+          
+        ),
+        column(
+          9,
+          tags$hr(),
+          conditionalPanel(condition = "input.Diversity_Plot_Options == 'Line'", ns = ns,
+                           uiOutput(outputId = ns('plotUI'))),
+          conditionalPanel(condition = "input.Diversity_Plot_Options == 'Map Bubbles'", ns = ns,
+                           plotOutput(outputId = ns("map"))
+          )
+        )
+      ) 
     )
+    
   }
   
   diversity_Server <- function(id) {
     moduleServer(
       id,
       function(input, output, session) {
-       
+        
         output$plotUI <- renderUI({
           plotOutput(outputId = session$ns("Diversity_Plot"),
                      height = if (input$Data_Options == "Individual Site"){350} else {750})
@@ -255,23 +263,26 @@
           }
         })
         
-        map_data <- reactive({
+        # This level allows for consistent bubble sizing...
+        map_subset <- reactive({
           if (id == "shannon") {
             Diversity %>% 
               dplyr::rename(Index = shannon_all) %>% 
-            dplyr::filter(SurveyYear == input$map_slider, IslandName == input$map_center) 
+            dplyr::filter(IslandName == input$map_center) 
           } 
           else if (id == "simpson") {
             Diversity %>% 
               dplyr::rename(Index = simpson) %>% 
-              dplyr::filter(SurveyYear == input$map_slider, IslandName == input$map_center)
+              dplyr::filter(IslandName == input$map_center)
           }
           else if (id == "richness") {
             Diversity %>% 
               dplyr::rename(Index = richness_all) %>% 
-              dplyr::filter(SurveyYear == input$map_slider, IslandName == input$map_center)
+              dplyr::filter(IslandName == input$map_center)
           }
         })
+        
+        map_data <- reactive({map_subset() %>% dplyr::filter(SurveyYear == input$map_slider)})
         
         yscale <- reactive({
           if (input$Sclaes_Selector == "Fixed Y") {
@@ -446,19 +457,16 @@
         output$map <-  renderPlot({ # Map     ----
           ggplot()+  
             geom_sf(data = dplyr::filter(CINP, IslandName == input$map_center)) +
-            geom_text(data = dplyr::filter(Site_Info, IslandName == input$map_center), size = 5,
-                      aes(x = Island_Longitude, y = Island_Latitude - .003, label = IslandName)) +
             geom_text(data = map_data(), size = 3,
                        aes(x = Longitude, y = Latitude, label = SiteCode)) +
-            geom_point(data = map_data(),
-              aes(x = Longitude, y = Latitude, size = Index , color = ReserveStatus),
-              shape = 1, stroke = 1) +
-            scale_color_manual(values = Island_Colors) +
-            scale_y_continuous(expand = expansion(mult = 0.1)) +
-            scale_x_continuous(expand = expansion(mult = 0.1)) +
-            scale_size_continuous(range = c(10, 25), guide = guide_legend()) +
-            theme_void() +
-            theme(legend.position = "none")
+            geom_point(data = map_data(), shape = 1, stroke = 1,
+                       aes(x = Longitude, y = Latitude, size = Index , color = ReserveStatus)) +
+            labs(title = map_data()$IslandName) +
+            scale_y_continuous(expand = expansion(mult = 0.2)) +
+            scale_x_continuous(expand = expansion(mult = 0.2)) +
+            scale_size_continuous(limits = c(0, max(map_subset()$Index)), range = c(5, 25), guide = guide_legend(order = 1)) +
+            scale_color_manual(values = Island_Colors, guide = guide_legend(order = 2)) +
+            map_bubble_theme()
         })
       }
     )
@@ -1706,21 +1714,16 @@
         output$plot <- renderPlot({
           ggplot2::ggplot()+  
             ggplot2::geom_sf(data = dplyr::filter(CINP, IslandName == input$map_center)) +
-            ggplot2::geom_text(data = dplyr::filter(Site_Info, IslandName == input$map_center), size = 5,
-                      aes(x = Island_Longitude, y = Island_Latitude - .003, label = IslandName)) +
-            ggplot2::geom_text(data = Data_Subset(), size = 3,
-                      aes(x = Longitude, y = Latitude, label = SiteCode)) +
+            ggplot2::geom_text(data = Data_Subset(), size = 3, aes(x = Longitude, y = Latitude, label = SiteCode)) +
             ggplot2::geom_point(data = Data_Subset(), shape = 1, stroke = 1,
-                       aes(x = Longitude, y = Latitude, size = Index , color = ReserveStatus)) +
+                                aes(x = Longitude, y = Latitude, size = Index , color = ReserveStatus)) +
+            ggplot2::labs(title = Data_Subset()$IslandName) +
             ggplot2::scale_y_continuous(expand = expansion(mult = 0.2)) +
             ggplot2::scale_x_continuous(expand = expansion(mult = 0.1)) +
             ggplot2::scale_size_continuous(limits = c(0, max(Data_Sub1()$Index)), range = c(5, 25), guide = guide_legend(order = 1)) +
             ggplot2::scale_color_manual(values = Island_Colors, guide = guide_legend(order = 2)) +
-            ggplot2::theme_void() +
-            ggplot2::theme(legend.position = "right")
+            map_bubble_theme()
         })
-        
-        
         
       }
     )

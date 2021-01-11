@@ -365,8 +365,18 @@ ui <- dashboardPage(
           tabPanel(
             title = "Leaflet Maps",
             tags$hr(),
-            leafletOutput(outputId = "Leaflet",
-                          height = 500, width = '50%')
+            fluidRow(
+              column(
+                6,
+                leafletOutput(outputId = "Leaflet",
+                              height = 500, width = '100%')
+              ),
+              column(
+                6, 
+                includeMarkdown(path = "Text/Sites/leaflet.md")
+              )
+            )
+            
           ),
           # ............ Tab - Satellite Imagery  ----
           tabPanel(
@@ -379,7 +389,7 @@ ui <- dashboardPage(
                              label = "Choose a Category:",
                              inline = TRUE,
                              choices = c("Park", "Island", "MPA", "Site"))
-                ),
+              ),
               column(
                 3,
                 conditionalPanel(
@@ -412,15 +422,15 @@ ui <- dashboardPage(
                 7,
                 imageOutput(outputId = "satMap", height = 800)
               ),
-            conditionalPanel(
-              condition = "input.Sat_Isl_Site == 'Site'",
-              fluidRow(
-                column(
-                  5,
-                  includeMarkdown(path = "Text/Sites/gps_transects.md")
+              conditionalPanel(
+                condition = "input.Sat_Isl_Site != 'Park'",
+                fluidRow(
+                  column(
+                    5,
+                    uiOutput(outputId = "map_text")
+                  )
                 )
               )
-            )
             ),
             conditionalPanel(
               condition = "input.Sat_Isl_Site == 'Park'",
@@ -492,6 +502,42 @@ ui <- dashboardPage(
         tabName = 'diversity',
         h1("Kelp Forest Community Biodiversity"),
         tabsetPanel(
+          # ............ Tab - About   ----
+          tabPanel(
+            title = "About",
+            fluidRow(
+              column(
+                6,
+                includeMarkdown(path = "Text/Biodiversity/biodiversity.md")
+              ),
+              column(
+                6,
+                imageOutput(outputId = "diversity_pic1", height = 400),
+                h5("Text"),
+                h5("Photo: ..."), 
+                imageOutput(outputId = "diversity_pic2", height = 400),
+                h5("Text"),
+                h5("Photo: ..."),
+                imageOutput(outputId = "diversity_pic3", height = 400),
+                h5("Text"),
+                h5("Photo: ...")
+              )    
+            ),
+            fluidRow(
+              column(
+                6,
+                imageOutput(outputId = "diversity_pic4", height = 400),
+                h5("Text"),
+                h5("Photo: ...")
+              ),
+              column(
+                6,
+                imageOutput(outputId = "diversity_pic5", height = 400),
+                h5("Text"),
+                h5("Photo: ...")
+              )
+            )
+          ),
           # ............ Tab - Species Richness  ----
           tabPanel(
             title = "Species Richness",
@@ -697,30 +743,27 @@ ui <- dashboardPage(
             title = "About",
             fluidRow(
               column(
-                8,
+                6,
                 includeMarkdown(path = "Text/Biomass_Density/biomass.md")
               ),
               column(
-                4,
+                6,
                 imageOutput(outputId = "Biomass_pic_1", height = 400),
                 h5("Photo: Kenan Chan"),
                 imageOutput(outputId = "Biomass_pic_2", height = 400),
                 h5("Photo: Kenan Chan"),
+                imageOutput(outputId = "Biomass_pic_3", height = 400),
+                h5("Photo: Shaun Wolfe")
               )
             ),
             fluidRow(
               column(
-                4,
-                imageOutput(outputId = "Biomass_pic_3", height = 400),
-                h5("Photo: Shaun Wolfe")
-              ),
-              column(
-                4,
+                6,
                 imageOutput(outputId = "Biomass_pic_4", height = 400),
                 h5("Photo: Shaun Wolfe")
               ),
               column(
-                4,
+                6,
                 imageOutput(outputId = "Biomass_pic_5", height = 400),
                 h5("Photo: Shaun Wolfe")
               )
@@ -757,32 +800,26 @@ ui <- dashboardPage(
             title = "About",
             fluidRow(
               column(
-                8,
+                6,
                 includeMarkdown(path = "Text/Biomass_Density/density.md")
               ),
               column(
-                4,
+                6,
                 imageOutput(outputId = "Density_pic_1", height = 400),
+                h5("Photo: Brett Seymour"),
+                imageOutput(outputId = "Density_pic_2", height = 400),
                 h5("Photo: Brett Seymour")
-                # ,
-                # imageOutput(outputId = "Density_pic_2", height = 400),
-                # h5("Photo: Brett Seymour"),
               )
             ),
             fluidRow(
               column(
-                4,
+                6,
                 imageOutput(outputId = "Density_pic_3", height = 400),
                 h5("Photo: Brett Seymour")
               ),
               column(
-                4,
+                6,
                 imageOutput(outputId = "Density_pic_4", height = 400),
-                h5("Photo: Shaun Wolfe")
-              ),
-              column(
-                4,
-                imageOutput(outputId = "Density_pic_5", height = 400),
                 h5("Photo: Shaun Wolfe")
               )
             )

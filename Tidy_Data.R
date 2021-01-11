@@ -1013,12 +1013,20 @@ Export_END_Year <- 2019
       dplyr::summarise(Mean_Density = sum(Mean_Density * 2000))
     
     Counts <- Benthic_Counts %>%
-      dplyr::left_join(dplyr::distinct(Species_Info, ScientificName, CommonNameSimple)) %>% 
+      dplyr::left_join(
+        Species_Info %>% 
+          dplyr::distinct(ScientificName, CommonNameSimple)) %>% 
       dplyr::mutate(CommonName = CommonNameSimple,
                     Mean_Density = Count) %>%  
       dplyr::select(-CommonNameSimple, -Count) %>%
       base::rbind(VFT_Counts) %>% 
-      dplyr::filter(!CommonName %in% Benthic_Mean_Biomass$CommonName)
+      dplyr::filter(!CommonName %in% Benthic_Mean_Biomass$CommonName) %>% 
+      dplyr::mutate(
+        ReserveStatus = case_when(
+          SurveyYear < 2003 & SiteCode == "LC" ~ "Inside",
+          SurveyYear < 2003 & SiteCode == "CC" ~ "Inside",
+          SurveyYear < 2003 ~ "Outside",
+          TRUE ~ ReserveStatus))
     
   }
   
@@ -1036,13 +1044,19 @@ Export_END_Year <- 2019
                     Mean_Density = Percent_Cover) %>% 
       dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, 
                     ScientificName, CommonName, Mean_Density, ReserveStatus, Reference) %>% 
-      base::rbind(Counts, Benthic_Mean_Biomass %>% 
-                    dplyr::select(-Date, -Mean_Density,  -Survey_Type) %>% 
-                    dplyr::mutate(Mean_Density = Mean_Biomass) %>% 
-                    dplyr::select(-Mean_Biomass)) %>%  
-      base::rbind(total_biomass %>% 
-                    dplyr::select(-Date, -Count, -Survey_Type) %>% 
-                    dplyr::mutate(Mean_Density = Mean_Biomass) %>% 
+      dplyr::mutate(
+        ReserveStatus = case_when(
+          SurveyYear < 2003 & SiteCode == "LC" ~ "Inside",
+          SurveyYear < 2003 & SiteCode == "CC" ~ "Inside",
+          SurveyYear < 2003 ~ "Outside",
+          TRUE ~ ReserveStatus)) %>% 
+      base::rbind(Counts, Benthic_Mean_Biomass %>%
+                    dplyr::select(-Date, -Mean_Density,  -Survey_Type) %>%
+                    dplyr::mutate(Mean_Density = Mean_Biomass) %>%
+                    dplyr::select(-Mean_Biomass)) %>%
+      base::rbind(total_biomass %>%
+                    dplyr::select(-Date, -Count, -Survey_Type) %>%
+                    dplyr::mutate(Mean_Density = Mean_Biomass) %>%
                     dplyr::select(-Mean_Biomass)) %>%
       dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, 
                     CommonName, Mean_Density, ReserveStatus, Reference) %>% 
@@ -1053,12 +1067,6 @@ Export_END_Year <- 2019
       dplyr::left_join(
         Diversity_Simpson %>% 
           dplyr::select(SiteNumber, SurveyYear, simpson)) %>% 
-      dplyr::mutate(
-        ReserveStatus = case_when(
-          SurveyYear < 2003 & SiteCode == "LC" ~ "Inside",
-          SurveyYear < 2003 & SiteCode == "CC" ~ "Inside",
-          SurveyYear < 2003 ~ "Outside",
-          TRUE ~ ReserveStatus)) %>% 
       dplyr::rename_with(~ base::gsub(",", "", .)) %>% 
       dplyr::rename_with(~ base::gsub(" ", "_", .)) %>% 
       dplyr::rename_with(~ base::gsub("-", "_", .)) %>% 
@@ -1189,7 +1197,7 @@ Export_END_Year <- 2019
   
   { # 2005 2D nMDS Dimensions  -----
     nMDS_2D_2005 <- data.frame(
-      NMDS1 = double(), NMDS2 = double(), SiteCode = character(),
+      NMDS1 = double(), NMDS2 = double(), SiteCode = character(), SiteName = character(),
       IslandName = character(), ReserveStatus = character(), SurveyYear = integer())
     
     for (k in unique(Mixed_Data_2005$SurveyYear)) {
@@ -1202,7 +1210,6 @@ Export_END_Year <- 2019
         dplyr::select(-SiteNumber, -IslandCode, - IslandName, -SiteCode,
                       -SiteName, - SurveyYear, - ReserveStatus, -Reference) %>%
         metaMDS(k = 2, trymax = 100)
-      stress_score <- nMDS$stress
       
       data_scores <- as.data.frame(scores(nMDS))
       data_scores$SiteCode <- nMDS_Table$SiteCode
@@ -1213,36 +1220,34 @@ Export_END_Year <- 2019
       
       nMDS_2D_2005 <- rbind(data_scores, nMDS_2D_2005)
     }
-    # readr::write_csv(nMDS_2D_2005, "App/Tidy_Data/nMDS_2D_2005.csv")
   }
   
   { # All 2D nMDS Dimensions  -----
     nMDS_2D_All <- data.frame(
-      NMDS1 = double(), NMDS2 = double(), SiteCode = character(),
+      NMDS1 = double(), NMDS2 = double(), SiteCode = character(), SiteName = character(),
       IslandName = character(), ReserveStatus = character(), SurveyYear = integer())
     
-    for (k in unique(Mixed_Data_All$SurveyYear)) {
-      nMDS_Table <- Mixed_Data_All %>%
-        filter(SurveyYear %in% k) %>%
+    for (y in unique(Mixed_Data_All$SurveyYear)) {
+      nMDS_Table2 <- Mixed_Data_All %>%
+        filter(SurveyYear %in% y) %>%
         arrange(IslandName) %>% 
         droplevels()
       
-      nMDS <- nMDS_Table %>%
+      nMDS <- nMDS_Table2 %>%
         dplyr::select(-SiteNumber, -IslandCode, - IslandName, -SiteCode, 
                       -SiteName, - SurveyYear, - ReserveStatus, -Reference) %>%
         metaMDS(k = 2, trymax = 100)
-      stress_score <- nMDS$stress
       
-      data_scores <- as.data.frame(scores(nMDS))
-      data_scores$SiteCode <- nMDS_Table$SiteCode
-      data_scores$SiteName <- nMDS_Table$SiteName
-      data_scores$IslandName <- nMDS_Table$IslandName
-      data_scores$ReserveStatus <- nMDS_Table$ReserveStatus
-      data_scores$SurveyYear <- k
+      data_scores2 <- as.data.frame(scores(nMDS))
+      data_scores2$SiteCode <- nMDS_Table2$SiteCode
+      data_scores2$SiteName <- nMDS_Table2$SiteName
+      data_scores2$IslandName <- nMDS_Table2$IslandName
+      data_scores2$ReserveStatus <- nMDS_Table2$ReserveStatus
+      data_scores2$SurveyYear <- y
       
-      nMDS_2D_All <- rbind(data_scores, nMDS_2D_All)
+      nMDS_2D_All <- rbind(data_scores2, nMDS_2D_All)
     }
-    # readr::write_csv(nMDS_2D_All, "App/Tidy_Data/nMDS_2D_All.csv")
+    
   }
   
   { # All 3D nMDS Dimensions    -----
@@ -1255,8 +1260,6 @@ Export_END_Year <- 2019
     nMDS_3D_All <- unlist(nMDS_3D_ay$points) %>%
       as.data.frame() %>%
       cbind(Mixed_Data_All %>% dplyr::select(SiteCode, SiteName, IslandName, ReserveStatus, SurveyYear)) 
-    # %>% 
-      # readr::write_csv("App/Tidy_Data/nMDS_3D_All.csv")
   }
   
   { # 2005 3D nMDS Dimensions    -----
@@ -1269,8 +1272,6 @@ Export_END_Year <- 2019
     nMDS_3D_2005 <- unlist(nMDS_3D_2__5$points) %>%
       as.data.frame() %>%
       cbind(Mixed_Data_2005 %>% dplyr::select( SiteCode, SiteName, IslandName, ReserveStatus, SurveyYear)) 
-    # %>% 
-      # readr::write_csv("App/Tidy_Data/nMDS_3D_2005.csv")
   }
   
   { # nMDS All Output    ----
