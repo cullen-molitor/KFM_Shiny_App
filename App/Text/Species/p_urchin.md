@@ -1,6 +1,5 @@
 
-### Purple Sea Urchin 
-#### *Strongylocentrotus purpuratus*
+#### Purple Sea Urchin (*Strongylocentrotus purpuratus*)
 
 Purple urchins...
 

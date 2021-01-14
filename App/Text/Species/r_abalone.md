@@ -1,6 +1,5 @@
 
-### Red Abalone
-#### *Haliotis rufescens*
+#### Red Abalone (*Haliotis rufescens*)
 
 Red abalone...
 

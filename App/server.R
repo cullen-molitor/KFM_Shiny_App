@@ -42,6 +42,29 @@ server <- function(input, output, session) {
   
   { # Sampling Locations   ----
     
+    { # Images   ----
+      output$site_image1 <- renderImage({list(
+        src = 'www/Maps/Other/tempmap.jpg', 
+        height = "100%")}, delete = FALSE)
+      
+      output$site_image2 <- renderImage({list(
+        src = 'www/Photos/Protocols/site/1 (1).jpg', 
+        height = "100%")}, delete = FALSE)
+      
+      output$site_image3 <- renderImage({list(
+        src = "www/Photos/Protocols/boating/boat (1).jpg", 
+        height = "100%")}, delete = FALSE)
+      
+      output$site_image4 <- renderImage({list(
+        src = 'www/Photos/Protocols/boating/boat (4).jpg', 
+        height = "100%")}, delete = FALSE)
+      
+      output$site_image5 <- renderImage({list(
+        src = "www/Photos/Protocols/boating/boat (8).jpg", 
+        height = "100%")}, delete = FALSE)
+      
+    }
+    
     { # .... Leaflet Maps     ----
       
       output$Leaflet <- renderLeaflet({
@@ -431,6 +454,17 @@ server <- function(input, output, session) {
   { # Reports   -----
     output$Annual_Report <- renderUI({ 
       tags$iframe(style="height:750px; width:100%; scrolling=yes", src = glue("Annual_Reports/{input$Report}.pdf"))
+    })
+    
+    Text_Data <- reactive(Text %>% dplyr::filter(Year == input$Cloud))
+    
+    
+    output$cloud_plot <- renderPlot(bg = "black", {
+      wordcloud::wordcloud(
+        words = Text_Data()$word,
+        freq = Text_Data()$n, min.freq = 1, scale = c(3, 0.5),
+        max.words = input$cloud_n, random.order = FALSE, rot.per = 0,
+        colors = brewer.pal(8, "Dark2"))
     })
     
     output$Handbook <- renderUI({ 

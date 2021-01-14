@@ -15,6 +15,7 @@
   library(DT)
   library(pdp)
   library(randomForest)
+  library(wordcloud)
   # library(iml)
   # library(tidymodels)
   # library(rmarkdown)
@@ -491,6 +492,10 @@ source('modules.R')
   All_Ratios <- readr::read_csv("Tidy_Data/Ratios.csv")
 }
 
+{ # Report Text   -----
+  Text <- readr::read_csv("Tidy_Data/Text.csv")
+}
+
 { # NPS Tags   ------
   NPS_Blog_tagList <- tagList(  
     tags$h4(
@@ -533,7 +538,6 @@ source('modules.R')
     )
   )
 }
-
 
 
 

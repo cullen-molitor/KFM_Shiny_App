@@ -189,9 +189,7 @@ ui <- dashboardPage(
           # ............ Tab - Foundation Species  ----
           tabPanel(
             title = "Foundation Species",
-            tags$hr(),
             includeMarkdown(path = "Text/Species/foundation.md"),
-            tags$hr(),
             foundation_UI(id = "kelp"),
             foundation_UI(id = "p_urchin"),
             foundation_UI(id = "r_urchin"),
@@ -355,11 +353,39 @@ ui <- dashboardPage(
         tabName = 'maps',
         h1("Kelp Forest Monitoring Sampling Locations"),
         tabsetPanel(
-          # ............ Tab - Site Selection and History  ----
+          # ............ Tab - Site Selection   ----
           tabPanel(
             title = "Site History",
-            tags$hr(),
-            includeMarkdown(path = "Text/Sites/site_history.md")
+            fluidRow(
+              column(
+                6,
+                includeMarkdown(path = "Text/Sites/site_history.md")
+              ),
+              column(
+                6,
+                tags$hr(),
+                imageOutput(outputId = "site_image1", height = 400),
+                h5("Sea surface temperature around the Channel Islands on 31 August 2003"),
+                h5("Photo: NOAA"),
+                imageOutput(outputId = "site_image2", height = 400),
+                h5("A diver laying lead line for a new monitoring site (2005)"),
+                h5("Photo: KFMP"),
+                imageOutput(outputId = "site_image3", height = 400),
+                h5("NPS dive vessel, the Sea Ranger II at Pelican Bay, Santa Cruz Island"),
+                h5("Photo: Kenan Chan"),
+                imageOutput(outputId = "site_image4", height = 400),
+                h5("The Sea Ranger II anchored at Scorpion Anchorage, Santa Cruz Island"),
+                h5("Photo: Shaun Wolfe")
+              )
+            ),
+            fluidRow(
+              column(
+                6,
+                imageOutput(outputId = "site_image5", height = 400),
+                h5("A diver crashing through the surface to begin monitoring efforts"),
+                h5("Photo: Brett Seymour")
+              )
+            )
           ),
           # ............ Tab - Leaflet  ----
           tabPanel(
@@ -512,6 +538,7 @@ ui <- dashboardPage(
               ),
               column(
                 6,
+                tags$hr(),
                 imageOutput(outputId = "diversity_pic1", height = 400),
                 h5("Text"),
                 h5("Photo: ..."), 
@@ -571,6 +598,7 @@ ui <- dashboardPage(
               ),
               column(
                 6, 
+                tags$hr(),
                 imageOutput(outputId = "com_pic_1", height = 400), 
                 h5("Healthy kelp forest with mature canopy forming plants."),
                 h5("Photo: Kenan Chan"),
@@ -748,6 +776,7 @@ ui <- dashboardPage(
               ),
               column(
                 6,
+                tags$hr(),
                 imageOutput(outputId = "Biomass_pic_1", height = 400),
                 h5("Photo: Kenan Chan"),
                 imageOutput(outputId = "Biomass_pic_2", height = 400),
@@ -805,6 +834,7 @@ ui <- dashboardPage(
               ),
               column(
                 6,
+                tags$hr(),
                 imageOutput(outputId = "Density_pic_1", height = 400),
                 h5("Photo: Brett Seymour"),
                 imageOutput(outputId = "Density_pic_2", height = 400),
@@ -859,11 +889,38 @@ ui <- dashboardPage(
             fluidRow(
               column(
                 2,
-                radioButtons(inputId = "Report", label = "Select a Year:", choices = c(2013:1990, "1982-1989"))
+                radioButtons(inputId = "report_cloud", label = "View:", inline = T, choices = c("Report", "Word Cloud"))
+              ),
+              column(
+                6,
+                conditionalPanel(
+                  condition = "input.report_cloud == 'Word Cloud'",
+                  sliderInput(inputId = "cloud_n", label = "Number of Phrases:", min = 10, max = 75, value = 30, width = "100%", step = 1)
+                )
+              )
+            ),
+            fluidRow(
+              column(
+                2,
+                conditionalPanel(
+                  condition = "input.report_cloud == 'Report'",
+                  radioButtons(inputId = "Report", label = "Select a Year:", choices = c(2013:1990, "1982-1989"))
+                ),
+                conditionalPanel(
+                  condition = "input.report_cloud == 'Word Cloud'",
+                  radioButtons(inputId = "Cloud", label = "Year:", choices = c("All Years", 2013:1990, "1982-1989"))
+                )
               ),
               column(
                 10,
-                htmlOutput(outputId = "Annual_Report", height = 750)
+                conditionalPanel(
+                  condition = "input.report_cloud == 'Report'",
+                  htmlOutput(outputId = "Annual_Report", height = 750)
+                ),
+                conditionalPanel(
+                  condition = "input.report_cloud == 'Word Cloud'",
+                  plotOutput(outputId = "cloud_plot", height = 750)
+                )
               )
             )
           ),

@@ -1,5 +1,4 @@
 
-### Wakame 
-#### *Undaria pinnatifida*
+#### Wakame (*Undaria pinnatifida*)
 
-Wakame, its whats in your soup...
+Wakame, it's in your soup...

@@ -1,6 +1,5 @@
 
-### California Sheephead 
-#### *Semicossyphus pulcher*
+#### California Sheephead (*Semicossyphus pulcher*)
 
 California sheephead...
 

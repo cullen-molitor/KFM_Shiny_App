@@ -477,11 +477,14 @@
   foundation_UI <- function(id, label = "foundation_species") {
     ns <- NS(id)
     tagList(
+      DTOutput(outputId = ns("taxa_table")),
+      tags$hr(),
       fluidRow(
         column(4, imageOutput(outputId = ns("pic"))),
         column(4, uiOutput(outputId = ns("text"))),
         column(4, DTOutput(outputId = ns("table")))
-      ), tags$hr()
+      ),
+      tags$hr()
     )
   }
   
@@ -531,17 +534,29 @@
           datatable(
             table_data(), rownames = FALSE,  
             options = list(
-              searching = FALSE, lengthChange = FALSE, paging = FALSE,
-              ordering = FALSE, info = FALSE, 
+              searching = FALSE, lengthChange = FALSE, paging = FALSE, ordering = FALSE, info = FALSE, 
               initComplete = JS(
                 "function(settings, json) {",
-                "$(this.api().table().header()).css({'background-color': '#3c8dbc', 'color': '#fff'});",
-                "}"))) %>%
-            formatStyle(
-              names(table_data()),
-              color = "black",
-              backgroundColor = 'white'
-            )
+                "$(this.api().table().header()).css({'background-color': '#3c8dbc', 'color': '#fff'});}"))) %>%
+            formatStyle(names(table_data()), color = "black", backgroundColor = 'white')
+        })
+        
+        taxa_table_data <- reactive({
+          Species_Info %>%
+            dplyr::filter(Species == Species_Code()) %>%
+            dplyr::select(Species, Kingdom, Phylum, Class, Order, Family, Genus, `Species (Used by KFM)`,
+                          `Currently Accepted Name`, `Authority (Accepted)`, CommonName) %>%
+            dplyr::rename(`Common Name` = CommonName) %>% 
+            dplyr::select(-Species)
+        }) 
+        
+        output$taxa_table <- renderDT({
+          datatable(
+            taxa_table_data(), rownames = FALSE,  
+            options = list(
+              searching = FALSE, lengthChange = FALSE, paging = FALSE, ordering = FALSE, info = FALSE, 
+              initComplete = JS("function(settings,json){$(this.api().table().header()).css({'background-color':'#3c8dbc','color':'#fff'});}"))) %>%
+            formatStyle(names(taxa_table_data()), color = "black", backgroundColor = 'white')
         })
         
       }
@@ -636,7 +651,7 @@
         taxonomy_table_data <- reactive({
           Species_Info %>%
             dplyr::filter(Species == Species_Code()$Species) %>%
-            dplyr::select(Species, Kingdom, Phylum, Subphylum, Class, Order, Family, Genus, `Species (Used by KFM)`,
+            dplyr::select(Species, Kingdom, Phylum, Class, Order, Family, Genus, `Species (Used by KFM)`,
                           `Currently Accepted Name`, `Authority (Accepted)`) %>%
             tidyr::pivot_longer(-Species, names_to = "Category", values_to = "Information") %>%
             dplyr::select(Category, Information)
@@ -1373,12 +1388,12 @@
         
         pic_filename <- reactive(glue::glue("www/Photos/Indicator_Species/{Species_Code()$Species}.jpg"))
         
-        output$pic <- renderImage({list(src = pic_filename(), width = "100%", height = "100%")}, delete = FALSE)
+        output$pic <- renderImage({list(src = pic_filename(), height = "100%")}, delete = FALSE)
         
         taxonomy_table_data <- reactive({
           Species_Info %>%
             dplyr::filter(Species == Species_Code()$Species) %>%
-            dplyr::select(Species, Kingdom, Phylum, Subphylum, Class, Order, Family, Genus, `Species (Used by KFM)`,
+            dplyr::select(Species, Kingdom, Phylum, Class, Order, Family, Genus, `Species (Used by KFM)`,
                           `Currently Accepted Name`, `Authority (Accepted)`, CommonName) %>%
             dplyr::rename(`Common Name` = CommonName) %>% 
             tidyr::pivot_longer(-Species, names_to = "Category", values_to = "Information") %>%
