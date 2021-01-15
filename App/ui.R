@@ -383,7 +383,10 @@ ui <- dashboardPage(
                 6,
                 imageOutput(outputId = "site_image5", height = 400),
                 h5("A diver crashing through the surface to begin monitoring efforts"),
-                h5("Photo: Brett Seymour")
+                h5("Photo: Brett Seymour"),
+                imageOutput(outputId = "site_image6", height = 400),
+                h5("Sea Ranger II anchored in Cuyler Harbor, San Miguel Island"),
+                h5("Photo: Kenan Chan")
               )
             )
           ),
@@ -772,7 +775,7 @@ ui <- dashboardPage(
             fluidRow(
               column(
                 6,
-                includeMarkdown(path = "Text/Biomass_Density/biomass.md")
+                includeMarkdown(path = "Text/Biomass_Density_Sizes/biomass.md")
               ),
               column(
                 6,
@@ -830,7 +833,7 @@ ui <- dashboardPage(
             fluidRow(
               column(
                 6,
-                includeMarkdown(path = "Text/Biomass_Density/density.md")
+                includeMarkdown(path = "Text/Biomass_Density_Sizes/density.md")
               ),
               column(
                 6,
@@ -875,7 +878,38 @@ ui <- dashboardPage(
       tabItem(
         tabName = 'sizes',
         h1("Kelp Forest Natural Habitat Size Frequency Distributions"),
-        tags$img(height = 533, width = 800, src = 'Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (13).jpg')
+        tabsetPanel(
+          # ............ Tab - About  ----
+          tabPanel(
+            title = "About",
+            fluidRow(
+              column(
+                6,
+                includeMarkdown(path = "Text/Biomass_Density_Sizes/sizes.md")
+              ),
+              column(
+                6,
+                tags$hr(),
+                imageOutput(outputId = "Size_pic_1", height = 400),
+                h5("Text..."),
+                h5("Photo: ..."),
+                imageOutput(outputId = "Size_pic_2", height = 400),
+                h5("Text..."),
+                h5("Photo: ...")
+              )
+            )
+          ),
+          # ............ Tab - NHSF  ----
+          tabPanel(
+            title = "NHSF",
+            h3("Comming soon... Maybe combine fish with inverts... not sure yet...")
+          ),
+          # ............ Tab - FSF  ----
+          tabPanel(
+            title = "FSF",
+            h3("Comming soon... Maybe combine fish with inverts... not sure yet...")
+          )
+        )
       ),
       # ...... Body - Reports    ---- 
       tabItem(

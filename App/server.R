@@ -63,6 +63,9 @@ server <- function(input, output, session) {
         src = "www/Photos/Protocols/boating/boat (8).jpg", 
         height = "100%")}, delete = FALSE)
       
+      output$site_image6 <- renderImage({list(
+        src = "www/Photos/Protocols/boating/boat (6).jpg", 
+        height = "100%")}, delete = FALSE)
     }
     
     { # .... Leaflet Maps     ----
@@ -447,6 +450,21 @@ server <- function(input, output, session) {
     { # Map Bubbles    ----
       bubbles_Server(id = "biomass_bubbles")
       bubbles_Server(id = "density_bubbles")
+    }
+    
+  }
+  
+  { # Size Frequencies   ----
+    
+    { # Images  ----
+      output$Size_pic_1 <- renderImage({list(
+        src = "www/Photos/Protocols/nhsf/nhsf (1).jpg", 
+        height = "100%")}, delete = FALSE)
+      
+      output$Size_pic_2 <- renderImage({list(
+        src = "www/Photos/Protocols/nhsf/nhsf (4).jpg", 
+        height = "100%")}, delete = FALSE)
+      
     }
     
   }
