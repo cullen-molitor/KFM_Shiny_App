@@ -492,6 +492,11 @@ source('modules.R')
   All_Ratios <- readr::read_csv("Tidy_Data/Ratios.csv")
 }
 
+{ # Sizes  ----
+  Benthic_Sizes <- readr::read_csv("Tidy_Data/Benthic_Sizes.csv")
+  Fish_Sizes <- readr::read_csv("Tidy_Data/Fish_Sizes.csv")
+}
+
 { # Report Text   -----
   Text <- readr::read_csv("Tidy_Data/Text.csv")
 }

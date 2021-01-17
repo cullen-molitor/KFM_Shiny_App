@@ -1,6 +1,7 @@
 
 
 { # Protocol Tab Panel Module   ----
+  
   protocol_UI <- function(id, label = "proto") {
     ns <- NS(id)
     tagList(
@@ -79,9 +80,11 @@
       }
     )
   } 
+  
 }
 
 { # Site Selector Module   ----
+  
   Site_Selector_UI <- function(id, label = "site") {
     ns <- NS(id)
     selectInput(inputId = ns("Site_Selector"),
@@ -98,28 +101,11 @@
       }
     )
   } 
-}
-
-{ # Species Selector Module   ----
-  Species_Selector_UI <- function(id, label = "species") {
-    ns <- NS(id)
-    selectInput(inputId = ns("Species_Selector"),
-                label = "Species:",
-                choices = Site_Info$Isl_SiteName)
-    # dplyr::arrange(Site_Info, Longitude)$Isl_SiteName   # arrange choices by longitude
-  }
   
-  Species_Selector_Server <- function(id) {
-    moduleServer(
-      id,
-      function(input, output, session) {
-        reactive(dplyr::filter(Species_Info, CommonName == input$Species_Selector))
-      }
-    )
-  } 
 }
 
 { # Biodiversity Tab Module  ----
+  
   diversity_UI <- function(id, label = "bio") {
     ns <- NS(id)
     tagList(
@@ -581,6 +567,7 @@
 }
 
 { # Foundation Species Module  -----
+  
   foundation_UI <- function(id, label = "foundation_species") {
     ns <- NS(id)
     tagList(
@@ -672,6 +659,7 @@
 }
 
 { # Species Guides Module   ----
+  
   species_guide_UI <- function(id, label = "species_guide") {
     ns <- NS(id)
     tagList(
@@ -707,6 +695,7 @@
 }
 
 { # Taxa Module  -----
+  
   Taxa_UI <- function(id, label = "taxa") {
     ns <- NS(id)
     tagList(
@@ -1600,6 +1589,7 @@
 }
 
 { # Ratio Module   -----
+  
   Ratio_UI <- function(id, label = 'ratio') {
     ns <- NS(id)
     tagList(
@@ -1615,8 +1605,7 @@
             ),
             column(
               4,
-              radioButtons(inputId = ns("taxa"), label = "in Category:", 
-                           choices = c('Invertebrates', 'Algae', 'Fish'))
+              uiOutput(outputId = ns("taxa_UI"))
             ),
             column(
               3,
@@ -1650,6 +1639,18 @@
       id,
       function(input, output, session) {
         
+        taxa_choices <- reactive({
+          if (id == "density_ratio") {
+            c('Invertebrates', 'Algae', 'Fish')
+          }
+          else {c('Invertebrates', 'Algae', 'Fish', 'Mixed')}
+        })
+        
+        output$taxa_UI<- renderUI({
+          radioButtons(inputId = session$ns("taxa"), label = "in Category:", 
+                     choices = taxa_choices())
+        }) 
+        
         output$Fishy <- renderUI({
           if (id == "bimass_ratio") {NULL}
           else if (id == "density_ratio" & input$taxa == 'Fish'){
@@ -1659,19 +1660,29 @@
         
         Data <- reactive({
           if (id == "biomass_ratio") {
-            All_Ratios %>% dplyr::filter(Metric == id, Classification == input$taxa)
+            All_Ratios %>% dplyr::filter(Metric == id, Classification == input$taxa) %>% 
+            dplyr::arrange(Mean_Ratio) %>% 
+            dplyr::mutate(CommonName = fct_inorder(CommonName),
+                          Label = "Biomass Ratio")
           }
           else if (id == "density_ratio" & input$taxa != 'Fish') {
-            All_Ratios %>% dplyr::filter(Metric == id, Classification == input$taxa)
+            All_Ratios %>% dplyr::filter(Metric == id, Classification == input$taxa) %>% 
+              dplyr::arrange(Mean_Ratio) %>% 
+              dplyr::mutate(CommonName = fct_inorder(CommonName),
+                            Label = "Density Ratio")
           }
           else if (id == "density_ratio" & input$taxa == 'Fish') {
-            All_Ratios %>% dplyr::filter(Metric == id, Classification == input$taxa, Survey_Type == input$Fish_Survey)
+            All_Ratios %>% dplyr::filter(Metric == id, Classification == input$taxa, Survey_Type == input$Fish_Survey) %>% 
+              dplyr::arrange(Mean_Ratio) %>% 
+              dplyr::mutate(CommonName = fct_inorder(CommonName),
+                            Label = "Density Ratio")
           }
         })
         
         output$species_year_UI <- renderUI({
           if (input$category == "Single Species") {
-            selectInput(inputId = session$ns("species"), label = 'Species:', choices = unique(Data()$CommonName))
+            selectInput(inputId = session$ns("species"), label = 'Species:', 
+                        choices =  levels(forcats::fct_relevel(Data()$CommonName, sort)))
           }
           else if (input$category == "All Species") {
             sliderInput(inputId = session$ns("year"),label = "Select a Year:",
@@ -1680,33 +1691,16 @@
           }
         })
         
-        Ratios <- reactive({Data() %>% dplyr::filter(CommonName == input$species)}) 
-        
         output$plot_all_UI <- renderUI({
           plotOutput(outputId = session$ns("plot_all"), 
                      height = if (input$taxa == "Invertebrates") {600}
-                     else if(input$taxa == "Algae") {200}
+                     else if(input$taxa == "Algae" | input$taxa == "Mixed") {200}
                      else if(id == "biomass_ratio" & input$taxa == "Fish") {600}
                      else if(id == "density_ratio" & input$taxa == "Fish" & input$Fish_Survey == 'RDFC') {1200}
                      else if(id == "density_ratio" & input$taxa == "Fish" & input$Fish_Survey == 'VFT') {600}) 
         })
         
-        
-        All_Data <- reactive({Data() %>% dplyr::filter(SurveyYear == input$year)})
-          
-        output$plot_all <- renderPlot({
-          ggplot2::ggplot(data = All_Data(), aes(x = Mean_Ratio, y = CommonName, color = Targeted_Broad)) +
-            ggplot2::geom_vline(aes(xintercept = 1)) +
-            ggplot2::geom_point(size = 3, stroke = 1, aes(shape = Targeted_Broad), fill = "blue") +
-            ggplot2::geom_errorbar(aes(y = CommonName, xmin = Mean_Ratio - CI_minus, xmax = Mean_Ratio + CI_plus)) +
-            ggplot2::scale_shape_manual(values = Target_Shapes) +
-            ggplot2::scale_color_manual(values = Target_Colors) +
-            ggplot2::scale_x_continuous(trans = 'log10', expand = expansion(mult = 1)) +
-            ggplot2::coord_cartesian(xlim = c(min(All_Data()$Mean_Ratio), max(All_Data()$Mean_Ratio))) +
-            ggplot2::facet_grid(rows = vars(Targeted_Broad), space = "free", scales = "free") +
-            ggplot2::labs(title = input$year, color = NULL, shape = NULL, x = "Biomass Ratio", y = "Common Name") +
-            Ratio_Long_theme()
-        })
+        Ratios <- reactive({Data() %>% dplyr::filter(CommonName == input$species)}) 
         
         output$plot_single <- renderPlot({
           ggplot2::ggplot(data = Ratios(), aes(x = Date, y = Mean_Ratio, color = Targeted_Broad)) +
@@ -1722,7 +1716,7 @@
             ggplot2::scale_color_manual(values = Target_Colors) +
             ggplot2::scale_shape_manual(values = Target_Shapes) +
             ggplot2::facet_grid(rows = vars(Targeted_Broad), space = "free", scales = "free") +
-            ggplot2::labs(title = paste(Ratios()$CommonName, " (", id, ")", sep = ""),
+            ggplot2::labs(title = paste(Ratios()$CommonName, " (", Ratios()$Label, ")", sep = ""),
                            color = NULL, shape = NULL, x = NULL, y = NULL) +
             ggplot2::scale_y_continuous(trans = 'log10', expand = expansion(mult = 1)) +
             ggplot2::scale_x_date(date_labels = "%Y", date_breaks = "year", expand = expansion(mult = .05),
@@ -1732,9 +1726,26 @@
             Ratio_Wide_theme()
         })
         
+        All_Data <- reactive({Data() %>% dplyr::filter(SurveyYear == input$year)})
+          
+        output$plot_all <- renderPlot({
+          ggplot2::ggplot(data = All_Data(), aes(x = Mean_Ratio, y = CommonName, color = Targeted_Broad)) +
+            ggplot2::geom_vline(aes(xintercept = 1)) +
+            ggplot2::geom_point(size = 3, stroke = 1, aes(shape = Targeted_Broad), fill = "blue") +
+            ggplot2::geom_errorbar(aes(y = CommonName, xmin = Mean_Ratio - CI_minus, xmax = Mean_Ratio + CI_plus)) +
+            ggplot2::scale_shape_manual(values = Target_Shapes) +
+            ggplot2::scale_color_manual(values = Target_Colors) +
+            ggplot2::scale_x_continuous(trans = 'log10', expand = expansion(mult = 1)) +
+            ggplot2::coord_cartesian(xlim = c(min(All_Data()$Mean_Ratio), max(All_Data()$Mean_Ratio))) +
+            ggplot2::facet_grid(rows = vars(Targeted_Broad), space = "free", scales = "free") +
+            ggplot2::labs(title = input$year, color = NULL, shape = NULL, x = Ratios()$Label, y = "Common Name") +
+            Ratio_Long_theme()
+        })
+        
       }
     )
   }
+  
 }
 
 { # Map Bubbles Module   ----

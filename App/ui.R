@@ -902,7 +902,35 @@ ui <- dashboardPage(
           # ............ Tab - NHSF  ----
           tabPanel(
             title = "NHSF",
-            h3("Comming soon... Maybe combine fish with inverts... not sure yet...")
+            tags$hr(),
+            fluidRow(
+              column(
+                2,
+                fluidRow(
+                  column(
+                    12,
+                    radioButtons(inputId = "size_category", label = "Category:", 
+                                 choices = c("Invertebrates", "Algae", "Fish"))
+                  )
+                ),
+                fluidRow(
+                  column(
+                    12,
+                    Site_Selector_UI(id = "sizes")
+                  )
+                ),
+                fluidRow(
+                  column(
+                    12,
+                    uiOutput(outputId = "size_species_UI")
+                  )
+                )
+              ),
+              column(
+                10,
+                plotOutput(outputId = "size_plot", height = 400)
+              )
+            )
           ),
           # ............ Tab - FSF  ----
           tabPanel(
