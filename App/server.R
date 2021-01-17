@@ -467,71 +467,102 @@ server <- function(input, output, session) {
       
     }
     
-    # Site_Selector_Server(id = "sizes")
-    
-    Size_Data <- reactive({
-      if (input$size_category == "Invertebrates") {
-        Benthic_Sizes %>% 
-          dplyr::filter(ScientificName != "Macrocystis pyrifera",
-                        SiteName == Site_Selector_Server(id = "sizes")()$SiteName)
-      }
-      else if (input$size_category == "Algae") {
-        Benthic_Sizes %>% 
-          dplyr::filter(ScientificName == "Macrocystis pyrifera",
-                        SiteName == Site_Selector_Server(id = "sizes")()$SiteName)
-      }
-      else if (input$size_category == "Fish") {
-        Fish_Sizes %>% 
-          dplyr::filter(SiteName == Site_Selector_Server(id = "sizes")()$SiteName)
-      }
-    })
-    
-    output$size_species_UI <- renderUI({
+    { # Box Plots  ----
+      Site <- Site_Selector_Server(id = "sizes")
       
-      selectInput(inputId = "size_species", label = "Species:", 
-                   choices = levels(factor(Size_Data()$CommonName)))
-    })
-    
-    Size_Data_Subset <- reactive({
-      Size_Data() %>% dplyr::filter(CommonName == input$size_species)
-    })
-    
-    output$size_plot <- renderPlot({
-      ggplot() +
-        # geom_rect(data = oni, aes(xmin= DateStart, xmax = DateEnd,ymin = 0, ymax = Inf, fill = ANOM), 
-        #           position = "identity", alpha = as.numeric(NHSF_alphaONI_SD_one()), show.legend = FALSE) +
-        # geom_rect(data = pdo_noaa, aes(xmin= DateStart, xmax = DateEnd, ymin = 0, ymax = Inf, fill = pdoAnom), 
-        #           position = "identity", alpha = as.numeric(NHSF_alphaPDO_NOAA_SD_one()), show.legend = FALSE) +
-        # geom_rect(data = pdo_uw, aes(xmin= DateStart, xmax = DateEnd, ymin = 0, ymax = Inf, fill = pdoAnom), 
-        #           position = "identity", alpha = as.numeric(NHSF_alphaPDO_UW_SD_one()), show.legend = FALSE) +
-        # scale_fill_gradient2(high = "red3", mid = "white", low = "blue3", midpoint = 0) +
-        # new_scale_fill() +
-        geom_boxplot(data = Size_Data_Subset(), width = 150,
-                     aes(x = Date, y = Size, group = SurveyYear, color = CommonName)) +
-        geom_point(data = Size_Data_Subset(), size = 1, color = "black",
-                   aes(x = Date, y = mean(Size), group = SurveyYear)) +
-        # geom_text(data = Size_Data_Subset(), size = 4, fontface = "plain",
-        #           aes(x = Date, y = -1, group = Date, label = paste(' n = \n', Size_Data_Subset()$TotalCount))) +
-        scale_x_date(date_labels = "%Y", breaks = unique(Size_Data_Subset()$Date), expand = expansion(mult = c(0.01, .01)),
-                     limits = c(min(Size_Data_Subset()$Date) - 150, max(Size_Data_Subset()$Date) + 150)) +
-        labs(title = glue("{unique(Size_Data_Subset()$ScientificName)}"),
-             subtitle= glue("{unique(Size_Data_Subset()$IslandName)} {unique(Size_Data_Subset()$SiteName)}"), 
-             color = "Common Name",
-             x = "Year",
-             y = "Size Distribution") +
-        scale_color_manual(values = SpeciesColor) +
-        theme_classic() +
-        theme(legend.position = "bottom",
-              legend.background = element_rect(),
-              legend.title = element_text(size = 12),
-              legend.text = element_text(size = 10),
-              plot.title = element_text(size = 16, hjust = 0, face = "italic"),
-              plot.subtitle = element_text(size = 14, hjust = 0.5),
-              axis.title = element_text(size = 12),
-              axis.text.y = element_text(size = 12),
-              axis.text.x = element_text(size = 12, angle = 45, hjust = 1, vjust = 1),
-              strip.text = element_text(size = 12, angle = 90))
-    })
+      Size_Data <- reactive({
+        if (input$size_category == "Invertebrates") {Benthic_Sizes %>% 
+            dplyr::filter(ScientificName != "Macrocystis pyrifera", 
+                          CommonName != "Coronado urchin", CommonName != "Chestnut Cowrie" & SurveyYear > 1990)}
+        else if (input$size_category == "Algae") {Benthic_Sizes %>% dplyr::filter(ScientificName == "Macrocystis pyrifera")}
+        else if (input$size_category == "Fish") {Fish_Sizes}
+      })
+      
+      output$size_site_year <- renderUI({
+        if (input$size_site_radio == "One Site") {
+          Site_Selector_UI(id = "sizes")
+        }
+        else if (input$size_site_radio == "All Sites") {
+          sliderInput(inputId = "size_year_slider", label = "Year:",
+                      min = min(Size_Year_Species()$SurveyYear), 
+                      max = max(Size_Year_Species()$SurveyYear), 
+                      value = min(Size_Year_Species()$SurveyYear),
+                      sep = "", step = 1, animate = TRUE)
+        }
+      })
+      
+      Size_Year_Species <- reactive({Size_Data() %>% dplyr::filter(CommonName == input$size_species)})
+      
+      Site_Levels <- reactive({
+        if (input$size_year_slider < 2001) {
+          Site_Info %>% dplyr::filter(SiteNumber < 17) %>% dplyr::arrange(Longitude)
+        }
+        else if (input$size_year_slider > 2000 & input$size_year_slider < 2005) {
+          Site_Info %>% dplyr::filter(SiteNumber < 22) %>% dplyr::arrange(Longitude)
+        }
+        else if (input$size_year_slider > 2004) {
+          Site_Info %>% dplyr::arrange(Longitude)
+        }
+      })
+      
+      Size_Year_Data <- reactive({
+        Size_Year_Species() %>% 
+          dplyr::filter(SurveyYear == input$size_year_slider) %>% 
+          dplyr::mutate(SiteCode = factor(SiteCode, levels = Site_Levels()$SiteCode)) 
+      })
+      
+      Size_Site_Data <- reactive(Size_Data() %>% dplyr::filter(SiteName == Site()$SiteName))
+      
+      species_choice <- reactive({
+        if (input$size_site_radio == "One Site") {levels(factor(Size_Site_Data()$CommonName))}
+        else if (input$size_site_radio == "All Sites") {levels(factor(Size_Data()$CommonName))}
+      })
+      
+      output$size_species_UI <- renderUI({selectInput(inputId = "size_species", label = "Species:", choices = species_choice())})
+      
+      Size_Data_Subset <- reactive({
+        Size_Site_Data() %>% 
+          dplyr::filter(CommonName == input$size_species)
+      })
+      
+      output$size_plot <- renderPlot({
+        if (input$size_site_radio == "One Site") {
+          ggplot2::ggplot() +
+            ggplot2::geom_boxplot(data = Size_Data_Subset(), width = 150,
+                                  aes(x = Date, y = Size, group = SurveyYear, color = CommonName)) +
+            ggplot2::geom_point(data = Size_Data_Subset(), size = 1, color = "black",
+                                aes(x = Date, y = Mean_Size, group = SurveyYear)) +
+            ggplot2::geom_label(data = Size_Data_Subset(), size = 3, hjust = .5, vjust = 0,
+                                aes(x = Date, y = -Inf, label = Size_Data_Subset()$Total_Count)) +
+            ggplot2::geom_hline(yintercept = 0) +
+            ggplot2::scale_y_continuous(limits = c(0, NA), expand = expansion(mult = c(0.1, 0))) +
+            ggplot2::scale_x_date(date_labels = "%Y", breaks = unique(Size_Data_Subset()$Date), expand = expansion(mult = c(0.01, 0.01)),
+                                  limits = c(min(Size_Data_Subset()$Date) - 150, max(Size_Data_Subset()$Date) + 150)) +
+            ggplot2::labs(title = Size_Data_Subset()$ScientificName,
+                          subtitle = glue("{Size_Data_Subset()$IslandName} {Size_Data_Subset()$SiteName}"), 
+                          color = "Common Name", x = "Year", y = "Size Distribution") +
+            ggplot2::scale_color_manual(values = SpeciesColor) +
+            Boxplot_theme()
+        }
+        else if (input$size_site_radio == "All Sites") {
+          ggplot2::ggplot() +
+            ggplot2::geom_boxplot(data = Size_Year_Data(), 
+                                  aes(x = SiteCode, y = Size, group = SiteCode, color = CommonName)) +
+            ggplot2::geom_point(data = Size_Year_Data(), size = 1, color = "black",
+                                aes(x = SiteCode, y = Mean_Size, group = SurveyYear)) +
+            ggplot2::geom_label(data = Size_Year_Data(), size = 3, hjust = .5, vjust = 0,
+                                aes(x = SiteCode, y = -Inf, label = Size_Year_Data()$Total_Count)) +
+            ggplot2::geom_hline(yintercept = 0) +
+            ggplot2::scale_y_continuous(limits = c(0, NA), expand = expansion(mult = c(0.1, 0.01))) +
+            ggplot2::scale_x_discrete(drop = FALSE) +
+            ggplot2::labs(title = Size_Year_Data()$ScientificName,
+                          subtitle = glue("{Size_Year_Data()$IslandName} {Size_Year_Data()$SiteName}"), 
+                          color = "Common Name", x = "Year", y = "Size Distribution") +
+            ggplot2::scale_color_manual(values = SpeciesColor) +
+            Boxplot_theme()
+        }
+      })
+    }
     
   }
  

@@ -632,8 +632,12 @@ Export_END_Year <- 2019
   }
   
   { # Benthic Sizes  ----
-    Benthic_Sizes <- base::rbind(Kelp_Sizes, Gorgonian_Sizes, Invert_Sizes) %>% 
-      readr::write_csv("App/Tidy_Data/Benthic_Sizes.csv")
+    Benthic_Sizes <- base::rbind(Kelp_Sizes, Gorgonian_Sizes, Invert_Sizes) %>%
+      dplyr::group_by(SiteCode, SurveyYear, CommonName) %>% 
+      dplyr::mutate(Total_Count = length(Size), Mean_Size = mean(Size), Date = max(Date)) %>% 
+      dplyr::ungroup() %>% 
+      readr::write_csv("App/Tidy_Data/BenthicSizes.csv") %>% 
+      dplyr::select(-Mean_Size, -Total_Coun) 
   }
   
   { # Benthic Biomass Long  ----
@@ -826,7 +830,10 @@ Export_END_Year <- 2019
           ScientificName == "Ophiodon elongatus" ~ WL_a_corrected * Size ^ WL_b * 1000,
           TRUE ~ WL_a_corrected * Size ^ WL_b))  %>% 
       dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, Date,
-                    ScientificName, CommonName, Size, Biomass, ReserveStatus, Reference) %>% 
+                    ScientificName, CommonName, Size, Biomass, ReserveStatus, Reference)  %>%
+      dplyr::group_by(SiteCode, SurveyYear, CommonName) %>% 
+      dplyr::mutate(Total_Count = length(Size), Mean_Size = mean(Size), Date = max(Date)) %>% 
+      dplyr::ungroup() %>% 
       readr::write_csv("App/Tidy_Data/Fish_Sizes.csv")
     
   }
@@ -835,7 +842,7 @@ Export_END_Year <- 2019
     
     Fish_Biomass <- Fish_Sizes %>%
       dplyr::filter(ScientificName %in% Fish_Biomass_Species) %>% 
-      dplyr::select(-Date) %>%
+      dplyr::select(-Date, -Total_Count, -Mean_Size) %>%
       dplyr::full_join(RDFC_Biomass) %>%
       dplyr::group_by(SiteNumber, SurveyYear, CommonName) %>%
       dplyr::mutate(
@@ -867,9 +874,6 @@ Export_END_Year <- 2019
       dplyr::ungroup() %>% 
       dplyr::mutate(Mean_Biomass = ifelse(Mean_Biomass == -1, NA, Mean_Biomass))
     
-    
-    a <- subset(Fish_Biomass, Mean_Biomass == 0 & Count > 0)
-    aa <- subset(Fish_Biomass, Mean_Biomass > 0 & Count == 0)
   }
   
   { # Fish Biomass Long ----- 

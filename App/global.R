@@ -16,6 +16,7 @@
   library(pdp)
   library(randomForest)
   library(wordcloud)
+  # library(ggnewscale)
   # library(iml)
   # library(tidymodels)
   # library(rmarkdown)
@@ -25,7 +26,6 @@
   # library(labdsv)
   # library(lme4)
   # library(car)
-  # library(ggnewscale)
   
 }
 
@@ -274,7 +274,7 @@ source('modules.R')
         legend.text = element_text(size = 10, colour = "black"),
         legend.spacing.y = unit(.01, 'cm'),
         legend.margin = ggplot2::margin(unit(0.1, "cm")),
-        axis.title = element_text(hjust = .5, size = 18),
+        axis.title = element_text(hjust = .5, size = 12),
         axis.text.x = element_blank(),
         axis.text.y = element_text(size = 12),
         strip.text = element_text(size = 10, colour = "black", angle = 90))
@@ -408,6 +408,21 @@ source('modules.R')
         axis.text.y = element_text(size = 12, color="black"),
         axis.line.x = element_blank(),
         strip.text = element_text(size = 10, colour = "black", angle = 90))
+  }
+  
+  Boxplot_theme <- function() {
+    theme_classic() +
+      theme(plot.title = element_text(size = 16, face = "italic"),
+            plot.subtitle = element_text(size = 14),
+            axis.title = element_text(size = 12),
+            axis.text.y = element_text(size = 12),
+            axis.text.x = element_text(size = 12, angle = 45, hjust = 1, vjust = 1),
+            strip.text = element_text(size = 12, angle = 90),
+            legend.position = "bottom",
+            legend.background = element_rect(),
+            legend.title = element_text(size = 12),
+            legend.text = element_text(size = 10),
+            axis.line.x = element_blank())
   }
   
 }

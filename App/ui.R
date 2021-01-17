@@ -899,16 +899,21 @@ ui <- dashboardPage(
               )
             )
           ),
-          # ............ Tab - NHSF  ----
+          # ............ Tab - Box Plot  ----
           tabPanel(
-            title = "NHSF",
+            title = "Box Plot",
             tags$hr(),
             fluidRow(
               column(
                 2,
                 fluidRow(
                   column(
-                    12,
+                    6,
+                    radioButtons(inputId = "size_site_radio", label = "Choose:",
+                                 choices = c("One Site", "All Sites"))
+                  ),
+                  column(
+                    6,
                     radioButtons(inputId = "size_category", label = "Category:", 
                                  choices = c("Invertebrates", "Algae", "Fish"))
                   )
@@ -916,13 +921,13 @@ ui <- dashboardPage(
                 fluidRow(
                   column(
                     12,
-                    Site_Selector_UI(id = "sizes")
+                    uiOutput(outputId = "size_species_UI")
                   )
                 ),
                 fluidRow(
                   column(
                     12,
-                    uiOutput(outputId = "size_species_UI")
+                    uiOutput(outputId = "size_site_year")  
                   )
                 )
               ),
@@ -932,10 +937,10 @@ ui <- dashboardPage(
               )
             )
           ),
-          # ............ Tab - FSF  ----
+          # ............ Tab - Histogram  ----
           tabPanel(
-            title = "FSF",
-            h3("Comming soon... Maybe combine fish with inverts... not sure yet...")
+            title = "Histogram",
+            h3("Comming soon... animated histograms")
           )
         )
       ),
