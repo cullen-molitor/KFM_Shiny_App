@@ -422,6 +422,7 @@ source('modules.R')
             legend.background = element_rect(),
             legend.title = element_text(size = 12),
             legend.text = element_text(size = 10),
+            plot.caption = element_text(size = 10, hjust = 0),
             axis.line.x = element_blank())
   }
   

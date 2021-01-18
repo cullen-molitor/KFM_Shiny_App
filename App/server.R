@@ -60,10 +60,14 @@ server <- function(input, output, session) {
         height = "100%")}, delete = FALSE)
       
       output$site_image5 <- renderImage({list(
-        src = "www/Photos/Protocols/boating/boat (8).jpg", 
+        src = 'www/Photos/Protocols/boating/boat (7).jpg', 
         height = "100%")}, delete = FALSE)
       
       output$site_image6 <- renderImage({list(
+        src = "www/Photos/Protocols/boating/boat (8).jpg", 
+        height = "100%")}, delete = FALSE)
+      
+      output$site_image7 <- renderImage({list(
         src = "www/Photos/Protocols/boating/boat (6).jpg", 
         height = "100%")}, delete = FALSE)
     }
@@ -105,6 +109,8 @@ server <- function(input, output, session) {
     
     { # .... Static Imagery  -----
       
+      Sat_Map_Site <- Site_Selector_Server(id = 'Site_Sat')
+      
       satMapCode <- reactive({
         if (input$Sat_Isl_Site == "Park") {
           return("CHIS")
@@ -116,7 +122,7 @@ server <- function(input, output, session) {
           return(dplyr::filter(Site_Info, Reference == TRUE, IslandName == input$Sat_MPA)$MPA_Code[1])
         } 
         else {
-          return(Site_Selector_Server(id = 'Site_Sat')()$SiteCode)
+          return(Sat_Map_Site()$SiteCode)
         } 
       })
       
@@ -149,7 +155,7 @@ server <- function(input, output, session) {
         }
         else if (input$Sat_Isl_Site == 'Site') {
           site_data %>% 
-            dplyr::filter(Site == Site_Selector_Server(id = 'Site_Sat')()$SiteName) %>% 
+            dplyr::filter(Site == Sat_Map_Site()$SiteName) %>% 
             dplyr::select(-IslandName) 
         }
         
@@ -468,6 +474,7 @@ server <- function(input, output, session) {
     }
     
     { # Box Plots  ----
+      
       Site <- Site_Selector_Server(id = "sizes")
       
       Size_Data <- reactive({
@@ -483,26 +490,28 @@ server <- function(input, output, session) {
           Site_Selector_UI(id = "sizes")
         }
         else if (input$size_site_radio == "All Sites") {
-          sliderInput(inputId = "size_year_slider", label = "Year:",
-                      min = min(Size_Year_Species()$SurveyYear), 
-                      max = max(Size_Year_Species()$SurveyYear), 
-                      value = min(Size_Year_Species()$SurveyYear),
-                      sep = "", step = 1, animate = TRUE)
+          tagList(
+            sliderInput(inputId = "size_year_slider", label = "Year:",
+                        min = min(Size_Year_Species()$SurveyYear), 
+                        max = max(Size_Year_Species()$SurveyYear), 
+                        value = min(Size_Year_Species()$SurveyYear),
+                        sep = "", step = 1, animate = TRUE),
+            h5("Animation Note: Animals with many measurements take a long time to plot. ",
+               "Plots are cached within a session. ",
+               "Run the animation once and allow all plots to complete (watch year in top left corner). ",
+               "Re-run to show smooth animation from cached plots.") 
+          )
+          
         }
       })
       
       Size_Year_Species <- reactive({Size_Data() %>% dplyr::filter(CommonName == input$size_species)})
       
       Site_Levels <- reactive({
-        if (input$size_year_slider < 2001) {
-          Site_Info %>% dplyr::filter(SiteNumber < 17) %>% dplyr::arrange(Longitude)
-        }
+        if (input$size_year_slider < 2001) {Site_Info %>% dplyr::filter(SiteNumber < 17) %>% dplyr::arrange(Longitude)}
         else if (input$size_year_slider > 2000 & input$size_year_slider < 2005) {
-          Site_Info %>% dplyr::filter(SiteNumber < 22) %>% dplyr::arrange(Longitude)
-        }
-        else if (input$size_year_slider > 2004) {
-          Site_Info %>% dplyr::arrange(Longitude)
-        }
+          Site_Info %>% dplyr::filter(SiteNumber < 22) %>% dplyr::arrange(Longitude)}
+        else if (input$size_year_slider > 2004) {Site_Info %>% dplyr::arrange(Longitude)}
       })
       
       Size_Year_Data <- reactive({
@@ -520,13 +529,9 @@ server <- function(input, output, session) {
       
       output$size_species_UI <- renderUI({selectInput(inputId = "size_species", label = "Species:", choices = species_choice())})
       
-      Size_Data_Subset <- reactive({
-        Size_Site_Data() %>% 
-          dplyr::filter(CommonName == input$size_species)
-      })
+      Size_Data_Subset <- reactive({Size_Site_Data() %>% dplyr::filter(CommonName == input$size_species)})
       
-      output$size_plot <- renderPlot({
-        if (input$size_site_radio == "One Site") {
+      output$size_site_plot <- renderCachedPlot({
           ggplot2::ggplot() +
             ggplot2::geom_boxplot(data = Size_Data_Subset(), width = 150,
                                   aes(x = Date, y = Size, group = SurveyYear, color = CommonName)) +
@@ -543,25 +548,23 @@ server <- function(input, output, session) {
                           color = "Common Name", x = "Year", y = "Size Distribution") +
             ggplot2::scale_color_manual(values = SpeciesColor) +
             Boxplot_theme()
-        }
-        else if (input$size_site_radio == "All Sites") {
-          ggplot2::ggplot() +
-            ggplot2::geom_boxplot(data = Size_Year_Data(), 
-                                  aes(x = SiteCode, y = Size, group = SiteCode, color = CommonName)) +
-            ggplot2::geom_point(data = Size_Year_Data(), size = 1, color = "black",
-                                aes(x = SiteCode, y = Mean_Size, group = SurveyYear)) +
-            ggplot2::geom_label(data = Size_Year_Data(), size = 3, hjust = .5, vjust = 0,
-                                aes(x = SiteCode, y = -Inf, label = Size_Year_Data()$Total_Count)) +
-            ggplot2::geom_hline(yintercept = 0) +
-            ggplot2::scale_y_continuous(limits = c(0, NA), expand = expansion(mult = c(0.1, 0.01))) +
-            ggplot2::scale_x_discrete(drop = FALSE) +
-            ggplot2::labs(title = Size_Year_Data()$ScientificName,
-                          subtitle = glue("{Size_Year_Data()$IslandName} {Size_Year_Data()$SiteName}"), 
-                          color = "Common Name", x = "Year", y = "Size Distribution") +
-            ggplot2::scale_color_manual(values = SpeciesColor) +
-            Boxplot_theme()
-        }
-      })
+      }, cacheKeyExpr = {Size_Data_Subset()} )
+      
+      output$size_year_plot <- renderCachedPlot({
+        ggplot2::ggplot() +
+          ggplot2::geom_boxplot(data = Size_Year_Data(), aes(x = SiteCode, y = Size, group = SiteCode, color = CommonName)) +
+          ggplot2::geom_point(data = Size_Year_Data(), size = 1, color = "black", aes(x = SiteCode, y = Mean_Size, group = SurveyYear)) +
+          ggplot2::geom_label(data = Size_Year_Data(), size = 3, hjust = .5, vjust = 0, aes(x = SiteCode, y = -Inf, label = Size_Year_Data()$Total_Count)) +
+          ggplot2::geom_hline(yintercept = 0) +
+          ggplot2::scale_y_continuous(limits = c(0, NA), expand = expansion(mult = c(0.1, 0.01))) +
+          ggplot2::scale_x_discrete(drop = FALSE) +
+          ggplot2::labs(title = Size_Year_Data()$SurveyYear, color = "Common Name", x = NULL, y = "Size Distribution",
+                        caption = "Sites arranged by longitude (west to east)") +
+          ggplot2::scale_color_manual(values = SpeciesColor) +
+          Boxplot_theme()
+        
+      }, cacheKeyExpr = {Size_Year_Data()} )
+      
     }
     
   }

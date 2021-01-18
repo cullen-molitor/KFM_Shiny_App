@@ -325,19 +325,26 @@ ui <- dashboardPage(
                 6, 
                 tags$hr(),
                 tags$img(height = 400, width = 600, src = 'Photos/Protocols/1m/1m (2).jpg'),
-                tags$br(), tags$hr(),
-                tags$img(height = 400, width = 600, src = 'Photos/Protocols/5m/5m (1).jpg')
+                h5("1 m² Quadrats"),
+                h5("Photo: Shaun Wolfe"),
+                tags$img(height = 400, width = 600, src = 'Photos/Protocols/5m/5m (1).jpg'),
+                h5("5 m² Quadrats"),
+                h5("Photo: Shaun Wolfe")
               )
             ),
             tags$hr(),
             fluidRow(
               column(
                 6,
-                tags$img(height = 400, width = 600, src = 'Photos/Protocols/bands/bands (1).jpg') 
+                tags$img(height = 400, width = 600, src = 'Photos/Protocols/bands/bands (1).jpg'),
+                h5("Band Transects"),
+                h5("Photo: Shaun Wolfe") 
               ),
               column(
                 6, 
-                tags$img(height = 400, width = 600, src = 'Photos/Protocols/rpcs/rpcs (1).jpg')
+                tags$img(height = 400, width = 600, src = 'Photos/Protocols/rpcs/rpcs (1).jpg'),
+                h5("Random Point Contacts (RPCs)"),
+                h5("Photo: Shaun Wolfe")
               )
             )
           ),
@@ -375,16 +382,22 @@ ui <- dashboardPage(
                 h5("Photo: Kenan Chan"),
                 imageOutput(outputId = "site_image4", height = 400),
                 h5("The Sea Ranger II anchored at Scorpion Anchorage, Santa Cruz Island"),
-                h5("Photo: Shaun Wolfe")
+                h5("Photo: Shaun Wolfe"),
+                imageOutput(outputId = "site_image5", height = 400),
+                h5("The Sea Ranger II en route to Prisoners Harbor, Santa Cruz Island"),
+                h5("Photo: Kenan Chan")
               )
             ),
             fluidRow(
               column(
                 6,
-                imageOutput(outputId = "site_image5", height = 400),
-                h5("A diver crashing through the surface to begin monitoring efforts"),
-                h5("Photo: Brett Seymour"),
                 imageOutput(outputId = "site_image6", height = 400),
+                h5("A diver crashing through the surface to begin monitoring efforts"),
+                h5("Photo: Brett Seymour")
+              ),
+              column(
+                6,
+                imageOutput(outputId = "site_image7", height = 400),
                 h5("Sea Ranger II anchored in Cuyler Harbor, San Miguel Island"),
                 h5("Photo: Kenan Chan")
               )
@@ -407,7 +420,7 @@ ui <- dashboardPage(
             )
             
           ),
-          # ............ Tab - Satellite Imagery  ----
+          # ............ Tab - Static Imagery  ----
           tabPanel(
             title = "Static Imagery",
             tags$hr(),
@@ -436,13 +449,6 @@ ui <- dashboardPage(
                 conditionalPanel(
                   condition = "input.Sat_Isl_Site == 'Site'",
                   Site_Selector_UI(id = "Site_Sat")
-                )
-              ),
-              conditionalPanel(
-                condition = "input.Sat_Isl_Site != 'Park'",
-                column(
-                  5,
-                  h5("Known bug: Site selector can become stuck. Simply choose a different category to the left and come back to reset.")
                 )
               )
             ),
@@ -933,7 +939,14 @@ ui <- dashboardPage(
               ),
               column(
                 10,
-                plotOutput(outputId = "size_plot", height = 400)
+                conditionalPanel(
+                  condition = "input.size_site_radio == 'One Site'",
+                  plotOutput(outputId = "size_site_plot", height = 400)
+                ),
+                conditionalPanel(
+                  condition = "input.size_site_radio == 'All Sites'",
+                  plotOutput(outputId = "size_year_plot", height = 400)
+                )
               )
             )
           ),

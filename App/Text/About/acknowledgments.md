@@ -27,7 +27,9 @@ Additionally, we want to thank D. G. Baldwin, L. E. Cullen, T. I. McClure, C. D.
 
 Volunteer divers...
 
-### Education Rangers
+### Education and Interpretation Rangers
+
+Channel Islands Live...
 
 
 

@@ -28,11 +28,11 @@
           ),
           column(
             6, 
-            tags$hr(), imageOutput(outputId = ns("proto_pic1")),
-            tags$br(), imageOutput(outputId = ns("proto_pic2")),
-            tags$br(), imageOutput(outputId = ns("proto_pic3")),
-            tags$br(), imageOutput(outputId = ns("proto_pic4")),
-            tags$br(), imageOutput(outputId = ns("proto_pic5"))
+            tags$hr(), imageOutput(outputId = ns("proto_pic1"), height = 400),
+            tags$br(), imageOutput(outputId = ns("proto_pic2"), height = 400),
+            tags$br(), imageOutput(outputId = ns("proto_pic3"), height = 400),
+            tags$br(), imageOutput(outputId = ns("proto_pic4"), height = 400),
+            tags$br(), imageOutput(outputId = ns("proto_pic5"), height = 400)
           )
         )
       ),
@@ -63,15 +63,15 @@
         
         output$text <- renderUI(includeMarkdown(path = filename_text()))
         
-        output$proto_pic1 <- renderImage({list(src = filename_pic_1(), width = 600, height = 400)}, deleteFile = FALSE)
+        output$proto_pic1 <- renderImage({list(src = filename_pic_1(), height = '100%')}, deleteFile = FALSE)
         
-        output$proto_pic2 <- renderImage({list(src = filename_pic_2(), width = 600, height = 400)}, deleteFile = FALSE)
+        output$proto_pic2 <- renderImage({list(src = filename_pic_2(), height = '100%')}, deleteFile = FALSE)
         
-        output$proto_pic3 <- renderImage({list(src = filename_pic_3(), width = 600, height = 400)}, deleteFile = FALSE)
+        output$proto_pic3 <- renderImage({list(src = filename_pic_3(), height = '100%')}, deleteFile = FALSE)
         
-        output$proto_pic4 <- renderImage({list(src = filename_pic_4(), width = 600, height = 400)}, deleteFile = FALSE)
+        output$proto_pic4 <- renderImage({list(src = filename_pic_4(), height = '100%')}, deleteFile = FALSE)
         
-        output$proto_pic5 <- renderImage({list(src = filename_pic_5(), width = 600, height = 400)}, deleteFile = FALSE)
+        output$proto_pic5 <- renderImage({list(src = filename_pic_5(), height = '100%')}, deleteFile = FALSE)
         
         output$protocol_guide <- renderUI({tags$iframe(style = "height:600px; width:100%; scrolling=yes", src = glue::glue(filename_proto()))})
         

@@ -2,4 +2,4 @@
 
 ## Why are we here?
 
-#### Existence is pain
+## What is the meaning of life?
