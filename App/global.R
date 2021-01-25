@@ -169,7 +169,7 @@ source('modules.R')
                  "Temperature Loggers" = "temp")
 }
 
-{ # Island and Site Information   -----
+{ # Sites   -----
   Site_Info <- readr::read_csv("Meta_Data/Site_Info.csv")
   
   site_data <- Site_Info %>%
@@ -180,6 +180,33 @@ source('modules.R')
                   Reference = Reference, `Reserve Status` = ReserveStatus, `Mean Depth` = MeanDepth, 
                   `Rock (%)` = Rock, `Cobble (%)` = Cobble, `Sand (%)` =  Sand) %>% 
     dplyr::mutate(Island = gsub(" Island", "", Island)) 
+  
+  SiteLevels <- c(
+    # San Miguel
+    "Wyckoff Ledge", "Miracle Mile", # Out
+    "Hare Rock", # In
+    # Santa Rosa
+    "Johnson's Lee North", "Johnson's Lee South", "Rodes Reef", "Cluster Point", # Out
+    "Trancion Canyon", "Chickasaw", "South Point", # In
+    # Santa Cruz
+    "Fry's Harbor", "Pelican Bay", "Yellow Banks", "Devil's Peak Member", "Pedro Reef", "Little Scorpion", # Out
+    "Gull Island South", "Scorpion Anchorage", "Potato Pasture", "Cavern Point",  # In
+    # Anacapa
+    "Admiral's Reef", "East Fish Camp", "Lighthouse",  # Out
+    "Cathedral Cove" , "Landing Cove", "Black Sea Bass Reef", "Keyhole",  # In
+    # Santa Barbara
+    "Arch Point", "Cat Canyon", "Webster's Arch",  # Out
+    "SE Sea Lion Rookery", "Graveyard Canyon", "Southeast Reef") # In
+  
+  SiteColor <- c(as.character(Site_Info$Color), as.character(Site_Info$Color))
+  names(SiteColor) <- c(Site_Info$SiteName, Site_Info$SiteCode)
+  
+  SiteLine <- c(Site_Info$LineType, Site_Info$LineType)
+  names(SiteLine) <- c(Site_Info$SiteName, Site_Info$SiteCode)
+  
+}
+
+{ # Islands and MPAs   -----
   
   Island_Colors <- 
     c("San Miguel" = "darkmagenta", "San Miguel Island" = "darkmagenta", "SM" = "darkmagenta", 
@@ -211,32 +238,11 @@ source('modules.R')
                        "Anacapa Island",  
                        "Santa Barbara Island")
   
-  SiteLevels <- c(
-    # San Miguel
-    "Wyckoff Ledge", "Miracle Mile", # Out
-    "Hare Rock", # In
-    # Santa Rosa
-    "Johnson's Lee North", "Johnson's Lee South", "Rodes Reef", "Cluster Point", # Out
-    "Trancion Canyon", "Chickasaw", "South Point", # In
-    # Santa Cruz
-    "Fry's Harbor", "Pelican Bay", "Yellow Banks", "Devil's Peak Member", "Pedro Reef", "Little Scorpion", # Out
-    "Gull Island South", "Scorpion Anchorage", "Potato Pasture", "Cavern Point",  # In
-    # Anacapa
-    "Admiral's Reef", "East Fish Camp", "Lighthouse",  # Out
-    "Cathedral Cove" , "Landing Cove", "Black Sea Bass Reef", "Keyhole",  # In
-    # Santa Barbara
-    "Arch Point", "Cat Canyon", "Webster's Arch",  # Out
-    "SE Sea Lion Rookery", "Graveyard Canyon", "Southeast Reef") # In
   
-  SiteColor <- c(as.character(Site_Info$Color), as.character(Site_Info$Color))
-  names(SiteColor) <- c(Site_Info$SiteName, Site_Info$SiteCode)
-  
-  SiteLine <- c(Site_Info$LineType, Site_Info$LineType)
-  names(SiteLine) <- c(Site_Info$SiteName, Site_Info$SiteCode)
 }
 
 { # SST Indicies  ----
-  SST_Anomaly_Index <- readr::read_csv("Tidy_Data/SST_Anomaly_Index.csv")
+  SST_Anomaly_Index <- arrow::read_feather("Tidy_Data/SST_Anomaly_Index.feather")
 }
 
 { # Dive meta data  ----
@@ -252,10 +258,7 @@ source('modules.R')
   
 }
 
-{ # Custom Functions   ----
-  is.even <- function(x) x %% 2 == 0
-  
-  is.odd <- function(x) x %% 2 != 0 
+{ # Plot Themes   ----
   
   map_bubble_theme <- function() {
     ggplot2::theme_void() +
@@ -465,17 +468,17 @@ source('modules.R')
 }
 
 { # Biodiversity Data    ----
-  Diversity <- readr::read_csv("Tidy_Data/Diversity.csv")
+  Diversity <- arrow::read_feather("Tidy_Data/Diversity.feather")
 }
 
 { # Mixed Data   ----
-  Mixed_2005 <- readr::read_csv("Tidy_Data/Mixed_Data_2005.csv") %>%
+  Mixed_2005 <- arrow::read_feather("Tidy_Data/Mixed_Data_2005.feather") %>%
     dplyr::mutate(SurveyYear = factor(SurveyYear), 
                   IslandName = factor(IslandName),
                   ReserveStatus = factor(ReserveStatus)) %>% 
     dplyr::select(-SiteNumber, -SiteName,  -IslandCode, -SiteCode) 
   
-  Mixed_All <- readr::read_csv("Tidy_Data/Mixed_Data_All.csv") %>%
+  Mixed_All <- arrow::read_feather("Tidy_Data/Mixed_Data_All.feather") %>%
     dplyr::mutate(SurveyYear = factor(SurveyYear),
                   IslandName = factor(IslandName),
                   ReserveStatus = factor(ReserveStatus)) %>% 
@@ -491,30 +494,28 @@ source('modules.R')
 }
 
 { # Community Similarity Data   ----
-  nMDS <- readr::read_csv('Tidy_Data/nMDS.csv')
+  nMDS <- arrow::read_feather('Tidy_Data/nMDS.feather')
 }
 
 { # Important Species Data  ---- 
-  RF_Importance <- readr::read_csv("Tidy_Data/RF_Importance.csv")
+  RF_Importance <- arrow::read_feather("Tidy_Data/RF_Importance.feather")
 }
 
 { # Density and Biomass Data    ----
-  Density <- readr::read_csv("Tidy_Data/Density.csv")
-  Biomass <- readr::read_csv("Tidy_Data/Biomass.csv") %>% 
-    dplyr::mutate(CommonName = gsub("giant kelp", "giant kelp, adult (>1m)", CommonName),
-                  CommonName = gsub("Benthic_Biomass_Total", "total benthic biomass", CommonName),
-                  CommonName = gsub("Fish_Biomass_Total", "total fish biomass", CommonName))
+  Density <- arrow::read_feather("Tidy_Data/Density.feather")
+  Biomass <- arrow::read_feather("Tidy_Data/Biomass.feather")
   
-  All_Ratios <- readr::read_csv("Tidy_Data/Ratios.csv")
+  All_Ratios <- arrow::read_feather("Tidy_Data/Ratios.feather")
 }
 
 { # Sizes  ----
-  Benthic_Sizes <- readr::read_csv("Tidy_Data/Benthic_Sizes.csv")
-  Fish_Sizes <- readr::read_csv("Tidy_Data/Fish_Sizes.csv")
+  Benthic_Sizes <- arrow::read_feather("Tidy_Data/Benthic_Sizes.feather")
+  Fish_Sizes <- arrow::read_feather("Tidy_Data/Fish_Sizes.feather")
 }
 
 { # Report Text   -----
-  Text <- readr::read_csv("Tidy_Data/Text.csv")
+  Text <- arrow::read_feather("Tidy_Data/Text.feather")
+  Acronyms <- readr::read_csv("Meta_Data/Acronyms.csv")
 }
 
 { # NPS Tags   ------
@@ -559,7 +560,6 @@ source('modules.R')
     )
   )
 }
-
 
 
 

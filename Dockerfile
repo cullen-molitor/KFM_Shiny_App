@@ -23,6 +23,7 @@ RUN R -e "install.packages('DT', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('pdp', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('randomForest', repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('wordcloud', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('arrow')"
 
 COPY /App /srv/shiny-server/
 

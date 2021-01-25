@@ -9,15 +9,17 @@
       fluidRow(
         column(
           3, 
-          selectInput(inputId = ns("protocol_selector"),
-                      label = "Protocol:",
-                      choices = Protocols)
+          selectInput(
+            inputId = ns("protocol_selector"),
+            label = "Protocol:",
+            choices = Protocols)
         ),
         column(
           3,
-          radioButtons(inputId = ns("Overview_Practical"),
-                       label = "View:", inline = TRUE,
-                       choices = c("Overview", "Pratical Guide", "Data Sheet"))
+          radioButtons(
+            inputId = ns("Overview_Practical"),
+            label = "View:", inline = TRUE,
+            choices = c("Overview", "Pratical Guide", "Data Sheet"))
         )
       ),
       conditionalPanel(
@@ -1053,15 +1055,31 @@
         })
         
         output$PD_Plot <- renderPlot({
-          if (input$Data_VI == 'All Years (Fewer Species)') {
+          if (id == 'reserve' & input$Data_VI == 'All Years (Fewer Species)') {
             do.call(
             "partialPlot", 
-            list(x = RF_Island_Model_All, pred.data = as.data.frame(Mixed_All), 
+            list(x = RF_Reserve_All, pred.data = as.data.frame(Mixed_All), 
                  x.var = pdp_labels()$Common_Name,
                  main = paste("Partial Dependence on", pdp_labels()$CommonName),
                  xlab = pdp_labels()$Data_Type))
           } 
-          else if (input$Data_VI == 'Years > 2004 (All Species)') {
+          else if (id == 'reserve' & input$Data_VI == 'Years > 2004 (All Species)') {
+            do.call(
+              "partialPlot", 
+              list(x = RF_Reserve_Model_2005, pred.data = as.data.frame(Mixed_2005), 
+                   x.var = pdp_labels()$Common_Name,
+                   main = paste("Partial Dependence on", pdp_labels()$CommonName),
+                   xlab = pdp_labels()$Data_Type))
+          }
+          if (id == 'island' & input$Data_VI == 'All Years (Fewer Species)') {
+            do.call(
+              "partialPlot", 
+              list(x = RF_Island_Model_All, pred.data = as.data.frame(Mixed_All), 
+                   x.var = pdp_labels()$Common_Name,
+                   main = paste("Partial Dependence on", pdp_labels()$CommonName),
+                   xlab = pdp_labels()$Data_Type))
+          } 
+          else if (id == 'island' & input$Data_VI == 'Years > 2004 (All Species)') {
             do.call(
               "partialPlot", 
               list(x = RF_Island_Model_2005, pred.data = as.data.frame(Mixed_2005), 
@@ -1069,7 +1087,6 @@
                    main = paste("Partial Dependence on", pdp_labels()$CommonName),
                    xlab = pdp_labels()$Data_Type))
           }
-          
         })
         
       }

@@ -9,6 +9,7 @@ library(topicmodels)
 library(textdata)
 library(igraph)
 library(ggraph)
+library(arrow)
 
 data(stop_words)
 
@@ -60,11 +61,9 @@ text_all_summary <- text_complete %>%
   dplyr::summarise(n = sum(n)) %>% 
   dplyr::arrange(desc(n)) %>% 
   dplyr::mutate(Year = "All Years") %>% 
-  base::rbind(text_complete) %>% 
-  # dplyr::group_by(Year) %>% 
-  # dplyr::mutate(n = round(scales::rescale(n, c(1, 5000))), 0) %>% 
-  # dplyr::ungroup() %>% 
-  readr::write_csv("App/Tidy_Data/Text.csv")
+  base::rbind(text_complete) %>%
+  # readr::write_csv("App/Tidy_Data/Text.csv")
+  arrow::write_feather("App/Tidy_Data/Text.feather")
 
 # text_all_sentiment <- text_complete %>%
 #   inner_join(get_sentiments("afinn")) %>%
@@ -82,21 +81,11 @@ text_all_summary <- text_complete %>%
 #   geom_col() +
 #   labs(y = NULL) 
 
-wordcloud::wordcloud(
-  words = text_all_summary$word, 
-  freq = text_all_summary$n, min.freq = 1,
-  max.words = 250, random.order = FALSE, rot.per = 0, 
-  colors = brewer.pal(8, "Dark2"))
-
-
-
-
-
-# tidytext::cast_dfm()
-# 
-# ap_lda <- LDA(AssociatedPress, k = 2, control = list(seed = 1234))
-
-
+# wordcloud::wordcloud(
+#   words = text_all_summary$word, 
+#   freq = text_all_summary$n, min.freq = 1,
+#   max.words = 250, random.order = FALSE, rot.per = 0, 
+#   colors = brewer.pal(8, "Dark2"))
 
 
 

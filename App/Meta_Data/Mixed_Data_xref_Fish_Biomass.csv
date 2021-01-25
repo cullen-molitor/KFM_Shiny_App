@@ -170,3 +170,13 @@ treefish,treefish,Sebastes serriceps,Biomass,Fish,Targeted
 total_benthic_biomass,total benthic biomass,total benthic biomass,Biomass,Invertebrate,Calculated Value
 total_fish_biomass,total fish biomass,total fish biomass,Biomass,Fish,Calculated Value
 total_biomass,total biomass,total biomass,Biomass,Mixed,Calculated Value
+Non_targeted_inverts,Non-targeted inverts,Non-targeted inverts,Biomass,Mixed,Calculated Value
+Targeted_inverts,Targeted inverts,Targeted inverts,Biomass,Mixed,Calculated Value
+Targeted_fish,Targeted fish,Targeted fish,Biomass,Mixed,Calculated Value
+Non_targeted_fish,Non-targeted fish,Non-targeted fish,Biomass,Mixed,Calculated Value
+Producer,Producer,Producer,Biomass,Algae,Calculated Value
+Planktivore,Planktivore,Planktivore,Biomass,Mixed,Calculated Value
+Piscivore,Piscivore,Piscivore,Biomass,Fish,Calculated Value
+Herbivore,Herbivore,Herbivore,Biomass,Mixed,Calculated Value
+Detritivore,Detritivore,Detritivore,Biomass,Mixed,Calculated Value
+Carnivore,Carnivore,Carnivore,Biomass,Mixed,Calculated Value

@@ -2,6 +2,20 @@
 # Define server logic
 server <- function(input, output, session) {
   
+  { # Acronyms   ----
+    output$Acro_Table <- renderDT({
+      datatable(
+        Acronyms, rownames = FALSE,  
+        options = list(
+          searching = FALSE,  paging = FALSE,
+          ordering = TRUE, info = FALSE, scrollX = TRUE, 
+          initComplete = JS(
+            "function(settings, json) {",
+            "$(this.api().table().header()).css({'background-color': '#3c8dbc', 'color': '#fff'});}"))) %>%
+        formatStyle(names(Acronyms), color = "black", backgroundColor = 'white')
+    })
+  }
+  
   { # Protocols  -----
     protocol_Server(id = "protocol")
   }
@@ -222,6 +236,7 @@ server <- function(input, output, session) {
       }, deleteFile = FALSE)
       
     }
+    
   }
   
   { # Biodiversity   ----
@@ -299,7 +314,7 @@ server <- function(input, output, session) {
         }
       })
       
-      output$Two_D <- renderPlot({
+      output$Two_D <- renderCachedPlot({
         ggplot(data = Two_D_data(), aes(x = `Dim 1`, y = `Dim 2`)) + 
           geom_point(size = 4, aes(shape = ReserveStatus, color = Color)) + 
           geom_text(size = 3, vjust = 2, aes(label = SiteCode)) +  
@@ -309,11 +324,9 @@ server <- function(input, output, session) {
           coord_fixed() +
           scale_x_reverse() +
           # coord_flip() +
-          labs(title = input$slider2d, 
-               color = input$radio_2D_color, 
-               shape = "Reserve Status") +
+          labs(title = Two_D_data()$SurveyYear, color = input$radio_2D_color, shape = "Reserve Status") +
           nMDS_theme()
-      })
+      }, cacheKeyExpr = {list(input$radio_2D_color, Two_D_data())})
       
     }
     
@@ -577,13 +590,13 @@ server <- function(input, output, session) {
     Text_Data <- reactive(Text %>% dplyr::filter(Year == input$Cloud))
     
     
-    output$cloud_plot <- renderPlot(bg = "black", {
+    output$cloud_plot <- renderCachedPlot(bg = "black", {
       wordcloud::wordcloud(
         words = Text_Data()$word,
         freq = Text_Data()$n, min.freq = 1, scale = c(3, 0.5),
         max.words = input$cloud_n, random.order = FALSE, rot.per = 0,
         colors = brewer.pal(8, "Dark2"))
-    })
+    }, cacheKeyExpr = {list(input$cloud_n, Text_Data())} )
     
     output$Handbook <- renderUI({ 
       tags$iframe(style="height:750px; width:100%; scrolling=yes", src = glue("Handbook/Full_Versions/{input$old_handy}.pdf"))
@@ -603,8 +616,8 @@ server <- function(input, output, session) {
 
 
 
-# add kelp and gorgonian species guide and protocol guide
-# add shell size frequency guides
+# TODO add kelp and gorgonian species guide and protocol guide
+# TODO add shell size frequency guides
 
 
 

@@ -33,6 +33,7 @@ Export_END_Year <- 2019
   library(pdp)
   library(broom)
   library(scales)
+  library(arrow)
   
 }
 
@@ -121,7 +122,7 @@ Export_END_Year <- 2019
   
   { # Full Index  ----
     SST_Anomaly_Index <- dplyr::left_join(oni, pdo) %>% 
-      readr::write_csv("App/Tidy_Data/SST_Anomaly_Index.csv")
+      arrow::write_feather("App/Tidy_Data/SST_Anomaly_Index.feather")
   }
   
 }
@@ -303,7 +304,7 @@ Export_END_Year <- 2019
       dplyr::mutate(Count = ifelse(Count > 0 & Count < 1, 1, round(Count, 0))) %>% 
       dplyr::ungroup() 
     # %>% 
-      # readr::write_csv("App/Tidy_Data/RDFC_Count.csv")
+      # arrow::write_feather("App/Tidy_Data/RDFC_Count.feather")
     
   }
   
@@ -335,7 +336,7 @@ Export_END_Year <- 2019
       dplyr::distinct(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, Date,
                       CommonName, ScientificName, Mean_Density, ReserveStatus, Reference) 
     # %>%
-      # readr::write_csv("App/Tidy_Data/VFT_Density.csv") 
+      # arrow::write_feather("App/Tidy_Data/VFT_Density.feather") 
   }
   
   { # All Density    ----
@@ -389,7 +390,9 @@ Export_END_Year <- 2019
     
     Density_CSV <- Benthic_Density_CSV %>% 
       base::rbind(Fish_Density_CSV) %>%
-      readr::write_csv("App/Tidy_Data/Density.csv")
+      # arrow::write_feather("App/Tidy_Data/Density.csv")
+      # readr::write_rds("App/Tidy_Data/Density.rds")
+      arrow::write_feather("App/Tidy_Data/Density.feather")
   }
   
 }
@@ -436,7 +439,7 @@ Export_END_Year <- 2019
       SE = round(SD / sqrt(Area_Surveyed), 4)) %>% 
     dplyr::ungroup() %>%  
     dplyr::distinct(SiteCode, ScientificName, CommonName, SurveyYear, Percent_Cover, .keep_all = TRUE) %>%
-    readr::write_csv("App/Tidy_Data/RPC_Cover.csv")
+    arrow::write_feather("App/Tidy_Data/RPC_Cover.feather")
   
   # RPC_Substrate <- RPC_Cover %>%
   #   dplyr::filter(ScientificName %in% c("Rock", "Cobble", "Sand")) %>%
@@ -446,7 +449,7 @@ Export_END_Year <- 2019
   # 
   # Site_Info <- Site_Info %>%
   #   left_join(RPC_Substrate) %>%
-  #   readr::write_csv("App/Meta_Data/Site_Info.csv")
+  #   arrow::write_feather("App/Meta_Data/Site_Info.feather")
   
 }
 
@@ -550,7 +553,7 @@ Export_END_Year <- 2019
           TRUE ~ ReserveStatus),
         ReserveColor = ifelse(ReserveStatus == "Inside", "green", "red")) %>%
       dplyr::mutate(Date = base::as.Date(base::ISOdate(SurveyYear, 7, 1))) %>% 
-      readr::write_csv("App/Tidy_Data/Diversity.csv")
+      arrow::write_feather("App/Tidy_Data/Diversity.feather")
   }
   
   
@@ -636,8 +639,8 @@ Export_END_Year <- 2019
       dplyr::group_by(SiteCode, SurveyYear, CommonName) %>% 
       dplyr::mutate(Total_Count = length(Size), Mean_Size = mean(Size), Date = max(Date)) %>% 
       dplyr::ungroup() %>% 
-      readr::write_csv("App/Tidy_Data/BenthicSizes.csv") %>% 
-      dplyr::select(-Mean_Size, -Total_Coun) 
+      arrow::write_feather("App/Tidy_Data/Benthic_Sizes.feather") %>% 
+      dplyr::select(-Mean_Size, -Total_Count) 
   }
   
   { # Benthic Biomass Long  ----
@@ -834,7 +837,7 @@ Export_END_Year <- 2019
       dplyr::group_by(SiteCode, SurveyYear, CommonName) %>% 
       dplyr::mutate(Total_Count = length(Size), Mean_Size = mean(Size), Date = max(Date)) %>% 
       dplyr::ungroup() %>% 
-      readr::write_csv("App/Tidy_Data/Fish_Sizes.csv")
+      arrow::write_feather("App/Tidy_Data/Fish_Sizes.feather")
     
   }
   
@@ -984,7 +987,8 @@ Export_END_Year <- 2019
       dplyr::left_join(
         Site_Info %>% 
           dplyr::select(SiteName, ReserveYear, Latitude, Longitude)) %>% 
-      readr::write_csv("App/Tidy_Data/Biomass.csv")
+      dplyr::mutate(CommonName = gsub("giant kelp", "giant kelp, adult (>1m)", CommonName)) %>% 
+      arrow::write_feather("App/Tidy_Data/Biomass.feather")
     
   }
  
@@ -1107,11 +1111,13 @@ Export_END_Year <- 2019
           SurveyYear < 2003 ~ "Outside",
           TRUE ~ ReserveStatus)) %>% 
       base::rbind(Counts, Benthic_Mean_Biomass %>%
-                    dplyr::select(-Date, -Mean_Density,  -Survey_Type) %>%
+                    dplyr::select(-Date, -Mean_Density,  -Survey_Type, -Classification, -Trophic_Broad, 
+                                  -Targeted_Broad, -Recreational_Fishery, -Commercial_Fishery) %>%
                     dplyr::mutate(Mean_Density = Mean_Biomass) %>%
                     dplyr::select(-Mean_Biomass)) %>%
       base::rbind(total_biomass %>%
-                    dplyr::select(-Date, -Count, -Survey_Type) %>%
+                    dplyr::select(-Date, -Count, -Survey_Type, -Classification, -Trophic_Broad, 
+                                  -Targeted_Broad, -Recreational_Fishery, -Commercial_Fishery) %>%
                     dplyr::mutate(Mean_Density = Mean_Biomass) %>%
                     dplyr::select(-Mean_Biomass)) %>%
       dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, 
@@ -1127,16 +1133,22 @@ Export_END_Year <- 2019
       dplyr::rename_with(~ base::gsub(" ", "_", .)) %>% 
       dplyr::rename_with(~ base::gsub("-", "_", .)) %>% 
       dplyr::rename_with(~ base::gsub("'", "", .)) %>% 
+      dplyr::rename(Non_targeted_inverts = Non_targeted,
+                    Targeted_inverts = Targeted) %>% 
       dplyr::filter(SiteCode != "MM" | SurveyYear > 2004) %>%
-      readr::write_csv("App/Tidy_Data/Mixed_Data_All.csv")
+      arrow::write_feather("App/Tidy_Data/Mixed_Data_All.feather")
+    
     Mixed_2005 <- Mixed_All %>% 
       dplyr::select(-all_of(VFT_Species), -richness_all, -shannon_all) %>% 
       dplyr::filter(SurveyYear > 2004) %>%
       dplyr::left_join(Diversity_Shannon_2005) %>% 
       dplyr::left_join(RDFC_Wide) %>% 
       dplyr::left_join(Fish_Biomass_Wide) %>% 
-      base::replace(is.na(.), 0)  %>%
-      readr::write_csv("App/Tidy_Data/Mixed_Data_2005.csv")
+      base::replace(is.na(.), 0) %>%
+      dplyr::rename_with(~ base::gsub("-", "_", .)) %>% 
+      dplyr::rename(Non_targeted_fish = Non_targeted,
+                    Targeted_fish = Targeted) %>% 
+      arrow::write_feather("App/Tidy_Data/Mixed_Data_2005.feather")
   }
   
 }
@@ -1145,7 +1157,7 @@ Export_END_Year <- 2019
   
   { # All Years Reserve Model   -----
     
-    Mixed_Data_All <- readr::read_csv("App/Tidy_Data/Mixed_Data_All.csv") 
+    Mixed_Data_All <- arrow::read_feather("App/Tidy_Data/Mixed_Data_All.feather") 
     
     Mixed_All <- Mixed_Data_All  %>% 
       dplyr::mutate(SurveyYear = factor(SurveyYear),
@@ -1170,7 +1182,7 @@ Export_END_Year <- 2019
   
   { # 2005 Reserve Model   -----
     
-    Mixed_Data_2005 <- readr::read_csv("App/Tidy_Data/Mixed_Data_2005.csv") 
+    Mixed_Data_2005 <- arrow::read_feather("App/Tidy_Data/Mixed_Data_2005.feather") 
     
     Mixed_2005 <- Mixed_Data_2005 %>%
       dplyr::mutate(SurveyYear = factor(SurveyYear),
@@ -1213,7 +1225,7 @@ Export_END_Year <- 2019
                     Data_Type, Classification, Targeted) %>% 
       dplyr::mutate(Type = 'RF_All')
     # %>% 
-      # readr::write_csv("App/Tidy_Data/Species_Importance_All.csv")
+      # arrow::write_feather("App/Tidy_Data/Species_Importance_All.feather")
   }
   
   { # 2005 Island Model   -----
@@ -1238,13 +1250,13 @@ Export_END_Year <- 2019
                     Data_Type, Classification, Targeted) %>% 
       dplyr::mutate(Type = 'RF_2005')
     # %>% 
-    # readr::write_csv("App/Tidy_Data/Species_Importance_2005.csv")
+    # arrow::write_feather("App/Tidy_Data/Species_Importance_2005.feather")
     
   }
   
   { # RF All ranked variables   ----
     RF_Importance <- base::rbind(RF_VI_Isl_All, RF_VI_Isl_2005) %>% 
-      readr::write_csv("App/Tidy_Data/RF_Importance.csv")
+      arrow::write_feather("App/Tidy_Data/RF_Importance.feather")
   }
   
 }
@@ -1348,11 +1360,13 @@ Export_END_Year <- 2019
       dplyr::left_join(Site_Info) %>% 
       dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, 
                     `Dim 1`, `Dim 2`, `Dim 3`, Type, ReserveStatus, Reference) %>%
-    readr::write_csv("App/Tidy_Data/nMDS.csv")
+    arrow::write_feather("App/Tidy_Data/nMDS.feather")
     
   }
   
 }
+
+# BEWARE... RATIOS TAKE A LONG TIME  -----------------
 
 { # Biomass Ratios   ----
   
@@ -1375,7 +1389,7 @@ Export_END_Year <- 2019
   }
   
   { # Data  ----
-    Biomass_Data <- readr::read_csv("App/Tidy_Data/Biomass.csv") %>%
+    Biomass_Data <- arrow::read_feather("App/Tidy_Data/Biomass.feather") %>%
       dplyr::filter(
         !ScientificName %in% c(
           "total benthic biomass", "total fish biomass", "total biomass", "Targeted", "Non-targeted",
@@ -1632,7 +1646,9 @@ Export_END_Year <- 2019
                       Metric = 'density_ratio') %>%
         dplyr::left_join(
           Species_Info %>% 
-            dplyr::filter(Classification %in% c('Invertebrates', 'Algae')) %>% 
+            dplyr::filter(
+              Classification != "Fish" |
+                CommonName %in% c('island kelpfish', 'blackeye goby', 'blue-banded goby')) %>%
             dplyr::distinct(
               ScientificName, CommonName, Classification, Trophic_Broad, 
               Targeted_Broad, Recreational_Fishery, Commercial_Fishery))
@@ -1854,16 +1870,16 @@ Export_END_Year <- 2019
     
   }
   
-  { # All Ratios   -----
-    All_Ratios <- 
-      base::rbind(
-        Biomass_Ratios,  
-        Density_Ratios, 
-        RDFC_Density_Ratios, 
-        VFT_Density_Ratios) %>% 
-      readr::write_csv("App/Tidy_Data/Ratios.csv")
-  }
-  
+}
+
+{ # All Ratios   -----
+  All_Ratios <- 
+    base::rbind(
+      Biomass_Ratios,  
+      Density_Ratios, 
+      RDFC_Density_Ratios, 
+      VFT_Density_Ratios) %>% 
+    arrow::write_feather("App/Tidy_Data/Ratios.feather")
 }
 
 { # Temperature RAW to Tidy   ----
@@ -1890,7 +1906,7 @@ Export_END_Year <- 2019
   #   dplyr::left_join(Site_Info) %>%
   #   dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName,
   #                 Year, Month, Date, Temp_Daily_Mean, Temp_Daily_Min, Temp_Daily_Max, Temp_Monthly_Mean, MeanDepth) %>%
-  #   readr::write_csv("App/Tidy_Data/Temp_Raw_Tidy.csv")
+  #   arrow::write_feather("App/Tidy_Data/Temp_Raw_Tidy.feather")
   
 }
 

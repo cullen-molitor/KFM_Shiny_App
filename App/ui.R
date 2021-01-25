@@ -21,65 +21,41 @@ ui <- dashboardPage(
       id = 'sidebar',
       style = 'position: fixed; overflow: visible;',
       # ...... Sidebar - About  ----
-      menuItem(text = 'About', 
-               icon = icon('globe'),
-               badgeColor = 'green',
-               tabName = 'about'),
+      menuItem(text = 'About', icon = icon('globe'),
+               badgeColor = 'green', tabName = 'about'),
       # ...... Sidebar - Species  ----
-      menuItem(text = 'Species', 
-               icon = icon('fish'),
-               badgeColor = 'green',
-               tabName = 'species'),
+      menuItem(text = 'Species', icon = icon('fish'),
+               badgeColor = 'green',tabName = 'species'),
       # ...... Sidebar - Protocols  ----
-      menuItem(text = 'Protocols', 
-               icon = icon('grip-horizontal'),
-               badgeColor = 'green',
-               tabName = 'protocols'),
+      menuItem(text = 'Protocols', icon = icon('grip-horizontal'),
+               badgeColor = 'green', tabName = 'protocols'),
       # ...... Sidebar - Maps  ----
-      menuItem(text = 'Sampling Locations', 
-               icon = icon('globe'),
-               badgeColor = 'green',
-               tabName = 'maps'),
+      menuItem(text = 'Sampling Locations', icon = icon('globe'),
+               badgeColor = 'green', tabName = 'maps'),
       # ...... Sidebar - Biodiversity  ----
-      menuItem(text = 'Biodiversity',
-               icon = icon('rainbow'),
-               badgeColor = 'green',
-               tabName = 'diversity'),
+      menuItem(text = 'Biodiversity', icon = icon('rainbow'), 
+               badgeColor = 'green', tabName = 'diversity'),
       # ...... Sidebar - Community Similarity  ----
-      menuItem(text = 'Community Similarity', 
-               icon = icon('balance-scale'),
-               badgeColor = 'green',
-               tabName = 'com_sim'),
+      menuItem(text = 'Community Similarity', icon = icon('balance-scale'),
+               badgeColor = 'green', tabName = 'com_sim'),
       # ...... Sidebar - Important Species  ----
-      menuItem(text = 'Important Species', 
-               icon = icon('otter'),
-               badgeColor = 'green',
-               tabName = 'imp_spe'),
+      menuItem(text = 'Important Species', icon = icon('otter'),
+               badgeColor = 'green', tabName = 'imp_spe'),
       # ...... Sidebar - Biomass  ----
-      menuItem(text = 'Biomass', 
-               icon = icon('hippo'),
-               badgeColor = 'green',
-               tabName = 'biomass'),
+      menuItem(text = 'Biomass', icon = icon('hippo'),
+               badgeColor = 'green', tabName = 'biomass'),
       # ...... Sidebar - Density  ----
-      menuItem(text = 'Density', 
-               icon = icon('gem'),
-               badgeColor = 'green',
-               tabName = 'density'),
+      menuItem(text = 'Density', icon = icon('gem'),
+               badgeColor = 'green', tabName = 'density'),
       # ...... Sidebar - Size Frequencies  ----
-      menuItem(text = 'Size Frequency', 
-               icon = icon('ruler'),
-               badgeColor = 'green',
-               tabName = 'sizes'),
+      menuItem(text = 'Size Frequency', icon = icon('ruler'),
+               badgeColor = 'green', tabName = 'sizes'),
       # ...... Sidebar - Reports  ----
-      menuItem(text = 'Reports', 
-               icon = icon('newspaper'),
-               badgeColor = 'green',
-               tabName = 'reports'),
+      menuItem(text = 'Reports', icon = icon('newspaper'),
+               badgeColor = 'green', tabName = 'reports'),
       # ...... Sidebar - Literature Cited  ----
-      menuItem(text = 'Literature Cited', 
-               icon = icon('book-reader'),
-               badgeColor = 'green',
-               tabName = 'lit')
+      menuItem(text = 'Literature Cited', icon = icon('book-reader'),
+               badgeColor = 'green', tabName = 'lit')
     )
   ),
   # .. Dashboard Body  ----
@@ -91,94 +67,102 @@ ui <- dashboardPage(
         h1("Channel Islands National Park's Kelp Forest Monitoring Program"),
         tabsetPanel(
           # ............ Tab - Disclaimer  ----
-          tabPanel("Disclaimer",
-                   fluidRow(
-                     column(
-                       8, includeMarkdown(path = "Text/About/about.md")
-                     ),
-                     column(
-                       4, tags$img(height = 332, width = 500, 
-                                   src = 'Photos/Kelp_Forest_Scenes/Laurie_Montgomery/1 (2).jpg'),
-                       h5("Diver in a kelp forest on Santa Barbara Island"),
-                       h5("Photographed by Laurie Montgomery (NPS KFMP Diver)")
-                     )
-                   )
+          tabPanel(
+            title = "Disclaimer",
+            fluidRow(
+              column(
+                8, includeMarkdown(path = "Text/About/about.md")
+              ),
+              column(
+                4, tags$img(height = 332, width = 500, 
+                            src = 'Photos/Kelp_Forest_Scenes/Laurie_Montgomery/1 (2).jpg'),
+                h5("Diver in a kelp forest on Santa Barbara Island"),
+                h5("Photographed by Laurie Montgomery (NPS KFMP Diver)")
+              )
+            )
           ),
           # ............ Tab - KFMP History  ----
-          tabPanel("KFMP History",
-                   fluidRow(
-                     column(
-                       8, includeMarkdown(path = "Text/About/history.md")
-                     ),
-                     column(
-                       4, tags$img(height = 332, width = 500, 
-                                   src = 'Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (3).jpg'),
-                       h5("Antler kelp (Pelagophycus porra) on Santa Cruz Island"),
-                       h5("Photographed by Brett Seymour (NPS Submerged Resources Center)")
-                     )
-                   )
+          tabPanel(
+            title = "KFMP History",
+            fluidRow(
+              column(
+                8, includeMarkdown(path = "Text/About/history.md")
+              ),
+              column(
+                4, tags$img(height = 332, width = 500, 
+                            src = 'Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (3).jpg'),
+                h5("Antler kelp (Pelagophycus porra) on Santa Cruz Island"),
+                h5("Photographed by Brett Seymour (NPS Submerged Resources Center)")
+              )
+            )
           ),
           # ............ Tab - Acknowledgments  ----
-          tabPanel("Acknowledgments",
-                   fluidRow(
-                     column(
-                       8, includeMarkdown(path = "Text/About/acknowledgments.md")
-                     ),
-                     column(
-                       4, tags$img(height = 332, width = 500, 
-                                   src = 'Photos/Kelp_Forest_Scenes/Laurie_Montgomery/1 (3).jpg'),
-                       h5("California sea lion swimming through the kelp forest on Santa Barbara Island"),
-                       h5("Photographed by Laurie Montgomery (NPS KFMP Diver)")
-                     )
-                   )
+          tabPanel(
+            title = "Acknowledgments",
+            fluidRow(
+              column(
+                8, includeMarkdown(path = "Text/About/acknowledgments.md")
+              ),
+              column(
+                4, tags$img(height = 332, width = 500, 
+                            src = 'Photos/Kelp_Forest_Scenes/Laurie_Montgomery/1 (3).jpg'),
+                h5("California sea lion swimming through the kelp forest on Santa Barbara Island"),
+                h5("Photographed by Laurie Montgomery (NPS KFMP Diver)")
+              )
+            )
           ),
           # ............ Tab - Introduction  ----
-          tabPanel("Introduction",
-                   fluidRow(
-                     column(
-                       8, includeMarkdown(path = "Text/About/introduction.md")
-                     ),
-                     column(
-                       4, tags$img(height = 332, width = 500, 
-                                   src = 'Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (4).jpg'),
-                       h5("California sea lion swimming through the kelp forest on Santa Barbara Island"),
-                       h5("Photographed by Brett Seymour (NPS Submerged Resources Center)")
-                     )
-                   )
+          tabPanel(
+            title = "Introduction",
+            fluidRow(
+              column(
+                8, includeMarkdown(path = "Text/About/introduction.md")
+              ),
+              column(
+                4, tags$img(height = 332, width = 500, 
+                            src = 'Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (4).jpg'),
+                h5("California sea lion swimming through the kelp forest on Santa Barbara Island"),
+                h5("Photographed by Brett Seymour (NPS Submerged Resources Center)")
+              )
+            )
           ),
           # ............ Tab - Acronyms  ----
-          tabPanel("Acronyms",
-                   fluidRow(
-                     column(
-                       8, includeMarkdown(path = "Text/About/acronyms.md")
-                     ),
-                     column(
-                       4, tags$img(height = 332, width = 500, 
-                                   src = 'Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (6).jpg'),
-                       h5("California sea lion playing with southern sea palm (Eisenia arborea) on Santa Barbara Island"),
-                       h5("Photographed by Brett Seymour (NPS Submerged Resources Center)")
-                     )
-                   )
+          tabPanel(
+            title = "Acronyms",
+            tags$hr(),
+            fluidRow(
+              column(
+                8, DTOutput(outputId = "Acro_Table")
+              ),
+              column(
+                4, tags$img(height = 332, width = 500, 
+                            src = 'Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (6).jpg'),
+                h5("California sea lion playing with southern sea palm (Eisenia arborea) on Santa Barbara Island"),
+                h5("Photographed by Brett Seymour (NPS Submerged Resources Center)")
+              )
+            )
           ),
           # ............ Tab - Blogs  ----
-          tabPanel("Blog Posts",
-                   tags$hr(), 
-                   fluidRow(
-                     column(
-                       8, NPS_Blog_tagList
-                     ),
-                     column(
-                       4, tags$img(height = 332, width = 500, 
-                                   src = 'Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (6).jpg'),
-                       h5("California sea lion playing with southern sea palm (Eisenia arborea) on Santa Barbara Island"),
-                       h5("Photographed by Brett Seymour (NPS Submerged Resources Center)")
-                     )
-                   )
+          tabPanel(
+            title = "Blog Posts",
+            tags$hr(), 
+            fluidRow(
+              column(
+                8, NPS_Blog_tagList
+              ),
+              column(
+                4, tags$img(height = 332, width = 500, 
+                            src = 'Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (6).jpg'),
+                h5("California sea lion playing with southern sea palm (Eisenia arborea) on Santa Barbara Island"),
+                h5("Photographed by Brett Seymour (NPS Submerged Resources Center)")
+              )
+            )
           ),
           # ............ Tab - FAQ  ----
-          tabPanel("FAQ",
-                   includeMarkdown(path = "Text/About/FAQ.md")
-                   )
+          tabPanel(
+            title = "FAQ",
+            includeMarkdown(path = "Text/About/FAQ.md")
+          )
         )
       ),
       # ...... Body - Species    ---- 
@@ -975,7 +959,8 @@ ui <- dashboardPage(
                 6,
                 conditionalPanel(
                   condition = "input.report_cloud == 'Word Cloud'",
-                  sliderInput(inputId = "cloud_n", label = "Number of Phrases:", min = 10, max = 75, value = 30, width = "100%", step = 1)
+                  sliderInput(inputId = "cloud_n", label = "Number of Phrases:", 
+                              min = 10, max = 125, value = 30, width = "100%", step = 1)
                 )
               )
             ),
@@ -1057,7 +1042,7 @@ ui <- dashboardPage(
       # ...... Body - Literature Cited    ---- 
       tabItem(
         tabName = 'lit',
-        h1("Literature Cited"),
+        includeMarkdown(path = "Text/About/lit.Rmd"),
         tags$img(height = 533, width = 800, src = 'Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (12).jpg')
       )
     ),
