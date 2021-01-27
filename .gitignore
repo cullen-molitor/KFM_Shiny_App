@@ -32,6 +32,9 @@ vignettes/*.pdf
 *_cache/
 /cache/
 
+# Shiny Persistent Cache
+App/cache/
+
 # Temporary files created by R markdown
 *.utf8.md
 *.knit.md
@@ -42,5 +45,5 @@ vignettes/*.pdf
 # Cloud Build Key
 kfmapp-428ef08101fd.json
 
-# Notes for building and deploying docker app to gcloud
-Docker_Notes.docx
+# Notes
+*.docx

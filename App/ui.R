@@ -71,13 +71,30 @@ ui <- dashboardPage(
             title = "Disclaimer",
             fluidRow(
               column(
-                8, includeMarkdown(path = "Text/About/about.md")
+                6, includeMarkdown(path = "Text/About/disclaimer.md")
               ),
               column(
-                4, tags$img(height = 332, width = 500, 
-                            src = 'Photos/Kelp_Forest_Scenes/Laurie_Montgomery/1 (2).jpg'),
+                6,
+                tags$hr(),
+                imageOutput(outputId = "disc_pic_1", height = 400),
                 h5("Diver in a kelp forest on Santa Barbara Island"),
-                h5("Photographed by Laurie Montgomery (NPS KFMP Diver)")
+                h5("Photo: Laurie Montgomery")
+              )
+            )
+          ),
+          # ............ Tab - App Basics  ----
+          tabPanel(
+            title = "App Basics",
+            fluidRow(
+              column(
+                6, includeMarkdown(path = "Text/About/app_intro.md")
+              ),
+              column(
+                6, 
+                tags$hr(),
+                imageOutput(outputId = "basics_pic_1", height = 400),
+                h5("California sea lion swimming through the kelp forest on Santa Barbara Island"),
+                h5("Photo: Brett Seymour")
               )
             )
           ),
@@ -86,13 +103,14 @@ ui <- dashboardPage(
             title = "KFMP History",
             fluidRow(
               column(
-                8, includeMarkdown(path = "Text/About/history.md")
+                6, includeMarkdown(path = "Text/About/history.md")
               ),
               column(
-                4, tags$img(height = 332, width = 500, 
-                            src = 'Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (3).jpg'),
+                6, 
+                tags$hr(),
+                imageOutput(outputId = "history_pic_1", height = 400),
                 h5("Antler kelp (Pelagophycus porra) on Santa Cruz Island"),
-                h5("Photographed by Brett Seymour (NPS Submerged Resources Center)")
+                h5("Photo: Brett Seymour")
               )
             )
           ),
@@ -101,28 +119,14 @@ ui <- dashboardPage(
             title = "Acknowledgments",
             fluidRow(
               column(
-                8, includeMarkdown(path = "Text/About/acknowledgments.md")
+                6, includeMarkdown(path = "Text/About/acknowledgments.md")
               ),
               column(
-                4, tags$img(height = 332, width = 500, 
-                            src = 'Photos/Kelp_Forest_Scenes/Laurie_Montgomery/1 (3).jpg'),
+                6, 
+                tags$hr(),
+                imageOutput(outputId = "ack_pic_1", height = 400),
                 h5("California sea lion swimming through the kelp forest on Santa Barbara Island"),
-                h5("Photographed by Laurie Montgomery (NPS KFMP Diver)")
-              )
-            )
-          ),
-          # ............ Tab - Introduction  ----
-          tabPanel(
-            title = "Introduction",
-            fluidRow(
-              column(
-                8, includeMarkdown(path = "Text/About/introduction.md")
-              ),
-              column(
-                4, tags$img(height = 332, width = 500, 
-                            src = 'Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (4).jpg'),
-                h5("California sea lion swimming through the kelp forest on Santa Barbara Island"),
-                h5("Photographed by Brett Seymour (NPS Submerged Resources Center)")
+                h5("Photo: Laurie Montgomery")
               )
             )
           ),
@@ -132,13 +136,14 @@ ui <- dashboardPage(
             tags$hr(),
             fluidRow(
               column(
-                8, DTOutput(outputId = "Acro_Table")
+                6, DTOutput(outputId = "Acro_Table")
               ),
               column(
-                4, tags$img(height = 332, width = 500, 
-                            src = 'Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (6).jpg'),
+                6, 
+                tags$hr(),
+                imageOutput(outputId = "acr_pic_1", height = 400),
                 h5("California sea lion playing with southern sea palm (Eisenia arborea) on Santa Barbara Island"),
-                h5("Photographed by Brett Seymour (NPS Submerged Resources Center)")
+                h5("Photo: Brett Seymour")
               )
             )
           ),
@@ -148,20 +153,35 @@ ui <- dashboardPage(
             tags$hr(), 
             fluidRow(
               column(
-                8, NPS_Blog_tagList
+                6,
+                h2("OWUSS KFM Blogs"),
+                NPS_Blog_tagList
               ),
               column(
-                4, tags$img(height = 332, width = 500, 
-                            src = 'Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (6).jpg'),
-                h5("California sea lion playing with southern sea palm (Eisenia arborea) on Santa Barbara Island"),
-                h5("Photographed by Brett Seymour (NPS Submerged Resources Center)")
+                6, 
+                tags$hr(),
+                imageOutput(outputId = "blog_pic_1", height = 400),
+                h5("Giant kelp"),
+                h5("Photo: Brett Seymour")
               )
             )
           ),
           # ............ Tab - FAQ  ----
           tabPanel(
             title = "FAQ",
-            includeMarkdown(path = "Text/About/FAQ.md")
+            tags$hr(), 
+            fluidRow(
+              column(
+                6, includeMarkdown(path = "Text/About/FAQ.md")
+              ),
+              column(
+                6, 
+                tags$hr(),
+                imageOutput(outputId = "faq_pic_1", height = 400),
+                h5("Kelp forest canopy as seen from below"),
+                h5("Photo: Kenan Chan")
+              )
+            )
           )
         )
       ),
@@ -912,6 +932,8 @@ ui <- dashboardPage(
                   column(
                     12,
                     uiOutput(outputId = "size_species_UI")
+                    # selectInput(inputId = "size_species",
+                    #             label = "Species:", choices = c())
                   )
                 ),
                 fluidRow(
@@ -1042,7 +1064,7 @@ ui <- dashboardPage(
       # ...... Body - Literature Cited    ---- 
       tabItem(
         tabName = 'lit',
-        includeMarkdown(path = "Text/About/lit.Rmd"),
+        includeMarkdown(path = "Text/About/lit.md"),
         tags$img(height = 533, width = 800, src = 'Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (12).jpg')
       )
     ),

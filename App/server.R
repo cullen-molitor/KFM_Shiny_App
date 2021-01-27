@@ -2,18 +2,51 @@
 # Define server logic
 server <- function(input, output, session) {
   
-  { # Acronyms   ----
-    output$Acro_Table <- renderDT({
-      datatable(
-        Acronyms, rownames = FALSE,  
-        options = list(
-          searching = FALSE,  paging = FALSE,
-          ordering = TRUE, info = FALSE, scrollX = TRUE, 
-          initComplete = JS(
-            "function(settings, json) {",
-            "$(this.api().table().header()).css({'background-color': '#3c8dbc', 'color': '#fff'});}"))) %>%
-        formatStyle(names(Acronyms), color = "black", backgroundColor = 'white')
-    })
+  { # About  ----
+    { # Images   ----
+      output$disc_pic_1 <- renderImage({list(
+        src = 'www/Photos/Kelp_Forest_Scenes/Laurie_Montgomery/1 (2).jpg', 
+        height = "100%")}, delete = FALSE)
+      
+      output$basics_pic_1 <- renderImage({list(
+        src = 'www/Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (4).jpg', 
+        height = "100%")}, delete = FALSE)
+      
+      output$history_pic_1 <- renderImage({list(
+        src = 'www/Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (3).jpg', 
+        height = "100%")}, delete = FALSE)
+      
+      output$ack_pic_1 <- renderImage({list(
+        src = 'www/Photos/Kelp_Forest_Scenes/Laurie_Montgomery/1 (3).jpg', 
+        height = "100%")}, delete = FALSE)
+      
+      output$acr_pic_1 <- renderImage({list(
+        src = 'www/Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (6).jpg', 
+        height = "100%")}, delete = FALSE)
+      
+      output$blog_pic_1 <- renderImage({list(
+        src = 'www/Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (5).jpg', 
+        height = "100%")}, delete = FALSE)
+      
+      output$faq_pic_1 <- renderImage({list(
+        src = 'www/Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (5).jpg', 
+        height = "100%")}, delete = FALSE)
+    }
+    
+    { # Acronyms   ----
+      output$Acro_Table <- renderDT({
+        datatable(
+          Acronyms, rownames = FALSE,  
+          options = list(
+            searching = FALSE,  paging = FALSE,
+            ordering = TRUE, info = FALSE, scrollX = TRUE, 
+            initComplete = JS(
+              "function(settings, json) {",
+              "$(this.api().table().header()).css({'background-color': '#3c8dbc', 'color': '#fff'});}"))) %>%
+          formatStyle(names(Acronyms), color = "black", backgroundColor = 'white')
+      })
+    }
+    
   }
   
   { # Protocols  -----
@@ -371,9 +404,10 @@ server <- function(input, output, session) {
           plotly::add_markers(symbol = ~ReserveStatus, 
                               symbols = c('Inside' = "cross-open", 'Outside' = "square")) %>%
           plotly::add_text(text = ~SiteCode, showlegend = FALSE) %>%
-          plotly::layout(scene = list(xaxis = list(title = 'X'),
+          plotly::layout(title = list(text = paste(Three_D_data()$SurveyYear)),
+                         scene = list(xaxis = list(title = 'X'),
                                       yaxis = list(title = 'Y'),
-                                      zaxis = list(title = 'Z'))) 
+                                      zaxis = list(title = 'Z')))
         # %>%
         #   plotly::animation_opts(1500, easing = "linear")
       })
@@ -540,11 +574,19 @@ server <- function(input, output, session) {
         else if (input$size_site_radio == "All Sites") {levels(factor(Size_Data()$CommonName))}
       })
       
-      output$size_species_UI <- renderUI({selectInput(inputId = "size_species", label = "Species:", choices = species_choice())})
+      # observeEvent(input$size_site_radio, {
+      #   updateSelectInput(session, inputId = "size_species",
+      #                     label = "Species:", choices = species_choice())
+      # 
+      # })
+      
+      output$size_species_UI <- renderUI({
+        selectInput(inputId = "size_species", label = "Species:", choices = species_choice())
+        })
       
       Size_Data_Subset <- reactive({Size_Site_Data() %>% dplyr::filter(CommonName == input$size_species)})
       
-      output$size_site_plot <- renderCachedPlot({
+      output$size_site_plot <- renderPlot({
           ggplot2::ggplot() +
             ggplot2::geom_boxplot(data = Size_Data_Subset(), width = 150,
                                   aes(x = Date, y = Size, group = SurveyYear, color = CommonName)) +
@@ -561,9 +603,10 @@ server <- function(input, output, session) {
                           color = "Common Name", x = "Year", y = "Size Distribution") +
             ggplot2::scale_color_manual(values = SpeciesColor) +
             Boxplot_theme()
-      }, cacheKeyExpr = {Size_Data_Subset()} )
+      }) %>% 
+        shiny::bindCache(Size_Data_Subset())
       
-      output$size_year_plot <- renderCachedPlot({
+      output$size_year_plot <- renderPlot({
         ggplot2::ggplot() +
           ggplot2::geom_boxplot(data = Size_Year_Data(), aes(x = SiteCode, y = Size, group = SiteCode, color = CommonName)) +
           ggplot2::geom_point(data = Size_Year_Data(), size = 1, color = "black", aes(x = SiteCode, y = Mean_Size, group = SurveyYear)) +
@@ -576,7 +619,8 @@ server <- function(input, output, session) {
           ggplot2::scale_color_manual(values = SpeciesColor) +
           Boxplot_theme()
         
-      }, cacheKeyExpr = {Size_Year_Data()} )
+      }) %>% 
+        shiny::bindCache(Size_Year_Data(), cache = cachem::cache_disk("./cache/sizes-cache"))
       
     }
     
@@ -590,13 +634,14 @@ server <- function(input, output, session) {
     Text_Data <- reactive(Text %>% dplyr::filter(Year == input$Cloud))
     
     
-    output$cloud_plot <- renderCachedPlot(bg = "black", {
+    output$cloud_plot <- renderPlot(bg = "black", {
       wordcloud::wordcloud(
         words = Text_Data()$word,
         freq = Text_Data()$n, min.freq = 1, scale = c(3, 0.5),
         max.words = input$cloud_n, random.order = FALSE, rot.per = 0,
         colors = brewer.pal(8, "Dark2"))
-    }, cacheKeyExpr = {list(input$cloud_n, Text_Data())} )
+    }) %>% 
+      shiny::bindCache(input$cloud_n, Text_Data(), cache = cachem::cache_disk("./cache/word-cache"))
     
     output$Handbook <- renderUI({ 
       tags$iframe(style="height:750px; width:100%; scrolling=yes", src = glue("Handbook/Full_Versions/{input$old_handy}.pdf"))

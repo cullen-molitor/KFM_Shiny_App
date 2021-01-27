@@ -16,6 +16,8 @@
   library(pdp)
   library(randomForest)
   library(wordcloud)
+  library(arrow)
+  library(cachem)
   # library(ggnewscale)
   # library(iml)
   # library(tidymodels)
@@ -30,6 +32,7 @@
 }
 
 source('modules.R')
+# shinyOptions(cache = cachem::cache_disk("./myapp-cache"))
 
 { # Species and Trophic Levels   ----
   
@@ -515,7 +518,7 @@ source('modules.R')
 
 { # Report Text   -----
   Text <- arrow::read_feather("Tidy_Data/Text.feather")
-  Acronyms <- readr::read_csv("Meta_Data/Acronyms.csv")
+  Acronyms <- data.table::fread("Meta_Data/Acronyms.csv", encoding = "Latin-1")
 }
 
 { # NPS Tags   ------

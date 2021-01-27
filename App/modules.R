@@ -1574,7 +1574,8 @@
           }
           else if (id == "density") {
             data_subset() %>% 
-              dplyr::select(IslandName, SiteName, Survey_Type, SurveyYear, CommonName, Mean_Density, Count, ReserveStatus) %>% 
+              dplyr::select(IslandName, SiteName, Survey_Type, SurveyYear, 
+                            CommonName, Mean_Density, Count, ReserveStatus) %>% 
               dplyr::rename(`Island Name` = IslandName, 
                             `Site Name` = SiteName,
                             `Survey Type` = Survey_Type,
