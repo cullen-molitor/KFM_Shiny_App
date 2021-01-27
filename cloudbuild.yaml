@@ -4,7 +4,7 @@ steps:
       - '-c'
       - >-
         docker pull
-        gcr.io/$PROJECT_ID/kfm-app:1.4
+        gcr.io/$PROJECT_ID/kfm-app@sha256:1242110c9efb14081e5cbc9904fb28a87b6aced7a16440a6ec6738b807cf074a
         || exit 0
     entrypoint: bash
   - name: gcr.io/cloud-builders/docker
@@ -15,7 +15,7 @@ steps:
       - .
       - '--cache-from'
       - >-
-        gcr.io/$PROJECT_ID/kfm-app:1.4
+        gcr.io/$PROJECT_ID/kfm-app@sha256:1242110c9efb14081e5cbc9904fb28a87b6aced7a16440a6ec6738b807cf074a
       - '-f'
       - Dockerfile
     id: Build

@@ -11,19 +11,21 @@ RUN /rocker_scripts/install_tidyverse.sh
 RUN /rocker_scripts/install_geospatial.sh
 
 # Install R packages that are required
-RUN R -e "install.packages('shinydashboard', repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('shinyWidgets', repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('plotly', repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('ggpubr', repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('glue', repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('lubridate', repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('scales', repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('leaflet', repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('DT', repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('pdp', repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('randomForest', repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('wordcloud', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('shinydashboard')"
+RUN R -e "install.packages('shinyWidgets')"
+RUN R -e "install.packages('plotly')"
+RUN R -e "install.packages('ggpubr')"
+RUN R -e "install.packages('glue')"
+RUN R -e "install.packages('lubridate')"
+RUN R -e "install.packages('scales')"
+RUN R -e "install.packages('leaflet')"
+RUN R -e "install.packages('DT')"
+RUN R -e "install.packages('pdp')"
+RUN R -e "install.packages('randomForest')"
+RUN R -e "install.packages('wordcloud')"
 RUN R -e "install.packages('arrow')"
+RUN R -e "install.packages('cachem')"
+RUN R -e "install.packages('shiny')"
 
 COPY /App /srv/shiny-server/
 
