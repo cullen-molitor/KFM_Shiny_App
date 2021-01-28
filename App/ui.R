@@ -136,7 +136,9 @@ ui <- dashboardPage(
             tags$hr(),
             fluidRow(
               column(
-                6, DTOutput(outputId = "Acro_Table")
+                6,
+                h2("Common Acronyms"), 
+                DTOutput(outputId = "Acro_Table")
               ),
               column(
                 6, 
@@ -150,7 +152,6 @@ ui <- dashboardPage(
           # ............ Tab - Blogs  ----
           tabPanel(
             title = "Blog Posts",
-            tags$hr(), 
             fluidRow(
               column(
                 6,
@@ -169,7 +170,6 @@ ui <- dashboardPage(
           # ............ Tab - FAQ  ----
           tabPanel(
             title = "FAQ",
-            tags$hr(), 
             fluidRow(
               column(
                 6, includeMarkdown(path = "Text/About/FAQ.md")
