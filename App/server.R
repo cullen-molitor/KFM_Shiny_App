@@ -184,6 +184,7 @@ server <- function(input, output, session) {
       
       map_text_filename <- reactive({
         if (input$Sat_Isl_Site == 'Site') {"Text/Sites/gps_transects.md"}
+        else if (input$Sat_Isl_Site == 'Park') {NULL}
         else {glue::glue("Text/Sites/{satMapCode()}.md")}
       })
       
