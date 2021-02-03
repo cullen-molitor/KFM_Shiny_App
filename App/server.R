@@ -621,9 +621,7 @@ server <- function(input, output, session) {
           Boxplot_theme()
         
       }) %>% 
-        shiny::bindCache(Size_Year_Data()
-                         # , cache = cachem::cache_disk("./cache/sizes-cache")
-                         )
+        shiny::bindCache(Size_Year_Data(), cache = cachem::cache_disk("./cache/sizes-cache"))
       
     }
     
@@ -644,9 +642,7 @@ server <- function(input, output, session) {
         max.words = input$cloud_n, random.order = FALSE, rot.per = 0,
         colors = brewer.pal(8, "Dark2"))
     }) %>% 
-      shiny::bindCache(input$cloud_n, Text_Data()
-                       # , cache = cachem::cache_disk("./cache/word-cache")
-                       )
+      shiny::bindCache(input$cloud_n, Text_Data(), cache = cachem::cache_disk("./cache/word-cache"))
     
     output$Handbook <- renderUI({ 
       tags$iframe(style="height:750px; width:100%; scrolling=yes", src = glue("Handbook/Full_Versions/{input$old_handy}.pdf"))

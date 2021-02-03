@@ -975,23 +975,10 @@ ui <- dashboardPage(
             fluidRow(
               column(
                 2,
-                radioButtons(inputId = "report_cloud", label = "View:", inline = T, choices = c("Report", "Word Cloud"))
-              ),
-              column(
-                6,
-                conditionalPanel(
-                  condition = "input.report_cloud == 'Word Cloud'",
-                  sliderInput(inputId = "cloud_n", label = "Number of Phrases:", 
-                              min = 10, max = 125, value = 30, width = "100%", step = 1)
-                )
-              )
-            ),
-            fluidRow(
-              column(
-                2,
+                radioButtons(inputId = "report_cloud", label = "View:", choices = c("Report", "Word Cloud")),
                 conditionalPanel(
                   condition = "input.report_cloud == 'Report'",
-                  radioButtons(inputId = "Report", label = "Select a Year:", choices = c(2013:1990, "1982-1989"))
+                  radioButtons(inputId = "Report", label = "Year:", choices = c(2013:1990, "1982-1989"))
                 ),
                 conditionalPanel(
                   condition = "input.report_cloud == 'Word Cloud'",
@@ -1001,15 +988,24 @@ ui <- dashboardPage(
               column(
                 10,
                 conditionalPanel(
-                  condition = "input.report_cloud == 'Report'",
-                  htmlOutput(outputId = "Annual_Report", height = 750)
-                ),
-                conditionalPanel(
                   condition = "input.report_cloud == 'Word Cloud'",
-                  plotOutput(outputId = "cloud_plot", height = 750)
+                  fluidRow(
+                    sliderInput(inputId = "cloud_n", label = "Number of Phrases:", 
+                                min = 10, max = 125, value = 30, width = "50%", step = 1)
+                  )
+                ),
+                fluidRow(
+                  conditionalPanel(
+                    condition = "input.report_cloud == 'Report'",
+                    htmlOutput(outputId = "Annual_Report", height = 750)
+                  ),
+                  conditionalPanel(
+                    condition = "input.report_cloud == 'Word Cloud'",
+                    plotOutput(outputId = "cloud_plot", height = 750)
+                  )
                 )
               )
-            )
+            ) 
           ),
           # ............ Tab - Handbook   ----
           tabPanel(
@@ -1019,7 +1015,7 @@ ui <- dashboardPage(
               column(
                 2,
                 radioButtons(inputId = "old_handy", label = "Select a Version:", 
-                             choices = c("1997 - Revision Volume 1", "1997 - Revision Volume 2", "1988 - Original"))
+                             choices = c("1997 - Revision 1 Vol. 1", "1997 - Revision 1 Vol. 2", "1988 - Original"))
               ),
               column(
                 10,

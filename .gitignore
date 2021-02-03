@@ -33,7 +33,17 @@ vignettes/*.pdf
 /cache/
 
 # Shiny Persistent Cache
-App/cache/
+# App/cache/
+
+# exclude everything from these folders
+App/cache/3d-cache/*
+App/cache/sizes-cache/*
+App/cache/word-cache/*
+
+# exceptions to the above rules. This keeps the folder but not the contents
+!App/cache/3d-cache/*.gitkeep 
+!App/cache/sizes-cache/*.gitkeep 
+!App/cache/word-cache/*.gitkeep 
 
 # Temporary files created by R markdown
 *.utf8.md
@@ -47,3 +57,4 @@ kfmapp-428ef08101fd.json
 
 # Notes
 *.docx
+
