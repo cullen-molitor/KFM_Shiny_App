@@ -663,7 +663,8 @@ ui <- dashboardPage(
                   )
                 ),
                 fluidRow(
-                  plotOutput(outputId = "Two_D", height = 500)
+                  plotOutput(outputId = "Two_D", height = 500) %>% 
+                    shinycssloaders::withSpinner()
                 )
               )
             ),
@@ -711,7 +712,8 @@ ui <- dashboardPage(
                 ),
                 fluidRow(
                   plotlyOutput(outputId = "Three_D",
-                               height = 450, width = '100%')
+                               height = 450, width = '100%') %>% 
+                    shinycssloaders::withSpinner()
                 ) 
               )
             ),
@@ -947,11 +949,13 @@ ui <- dashboardPage(
                 10,
                 conditionalPanel(
                   condition = "input.size_site_radio == 'One Site'",
-                  plotOutput(outputId = "size_site_plot", height = 400)
+                  plotOutput(outputId = "size_site_plot", height = 400) %>% 
+                    shinycssloaders::withSpinner()
                 ),
                 conditionalPanel(
                   condition = "input.size_site_radio == 'All Sites'",
-                  plotOutput(outputId = "size_year_plot", height = 400)
+                  plotOutput(outputId = "size_year_plot", height = 400) %>% 
+                    shinycssloaders::withSpinner()
                 )
               )
             )
@@ -1001,7 +1005,8 @@ ui <- dashboardPage(
                   ),
                   conditionalPanel(
                     condition = "input.report_cloud == 'Word Cloud'",
-                    plotOutput(outputId = "cloud_plot", height = 750)
+                    plotOutput(outputId = "cloud_plot", height = 750) %>% 
+                      shinycssloaders::withSpinner()
                   )
                 )
               )

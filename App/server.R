@@ -622,7 +622,7 @@ server <- function(input, output, session) {
         
       }) %>% 
         shiny::bindCache(Size_Year_Data()
-                         # , cache = cachem::cache_disk("./cache/sizes-cache")
+                           , cache = cachem::cache_disk("./cache/sizes-cache")
                          )
       
     }
@@ -645,7 +645,7 @@ server <- function(input, output, session) {
         colors = brewer.pal(8, "Dark2"))
     }) %>% 
       shiny::bindCache(input$cloud_n, Text_Data()
-                       # , cache = cachem::cache_disk("./cache/word-cache")
+                         , cache = cachem::cache_disk("./cache/word-cache")
                        )
     
     output$Handbook <- renderUI({ 

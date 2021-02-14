@@ -185,7 +185,8 @@
           conditionalPanel(condition = "input.Diversity_Plot_Options == 'Line'", ns = ns,
                            uiOutput(outputId = ns('plotUI'))),
           conditionalPanel(condition = "input.Diversity_Plot_Options == 'Map Bubbles'", ns = ns,
-                           plotOutput(outputId = ns("map"))
+                           plotOutput(outputId = ns("map")) %>% 
+                             shinycssloaders::withSpinner()
           )
         )
       ) 
@@ -840,11 +841,13 @@
           ),
           conditionalPanel(
             condition = "input.VI_Plot_Type == 'Variable Importance'", ns = ns,
-            fluidRow(plotOutput(outputId = ns("VI_Plot"), height = 600))),
+            fluidRow(plotOutput(outputId = ns("VI_Plot"), height = 600) %>% 
+                       shinycssloaders::withSpinner())),
           conditionalPanel(
             condition = "input.VI_Plot_Type == 'Partial Dependence'", ns = ns,
             fluidRow(h5("Please be patient, these take a while to calculate and plot")),
-            fluidRow(plotOutput(outputId = ns("PD_Plot"), height = 350)))
+            fluidRow(plotOutput(outputId = ns("PD_Plot"), height = 350) %>% 
+                       shinycssloaders::withSpinner()))
         )
       )
     )
@@ -1208,7 +1211,8 @@
         
         output$plotUI <- renderUI({
             plotOutput(outputId = session$ns("time_plot"), 
-                       height = if (input$Data_Options == "Individual Site"){350} else {700})
+                       height = if (input$Data_Options == "Individual Site"){350} else {700}) %>% 
+            shinycssloaders::withSpinner()
         })
         
         
@@ -1641,7 +1645,8 @@
           9,
           conditionalPanel(
             condition = "input.category == 'Single Species'", ns = ns,
-            plotOutput(outputId = ns("plot_single"))
+            plotOutput(outputId = ns("plot_single")) %>% 
+              shinycssloaders::withSpinner()
           ),
           conditionalPanel(
             condition = "input.category == 'All Species'", ns = ns,
@@ -1715,7 +1720,8 @@
                      else if(input$taxa == "Algae" | input$taxa == "Mixed") {200}
                      else if(id == "biomass_ratio" & input$taxa == "Fish") {600}
                      else if(id == "density_ratio" & input$taxa == "Fish" & input$Fish_Survey == 'RDFC') {1200}
-                     else if(id == "density_ratio" & input$taxa == "Fish" & input$Fish_Survey == 'VFT') {600}) 
+                     else if(id == "density_ratio" & input$taxa == "Fish" & input$Fish_Survey == 'VFT') {600}) %>% 
+            shinycssloaders::withSpinner() 
         })
         
         Ratios <- reactive({Data() %>% dplyr::filter(CommonName == input$species)}) 
@@ -1808,7 +1814,8 @@
         ),
         column(
           9,
-          plotOutput(outputId = ns("plot"))
+          plotOutput(outputId = ns("plot")) %>% 
+            shinycssloaders::withSpinner()
         )
       )
     )

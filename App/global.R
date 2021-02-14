@@ -18,6 +18,7 @@
   library(wordcloud)
   library(arrow)
   library(cachem)
+  library(shinycssloaders)
   # library(ggnewscale)
   # library(iml)
   # library(tidymodels)
