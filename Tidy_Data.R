@@ -1366,520 +1366,567 @@ Export_END_Year <- 2019
   
 }
 
-# BEWARE... RATIOS TAKE A LONG TIME  -----------------
+{ # GIS Data   ----
+  
+  CINP <- sf::st_read("Raw_Data/Shapefiles/california_islands.shp") %>%
+    sf::st_as_sf() %>%
+    dplyr::mutate(geometry = st_transform(geometry, "+proj=longlat +ellps=WGS84 +datum=WGS84")) %>%
+    dplyr::filter(COUNTY_ID %in% c(520, 530, 519, 527, 528, 556, 557)) %>%
+    dplyr::mutate(
+      IslandName = case_when(
+        COUNTY_ID == 520 ~ "San Miguel Island",
+        COUNTY_ID == 530 ~ "Santa Rosa Island",
+        COUNTY_ID == 519 ~ "Santa Cruz Island",
+        COUNTY_ID == 527 | COUNTY_ID == 528 ~ "Anacapa Island",
+        COUNTY_ID == 556 | COUNTY_ID == 557 ~ "Santa Barbara Island")) %>% 
+    sf::st_write(dsn = "App/GIS_Data/CINP_Islands.gpkg", layer = "CINP_Islands", 
+                 delete_dsn = TRUE, layer_options = "OVERWRITE=YES")
+  
+  mpa <- sf::st_read("Raw_Data/Shapefiles/California_Marine_Protected_Areas.shp") %>% 
+    sf::st_as_sf(mpa) %>%
+    dplyr::mutate(geometry = st_transform(geometry, "+proj=longlat +ellps=WGS84 +datum=WGS84")) %>%
+    dplyr::filter(OBJECTID %in% 95:116) %>%
+    dplyr::mutate(Color = ifelse(Type == "SMR", "red", 
+                                 ifelse(Type == "SMCA", "blue", 
+                                        ifelse(Type == "FMR", "orange", "purple")))) %>%
+    sf::st_write(dsn = "App/GIS_Data/CA_MPA.gpkg", layer = "CA_MPA", 
+                 delete_dsn = TRUE, layer_options = "OVERWRITE=YES")
+  
+  GPS_Transects <- sf::st_read("Raw_Data/Shapefiles/KFM_Transects_SmoothLine5.shp")  %>%
+    sf::st_as_sf() %>%
+    dplyr::mutate(geometry = st_transform(geometry, "+proj=longlat +ellps=WGS84 +datum=WGS84")) %>%
+    sf::st_write(dsn = "App/GIS_Data/KFM_Transects.gpkg", layer = "KFM_Transects", 
+                 delete_dsn = TRUE, layer_options = "OVERWRITE=YES")
+  
+  NPS_boundary <- sf::st_read("Raw_Data/Shapefiles/nps_boundary.shp") %>%
+    sf::st_as_sf() %>%
+    dplyr::mutate(geometry = st_transform(geometry, "+proj=longlat +ellps=WGS84 +datum=WGS84")) %>%
+    sf::st_write(dsn = "App/GIS_Data/CINP_Boundary.gpkg", layer = "CINP_Boundary", 
+                 delete_dsn = TRUE, layer_options = "OVERWRITE=YES")
+  
+  CINMS_boundary <- sf::st_read("Raw_Data/Shapefiles/cinms_py.shp") %>%
+    sf::st_as_sf() %>%
+    dplyr::mutate(geometry = st_transform(geometry, "+proj=longlat +ellps=WGS84 +datum=WGS84")) %>%
+    sf::st_write(dsn = "App/GIS_Data/CINMS_Boundary.gpkg", layer = "CINMS_Boundary", 
+                 delete_dsn = TRUE, layer_options = "OVERWRITE=YES")
+}
 
-{ # Biomass Ratios   ----
+{ # RATIOS - BEWARE... THESE TAKE A LOOOOONG TIME  -----------------
   
-  { # Ratio Functions   -----
+  { # Biomass Ratios   ----
     
-    biomass_boot_ratio <- function (data, indices) {
-      sample = data[indices, ]
-      ratio = mean(sample$Mean_Biomass[sample$ReserveStatus == "Inside"])/
-        mean(sample$Mean_Biomass[sample$ReserveStatus == "Outside"])
-      return(ratio) 
+    { # Ratio Functions   -----
+      
+      biomass_boot_ratio <- function (data, indices) {
+        sample = data[indices, ]
+        ratio = mean(sample$Mean_Biomass[sample$ReserveStatus == "Inside"])/
+          mean(sample$Mean_Biomass[sample$ReserveStatus == "Outside"])
+        return(ratio) 
+      }
+      
+      density_boot_ratio <- function (data, indices) {
+        sample = data[indices, ]
+        ratio = mean(sample$Mean_Density[sample$ReserveStatus == "Inside"])/
+          mean(sample$Mean_Density[sample$ReserveStatus == "Outside"])
+        return(ratio) 
+      }
+      
     }
     
-    density_boot_ratio <- function (data, indices) {
-      sample = data[indices, ]
-      ratio = mean(sample$Mean_Density[sample$ReserveStatus == "Inside"])/
-        mean(sample$Mean_Density[sample$ReserveStatus == "Outside"])
-      return(ratio) 
+    { # Data  ----
+      Biomass_Data <- arrow::read_feather("App/Tidy_Data/Biomass.feather") %>%
+        dplyr::filter(
+          !ScientificName %in% c(
+            "total benthic biomass", "total fish biomass", "total biomass", "Targeted", "Non-targeted",
+            "Detritivore", "Herbivore", "Planktivore", "Producer", "Carnivore", "Piscivore"),
+          ScientificName != 'Muricea californica' | SurveyYear > 1990,
+          ScientificName != 'Lithopoma gibberosa' | SurveyYear > 2002) %>% 
+        dplyr::group_by(SiteNumber, CommonName, SurveyYear) %>% 
+        dplyr::mutate(Mean_Biomass = Mean_Biomass + runif(1, min = .9, max = 1.1),
+                      CommonName = factor(CommonName),
+                      Targeted_Broad = factor(Targeted_Broad),
+                      Trophic_Broad = factor(Trophic_Broad)) %>% 
+        dplyr::ungroup()
     }
     
-  }
-  
-  { # Data  ----
-    Biomass_Data <- arrow::read_feather("App/Tidy_Data/Biomass.feather") %>%
-      dplyr::filter(
-        !ScientificName %in% c(
-          "total benthic biomass", "total fish biomass", "total biomass", "Targeted", "Non-targeted",
-          "Detritivore", "Herbivore", "Planktivore", "Producer", "Carnivore", "Piscivore"),
-        ScientificName != 'Muricea californica' | SurveyYear > 1990,
-        ScientificName != 'Lithopoma gibberosa' | SurveyYear > 2002) %>% 
-      dplyr::group_by(SiteNumber, CommonName, SurveyYear) %>% 
-      dplyr::mutate(Mean_Biomass = Mean_Biomass + runif(1, min = .9, max = 1.1),
-                    CommonName = factor(CommonName),
-                    Targeted_Broad = factor(Targeted_Broad),
-                    Trophic_Broad = factor(Trophic_Broad)) %>% 
-      dplyr::ungroup()
-  }
-   
-  { # Species Level  ----
-    Biomass_Species_Ratios <- tibble(
-      CommonName = character(), SurveyYear = integer(), Classification = character(),
-      Mean_Ratio = double(), CI_plus = double(), CI_minus = double())
-    
-    for (class in unique(Biomass_Data$Classification)) {
-      class_filtered <- Biomass_Data %>% 
-        dplyr::filter(Classification == class)
-      for (yr in unique(class_filtered$SurveyYear)){
-        dropped_levels <- class_filtered %>% 
-          dplyr::filter(SurveyYear == yr) %>% 
-          droplevels()
-        for (sp in levels(dropped_levels$CommonName)){
-          d <- dropped_levels %>%
-            filter(CommonName == sp) 
-          output <- boot::boot(data = d, statistic = biomass_boot_ratio, R = 1000)
-          ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
-          Biomass_Species_Ratios <- Biomass_Species_Ratios %>% 
-            tibble::add_row(
-              CommonName = sp, SurveyYear = yr, Classification = class,
-              Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
+    { # Species Level  ----
+      Biomass_Species_Ratios <- tibble(
+        CommonName = character(), SurveyYear = integer(), Classification = character(),
+        Mean_Ratio = double(), CI_plus = double(), CI_minus = double())
+      
+      for (class in unique(Biomass_Data$Classification)) {
+        class_filtered <- Biomass_Data %>% 
+          dplyr::filter(Classification == class)
+        for (yr in unique(class_filtered$SurveyYear)){
+          dropped_levels <- class_filtered %>% 
+            dplyr::filter(SurveyYear == yr) %>% 
+            droplevels()
+          for (sp in levels(dropped_levels$CommonName)){
+            d <- dropped_levels %>%
+              filter(CommonName == sp) 
+            output <- boot::boot(data = d, statistic = biomass_boot_ratio, R = 1000)
+            ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
+            Biomass_Species_Ratios <- Biomass_Species_Ratios %>% 
+              tibble::add_row(
+                CommonName = sp, SurveyYear = yr, Classification = class,
+                Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
+          }
         }
       }
     }
-  }
-  
-  { # Total Class Level  ----
-    Biomass_Total_Ratios <- tibble(
-      CommonName = character(), SurveyYear = integer(), Classification = character(),
-      Mean_Ratio = double(), CI_plus = double(), CI_minus = double())
     
-    for (class in unique(Biomass_Data$Classification)) {
-      class_filtered <- Biomass_Data %>% 
-        dplyr::filter(Classification == class)
-      for(yr in unique(class_filtered$SurveyYear)){
-        dropped_levels <- class_filtered %>% 
+    { # Total Class Level  ----
+      Biomass_Total_Ratios <- tibble(
+        CommonName = character(), SurveyYear = integer(), Classification = character(),
+        Mean_Ratio = double(), CI_plus = double(), CI_minus = double())
+      
+      for (class in unique(Biomass_Data$Classification)) {
+        class_filtered <- Biomass_Data %>% 
+          dplyr::filter(Classification == class)
+        for(yr in unique(class_filtered$SurveyYear)){
+          dropped_levels <- class_filtered %>% 
+            dplyr::filter(SurveyYear == yr) %>% 
+            droplevels() 
+          output <- boot::boot(data = dropped_levels, statistic = biomass_boot_ratio, R = 5000)
+          ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
+          Biomass_Total_Ratios <- Biomass_Total_Ratios %>% 
+            tibble::add_row(
+              CommonName = paste("Total ", class, " Biomass", sep = ""), SurveyYear = yr, Classification = class, 
+              Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
+          
+        }
+      }
+    }
+    
+    { # All Total Level  ----
+      Biomass_All_Total_Ratios <- tibble(
+        CommonName = character(), SurveyYear = integer(), Classification = character(),
+        Mean_Ratio = double(), CI_plus = double(), CI_minus = double())
+      
+      for(yr in unique(Biomass_Data$SurveyYear)){
+        dropped_levels <- Biomass_Data %>% 
           dplyr::filter(SurveyYear == yr) %>% 
           droplevels() 
         output <- boot::boot(data = dropped_levels, statistic = biomass_boot_ratio, R = 5000)
         ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
-        Biomass_Total_Ratios <- Biomass_Total_Ratios %>% 
-          tibble::add_row(
-            CommonName = paste("Total ", class, " Biomass", sep = ""), SurveyYear = yr, Classification = class, 
-            Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
+        Biomass_All_Total_Ratios <- Biomass_All_Total_Ratios %>% 
+          tibble::add_row(CommonName = "total biomass", SurveyYear = yr, Classification = "Mixed", 
+                          Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
+        
         
       }
     }
-  }
-  
-  { # All Total Level  ----
-    Biomass_All_Total_Ratios <- tibble(
-      CommonName = character(), SurveyYear = integer(), Classification = character(),
-      Mean_Ratio = double(), CI_plus = double(), CI_minus = double())
-    
-    for(yr in unique(Biomass_Data$SurveyYear)){
-      dropped_levels <- Biomass_Data %>% 
-        dplyr::filter(SurveyYear == yr) %>% 
-        droplevels() 
-      output <- boot::boot(data = dropped_levels, statistic = biomass_boot_ratio, R = 5000)
-      ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
-      Biomass_All_Total_Ratios <- Biomass_All_Total_Ratios %>% 
-        tibble::add_row(CommonName = "total biomass", SurveyYear = yr, Classification = "Mixed", 
-                        Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
-      
-      
-    }
-  }
-    
-  { # Targeted Level  ----
-    Biomass_Target_Ratios <- tibble(
-      CommonName = character(), SurveyYear = integer(), Classification = character(),
-      Mean_Ratio = double(), CI_plus = double(), CI_minus = double())
-    
-    for (class in unique(Biomass_Data$Classification)) {
-      class_filtered <- Biomass_Data %>% 
-        dplyr::filter(Classification == class)
-      for(yr in unique(class_filtered$SurveyYear)){
-        dropped_levels <- class_filtered %>% 
-          dplyr::filter(SurveyYear == yr) %>% 
-          droplevels()
-        for(sp in levels(dropped_levels$Targeted_Broad)){
-          d <- dropped_levels %>%
-            filter(Targeted_Broad == sp) 
-          output <- boot::boot(data = d, statistic = biomass_boot_ratio, R = 5000)
-          ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
-          Biomass_Target_Ratios <- Biomass_Target_Ratios %>% 
-            tibble::add_row(CommonName = sp, SurveyYear = yr, Classification = class, 
-                            Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
-        }
-      }
-    }
-  }
-  
-  { # Trophic level ----
-    Biomass_Trophic_Ratios <- tibble(
-      CommonName = character(), SurveyYear = integer(), Classification = character(),
-      Mean_Ratio = double(), CI_plus = double(), CI_minus = double())
-    
-    for (class in unique(Biomass_Data$Classification)) {
-      class_filtered <- Biomass_Data %>% 
-        dplyr::filter(Classification == class)
-      for(yr in unique(class_filtered$SurveyYear)){
-        dropped_levels <- class_filtered %>% 
-          dplyr::filter(SurveyYear == yr) %>% 
-          droplevels()
-        for(sp in levels(dropped_levels$Trophic_Broad)){
-          d <- dropped_levels %>%
-            filter(Trophic_Broad == sp) 
-          output <- boot::boot(data = d, statistic = biomass_boot_ratio, R = 5000)
-          ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
-          Biomass_Trophic_Ratios <- Biomass_Trophic_Ratios %>% 
-            tibble::add_row(CommonName = sp, SurveyYear = yr, Classification = class, 
-                            Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
-        }
-      }
-    }
-  }
-   
-  { # Data Output  ----
-    
-    Biomass_Ratios <- base::rbind(
-      Biomass_Species_Ratios, 
-      Biomass_Total_Ratios,
-      Biomass_All_Total_Ratios,
-      Biomass_Target_Ratios,
-      Biomass_Trophic_Ratios) %>% 
-      dplyr::mutate(
-        Date = lubridate::mdy(glue::glue('7-1-{SurveyYear}')),
-        Survey_Type = 'Mixed',
-        Metric = 'biomass_ratio') %>%
-      dplyr::left_join(
-        Species_Info %>% 
-          dplyr::distinct(
-            ScientificName, CommonName, Classification, Trophic_Broad, 
-            Targeted_Broad, Recreational_Fishery, Commercial_Fishery)) %>% 
-      dplyr::filter(CommonName != "Targeted" | Classification != "Algae",
-                    CommonName != "Producer" | Classification != "Algae",
-                    CommonName != "Total Algae Biomass" | Classification != "Algae")
-  }
-  
-}
-
-{ # Density Ratios   ----
-  
-  { # Benthic Density Ratios    -----
-    
-    { # Data    ----
-      Density_Boot <- Benthic_Density_CSV %>%
-        dplyr::filter(ScientificName != 'Muricea californica' | SurveyYear > 1990,
-                      ScientificName != 'Cypraea spadicea' | SurveyYear > 1983,
-                      ScientificName != 'Undaria pinnatifida',
-                      ScientificName != 'Haliotis assimilis',
-                      ScientificName != 'Haliotis sorenseni',
-                      ScientificName != 'Pisaster ochraceus') %>%
-        dplyr::left_join(
-          Species_Info %>% 
-            dplyr::distinct(ScientificName, Trophic_Broad, Targeted_Broad, 
-                          Recreational_Fishery, Commercial_Fishery)) %>%
-        dplyr::group_by(SiteNumber, CommonName, SurveyYear) %>% 
-        dplyr::mutate(Mean_Density = Mean_Density + runif(1, min = .9, max = 1.1),
-                      CommonName = factor(CommonName),
-                      Targeted_Broad = factor(Targeted_Broad),
-                      Trophic_Broad = factor(Trophic_Broad)) %>% 
-        dplyr::ungroup()
-    }
-    
-    { # Species Level  ----
-      Density_Species_Ratio <- tibble(
-        CommonName = character(), SurveyYear = integer(),
-        Mean_Ratio = double(), CI_plus = double(), CI_minus = double())
-      
-      for(y in unique(Density_Boot$SurveyYear)){
-        dropped <- Density_Boot %>% 
-          dplyr::filter(SurveyYear == y) %>% 
-          droplevels()
-        for(s in levels(dropped$CommonName)){
-          d <- dropped %>%
-            filter(CommonName == s) 
-          output <- boot::boot(data = d, statistic = density_boot_ratio, R = 1000)
-          ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
-          Density_Species_Ratio <- Density_Species_Ratio %>% 
-            tibble::add_row(CommonName = s, SurveyYear = y, 
-                            Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
-        }
-      } 
-    }
     
     { # Targeted Level  ----
-      Density_Target_Species_Ratio <- tibble(
-        CommonName = character(), SurveyYear = integer(),
+      Biomass_Target_Ratios <- tibble(
+        CommonName = character(), SurveyYear = integer(), Classification = character(),
         Mean_Ratio = double(), CI_plus = double(), CI_minus = double())
       
-      for(yr in unique(Density_Boot$SurveyYear)){
-        drop <- Density_Boot %>% 
-          dplyr::filter(SurveyYear == yr,
-                        Targeted_Broad != 'Mixed') %>% 
-          droplevels()
-        for(c in levels(drop$Targeted_Broad)){
-          d <- drop %>%
-            filter(Targeted_Broad == c) 
-          output <- boot::boot(data = d, statistic = density_boot_ratio, R = 1000)
-          ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
-          Density_Target_Species_Ratio <- Density_Target_Species_Ratio %>% 
-            tibble::add_row(CommonName = c, SurveyYear = yr, 
-                            Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
+      for (class in unique(Biomass_Data$Classification)) {
+        class_filtered <- Biomass_Data %>% 
+          dplyr::filter(Classification == class)
+        for(yr in unique(class_filtered$SurveyYear)){
+          dropped_levels <- class_filtered %>% 
+            dplyr::filter(SurveyYear == yr) %>% 
+            droplevels()
+          for(sp in levels(dropped_levels$Targeted_Broad)){
+            d <- dropped_levels %>%
+              filter(Targeted_Broad == sp) 
+            output <- boot::boot(data = d, statistic = biomass_boot_ratio, R = 5000)
+            ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
+            Biomass_Target_Ratios <- Biomass_Target_Ratios %>% 
+              tibble::add_row(CommonName = sp, SurveyYear = yr, Classification = class, 
+                              Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
+          }
         }
       }
     }
     
     { # Trophic level ----
-      Density_Trophic_Level_Ratios <- tibble(
-        CommonName = character(), SurveyYear = integer(),
+      Biomass_Trophic_Ratios <- tibble(
+        CommonName = character(), SurveyYear = integer(), Classification = character(),
         Mean_Ratio = double(), CI_plus = double(), CI_minus = double())
       
-      for(year in unique(Density_Boot$SurveyYear)){
-        dropT <- Density_Boot %>% 
-          dplyr::filter(SurveyYear == year,
-                        Trophic_Broad != 'Mixed Trophic Levels') %>% 
-          droplevels()
-        for(t in levels(dropT$Trophic_Broad)){
-          d <- dropT %>%
-            filter(Trophic_Broad == t) 
-          output <- boot::boot(data = d, statistic = density_boot_ratio, R = 1000)
-          ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
-          Density_Trophic_Level_Ratios <- Density_Trophic_Level_Ratios %>% 
-            tibble::add_row(CommonName = t, SurveyYear = year, 
-                            Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
+      for (class in unique(Biomass_Data$Classification)) {
+        class_filtered <- Biomass_Data %>% 
+          dplyr::filter(Classification == class)
+        for(yr in unique(class_filtered$SurveyYear)){
+          dropped_levels <- class_filtered %>% 
+            dplyr::filter(SurveyYear == yr) %>% 
+            droplevels()
+          for(sp in levels(dropped_levels$Trophic_Broad)){
+            d <- dropped_levels %>%
+              filter(Trophic_Broad == sp) 
+            output <- boot::boot(data = d, statistic = biomass_boot_ratio, R = 5000)
+            ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
+            Biomass_Trophic_Ratios <- Biomass_Trophic_Ratios %>% 
+              tibble::add_row(CommonName = sp, SurveyYear = yr, Classification = class, 
+                              Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
+          }
         }
       }
     }
     
-    { # Data Outputs  ----
+    { # Data Output  ----
       
-      Density_Ratios <- base::rbind(
-        Density_Species_Ratio, 
-        Density_Target_Species_Ratio, 
-        Density_Trophic_Level_Ratios) %>%
-        dplyr::mutate(Date = lubridate::mdy(glue::glue('7-1-{SurveyYear}')),
-                      Survey_Type = 'Mixed',
-                      Metric = 'density_ratio') %>%
-        dplyr::left_join(
-          Species_Info %>% 
-            dplyr::filter(
-              Classification != "Fish" |
-                CommonName %in% c('island kelpfish', 'blackeye goby', 'blue-banded goby')) %>%
-            dplyr::distinct(
-              ScientificName, CommonName, Classification, Trophic_Broad, 
-              Targeted_Broad, Recreational_Fishery, Commercial_Fishery))
-      
-    }
-    
-  }
-  
-  { # RDFC Density Ratios    -----
-    
-    { # Data    ----
-      RDFC_Density_Boot <- Fish_Density_CSV %>%
-        dplyr::filter(
-          Survey_Type == "RDFC",
-          !ScientificName %in% 
-            c('Coryphopterus nicholsi', 
-              'Lythrypnus dalli', 
-              'Alloclinus holderi')) %>%
-        dplyr::left_join(
-          Species_Info %>% 
-            dplyr::distinct(ScientificName, Trophic_Broad, Targeted_Broad, 
-                            Recreational_Fishery, Commercial_Fishery)) %>%
-        dplyr::group_by(SiteNumber, CommonName, SurveyYear) %>% 
-        dplyr::mutate(
-          Mean_Density = Mean_Density + runif(1, min = .9, max = 1.1),
-          CommonName = factor(CommonName),
-          Targeted_Broad = factor(Targeted_Broad),
-          Trophic_Broad = factor(Trophic_Broad)) %>% 
-        dplyr::ungroup()
-    }
-    
-    { # Species Level  ----
-      RDFC_Species_Ratio <- tibble(
-        CommonName = character(), SurveyYear = integer(),
-        Mean_Ratio = double(), CI_plus = double(), CI_minus = double())
-      
-      for(y in unique(RDFC_Density_Boot$SurveyYear)){
-        dropped <- RDFC_Density_Boot %>% 
-          dplyr::filter(SurveyYear == y) %>% 
-          droplevels()
-        for(s in levels(dropped$CommonName)){
-          d <- dropped %>%
-            filter(CommonName == s) 
-          output <- boot::boot(data = d, statistic = density_boot_ratio, R = 1000)
-          ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
-          RDFC_Species_Ratio <- RDFC_Species_Ratio %>% 
-            tibble::add_row(CommonName = s, SurveyYear = y, 
-                            Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
-        }
-      } 
-    }
-    
-    { # Targeted Level  ----
-      RDFC_Target_Species_Ratio <- tibble(
-        CommonName = character(), SurveyYear = integer(),
-        Mean_Ratio = double(), CI_plus = double(), CI_minus = double())
-      
-      for(yr in unique(RDFC_Density_Boot$SurveyYear)){
-        drop <- RDFC_Density_Boot %>% 
-          dplyr::filter(SurveyYear == yr,
-                        Targeted_Broad != 'Mixed') %>% 
-          droplevels()
-        for(c in levels(drop$Targeted_Broad)){
-          d <- drop %>%
-            filter(Targeted_Broad == c) 
-          output <- boot::boot(data = d, statistic = density_boot_ratio, R = 1000)
-          ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
-          RDFC_Target_Species_Ratio <- RDFC_Target_Species_Ratio %>% 
-            tibble::add_row(CommonName = c, SurveyYear = yr, 
-                            Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
-        }
-      }
-    }
-    
-    { # Trophic level ----
-      RDFC_Trophic_Level_Ratios <- tibble(
-        CommonName = character(), SurveyYear = integer(),
-        Mean_Ratio = double(), CI_plus = double(), CI_minus = double())
-      
-      for(year in unique(RDFC_Density_Boot$SurveyYear)){
-        dropT <- RDFC_Density_Boot %>% 
-          dplyr::filter(SurveyYear == year,
-                        Trophic_Broad != 'Mixed Trophic Levels') %>% 
-          droplevels()
-        for(t in levels(dropT$Trophic_Broad)){
-          d <- dropT %>%
-            filter(Trophic_Broad == t) 
-          output <- boot::boot(data = d, statistic = density_boot_ratio, R = 1000)
-          ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
-          RDFC_Trophic_Level_Ratios <- RDFC_Trophic_Level_Ratios %>% 
-            tibble::add_row(CommonName = t, SurveyYear = year, 
-                            Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
-        }
-      }
-    }
-    
-    { # Data Outputs  ----
-      
-      RDFC_Density_Ratios <- base::rbind(
-        RDFC_Species_Ratio,
-        RDFC_Target_Species_Ratio, 
-        RDFC_Trophic_Level_Ratios) %>%
+      Biomass_Ratios <- base::rbind(
+        Biomass_Species_Ratios, 
+        Biomass_Total_Ratios,
+        Biomass_All_Total_Ratios,
+        Biomass_Target_Ratios,
+        Biomass_Trophic_Ratios) %>% 
         dplyr::mutate(
           Date = lubridate::mdy(glue::glue('7-1-{SurveyYear}')),
-          Survey_Type = 'RDFC',
-          Metric = 'density_ratio') %>%
+          Survey_Type = 'Mixed',
+          Metric = 'biomass_ratio') %>%
         dplyr::left_join(
           Species_Info %>% 
-            dplyr::filter(Classification == 'Fish') %>% 
             dplyr::distinct(
               ScientificName, CommonName, Classification, Trophic_Broad, 
-              Targeted_Broad, Recreational_Fishery, Commercial_Fishery))
+              Targeted_Broad, Recreational_Fishery, Commercial_Fishery)) %>% 
+        dplyr::filter(CommonName != "Targeted" | Classification != "Algae",
+                      CommonName != "Producer" | Classification != "Algae",
+                      CommonName != "Total Algae Biomass" | Classification != "Algae")
+    }
+    
+  }
+  
+  { # Density Ratios   ----
+    
+    { # Benthic Density Ratios    -----
+      
+      { # Data    ----
+        Density_Boot <- Benthic_Density_CSV %>%
+          dplyr::filter(ScientificName != 'Muricea californica' | SurveyYear > 1990,
+                        ScientificName != 'Cypraea spadicea' | SurveyYear > 1983,
+                        ScientificName != 'Undaria pinnatifida',
+                        ScientificName != 'Haliotis assimilis',
+                        ScientificName != 'Haliotis sorenseni',
+                        ScientificName != 'Pisaster ochraceus') %>%
+          dplyr::left_join(
+            Species_Info %>% 
+              dplyr::distinct(ScientificName, Trophic_Broad, Targeted_Broad, 
+                              Recreational_Fishery, Commercial_Fishery)) %>%
+          dplyr::group_by(SiteNumber, CommonName, SurveyYear) %>% 
+          dplyr::mutate(Mean_Density = Mean_Density + runif(1, min = .9, max = 1.1),
+                        CommonName = factor(CommonName),
+                        Targeted_Broad = factor(Targeted_Broad),
+                        Trophic_Broad = factor(Trophic_Broad)) %>% 
+          dplyr::ungroup()
+      }
+      
+      { # Species Level  ----
+        Density_Species_Ratio <- tibble(
+          CommonName = character(), SurveyYear = integer(),
+          Mean_Ratio = double(), CI_plus = double(), CI_minus = double())
+        
+        for(y in unique(Density_Boot$SurveyYear)){
+          dropped <- Density_Boot %>% 
+            dplyr::filter(SurveyYear == y) %>% 
+            droplevels()
+          for(s in levels(dropped$CommonName)){
+            d <- dropped %>%
+              filter(CommonName == s) 
+            output <- boot::boot(data = d, statistic = density_boot_ratio, R = 1000)
+            ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
+            Density_Species_Ratio <- Density_Species_Ratio %>% 
+              tibble::add_row(CommonName = s, SurveyYear = y, 
+                              Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
+          }
+        } 
+      }
+      
+      { # Targeted Level  ----
+        Density_Target_Species_Ratio <- tibble(
+          CommonName = character(), SurveyYear = integer(),
+          Mean_Ratio = double(), CI_plus = double(), CI_minus = double())
+        
+        for(yr in unique(Density_Boot$SurveyYear)){
+          drop <- Density_Boot %>% 
+            dplyr::filter(SurveyYear == yr,
+                          Targeted_Broad != 'Mixed') %>% 
+            droplevels()
+          for(c in levels(drop$Targeted_Broad)){
+            d <- drop %>%
+              filter(Targeted_Broad == c) 
+            output <- boot::boot(data = d, statistic = density_boot_ratio, R = 1000)
+            ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
+            Density_Target_Species_Ratio <- Density_Target_Species_Ratio %>% 
+              tibble::add_row(CommonName = c, SurveyYear = yr, 
+                              Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
+          }
+        }
+      }
+      
+      { # Trophic level ----
+        Density_Trophic_Level_Ratios <- tibble(
+          CommonName = character(), SurveyYear = integer(),
+          Mean_Ratio = double(), CI_plus = double(), CI_minus = double())
+        
+        for(year in unique(Density_Boot$SurveyYear)){
+          dropT <- Density_Boot %>% 
+            dplyr::filter(SurveyYear == year,
+                          Trophic_Broad != 'Mixed Trophic Levels') %>% 
+            droplevels()
+          for(t in levels(dropT$Trophic_Broad)){
+            d <- dropT %>%
+              filter(Trophic_Broad == t) 
+            output <- boot::boot(data = d, statistic = density_boot_ratio, R = 1000)
+            ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
+            Density_Trophic_Level_Ratios <- Density_Trophic_Level_Ratios %>% 
+              tibble::add_row(CommonName = t, SurveyYear = year, 
+                              Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
+          }
+        }
+      }
+      
+      { # Data Outputs  ----
+        
+        Density_Ratios <- base::rbind(
+          Density_Species_Ratio, 
+          Density_Target_Species_Ratio, 
+          Density_Trophic_Level_Ratios) %>%
+          dplyr::mutate(Date = lubridate::mdy(glue::glue('7-1-{SurveyYear}')),
+                        Survey_Type = 'Mixed',
+                        Metric = 'density_ratio') %>%
+          dplyr::left_join(
+            Species_Info %>% 
+              dplyr::filter(
+                Classification != "Fish" |
+                  CommonName %in% c('island kelpfish', 'blackeye goby', 'blue-banded goby')) %>%
+              dplyr::distinct(
+                ScientificName, CommonName, Classification, Trophic_Broad, 
+                Targeted_Broad, Recreational_Fishery, Commercial_Fishery))
+        
+      }
+      
+    }
+    
+    { # RDFC Density Ratios    -----
+      
+      { # Data    ----
+        RDFC_Density_Boot <- Fish_Density_CSV %>%
+          dplyr::filter(
+            Survey_Type == "RDFC",
+            !ScientificName %in% 
+              c('Coryphopterus nicholsi', 
+                'Lythrypnus dalli', 
+                'Alloclinus holderi')) %>%
+          dplyr::left_join(
+            Species_Info %>% 
+              dplyr::distinct(ScientificName, Trophic_Broad, Targeted_Broad, 
+                              Recreational_Fishery, Commercial_Fishery)) %>%
+          dplyr::group_by(SiteNumber, CommonName, SurveyYear) %>% 
+          dplyr::mutate(
+            Mean_Density = Mean_Density + runif(1, min = .9, max = 1.1),
+            CommonName = factor(CommonName),
+            Targeted_Broad = factor(Targeted_Broad),
+            Trophic_Broad = factor(Trophic_Broad)) %>% 
+          dplyr::ungroup()
+      }
+      
+      { # Species Level  ----
+        RDFC_Species_Ratio <- tibble(
+          CommonName = character(), SurveyYear = integer(),
+          Mean_Ratio = double(), CI_plus = double(), CI_minus = double())
+        
+        for(y in unique(RDFC_Density_Boot$SurveyYear)){
+          dropped <- RDFC_Density_Boot %>% 
+            dplyr::filter(SurveyYear == y) %>% 
+            droplevels()
+          for(s in levels(dropped$CommonName)){
+            d <- dropped %>%
+              filter(CommonName == s) 
+            output <- boot::boot(data = d, statistic = density_boot_ratio, R = 1000)
+            ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
+            RDFC_Species_Ratio <- RDFC_Species_Ratio %>% 
+              tibble::add_row(CommonName = s, SurveyYear = y, 
+                              Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
+          }
+        } 
+      }
+      
+      { # Targeted Level  ----
+        RDFC_Target_Species_Ratio <- tibble(
+          CommonName = character(), SurveyYear = integer(),
+          Mean_Ratio = double(), CI_plus = double(), CI_minus = double())
+        
+        for(yr in unique(RDFC_Density_Boot$SurveyYear)){
+          drop <- RDFC_Density_Boot %>% 
+            dplyr::filter(SurveyYear == yr,
+                          Targeted_Broad != 'Mixed') %>% 
+            droplevels()
+          for(c in levels(drop$Targeted_Broad)){
+            d <- drop %>%
+              filter(Targeted_Broad == c) 
+            output <- boot::boot(data = d, statistic = density_boot_ratio, R = 1000)
+            ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
+            RDFC_Target_Species_Ratio <- RDFC_Target_Species_Ratio %>% 
+              tibble::add_row(CommonName = c, SurveyYear = yr, 
+                              Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
+          }
+        }
+      }
+      
+      { # Trophic level ----
+        RDFC_Trophic_Level_Ratios <- tibble(
+          CommonName = character(), SurveyYear = integer(),
+          Mean_Ratio = double(), CI_plus = double(), CI_minus = double())
+        
+        for(year in unique(RDFC_Density_Boot$SurveyYear)){
+          dropT <- RDFC_Density_Boot %>% 
+            dplyr::filter(SurveyYear == year,
+                          Trophic_Broad != 'Mixed Trophic Levels') %>% 
+            droplevels()
+          for(t in levels(dropT$Trophic_Broad)){
+            d <- dropT %>%
+              filter(Trophic_Broad == t) 
+            output <- boot::boot(data = d, statistic = density_boot_ratio, R = 1000)
+            ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
+            RDFC_Trophic_Level_Ratios <- RDFC_Trophic_Level_Ratios %>% 
+              tibble::add_row(CommonName = t, SurveyYear = year, 
+                              Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
+          }
+        }
+      }
+      
+      { # Data Outputs  ----
+        
+        RDFC_Density_Ratios <- base::rbind(
+          RDFC_Species_Ratio,
+          RDFC_Target_Species_Ratio, 
+          RDFC_Trophic_Level_Ratios) %>%
+          dplyr::mutate(
+            Date = lubridate::mdy(glue::glue('7-1-{SurveyYear}')),
+            Survey_Type = 'RDFC',
+            Metric = 'density_ratio') %>%
+          dplyr::left_join(
+            Species_Info %>% 
+              dplyr::filter(Classification == 'Fish') %>% 
+              dplyr::distinct(
+                ScientificName, CommonName, Classification, Trophic_Broad, 
+                Targeted_Broad, Recreational_Fishery, Commercial_Fishery))
+        
+      }
+      
+    }
+    
+    { # VFT Density Ratios    -----
+      
+      { # Data    ----
+        
+        VFT_Density_Boot <- Fish_Density_CSV %>%
+          dplyr::filter(Survey_Type == "VFT") %>%
+          dplyr::left_join(
+            Species_Info %>% 
+              dplyr::distinct(ScientificName, Trophic_Broad, Targeted_Broad, 
+                              Recreational_Fishery, Commercial_Fishery)) %>%
+          dplyr::group_by(SiteNumber, CommonName, SurveyYear) %>% 
+          dplyr::mutate(Mean_Density = Mean_Density + runif(1, min = .9, max = 1.1),
+                        CommonName = factor(CommonName),
+                        Targeted_Broad = factor(Targeted_Broad),
+                        Trophic_Broad = factor(Trophic_Broad)) %>% 
+          dplyr::ungroup()
+      }
+      
+      { # Species Level  ----
+        VFT_Species_Ratio <- tibble(
+          CommonName = character(), SurveyYear = integer(),
+          Mean_Ratio = double(), CI_plus = double(), CI_minus = double())
+        
+        for(y in unique(VFT_Density_Boot$SurveyYear)){
+          dropped <- VFT_Density_Boot %>% 
+            dplyr::filter(SurveyYear == y) %>% 
+            droplevels()
+          for(s in levels(dropped$CommonName)){
+            d <- dropped %>%
+              filter(CommonName == s) 
+            output <- boot::boot(data = d, statistic = density_boot_ratio, R = 1000)
+            ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
+            VFT_Species_Ratio <- VFT_Species_Ratio %>% 
+              tibble::add_row(CommonName = s, SurveyYear = y, 
+                              Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
+          }
+        } 
+      }
+      
+      { # Targeted Level  ----
+        VFT_Target_Species_Ratio <- tibble(
+          CommonName = character(), SurveyYear = integer(),
+          Mean_Ratio = double(), CI_plus = double(), CI_minus = double())
+        
+        for(yr in unique(VFT_Density_Boot$SurveyYear)){
+          drop <- VFT_Density_Boot %>% 
+            dplyr::filter(SurveyYear == yr,
+                          Targeted_Broad != 'Mixed') %>% 
+            droplevels()
+          for(c in levels(drop$Targeted_Broad)){
+            d <- drop %>%
+              filter(Targeted_Broad == c) 
+            output <- boot::boot(data = d, statistic = density_boot_ratio, R = 1000)
+            ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
+            VFT_Target_Species_Ratio <- VFT_Target_Species_Ratio %>% 
+              tibble::add_row(CommonName = c, SurveyYear = yr, 
+                              Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
+          }
+        }
+      }
+      
+      { # Trophic level ----
+        VFT_Trophic_Level_Ratios <- tibble(
+          CommonName = character(), SurveyYear = integer(),
+          Mean_Ratio = double(), CI_plus = double(), CI_minus = double())
+        
+        for(year in unique(VFT_Density_Boot$SurveyYear)){
+          dropT <- VFT_Density_Boot %>% 
+            dplyr::filter(SurveyYear == year,
+                          Trophic_Broad != 'Mixed Trophic Levels') %>% 
+            droplevels()
+          for(t in levels(dropT$Trophic_Broad)){
+            d <- dropT %>%
+              filter(Trophic_Broad == t) 
+            output <- boot::boot(data = d, statistic = density_boot_ratio, R = 1000)
+            ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
+            VFT_Trophic_Level_Ratios <- VFT_Trophic_Level_Ratios %>% 
+              tibble::add_row(CommonName = t, SurveyYear = year, 
+                              Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
+          }
+        }
+      }
+      
+      { # Data Outputs  ----
+        
+        VFT_Density_Ratios <- base::rbind(
+          VFT_Species_Ratio,
+          VFT_Target_Species_Ratio, 
+          VFT_Trophic_Level_Ratios) %>%
+          dplyr::mutate(
+            Date = lubridate::mdy(glue::glue('7-1-{SurveyYear}')),
+            Survey_Type = 'VFT',
+            Metric = 'density_ratio') %>%
+          dplyr::left_join(
+            Species_Info %>% 
+              dplyr::filter(Classification == 'Fish') %>% 
+              dplyr::distinct(
+                ScientificName, CommonName, Classification, Trophic_Broad, 
+                Targeted_Broad, Recreational_Fishery, Commercial_Fishery))
+        
+      }
       
     }
     
   }
   
-  { # VFT Density Ratios    -----
-    
-    { # Data    ----
-      
-      VFT_Density_Boot <- Fish_Density_CSV %>%
-        dplyr::filter(Survey_Type == "VFT") %>%
-        dplyr::left_join(
-          Species_Info %>% 
-            dplyr::distinct(ScientificName, Trophic_Broad, Targeted_Broad, 
-                            Recreational_Fishery, Commercial_Fishery)) %>%
-        dplyr::group_by(SiteNumber, CommonName, SurveyYear) %>% 
-        dplyr::mutate(Mean_Density = Mean_Density + runif(1, min = .9, max = 1.1),
-                      CommonName = factor(CommonName),
-                      Targeted_Broad = factor(Targeted_Broad),
-                      Trophic_Broad = factor(Trophic_Broad)) %>% 
-        dplyr::ungroup()
-    }
-    
-    { # Species Level  ----
-      VFT_Species_Ratio <- tibble(
-        CommonName = character(), SurveyYear = integer(),
-        Mean_Ratio = double(), CI_plus = double(), CI_minus = double())
-      
-      for(y in unique(VFT_Density_Boot$SurveyYear)){
-        dropped <- VFT_Density_Boot %>% 
-          dplyr::filter(SurveyYear == y) %>% 
-          droplevels()
-        for(s in levels(dropped$CommonName)){
-          d <- dropped %>%
-            filter(CommonName == s) 
-          output <- boot::boot(data = d, statistic = density_boot_ratio, R = 1000)
-          ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
-          VFT_Species_Ratio <- VFT_Species_Ratio %>% 
-            tibble::add_row(CommonName = s, SurveyYear = y, 
-                            Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
-        }
-      } 
-    }
-    
-    { # Targeted Level  ----
-      VFT_Target_Species_Ratio <- tibble(
-        CommonName = character(), SurveyYear = integer(),
-        Mean_Ratio = double(), CI_plus = double(), CI_minus = double())
-      
-      for(yr in unique(VFT_Density_Boot$SurveyYear)){
-        drop <- VFT_Density_Boot %>% 
-          dplyr::filter(SurveyYear == yr,
-                        Targeted_Broad != 'Mixed') %>% 
-          droplevels()
-        for(c in levels(drop$Targeted_Broad)){
-          d <- drop %>%
-            filter(Targeted_Broad == c) 
-          output <- boot::boot(data = d, statistic = density_boot_ratio, R = 1000)
-          ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
-          VFT_Target_Species_Ratio <- VFT_Target_Species_Ratio %>% 
-            tibble::add_row(CommonName = c, SurveyYear = yr, 
-                            Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
-        }
-      }
-    }
-    
-    { # Trophic level ----
-      VFT_Trophic_Level_Ratios <- tibble(
-        CommonName = character(), SurveyYear = integer(),
-        Mean_Ratio = double(), CI_plus = double(), CI_minus = double())
-      
-      for(year in unique(VFT_Density_Boot$SurveyYear)){
-        dropT <- VFT_Density_Boot %>% 
-          dplyr::filter(SurveyYear == year,
-                        Trophic_Broad != 'Mixed Trophic Levels') %>% 
-          droplevels()
-        for(t in levels(dropT$Trophic_Broad)){
-          d <- dropT %>%
-            filter(Trophic_Broad == t) 
-          output <- boot::boot(data = d, statistic = density_boot_ratio, R = 1000)
-          ci_boot <- boot::boot.ci(boot.out = output, conf = 0.95, type = "perc")
-          VFT_Trophic_Level_Ratios <- VFT_Trophic_Level_Ratios %>% 
-            tibble::add_row(CommonName = t, SurveyYear = year, 
-                            Mean_Ratio = ci_boot$t0, CI_minus = ci_boot$percent[4], CI_plus = ci_boot$percent[5])
-        }
-      }
-    }
-    
-    { # Data Outputs  ----
-      
-      VFT_Density_Ratios <- base::rbind(
-        VFT_Species_Ratio,
-        VFT_Target_Species_Ratio, 
-        VFT_Trophic_Level_Ratios) %>%
-        dplyr::mutate(
-          Date = lubridate::mdy(glue::glue('7-1-{SurveyYear}')),
-          Survey_Type = 'VFT',
-          Metric = 'density_ratio') %>%
-        dplyr::left_join(
-          Species_Info %>% 
-            dplyr::filter(Classification == 'Fish') %>% 
-            dplyr::distinct(
-              ScientificName, CommonName, Classification, Trophic_Broad, 
-              Targeted_Broad, Recreational_Fishery, Commercial_Fishery))
-      
-    }
-    
+  { # All Ratios   -----
+    All_Ratios <- 
+      base::rbind(
+        Biomass_Ratios,  
+        Density_Ratios, 
+        RDFC_Density_Ratios, 
+        VFT_Density_Ratios) %>% 
+      arrow::write_feather("App/Tidy_Data/Ratios.feather")
   }
   
-}
-
-{ # All Ratios   -----
-  All_Ratios <- 
-    base::rbind(
-      Biomass_Ratios,  
-      Density_Ratios, 
-      RDFC_Density_Ratios, 
-      VFT_Density_Ratios) %>% 
-    arrow::write_feather("App/Tidy_Data/Ratios.feather")
 }
 
 { # Temperature RAW to Tidy   ----
