@@ -6,24 +6,24 @@ This application is designed as a repository for the methods, locations, and dat
 
 Use the sidebar to navigate the main topics. The major topics are:
 
-1.  What is KFM?
-2.  What do we monitor?
-3.  How do we conduct monitoring?
-4.  Where do we conduct monitoring?
-5.  Community diversity
-6.  Community similarity
-7.  Important Variables
-8.  Biomass (density and size frequency combined)
-9.  Density
-10. Size frequencies
-11. Published reports
-12. Relevant literature
+1.  About - What is KFM?
+2.  Species - What do we monitor?
+3.  Protocols - How do we conduct monitoring?
+4.  Sampling Locations - Where do we conduct monitoring?
+5.  Biodiversity - Community diversity over time
+6.  Community Similarity - Community similarity over time
+7.  Important Species - Classification modeling to identify species which represent communities
+8.  Biomass - Density and size frequency are combined to represent estimated biomass
+9.  Density - Population density over time
+10. Size Frequency - Animal and kelp size frequency distributions over time
+11. Reports - Published KFM reports and collaborative works
+12. Literature Cited - Literature relevant to kelp forest ecology, meteorology, and oceanography
 
-Within each level of navigation there are several tabs related to the main topic of the sidebar item.
+\* *Within each level of sidebar navigation, there are tabs related to that topic.*
 
 ## Data
 
-KFM data can be visualized in many different ways. Typically, data are recapitulated into summary statistics and broken into subsets which are used to display focused data.
+KFM data can be visualized in many different ways. Typically, data are recapitulated into summary statistics and broken into subsets which are used to visualize focused data.
 
 ### KFM summary statistics:
 
@@ -43,16 +43,16 @@ KFM data can be visualized in many different ways. Typically, data are recapitul
 3.  The 24 State Marine Reserve (SMR) reference sites (12 sites inside and 12 sites outside)
 4.  One of the 33 sites
 
-### Data visualization:
+### Data visualizations:
 
 1.  Time series to see how a variable change over time
 2.  Animated time series to see the change over time for many variables, or a single variable at many sites.
 3.  Data plotted as a point on a map, with the size of the point scaled to the magnitude of the statistic, and animated over time.
 4.  Ranked variables by the relative importance to a model
-5.  The partial dependence on a variable relative to a model.
+5.  The partial dependence on a variable relative to a model
 6.  Word/phrase frequency cloud
 7.  Data tables
 
 ### Metadata
 
-When possible, descriptive graphics, text, photos, or metadata will be provided to give context to the data visualizations. Some level of cross referencing with other sections or tabs may be required to gain perspective.
+When possible, descriptive graphics, text, photos, or metadata will be provided to give context to the data visualizations. Some level of cross referencing with other sections or outside resources may be required to gain perspective.

@@ -2,7 +2,7 @@
 
 ### The Islands
 
-Kelp forests constitute one of the largest, most complex, and most threatened ecosystems in the Channel Islands National Park (CINP). Located at the boundary of two major biogeographical provinces and near unusually persistent upwelling features, the park is endowed with marine ecosystems of exceptional diversity. The five park islands are surrounded by extensive kelp forest habitat with high productivity, which supports large and diverse seabird and pinniped populations. As a result of these conditions and the relative isolation from the mainland, kelp forests in the park are among the best examples of this important ecosystem in southern California.
+Kelp forests constitute one of the largest, most complex, and most threatened ecosystems in Channel Islands National Park (CINP). Located at the boundary of two major biogeographical provinces and near unusually persistent upwelling features, the park is endowed with marine ecosystems of exceptional diversity. The five park islands are surrounded by extensive kelp forest habitat with high productivity, which supports large and diverse seabird and pinniped populations. As a result of these conditions and the relative isolation from the mainland, kelp forests in the park are among the best examples of this important ecosystem in southern California.
 
 ### The Park
 

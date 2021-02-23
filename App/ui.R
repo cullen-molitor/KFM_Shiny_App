@@ -94,7 +94,13 @@ ui <- dashboardPage(
                 tags$hr(),
                 imageOutput(outputId = "basics_pic_1", height = 400),
                 h5("California sea lion swimming through the kelp forest on Santa Barbara Island"),
-                h5("Photo: Brett Seymour")
+                h5("Photo: Brett Seymour"),
+                imageOutput(outputId = "basics_pic_2", height = 400),
+                h5("Diver swimming through the kelp forest on Santa Barbara Island"),
+                h5("Photo: Kenan Chan"),
+                imageOutput(outputId = "basics_pic_3", height = 400),
+                h5("Typical kelp forest scene on Anacapa Island"),
+                h5("Photo: Kenan Chan")
               )
             )
           ),
@@ -108,9 +114,15 @@ ui <- dashboardPage(
               column(
                 6, 
                 tags$hr(),
-                imageOutput(outputId = "history_pic_1", height = 400),
-                h5("Antler kelp (Pelagophycus porra) on Santa Cruz Island"),
-                h5("Photo: Brett Seymour")
+                imageOutput(outputId = "history_pic_1", height = 450),
+                h5("Map of Channel Islands National Park"),
+                h5("Map: Rockne Rudolph"),
+                imageOutput(outputId = "history_pic_2", height = 400),
+                div(HTML("Diver holding a California spiny lobster (<em>panulirus interruptus</em>), a highly targeted fishery species")),
+                h5("Photo: Brett Seymour"),
+                imageOutput(outputId = "history_pic_3", height = 400),
+                div(HTML("Red abalone (<em>Haliotis rufescens</em>) on San Miguel Island")),
+                h5("Photo: Kelly Moore")
               )
             )
           ),

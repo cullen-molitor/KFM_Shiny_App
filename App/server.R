@@ -4,33 +4,77 @@ server <- function(input, output, session) {
   
   { # About  ----
     { # Images   ----
-      output$disc_pic_1 <- renderImage({list(
+      
+      { # Disclaimer Pics  ----
+        output$disc_pic_1 <- renderImage({list(
         src = 'www/Photos/Kelp_Forest_Scenes/Laurie_Montgomery/1 (2).jpg', 
         height = "100%")}, delete = FALSE)
+      }
       
-      output$basics_pic_1 <- renderImage({list(
-        src = 'www/Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (4).jpg', 
-        height = "100%")}, delete = FALSE)
+      { # App Basics Pics   ----
+        
+        output$basics_pic_1 <- renderImage({list(
+          src = 'www/Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (4).jpg', 
+          height = "100%")}, delete = FALSE)
+        
+        output$basics_pic_2 <- renderImage({list(
+          src = 'www/Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (12).jpg', 
+          height = "100%")}, delete = FALSE)
+        
+        output$basics_pic_3 <- renderImage({list(
+          src = 'www/Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (14).jpg', 
+          height = "100%")}, delete = FALSE)
+        
+      }
       
-      output$history_pic_1 <- renderImage({list(
-        src = 'www/Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (3).jpg', 
-        height = "100%")}, delete = FALSE)
+      { # KFMP History Pics   -----
+        
+        output$history_pic_1 <- renderImage({list(
+          src = 'www/Maps/Satellite/CHIS.png', 
+          height = "100%")}, delete = FALSE)
+        
+        output$history_pic_2 <- renderImage({list(
+          src = 'www/Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (10).jpg', 
+          height = "100%")}, delete = FALSE)
+        
+        output$history_pic_3 <- renderImage({list(
+          src = 'www/Photos/Kelp_Forest_Scenes/Kelly_Moore/1 (1).jpg', 
+          height = "100%")}, delete = FALSE)
+      }
       
-      output$ack_pic_1 <- renderImage({list(
-        src = 'www/Photos/Kelp_Forest_Scenes/Laurie_Montgomery/1 (3).jpg', 
-        height = "100%")}, delete = FALSE)
+      { # Acknowledgments Pics   ----
+        
+        output$ack_pic_1 <- renderImage({list(
+          src = 'www/Photos/Kelp_Forest_Scenes/Laurie_Montgomery/1 (3).jpg', 
+          height = "100%")}, delete = FALSE)
+        
+      }
       
-      output$acr_pic_1 <- renderImage({list(
-        src = 'www/Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (6).jpg', 
-        height = "100%")}, delete = FALSE)
+      { # Acronyms Pics   ----
+        
+        output$acr_pic_1 <- renderImage({list(
+          src = 'www/Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (6).jpg', 
+          height = "100%")}, delete = FALSE)
+        
+      }
       
-      output$blog_pic_1 <- renderImage({list(
-        src = 'www/Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (5).jpg', 
-        height = "100%")}, delete = FALSE)
+      { # Blog Pics   ----
+        
+        output$blog_pic_1 <- renderImage({list(
+          src = 'www/Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (5).jpg', 
+          height = "100%")}, delete = FALSE)
+        
+      }
       
-      output$faq_pic_1 <- renderImage({list(
-        src = 'www/Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (5).jpg', 
-        height = "100%")}, delete = FALSE)
+      { # FAQ Pics   ----
+        
+        output$faq_pic_1 <- renderImage({list(
+          src = 'www/Photos/Kelp_Forest_Scenes/Kenan_Chan/1 (5).jpg', 
+          height = "100%")}, delete = FALSE)
+        
+      }
+      
+      
     }
     
     { # Acronyms   ----
