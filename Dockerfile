@@ -26,6 +26,6 @@ RUN R -e "install.packages('wordcloud')"
 RUN R -e "install.packages('arrow')"
 RUN R -e "install.packages('cachem')"
 RUN R -e "install.packages('shiny')"
-RUN R -e "install.packages("shinycssloaders")"
+RUN R -e "install.packages('shinycssloaders')"
 
 COPY --chown=shiny:shiny /App /srv/shiny-server/
