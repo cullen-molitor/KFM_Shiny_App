@@ -3,6 +3,7 @@
 server <- function(input, output, session) {
   
   { # About  ----
+    
     { # Images   ----
       
       { # Disclaimer Pics  ----
@@ -73,7 +74,6 @@ server <- function(input, output, session) {
           height = "100%")}, delete = FALSE)
         
       }
-      
       
     }
     
