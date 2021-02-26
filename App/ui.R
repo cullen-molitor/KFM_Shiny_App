@@ -115,14 +115,14 @@ ui <- dashboardPage(
                 6, 
                 tags$hr(),
                 imageOutput(outputId = "history_pic_1", height = 450),
-                h5("Map of Channel Islands National Park"),
-                h5("Map: Rockne Rudolph"),
+                div(HTML("Map of Channel Islands National Park")),
+                div(HTML("Map: Rockne Rudolph")),
                 imageOutput(outputId = "history_pic_2", height = 400),
                 div(HTML("Diver holding a California spiny lobster (<em>panulirus interruptus</em>), a highly targeted fishery species")),
-                h5("Photo: Brett Seymour"),
+                div(HTML("Photo: Brett Seymour")),
                 imageOutput(outputId = "history_pic_3", height = 400),
                 div(HTML("Red abalone (<em>Haliotis rufescens</em>) on San Miguel Island")),
-                h5("Photo: Kelly Moore")
+                div(HTML("Photo: Kelly Moore"))
               )
             )
           ),
@@ -137,8 +137,14 @@ ui <- dashboardPage(
                 6, 
                 tags$hr(),
                 imageOutput(outputId = "ack_pic_1", height = 400),
-                h5("California sea lion swimming through the kelp forest on Santa Barbara Island"),
-                h5("Photo: Laurie Montgomery")
+                div(HTML("California sea lion swimming through the kelp forest on Santa Barbara Island")),
+                div(HTML("Photo: Laurie Montgomery")),
+                imageOutput(outputId = "ack_pic_2", height = 400),
+                div(HTML("Interpretative Ranger discussing giant kelp (<em>Macrocystis pyrifera</em>) during Channel Islands Live broadcast")),
+                div(HTML("Photo: Brett Seymour")),
+                imageOutput(outputId = "ack_pic_3", height = 400),
+                div(HTML("NPS dive vessel Sea Ranger II approaching the peir at Scorpion Anchorage")),
+                div(HTML("Photo: Kenan Chan"))
               )
             )
           ),

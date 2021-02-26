@@ -49,6 +49,14 @@ server <- function(input, output, session) {
           src = 'www/Photos/Kelp_Forest_Scenes/Laurie_Montgomery/1 (3).jpg', 
           height = "100%")}, delete = FALSE)
         
+        output$ack_pic_2 <- renderImage({list(
+          src = 'www/Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (11).jpg', 
+          height = "100%")}, delete = FALSE)
+        
+        output$ack_pic_3 <- renderImage({list(
+          src = 'www/Photos/Protocols/boating/boat (2).jpg', 
+          height = "100%")}, delete = FALSE)
+        
       }
       
       { # Acronyms Pics   ----

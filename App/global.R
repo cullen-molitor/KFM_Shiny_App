@@ -533,7 +533,9 @@ source('modules.R')
       tags$br(),
       tags$a(href="https://www.youtube.com/watch?v=pv9N2xDu0y8", "KFM Lecture Part 2", target = "_blank"),
       tags$br(),
-      tags$a(href="https://www.nps.gov/im/medn/index.htm", "Mediterranean Coast Inventory & Monitoring Network Video", target = "_blank")
+      tags$a(href="https://www.nps.gov/im/medn/index.htm", "Inventory & Monitoring Network Video", target = "_blank"),
+      tags$br(),
+      tags$a(href="https://www.nps.gov/chis/planyourvisit/channel-islands-live-nps.htm", "Channel Islands Live (CHIL)", target = "_blank")
     )
   )
 }
