@@ -77,8 +77,8 @@ ui <- dashboardPage(
                 6,
                 tags$hr(),
                 imageOutput(outputId = "disc_pic_1", height = 400),
-                h5("Diver in a kelp forest on Santa Barbara Island"),
-                h5("Photo: Laurie Montgomery")
+                div(HTML("Diver in a kelp forest on Santa Barbara Island")),
+                div(HTML("Photo: Laurie Montgomery"))
               )
             )
           ),
@@ -93,14 +93,16 @@ ui <- dashboardPage(
                 6, 
                 tags$hr(),
                 imageOutput(outputId = "basics_pic_1", height = 400),
-                h5("California sea lion swimming through the kelp forest on Santa Barbara Island"),
-                h5("Photo: Brett Seymour"),
+                div(HTML("California sea lion (<em>Zalophus californianus</em>) swimming through the kelp forest on Santa Barbara Island")),
+                div(HTML("Photo: Brett Seymour")),
+                tags$br(),
                 imageOutput(outputId = "basics_pic_2", height = 400),
-                h5("Diver swimming through the kelp forest on Santa Barbara Island"),
-                h5("Photo: Kenan Chan"),
+                div(HTML("Diver swimming through the kelp forest on Santa Barbara Island")),
+                div(HTML("Photo: Kenan Chan")),
+                tags$br(),
                 imageOutput(outputId = "basics_pic_3", height = 400),
-                h5("Typical kelp forest scene on Anacapa Island"),
-                h5("Photo: Kenan Chan")
+                div(HTML("Typical kelp forest scene on Anacapa Island")),
+                div(HTML("Photo: Kenan Chan"))
               )
             )
           ),
@@ -117,9 +119,11 @@ ui <- dashboardPage(
                 imageOutput(outputId = "history_pic_1", height = 450),
                 div(HTML("Map of Channel Islands National Park")),
                 div(HTML("Map: Rockne Rudolph")),
+                tags$br(),
                 imageOutput(outputId = "history_pic_2", height = 400),
                 div(HTML("Diver holding a California spiny lobster (<em>panulirus interruptus</em>), a highly targeted fishery species")),
                 div(HTML("Photo: Brett Seymour")),
+                tags$br(),
                 imageOutput(outputId = "history_pic_3", height = 400),
                 div(HTML("Red abalone (<em>Haliotis rufescens</em>) on San Miguel Island")),
                 div(HTML("Photo: Kelly Moore"))
@@ -139,9 +143,11 @@ ui <- dashboardPage(
                 imageOutput(outputId = "ack_pic_1", height = 400),
                 div(HTML("California sea lion swimming through the kelp forest on Santa Barbara Island")),
                 div(HTML("Photo: Laurie Montgomery")),
+                tags$br(),
                 imageOutput(outputId = "ack_pic_2", height = 400),
                 div(HTML("Interpretative Ranger discussing giant kelp (<em>Macrocystis pyrifera</em>) during Channel Islands Live broadcast")),
                 div(HTML("Photo: Brett Seymour")),
+                tags$br(),
                 imageOutput(outputId = "ack_pic_3", height = 400),
                 div(HTML("NPS dive vessel Sea Ranger II approaching the peir at Scorpion Anchorage")),
                 div(HTML("Photo: Kenan Chan"))
@@ -151,19 +157,22 @@ ui <- dashboardPage(
           # ............ Tab - Acronyms  ----
           tabPanel(
             title = "Acronyms",
-            tags$hr(),
+            h2("Common Acronyms"),
             fluidRow(
               column(
-                6,
-                h2("Common Acronyms"), 
+                6, 
                 DTOutput(outputId = "Acro_Table")
               ),
               column(
                 6, 
-                tags$hr(),
                 imageOutput(outputId = "acr_pic_1", height = 400),
-                h5("California sea lion playing with southern sea palm (Eisenia arborea) on Santa Barbara Island"),
-                h5("Photo: Brett Seymour")
+                div(HTML("California sea lion (<em>Zalophus californianus</em>) playing with southern sea palm (<em>Eisenia arborea</em>) on Santa Barbara Island")),
+                div(HTML("Photo: Brett Seymour")),
+                tags$br(),
+                imageOutput(outputId = "acr_pic_2", height = 400),
+                div(HTML("KFM diver conducting Random Point Contacts (RPCs)")),
+                div(HTML("Photo: Shaun Wolfe"))
+                
               )
             )
           ),
@@ -180,8 +189,8 @@ ui <- dashboardPage(
                 6, 
                 tags$hr(),
                 imageOutput(outputId = "blog_pic_1", height = 400),
-                h5("Giant kelp"),
-                h5("Photo: Brett Seymour")
+                div(HTML("Giant kelp (<em>Macrocystis pyrifera</em>")),
+                div(HTML("Photo: Brett Seymour"))
               )
             )
           ),
@@ -196,8 +205,8 @@ ui <- dashboardPage(
                 6, 
                 tags$hr(),
                 imageOutput(outputId = "faq_pic_1", height = 400),
-                h5("Kelp forest canopy as seen from below"),
-                h5("Photo: Kenan Chan")
+                div(HTML("Kelp forest canopy as seen from below")),
+                div(HTML("Photo: Kenan Chan"))
               )
             )
           )

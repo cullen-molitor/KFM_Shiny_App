@@ -65,6 +65,10 @@ server <- function(input, output, session) {
           src = 'www/Photos/Kelp_Forest_Scenes/Brett_Seymour/1 (6).jpg', 
           height = "100%")}, delete = FALSE)
         
+        output$acr_pic_2 <- renderImage({list(
+          src = 'www/Photos/Protocols/rpcs/rpcs (1).jpg', 
+          height = "100%")}, delete = FALSE)
+        
       }
       
       { # Blog Pics   ----
