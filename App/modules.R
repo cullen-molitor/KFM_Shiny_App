@@ -30,11 +30,16 @@
           ),
           column(
             6, 
-            tags$hr(), imageOutput(outputId = ns("proto_pic1"), height = 400),
-            tags$br(), imageOutput(outputId = ns("proto_pic2"), height = 400),
-            tags$br(), imageOutput(outputId = ns("proto_pic3"), height = 400),
-            tags$br(), imageOutput(outputId = ns("proto_pic4"), height = 400),
-            tags$br(), imageOutput(outputId = ns("proto_pic5"), height = 400)
+            tags$hr(), imageOutput(outputId = ns("proto_pic1"), height = 400) %>% 
+              shinycssloaders::withSpinner(),
+            tags$br(), imageOutput(outputId = ns("proto_pic2"), height = 400) %>% 
+              shinycssloaders::withSpinner(),
+            tags$br(), imageOutput(outputId = ns("proto_pic3"), height = 400) %>% 
+              shinycssloaders::withSpinner(),
+            tags$br(), imageOutput(outputId = ns("proto_pic4"), height = 400) %>% 
+              shinycssloaders::withSpinner(),
+            tags$br(), imageOutput(outputId = ns("proto_pic5"), height = 400) %>% 
+              shinycssloaders::withSpinner()
           )
         )
       ),
@@ -577,7 +582,7 @@
       DTOutput(outputId = ns("taxa_table")),
       tags$hr(),
       fluidRow(
-        column(4, imageOutput(outputId = ns("pic"))),
+        column(4, imageOutput(outputId = ns("pic")) %>% shinycssloaders::withSpinner()),
         column(4, uiOutput(outputId = ns("text"))),
         column(4, DTOutput(outputId = ns("table")))
       ),
@@ -715,7 +720,8 @@
       ),
       
       fluidRow(
-        column(4, imageOutput(outputId = ns("pic")), h5("Not all taxa currently have photos yet.")),
+        column(4, imageOutput(outputId = ns("pic")) %>% 
+                 shinycssloaders::withSpinner(), h5("Not all taxa currently have photos yet.")),
         column(4, DTOutput(outputId = ns("taxonomy_table"))),
         column(4, DTOutput(outputId = ns("meta_table")))
       ), tags$hr()
@@ -1162,7 +1168,8 @@
       ),
       tags$hr(),
       fluidRow(
-        column(4, imageOutput(outputId = ns("pic")), h5("Not all taxa currently have photos yet.")),
+        column(4, imageOutput(outputId = ns("pic")) %>% 
+                 shinycssloaders::withSpinner(), h5("Not all taxa currently have photos.")),
         column(4, DTOutput(outputId = ns("taxonomy_table"))),
         column(4, DTOutput(outputId = ns("meta_table")))
       ), 
@@ -1872,8 +1879,8 @@
         
         output$plot <- renderPlot({
           ggplot2::ggplot() +  
-            ggplot2::geom_sf(data = dplyr::filter(CINP, IslandName == input$map_center), fill = "black") +
-            ggplot2::geom_point(data = Data_Subset(), shape = 19, stroke = 1,
+            ggplot2::geom_sf(data = dplyr::filter(CINP, IslandName == input$map_center)) +
+            ggplot2::geom_point(data = Data_Subset(), shape = 1, stroke = 1,
                                 aes(x = Longitude, y = Latitude, size = Index , color = ReserveStatus)) +
             ggplot2::geom_text(data = Data_Subset(), size = 3, aes(x = Longitude, y = Latitude, label = SiteCode)) +
             ggplot2::labs(title = Data_Subset()$IslandName) +

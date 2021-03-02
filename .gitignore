@@ -36,11 +36,13 @@ vignettes/*.pdf
 # App/cache/
 
 # exclude everything from these folders
+App/cache/2d-cache/*
 App/cache/3d-cache/*
 App/cache/sizes-cache/*
 App/cache/word-cache/*
 
 # exceptions to the above rules. This keeps the folder but not the contents
+!App/cache/2d-cache/*.gitkeep 
 !App/cache/3d-cache/*.gitkeep 
 !App/cache/sizes-cache/*.gitkeep 
 !App/cache/word-cache/*.gitkeep 

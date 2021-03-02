@@ -390,8 +390,6 @@ Export_END_Year <- 2019
     
     Density_CSV <- Benthic_Density_CSV %>% 
       base::rbind(Fish_Density_CSV) %>%
-      # arrow::write_feather("App/Tidy_Data/Density.csv")
-      # readr::write_rds("App/Tidy_Data/Density.rds")
       arrow::write_feather("App/Tidy_Data/Density.feather")
   }
   
@@ -543,8 +541,9 @@ Export_END_Year <- 2019
     Diversity <- Diversity_Shannon_All  %>% 
       dplyr::left_join(Diversity_Simpson) %>% 
       dplyr::left_join(Diversity_Shannon_2005) %>% 
-      dplyr::left_join(Site_Info %>% 
-                         dplyr::select(SiteNumber, ReserveYear, Latitude, Longitude)) %>% 
+      dplyr::left_join(
+        Site_Info %>% 
+          dplyr::select(SiteNumber, ReserveYear, Latitude, Longitude)) %>% 
       dplyr::mutate(
         ReserveStatus = case_when(
           SurveyYear < 2003 & SiteCode == "LC" ~ "Inside",
@@ -553,11 +552,9 @@ Export_END_Year <- 2019
           TRUE ~ ReserveStatus),
         ReserveColor = ifelse(ReserveStatus == "Inside", "green", "red")) %>%
       dplyr::mutate(Date = base::as.Date(base::ISOdate(SurveyYear, 7, 1))) %>% 
+      dplyr::filter(SiteCode != "MM" | SurveyYear > 2007) %>% 
       arrow::write_feather("App/Tidy_Data/Diversity.feather")
   }
-  
-  
- # Miracle Mile only is missing RPCs for 2001, 2002, and 2004. 
   
 }
 

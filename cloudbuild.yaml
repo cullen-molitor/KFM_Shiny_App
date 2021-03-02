@@ -4,7 +4,7 @@ steps:
       - '-c'
       - >-
         docker pull
-        us.gcr.io/$PROJECT_ID/$REPO_NAME/app@sha256:04b0c8a3dff33f7e04f8742438742216c0b0856ee3a27da657d615aefa9b0238
+        us.gcr.io/$PROJECT_ID/$REPO_NAME/app@sha256:cb28a447987db0384d004c2ca1dabec6b40709092878da5494d1f526d6a428d7
         || exit 0
     entrypoint: bash
   - name: gcr.io/cloud-builders/docker
@@ -15,7 +15,7 @@ steps:
       - .
       - '--cache-from'
       - >-
-        us.gcr.io/$PROJECT_ID/$REPO_NAME/app@sha256:04b0c8a3dff33f7e04f8742438742216c0b0856ee3a27da657d615aefa9b0238
+        us.gcr.io/$PROJECT_ID/$REPO_NAME/app@sha256:cb28a447987db0384d004c2ca1dabec6b40709092878da5494d1f526d6a428d7
       - '-f'
       - Dockerfile
     id: Build

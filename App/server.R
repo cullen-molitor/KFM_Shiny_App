@@ -404,7 +404,7 @@ server <- function(input, output, session) {
         }
       })
       
-      output$Two_D <- renderCachedPlot({
+      output$Two_D <- renderPlot({
         ggplot(data = Two_D_data(), aes(x = `Dim 1`, y = `Dim 2`)) + 
           geom_point(size = 4, aes(shape = ReserveStatus, color = Color)) + 
           geom_text(size = 3, vjust = 2, aes(label = SiteCode)) +  
@@ -416,7 +416,8 @@ server <- function(input, output, session) {
           # coord_flip() +
           labs(title = Two_D_data()$SurveyYear, color = input$radio_2D_color, shape = "Reserve Status") +
           nMDS_theme()
-      }, cacheKeyExpr = {list(input$radio_2D_color, Two_D_data())})
+      }) %>% 
+        shiny::bindCache(Two_D_data(), cache = cachem::cache_disk("./cache/2d-cache"))
       
     }
     
@@ -464,10 +465,11 @@ server <- function(input, output, session) {
           plotly::layout(title = list(text = paste(Three_D_data()$SurveyYear)),
                          scene = list(xaxis = list(title = 'X'),
                                       yaxis = list(title = 'Y'),
-                                      zaxis = list(title = 'Z')))
+                                      zaxis = list(title = 'Z'))) 
         # %>%
         #   plotly::animation_opts(1500, easing = "linear")
-      })
+      }) %>% 
+        shiny::bindCache(Three_D_data(), cache = cachem::cache_disk("./cache/3d-cache"))
       
     }
     
@@ -641,7 +643,7 @@ server <- function(input, output, session) {
         selectInput(inputId = "size_species", label = "Species:", choices = species_choice())
         })
       
-      Size_Data_Subset <- reactive({Size_Site_Data() %>% dplyr::filter(CommonName == input$size_species)})
+      Size_Site_Data_Subset <- reactive({Size_Site_Data() %>% dplyr::filter(CommonName == input$size_species)})
       
       output$size_site_plot <- renderPlot({
           ggplot2::ggplot() +
@@ -661,7 +663,7 @@ server <- function(input, output, session) {
             ggplot2::scale_color_manual(values = SpeciesColor) +
             Boxplot_theme()
       }) %>% 
-        shiny::bindCache(Size_Data_Subset())
+        shiny::bindCache(Size_Site_Data_Subset(), cache = cachem::cache_disk("./cache/sizes-cache"))
       
       output$size_year_plot <- renderPlot({
         ggplot2::ggplot() +
@@ -677,9 +679,7 @@ server <- function(input, output, session) {
           Boxplot_theme()
         
       }) %>% 
-        shiny::bindCache(Size_Year_Data()
-                           , cache = cachem::cache_disk("./cache/sizes-cache")
-                         )
+        shiny::bindCache(Size_Year_Data(), cache = cachem::cache_disk("./cache/sizes-cache"))
       
     }
     
@@ -696,13 +696,11 @@ server <- function(input, output, session) {
     output$cloud_plot <- renderPlot(bg = "black", {
       wordcloud::wordcloud(
         words = Text_Data()$word,
-        freq = Text_Data()$n, min.freq = 1, scale = c(3, 0.5),
-        max.words = input$cloud_n, random.order = FALSE, rot.per = 0,
+        freq = Text_Data()$n, min.freq = 1, scale = c(4, .75),
+        max.words = input$cloud_n, random.order = FALSE, rot.per = 0.25,
         colors = brewer.pal(8, "Dark2"))
     }) %>% 
-      shiny::bindCache(input$cloud_n, Text_Data()
-                         , cache = cachem::cache_disk("./cache/word-cache")
-                       )
+      shiny::bindCache(input$cloud_n, Text_Data(), cache = cachem::cache_disk("./cache/word-cache"))
     
     output$Handbook <- renderUI({ 
       tags$iframe(style="height:750px; width:100%; scrolling=yes", src = glue("Handbook/Full_Versions/{input$old_handy}.pdf"))

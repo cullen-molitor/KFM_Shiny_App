@@ -76,7 +76,8 @@ ui <- dashboardPage(
               column(
                 6,
                 tags$hr(),
-                imageOutput(outputId = "disc_pic_1", height = 400),
+                imageOutput(outputId = "disc_pic_1", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 div(HTML("Diver in a kelp forest on Santa Barbara Island")),
                 div(HTML("Photo: Laurie Montgomery"))
               )
@@ -92,15 +93,18 @@ ui <- dashboardPage(
               column(
                 6, 
                 tags$hr(),
-                imageOutput(outputId = "basics_pic_1", height = 400),
+                imageOutput(outputId = "basics_pic_1", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 div(HTML("California sea lion (<em>Zalophus californianus</em>) swimming through the kelp forest on Santa Barbara Island")),
                 div(HTML("Photo: Brett Seymour")),
                 tags$br(),
-                imageOutput(outputId = "basics_pic_2", height = 400),
+                imageOutput(outputId = "basics_pic_2", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 div(HTML("Diver swimming through the kelp forest on Santa Barbara Island")),
                 div(HTML("Photo: Kenan Chan")),
                 tags$br(),
-                imageOutput(outputId = "basics_pic_3", height = 400),
+                imageOutput(outputId = "basics_pic_3", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 div(HTML("Typical kelp forest scene on Anacapa Island")),
                 div(HTML("Photo: Kenan Chan"))
               )
@@ -116,15 +120,18 @@ ui <- dashboardPage(
               column(
                 6, 
                 tags$hr(),
-                imageOutput(outputId = "history_pic_1", height = 450),
+                imageOutput(outputId = "history_pic_1", height = 450) %>% 
+                  shinycssloaders::withSpinner(),
                 div(HTML("Map of Channel Islands National Park")),
                 div(HTML("Map: Rockne Rudolph")),
                 tags$br(),
-                imageOutput(outputId = "history_pic_2", height = 400),
+                imageOutput(outputId = "history_pic_2", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 div(HTML("Diver holding a California spiny lobster (<em>panulirus interruptus</em>), a highly targeted fishery species")),
                 div(HTML("Photo: Brett Seymour")),
                 tags$br(),
-                imageOutput(outputId = "history_pic_3", height = 400),
+                imageOutput(outputId = "history_pic_3", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 div(HTML("Red abalone (<em>Haliotis rufescens</em>) on San Miguel Island")),
                 div(HTML("Photo: Kelly Moore"))
               )
@@ -140,15 +147,18 @@ ui <- dashboardPage(
               column(
                 6, 
                 tags$hr(),
-                imageOutput(outputId = "ack_pic_1", height = 400),
+                imageOutput(outputId = "ack_pic_1", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 div(HTML("California sea lion swimming through the kelp forest on Santa Barbara Island")),
                 div(HTML("Photo: Laurie Montgomery")),
                 tags$br(),
-                imageOutput(outputId = "ack_pic_2", height = 400),
+                imageOutput(outputId = "ack_pic_2", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 div(HTML("Interpretative Ranger discussing giant kelp (<em>Macrocystis pyrifera</em>) during Channel Islands Live broadcast")),
                 div(HTML("Photo: Brett Seymour")),
                 tags$br(),
-                imageOutput(outputId = "ack_pic_3", height = 400),
+                imageOutput(outputId = "ack_pic_3", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 div(HTML("NPS dive vessel Sea Ranger II approaching the peir at Scorpion Anchorage")),
                 div(HTML("Photo: Kenan Chan"))
               )
@@ -165,11 +175,13 @@ ui <- dashboardPage(
               ),
               column(
                 6, 
-                imageOutput(outputId = "acr_pic_1", height = 400),
+                imageOutput(outputId = "acr_pic_1", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 div(HTML("California sea lion (<em>Zalophus californianus</em>) playing with southern sea palm (<em>Eisenia arborea</em>) on Santa Barbara Island")),
                 div(HTML("Photo: Brett Seymour")),
                 tags$br(),
-                imageOutput(outputId = "acr_pic_2", height = 400),
+                imageOutput(outputId = "acr_pic_2", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 div(HTML("KFM diver conducting Random Point Contacts (RPCs)")),
                 div(HTML("Photo: Shaun Wolfe"))
                 
@@ -188,8 +200,9 @@ ui <- dashboardPage(
               column(
                 6, 
                 tags$hr(),
-                imageOutput(outputId = "blog_pic_1", height = 400),
-                div(HTML("Giant kelp (<em>Macrocystis pyrifera</em>")),
+                imageOutput(outputId = "blog_pic_1", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
+                div(HTML("Giant kelp (<em>Macrocystis pyrifera</em>)")),
                 div(HTML("Photo: Brett Seymour"))
               )
             )
@@ -204,7 +217,8 @@ ui <- dashboardPage(
               column(
                 6, 
                 tags$hr(),
-                imageOutput(outputId = "faq_pic_1", height = 400),
+                imageOutput(outputId = "faq_pic_1", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 div(HTML("Kelp forest canopy as seen from below")),
                 div(HTML("Photo: Kenan Chan"))
               )
@@ -311,7 +325,8 @@ ui <- dashboardPage(
                     ),
                     column(
                       6,
-                      imageOutput(outputId = "abalone", height = 400),
+                      imageOutput(outputId = "abalone", height = 400) %>% 
+                        shinycssloaders::withSpinner(),
                       h4("Farmed red abalone (Haliotis rufescens). The animal on the right shows classic signs of WS."),
                       h5("Photo Credit: CDFW")
                     )
@@ -323,10 +338,9 @@ ui <- dashboardPage(
           # ............ Tab - External Resources  ----
           tabPanel(
             title = "External Resources",
-            tags$hr(),
             h2("Coming soon... "),
             h4("PISCO - Partnership for Interdisciplinary Studies of Coastal Oceans"),
-            h4("SBC LTER - Santa Barbara Coastal Term Ecological Research"),
+            h4("SBC LTER - Santa Barbara Coastal Long Term Ecological Research"),
             h4("RCCA - Reef Check California"),
             h4("Vantuna"),
             h4("MARINE - Multi-Agency Rocky Intertidal Network"),
@@ -402,19 +416,24 @@ ui <- dashboardPage(
               column(
                 6,
                 tags$hr(),
-                imageOutput(outputId = "site_image1", height = 400),
+                imageOutput(outputId = "site_image1", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 h5("Sea surface temperature around the Channel Islands on 31 August 2003"),
                 h5("Photo: NOAA"),
-                imageOutput(outputId = "site_image2", height = 400),
+                imageOutput(outputId = "site_image2", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 h5("A diver laying lead line for a new monitoring site (2005)"),
                 h5("Photo: KFMP"),
-                imageOutput(outputId = "site_image3", height = 400),
+                imageOutput(outputId = "site_image3", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 h5("NPS dive vessel, the Sea Ranger II at Pelican Bay, Santa Cruz Island"),
                 h5("Photo: Kenan Chan"),
-                imageOutput(outputId = "site_image4", height = 400),
+                imageOutput(outputId = "site_image4", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 h5("The Sea Ranger II anchored at Scorpion Anchorage, Santa Cruz Island"),
                 h5("Photo: Shaun Wolfe"),
-                imageOutput(outputId = "site_image5", height = 400),
+                imageOutput(outputId = "site_image5", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 h5("The Sea Ranger II en route to Prisoners Harbor, Santa Cruz Island"),
                 h5("Photo: Kenan Chan")
               )
@@ -422,13 +441,15 @@ ui <- dashboardPage(
             fluidRow(
               column(
                 6,
-                imageOutput(outputId = "site_image6", height = 400),
+                imageOutput(outputId = "site_image6", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 h5("A diver crashing through the surface to begin monitoring efforts"),
                 h5("Photo: Brett Seymour")
               ),
               column(
                 6,
-                imageOutput(outputId = "site_image7", height = 400),
+                imageOutput(outputId = "site_image7", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 h5("Sea Ranger II anchored in Cuyler Harbor, San Miguel Island"),
                 h5("Photo: Kenan Chan")
               )
@@ -486,7 +507,8 @@ ui <- dashboardPage(
             fluidRow(
               column(
                 7,
-                imageOutput(outputId = "satMap", height = 800)
+                imageOutput(outputId = "satMap", height = 800) %>% 
+                  shinycssloaders::withSpinner()
               ),
               conditionalPanel(
                 condition = "input.Sat_Isl_Site != 'Park'",
@@ -518,8 +540,8 @@ ui <- dashboardPage(
             selectInput(inputId = "Bath_Maps_Site",
                         label = "Choose a Site:",
                         choices = dplyr::filter(Site_Info, Bath == TRUE)$SiteName),
-            imageOutput(outputId = "Bathymetry_Map",
-                        height = 800)
+            imageOutput(outputId = "Bathymetry_Map", height = 800) %>% 
+              shinycssloaders::withSpinner()
           ),
           # ............ Tab - ARM Locations  ----
           tabPanel(
@@ -534,7 +556,8 @@ ui <- dashboardPage(
               ),
               column(
                 10,
-                imageOutput(outputId = "ARM_Map", height = 750)
+                imageOutput(outputId = "ARM_Map", height = 750) %>% 
+                  shinycssloaders::withSpinner()
               )
             )
           ),
@@ -550,7 +573,8 @@ ui <- dashboardPage(
               ),
               column(
                 10,
-                imageOutput(outputId = "Site_Description", height = 1000)
+                imageOutput(outputId = "Site_Description", height = 1000) %>% 
+                  shinycssloaders::withSpinner()
               )
             )
           ),
@@ -579,13 +603,16 @@ ui <- dashboardPage(
               column(
                 6,
                 tags$hr(),
-                imageOutput(outputId = "diversity_pic1", height = 400),
+                imageOutput(outputId = "diversity_pic1", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 h5("Text"),
                 h5("Photo: ..."), 
-                imageOutput(outputId = "diversity_pic2", height = 400),
+                imageOutput(outputId = "diversity_pic2", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 h5("Text"),
                 h5("Photo: ..."),
-                imageOutput(outputId = "diversity_pic3", height = 400),
+                imageOutput(outputId = "diversity_pic3", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 h5("Text"),
                 h5("Photo: ...")
               )    
@@ -593,13 +620,15 @@ ui <- dashboardPage(
             fluidRow(
               column(
                 6,
-                imageOutput(outputId = "diversity_pic4", height = 400),
+                imageOutput(outputId = "diversity_pic4", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 h5("Text"),
                 h5("Photo: ...")
               ),
               column(
                 6,
-                imageOutput(outputId = "diversity_pic5", height = 400),
+                imageOutput(outputId = "diversity_pic5", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 h5("Text"),
                 h5("Photo: ...")
               )
@@ -639,10 +668,12 @@ ui <- dashboardPage(
               column(
                 6, 
                 tags$hr(),
-                imageOutput(outputId = "com_pic_1", height = 400), 
+                imageOutput(outputId = "com_pic_1", height = 400) %>% 
+                  shinycssloaders::withSpinner(), 
                 h5("Healthy kelp forest with mature canopy forming plants."),
                 h5("Photo: Kenan Chan"),
-                imageOutput(outputId = "com_pic_2", height = 400), 
+                imageOutput(outputId = "com_pic_2", height = 400) %>% 
+                  shinycssloaders::withSpinner(), 
                 h5("A once forested reef, now a barren area dominated by sea urchins."),
                 h5("Photo: Kenan Chan")
               )
@@ -690,8 +721,9 @@ ui <- dashboardPage(
                   )
                 ),
                 fluidRow(
-                  plotOutput(outputId = "Two_D", height = 500) %>% 
-                    shinycssloaders::withSpinner()
+                  plotOutput(outputId = "Two_D", height = 500) 
+                  # %>% 
+                    # shinycssloaders::withSpinner()
                 )
               )
             ),
@@ -739,8 +771,9 @@ ui <- dashboardPage(
                 ),
                 fluidRow(
                   plotlyOutput(outputId = "Three_D",
-                               height = 450, width = '100%') %>% 
-                    shinycssloaders::withSpinner()
+                               height = 450, width = '100%') 
+                  # %>% 
+                    # shinycssloaders::withSpinner()
                 ) 
               )
             ),
@@ -764,19 +797,23 @@ ui <- dashboardPage(
               column(
                 4,
                 fluidRow(
-                  imageOutput(outputId = "cucumba", height = 400)
+                  imageOutput(outputId = "cucumba", height = 400) %>% 
+                    shinycssloaders::withSpinner()
                 ),
                 h5("Warty sea cucumber, a highly targeted species"), 
                 fluidRow(
-                  imageOutput(outputId = "lobsta", height = 400)
+                  imageOutput(outputId = "lobsta", height = 400) %>% 
+                    shinycssloaders::withSpinner()
                 ),
                 h5("California spiny lobster, a highly targeted species"),
                 fluidRow(
-                  imageOutput(outputId = "rose", height = 400)
+                  imageOutput(outputId = "rose", height = 400) %>% 
+                    shinycssloaders::withSpinner()
                 ),
                 h5("White-spotted rose anemone, a cold water species typical of the Oregonian province"),
                 fluidRow(
-                  imageOutput(outputId = "kelkel", height = 400)
+                  imageOutput(outputId = "kelkel", height = 400) %>% 
+                    shinycssloaders::withSpinner()
                 ),
                 h5("Kellet's whelk, a fished species, though most catch is incidental to trap fisheries")
               )
@@ -819,23 +856,28 @@ ui <- dashboardPage(
               column(
                 6,
                 tags$hr(),
-                imageOutput(outputId = "Biomass_pic_1", height = 400),
+                imageOutput(outputId = "Biomass_pic_1", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 h5("Photo: Kenan Chan"),
-                imageOutput(outputId = "Biomass_pic_2", height = 400),
+                imageOutput(outputId = "Biomass_pic_2", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 h5("Photo: Kenan Chan"),
-                imageOutput(outputId = "Biomass_pic_3", height = 400),
+                imageOutput(outputId = "Biomass_pic_3", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 h5("Photo: Shaun Wolfe")
               )
             ),
             fluidRow(
               column(
                 6,
-                imageOutput(outputId = "Biomass_pic_4", height = 400),
+                imageOutput(outputId = "Biomass_pic_4", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 h5("Photo: Shaun Wolfe")
               ),
               column(
                 6,
-                imageOutput(outputId = "Biomass_pic_5", height = 400),
+                imageOutput(outputId = "Biomass_pic_5", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 h5("Photo: Shaun Wolfe")
               )
             )
@@ -877,21 +919,25 @@ ui <- dashboardPage(
               column(
                 6,
                 tags$hr(),
-                imageOutput(outputId = "Density_pic_1", height = 400),
+                imageOutput(outputId = "Density_pic_1", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 h5("Photo: Brett Seymour"),
-                imageOutput(outputId = "Density_pic_2", height = 400),
+                imageOutput(outputId = "Density_pic_2", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 h5("Photo: Brett Seymour")
               )
             ),
             fluidRow(
               column(
                 6,
-                imageOutput(outputId = "Density_pic_3", height = 400),
+                imageOutput(outputId = "Density_pic_3", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 h5("Photo: Brett Seymour")
               ),
               column(
                 6,
-                imageOutput(outputId = "Density_pic_4", height = 400),
+                imageOutput(outputId = "Density_pic_4", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 h5("Photo: Shaun Wolfe")
               )
             )
@@ -929,10 +975,12 @@ ui <- dashboardPage(
               column(
                 6,
                 tags$hr(),
-                imageOutput(outputId = "Size_pic_1", height = 400),
+                imageOutput(outputId = "Size_pic_1", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 h5("Text..."),
                 h5("Photo: ..."),
-                imageOutput(outputId = "Size_pic_2", height = 400),
+                imageOutput(outputId = "Size_pic_2", height = 400) %>% 
+                  shinycssloaders::withSpinner(),
                 h5("Text..."),
                 h5("Photo: ...")
               )
@@ -976,13 +1024,15 @@ ui <- dashboardPage(
                 10,
                 conditionalPanel(
                   condition = "input.size_site_radio == 'One Site'",
-                  plotOutput(outputId = "size_site_plot", height = 400) %>% 
-                    shinycssloaders::withSpinner()
+                  plotOutput(outputId = "size_site_plot", height = 400) 
+                  # %>% 
+                    # shinycssloaders::withSpinner()
                 ),
                 conditionalPanel(
                   condition = "input.size_site_radio == 'All Sites'",
-                  plotOutput(outputId = "size_year_plot", height = 400) %>% 
-                    shinycssloaders::withSpinner()
+                  plotOutput(outputId = "size_year_plot", height = 400) 
+                  # %>% 
+                    # shinycssloaders::withSpinner()
                 )
               )
             )
