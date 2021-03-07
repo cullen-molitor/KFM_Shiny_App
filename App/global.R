@@ -488,6 +488,8 @@ source('modules.R')
 { # Sizes  ----
   Benthic_Sizes <- arrow::read_feather("Tidy_Data/Benthic_Sizes.feather")
   Fish_Sizes <- arrow::read_feather("Tidy_Data/Fish_Sizes.feather")
+  ARM_Sizes <- arrow::read_feather("Tidy_Data/ARMs.feather")
+  ARM_par_Sizes <- arrow::read_feather("Tidy_Data/ARMs_par.feather")
 }
 
 { # Report Text   -----

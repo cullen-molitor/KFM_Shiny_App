@@ -672,7 +672,11 @@ Export_END_Year <- 2019
       dplyr::ungroup() %>% 
       dplyr::group_by(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear,
                       ScientificName, CommonName, Mean_Density, Survey_Type, ReserveStatus, Reference) %>% 
-      dplyr::summarise(Mean_Biomass = sum(1/n() * Biomass * Mean_Density)) %>% 
+      dplyr::summarise(Mean_Biomass = sum((Biomass * Mean_Density)/n())) %>%
+      # dplyr::summarise(Mean_Biomass = mean(Biomass) * Mean_Density) %>% # Does same thing
+      # dplyr::distinct(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear,
+      #                 ScientificName, CommonName, Mean_Density, Survey_Type, ReserveStatus,
+                      # Reference, .keep_all = TRUE) %>%
       dplyr::ungroup() 
     
     Benthic_Regression <- Benthic_Biomass %>%
@@ -1953,5 +1957,47 @@ Export_END_Year <- 2019
   #   arrow::write_feather("App/Tidy_Data/Temp_Raw_Tidy.feather")
   
 }
+
+{ # ARMs  ----
+  
+  { # Sizes   -----
+    ARM_Sizes <- 
+      readr::read_csv(
+        glue::glue("Raw_Data/KFM_ARMs_RawData_1992-{Export_END_Year}.txt")) %>%  
+      tidyr::separate(SurveyDate, c('Date','Time'),' ') %>%
+      dplyr::mutate(Date = lubridate::mdy(Date)) %>% 
+      dplyr::left_join(Site_Info) %>%
+      tidyr::uncount(weights = NoOfInd) %>% 
+      dplyr::group_by(SiteCode, SurveyYear, CommonName, ArmNo) %>%
+      dplyr::mutate(Count_per_ARM = n()) %>% 
+      dplyr::ungroup() %>%
+      dplyr::group_by(SiteCode, SurveyYear, CommonName) %>%
+      dplyr::mutate(Total_Count = n(), Mean_Size = mean(Size_mm), Date = max(Date)) %>% 
+      dplyr::ungroup() %>%
+      dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, Date,
+                    ScientificName, CommonName, Size_mm, ArmNo, Count_per_ARM, Total_Count, Mean_Size,
+                    ReserveStatus, Reference) %>% 
+      arrow::write_feather("App/Tidy_Data/ARMs.feather")
+  }
+  
+  { # Par par ----
+    ARM_par_Sizes <- 
+      readr::read_csv(
+        glue::glue("Raw_Data/KFM_ARMsParastichopus_RawData_1992-{Export_END_Year}.txt")) %>%  
+      tidyr::separate(SurveyDate, c('Date','Time'),' ') %>%
+      dplyr::mutate(Date = lubridate::mdy(Date)) %>% 
+      dplyr::left_join(Site_Info) %>%
+      dplyr::mutate(Total = `<10cm` + `>10cm`) %>%
+      dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, Date,
+                    ScientificName, CommonName, `<10cm`, `>10cm`, Total, ArmNo, ReserveStatus, Reference) %>%
+      arrow::write_feather("App/Tidy_Data/ARMs_par.feather")
+  }
+  
+}
+
+
+
+
+
 
 

@@ -633,12 +633,6 @@ server <- function(input, output, session) {
         else if (input$size_site_radio == "All Sites") {levels(factor(Size_Data()$CommonName))}
       })
       
-      # observeEvent(input$size_site_radio, {
-      #   updateSelectInput(session, inputId = "size_species",
-      #                     label = "Species:", choices = species_choice())
-      # 
-      # })
-      
       output$size_species_UI <- renderUI({
         selectInput(inputId = "size_species", label = "Species:", choices = species_choice())
         })
@@ -647,18 +641,18 @@ server <- function(input, output, session) {
       
       output$size_site_plot <- renderPlot({
           ggplot2::ggplot() +
-            ggplot2::geom_boxplot(data = Size_Data_Subset(), width = 150,
+            ggplot2::geom_boxplot(data = Size_Site_Data_Subset(), width = 150,
                                   aes(x = Date, y = Size, group = SurveyYear, color = CommonName)) +
-            ggplot2::geom_point(data = Size_Data_Subset(), size = 1, color = "black",
+            ggplot2::geom_point(data = Size_Site_Data_Subset(), size = 1, color = "black",
                                 aes(x = Date, y = Mean_Size, group = SurveyYear)) +
-            ggplot2::geom_label(data = Size_Data_Subset(), size = 3, hjust = .5, vjust = 0,
-                                aes(x = Date, y = -Inf, label = Size_Data_Subset()$Total_Count)) +
+            ggplot2::geom_label(data = Size_Site_Data_Subset(), size = 3, hjust = .5, vjust = 0,
+                                aes(x = Date, y = -Inf, label = Size_Site_Data_Subset()$Total_Count)) +
             ggplot2::geom_hline(yintercept = 0) +
             ggplot2::scale_y_continuous(limits = c(0, NA), expand = expansion(mult = c(0.1, 0))) +
-            ggplot2::scale_x_date(date_labels = "%Y", breaks = unique(Size_Data_Subset()$Date), expand = expansion(mult = c(0.01, 0.01)),
-                                  limits = c(min(Size_Data_Subset()$Date) - 150, max(Size_Data_Subset()$Date) + 150)) +
-            ggplot2::labs(title = Size_Data_Subset()$ScientificName,
-                          subtitle = glue("{Size_Data_Subset()$IslandName} {Size_Data_Subset()$SiteName}"), 
+            ggplot2::scale_x_date(date_labels = "%Y", breaks = unique(Size_Site_Data_Subset()$Date), expand = expansion(mult = c(0.01, 0.01)),
+                                  limits = c(min(Size_Site_Data_Subset()$Date) - 150, max(Size_Site_Data_Subset()$Date) + 150)) +
+            ggplot2::labs(title = Size_Site_Data_Subset()$ScientificName,
+                          subtitle = glue("{Size_Site_Data_Subset()$IslandName} {Size_Site_Data_Subset()$SiteName}"), 
                           color = "Common Name", x = "Year", y = "Size Distribution") +
             ggplot2::scale_color_manual(values = SpeciesColor) +
             Boxplot_theme()
@@ -680,6 +674,102 @@ server <- function(input, output, session) {
         
       }) %>% 
         shiny::bindCache(Size_Year_Data(), cache = cachem::cache_disk("./cache/sizes-cache"))
+      
+    }
+    
+    { # ARMs  ----
+      
+      ARM_Data <- reactive({
+        ARM_Sizes 
+        # %>% 
+          # dplyr::filter(Size_mm == input$Size_Limit)
+      })
+      
+      output$arm_site_year <- renderUI({
+        if (input$arm_site_radio == "One Site") {
+          selectInput(inputId = "ARM_Sites",
+                      label = "Site:",
+                      choices = dplyr::arrange(dplyr::filter(Site_Info, ARMs == T), Longitude)$SiteName)
+        }
+        else if (input$arm_site_radio == "All Sites") {
+          tagList(
+            sliderInput(inputId = "arm_year_slider", label = "Year:",
+                        min = min(ARM_Year_Species()$SurveyYear), 
+                        max = max(ARM_Year_Species()$SurveyYear), 
+                        value = min(ARM_Year_Species()$SurveyYear),
+                        sep = "", step = 1, animate = TRUE),
+            h5("Animation Note: Animals with many measurements take a long time to plot. ",
+               "Plots are cached within a session. ",
+               "Run the animation once and allow all plots to complete (watch year in top left corner). ",
+               "Re-run to show smooth animation from cached plots.") 
+          )
+          
+        }
+      })
+      
+      ARM_Year_Species <- reactive({ARM_Data() %>% dplyr::filter(CommonName == input$arm_species)})
+      
+      ARM_Site_Levels <- reactive({
+        if (input$arm_year_slider < 2001) {Site_Info %>% dplyr::filter(SiteNumber < 17) %>% dplyr::arrange(Longitude)}
+        else if (input$arm_year_slider > 2000 & input$arm_year_slider < 2005) {
+          Site_Info %>% dplyr::filter(SiteNumber < 22) %>% dplyr::arrange(Longitude)}
+        else if (input$arm_year_slider > 2004) {Site_Info %>% dplyr::arrange(Longitude)}
+      })
+      
+      ARM_Size_Year_Data <- reactive({
+        ARM_Year_Species() %>% 
+          dplyr::filter(SurveyYear == input$arm_year_slider) %>% 
+          dplyr::mutate(SiteCode = factor(SiteCode, levels = ARM_Site_Levels()$SiteCode)) 
+      })
+      
+      ARM_Size_Site_Data <- reactive(ARM_Data() %>% dplyr::filter(SiteName == input$ARM_Sites))
+      
+      arm_species_choice <- reactive({
+        if (input$arm_site_radio == "One Site") {levels(factor(ARM_Size_Site_Data()$CommonName))}
+        else if (input$arm_site_radio == "All Sites") {levels(factor(ARM_Data()$CommonName))}
+      })
+      
+      output$arm_species_UI <- renderUI({
+        selectInput(inputId = "arm_species", label = "Species:", choices = arm_species_choice())
+      })
+      
+      ARM_Size_Site_Data_Subset <- reactive({ARM_Size_Site_Data() %>% dplyr::filter(CommonName == input$arm_species)})
+      
+      output$arm_site_plot <- renderPlot({
+        ggplot2::ggplot() +
+          ggplot2::geom_boxplot(data = ARM_Size_Site_Data_Subset(), width = 150,
+                                aes(x = Date, y = Size_mm, group = SurveyYear, color = CommonName)) +
+          ggplot2::geom_point(data = ARM_Size_Site_Data_Subset(), size = 1, color = "black",
+                              aes(x = Date, y = Mean_Size, group = SurveyYear)) +
+          ggplot2::geom_label(data = ARM_Size_Site_Data_Subset(), size = 3, hjust = .5, vjust = 0,
+                              aes(x = Date, y = -Inf, label = ARM_Size_Site_Data_Subset()$Total_Count)) +
+          ggplot2::geom_hline(yintercept = 0) +
+          ggplot2::scale_y_continuous(limits = c(0, NA), expand = expansion(mult = c(0.1, 0))) +
+          ggplot2::scale_x_date(date_labels = "%Y", breaks = unique(ARM_Size_Site_Data_Subset()$Date), expand = expansion(mult = c(0.01, 0.01)),
+                                limits = c(min(ARM_Size_Site_Data_Subset()$Date) - 150, max(ARM_Size_Site_Data_Subset()$Date) + 150)) +
+          ggplot2::labs(title = ARM_Size_Site_Data_Subset()$ScientificName,
+                        subtitle = glue("{ARM_Size_Site_Data_Subset()$IslandName} {ARM_Size_Site_Data_Subset()$SiteName}"), 
+                        color = "Common Name", x = "Year", y = "Size Distribution") +
+          ggplot2::scale_color_manual(values = SpeciesColor) +
+          Boxplot_theme()
+      }) %>% 
+        shiny::bindCache(ARM_Size_Site_Data_Subset(), cache = cachem::cache_disk("./cache/sizes-cache"))
+      
+      output$arm_year_plot <- renderPlot({
+        ggplot2::ggplot() +
+          ggplot2::geom_boxplot(data = ARM_Size_Year_Data(), aes(x = SiteCode, y = Size_mm, group = SiteCode, color = CommonName)) +
+          ggplot2::geom_point(data = ARM_Size_Year_Data(), size = 1, color = "black", aes(x = SiteCode, y = Mean_Size, group = SurveyYear)) +
+          ggplot2::geom_label(data = ARM_Size_Year_Data(), size = 3, hjust = .5, vjust = 0, aes(x = SiteCode, y = -Inf, label = ARM_Size_Year_Data()$Total_Count)) +
+          ggplot2::geom_hline(yintercept = 0) +
+          ggplot2::scale_y_continuous(limits = c(0, NA), expand = expansion(mult = c(0.1, 0.01))) +
+          ggplot2::scale_x_discrete(drop = FALSE) +
+          ggplot2::labs(title = ARM_Size_Year_Data()$SurveyYear, color = "Common Name", x = NULL, y = "Size Distribution",
+                        caption = "Sites arranged by longitude (west to east)") +
+          ggplot2::scale_color_manual(values = SpeciesColor) +
+          Boxplot_theme()
+        
+      }) %>% 
+        shiny::bindCache(ARM_Size_Year_Data(), cache = cachem::cache_disk("./cache/sizes-cache"))
       
     }
     

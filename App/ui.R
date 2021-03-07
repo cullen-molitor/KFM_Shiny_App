@@ -1041,6 +1041,46 @@ ui <- dashboardPage(
           tabPanel(
             title = "Histogram",
             h3("Comming soon... animated histograms")
+          ),
+          # ............ Tab - ARMs  ----
+          tabPanel(
+            title = "ARMs",
+            tags$hr(),
+            fluidRow(
+              column(
+                2,
+                fluidRow(
+                  column(
+                    6,
+                    radioButtons(inputId = "arm_site_radio", label = "Choose:",
+                                 choices = c("One Site", "All Sites"))
+                  )
+                ),
+                fluidRow(
+                  column(
+                    12,
+                    uiOutput(outputId = "arm_species_UI")
+                  )
+                ),
+                fluidRow(
+                  column(
+                    12,
+                    uiOutput(outputId = "arm_site_year")  
+                  )
+                )
+              ),
+              column(
+                10,
+                conditionalPanel(
+                  condition = "input.arm_site_radio == 'One Site'",
+                  plotOutput(outputId = "arm_site_plot", height = 400) 
+                ),
+                conditionalPanel(
+                  condition = "input.arm_site_radio == 'All Sites'",
+                  plotOutput(outputId = "arm_year_plot", height = 400) 
+                )
+              )
+            )
           )
         )
       ),
