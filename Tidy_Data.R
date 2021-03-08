@@ -410,7 +410,25 @@ Export_END_Year <- 2019
                     "Sargassum muticum",
                     "Polymastia pachymastia",
                     "Spirobranchus spinosus")) %>%
-    dplyr::mutate(Date = lubridate::mdy(Date),  
+    dplyr::mutate(
+      Date = lubridate::mdy(Date),
+      CommonName = as.factor(CommonName),
+      ScientificName = as.factor(ScientificName),
+      CommonName = forcats::fct_collapse(
+        CommonName, 
+        "Misc Inverts" = c(
+          "Miscellaneous Invertebrates excluding Ophiothrix spiculata", 
+          "Miscellaneous Invertebrates including Ophiothrix spiculata",
+          "spiny brittle star")), 
+      ScientificName = forcats::fct_collapse(
+        ScientificName, 
+        "Misc Inverts" = c(
+          "Miscellaneous Invertebrates excluding Ophiothrix spiculata", 
+          "Miscellaneous Invertebrates including Ophiothrix spiculata",
+          "Ophiothrix spiculata")),
+      CommonName = as.character(CommonName),
+      ScientificName = as.character(ScientificName),
+      Species = ifelse(ScientificName == "Misc Inverts", 13003, Species),
       ScientificName = dplyr::case_when(
         CommonName == "encrusting coralline algae" ~ "encrusting coralline algae",
         CommonName == "articulated coralline algae" ~ "articulated coralline algae",
@@ -438,6 +456,9 @@ Export_END_Year <- 2019
     dplyr::ungroup() %>%  
     dplyr::distinct(SiteCode, ScientificName, CommonName, SurveyYear, Percent_Cover, .keep_all = TRUE) %>%
     arrow::write_feather("App/Tidy_Data/RPC_Cover.feather")
+  
+  unique(RPC_Cover$CommonName)
+  unique(RPC_Cover$ScientificName)
   
   # RPC_Substrate <- RPC_Cover %>%
   #   dplyr::filter(ScientificName %in% c("Rock", "Cobble", "Sand")) %>%
@@ -523,6 +544,7 @@ Export_END_Year <- 2019
     RPC_Cover_Wide <- RPC_Cover %>%
       dplyr::select(-SE, -SD, -CommonName, -Date, -Species,
                     -Area_Surveyed, -Total_Count) %>%
+      dplyr::filter(!CommonName %in% c("Rock", "Sand", "Cobble", "Bare Substrate")) %>%
       tidyr::pivot_wider(names_from = ScientificName, values_fn = sum,
                          values_from = Percent_Cover, values_fill = 0)
     
@@ -995,6 +1017,43 @@ Export_END_Year <- 2019
  
 }
 
+{ # ARMs  ----
+  
+  { # Sizes   -----
+    ARM_Sizes <- 
+      readr::read_csv(
+        glue::glue("Raw_Data/KFM_ARMs_RawData_1992-{Export_END_Year}.txt")) %>%  
+      tidyr::separate(SurveyDate, c('Date','Time'),' ') %>%
+      dplyr::mutate(Date = lubridate::mdy(Date)) %>% 
+      dplyr::left_join(Site_Info) %>%
+      tidyr::uncount(weights = NoOfInd) %>% 
+      dplyr::group_by(SiteCode, SurveyYear, CommonName, ArmNo) %>%
+      dplyr::mutate(Count_per_ARM = n()) %>% 
+      dplyr::ungroup() %>%
+      dplyr::group_by(SiteCode, SurveyYear, CommonName) %>%
+      dplyr::mutate(Total_Count = n(), Mean_Size = mean(Size_mm), Date = max(Date)) %>% 
+      dplyr::ungroup() %>%
+      dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, Date,
+                    ScientificName, CommonName, Size_mm, ArmNo, Count_per_ARM, Total_Count, Mean_Size,
+                    ReserveStatus, Reference) %>% 
+      arrow::write_feather("App/Tidy_Data/ARMs.feather")
+  }
+  
+  { # Par par ----
+    ARM_par_Sizes <- 
+      readr::read_csv(
+        glue::glue("Raw_Data/KFM_ARMsParastichopus_RawData_1992-{Export_END_Year}.txt")) %>%  
+      tidyr::separate(SurveyDate, c('Date','Time'),' ') %>%
+      dplyr::mutate(Date = lubridate::mdy(Date)) %>% 
+      dplyr::left_join(Site_Info) %>%
+      dplyr::mutate(Total = `<10cm` + `>10cm`) %>%
+      dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, Date,
+                    ScientificName, CommonName, `<10cm`, `>10cm`, Total, ArmNo, ReserveStatus, Reference) %>%
+      arrow::write_feather("App/Tidy_Data/ARMs_par.feather")
+  }
+  
+}
+
 { # Mixed Data (% Cover, Count, Biomass) for Random Forest Model   ----
   
   { # RDFC Counts for Mixed Data ---- 
@@ -1106,7 +1165,7 @@ Export_END_Year <- 2019
       dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, 
                     ScientificName, CommonName, Mean_Density, ReserveStatus, Reference) %>% 
       dplyr::mutate(
-        ReserveStatus = case_when(
+        ReserveStatus = dplyr::case_when(
           SurveyYear < 2003 & SiteCode == "LC" ~ "Inside",
           SurveyYear < 2003 & SiteCode == "CC" ~ "Inside",
           SurveyYear < 2003 ~ "Outside",
@@ -1411,6 +1470,38 @@ Export_END_Year <- 2019
     sf::st_write(dsn = "App/GIS_Data/CINMS_Boundary.gpkg", layer = "CINMS_Boundary", 
                  delete_dsn = TRUE, layer_options = "OVERWRITE=YES")
 }
+
+{ # Temperature RAW to Tidy   ----
+  
+  # temp_Raw <- readr::read_csv( # have not yet used but could...
+  #   glue("Raw_Data/Temperature_RawData_1994-{Export_END_Year}.txt")) %>%
+  #   dplyr::filter(IslandCode != "CL", Site_Number < 38, !base::is.na(Temp_C)) %>%
+  #   dplyr::select(-Date, -Time) %>%
+  #   tidyr::separate(DateTime, c('Date','Time'),' ') %>%
+  #   dplyr::group_by(Date, Site_Number) %>%
+  #   dplyr::mutate(Date = lubridate::mdy(Date),
+  #                 Month = lubridate::month(Date, label = TRUE),
+  #                 Temp_Daily_Min = base::min(Temp_C),
+  #                 Temp_Daily_Max = base::max(Temp_C),
+  #                 Temp_Daily_Mean = base::mean(Temp_C)) %>%
+  #   dplyr::ungroup() %>%
+  #   dplyr::group_by(Site_Number, Year, Month) %>%
+  #   dplyr::mutate(Include = ifelse(is.even(match(Month, month.abb)) & n() < 24, FALSE,
+  #                                  ifelse(is.odd(match(Month, month.abb)) & n() < 25, FALSE, TRUE))) %>%
+  #   dplyr::filter(Include == TRUE) %>%
+  #   dplyr::mutate(Temp_Monthly_Mean = base::mean(Temp_C)) %>%
+  #   dplyr::ungroup() %>%
+  #   dplyr::distinct(Site_Number, Date, .keep_all = TRUE) %>%
+  #   dplyr::left_join(Site_Info) %>%
+  #   dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName,
+  #                 Year, Month, Date, Temp_Daily_Mean, Temp_Daily_Min, Temp_Daily_Max, Temp_Monthly_Mean, MeanDepth) %>%
+  #   arrow::write_feather("App/Tidy_Data/Temp_Raw_Tidy.feather")
+  
+}
+
+
+
+
 
 { # RATIOS - BEWARE... THESE TAKE A LOOOOONG TIME  -----------------
   
@@ -1929,72 +2020,6 @@ Export_END_Year <- 2019
   }
   
 }
-
-{ # Temperature RAW to Tidy   ----
-  
-  # temp_Raw <- readr::read_csv( # have not yet used but could...
-  #   glue("Raw_Data/Temperature_RawData_1994-{Export_END_Year}.txt")) %>%
-  #   dplyr::filter(IslandCode != "CL", Site_Number < 38, !base::is.na(Temp_C)) %>%
-  #   dplyr::select(-Date, -Time) %>%
-  #   tidyr::separate(DateTime, c('Date','Time'),' ') %>%
-  #   dplyr::group_by(Date, Site_Number) %>%
-  #   dplyr::mutate(Date = lubridate::mdy(Date),
-  #                 Month = lubridate::month(Date, label = TRUE),
-  #                 Temp_Daily_Min = base::min(Temp_C),
-  #                 Temp_Daily_Max = base::max(Temp_C),
-  #                 Temp_Daily_Mean = base::mean(Temp_C)) %>%
-  #   dplyr::ungroup() %>%
-  #   dplyr::group_by(Site_Number, Year, Month) %>%
-  #   dplyr::mutate(Include = ifelse(is.even(match(Month, month.abb)) & n() < 24, FALSE,
-  #                                  ifelse(is.odd(match(Month, month.abb)) & n() < 25, FALSE, TRUE))) %>%
-  #   dplyr::filter(Include == TRUE) %>%
-  #   dplyr::mutate(Temp_Monthly_Mean = base::mean(Temp_C)) %>%
-  #   dplyr::ungroup() %>%
-  #   dplyr::distinct(Site_Number, Date, .keep_all = TRUE) %>%
-  #   dplyr::left_join(Site_Info) %>%
-  #   dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName,
-  #                 Year, Month, Date, Temp_Daily_Mean, Temp_Daily_Min, Temp_Daily_Max, Temp_Monthly_Mean, MeanDepth) %>%
-  #   arrow::write_feather("App/Tidy_Data/Temp_Raw_Tidy.feather")
-  
-}
-
-{ # ARMs  ----
-  
-  { # Sizes   -----
-    ARM_Sizes <- 
-      readr::read_csv(
-        glue::glue("Raw_Data/KFM_ARMs_RawData_1992-{Export_END_Year}.txt")) %>%  
-      tidyr::separate(SurveyDate, c('Date','Time'),' ') %>%
-      dplyr::mutate(Date = lubridate::mdy(Date)) %>% 
-      dplyr::left_join(Site_Info) %>%
-      tidyr::uncount(weights = NoOfInd) %>% 
-      dplyr::group_by(SiteCode, SurveyYear, CommonName, ArmNo) %>%
-      dplyr::mutate(Count_per_ARM = n()) %>% 
-      dplyr::ungroup() %>%
-      dplyr::group_by(SiteCode, SurveyYear, CommonName) %>%
-      dplyr::mutate(Total_Count = n(), Mean_Size = mean(Size_mm), Date = max(Date)) %>% 
-      dplyr::ungroup() %>%
-      dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, Date,
-                    ScientificName, CommonName, Size_mm, ArmNo, Count_per_ARM, Total_Count, Mean_Size,
-                    ReserveStatus, Reference) %>% 
-      arrow::write_feather("App/Tidy_Data/ARMs.feather")
-  }
-  
-  { # Par par ----
-    ARM_par_Sizes <- 
-      readr::read_csv(
-        glue::glue("Raw_Data/KFM_ARMsParastichopus_RawData_1992-{Export_END_Year}.txt")) %>%  
-      tidyr::separate(SurveyDate, c('Date','Time'),' ') %>%
-      dplyr::mutate(Date = lubridate::mdy(Date)) %>% 
-      dplyr::left_join(Site_Info) %>%
-      dplyr::mutate(Total = `<10cm` + `>10cm`) %>%
-      dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, Date,
-                    ScientificName, CommonName, `<10cm`, `>10cm`, Total, ArmNo, ReserveStatus, Reference) %>%
-      arrow::write_feather("App/Tidy_Data/ARMs_par.feather")
-  }
-  
-}
-
 
 
 

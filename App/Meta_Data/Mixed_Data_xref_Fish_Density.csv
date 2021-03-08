@@ -18,7 +18,7 @@ La_Jolla_cup_coral,La Jolla cup coral,Astrangia lajollaensis,Percent Cover,Inver
 ornate_tube_worm,ornate tube worm,Diopatra ornata,Percent Cover,Invertebrate,Non-targeted
 scaled_wormsnail,scaled wormsnail,Serpulorbis squamigerus,Percent Cover,Invertebrate,Non-targeted
 tunicates,tunicates,Tunicata,Percent Cover,Invertebrate,Non-targeted
-Miscellaneous_Invertebrates_w_spiny_brittle_stars,Misc. Inv. including spiny brittle stars,Misc. Inv. including Ophiothrix spiculata,Percent Cover,Invertebrate,Non-targeted
+Misc_Inverts,Misc Inverts,Misc Inverts,Percent Cover,Invertebrate,Non-targeted
 acid_weed,acid weed,Desmarestia,Percent Cover,Algae,Non-targeted
 green_algae,green algae,Chlorophyta,Percent Cover,Algae,Non-targeted
 agar_weed,agar weed,Gelidium,Percent Cover,Algae,Non-targeted
@@ -30,7 +30,6 @@ bryozoans,bryozoans,Bryozoa,Percent Cover,Invertebrate,Non-targeted
 Southern_staghorn_bryozoan,Southern staghorn bryozoan,Diaperoecia californica,Percent Cover,Invertebrate,Non-targeted
 aggregated_red_sea_cucumber,aggregated red sea cucumber,Pachythyone rubra,Percent Cover,Invertebrate,Non-targeted
 spiny_brittle_star,spiny brittle star,Ophiothrix spiculata,Percent Cover,Invertebrate,Non-targeted
-Miscellaneous_Invertebrates_wo_spiny_brittle_stars,Misc. Inv. excluding spiny brittle stars,Misc. Inv. excluding Ophiothrix spiculata,Percent Cover,Invertebrate,Non-targeted
 island_kelpfish,island kelpfish,Alloclinus holderi,Count,Fish,Non-targeted
 California_brown_sea_hare,California brown sea hare,Aplysia californica,Count,Invertebrate,Non-targeted
 Coronado_urchin,Coronado urchin,Centrostephanus coronatus,Count,Invertebrate,Non-targeted

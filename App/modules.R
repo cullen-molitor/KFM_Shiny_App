@@ -126,7 +126,7 @@
               radioButtons(inputId = ns("Diversity_Plot_Options"),
                            label = "Plot Type:",
                            choices = c("Line",
-                                       "Map Bubbles"))
+                                       "Map"))
             ),
             column(
               8, 
@@ -139,7 +139,7 @@
                                          "MPA Reference Sites",
                                          "Individual Site"))),
               conditionalPanel(
-                condition = "input.Diversity_Plot_Options == 'Map Bubbles'", ns = ns,
+                condition = "input.Diversity_Plot_Options == 'Map'", ns = ns,
                 selectInput(inputId = ns("map_center"),
                             label = "Center Map on:",
                             choices = c(unique(Site_Info$IslandName))))
@@ -154,14 +154,14 @@
                                 choices = c("Free", "Fixed")))
             ),
             conditionalPanel(
-              condition = "input.Data_Options == 'All Sites' | input.Data_Options == 'Individual Site'", ns = ns,
+              condition = "input.Diversity_Plot_Options == 'Line' & (input.Data_Options == 'All Sites' | input.Data_Options == 'Individual Site')", ns = ns,
               column(
                 4, radioButtons(inputId = ns("linetype"),
                                 label = "Line Type:",
                                 choices = c("Smooth", "Sharp")))
             ),
             conditionalPanel(
-              condition = "input.Diversity_Plot_Options == 'Map Bubbles'", ns = ns,
+              condition = "input.Diversity_Plot_Options == 'Map'", ns = ns,
               column(
                 12, sliderInput(inputId = ns("map_slider"),
                                 label = "Select a Year:",
@@ -189,7 +189,7 @@
           tags$hr(),
           conditionalPanel(condition = "input.Diversity_Plot_Options == 'Line'", ns = ns,
                            uiOutput(outputId = ns('plotUI'))),
-          conditionalPanel(condition = "input.Diversity_Plot_Options == 'Map Bubbles'", ns = ns,
+          conditionalPanel(condition = "input.Diversity_Plot_Options == 'Map'", ns = ns,
                            plotOutput(outputId = ns("map")) %>% 
                              shinycssloaders::withSpinner()
           )
