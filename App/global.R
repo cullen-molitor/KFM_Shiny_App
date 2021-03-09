@@ -266,7 +266,9 @@ source('modules.R')
   
   map_bubble_theme <- function() {
     ggplot2::theme_void() +
-      ggplot2::theme(legend.position = "right", plot.title = element_text(hjust = .5))
+      ggplot2::theme(legend.position = "right", 
+                     plot.title = element_text(hjust = 0.5),
+                     plot.subtitle = element_text(hjust = 0.5))
   }
   
   all_sites_theme <- function () {

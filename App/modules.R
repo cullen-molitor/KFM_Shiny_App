@@ -118,18 +118,22 @@
     tagList(
       fluidRow(
         column(
-          3,
+          4,
+          uiOutput(outputId = ns('Diversity_Text'))
+        ),
+        column(
+          8,
           fluidRow(
             tags$hr(),
             column(
-              4, 
+              2, 
               radioButtons(inputId = ns("Diversity_Plot_Options"),
                            label = "Plot Type:",
                            choices = c("Line",
                                        "Map"))
             ),
             column(
-              8, 
+              3, 
               conditionalPanel(
                 condition = "input.Diversity_Plot_Options == 'Line'", ns = ns,
                 radioButtons(inputId = ns("Data_Options"),
@@ -143,55 +147,47 @@
                 selectInput(inputId = ns("map_center"),
                             label = "Center Map on:",
                             choices = c(unique(Site_Info$IslandName))))
-            )
-          ),
-          fluidRow(
+            ),
             conditionalPanel(
               condition = "input.Diversity_Plot_Options == 'Line'", ns = ns,
               column(
-                4, radioButtons(inputId = ns("Sclaes_Selector"),
-                                label = "Y Scale:",
-                                choices = c("Free", "Fixed")))
+                2,
+                radioButtons(inputId = ns("Sclaes_Selector"),
+                             label = "Y Scale:",
+                             choices = c("Free", "Fixed"))
+              ) 
             ),
             conditionalPanel(
-              condition = "input.Diversity_Plot_Options == 'Line' & (input.Data_Options == 'All Sites' | input.Data_Options == 'Individual Site')", ns = ns,
+              condition = "input.Diversity_Plot_Options == 'Line' & 
+                          (input.Data_Options == 'All Sites' | 
+                          input.Data_Options == 'Individual Site')", ns = ns,
               column(
-                4, radioButtons(inputId = ns("linetype"),
-                                label = "Line Type:",
-                                choices = c("Smooth", "Sharp")))
+                2,
+                radioButtons(inputId = ns("linetype"),
+                             label = "Line Type:",
+                             choices = c("Smooth", "Sharp")))
             ),
             conditionalPanel(
               condition = "input.Diversity_Plot_Options == 'Map'", ns = ns,
               column(
-                12, sliderInput(inputId = ns("map_slider"),
-                                label = "Select a Year:",
-                                min = min(Diversity$SurveyYear),
-                                max = max(Diversity$SurveyYear),
-                                value = min(Diversity$SurveyYear),
-                                width = "100%",
-                                sep = "", step = 1, animate = TRUE))
-            ) 
+                7, sliderInput(inputId = ns("map_slider"), label = "Select a Year:",
+                               min = min(Diversity$SurveyYear), max = max(Diversity$SurveyYear),
+                               value = min(Diversity$SurveyYear),
+                               width = "100%", sep = "", step = 1, animate = TRUE))
+            ),
+            conditionalPanel(
+              condition = "input.Diversity_Plot_Options == 'Line' & input.Data_Options == 'Individual Site'", ns = ns,
+              
+              column(
+                3, selectInput(inputId = ns("Site_Selector"),
+                               label = "Site:",
+                               choices = Site_Info$SiteName))
+            )
           ),
-          fluidRow(
-            column(
-              10, 
-              conditionalPanel(
-                condition = "input.Data_Options == 'Individual Site'", ns = ns,
-                selectInput(inputId = ns("Site_Selector"),
-                            label = "Site:",
-                            choices = Site_Info$SiteName))
-            ) 
-          )
-          
-        ),
-        column(
-          8,
-          tags$hr(),
           conditionalPanel(condition = "input.Diversity_Plot_Options == 'Line'", ns = ns,
                            uiOutput(outputId = ns('plotUI'))),
           conditionalPanel(condition = "input.Diversity_Plot_Options == 'Map'", ns = ns,
-                           plotOutput(outputId = ns("map")) %>% 
-                             shinycssloaders::withSpinner()
+                           plotOutput(outputId = ns("map")) 
           )
         )
       ) 
@@ -209,7 +205,7 @@
                      height = if (input$Data_Options == "Individual Site"){350} else {700})
         })
         
-        filename_text <- reactive(glue("Text/Biodiversity/{id}_index.md"))
+        filename_text <- reactive(glue("Text/Biodiversity/{id}.md"))
         
         output$Diversity_Text <- renderUI(includeMarkdown(path = filename_text()))
         
@@ -562,7 +558,7 @@
                        aes(x = Longitude, y = Latitude, label = SiteCode)) +
             geom_point(data = map_data(), shape = 1, stroke = 1,
                        aes(x = Longitude, y = Latitude, size = Index , color = ReserveStatus)) +
-            labs(title = map_data()$IslandName) +
+            labs(title = map_data()$IslandName, subtitle = map_data()$SurveyYear) +
             scale_y_continuous(expand = expansion(mult = 0.2)) +
             scale_x_continuous(expand = expansion(mult = 0.2)) +
             scale_size_continuous(limits = c(0, max(map_subset()$Index)), range = c(5, 25), guide = guide_legend(order = 1)) +
