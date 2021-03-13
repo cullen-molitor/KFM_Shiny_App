@@ -367,7 +367,13 @@ Export_END_Year <- 2019
       dplyr::left_join(
         Site_Info %>%
           dplyr::select(SiteName, ReserveYear, MeanDepth, Latitude, Longitude)) %>% 
-      dplyr::mutate(SE = NA, SD = NA) %>%
+      dplyr::mutate(
+        SE = NA, SD = NA,
+        ReserveStatus = case_when(
+          SurveyYear < 2003 & SiteCode == "LC" ~ "Inside",
+          SurveyYear < 2003 & SiteCode == "CC" ~ "Inside",
+          SurveyYear < 2003 ~ "Outside",
+          TRUE ~ ReserveStatus)) %>%
       dplyr::select(SiteNumber, IslandCode, IslandName, SiteCode, SiteName, SurveyYear, Date,
                     Species, ScientificName, CommonName, Mean_Density, SD, SE, Count,
                     MeanDepth, Survey_Type, ReserveStatus, Reference, ReserveYear, Latitude, Longitude, Classification)
@@ -1528,6 +1534,7 @@ Export_END_Year <- 2019
     { # Data  ----
       Biomass_Data <- arrow::read_feather("App/Tidy_Data/Biomass.feather") %>%
         dplyr::filter(
+          # SiteCode != "KH",
           !ScientificName %in% c(
             "total benthic biomass", "total fish biomass", "total biomass", "Targeted", "Non-targeted",
             "Detritivore", "Herbivore", "Planktivore", "Producer", "Carnivore", "Piscivore"),
@@ -1689,12 +1696,14 @@ Export_END_Year <- 2019
       
       { # Data    ----
         Density_Boot <- Benthic_Density_CSV %>%
-          dplyr::filter(ScientificName != 'Muricea californica' | SurveyYear > 1990,
-                        ScientificName != 'Cypraea spadicea' | SurveyYear > 1983,
-                        ScientificName != 'Undaria pinnatifida',
-                        ScientificName != 'Haliotis assimilis',
-                        ScientificName != 'Haliotis sorenseni',
-                        ScientificName != 'Pisaster ochraceus') %>%
+          dplyr::filter(
+            # SiteCode != "KH",
+            ScientificName != 'Muricea californica' | SurveyYear > 1990,
+            ScientificName != 'Cypraea spadicea' | SurveyYear > 1983,
+            ScientificName != 'Undaria pinnatifida',
+            ScientificName != 'Haliotis assimilis',
+            ScientificName != 'Haliotis sorenseni',
+            ScientificName != 'Pisaster ochraceus') %>%
           dplyr::left_join(
             Species_Info %>% 
               dplyr::distinct(ScientificName, Trophic_Broad, Targeted_Broad, 
@@ -1799,6 +1808,7 @@ Export_END_Year <- 2019
       { # Data    ----
         RDFC_Density_Boot <- Fish_Density_CSV %>%
           dplyr::filter(
+            # SiteCode != "KH",
             Survey_Type == "RDFC",
             !ScientificName %in% 
               c('Coryphopterus nicholsi', 
@@ -1908,7 +1918,9 @@ Export_END_Year <- 2019
       { # Data    ----
         
         VFT_Density_Boot <- Fish_Density_CSV %>%
-          dplyr::filter(Survey_Type == "VFT") %>%
+          dplyr::filter(
+            # SiteCode != "KH",
+            Survey_Type == "VFT") %>%
           dplyr::left_join(
             Species_Info %>% 
               dplyr::distinct(ScientificName, Trophic_Broad, Targeted_Broad, 

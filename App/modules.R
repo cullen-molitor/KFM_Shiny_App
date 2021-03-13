@@ -1105,61 +1105,57 @@
   Time_UI <- function(id, label = "time") {
     ns <- NS(id)
     tagList(
-      tags$hr(),
       fluidRow(
         column(
           4,
+          includeMarkdown("Text/Biomass_Density_Sizes/time_series.md")
+        ),
+        column(
+          8,
           fluidRow(
             column(
-              5,
-              radioButtons(inputId = ns("Data_Options"),
-                           label = "Data Summary:",
-                           choices = c("All Sites", "Original 16 Sites", "MPA Reference Sites", "Individual Site"))
+              3,
+              radioButtons(
+                inputId = ns("Data_Options"),
+                label = "Data Summary:",
+                choices = c("All Sites", "Original 16 Sites", "MPA Reference Sites", "Individual Site"))
             ),
             column(
-              3,
+              2,
               radioButtons(inputId = ns("taxa"), label = "Category:", choices = c('Invertebrates', 'Algae', 'Fish'))
             ),
             column(
-              3,
+              2,
+              radioButtons(inputId = ns("axis"), label = "Y Scale:", choices = c('Free', 'Fixed'))
+            ),
+            conditionalPanel(
+              condition = "input.Data_Options == 'All Sites' | input.Data_Options == 'Individual Site'", ns = ns,
+              column(
+                2,
+                radioButtons(inputId = ns("line"), label = "Line Type:", choices = c('Smooth', 'Sharp'))
+              )
+            ),
+            column(
+              2,
               uiOutput(outputId = ns("Fishy"))
             )
           ),
           fluidRow(
             column(
-              6,
+              3,
               uiOutput(outputId = ns("speciesUI")),
-              
             ),
-            column(
-              6,
-              conditionalPanel(
-                condition = "input.Data_Options == 'Individual Site'", ns = ns,
+            conditionalPanel(
+              condition = "input.Data_Options == 'Individual Site'", ns = ns,
+              column(
+                3,
                 uiOutput(outputId = ns("siteUI"))
               )
             )
           ),
           fluidRow(
-            column(
-              3,
-              radioButtons(inputId = ns("axis"), label = "Y Scale:", choices = c('Free', 'Fixed'))
-            ),
-            # column(
-            #   3,
-            #   radioButtons(inputId = ns('plot'), label = "Plot Type:", choices = c("Line", "Stacked"))
-            # ),
-            column(
-              3,
-              conditionalPanel(
-                condition = "input.Data_Options == 'All Sites' | input.Data_Options == 'Individual Site'", ns = ns,
-                radioButtons(inputId = ns("line"), label = "Line Type:", choices = c('Smooth', 'Sharp'))
-              )
-            )
+            uiOutput(outputId = ns('plotUI'))
           )
-        ),
-        column(
-          8,
-          uiOutput(outputId = ns('plotUI'))
         )
       ),
       tags$hr(),
@@ -1173,6 +1169,7 @@
       DTOutput(outputId = ns("data_table"), height = 575), 
       tags$hr()  
     )
+    
   }
   
   Time_Server <- function(id) {
@@ -1618,34 +1615,28 @@
   Ratio_UI <- function(id, label = 'ratio') {
     ns <- NS(id)
     tagList(
-      tags$hr(),
       fluidRow(
         column(
-          3,
+          4,
+          includeMarkdown("Text/Biomass_Density_Sizes/ratios.md")
+        ),
+        column(
+          8,
           fluidRow(
             column(
-              5,
+              2,
               radioButtons(inputId = ns("category"), label = 'Show:',
                            choices = c("Single Species", "All Species"))
             ),
             column(
-              4,
+              2,
               uiOutput(outputId = ns("taxa_UI"))
             ),
-            column(
-              3,
-              uiOutput(outputId = ns("Fishy"))
-            )
-          ),
-          fluidRow(
-            column(
-              10,
+            uiOutput(outputId = ns("Fishy")),
+            
               uiOutput(outputId = ns("species_year_UI"))
-            )
-          )
-        ),
-        column(
-          9,
+            
+          ),
           conditionalPanel(
             condition = "input.category == 'Single Species'", ns = ns,
             plotOutput(outputId = ns("plot_single")) %>% 
@@ -1655,9 +1646,11 @@
             condition = "input.category == 'All Species'", ns = ns,
             uiOutput(outputId = ns("plot_all_UI"))
           )
+          
         )
       )
     )
+    
   }
   
   Ratio_Server <- function(id) {
@@ -1680,7 +1673,10 @@
         output$Fishy <- renderUI({
           if (id == "bimass_ratio") {NULL}
           else if (id == "density_ratio" & input$taxa == 'Fish'){
-            radioButtons(inputId = session$ns("Fish_Survey"), label = "Survey:", choices = c("RDFC", "VFT"))
+            column(
+              2,
+              radioButtons(inputId = session$ns("Fish_Survey"), label = "Survey:", choices = c("RDFC", "VFT"))
+            )
           }
         })
         
@@ -1707,13 +1703,19 @@
         
         output$species_year_UI <- renderUI({
           if (input$category == "Single Species") {
+            column(
+            3,
             selectInput(inputId = session$ns("species"), label = 'Species:', 
                         choices =  levels(forcats::fct_relevel(Data()$CommonName, sort)))
+            )
           }
           else if (input$category == "All Species") {
+            column(
+              6,
             sliderInput(inputId = session$ns("year"),label = "Select a Year:",
                         min = min(Data()$SurveyYear), max = max(Data()$SurveyYear),
                         value = min(Data()$SurveyYear), width = "100%", sep = "", step = 1, animate = TRUE)
+            )
           }
         })
         
@@ -1780,48 +1782,95 @@
   bubbles_UI <- function(id, label = "bubbles") {
     ns <- NS(id)
     tagList(
-      tags$hr(),
       fluidRow(
         column(
-          3,
+          4,
+          includeMarkdown("Text/Biomass_Density_Sizes/map_bubbles.md")
+        ),
+        column(
+          8,
           fluidRow(
             column(
-              4,
+              2,
               radioButtons(inputId = ns("taxa"), label = "Category:", 
                            choices = c('Invertebrates', 'Algae', 'Fish'))
             ),
+            
+            uiOutput(outputId = ns("Fishy")),
             column(
               3,
-              uiOutput(outputId = ns("Fishy"))
-            )
-          ),
-          fluidRow(
-            column(
-              10,
               selectInput(inputId = ns("map_center"), label = "Center Map on:",
                           choices = c(unique(Site_Info$IslandName)))
-            )
-          ),
-          fluidRow(
+            ),
             column(
-              10,
+              3,
               uiOutput(outputId = ns("species_UI"))
             )
           ),
           fluidRow(
             column(
-              10,
+              6,
               uiOutput(outputId = ns("year_UI"))
             )
+          ),
+          fluidRow(
+            plotOutput(outputId = ns("plot")) %>% 
+              shinycssloaders::withSpinner()
           )
-        ),
-        column(
-          9,
-          plotOutput(outputId = ns("plot")) %>% 
-            shinycssloaders::withSpinner()
         )
       )
     )
+    
+    
+    
+    
+    
+    
+    
+    
+    # tagList(
+    #   tags$hr(),
+    #   fluidRow(
+    #     column(
+    #       3,
+    #       fluidRow(
+    #         column(
+    #           4,
+    #           radioButtons(inputId = ns("taxa"), label = "Category:", 
+    #                        choices = c('Invertebrates', 'Algae', 'Fish'))
+    #         ),
+    #         column(
+    #           3,
+    #           uiOutput(outputId = ns("Fishy"))
+    #         )
+    #       ),
+    #       fluidRow(
+    #         column(
+    #           10,
+    #           selectInput(inputId = ns("map_center"), label = "Center Map on:",
+    #                       choices = c(unique(Site_Info$IslandName)))
+    #         )
+    #       ),
+    #       fluidRow(
+    #         column(
+    #           10,
+    #           uiOutput(outputId = ns("species_UI"))
+    #         )
+    #       ),
+    #       fluidRow(
+    #         column(
+    #           10,
+    #           uiOutput(outputId = ns("year_UI"))
+    #         )
+    #       )
+    #     ),
+    #     column(
+    #       9,
+    #       plotOutput(outputId = ns("plot")) %>% 
+    #         shinycssloaders::withSpinner()
+    #     )
+    #   )
+    # )
   }
   
   bubbles_Server <- function(id) {
@@ -1832,7 +1881,10 @@
         output$Fishy <- renderUI({
           if (id == "biomass_bubbles") {NULL}
           else if (id == "density_bubbles" & input$taxa == 'Fish'){
+            column(
+              2,
             radioButtons(inputId = session$ns("Fish_Survey"), label = "Survey:", choices = c("RDFC", "VFT"))
+            )
           }
         })
         
