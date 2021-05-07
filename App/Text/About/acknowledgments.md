@@ -2,7 +2,7 @@
 
 ### General
 
-The design of this ecological monitoring program was supported by the National Park Service in cooperation with the California Department of Fish and Game, the U.S. Department of Commerce and the National Oceanographic and Atmospheric Administration's National Marine Sanctuary Program. More than 430 scientists, resource managers and boat captains from many academic institutions and resource management agencies participated in this endeavor. Of particular note were the sustained efforts of G. E. Davis, D. V. Richards, D. J. Kushner, J. M Morgan, J. E. Mondragon, D. Lerma, M. D. Moss, K. J. Moore, J. M. Engle, M. D. Conlin, T. J. Herrlinger, T. W. Anderson, J. D. Lewis, D. C. Canestro, S. L. Kim, D. Forcucci, and J. W. Trone. Their broad experience greatly strengthened the experimental design and resulting monitoring protocols.
+The design of this ecological monitoring program was supported by the National Park Service in cooperation with the California Department of Fish and Game, the U.S. Department of Commerce and the National Oceanographic and Atmospheric Administration's National Marine Sanctuary Program. Of particular note were the sustained efforts of G. E. Davis, D. V. Richards, D. J. Kushner, J. M Morgan, J. E. Mondragon, D. Lerma, M. D. Moss, K. J. Moore, J. M. Engle, M. D. Conlin, T. J. Herrlinger, T. W. Anderson, J. D. Lewis, D. C. Canestro, S. L. Kim, D. Forcucci, and J. W. Trone. Their broad experience greatly strengthened the experimental design and resulting monitoring protocols. Since the inception of KFM, more than 430 scientists, resource managers and boat captains from many academic institutions and resource management agencies participated in this endeavor.
 
 ### Funding
 
@@ -26,18 +26,22 @@ The CINP transportation division provides full time boat captains to assist and 
 
 Currently the KFM Program relies heavily on hiring 4 to 6 seasonal biological science technicians for each years survey season. These divers make up the bulk of the 430 scientists who have participated in the monitoring effort. Monitoring would not be possible without the help of these employees.
 
+Prior to seasonal biological science technicians, KFM relied on... (Ask David for details on how staff were previously hired, maybe something about star interns? not really sure)
+
 Additionally, we want to thank D. G. Baldwin, L. E. Cullen, T. I. McClure, C. D. Molitor, and L. J. Montgomery for their contributions for their assistance with publishing the third revision of the KFM Handbook.
 
 ### Volunteers
 
 Volunteer divers have provided an essential role in the KFM Program. One to two volunteer divers are typically recruited for each 5 day survey trip. These divers are typically from partner organizations such as CDFW, NOAA, the Bay Foundation, or university dive programs.
 
-Sometimes these "volunteers" are also recruited from other National Parks or from other positions within Channel Islands National Park. They are viewed as volunteers simply because KFM is not directly related to their official duties. THese divers are usually from other dive programs and are already fully trained.
+Sometimes volunteers are also recruited from other National Parks or from other positions within Channel Islands National Park. They are viewed as volunteers simply because KFM is not directly related to their official duties. These divers are usually from other dive programs and come as fully trained divers.
 
 ### Education and Interpretation Rangers
 
 The KFM Program is much better suited to field biology and data analysis and therefore relies heavily on others for education and outreach. This work is vital to relaying the results of monitoring to the public and to classrooms. Half of Channel Islands National Park is underwater, and it is important to share this portion of the park with those who may not be able to enjoy it otherwise.
 
-Education and Interpretation Rangers at Channel Islands National Park are essential to meeting this goal.
+Education and Interpretation Rangers at Channel Islands National Park are essential to meeting this goal. This includes activities scheduled at the [Robert J. Lagomarsino Visitor Center in Ventura Harbor, CA](https://goo.gl/maps/8iACeF7yixdJjDYg8), visits to local classrooms, and answering questions and calls on a daily basis.
 
-Channel Islands Live...
+One of the most important educational programs at CINP is [Channel Islands Live](https://www.nps.gov/chis/planyourvisit/channel-islands-live-nps.htm) which includes interactive broadcasts where visitors can talk to the rangers and ask questions, curriculum-based presentations for schools, and webcams for monitoring island and underwater features. Park visitors and students can join us for these programs on Anacapa Island, at the Visitor Center in Ventura Harbor, in classrooms, and on the Internet.
+
+Finally it is my hope that this application will help to spread knowledge of kelp forest ecology and the long term monitoring efforts of CINP.

@@ -496,7 +496,7 @@ source('modules.R')
 
 { # Report Text   -----
   Text <- arrow::read_feather("Tidy_Data/Text.feather")
-  Acronyms <- data.table::fread("Meta_Data/Acronyms.csv", encoding = "Latin-1")
+  Acronyms <- dplyr::arrange(data.table::fread("Meta_Data/Acronyms.csv", encoding = "Latin-1"))
 }
 
 { # NPS Tags   ------

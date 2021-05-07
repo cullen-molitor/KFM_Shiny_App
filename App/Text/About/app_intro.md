@@ -59,8 +59,8 @@ When possible, descriptive graphics, text, photos, or metadata will be provided 
 
 ## Which protocols for which species?
 
-KFM protocols and the list of associated species have changed overtime. These changes were intended to maximize detection power of indicator species while maintaining backwards compatibility. The data summaries here account for these changes and aim to use the "best" possible data for each species in any given survey year. For this reason, certain species like will display data from different protocols. *Pisaster giganteus* (giant-spined sea star) is a good example of these changes as they were initially monitored on 1 m² quadrats, but were then added to 5 m² quadrats to increase detection power, and eventually added to band transects after the 2013-14 sea star wasting event.
+KFM protocols and the list of associated species have changed overtime. These changes were intended to maximize detection power of indicator species while maintaining backwards compatibility. The data summaries here account for these changes and aim to use the "best" possible data for each species in any given survey year. For this reason, certain species will display data from different protocols. *Pisaster giganteus* (giant-spined sea star) is a good example of these changes as they were initially monitored on 1 m² quadrats, but were then added to 5 m² quadrats to increase detection power, and eventually added to band transects after the 2013-14 sea star wasting event.
 
 Below is a summary of the species which are monitored on more than one protocol along with the protocol and year ranges used for these data summaries.
 
-TO DO: put in table of best protocols here
+TO DO: put in table of "best"" protocols here
