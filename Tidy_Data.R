@@ -361,7 +361,7 @@ Export_END_Year <- 2019
       base::rbind(VFT_Density_CSV) %>% 
       dplyr::left_join(
         Species_Info %>%
-          dplyr::select(ScientificName, Species, Classification) %>%
+          dplyr::select(ScientificName, Species, CommonName, Classification) %>%
           dplyr::distinct()) %>%
       dplyr::filter(!is.na(Species)) %>%    
       dplyr::left_join(
@@ -550,7 +550,7 @@ Export_END_Year <- 2019
     RPC_Cover_Wide <- RPC_Cover %>%
       dplyr::select(-SE, -SD, -CommonName, -Date, -Species,
                     -Area_Surveyed, -Total_Count) %>%
-      dplyr::filter(!CommonName %in% c("Rock", "Sand", "Cobble", "Bare Substrate")) %>%
+      dplyr::filter(!ScientificName %in% c("Rock", "Sand", "Cobble", "Bare Substrate")) %>%
       tidyr::pivot_wider(names_from = ScientificName, values_fn = sum,
                          values_from = Percent_Cover, values_fill = 0)
     
