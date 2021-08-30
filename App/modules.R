@@ -309,7 +309,8 @@
                    color = "Site Code", linetype = "Site Code",
                    x = NULL, y = NULL) +
               facet_grid(rows = vars(IslandName), scales = "fixed") +
-              scale_color_manual(values = SiteColor, guide = guide_legend(order = 1, ncol = 2)) +
+              scale_color_manual(values = SiteColor, limits = force, 
+                                 guide = guide_legend(order = 1, ncol = 2)) +
               ggplot2::guides(linetype = guide_legend(order = 2, ncol = 2, override.aes = list(col = 'black'))) +
               all_sites_theme()
             p2 <- p1 %+% Split$`Santa Rosa Island` +
@@ -333,7 +334,8 @@
                             color = "Site Code", linetype = NULL,
                             fill = "Oceanic Ni\u00f1o Index") +
               ggplot2::facet_grid(rows = vars(IslandName), scales = "fixed") +
-              ggplot2::scale_color_manual(values = SiteColor, guide = guide_legend(order = 1, ncol = 2)) +
+              ggplot2::scale_color_manual(values = SiteColor, limits = force,
+                                          guide = guide_legend(order = 1, ncol = 2)) +
               ggplot2::guides(linetype = guide_legend(order = 2, ncol = 2, override.aes = list(col = 'black'))) +
               ggplot2::geom_hline(aes(yintercept = 0)) +
               all_sites_theme() +
@@ -361,7 +363,8 @@
                    color = "Site Code", linetype = "Site Code",
                    x = NULL, y = NULL) +
               ggplot2::facet_grid(rows = vars(IslandName), scales = "fixed") +
-              scale_color_manual(values = SiteColor, guide = guide_legend(order = 1, ncol = 2)) +
+              scale_color_manual(values = SiteColor, limits = force, 
+                                 guide = guide_legend(order = 1, ncol = 2)) +
               ggplot2::guides(linetype = guide_legend(order = 2, ncol = 2, override.aes = list(col = 'black'))) +
               all_sites_theme()
             p2 <- p1 %+% Split$`Santa Rosa Island` +
@@ -385,7 +388,8 @@
                             color = "Site Code", linetype = NULL,
                             fill = "Oceanic Ni\u00f1o Index") +
               ggplot2::facet_grid(rows = vars(IslandName), scales = "fixed") +
-              ggplot2::scale_color_manual(values = SiteColor, guide = guide_legend(order = 1, ncol = 2)) +
+              ggplot2::scale_color_manual(values = SiteColor, limits = force, 
+                                          guide = guide_legend(order = 1, ncol = 2)) +
               ggplot2::guides(linetype = guide_legend(order = 2, ncol = 2, override.aes = list(col = 'black'))) +
               ggplot2::geom_hline(aes(yintercept = 0)) +
               all_sites_theme() +
@@ -562,7 +566,8 @@
             scale_y_continuous(expand = expansion(mult = 0.2)) +
             scale_x_continuous(expand = expansion(mult = 0.2)) +
             scale_size_continuous(limits = c(0, max(map_subset()$Index)), range = c(5, 25), guide = guide_legend(order = 1)) +
-            scale_color_manual(values = Island_Colors, guide = guide_legend(order = 2)) +
+            scale_color_manual(values = Island_Colors, limits = force,
+                               guide = guide_legend(order = 2)) +
             map_bubble_theme()
         })
       }
@@ -1013,7 +1018,7 @@
                  color = NULL, linetype = NULL) +
             scale_x_continuous(expand = expansion(mult = c(0,.1)), 
                                limits = c(min(Variable_Accuracy()$xvalue) - .5, NA)) +
-            scale_color_manual(values = Target_Colors) +
+            scale_color_manual(values = Target_Colors, limits = force) +
             theme_classic() +
             theme(axis.text = element_text(size = 12),
                   axis.title = element_text(size = 12),
@@ -1029,7 +1034,7 @@
                  color = NULL, linetype = NULL) +
             scale_x_continuous(expand = expansion(mult = c(0,.1)), 
                                limits = c(min(Variable_Gini()$MeanDecreaseGini_Isl) - .5, NA)) +
-            scale_color_manual(values = Target_Colors) +
+            scale_color_manual(values = Target_Colors, limits = force) +
             theme_classic() +
             theme(axis.text = element_text(size = 12),
                   axis.title = element_text(size = 12),
@@ -1267,7 +1272,8 @@
               ggplot2::labs(title = Split$`San Miguel Island`$CommonName,  
                             color = "Site Code", linetype = NULL, x = NULL, y = NULL) +
               ggplot2::facet_grid(rows = vars(IslandName), scales = "fixed") +
-              ggplot2::scale_color_manual(values = SiteColor, guide = guide_legend(order = 1, ncol = 2)) +
+              ggplot2::scale_color_manual(values = SiteColor, limits = force, 
+                                          guide = guide_legend(order = 1, ncol = 2)) +
               ggplot2::guides(linetype = guide_legend(order = 2, ncol = 2, override.aes = list(col = 'black'))) +
               all_sites_theme()
             p2 <- p1 %+% Split$`Santa Rosa Island` +
@@ -1291,7 +1297,8 @@
                             color = "Site Code", linetype = NULL,
                            fill = "Oceanic Ni\u00f1o Index") +
               ggplot2::facet_grid(rows = vars(IslandName), scales = "fixed") +
-              ggplot2::scale_color_manual(values = SiteColor, guide = guide_legend(order = 1, ncol = 2)) +
+              ggplot2::scale_color_manual(values = SiteColor, limits = force, 
+                                          guide = guide_legend(order = 1, ncol = 2)) +
               ggplot2::guides(linetype = guide_legend(order = 2, ncol = 2, override.aes = list(col = 'black'))) +
               ggplot2::geom_hline(aes(yintercept = 0)) +
               all_sites_theme() +
@@ -1320,7 +1327,8 @@
                             color = "Site Code", linetype = NULL,
                             x = NULL, y = NULL) +
               ggplot2::facet_grid(rows = vars(IslandName), scales = "fixed") +
-              ggplot2::scale_color_manual(values = SiteColor, guide = guide_legend(order = 1, ncol = 2)) +
+              ggplot2::scale_color_manual(values = SiteColor, limits = force, 
+                                          guide = guide_legend(order = 1, ncol = 2)) +
               ggplot2::guides(linetype = guide_legend(order = 2, ncol = 2, override.aes = list(col = 'black'))) +
               all_sites_theme()
             p2 <- p1 %+% Split$`Santa Rosa Island` +
@@ -1344,7 +1352,8 @@
                             color = "Site Code", linetype = NULL,
                             fill = "Oceanic Ni\u00f1o Index") +
               ggplot2::facet_grid(rows = vars(IslandName), scales = "fixed") +
-              ggplot2::scale_color_manual(values = SiteColor, guide = guide_legend(order = 1, ncol = 2)) +
+              ggplot2::scale_color_manual(values = SiteColor, limits = force, 
+                                          guide = guide_legend(order = 1, ncol = 2)) +
               ggplot2::guides(linetype = guide_legend(order = 2, ncol = 2, override.aes = list(col = 'black'))) +
               ggplot2::geom_hline(aes(yintercept = 0)) +
               all_sites_theme() +
@@ -1742,8 +1751,8 @@
             ggplot2::geom_vline(aes(xintercept = lubridate::mdy('1-1-2005'))) +
             ggplot2::geom_label(aes(x = lubridate::mdy('1-1-2005'), y = Inf), label = "New Sites", 
                                 hjust = 0, vjust = 1, color = 'black', size = 3) +
-            ggplot2::scale_color_manual(values = Target_Colors) +
-            ggplot2::scale_shape_manual(values = Target_Shapes) +
+            ggplot2::scale_color_manual(values = Target_Colors, limits = force) +
+            ggplot2::scale_shape_manual(values = Target_Shapes, limits = force) +
             ggplot2::facet_grid(rows = vars(Targeted_Broad), space = "free", scales = "free") +
             ggplot2::labs(title = paste(Ratios()$CommonName, " (", Ratios()$Label, ")", sep = ""),
                            color = NULL, shape = NULL, x = NULL, y = NULL) +
@@ -1762,8 +1771,8 @@
             ggplot2::geom_vline(aes(xintercept = 1)) +
             ggplot2::geom_point(size = 3, stroke = 1, aes(shape = Targeted_Broad), fill = "blue") +
             ggplot2::geom_errorbar(aes(y = CommonName, xmin = Mean_Ratio - CI_minus, xmax = Mean_Ratio + CI_plus)) +
-            ggplot2::scale_shape_manual(values = Target_Shapes) +
-            ggplot2::scale_color_manual(values = Target_Colors) +
+            ggplot2::scale_shape_manual(values = Target_Shapes, limits = force) +
+            ggplot2::scale_color_manual(values = Target_Colors, limits = force) +
             ggplot2::scale_x_continuous(trans = 'log10', expand = expansion(mult = 1)) +
             ggplot2::coord_cartesian(xlim = c(min(All_Data()$Mean_Ratio), max(All_Data()$Mean_Ratio))) +
             ggplot2::facet_grid(rows = vars(Targeted_Broad), space = "free", scales = "free") +
@@ -1935,7 +1944,8 @@
             ggplot2::scale_y_continuous(expand = expansion(mult = 0.2)) +
             ggplot2::scale_x_continuous(expand = expansion(mult = 0.1)) +
             ggplot2::scale_size_continuous(limits = c(0, max(Data_Sub1()$Index)), range = c(5, 25), guide = guide_legend(order = 1)) +
-            ggplot2::scale_color_manual(values = Island_Colors, guide = guide_legend(order = 2)) +
+            ggplot2::scale_color_manual(values = Island_Colors, limits = force,
+                                        guide = guide_legend(order = 2)) +
             map_bubble_theme()
         })
         

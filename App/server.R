@@ -654,7 +654,7 @@ server <- function(input, output, session) {
             ggplot2::labs(title = Size_Site_Data_Subset()$ScientificName,
                           subtitle = glue("{Size_Site_Data_Subset()$IslandName} {Size_Site_Data_Subset()$SiteName}"), 
                           color = "Common Name", x = "Year", y = "Size Distribution") +
-            ggplot2::scale_color_manual(values = SpeciesColor) +
+            ggplot2::scale_color_manual(values = SpeciesColor, limits = force) +
             Boxplot_theme()
       }) %>% 
         shiny::bindCache(Size_Site_Data_Subset(), cache = cachem::cache_disk("./cache/sizes-cache"))
@@ -669,7 +669,7 @@ server <- function(input, output, session) {
           ggplot2::scale_x_discrete(drop = FALSE) +
           ggplot2::labs(title = Size_Year_Data()$SurveyYear, color = "Common Name", x = NULL, y = "Size Distribution",
                         caption = "Sites arranged by longitude (west to east)") +
-          ggplot2::scale_color_manual(values = SpeciesColor) +
+          ggplot2::scale_color_manual(values = SpeciesColor, limits = force) +
           Boxplot_theme()
         
       }) %>% 
@@ -750,7 +750,7 @@ server <- function(input, output, session) {
           ggplot2::labs(title = ARM_Size_Site_Data_Subset()$ScientificName,
                         subtitle = glue("{ARM_Size_Site_Data_Subset()$IslandName} {ARM_Size_Site_Data_Subset()$SiteName}"), 
                         color = "Common Name", x = "Year", y = "Size Distribution") +
-          ggplot2::scale_color_manual(values = SpeciesColor) +
+          ggplot2::scale_color_manual(values = SpeciesColor, limits = force) +
           Boxplot_theme()
       }) %>% 
         shiny::bindCache(ARM_Size_Site_Data_Subset(), cache = cachem::cache_disk("./cache/sizes-cache"))
@@ -765,7 +765,7 @@ server <- function(input, output, session) {
           ggplot2::scale_x_discrete(drop = FALSE) +
           ggplot2::labs(title = ARM_Size_Year_Data()$SurveyYear, color = "Common Name", x = NULL, y = "Size Distribution",
                         caption = "Sites arranged by longitude (west to east)") +
-          ggplot2::scale_color_manual(values = SpeciesColor) +
+          ggplot2::scale_color_manual(values = SpeciesColor, limits = force) +
           Boxplot_theme()
         
       }) %>% 
